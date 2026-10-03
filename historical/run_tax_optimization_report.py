@@ -7,7 +7,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib.dates import DateFormatter, YearLocator
-from matplotlib.patches import Rectangle
+from matplotlib.patches import FancyBboxPatch, Rectangle
 from matplotlib.ticker import FuncFormatter
 import numpy as np
 import pandas as pd
@@ -37,6 +37,8 @@ UNDERPERFORMER_LABELS = {
 UNDERPERFORMER_CONTROLS = {"annual_monthly_control": "A", "annual_only": "B"}
 INK, MUTED, TEAL, LIME, CORAL = "#142F3B", "#596B72", "#087F80", "#C4EF68", "#B34D35"
 PAPER, WHITE, LINE, SOFT = "#F5F4EE", "#FFFFFF", "#D9DFD9", "#E8EDE7"
+NIGHT, PANEL, AQUA, BLUE, DIM = "#101F2D", "#1B2D3B", "#54DACB", "#83B5F3", "#B2C3CF"
+SALMON = "#F29C88"
 PAGE_COUNT = 4
 
 
@@ -54,6 +56,12 @@ def text(fig, x, y, value, size=10, color=INK, weight="normal", **kwargs):
 def box(fig, x, y, width, height, color):
     fig.add_artist(Rectangle((x, y), width, height, transform=fig.transFigure,
                              facecolor=color, edgecolor="none", zorder=0))
+
+
+def rounded_box(fig, x, y, width, height, color, radius=.014):
+    fig.add_artist(FancyBboxPatch((x, y), width, height,
+                   boxstyle=f"round,pad=0,rounding_size={radius}",
+                   transform=fig.transFigure, facecolor=color, edgecolor="none", zorder=0))
 
 
 def rule(fig, x, y, width, color=LINE):
@@ -129,7 +137,8 @@ def overview(data):
     fig = page("Recreating an ETF, share by share.",
                "We buy and manage the Nasdaq-100's individual shares ourselves, then compare Irish taxes with owning an ETF.", 1)
     text(fig, .05, .790, "Target the full index; rebalance with fresh cash using dated weights. Tax rules and data gaps allow drift.", 9.5, MUTED)
-    box(fig, .05, .177, .345, .585, INK)
+    rounded_box(fig, .05, .177, .345, .585, NIGHT)
+    rounded_box(fig, .075, .711, .223, .035, PANEL, .008)
     text(fig, .075, .730, "HIGHEST SELECTED RESULT", 9, LIME, "bold")
     text(fig, .072, .675, money(best.final_cash), 42, WHITE, "bold")
     text(fig, .075, .577, LABELS[best.name].replace("; ", ";\n").replace("current stocks", "current stocks\n"), 12, WHITE, "bold")
@@ -138,16 +147,23 @@ def overview(data):
         text(fig, .075, y, money(best.final_cash - comparison.loc[key, "final_cash"], True), 25, LIME, "bold")
         text(fig, .075, y - .054, label, 10, "#CFDAD9")
     text(fig, .075, .218, "After liquidation, taxes and costs.", 9, "#CFDAD9")
-    maximum = comparison.final_cash.max()
-    colors = ["#A7B5BA", "#778F99", "#76B6AE", "#368E8B", TEAL]
+    maximum = np.ceil(comparison.final_cash.max() / 250000) * 250000
+    rounded_box(fig, .418, .177, .545, .585, NIGHT)
+    colors = ["#728A9C", "#A1B6C5", BLUE, AQUA, LIME]
     for i, key in enumerate(ORDER):
         y = .736 - i * .100
         row = comparison.loc[key]
-        text(fig, .435, y, LABELS[key], 9.5, weight="bold")
-        text(fig, .435, y - .025, DESCRIPTIONS[key], 8.5, MUTED)
-        text(fig, .95, y - .046, money(row.final_cash), 16, weight="bold", ha="right")
-        box(fig, .435, y - .085, .515, .008, LINE)
-        box(fig, .435, y - .085, .515 * row.final_cash / maximum, .008, colors[i])
+        if key == best.name:
+            rounded_box(fig, .426, y - .096, .529, .109, "#243D3E", .009)
+        text(fig, .435, y, LABELS[key], 9.5, LIME if key == best.name else WHITE, weight="bold")
+        text(fig, .435, y - .025, DESCRIPTIONS[key], 8.5, DIM)
+        text(fig, .95, y - .046, money(row.final_cash), 16,
+             LIME if key == best.name else WHITE, weight="bold", ha="right")
+        rounded_box(fig, .435, y - .087, .515, .012, "#354754", .006)
+        rounded_box(fig, .435, y - .087, .515 * row.final_cash / maximum, .012, colors[i], .006)
+    text(fig, .435, .207, "€0", 8, DIM)
+    text(fig, .695, .207, "FINAL WEALTH · LINEAR SCALE", 7, DIM, ha="center")
+    text(fig, .95, .207, f"€{maximum / 1000000:g}m", 8, DIM, ha="right")
     text(fig, .05, .158, "All three active stock strategies: review former index stocks quarterly; sell only when the sale adds no CGT.", 10, weight="bold")
     text(fig, .05, .127, "December profit sales use existing losses first, then the remaining €1,270 exemption. Eligibility limits apply.", 9.5, MUTED)
     text(fig, .05, .098, f"€{total:,.2f} invested / 192 payments / 16 years. Nominal wealth; differences include holdings, costs and tax.", 9, MUTED)
@@ -167,18 +183,19 @@ def attribution(data):
              [("baseline", "exits"), ("exits", "weekly_tlh"), ("weekly_tlh", "weekly_annual")]]
     text(fig, .05, .748, "THE WEEKLY STRATEGY, BUILT IN THREE STEPS", 9, TEAL, "bold")
     text(fig, .05, .701, f"{money(baseline)} → {money(baseline + sum(steps))}", 25, weight="bold")
-    ax = fig.add_axes([.087, .414, .488, .231], facecolor=PAPER)
+    rounded_box(fig, .05, .350, .545, .300, NIGHT)
+    ax = fig.add_axes([.096, .422, .475, .210], facecolor=NIGHT)
     cumulative = np.cumsum(steps)
-    for i, (gain, top, color) in enumerate(zip(steps, cumulative, ["#9ABFB7", "#4FA39E", TEAL])):
+    for i, (gain, top, color) in enumerate(zip(steps, cumulative, [BLUE, AQUA, AQUA])):
         ax.bar(i, gain, bottom=top-gain, width=.58, color=color, zorder=3)
-        ax.text(i, top + 1800, money(gain, True), ha="center", fontsize=10, color=INK, weight="bold")
-        ax.plot([i + .29, i + .71], [top, top], color=MUTED, lw=.8, ls=":")
-    ax.bar(3, sum(steps), width=.58, color=INK, zorder=3)
-    ax.text(3, sum(steps) + 1800, money(sum(steps), True), ha="center", fontsize=10, color=INK, weight="bold")
-    ax.set_xticks(range(4), ["Sell former\nindex stocks\nquarterly", "Sell losing\nshares\nweekly", "Sell & rebuy\ncurrent stocks\nin December", "Total"], fontsize=8.5)
-    ax.set_yticks([0, 20000, 40000], ["€0", "+€20k", "+€40k"], fontsize=8, color=MUTED)
+        ax.text(i, top + 2300, money(gain, True), ha="center", fontsize=10, color=WHITE, weight="bold")
+        ax.plot([i + .29, i + .71], [top, top], color=DIM, lw=.9, ls=(0, (2, 3)))
+    ax.bar(3, sum(steps), width=.58, color=LIME, zorder=3)
+    ax.text(3, sum(steps) + 2300, money(sum(steps), True), ha="center", fontsize=10, color=LIME, weight="bold")
+    ax.set_xticks(range(4), ["01 / Sell former\nindex stocks\nquarterly", "02 / Sell losing\nshares\nweekly", "03 / Sell & rebuy\ncurrent stocks\nin December", "Combined\nchange"], fontsize=8, color=WHITE)
+    ax.set_yticks([0, 20000, 40000], ["€0", "+€20k", "+€40k"], fontsize=8, color=DIM)
     ax.set_ylim(0, max(cumulative.max(), sum(steps)) * 1.20)
-    ax.grid(axis="y", color=LINE, lw=.7, zorder=0)
+    ax.grid(axis="y", color=WHITE, alpha=.12, lw=.7, zorder=0)
     ax.tick_params(axis="both", length=0)
     for spine in ax.spines.values():
         spine.set_visible(False)
@@ -191,12 +208,12 @@ def attribution(data):
     for y, key, label in [(.505, "weekly_annual", "Weekly loss sales; December sell & rebuy"),
                            (.270, "monthly_hybrid", "Monthly loss sales; former stocks first")]:
         row = effect(data, "weekly_no_exemption" if key == "weekly_annual" else "hybrid_no_exemption", key)
-        box(fig, .630, y, .320, .211, WHITE)
-        text(fig, .651, y + .187, label, 8, MUTED, "bold")
+        rounded_box(fig, .630, y, .320, .211, NIGHT)
+        text(fig, .651, y + .187, label, 8, DIM, "bold")
         text(fig, .651, y + .144, money(row.after_tax_gain_eur, True), 26,
-             TEAL if row.after_tax_gain_eur >= 0 else CORAL, "bold")
-        text(fig, .651, y + .084, "change in final wealth", 9, MUTED)
-        text(fig, .651, y + .043, f"Nominal exemption relief: {money(row.additional_nominal_exemption_shelter_eur)}", 10)
+             LIME if row.after_tax_gain_eur >= 0 else SALMON, "bold")
+        text(fig, .651, y + .084, "change in final wealth", 9, DIM)
+        text(fig, .651, y + .043, f"Nominal exemption relief: {money(row.additional_nominal_exemption_shelter_eur)}", 10, WHITE)
     rule(fig, .05, .232, .90)
     text(fig, .05, .205,
          "The three steps add because each builds on the previous rule. The exemption cards are separate experiments.\n"
@@ -251,15 +268,24 @@ def assumptions(data):
     text(fig, .05, .748, "CONTRIBUTIONS FOLLOW IRISH CPI", 9, TEAL, "bold")
     text(fig, .05, .703, f"€{initial:,.2f} → €{final:,.2f}", 29, weight="bold")
     text(fig, .05, .641, f"Per month  /  €{total:,.2f} contributed over 16 years", 10, MUTED)
-    ax = fig.add_axes([.093, .462, .469, .142], facecolor=PAPER)
-    ax.fill_between(schedule.date, initial, schedule.contribution_eur, step="post", color=LIME, alpha=.65)
-    ax.step(schedule.date, schedule.contribution_eur, where="post", color=TEAL, lw=2)
+    rounded_box(fig, .05, .432, .545, .181, NIGHT)
+    ax = fig.add_axes([.095, .467, .405, .121], facecolor=NIGHT)
+    ax.fill_between(schedule.date, initial, schedule.contribution_eur, step="post", color=AQUA, alpha=.16)
+    ax.step(schedule.date, schedule.contribution_eur, where="post", color=AQUA, lw=2.2)
+    reviews = schedule.loc[schedule.contribution_eur.ne(schedule.contribution_eur.shift())]
+    ax.scatter(reviews.date, reviews.contribution_eur, s=9, color=AQUA, zorder=3, clip_on=False)
+    ax.scatter(schedule.date.iloc[-1], final, s=38, color=LIME, edgecolors=NIGHT,
+               linewidths=1, zorder=4, clip_on=False)
+    ax.annotate(f"€{final:,.0f}", (schedule.date.iloc[-1], final), xytext=(9, 0),
+                textcoords="offset points", fontsize=9, color=LIME, weight="bold", va="center")
     ax.xaxis.set_major_locator(YearLocator(5))
     ax.xaxis.set_major_formatter(DateFormatter("%Y"))
     ax.set_yticks([1000, 1150, 1300], ["€1,000", "€1,150", "€1,300"])
     ax.set_xlim(schedule.date.iloc[0], schedule.date.iloc[-1])
-    ax.tick_params(labelsize=8, length=0, colors=MUTED)
-    ax.grid(axis="y", color=LINE, lw=.6)
+    padding = (schedule.contribution_eur.max() - schedule.contribution_eur.min()) * .2
+    ax.set_ylim(schedule.contribution_eur.min() - padding * .5, schedule.contribution_eur.max() + padding)
+    ax.tick_params(labelsize=8, length=0, colors=DIM, pad=5)
+    ax.grid(axis="y", color=WHITE, alpha=.12, lw=.6)
     for spine in ax.spines.values():
         spine.set_visible(False)
     text(fig, .05, .409, "Each September: €1,000 × August CPI ÷ August 2010 CPI.", 10, weight="bold")
@@ -267,7 +293,7 @@ def assumptions(data):
          "Published data only; increases and decreases apply.\n"
          "Same scheduled flows; three stock deposits post next session.\n"
          "CSO CPI: December 2006=100; current, non-revised series.", 9, MUTED)
-    box(fig, .630, .339, .320, .420, INK)
+    rounded_box(fig, .630, .339, .320, .420, NIGHT)
     text(fig, .653, .730, "THE TAX SCENARIO", 9, LIME, "bold")
     taxes = [("33%", "STOCK CAPITAL GAINS"), ("€1,270", "ANNUAL CGT EXEMPTION"),
              ("52.35%", "DIVIDEND TAX"), ("38% / 8y", "FUND TAX / DEEMED DISPOSAL")]
@@ -303,32 +329,40 @@ def marginal_chart(data):
         ("hybrid_no_exemption", "monthly_hybrid"): "Make the €1,270 exemption available\nMonthly loss sales; former stocks first in December",
     }
     shown = data["marginal_effects"].set_index(["control", "variant"]).loc[list(labels)]
-    fig, ax = plt.subplots(figsize=(12, 7), facecolor=PAPER)
-    fig.subplots_adjust(left=.405, right=.87, top=.79, bottom=.18)
-    ax.set_facecolor(PAPER)
+    fig = plt.figure(figsize=(12.6, 8), facecolor=NIGHT)
+    ax = fig.add_axes([.50, .090, .345, .695], facecolor="none")
     values = shown.after_tax_gain_eur.to_numpy()
-    positions = np.arange(len(values))
-    ax.barh(positions, values, height=.58, color=[TEAL if v >= 0 else CORAL for v in values])
-    ax.set_yticks(positions, list(labels.values()), fontsize=9)
-    ax.invert_yaxis()
-    limit = np.abs(values).max()
-    ax.set_xlim(min(values.min(), 0)-limit*.12, max(values.max(), 0)+limit*.21)
-    for y, value in zip(positions, values):
-        ax.text(max(value, 0) + limit * .02, y, money(value, True),
-                ha="left", va="center", fontsize=10, weight="bold", color=INK if value >= 0 else CORAL)
-    ax.axvline(0, color=MUTED, lw=.8)
-    ax.axhline(4.5, color=LINE, lw=1, ls=":")
-    ax.xaxis.set_major_formatter(FuncFormatter(lambda value, _: f"€{value/1000:,.0f}k"))
-    ax.tick_params(length=0, colors=MUTED)
-    ax.grid(axis="x", color=LINE, lw=.6)
+    positions = [.735, .644, .553, .462, .371, .220, .129]
+    colors = [BLUE, AQUA, AQUA, AQUA, LIME, LIME, SALMON]
+    ax.set_ylim(.090, .785)
+    limit = np.ceil(np.abs(values).max() / 10000) * 10000
+    ax.set_xlim(min(values.min(), 0) - limit * .07, limit)
+    for y, value, label, color in zip(positions, values, labels.values(), colors):
+        rounded_box(fig, .04, y - .036, .92, .074, PANEL, .012)
+        title, detail = label.split("\n")
+        text(fig, .055, y + .021, title, 10, WHITE, "bold")
+        text(fig, .055, y - .005, detail, 8.5, DIM)
+        ax.barh(y, value, height=.012, color=color, zorder=3)
+        ax.scatter(value, y, s=30, color=color, edgecolors=PANEL, linewidths=.8, zorder=4)
+        text(fig, .945, y + .017, money(value, True), 15, color, "bold", ha="right")
+    ax.set_yticks([])
+    ax.axvline(0, color=DIM, lw=1, alpha=.7)
+    ax.set_xticks(np.arange(0, limit + 1, 10000))
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda value, _: "€0" if value == 0 else f"€{value/1000:,.0f}k"))
+    ax.tick_params(length=0, colors=DIM, labelsize=8, pad=7)
+    ax.grid(axis="x", color=WHITE, alpha=.10, lw=.6)
     ax.set_axisbelow(True)
     for spine in ax.spines.values():
         spine.set_visible(False)
-    text(fig, .04, .94, "One rule. One matched comparison.", 24, weight="bold")
-    text(fig, .04, .853, "Change in final after-tax wealth; each row has its own control.", 11, MUTED)
-    text(fig, .04, .082, "Effects include changed holdings and costs. Exemption availability is a separate experiment from gain harvesting.", 9, MUTED)
-    text(fig, .04, .045, "Selected historical cases · CPI-indexed contributions · Full liquidation", 8, MUTED)
-    fig.savefig(OUT / "marginal_effects.png", dpi=170, facecolor=PAPER)
+    text(fig, .04, .971, "NASDAQ AFTER TAX   /   MATCHED COMPARISONS", 8, LIME, "bold")
+    text(fig, .04, .920, "What each change added.", 28, WHITE, "bold")
+    text(fig, .04, .852, "Final wealth after tax and costs. Each row compares portfolios differing in one rule.", 11, DIM)
+    text(fig, .055, .793, "01 / CHANGE A TRADING RULE", 8, AQUA, "bold")
+    text(fig, .945, .793, "WEALTH CHANGE", 8, DIM, "bold", ha="right")
+    text(fig, .055, .282, "02 / MAKE THE ANNUAL EXEMPTION AVAILABLE", 8, LIME, "bold")
+    text(fig, .04, .045, "Different controls: do not add these bars. Wealth changes include holdings and reinvestment, not just tax savings.", 9, DIM)
+    text(fig, .04, .021, "Hypothetical 2010–2026 study · CPI-indexed contributions · Full liquidation", 8, DIM)
+    fig.savefig(OUT / "marginal_effects.png", dpi=180, facecolor=NIGHT)
     plt.close(fig)
 
 
