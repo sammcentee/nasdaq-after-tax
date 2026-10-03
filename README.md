@@ -2,7 +2,7 @@
 
 # Nasdaq After Tax
 
-**Owning the Nasdaq-100's shares directly versus buying its ETF: what changes after Irish tax?**
+**Recreate a Nasdaq-100 ETF with individual shares, manage and rebalance it ourselves, then compare the Irish tax outcome.**
 
 Starts at €1,000/month · Annual Irish CPI reviews · 16 years · €210,936.48 contributed
 
@@ -14,9 +14,11 @@ Starts at €1,000/month · Annual Irish CPI reviews · 16 years · €210,936.4
 
 ---
 
-This project asks **what an Irish investor would keep after tax if they bought the Nasdaq-100's individual company shares directly instead of owning them through an accumulating ETF**. The direct-stock portfolio aims to approximate the index, allowing some drift when trading would incur tax or costs.
+This project models **recreating a Nasdaq-100 ETF in our own brokerage account by buying the underlying company shares directly**. We aim to hold the full basket of index shares in the available target proportions, and take responsibility for buying, rebalancing, reinvesting dividends and managing sales ourselves. The comparison asks what an Irish investor keeps after tax versus simply buying an accumulating ETF.
 
-The study follows dated index membership, invests monthly contributions, and accounts for dividends, rebalancing, tax-loss harvesting, use of the annual CGT exemption and final liquidation. Its central comparison is the tax treatment of direct share ownership against the ETF's fund-tax and eight-year deemed-disposal regime.
+**How we keep the portfolio close to the index:** use historical membership and target weights available at each date. New contributions, after-tax dividends and sale proceeds buy eligible current members below their target weights. New members become purchase targets once their weights are known; stocks that leave stop receiving new purchases. Each strategy below controls when holdings are sold, including for tax losses and the annual CGT exemption.
+
+This is an approximate, self-managed replica. We allow holdings to drift instead of automatically selling every overweight stock to restore exact weights. Retained former members, purchase restrictions and missing data can leave differences or cash, so the model does not claim to own every constituent at every date.
 
 **Every contribution, tax band, account value and transaction ledger is hypothetical or simulated.** The repository does not describe anyone’s actual income, holdings or investment activity.
 
@@ -24,7 +26,7 @@ The study follows dated index membership, invests monthly contributions, and acc
 
 ## What each strategy actually does
 
-All five scenarios invest the same CPI-linked monthly contributions for 16 years, then sell everything. The stock portfolios buy current Nasdaq-100 members using the weights available at the time.
+All five scenarios invest the same CPI-linked monthly contributions for 16 years, then sell everything. **The four share-based scenarios are different ways of managing the same attempted ETF replica**: they share the index-based buying rules above and differ in when they sell holdings.
 
 | Strategy | Trading rule | Final after-tax wealth |
 |:---|:---|---:|

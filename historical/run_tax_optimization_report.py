@@ -126,8 +126,9 @@ def overview(data):
     comparison = data["comparison"].set_index("key")
     best = comparison.loc[comparison.final_cash.idxmax()]
     total = data["manifest"]["contributions_eur"]
-    fig = page("Nasdaq-100, after Irish tax.",
-               "Individual shares versus an accumulating ETF under the modelled Irish tax rules.", 1)
+    fig = page("Recreating an ETF, share by share.",
+               "We buy and manage the Nasdaq-100's individual shares ourselves, then compare Irish taxes with owning an ETF.", 1)
+    text(fig, .05, .790, "Target the full index; rebalance with fresh cash using dated weights. Tax rules and data gaps allow drift.", 9.5, MUTED)
     box(fig, .05, .177, .345, .585, INK)
     text(fig, .075, .730, "HIGHEST SELECTED RESULT", 9, LIME, "bold")
     text(fig, .072, .675, money(best.final_cash), 42, WHITE, "bold")
@@ -205,8 +206,8 @@ def attribution(data):
 
 
 def rules_and_misses(data):
-    fig = page("How the strategies traded.",
-               "The leading strategy uses three scheduled reviews, with no foresight of later prices or losses.", 3)
+    fig = page("How we manage our own index portfolio.",
+               "Leading strategy: contributions, net dividends and sale proceeds top up eligible index stocks below their target weights.", 3)
     cards = [
         ("01 / EVERY FRIDAY", "Sell losing shares",
          "Sell a whole holding at ≥5% and ≥€25 loss.\nNo buy of that share class in prior 29 days;\nblock repurchase for 29 days afterwards.\nReinvest in other current index stocks."),
@@ -337,7 +338,7 @@ def main():
                          "text.color": INK, "axes.labelcolor": MUTED})
     destination = OUT / "report.pdf"
     with PdfPages(destination, metadata={"Title": "Nasdaq After Tax — Research Brief",
-            "Author": "Nasdaq After Tax", "Subject": "Hypothetical Irish ETF and direct-share tax comparison"}) as pdf:
+            "Author": "Nasdaq After Tax", "Subject": "Recreating a Nasdaq-100 ETF with a self-managed share portfolio: hypothetical Irish tax comparison"}) as pdf:
         for build in (overview, attribution, rules_and_misses, assumptions):
             fig = build(data)
             pdf.savefig(fig, facecolor=PAPER)
