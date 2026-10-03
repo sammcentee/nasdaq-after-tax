@@ -1,0 +1,72 @@
+{
+  "status": "partial_repair_bundle_not_validated_full_backtest",
+  "original_data_mutated": false,
+  "priority_chains_with_verified_terms": 5,
+  "additional_linked_events_recorded": 5,
+  "quote_series": 9,
+  "quote_observations": 27745,
+  "new_non_NDX_successor_downloaded": "BMY tts-818515",
+  "ebay_hidden_price_multiplier": 2.465201206382971,
+  "ebay_independent_issuer_extrema_checks": 14,
+  "ebay_max_extrema_error_usd": 0.005072684202104938,
+  "azn_inferred_quote_sessions": 6,
+  "flag_counts": {
+    "distribution": {
+      "total": 48,
+      "addressed_at_least_partially": 2,
+      "unreviewed": 46
+    },
+    "extreme_return": {
+      "total": 23,
+      "addressed_at_least_partially": 3,
+      "unreviewed": 20
+    },
+    "terminal_gap": {
+      "total": 55,
+      "addressed_at_least_partially": 3,
+      "unreviewed": 52
+    }
+  },
+  "full_chains_validated_for_Irish_after_tax_TLH": 0,
+  "unresolved": [
+    "Other required securities/actions remain unreviewed; flag lists overlap and are not exhaustive.",
+    "Irish treatment and lot-basis allocation for all stock/spin/mixed mergers is not supplied by this bundle.",
+    "BMYRT interim daily marks unavailable; contractual expiry is known but separate litigation claims need review.",
+    "GOOG 2015 cash in lieu of fractional stock and distribution settlement not reconstructed.",
+    "AZN six daily quotes are inferred unit corrections and were not verified with an independent price source.",
+    "Raw EBAY historical factor is inferred constant and independently checked against fourteen issuer price extrema.",
+    "Fractional-share cash in lieu and actual broker settlement lags unresolved for merger successors.",
+    "Source dividend dates are ex dates, not confirmed payment dates; withholding and ADR fees not classified.",
+    "Regular split factors remain provider-derived, and other hidden adjustment errors cannot be excluded."
+  ],
+  "data_requests": {
+    "general_assets": "https://data-api.quantiacs.io/assets?min_date=2010-09-01&max_date=2026-10-02&type=",
+    "general_data": {
+      "url": "https://data-api.quantiacs.io/data",
+      "method": "POST",
+      "json": {
+        "assets": [
+          "tts-832177",
+          "tts-91263224",
+          "tts-71625495",
+          "tts-1947579",
+          "tts-832022",
+          "tts-818515",
+          "tts-831866",
+          "tts-203249662",
+          "tts-827879"
+        ],
+        "min_date": "2010-09-01",
+        "max_date": "2026-10-02",
+        "type": ""
+      }
+    },
+    "general_data_note": "AZN requested but absent from general response; existing NDX data supplies AZN. General endpoint shares adjusted-price anomalies with NDX endpoint.",
+    "yahoo_fallback": "Four unauthenticated chart requests returned HTTP429; no credentials/account requests used."
+  },
+  "input_sha256": {
+    "quantiacs_ndx_all.nc": "cf8458f4e882d867b52ef36068ec4cf6c887a6368fbe3df035f3253a9d8babb5",
+    "repairs/quantiacs_general_priority.nc": "e2e976c62e801989cac484e4df8852c658c6d3a5c0b5abeef1aa36b8824eea02",
+    "repairs/quantiacs_general_assets.json": "88b07a2bc9f6c0327860e089891d35d19709490e0ad05b5dfb044eb95999e9a6"
+  }
+}

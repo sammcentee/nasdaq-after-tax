@@ -1,0 +1,15 @@
+{
+  "security_id": "tts-12361625",
+  "old_symbol": "SATS",
+  "new_symbol": "ECHO",
+  "legal_effective_date": "2026-06-24",
+  "first_extended_quote": "2026-06-23",
+  "source": "https://ir.echostar.com/news-releases/news-release-details/echostar-changing-stocker-ticker-sats-echo-marking-companys-next",
+  "price_source": "Yahoo via yfinance ECHO",
+  "quantity_ratio": 1,
+  "comparison_observations_2026": 117,
+  "p99_relative_close_difference": 3.2838602361904415e-05,
+  "new_observations": 70,
+  "first_extended_close_usd": 103.91999816894533,
+  "last_close_usd": 89.41000366210938
+}

@@ -1,0 +1,6 @@
+# Raw sources are re-downloadable via `python build.py fetch`
+data/
+
+# Python
+__pycache__/
+*.pyc

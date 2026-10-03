@@ -1,0 +1,411 @@
+{
+  "as_of": "2026-10-03",
+  "accepted_series": "cndx_nav_eur.csv",
+  "rows": 4244,
+  "start": "2010-01-26",
+  "end": "2026-10-02",
+  "ecb_api_vs_zip_matching_observations": 4290,
+  "fx_prior_date_used_count": 22,
+  "sources": {
+    "fund_page": "https://www.ishares.com/uk/individual/en/products/253741/ishares-nasdaq-100-ucits-etf",
+    "fund_download": "https://www.blackrock.com/varnish-api/uk-retail01-product-data/product-data/api/v1/get-fund-document?appSubType=ISHARES&appType=PRODUCT_PAGE&component=fundDownloadV2&locale=en_GB&portfolioId=253741&targetSite=ishares-uk&userType=individual",
+    "ecb_zip": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip",
+    "ecb_api": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?startPeriod=2010-01-01&endPeriod=2026-10-02&format=csvdata",
+    "ecb_reference_description": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+  },
+  "source_sha256": {
+    "cndx_fund_download.xls": "f6b02571c711146f5457bc0fb7d88d7396704eeba82c5f8c1f99a88afceb8ed6",
+    "ecb_eurofxref_hist.zip": "9d2c7ecc33b01c9b18c28ff10ddcf036901ee6a5d8637916d599864b64eb1a97",
+    "ecb_usd_api.csv": "5f04123bc34b3ddaf7d7a370e3ef99178fc9522ab9884b65d87571d51a3c3e85"
+  },
+  "spot_checks": [
+    {
+      "date": "2010-09-30",
+      "nav_usd": 105.42,
+      "usd_per_eur": 1.3648,
+      "fx_date": "2010-09-30",
+      "nav_eur": 77.24208675263775,
+      "sxrv_yahoo_close": 104.88999938964844,
+      "sxrv_deviation": 0.3579384477992049,
+      "cndx_yahoo_close": 101.83000183105469,
+      "cndx_deviation": -0.03405424178472127
+    },
+    {
+      "date": "2011-09-30",
+      "nav_usd": 113.31,
+      "usd_per_eur": 1.3503,
+      "fx_date": "2011-09-30",
+      "nav_eur": 83.91468562541657,
+      "sxrv_yahoo_close": 86.08000183105469,
+      "sxrv_deviation": 0.02580378141799633,
+      "cndx_yahoo_close": 115.19499969482422,
+      "cndx_deviation": 0.016635775261002683
+    },
+    {
+      "date": "2016-09-30",
+      "nav_usd": 268.16,
+      "usd_per_eur": 1.1161,
+      "fx_date": "2016-09-30",
+      "nav_eur": 240.2652092106442,
+      "sxrv_yahoo_close": 238.75999450683594,
+      "sxrv_deviation": -0.006264805082489611,
+      "cndx_yahoo_close": 268.29998779296875,
+      "cndx_deviation": 0.0005220308508677718
+    },
+    {
+      "date": "2026-09-30",
+      "nav_usd": 1747.11,
+      "usd_per_eur": 1.1355,
+      "fx_date": "2026-09-30",
+      "nav_eur": 1538.6261558784677,
+      "sxrv_yahoo_close": 1547.4000244140625,
+      "sxrv_deviation": 0.005702404383334692,
+      "cndx_yahoo_close": 1758.0,
+      "cndx_deviation": 0.006233150746089322
+    }
+  ],
+  "sxrv_discrepancy_gt_10pct": {
+    "count": 20,
+    "first": "2010-09-30",
+    "last": "2025-04-09"
+  },
+  "annual_yahoo_audit": {
+    "2010": {
+      "sxrv": {
+        "observations": 58,
+        "median_deviation": 0.004346727533727668,
+        "max_abs_deviation": 0.41140092248086924,
+        "count_abs_deviation_gt_10pct": 19
+      },
+      "cndx": {
+        "observations": 64,
+        "median_deviation": -0.006492633451204932,
+        "max_abs_deviation": 0.061820510124795613,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2011": {
+      "sxrv": {
+        "observations": 213,
+        "median_deviation": -0.0008896684924850629,
+        "max_abs_deviation": 0.03988592526376933,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 251,
+        "median_deviation": -0.000895717382605743,
+        "max_abs_deviation": 0.041799083564563744,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2012": {
+      "sxrv": {
+        "observations": 252,
+        "median_deviation": -0.0007818329941798319,
+        "max_abs_deviation": 0.023945021714180115,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 250,
+        "median_deviation": -0.000395951775430059,
+        "max_abs_deviation": 0.027625461612155955,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2013": {
+      "sxrv": {
+        "observations": 250,
+        "median_deviation": -5.599466531802655e-05,
+        "max_abs_deviation": 0.024339911284543714,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 250,
+        "median_deviation": -0.00043233208992854433,
+        "max_abs_deviation": 0.01763240332557947,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2014": {
+      "sxrv": {
+        "observations": 251,
+        "median_deviation": -0.00022800618117890803,
+        "max_abs_deviation": 0.026616857895038315,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 253,
+        "median_deviation": -0.00038955796220629946,
+        "max_abs_deviation": 0.021256493008155575,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2015": {
+      "sxrv": {
+        "observations": 253,
+        "median_deviation": -0.00017412763007829124,
+        "max_abs_deviation": 0.05068704714504202,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 253,
+        "median_deviation": -0.00012147217093472218,
+        "max_abs_deviation": 0.04407938653248333,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2016": {
+      "sxrv": {
+        "observations": 251,
+        "median_deviation": -0.0002178519917979127,
+        "max_abs_deviation": 0.034594268642887505,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 253,
+        "median_deviation": -0.00045731471291632353,
+        "max_abs_deviation": 0.03182095269950924,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2017": {
+      "sxrv": {
+        "observations": 251,
+        "median_deviation": -0.0012543912535731838,
+        "max_abs_deviation": 0.021515006795511216,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 252,
+        "median_deviation": -0.0009036640009491559,
+        "max_abs_deviation": 0.022399340871075646,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2018": {
+      "sxrv": {
+        "observations": 248,
+        "median_deviation": 0.0006132648452583656,
+        "max_abs_deviation": 0.04187551060585437,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 252,
+        "median_deviation": 8.16071062184065e-05,
+        "max_abs_deviation": 0.04111264621192534,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2019": {
+      "sxrv": {
+        "observations": 248,
+        "median_deviation": 5.30852555283845e-05,
+        "max_abs_deviation": 0.02247349505909657,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 253,
+        "median_deviation": -0.0005987825002939928,
+        "max_abs_deviation": 0.025367627420626038,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2020": {
+      "sxrv": {
+        "observations": 251,
+        "median_deviation": -0.0008637402764640756,
+        "max_abs_deviation": 0.0650473031631903,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 254,
+        "median_deviation": -0.0012525391593076196,
+        "max_abs_deviation": 0.06840593905126557,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2021": {
+      "sxrv": {
+        "observations": 251,
+        "median_deviation": -0.0004196616935534525,
+        "max_abs_deviation": 0.031894563402065534,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 253,
+        "median_deviation": -0.0006578377260205714,
+        "max_abs_deviation": 0.03277314489170169,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2022": {
+      "sxrv": {
+        "observations": 250,
+        "median_deviation": 0.00021807361576686723,
+        "max_abs_deviation": 0.04880400802976215,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 250,
+        "median_deviation": 0.0005286677596914036,
+        "max_abs_deviation": 0.04666451744221656,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2023": {
+      "sxrv": {
+        "observations": 251,
+        "median_deviation": -0.0008124566163942859,
+        "max_abs_deviation": 0.028931884996608037,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 251,
+        "median_deviation": -0.0008682331020725131,
+        "max_abs_deviation": 0.02311486231297155,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2024": {
+      "sxrv": {
+        "observations": 251,
+        "median_deviation": -3.3833398352500765e-05,
+        "max_abs_deviation": 0.03976666618559088,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 254,
+        "median_deviation": -0.00031746614138639107,
+        "max_abs_deviation": 0.03758164947121179,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    },
+    "2025": {
+      "sxrv": {
+        "observations": 250,
+        "median_deviation": -0.0011509011196753072,
+        "max_abs_deviation": 0.10101061611683615,
+        "count_abs_deviation_gt_10pct": 1
+      },
+      "cndx": {
+        "observations": 248,
+        "median_deviation": -0.00043761404244951896,
+        "max_abs_deviation": 0.10013780235392389,
+        "count_abs_deviation_gt_10pct": 1
+      }
+    },
+    "2026": {
+      "sxrv": {
+        "observations": 190,
+        "median_deviation": -0.00015087155856219336,
+        "max_abs_deviation": 0.03242992958381685,
+        "count_abs_deviation_gt_10pct": 0
+      },
+      "cndx": {
+        "observations": 188,
+        "median_deviation": 4.31364322478478e-05,
+        "max_abs_deviation": 0.023710604769817012,
+        "count_abs_deviation_gt_10pct": 0
+      }
+    }
+  },
+  "calendar_return_validation": [
+    {
+      "year": 2016,
+      "previous_year_end_nav_date": "2015-12-31",
+      "year_end_nav_date": "2016-12-30",
+      "nav_return_percent": 6.717101333864206,
+      "published_return_percent": 6.7,
+      "difference_percentage_points": 0.01710133386420587,
+      "rounds_to_published": true
+    },
+    {
+      "year": 2017,
+      "previous_year_end_nav_date": "2016-12-30",
+      "year_end_nav_date": "2017-12-29",
+      "nav_return_percent": 32.34460114916797,
+      "published_return_percent": 32.3,
+      "difference_percentage_points": 0.044601149167974086,
+      "rounds_to_published": true
+    },
+    {
+      "year": 2018,
+      "previous_year_end_nav_date": "2017-12-29",
+      "year_end_nav_date": "2018-12-31",
+      "nav_return_percent": -0.44261509402047094,
+      "published_return_percent": -0.4,
+      "difference_percentage_points": -0.04261509402047092,
+      "rounds_to_published": true
+    },
+    {
+      "year": 2019,
+      "previous_year_end_nav_date": "2018-12-31",
+      "year_end_nav_date": "2019-12-31",
+      "nav_return_percent": 38.77215835079573,
+      "published_return_percent": 38.8,
+      "difference_percentage_points": -0.02784164920426946,
+      "rounds_to_published": true
+    },
+    {
+      "year": 2020,
+      "previous_year_end_nav_date": "2019-12-31",
+      "year_end_nav_date": "2020-12-31",
+      "nav_return_percent": 48.17165245072032,
+      "published_return_percent": 48.2,
+      "difference_percentage_points": -0.02834754927967964,
+      "rounds_to_published": true
+    },
+    {
+      "year": 2021,
+      "previous_year_end_nav_date": "2020-12-31",
+      "year_end_nav_date": "2021-12-31",
+      "nav_return_percent": 26.953851238758908,
+      "published_return_percent": 27.0,
+      "difference_percentage_points": -0.04614876124109202,
+      "rounds_to_published": true
+    },
+    {
+      "year": 2022,
+      "previous_year_end_nav_date": "2021-12-31",
+      "year_end_nav_date": "2022-12-30",
+      "nav_return_percent": -32.665835005695065,
+      "published_return_percent": -32.7,
+      "difference_percentage_points": 0.03416499430493758,
+      "rounds_to_published": true
+    },
+    {
+      "year": 2023,
+      "previous_year_end_nav_date": "2022-12-30",
+      "year_end_nav_date": "2023-12-29",
+      "nav_return_percent": 54.4335610259054,
+      "published_return_percent": 54.4,
+      "difference_percentage_points": 0.03356102590539933,
+      "rounds_to_published": true
+    },
+    {
+      "year": 2024,
+      "previous_year_end_nav_date": "2023-12-29",
+      "year_end_nav_date": "2024-12-31",
+      "nav_return_percent": 25.320258710619648,
+      "published_return_percent": 25.3,
+      "difference_percentage_points": 0.02025871061964679,
+      "rounds_to_published": true
+    },
+    {
+      "year": 2025,
+      "previous_year_end_nav_date": "2024-12-31",
+      "year_end_nav_date": "2025-12-31",
+      "nav_return_percent": 20.539906103286377,
+      "published_return_percent": 20.5,
+      "difference_percentage_points": 0.039906103286377004,
+      "rounds_to_published": true
+    }
+  ],
+  "limitations": [
+    "NAV valuation rather than exchange execution; London/Xetra close before final US-close NAV, so small daily differences are expected.",
+    "ECB rates are reference observations, not broker executable FX; same-day US NAV and ECB FX are not synchronous.",
+    "NAV already reflects fund expenses, fund-level withholding, accumulation, and other tracking effects; do not subtract TER or fund dividend withholding again.",
+    "The legacy direct eurofxref-hist.csv URL returned stale data with obvious outliers; it was rejected. ZIP and SDMX API independently agree.",
+    "A 10% market-price/NAV threshold is only an anomaly flag. On 2025-04-09 both European closes were about 10% below final US-close NAV, consistent with non-synchronous valuation during a volatile day. This is not classified as a data error."
+  ]
+}

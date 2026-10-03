@@ -1,0 +1,48 @@
+{
+  "componentId": "holdings",
+  "context": {
+    "productId": "253741",
+    "portfolioType": "ISHARES_FUND_DATA",
+    "currencyCode": "USD",
+    "shareClass": " ",
+    "aladdinFundTicker": "ID-CNDXCPA",
+    "ticker": "CNDX",
+    "appSubType": "ISHARES",
+    "locale": "en_GB",
+    "targetSite": "ishares-uk",
+    "userType": "individual"
+  },
+  "tabs": [
+    {
+      "name": "all",
+      "label": "All",
+      "default": true
+    }
+  ],
+  "initSelectedTab": "all",
+  "apiHost": "https://www.blackrock.com/varnish-api/uk-retail01-product-data/product-data/api/v2/get-product-data?",
+  "initAsOfDates": {
+    "all": "20261001"
+  },
+  "initAsOfDateList": {
+    "all": [
+      20261001,
+      20260930,
+      20251231
+    ]
+  },
+  "initAsOfDateListFormatted": {
+    "all": {
+      "value": [
+        20261001,
+        20260930,
+        20251231
+      ],
+      "formattedValue": [
+        "01/Oct/2026",
+        "30/Sept/2026",
+        "31/Dec/2025"
+      ]
+    }
+  }
+}

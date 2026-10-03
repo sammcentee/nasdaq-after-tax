@@ -1,0 +1,94 @@
+Data handoff for the Nasdaq-100 direct-share / Irish-tax comparison
+================================================================
+
+You do not need to collect this manually. Public filings, issuer notices,
+historical fund holdings and market-data sources can supply many of the gaps.
+This document describes useful exports if you already have access to a dataset.
+
+How to supply data
+------------------
+Place original CSV, XLSX, Parquet or ZIP exports in this directory, or attach
+them in the conversation. Provide the provider/dataset name, download date and
+field definitions, especially the price-adjustment convention. Original native
+exports are preferred; no manual renaming or conversion is required. A small
+sample and the provider's documentation are enough to assess coverage first.
+PDF filings or links to original issuer/exchange announcements also help.
+
+Core period: 2010-09-30 through 2026-09-30 inclusive. Include earlier observations
+back to 2009-09-30 if available, to drift the earliest archived holdings forward.
+Universe: every stock held by the Nasdaq-100 during the core period, plus all
+successor securities and spin-offs that a holder would receive and retain.
+Continue each price history after index deletion; include delisted/failed firms.
+
+1. Dated index membership and target weights
+------------------------------------------
+Daily or rebalance-date Nasdaq-100 constituent weights (or index share counts
+and corresponding prices), stable security identifiers, effective date and the
+date/time the information became publicly available. Archived full QQQ/CNDX
+holdings are a useful alternative. Membership alone does not supply weights.
+Do not substitute today's constituents or interpolate using a future snapshot.
+
+2. Prices, dividends and identifiers
+-----------------------------------
+Daily unadjusted closing prices with currency, stable security identifiers,
+dated ticker/name/ISIN mappings and share-class identification. If only adjusted
+prices are supplied, include exact adjustment factors and definitions. Gross
+cash dividends need amount, currency, ex-date and payment date. Include split
+ratios and effective dates. Total-return adjusted prices alone cannot establish
+the historical taxable dividends or acquisition/disposal amounts.
+
+3. Corporate actions and terminal outcomes
+------------------------------------------
+Cash takeover consideration per share, successor security IDs and exchange
+ratios, spin-off distributions, effective/settlement dates, fractional-share
+cash terms, and any contingent rights or liquidation payments. Preserve links
+to the issuer/SEC/exchange documents. A last available price is not necessarily
+the cash received. A price adjustment is not a substitute for successor holdings.
+
+Tax treatment and euro acquisition-basis allocation must be checked separately
+for Irish investors. A US tax-basis form alone does not determine Irish treatment.
+Mixed cash/share mergers also need an extension to the existing stock engine;
+receiving a dataset will not automatically produce a validated final result.
+
+Already available in this project
+--------------------------------
+Official CNDX NAV history and ECB exchange rates, current Trading 212 instrument
+metadata and fee assumptions, 154 archived weight snapshots, preliminary stock
+histories, the tax-lot engines and audits. Remaining work includes validating and
+joining these sources; no additional personal broker history is required for
+the hypothetical EUR 1,000/month strategy.
+
+Provider checks before spending money
+-------------------------------------
+Nasdaq Global Index Watch advertises historical components and weights. Confirm
+the export entitlement, start date and publication/announcement fields cover
+this exact period; the public product page does not establish all of those.
+https://www.nasdaq.com/products/global-indexes/data/giw
+
+Norgate supplies raw/adjusted and delisted price histories and historical index
+membership in relevant tiers. Its FAQ explicitly excludes merger consideration
+and successor details, so it is not a complete replacement for the event ledger.
+Its documented workflow uses a Windows updater; native exports can be assessed
+here. Confirm the licence allows the intended export and use.
+https://norgatedata.com/data-content-tables.php
+https://norgatedata.com/data-package-faq.php
+
+Trading 212's documented historical endpoints concern account orders, dividends
+and transactions; no documented 16-year constituent price/corporate-action feed
+was found. A second broker key or demo account would not fill these data gaps.
+https://docs.trading212.com/api
+
+Public SEC submissions data requires no API key. Issuer filings and exchange
+notices can resolve identities, cash consideration and successor terms.
+https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+
+Existing detailed gap reports
+-----------------------------
+../inputs/input_feasibility_audit.json
+../inputs/unresolved_weight_identities.csv
+../prices/required_member_identity_audit.csv
+../prices/repairs/repair_summary.json
+../results/actual_stock_backtest_status.json
+
+This handoff specification does not change portfolio assumptions or existing
+performance results. No trades, purchases or paid subscriptions are requested.

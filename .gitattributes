@@ -1,0 +1,13 @@
+# Preserve historical source bytes: several audit manifests identify them by hash.
+* -text
+
+# Make binary source data and reports explicit.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gz binary
+*.zip binary
+*.nc binary
+*.xls binary
+*.xlsx binary

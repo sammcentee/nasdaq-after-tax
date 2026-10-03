@@ -1,0 +1,498 @@
+{
+  "lng": "en",
+  "fallbackLng": "en",
+  "translations": {
+    "basket": {
+      "config": {
+        "basket_config": {
+          "fund_card": {
+            "show": {
+              "ticker": "ticker",
+              "fund_name": "fundName",
+              "share_class": "shareClass",
+              "active": "active",
+              "asset_class": "assetClass",
+              "sfdr": "sfdr"
+            }
+          },
+          "data_points": {
+            "product_id": "fundHeader.custom-metadata.productId",
+            "ticker": "fundHeader.fundTicker.ticker",
+            "fund_name": "fundHeader.fundName.fundName",
+            "active": "fundHeader.custom-metadata.investmentStyle",
+            "asset_class": "fundHeader.custom-metadata.assetClass",
+            "legal_structure": "fundHeader.custom-metadata.legalStructure",
+            "product_type": "fundHeader.custom-metadata.productType",
+            "share_class": {
+              "series_currency_code": "fundHeader.custom-metadata.seriesCurrencyCode",
+              "investor_class_code": "fundHeader.custom-metadata.investorClassCode",
+              "use_of_profits_code": "keyFundFacts.useOfProfitsCode"
+            },
+            "unlinked": "unlinked",
+            "sfdr": "keyFundFacts.sfdr"
+          }
+        },
+        "basket_config_pp_api": {
+          "fund_card": {
+            "show": {
+              "ticker": "ticker",
+              "fund_name": "fundName",
+              "share_class": "shareClass",
+              "active": "active",
+              "asset_class": "assetClass"
+            }
+          },
+          "component_types": {
+            "fund_header": "fundHeader",
+            "key_fund_facts": "keyFundFacts"
+          },
+          "user_types": {
+            "individual": "individual",
+            "institutional": "institutional",
+            "professionals": "institutional",
+            "intermediaries": "professionals"
+          },
+          "productDataParams": {
+            "appSubType": "ISHARES",
+            "appType": "PRODUCT_PAGE",
+            "locale": "en_GB",
+            "targetSite": "ishares-uk",
+            "userType": "individual"
+          },
+          "headers": {
+            "x-application-id": "ishares-compare-basket"
+          },
+          "data_points": {
+            "product_id": "productId",
+            "ticker": "componentsByNameMap.fundHeader.containersByNameMap.fundTicker.dataPointsByNameMap.ticker.value",
+            "fund_name": "componentsByNameMap.fundHeader.containersByNameMap.fundName.dataPointsByNameMap.fundName.value",
+            "active": "componentsByNameMap.fundHeader.containersByNameMap.fundName.dataPointsByNameMap.activeBadge.value",
+            "asset_class": "componentsByNameMap.fundHeader.containersByNameMap.fundName.dataPointsByNameMap.assetClass.value",
+            "legal_structure": "fundHeader.custom-metadata.legalStructure",
+            "product_type": "portfolioType",
+            "share_class": {
+              "currency_code": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.investorClass.value",
+              "investor_class_code": "currencyCode",
+              "use_of_profits_code": "componentsByNameMap.keyFundFacts.containersByNameMap.default.dataPointsByNameMap.useOfProfitsCode.value"
+            },
+            "sfdr": "componentsByNameMap.keyFundFacts.containersByNameMap.default.dataPointsByNameMap.sfdr.value",
+            "isaEligibility": "componentsByNameMap.keyFundFacts.containersByNameMap.default.dataPointsByNameMap.isaEligibilityFlag.value",
+            "mstarRatingOverall": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.mstarRatingOverall.value",
+            "mstarRatingOverallInfoPaths": {
+              "withShareClass": "componentsByNameMap.fundHeader.componentLabels.ratingsAndAwards.mstarRatingOverall.disclaimer.infobubble",
+              "noShareClass": "componentsByNameMap.fundHeader.componentLabels.ratingsAndAwards.mstarRatingOverall.disclaimer.noShareClass.infobubble"
+            },
+            "mstarRatingOverallInfoData": {
+              "fundName": "fundName",
+              "investorClass": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.investorClass.value",
+              "asOfDate": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.mstarRatingOverall.formattedAsOfDate",
+              "mstarFundOverall": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.mstarFundOverall.formattedValue",
+              "category": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.mstarCategory.value"
+            }
+          }
+        },
+        "basket_settings": {
+          "max_number_of_products": "4",
+          "basket_key": "basket-en-gb"
+        },
+        "content": {
+          "basket_title": "Compare ETFs",
+          "basket_button_text": "Compare",
+          "basket_close": "Close",
+          "basket_go_to_compare_button_text": "Go to Compare",
+          "basket_go_to_compare_button_link": "products/find-a-fund/compare-funds",
+          "basket_notification_full_message": "You can only compare up to 4 funds. Please remove one.",
+          "basket_fund_card_placeholder_separator": "of",
+          "basket_fund_card_remove_label": "Remove",
+          "basket_fund_card_view_label": "Explore",
+          "aria_label_compare_basket": "Compare basket",
+          "aria_label_compare_funds": "Compare funds",
+          "aria_label_fund_number_added": "Fund {{currentBasketFundNumber}} of {{maxBasketFundNumber}} added",
+          "aria_label_empty": ", empty",
+          "aria_label_remove_fund": "remove this fund",
+          "aria_label_title_tooltip": "More info",
+          "aria_label_error": "Error:",
+          "aria_label_notice": "Notice:",
+          "aria_label_info": "Info: "
+        },
+        "url_map": {
+          "compare_esg_api": "https://www.ishares.com/uk/individual/en/product-data.jsn",
+          "compare_tool_page": "https://www.ishares.com/uk/individual/en/product-data.jsn",
+          "cwp_screener_api": "https://www.ishares.com/uk/individual/en/product-data.jsn",
+          "product_data_api": "https://www.ishares.com/varnish-api/uk-retail01-product-data/product-data/api/v2/get-product-data",
+          "product_page": "https://www.ishares.com/products",
+          "product_screener_v3_api": "https://www.ishares.com/uk/individual/en/product-data.jsn"
+        }
+      }
+    }
+  },
+  "enTranslations": {
+    "videoplayer": {
+      "transcript": "Transcript",
+      "play_button": "Play",
+      "pause": "Pause",
+      "skip_back": "Skip back",
+      "skip_forward": "Skip forward",
+      "volume": "Volume",
+      "closed_caption": "Closed caption",
+      "pop_out_player": "Pop out player",
+      "full_screen": "Full screen",
+      "mute": "Mute",
+      "now_playing": "Now playing"
+    },
+    "duration": {
+      "minutes": "minutes",
+      "page_length_label": {
+        "text": "read",
+        "video": "watch",
+        "audio": "listen",
+        "tool": "read",
+        "default": "read"
+      }
+    },
+    "dynamic_list": {
+      "pagination": {
+        "showing": "Show",
+        "to": "to",
+        "of": "of",
+        "results": "results"
+      },
+      "filter": {
+        "label": "Filter",
+        "title": "Filter group ({{numberOfAvailableGroups}})",
+        "titlePlural": "Filter groups ({{numberOfAvailableGroups}})",
+        "clearAll": "Clear all",
+        "submit": "Show 1 result",
+        "submitPlural": "Show {{numberOfResults}} results",
+        "ariaLabelForCategory": "",
+        "ariaStatus": "One story is available.",
+        "ariaStatusPlural": "{{numberOfResults}} stories are available.",
+        "ariaLabelCloseButton": "Close",
+        "ariaLabelDialog": "Filter",
+        "categoryTitles": {
+          "contentCategory": "Content category",
+          "topic": "Topic",
+          "contentFormat": "Format",
+          "contentType": "Type",
+          "audience": "Audience",
+          "subAudience": "Sub audience",
+          "series": "Series",
+          "expertPerson": "Lead expert person",
+          "expertTeam": "Lead expert team",
+          "contributingExpert": "Contributing expert"
+        }
+      }
+    },
+    "investorattestation": {
+      "accept": "Accept",
+      "decline": "Decline"
+    },
+    "source": {
+      "label": "Source: "
+    },
+    "fund_card": {
+      "explore_link_event": "Explore",
+      "remove": "Remove",
+      "info_bubble_aria": "Information",
+      "retry": "Load again",
+      "error_message": "The fund card was not able to load correctly please try again.",
+      "error_heading": "Fund card error heading",
+      "email_subject": "Let\u2019s discuss my portfolio",
+      "email_body": "Please contact me to discuss my portfolio and this fund. Here is the URL: {{productUrl}}",
+      "isa_ready": "ISA Ready"
+    },
+    "poll": {
+      "left": "left",
+      "pollClosed": "Poll closed"
+    },
+    "timeUnits": {
+      "day": "day",
+      "days": "days",
+      "hour": "hour",
+      "hours": "hours",
+      "minute": "minute",
+      "minutes": "minutes",
+      "week": "week",
+      "weeks": "weeks",
+      "month": "month",
+      "months": "months",
+      "year": "year",
+      "years": "years"
+    },
+    "modal": {
+      "close_aria_label": "Close"
+    },
+    "site_search": {
+      "open_search_aria_label": "Open search",
+      "close_search_aria_label": "Close search",
+      "search_placeholder": "Search BlackRock...",
+      "search_button_label": "Search",
+      "search_button_aria_label": "Search",
+      "short_query_error_message": "Please enter 3 or more characters to initiate a search",
+      "funds_heading_label": "Funds",
+      "strategies_heading_label": "Strategies & Insights",
+      "literature_heading_label": "Literature",
+      "search_input_aria_label": "Search input",
+      "clear_button_aria_label": "Clear search input",
+      "clear_button_label": "CLEAR",
+      "search_results_heading": "Search results",
+      "no_results_heading": "No search results found",
+      "no_results_message": "Please double-check your spelling or try a different search term.",
+      "items_per_page_10_label": "10 items per page",
+      "items_per_page_25_label": "25 items per page",
+      "items_per_page_50_label": "50 items per page",
+      "view_all_label": "View all"
+    },
+    "basket": {
+      "config": {
+        "basket_config": {
+          "fund_card": {
+            "show": {
+              "ticker": "ticker",
+              "fund_name": "fundName",
+              "share_class": "shareClass",
+              "active": "active",
+              "asset_class": "assetClass",
+              "sfdr": "sfdr"
+            }
+          },
+          "data_points": {
+            "product_id": "fundHeader.custom-metadata.productId",
+            "ticker": "fundHeader.fundTicker.ticker",
+            "fund_name": "fundHeader.fundName.fundName",
+            "active": "fundHeader.custom-metadata.investmentStyle",
+            "asset_class": "fundHeader.custom-metadata.assetClass",
+            "legal_structure": "fundHeader.custom-metadata.legalStructure",
+            "product_type": "fundHeader.custom-metadata.productType",
+            "share_class": {
+              "series_currency_code": "fundHeader.custom-metadata.seriesCurrencyCode",
+              "investor_class_code": "fundHeader.custom-metadata.investorClassCode",
+              "use_of_profits_code": "keyFundFacts.useOfProfitsCode"
+            },
+            "unlinked": "unlinked",
+            "sfdr": "keyFundFacts.sfdr"
+          }
+        },
+        "basket_config_pp_api": {
+          "fund_card": {
+            "show": {
+              "ticker": "ticker",
+              "fund_name": "fundName",
+              "share_class": "shareClass",
+              "active": "active",
+              "asset_class": "assetClass"
+            }
+          },
+          "component_types": {
+            "fund_header": "fundHeader",
+            "key_fund_facts": "keyFundFacts"
+          },
+          "user_types": {
+            "individual": "individual",
+            "institutional": "institutional",
+            "professionals": "institutional",
+            "intermediaries": "professionals"
+          },
+          "productDataParams": {
+            "appSubType": "ISHARES",
+            "appType": "PRODUCT_PAGE",
+            "locale": "en_GB",
+            "targetSite": "ishares-uk",
+            "userType": "individual"
+          },
+          "headers": {
+            "x-application-id": "ishares-compare-basket"
+          },
+          "data_points": {
+            "product_id": "productId",
+            "ticker": "componentsByNameMap.fundHeader.containersByNameMap.fundTicker.dataPointsByNameMap.ticker.value",
+            "fund_name": "componentsByNameMap.fundHeader.containersByNameMap.fundName.dataPointsByNameMap.fundName.value",
+            "active": "componentsByNameMap.fundHeader.containersByNameMap.fundName.dataPointsByNameMap.activeBadge.value",
+            "asset_class": "componentsByNameMap.fundHeader.containersByNameMap.fundName.dataPointsByNameMap.assetClass.value",
+            "legal_structure": "fundHeader.custom-metadata.legalStructure",
+            "product_type": "portfolioType",
+            "share_class": {
+              "currency_code": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.investorClass.value",
+              "investor_class_code": "currencyCode",
+              "use_of_profits_code": "componentsByNameMap.keyFundFacts.containersByNameMap.default.dataPointsByNameMap.useOfProfitsCode.value"
+            },
+            "sfdr": "componentsByNameMap.keyFundFacts.containersByNameMap.default.dataPointsByNameMap.sfdr.value",
+            "isaEligibility": "componentsByNameMap.keyFundFacts.containersByNameMap.default.dataPointsByNameMap.isaEligibilityFlag.value",
+            "mstarRatingOverall": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.mstarRatingOverall.value",
+            "mstarRatingOverallInfoPaths": {
+              "withShareClass": "componentsByNameMap.fundHeader.componentLabels.ratingsAndAwards.mstarRatingOverall.disclaimer.infobubble",
+              "noShareClass": "componentsByNameMap.fundHeader.componentLabels.ratingsAndAwards.mstarRatingOverall.disclaimer.noShareClass.infobubble"
+            },
+            "mstarRatingOverallInfoData": {
+              "fundName": "fundName",
+              "investorClass": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.investorClass.value",
+              "asOfDate": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.mstarRatingOverall.formattedAsOfDate",
+              "mstarFundOverall": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.mstarFundOverall.formattedValue",
+              "category": "componentsByNameMap.fundHeader.containersByNameMap.fundNav.dataPointsByNameMap.mstarCategory.value"
+            }
+          }
+        },
+        "basket_settings": {
+          "max_number_of_products": "4",
+          "basket_key": "basket-en"
+        },
+        "content": {
+          "basket_title": "Compare ETFs",
+          "basket_button_text": "Compare",
+          "basket_close": "Close",
+          "basket_go_to_compare_button_text": "Go to Compare",
+          "basket_go_to_compare_button_link": "products/find-a-fund/compare-funds",
+          "basket_notification_full_message": "You can only compare up to 4 funds. Please remove one.",
+          "basket_fund_card_placeholder_separator": "of",
+          "basket_fund_card_remove_label": "Remove",
+          "basket_fund_card_view_label": "Explore",
+          "aria_label_compare_basket": "Compare basket",
+          "aria_label_compare_funds": "Compare funds",
+          "aria_label_fund_number_added": "Fund {{currentBasketFundNumber}} of {{maxBasketFundNumber}} added",
+          "aria_label_empty": ", empty",
+          "aria_label_remove_fund": "remove this fund",
+          "aria_label_title_tooltip": "More info",
+          "aria_label_error": "Error:",
+          "aria_label_notice": "Notice:",
+          "aria_label_info": "Info: "
+        },
+        "url_map": {
+          "compare_esg_api": "https://www.ishares.com/uk/individual/en/product-data.jsn",
+          "compare_tool_page": "https://www.ishares.com/uk/individual/en/product-data.jsn",
+          "cwp_screener_api": "https://www.ishares.com/uk/individual/en/product-data.jsn",
+          "product_data_api": "https://www.blackrock.com/varnish-api/uk-retail01-product-data/product-data/api/v2/get-product-data",
+          "product_page": "https://www.ishares.com/products",
+          "product_screener_v3_api": "https://www.ishares.com/uk/individual/en/product-data.jsn"
+        }
+      }
+    },
+    "fund_search": {
+      "filterGroups": [
+        {
+          "title": "Asset class",
+          "name": "fac",
+          "items": [
+            {
+              "label": "Equity",
+              "value": "43535|43580|43581|43584|43585|43615"
+            },
+            {
+              "label": "Fixed Income",
+              "value": "43549|43563|43566|43567|43573|43588|43590|43774|43775|60556|62779"
+            },
+            {
+              "label": "Multi Asset",
+              "value": "43589|43619|43625|61455"
+            },
+            {
+              "label": "Real Estate",
+              "value": "43776|61382"
+            },
+            {
+              "label": "Commodity",
+              "value": "43587|43608"
+            },
+            {
+              "label": "Digital Assets",
+              "value": "62184"
+            }
+          ]
+        },
+        {
+          "title": "Market",
+          "name": "fmkt",
+          "items": [
+            {
+              "label": "Developed",
+              "value": "43513"
+            },
+            {
+              "label": "Emerging",
+              "value": "43524"
+            }
+          ]
+        },
+        {
+          "title": "Region",
+          "name": "fc",
+          "items": [
+            {
+              "label": "North America",
+              "value": "43541|43632|44049"
+            },
+            {
+              "label": "Asia Pacific",
+              "value": "43537|43544|43568|43570|43571|43579|43582|43593|43606|43614|43617|43624|43628|43769"
+            },
+            {
+              "label": "Europe",
+              "value": "43538|43539|43550|43558|43561|43562|43577|43578|43592|43595|43607|43612|43618|43621|43622|43629|43631|43770"
+            },
+            {
+              "label": "Global",
+              "value": "43771"
+            },
+            {
+              "label": "Latin America",
+              "value": "43540|43543|43583|43772"
+            },
+            {
+              "label": "Middle East and Africa",
+              "value": "43609|43616|43630|59781"
+            }
+          ]
+        }
+      ],
+      "goals": [
+        {
+          "title": "Focus on income",
+          "description": "Seek dividend and interest payments from stocks and bonds or through covered call options strategies.",
+          "icon": "bullseye",
+          "iconAlt": "Icon Target",
+          "url": "#/funds?categoryId=1&subcategoryId=8",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Aim to maximize growth",
+          "description": "Pursue long-term opportunities in the stock market.",
+          "icon": "compass",
+          "iconAlt": "Icon Compass",
+          "url": "#/funds?categoryId=2&subcategoryId=5",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Step up from idle cash",
+          "description": "Use a short-term investment strategy to pursue income while maintaining liquidity.",
+          "icon": "chart-pie",
+          "iconAlt": "Icon Pie Chart",
+          "url": "#/funds?categoryId=3",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Prepare for retirement",
+          "description": "Simplify retirement planning and take finding a mix of stocks and bonds off my to-do list.",
+          "icon": "sailboat",
+          "iconAlt": "Icon Sailboat",
+          "url": "#/funds?categoryId=4&subcategoryId=15",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Navigate risk",
+          "description": "Hedge against potential market pitfalls, seek to minimize volatility.",
+          "icon": "shield",
+          "iconAlt": "Icon Shield",
+          "url": "#/funds?categoryId=5&subcategoryId=18",
+          "linkLabel": "Explore"
+        }
+      ],
+      "categoryScreenerTitle": "Filter funds by category",
+      "resetLabel": "Reset",
+      "searchLabel": "Search",
+      "selectedLabel": "selected",
+      "noResultFoundMsg": "Sorry, we couldn't find any result for",
+      "noResultFoundDesc": "Please try a different search term",
+      "apiResponseErrorMsg": "Fund search is currently unavailable",
+      "apiResponseErrorDesc": "Please try again later"
+    }
+  }
+}

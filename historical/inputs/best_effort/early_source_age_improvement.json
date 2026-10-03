@@ -1,0 +1,12 @@
+{
+  "first_40_deposits": 40,
+  "old_mean_snapshot_age_days": 253.525,
+  "new_mean_snapshot_age_days": 96.95,
+  "old_max_snapshot_age_days": 458,
+  "new_max_snapshot_age_days": 152,
+  "deposits_with_newer_source": 29,
+  "first_month_old_missing_new_members": 8,
+  "first_month_new_missing_new_members": 0,
+  "first_month_old_Apple_target": 0.1492650577708491,
+  "first_month_new_Apple_target": 0.1996812533068356
+}

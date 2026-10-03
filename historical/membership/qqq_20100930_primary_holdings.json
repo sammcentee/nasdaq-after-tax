@@ -1,0 +1,502 @@
+[
+  {
+    "name": "Apple, Inc.",
+    "shares": "14811955",
+    "value": "4202892231"
+  },
+  {
+    "name": "QUALCOMM, Inc.",
+    "shares": "22504425",
+    "value": "1015399656"
+  },
+  {
+    "name": "Google, Inc., Class A",
+    "shares": "1742953",
+    "value": "916427258"
+  },
+  {
+    "name": "Microsoft Corp.",
+    "shares": "34619884",
+    "value": "847840959"
+  },
+  {
+    "name": "Oracle Corp.",
+    "shares": "24361785",
+    "value": "654113927"
+  },
+  {
+    "name": "Amazon.Com, Inc.",
+    "shares": "3456381",
+    "value": "542859200"
+  },
+  {
+    "name": "Cisco Systems, Inc.",
+    "shares": "23718244",
+    "value": "519429544"
+  },
+  {
+    "name": "Teva Pharmaceutical Industries Ltd. ADR",
+    "shares": "8514145",
+    "value": "449121149"
+  },
+  {
+    "name": "Intel Corp.",
+    "shares": "22664461",
+    "value": "435837585"
+  },
+  {
+    "name": "Gilead Sciences, Inc.",
+    "shares": "9600329",
+    "value": "341867716"
+  },
+  {
+    "name": "Baidu, Inc. ADR",
+    "shares": "3187108",
+    "value": "327061023"
+  },
+  {
+    "name": "Starbucks Corp.",
+    "shares": "11961752",
+    "value": "305981616"
+  },
+  {
+    "name": "DIRECTV, Class A",
+    "shares": "7336790",
+    "value": "305430568"
+  },
+  {
+    "name": "Celgene Corp.",
+    "shares": "5295593",
+    "value": "305079113"
+  },
+  {
+    "name": "Comcast Corp., Class A",
+    "shares": "16837670",
+    "value": "304425074"
+  },
+  {
+    "name": "Research In Motion Ltd.",
+    "shares": "6139643",
+    "value": "298939218"
+  },
+  {
+    "name": "Amgen, Inc.",
+    "shares": "5193025",
+    "value": "286187608"
+  },
+  {
+    "name": "eBay, Inc.",
+    "shares": "11375764",
+    "value": "277568642"
+  },
+  {
+    "name": "Express Scripts, Inc., Class A",
+    "shares": "5626332",
+    "value": "274002368"
+  },
+  {
+    "name": "Genzyme Corp.",
+    "shares": "3713761",
+    "value": "262897141"
+  },
+  {
+    "name": "PACCAR, Inc.",
+    "shares": "4749701",
+    "value": "228698103"
+  },
+  {
+    "name": "Cognizant Technology Solutions Corp., Class A",
+    "shares": "3408703",
+    "value": "219759082"
+  },
+  {
+    "name": "News Corp., Class A",
+    "shares": "16563242",
+    "value": "216315941"
+  },
+  {
+    "name": "NetApp, Inc.",
+    "shares": "4340328",
+    "value": "216104931"
+  },
+  {
+    "name": "priceline.com, Inc.",
+    "shares": "595013",
+    "value": "207266828"
+  },
+  {
+    "name": "Vodafone Group PLC ADR",
+    "shares": "8223292",
+    "value": "204019875"
+  },
+  {
+    "name": "Intuit, Inc.",
+    "shares": "4599714",
+    "value": "201513470"
+  },
+  {
+    "name": "Bed Bath & Beyond, Inc.",
+    "shares": "4125187",
+    "value": "179074368"
+  },
+  {
+    "name": "Citrix Systems, Inc.",
+    "shares": "2581737",
+    "value": "176177733"
+  },
+  {
+    "name": "Costco Wholesale Corp.",
+    "shares": "2688672",
+    "value": "173392457"
+  },
+  {
+    "name": "Biogen IDEC, Inc.",
+    "shares": "3056910",
+    "value": "171553789"
+  },
+  {
+    "name": "Automatic Data Processing, Inc.",
+    "shares": "4041873",
+    "value": "169879922"
+  },
+  {
+    "name": "Broadcom Corp., Class A",
+    "shares": "4754426",
+    "value": "168259136"
+  },
+  {
+    "name": "Adobe Systems, Inc.",
+    "shares": "5983521",
+    "value": "156469074"
+  },
+  {
+    "name": "Altera Corp.",
+    "shares": "5022885",
+    "value": "151490212"
+  },
+  {
+    "name": "Symantec Corp.",
+    "shares": "9594484",
+    "value": "145548322"
+  },
+  {
+    "name": "Activision Blizzard, Inc.",
+    "shares": "12708954",
+    "value": "137510882"
+  },
+  {
+    "name": "Wynn Resorts Ltd.",
+    "shares": "1565120",
+    "value": "135805462"
+  },
+  {
+    "name": "CH Robinson Worldwide, Inc.",
+    "shares": "1905683",
+    "value": "133245355"
+  },
+  {
+    "name": "Intuitive Surgical, Inc.",
+    "shares": "456982",
+    "value": "129664073"
+  },
+  {
+    "name": "First Solar, Inc.",
+    "shares": "870906",
+    "value": "128327999"
+  },
+  {
+    "name": "Marvell Technology Group Ltd.",
+    "shares": "7210189",
+    "value": "126250409"
+  },
+  {
+    "name": "CA, Inc.",
+    "shares": "5760914",
+    "value": "121670504"
+  },
+  {
+    "name": "Staples, Inc.",
+    "shares": "5700939",
+    "value": "119263644"
+  },
+  {
+    "name": "Millicom International Cellular SA",
+    "shares": "1224430",
+    "value": "117484059"
+  },
+  {
+    "name": "Fiserv, Inc.",
+    "shares": "2182601",
+    "value": "117467586"
+  },
+  {
+    "name": "Mattel, Inc.",
+    "shares": "4782019",
+    "value": "112186166"
+  },
+  {
+    "name": "Expeditors International of Washington, Inc.",
+    "shares": "2421443",
+    "value": "111943310"
+  },
+  {
+    "name": "Paychex, Inc.",
+    "shares": "3986163",
+    "value": "109579621"
+  },
+  {
+    "name": "Dell, Inc.",
+    "shares": "8316389",
+    "value": "107780401"
+  },
+  {
+    "name": "Linear Technology Corp.",
+    "shares": "3487162",
+    "value": "107160488"
+  },
+  {
+    "name": "Yahoo!, Inc.",
+    "shares": "7534058",
+    "value": "106757602"
+  },
+  {
+    "name": "Xilinx, Inc.",
+    "shares": "3991412",
+    "value": "106211473"
+  },
+  {
+    "name": "SanDisk Corp.",
+    "shares": "2753696",
+    "value": "100922958"
+  },
+  {
+    "name": "Life Technologies Corp.",
+    "shares": "2156678",
+    "value": "100695296"
+  },
+  {
+    "name": "BMC Software, Inc.",
+    "shares": "2414114",
+    "value": "97723335"
+  },
+  {
+    "name": "Sears Holdings Corp.",
+    "shares": "1345121",
+    "value": "97037029"
+  },
+  {
+    "name": "Applied Materials, Inc.",
+    "shares": "8073369",
+    "value": "94296950"
+  },
+  {
+    "name": "Expedia, Inc.",
+    "shares": "3249475",
+    "value": "91667690"
+  },
+  {
+    "name": "Virgin Media, Inc.",
+    "shares": "3946596",
+    "value": "90850640"
+  },
+  {
+    "name": "Apollo Group, Inc., Class A",
+    "shares": "1733370",
+    "value": "89008550"
+  },
+  {
+    "name": "Check Point Software Technologies Ltd.",
+    "shares": "2384078",
+    "value": "88044001"
+  },
+  {
+    "name": "Autodesk, Inc.",
+    "shares": "2751846",
+    "value": "87976517"
+  },
+  {
+    "name": "Liberty Media Corp. - Interactive",
+    "shares": "6375471",
+    "value": "87407707"
+  },
+  {
+    "name": "Fastenal Co.",
+    "shares": "1638354",
+    "value": "87144049"
+  },
+  {
+    "name": "Infosys Technologies Ltd. ADR",
+    "shares": "1272582",
+    "value": "85657494"
+  },
+  {
+    "name": "O'Reilly Automotive, Inc.",
+    "shares": "1608047",
+    "value": "85548100"
+  },
+  {
+    "name": "Vertex Pharmaceuticals, Inc.",
+    "shares": "2465879",
+    "value": "85245437"
+  },
+  {
+    "name": "KLA-Tencor Corp.",
+    "shares": "2364180",
+    "value": "83290061"
+  },
+  {
+    "name": "Joy Global, Inc.",
+    "shares": "1177864",
+    "value": "82827396"
+  },
+  {
+    "name": "Sigma-Aldrich Corp.",
+    "shares": "1354480",
+    "value": "81783502"
+  },
+  {
+    "name": "Cerner Corp.",
+    "shares": "955114",
+    "value": "80220025"
+  },
+  {
+    "name": "Ross Stores, Inc.",
+    "shares": "1435449",
+    "value": "78404224"
+  },
+  {
+    "name": "NII Holdings, Inc.",
+    "shares": "1902535",
+    "value": "78194189"
+  },
+  {
+    "name": "NVIDIA Corp.",
+    "shares": "6552058",
+    "value": "76528037"
+  },
+  {
+    "name": "Stericycle, Inc.",
+    "shares": "1041708",
+    "value": "72377872"
+  },
+  {
+    "name": "Illumina, Inc.",
+    "shares": "1418152",
+    "value": "69773078"
+  },
+  {
+    "name": "Mylan, Inc.",
+    "shares": "3653549",
+    "value": "68723257"
+  },
+  {
+    "name": "Warner Chilcott PLC, Class A",
+    "shares": "2921456",
+    "value": "65557473"
+  },
+  {
+    "name": "Seagate Technology PLC",
+    "shares": "5468751",
+    "value": "64421887"
+  },
+  {
+    "name": "Garmin Ltd.",
+    "shares": "2098124",
+    "value": "63678063"
+  },
+  {
+    "name": "Electronic Arts, Inc.",
+    "shares": "3870584",
+    "value": "63593695"
+  },
+  {
+    "name": "Maxim Integrated Products, Inc.",
+    "shares": "3412789",
+    "value": "63170724"
+  },
+  {
+    "name": "Lam Research Corp.",
+    "shares": "1490536",
+    "value": "62378932"
+  },
+  {
+    "name": "Henry Schein, Inc.",
+    "shares": "1060572",
+    "value": "62128308"
+  },
+  {
+    "name": "Urban Outfitters, Inc.",
+    "shares": "1933345",
+    "value": "60784367"
+  },
+  {
+    "name": "VeriSign, Inc.",
+    "shares": "1908552",
+    "value": "60577440"
+  },
+  {
+    "name": "Flextronics International Ltd.",
+    "shares": "9905436",
+    "value": "59828833"
+  },
+  {
+    "name": "Cintas Corp.",
+    "shares": "2131991",
+    "value": "58736352"
+  },
+  {
+    "name": "Microchip Technology, Inc.",
+    "shares": "1796819",
+    "value": "56509958"
+  },
+  {
+    "name": "Cephalon, Inc.",
+    "shares": "851403",
+    "value": "53161603"
+  },
+  {
+    "name": "DENTSPLY International, Inc.",
+    "shares": "1593756",
+    "value": "50952379"
+  },
+  {
+    "name": "Hologic, Inc.",
+    "shares": "3167434",
+    "value": "50710618"
+  },
+  {
+    "name": "JB Hunt Transport Services, Inc.",
+    "shares": "1432491",
+    "value": "49707438"
+  },
+  {
+    "name": "FLIR Systems, Inc.",
+    "shares": "1923514",
+    "value": "49434310"
+  },
+  {
+    "name": "QIAGEN NV",
+    "shares": "2737530",
+    "value": "48563782"
+  },
+  {
+    "name": "DISH Network Corp., Class A",
+    "shares": "2512036",
+    "value": "48130610"
+  },
+  {
+    "name": "Patterson Cos., Inc.",
+    "shares": "1382206",
+    "value": "39600202"
+  },
+  {
+    "name": "Foster Wheeler AG",
+    "shares": "1548506",
+    "value": "37876457"
+  },
+  {
+    "name": "Logitech International SA",
+    "shares": "1996564",
+    "value": "34740214"
+  }
+]

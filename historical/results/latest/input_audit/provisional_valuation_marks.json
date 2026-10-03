@@ -1,0 +1,79 @@
+[
+  {
+    "date": "2014-10-01",
+    "security_id": "yahoo:CDK",
+    "price_usd": 31.000988216190546,
+    "source": "https://s205.q4cdn.com/887941133/files/doc_downloads/faq/IRS_Form_8937.pdf",
+    "quality": "first_close_inferred_from_issuer_rounded_FMV_allocation; daily_prices_and_dividends_missing"
+  },
+  {
+    "date": "2017-02-01",
+    "security_id": "yahoo:LOGM",
+    "price_usd": 108.1,
+    "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001420302/48509cd3-d1c6-4ad2-a0f5-f518990b4d6b.pdf",
+    "quality": "documented_Jan31_close_carried_to_distribution; daily_prices_and_dividends_missing"
+  },
+  {
+    "date": "2019-02-08",
+    "security_id": "yahoo:CVET",
+    "price_usd": 41.54,
+    "source": "https://s206.q4cdn.com/399858780/files/doc_downloads/IRS-Form-8937.pdf",
+    "quality": "issuer_documented_distribution_day_VWAP_proxy; daily_prices_missing"
+  },
+  {
+    "date": "2012-10-02",
+    "security_id": "yahoo:KRFT",
+    "price_usd": 45.42,
+    "source": "https://www.mondelezinternational.com/assets/PDFs/2--report-of-organizational-actions-affecting-basis-of-securities-form-8937.pdf",
+    "quality": "issuer_documented_first_close; daily_prices_and_dividends_missing"
+  },
+  {
+    "date": "2015-01-20",
+    "security_id": "yahoo:AMFW",
+    "price_usd": 12.802845076683706,
+    "source": "quantiacs_FWLT_last_quote_and_primary_cash_share_exchange_terms",
+    "quality": "inferred_stale_predecessor_value; no_AMFW_daily_prices_or_dividends"
+  },
+  {
+    "date": "2017-10-09",
+    "security_id": "yahoo:WG.L",
+    "price_usd": 17.07046010224494,
+    "source": "primary_AMFW_to_Wood_0.75_exchange_terms",
+    "quality": "retained_value_carry_proxy; no_Wood_daily_prices_or_dividends"
+  },
+  {
+    "date": "2020-09-15",
+    "security_id": "yahoo:QRTEP",
+    "price_usd": 100.0,
+    "source": "Qurate_8_percent_preferred_100_dollar_liquidation_preference",
+    "quality": "par_value_proxy_NOT_observed_market_price; no_preferred_daily_quotes"
+  },
+  {
+    "date": "2025-02-24",
+    "security_id": "yahoo:QVCGA",
+    "price_usd": 0.3588,
+    "source": "last_quoted_QRTEA_close_before_same_issuer_ticker_change",
+    "quality": "stale_predecessor_mark; no_executable_quotes_until_documented_cancellation"
+  },
+  {
+    "date": "2024-11-13",
+    "security_id": "yahoo:SUNN.SW",
+    "price_usd": 45.2,
+    "source": "https://www.libertyglobal.com/investors/share-information/share-cost-basis/",
+    "quality": "issuer_documented_Nov13_SNRE_ADS_close; Swiss_ordinary_quotes_from_Nov15; conversion_costs_not_reconstructed"
+  },
+  {
+    "date": "2021-11-02",
+    "security_id": "yahoo:VMW",
+    "price_usd": 130.73,
+    "source": "https://investors.delltechnologies.com/static-files/4afe078b-0cdc-4419-82c2-36d9d68f9229",
+    "quality": "issuer_documented_Nov2_high_low_mean_FMV_NOT_close; Dell_spin_recipients_excluded_from_prior_27.40_dividend"
+  },
+  {
+    "date": "2016-12-09",
+    "security_id": "yahoo:LGF-B",
+    "price_usd": 25.7,
+    "source": "https://www.sec.gov/Archives/edgar/data/929351/000092935117000006/lgf2016123110-q.htm",
+    "quality": "issuer_estimated_Dec8_FMV_NOT_Dec9_close; daily_history_and_dividends_missing"
+  }
+]

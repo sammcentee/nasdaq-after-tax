@@ -1,0 +1,144 @@
+{
+  "snapshots": [
+    {
+      "report_date": "2010-09-30",
+      "filed_date": "2010-11-29",
+      "accepted": "2010-11-29T18:36:40.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 174834000,
+      "reported_equity_nav_fraction": 0.992,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869510000235/nqnas09302010.txt",
+      "sha256": "9ccfb10fbae7d7b6b07c7096aea8e7f5c49fc85f98fd1626505e3905d1524d2a"
+    },
+    {
+      "report_date": "2010-12-31",
+      "filed_date": "2011-03-07",
+      "accepted": "2011-03-07T16:44:15.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 196916000,
+      "reported_equity_nav_fraction": 0.9740000000000001,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869511000039/ncsrnas123110.txt",
+      "sha256": "2c638027d0d0fdf0a4747ae7537986e2e44e216195ffc38af3fc61bb7dbd96d4"
+    },
+    {
+      "report_date": "2011-03-31",
+      "filed_date": "2011-05-31",
+      "accepted": "2011-05-31T18:16:12.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 217167000,
+      "reported_equity_nav_fraction": 0.983,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869511000091/nqnasdaq033111.txt",
+      "sha256": "60e10cc35b4703201f6cb52f6bc7cfda9a9c9fedcba0419ed83b4c0b273d087c"
+    },
+    {
+      "report_date": "2011-06-30",
+      "filed_date": "2011-09-01",
+      "accepted": "2011-09-01T19:26:05.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 214531000,
+      "reported_equity_nav_fraction": 0.983,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869511000175/ncsrsnas06302011.txt",
+      "sha256": "25ec0f0b8e98c4b197ba9e6a9747dbcc69ad3144186d66b7ae623edee2ae572f"
+    },
+    {
+      "report_date": "2011-09-30",
+      "filed_date": "2011-11-29",
+      "accepted": "2011-11-29T19:26:08.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 193115000,
+      "reported_equity_nav_fraction": 0.965,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869511000261/nqnas093011.txt",
+      "sha256": "cc961a893802af89586ba16cd17883a3e0c1318510b892e4c3672f892ed66ddf"
+    },
+    {
+      "report_date": "2011-12-31",
+      "filed_date": "2012-03-02",
+      "accepted": "2012-03-02T18:10:14.000Z",
+      "row_count": 101,
+      "reported_equity_value_usd": 211322000,
+      "reported_equity_nav_fraction": 0.968,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869512000052/ncsrnas123111.txt",
+      "sha256": "f40b6e130207a67d7650d9c66858985f2645507c9da00e6e86dbb6914b6033f5"
+    },
+    {
+      "report_date": "2012-03-31",
+      "filed_date": "2012-05-29",
+      "accepted": "2012-05-29T17:24:37.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 269369000,
+      "reported_equity_nav_fraction": 0.961,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869512000113/nqnas33112.txt",
+      "sha256": "6af90349ee64d7dcca64893d1d174177cd2811e714fc7daf5d10ac232c13585f"
+    },
+    {
+      "report_date": "2012-06-30",
+      "filed_date": "2012-08-30",
+      "accepted": "2012-08-30T15:47:33.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 270865000,
+      "reported_equity_nav_fraction": 0.9570000000000001,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869512000212/ncsrs63012.txt",
+      "sha256": "dd27b270062b7cbc480f80e7fd5193635550a6a20915c39855a69a7c5805fd93"
+    },
+    {
+      "report_date": "2012-09-30",
+      "filed_date": "2012-11-27",
+      "accepted": "2012-11-27T19:44:45.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 314988000,
+      "reported_equity_nav_fraction": 0.978,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869512000291/nqnas93012.txt",
+      "sha256": "023be0bc99016a6b23d17f48b09976e2ba36b2ffbd9a77291b5ac75d67179cc9"
+    },
+    {
+      "report_date": "2012-12-31",
+      "filed_date": "2013-03-07",
+      "accepted": "2013-03-07T15:03:57.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 303094000,
+      "reported_equity_nav_fraction": 0.9790000000000001,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869513000043/ncsrsnas123112.txt",
+      "sha256": "2e03d6a4b8565a86d89ea161d11075f4b31b53b525b561d67e217ec9ffdd4b05"
+    },
+    {
+      "report_date": "2013-03-31",
+      "filed_date": "2013-05-29",
+      "accepted": "2013-05-29T18:35:07.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 335410000,
+      "reported_equity_nav_fraction": 0.99,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869513000124/nqnas033113.txt",
+      "sha256": "6e5ab6942c0a91fafbd274e7c8c6d1277a97a3368fdfd0a5f84aef5190f16540"
+    },
+    {
+      "report_date": "2013-06-30",
+      "filed_date": "2013-09-03",
+      "accepted": "2013-09-03T19:00:10.000Z",
+      "row_count": 101,
+      "reported_equity_value_usd": 344230000,
+      "reported_equity_nav_fraction": 0.9840000000000001,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869513000261/ncsrsnas063013.txt",
+      "sha256": "061f88cf17e67e62748f0c24e01406dc9faa9d945ae9c5bc5b5975830793ad02"
+    },
+    {
+      "report_date": "2013-09-30",
+      "filed_date": "2013-11-21",
+      "accepted": "2013-11-21T20:02:55.000Z",
+      "row_count": 100,
+      "reported_equity_value_usd": 381140000,
+      "reported_equity_nav_fraction": 0.97,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869513000324/nqnas093013.txt",
+      "sha256": "4a6dfaa4b817edd881ba580b894ff711001313a58ea93f93bcf7ca146df480d0"
+    }
+  ],
+  "causality": "Each report is used strictly after its actual SEC filing date; no future portfolio data or interpolation.",
+  "normalization": "Every reported common-stock row retained and normalized over reported stock value; no survivor exclusions.",
+  "limitations": [
+    "These are an index fund's contemporaneous equity holdings, not certified exact Nasdaq index weights.",
+    "All USD values were reported rounded to USD1000. Share/value anchors are approximate, with rounding bounds retained.",
+    "Fund cash and derivatives are excluded from relative stock weights; futures generally supply the omitted cash exposure.",
+    "2011-12-31 includes a tiny Orchard Supply common-stock spin-off; unpriced exposure remains explicit cash.",
+    "2013-06-30 separately lists News Corp A and Twenty-First Century Fox A at identical implied prices; they map to the same continuing old class and engine weights aggregate them.",
+    "Future issuer records can establish historical identity but never supply historical holdings, prices, or values."
+  ]
+}

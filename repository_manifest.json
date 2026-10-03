@@ -1,0 +1,62 @@
+{
+  "project_name": "Nasdaq After Tax",
+  "repository_name": "nasdaq-after-tax",
+  "purpose": "Hypothetical Irish Nasdaq-100 after-tax research with a curated current study",
+  "prepared_on": "2026-10-03",
+  "intended_repository_visibility": "public",
+  "collaborators_requested": [],
+  "github_pages_requested": false,
+  "github_actions_requested": false,
+  "broker_execution": "none; simulations use cached public market research inputs",
+  "contents": "Source, cached market research inputs and provenance, one current report, three leading stock strategies, three underperforming variants, ETF and stock baselines, matched controls and independent audits",
+  "financial_scenarios": "All contribution amounts, tax bands, portfolio values and trades are hypothetical model parameters or simulated outputs, not personal account or income information",
+  "exclusions": [
+    "Python environments and interpreter caches",
+    "Credential/private-key file patterns",
+    "Editor state",
+    "Nested source-repository Git metadata",
+    "Original private-repository Git history",
+    "Personal account exports and account-authenticated API check artifacts",
+    "readonly_api_checks.json (account-derived connection metadata)",
+    "constituent_availability.json (authenticated broker instrument catalog matches)"
+  ],
+  "source_snapshots": [
+    {
+      "paths": [
+        "historical/prices/qnt_common.py",
+        "historical/prices/qnt_stocks.py",
+        "historical/prices/qnt_secgov.py",
+        "historical/prices/qnt_secgov_fundamental.py",
+        "historical/prices/qnt_secgov_indicators.py"
+      ],
+      "source_url": "https://github.com/quantiacs/toolbox",
+      "source_commit": "9e5274c5ce102a66debc799fd2a2300969fb90f6",
+      "included_as": "Five reference modules verified byte-for-byte at this revision; local filenames differ; MIT licence and QuantNet LLC copyright retained in historical/prices/LICENSE.quantiacs"
+    },
+    {
+      "path": "historical/membership/sp500nq100",
+      "source_url": "https://github.com/thuningxu/sp500nq100.git",
+      "source_commit": "1cc1de2770874293597a418b41b079e5337b260c",
+      "included_as": "ordinary source snapshot; nested Git history excluded; original notices retained"
+    },
+    {
+      "path": "historical/membership/n100tickers",
+      "source_url": "https://github.com/jmccarrell/n100tickers.git",
+      "source_commit": "cf7c89419941316ff8523726ccba136125f2c11c",
+      "included_as": "ordinary source snapshot; nested Git history excluded; original notices retained"
+    }
+  ],
+  "third_party_notices": "THIRD_PARTY_NOTICES.md",
+  "release_history": "The public release is prepared from a sanitized working-tree snapshot; the original private Git history is excluded",
+  "environment": {
+    "python": "3.14",
+    "runtime_dependencies": "requirements.txt",
+    "optional_acquisition_dependencies": "requirements-data.txt"
+  },
+  "data_integrity": "Git line-ending conversion is disabled so recorded source-file hashes remain meaningful.",
+  "git_history": "Public commits use the owner's GitHub username and no-reply email for contribution attribution without exposing a personal email; original private Git history is not included",
+  "current_results": "historical/results/latest",
+  "result_selection": "Three leaders and three weakest active gain-harvesting variants selected retrospectively from earlier studies; fourteen stock replays include matched controls and two exemption-unavailable sensitivities",
+  "data_cutoff": "2026-09-30 fixed sixteen-year study; benchmark source cache through 2026-10-02",
+  "historical_outputs": "Superseded generated studies are removed from the current tree; prior public commits preserve the research history"
+}

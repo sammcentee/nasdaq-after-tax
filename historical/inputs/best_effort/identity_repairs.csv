@@ -1,0 +1,14 @@
+ticker,original_security_id,security_id,repair_quality,repair_source_url,first_source_date,last_source_date,source_rows
+ALTR,isin:US0214411003,tts-130097863,primary_CIK_identity_repaired,https://www.sec.gov/Archives/edgar/data/768251/000119312515414631/d102231d8k.htm,2009-09-30,2015-09-30,42
+FOX,isin:US90130A2006,tts-161284558,historical_issuer_class_B,https://www.sec.gov/Archives/edgar/data/1308161/000119312513281456/d562317dex991.htm,2014-12-31,2019-02-28,45
+FOXA,isin:US90130A1016,tts-161284560,historical_issuer_class_A,https://www.sec.gov/Archives/edgar/data/1308161/000119312513281456/d562317dex991.htm,2013-06-30,2019-02-28,59
+KFT,unresolved:KFT,tts-51210920,primary_parent_rename_requires_spinoff_ledger,https://www.sec.gov/Archives/edgar/data/1103982/000119312512411522/d418430dex991.htm,2012-09-30,2012-09-30,2
+LIFE,unresolved:LIFE,tts-88339869,primary_CIK_identity_repaired,https://www.sec.gov/Archives/edgar/data/1073431/000119312514033495/d655804d8k.htm,2009-09-30,2013-06-30,19
+LILA,isin:GB00BTC0M714,yahoo:LILA,primary_class_A_lineage_with_2017_one_for_one_exchange_requires_tax_action_ledger,https://www.libertyglobal.com/investors/share-information/share-cost-basis/,2015-07-31,2017-11-30,12
+LILAK,isin:GB00BTC0MD78,yahoo:LILAK,primary_class_C_lineage_with_2017_one_for_one_exchange_requires_tax_action_ledger,https://www.libertyglobal.com/investors/share-information/share-cost-basis/,2015-07-31,2017-11-30,12
+LMCA,isin:US5312298707,tts-117027845,post_recapitalization_rename_only,https://www.libertymedia.com/investors/stock-data/faq,2016-04-29,2016-05-31,2
+LMCK,isin:US5312298541,tts-117027846,post_recapitalization_rename_only,https://www.libertymedia.com/investors/stock-data/faq,2016-04-29,2016-05-31,2
+NWSA,unresolved:NWSA,tts-161284560,historical_issuer_class_A,https://www.sec.gov/Archives/edgar/data/1308161/000119312513281456/d562317dex991.htm,2009-09-30,2013-06-30,19
+SOLS,isin:US83443Q1031,tts-375502573,primary_spin_issuer_identity_Yahoo_history_recovered,https://www.honeywell.com/us/en/news/press-releases/2025/10/honeywell-completes-spin-off-of-solstice-advanced-materials,2025-10-31,2025-10-31,1
+VIP,isin:US92719A1060,tts-120075582,primary_issuer_rename,https://www.sec.gov/Archives/edgar/data/1468091/000119312517103808/d320784dex991.htm,2014-01-31,2015-11-30,23
+WLTW,isin:IE00BDB6Q211,tts-159320127,primary_unchanged_CUSIP_ticker_change_Yahoo_history_recovered,https://investors.wtwco.com/news-releases/news-release-details/willis-towers-watson-announces-nasdaq-ticker-symbol-change-wltw,2018-12-31,2020-03-31,16

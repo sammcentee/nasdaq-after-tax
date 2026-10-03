@@ -1,0 +1,9 @@
+[
+  {
+    "security_id": "yahoo:SUNN.SW",
+    "listing_currency": "CHF",
+    "FX_symbol": "CHFUSD=X",
+    "method": "latest observed on or before quote date; no future observation",
+    "first_date": "2024-11-14"
+  }
+]

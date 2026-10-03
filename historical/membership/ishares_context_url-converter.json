@@ -1,0 +1,908 @@
+{
+  "exactReplace": [
+    {
+      "external": "/uk/individual/en",
+      "internal": "/ishares-retail/en-gb/individual/home"
+    },
+    {
+      "external": "/uk",
+      "internal": "/ishares-retail/en-gb/individual/home"
+    },
+    {
+      "external": "/uk/product-sitemap.xml",
+      "internal": "/ishares-retail/en-gb/individual/product-sitemap.xml"
+    },
+    {
+      "external": "/uk/individual",
+      "internal": "/ishares-retail/en-gb/individual/home"
+    },
+    {
+      "external": "/uk/individual/en/library",
+      "internal": "/ishares-retail/en-gb/individual/documents/resources/library"
+    },
+    {
+      "external": "/uk/professionals",
+      "internal": "/ishares-retail/en-gb/professionals/home"
+    },
+    {
+      "external": "/uk/professionals/en",
+      "internal": "/ishares-retail/en-gb/professionals/home"
+    },
+    {
+      "external": "/uk/professionals/en/library",
+      "internal": "/ishares-retail/en-gb/professionals/documents/resources/library"
+    },
+    {
+      "external": "/de/product-sitemap.xml",
+      "internal": "/ishares-retail/de-de/individual/product-sitemap.xml"
+    },
+    {
+      "external": "/de/privatanleger/de",
+      "internal": "/ishares-retail/de-de/individual/home"
+    },
+    {
+      "external": "/de/privatanleger",
+      "internal": "/ishares-retail/de-de/individual/home"
+    },
+    {
+      "external": "/de",
+      "internal": "/ishares-retail/de-de/individual/home"
+    },
+    {
+      "external": "/de/privatanleger/de/bibliothek",
+      "internal": "/ishares-retail/de-de/individual/education/service/library"
+    },
+    {
+      "external": "/de/professionelle-anleger/de",
+      "internal": "/ishares-retail/de-de/professionals/home"
+    },
+    {
+      "external": "/de/professionelle-anleger",
+      "internal": "/ishares-retail/de-de/professionals/home"
+    },
+    {
+      "external": "/de/professionelle-anleger/de/bibliothek",
+      "internal": "/ishares-retail/de-de/professionals/education/service/library"
+    }
+  ],
+  "prefixReplace": [
+    {
+      "external": "/uk/{userType}/en",
+      "internal": "/ishares-retail/en-gb/{userType}",
+      "locale": "en-gb"
+    },
+    {
+      "external": "/uk",
+      "internal": "/ishares-retail/en-gb",
+      "locale": "en-gb"
+    },
+    {
+      "external": "/de/{userType}/de",
+      "internal": "/ishares-retail/de-de/{userType}",
+      "locale": "de-de"
+    },
+    {
+      "external": "/de",
+      "internal": "/ishares-retail/de-de",
+      "locale": "de-de"
+    },
+    {
+      "external": "/walrus-us",
+      "externalExceptions": [
+        "/templates"
+      ],
+      "internal": "/ishares-us/en"
+    }
+  ],
+  "translations": {
+    "individual": {
+      "de-de": "privatanleger",
+      "hu-hu": "egyeni-befektetok",
+      "pt-pt": "privados",
+      "cs-cz": "individualni-investori",
+      "pl-pl": "inwestorzy-indywidualni",
+      "sk-sk": "individualni-investori"
+    },
+    "professionals": {
+      "de-de": "professionelle-anleger",
+      "hu-hu": "bankok-es-kozvetitok",
+      "pt-pt": "profissionais",
+      "cs-cz": "profesionalni-investori",
+      "sk-sk": "profesionalni-investori",
+      "pl-pl": "doradcy-i-dystrybutorzy"
+    },
+    "themes": {
+      "de-de": "anlegen-sparen"
+    },
+    "invest-and-optimise": {
+      "de-de": "anlegen-optimieren"
+    },
+    "insights": {
+      "de-de": "trends-markte",
+      "pt-pt": "perspectivas"
+    },
+    "education": {
+      "de-de": "wissen-service",
+      "hu-hu": "oktatas",
+      "pt-pt": "educacao",
+      "cs-cz": "vzdelavani",
+      "pl-pl": "edukacja",
+      "sk-sk": "vzdelavanie"
+    },
+    "about-us": {
+      "de-de": "uber-uns",
+      "hu-hu": "a-blackrockrol",
+      "pt-pt": "sobre-nos",
+      "cs-cz": "o-nas",
+      "pl-pl": "o-nas",
+      "sk-sk": "o-nas"
+    },
+    "products": {
+      "de-de": "produkte",
+      "hu-hu": "termekek",
+      "cs-cz": "produkty",
+      "pl-pl": "produkty",
+      "sk-sk": "produkty",
+      "pt-pt": "produtos"
+    },
+    "invest": {
+      "de-de": "anlegen"
+    },
+    "retirement-planning": {
+      "de-de": "altersvorsorge"
+    },
+    "trends": {
+      "de-de": "trends"
+    },
+    "markets": {
+      "de-de": "markte"
+    },
+    "market-commentary-and-ideas": {
+      "de-de": "marktkommentare-anlageideen"
+    },
+    "knowledge": {
+      "de-de": "wissen"
+    },
+    "service": {
+      "de-de": "service"
+    },
+    "about-ishares": {
+      "de-de": "uber-ishares",
+      "cs-cz": "o-ishares",
+      "pl-pl": "o-ishares",
+      "sk-sk": "o-ishares"
+    },
+    "why-ishares": {
+      "de-de": "warum-ishares"
+    },
+    "discover-ishares": {
+      "de-de": "ishares-entdecken"
+    },
+    "latest-information": {
+      "de-de": "aktuelle-informationen"
+    },
+    "etf-knowledge": {
+      "de-de": "etf-wissen"
+    },
+    "find-your-fund": {
+      "de-de": "finden-sie-ihren-fonds"
+    },
+    "fixed-income-etfs": {
+      "de-de": "anleihen-etfs"
+    },
+    "active-etfs": {
+      "de-de": "aktive-etfs"
+    },
+    "all-products": {
+      "de-de": "alle-produkte-anzeigen"
+    },
+    "retirement-savings-account": {
+      "de-de": "altersvorsorgedepot"
+    },
+    "bond-etfs-vs-ibonds": {
+      "de-de": "anleihen-etfs-vs-ibonds"
+    },
+    "most-popular-savings-plan-etfs": {
+      "de-de": "beliebteste-sparplan-etfs"
+    },
+    "the-power-of-artificial-intelligence": {
+      "de-de": "die-kraft-der-kunstlichen-intelligenz"
+    },
+    "three-themes-for-spring-2025": {
+      "de-de": "drei-themen-fur-das-fruhjahr-2025"
+    },
+    "three-themes-summer-2025": {
+      "de-de": "drei-themen-sommer-2025"
+    },
+    "three-themes-winter-2026": {
+      "de-de": "drei-themen-winter-2026"
+    },
+    "insights-and-trends-for-investors-in-germany": {
+      "de-de": "einblicke-trends-fur-anleger-in-deutschland"
+    },
+    "etf-savings-plan-study-2025": {
+      "de-de": "etf-sparplanstudie-2025"
+    },
+    "global-investment-outlook-2026": {
+      "de-de": "globaler-anlageausblick-2026"
+    },
+    "investing-in-crypto": {
+      "de-de": "investieren-in-krypto"
+    },
+    "contact": {
+      "de-de": "kontakt"
+    },
+    "macro-outlook": {
+      "de-de": "makro-ausblick"
+    },
+    "market-update-march-2026": {
+      "de-de": "markt-update-marz-2026"
+    },
+    "monthly-market-outlook-november-2025": {
+      "de-de": "monatlicher-marktausblick-november-2025"
+    },
+    "monthly-market-outlook-october-2025": {
+      "de-de": "monatlicher-marktausblick-oktober-2025"
+    },
+    "monthly-market-outlook-september-2025": {
+      "de-de": "monatlicher-marktausblick-september-2025"
+    },
+    "monthly-market-update": {
+      "de-de": "monatliches-markt-update"
+    },
+    "newsletter-signup": {
+      "de-de": "newsletter-anmeldung"
+    },
+    "rediscovering-commodities": {
+      "de-de": "rohstoffe-neu-entdecken"
+    },
+    "saving-with-etfs": {
+      "de-de": "sparen-mit-etfs"
+    },
+    "our-partners": {
+      "de-de": "unsere-partner"
+    },
+    "retirement-with-etfs": {
+      "de-de": "vorsorgen-mit-etfs"
+    },
+    "how-to-invest-in-etf-savings-plans": {
+      "de-de": "wie-man-in-etf-sparplane-investieren-kann"
+    },
+    "buffer-etfs-explained": {
+      "de-de": "buffer-etfs-erklart"
+    },
+    "etf-faq": {
+      "de-de": "etf-faq"
+    },
+    "ishares-model-portfolios": {
+      "de-de": "ishares-musterportfolios"
+    },
+    "ishares-top-10": {
+      "de-de": "ishares-top-10"
+    },
+    "ishares-top-10-etfs": {
+      "de-de": "ishares-top-10-etfs"
+    },
+    "ishares-future-portfolios": {
+      "de-de": "ishares-zukunftsportfolios"
+    },
+    "ai-etfs": {
+      "de-de": "ki-etfs",
+      "hu-hu": "ki-etf-ek"
+    },
+    "compare-fund": {
+      "de-de": "fondsvergleich",
+      "hu-hu": "alapok-osszehasonlitasa"
+    },
+    "product-screeners-with-brokers": {
+      "de-de": "produkt-screeners-mit-brokern",
+      "hu-hu": "brokerek-termekszuroi"
+    },
+    "enhanced": {
+      "de-de": "enhanced",
+      "hu-hu": "tovabbfejlesztett"
+    },
+    "portfolio-etfs": {
+      "de-de": "portfolio-etfs",
+      "hu-hu": "portfolio-etf-ek"
+    },
+    "essential-equity-returns": {
+      "de-de": "aktieninvestments",
+      "hu-hu": "reszvenybefektetesek"
+    },
+    "how-to-start": {
+      "de-de": "starten",
+      "hu-hu": "kezdes"
+    },
+    "invest-for-old-age": {
+      "de-de": "anlageziel-festlegen",
+      "hu-hu": "nyugdij-elotakarekossag"
+    },
+    "private-retirement": {
+      "de-de": "loesungen",
+      "hu-hu": "magan-nyugdij"
+    },
+    "capitol-formation": {
+      "de-de": "vermoegenswirksame-leistungen",
+      "hu-hu": "tokefelhalmozas"
+    },
+    "tools": {
+      "de-de": "tools",
+      "hu-hu": "eszkozok"
+    },
+    "budget-planner": {
+      "de-de": "budget-rechner",
+      "hu-hu": "koltsegvetes-tervezo"
+    },
+    "etf-savings-calculator": {
+      "hu-hu": "etf-megtakaritasi-kalkulator"
+    },
+    "buffer-etfs": {
+      "de-de": "buffer-etfs",
+      "hu-hu": "buffer-etf-ek"
+    },
+    "equities": {
+      "de-de": "aktien",
+      "hu-hu": "reszvenyek"
+    },
+    "active-cash-etfs": {
+      "de-de": "aktive-geldmarkt-etfs",
+      "hu-hu": "aktiv-penzpiaci-etf-ek"
+    },
+    "ishares-etf-update-on-the-russia-ukraine-crisis": {
+      "de-de": "ishares-etf-update-zum-russland-ukraine-konflikt",
+      "hu-hu": "ishares-etf-frissites-oroszorszag-ukrajna"
+    },
+    "midyear-outlook-2025": {
+      "de-de": "anlageausblick-jahresmitte",
+      "hu-hu": "felidei-kitekintes-2025"
+    },
+    "weekly-market-outlook": {
+      "de-de": "aktuell",
+      "hu-hu": "heti-piaci-kitekintes"
+    },
+    "space-technology": {
+      "de-de": "weltraumtechnologie",
+      "hu-hu": "urtechnologia"
+    },
+    "us-equities": {
+      "de-de": "us-aktien",
+      "hu-hu": "amerikai-reszvenyek"
+    },
+    "contact-form": {
+      "de-de": "kontaktformular",
+      "hu-hu": "kapcsolatfelveteli-urlap"
+    },
+    "commodity-etcs": {
+      "de-de": "rohstoff-etcs",
+      "hu-hu": "arupiaci-etc-k"
+    },
+    "etf-checklist": {
+      "de-de": "etf-checkliste",
+      "hu-hu": "etf-ellenorzo-lista"
+    },
+    "etf-guide-for-beginners": {
+      "de-de": "etf-leitfaden-fuer-anfaenger",
+      "hu-hu": "etf-utmutato-kezdoknek"
+    },
+    "etfs-etcs-and-etps-explained": {
+      "de-de": "etfs-etcs-und-etps-erklaert",
+      "hu-hu": "etf-ek-etc-k-es-etp-k-magyarazata"
+    },
+    "fixed-term-bond-etfs": {
+      "de-de": "laufzeitgebundene-anleihen-etfs",
+      "hu-hu": "futamidohoz-kotott-kotveny-etf-ek"
+    },
+    "global-share-indices": {
+      "de-de": "globale-aktienindizes",
+      "hu-hu": "globalis-reszvenyindexek"
+    },
+    "investing-in-artificial-intelligence": {
+      "de-de": "in-kuenstliche-intelligenz-investieren",
+      "hu-hu": "mesterseges-intelligencia-befektetes"
+    },
+    "regular-investing-with-an-etf-savings-plan": {
+      "de-de": "regelmaessig-mit-einem-etf-sparplan-investieren",
+      "hu-hu": "rendszeres-befektetes-etf-megtakaritasi-programmal"
+    },
+    "understanding-core-etfs": {
+      "de-de": "core-etfs-verstehen",
+      "hu-hu": "core-etf-ek-megertese"
+    },
+    "understanding-cryptocurrency": {
+      "de-de": "kryptowaehrungen-verstehen",
+      "hu-hu": "kriptovalutak-megertese"
+    },
+    "understanding-etfs": {
+      "de-de": "etfs-verstehen",
+      "hu-hu": "etf-ek-megertese"
+    },
+    "understanding-volatility": {
+      "de-de": "volatilitaet-verstehen",
+      "hu-hu": "a-volatilitas-megertese"
+    },
+    "ishares-triggers-thank-you": {
+      "de-de": "erfolgreich",
+      "hu-hu": "sikeres"
+    },
+    "thank-you": {
+      "de-de": "danke",
+      "hu-hu": "koszonjuk"
+    },
+    "etf-savings-plan-vs-pension-portfolio": {
+      "de-de": "etf-sparplan-vs-altersvorsorgedepot",
+      "hu-hu": "etf-megtakaritasi-program-vs-nyugdijportfolio"
+    },
+    "how-can-you-benefit-from-pension-savings-account": {
+      "de-de": "wie-sie-vom-altersvorsorgedepot-profitieren-koennen",
+      "hu-hu": "hogyan-profitalhat-a-nyugdij-megtakaritasi-szamlabol"
+    },
+    "how-do-i-calculate-my-pension-gap": {
+      "de-de": "wie-berechne-ich-meine-rentenluecke",
+      "hu-hu": "hogyan-szamithatom-ki-a-nyugdijhianyomat"
+    },
+    "how-does-the-pension-savings-account-work": {
+      "de-de": "wie-funktioniert-das-altersvorsorgedepot",
+      "hu-hu": "hogyan-mukodik-a-nyugdij-megtakaritasi-szamla"
+    },
+    "which-pension-plan-is-right-for-me": {
+      "de-de": "welcher-vorsorgeplan-passt-zu-mir",
+      "hu-hu": "melyik-nyugdijterv-a-megfelelo-szamomra"
+    },
+    "tax-faqs": {
+      "de-de": "steuer-faqs",
+      "hu-hu": "adozasi-gyik"
+    },
+    "home": {
+      "de-de": "startseite",
+      "hu-hu": "kezdolap",
+      "pl-pl": "strona-glowna"
+    },
+    "impressum": {
+      "de-de": "impressum",
+      "hu-hu": "impresszum"
+    },
+    "larry-fink-annual-chairmans-letter-overview": {
+      "de-de": "zusammenfassung-jaehrlicher-brief-larry-fink",
+      "hu-hu": "larry-fink-eves-elnoki-levelenek-osszefoglaloja"
+    },
+    "terms-and-conditions": {
+      "de-de": "nutzungsbedingungen",
+      "hu-hu": "jogi-tajekoztato",
+      "cs-cz": "podminky-a-pravidla",
+      "pl-pl": "informacje-prawne",
+      "sk-sk": "podmienky-a-pravidla"
+    },
+    "privacy-policy": {
+      "pl-pl": "polityka-ochrony-prywatnosci",
+      "hu-hu": "adatvedelem"
+    },
+    "library": {
+      "de-de": "bibliothek",
+      "hu-hu": "informacios-kiadvanyok",
+      "cs-cz": "knihovna",
+      "pl-pl": "materialy-informacyjne",
+      "sk-sk": "kniznica",
+      "pt-pt": "literatura"
+    },
+    "contact-us": {
+      "hu-hu": "kapcsolatfelvetel",
+      "cs-cz": "kontaktujte-nas",
+      "pl-pl": "kontakt",
+      "sk-sk": "kontaktujte-nas"
+    },
+    "product-list": {
+      "hu-hu": "termeklista",
+      "cs-cz": "seznam-produktu",
+      "pl-pl": "seznam-produktu",
+      "sk-sk": "zoznam-produktov",
+      "de-de": "produktliste"
+    },
+    "compliance": {
+      "hu-hu": "megfeleloseg",
+      "cs-cz": "dodrzovani",
+      "pl-pl": "dodrzovani",
+      "sk-sk": "dodrziavanie"
+    },
+    "about-blackrock-in-poland": {
+      "pl-pl": "o-blackrock-w-polsce"
+    },
+    "about-blackrock-in-slovakia": {
+      "sk-sk": "o-spolocnosti-blackrock-na-slovensku"
+    },
+    "product-screener-ishares": {
+      "de-de": "ishares-produktfinder"
+    },
+    "asset-class": {
+      "de-de": "anlageklassen"
+    },
+    "fixed-income": {
+      "de-de": "anleihen",
+      "pt-pt": "rendimento-fixo"
+    },
+    "real-estate": {
+      "de-de": "immobilien"
+    },
+    "commodities": {
+      "de-de": "rohstoffe"
+    },
+    "in-focus": {
+      "de-de": "im-fokus"
+    },
+    "european-equity-etfs": {
+      "de-de": "europaeische-aktien-etfs"
+    },
+    "bitcoin-etp": {
+      "de-de": "bitcoin-etp"
+    },
+    "fixed-maturity-etfs": {
+      "de-de": "laufzeitgebundene-etfs"
+    },
+    "ishares-v3": {
+      "de-de": "ishares-v3"
+    },
+    "ishares-v4": {
+      "de-de": "ishares-v4"
+    },
+    "product": {
+      "de-de": "produkt",
+      "hu-hu": "termek",
+      "pt-pt": "produto",
+      "cs-cz": "produkt",
+      "pl-pl": "produkt",
+      "sk-sk": "produkt"
+    },
+    "region": {
+      "de-de": "region"
+    },
+    "etf-insights-platform": {
+      "de-de": "etf-insights-plattform"
+    },
+    "bestseller": {
+      "de-de": "bestseller"
+    },
+    "discover-ibonds-etfs": {
+      "de-de": "ibonds-etfs-entdecken",
+      "pt-pt": "descobrir-etfs-ibonds"
+    },
+    "ibonds-etfs": {
+      "de-de": "ibonds-etfs"
+    },
+    "savings-planner": {
+      "de-de": "etf-sparplanrechner"
+    },
+    "savings-plan-study": {
+      "de-de": "sparplanstudie"
+    },
+    "monthly-market-outlook-12-25": {
+      "de-de": "monatlicher-marktausblick-dezember-2025"
+    },
+    "monthly-market-outlook-03-2025": {
+      "de-de": "monatlicher-marktausblick-maerz-2025"
+    },
+    "bitcoin": {
+      "de-de": "bitcoin"
+    },
+    "investor-insights-and-trends": {
+      "de-de": "investoren-und-trends"
+    },
+    "collateralised-loan-obligations": {
+      "de-de": "besicherte-kreditverpflichtungen"
+    },
+    "sustainable-investing": {
+      "de-de": "nachhaltiges-investieren",
+      "pt-pt": "investimento-sustentavel"
+    },
+    "press": {
+      "de-de": "presse"
+    },
+    "newsletter-registration": {
+      "de-de": "newsletter-registrierung"
+    },
+    "esg-metrics": {
+      "pt-pt": "metricas-de-esg-que-importam"
+    },
+    "investment-factors": {
+      "pt-pt": "investimento-em-fatores"
+    },
+    "rethinking-portfolio-construction": {
+      "pt-pt": "repensar-as-carteiras"
+    },
+    "etfs-and-indexing": {
+      "pt-pt": "etfs"
+    },
+    "three-habits": {
+      "pt-pt": "tres-habitos"
+    },
+    "why-indexing": {
+      "pt-pt": "por-que-indexacao"
+    },
+    "cities-of-the-future": {
+      "pt-pt": "construir-as-cidades-do-futuro"
+    },
+    "etfs-role-in-volatile-markets": {
+      "pt-pt": "papel-dos-etf-nos-mercados-volateis"
+    },
+    "etf-resilience": {
+      "pt-pt": "resiliencia-do-etfs"
+    },
+    "about-blackrock": {
+      "pt-pt": "sobre-blackrock"
+    },
+    "corporate-sustainability": {
+      "pt-pt": "sustentabilidade-corporativa"
+    },
+    "financial-professionals": {
+      "pt-pt": "ideias-de-investimento"
+    },
+    "navigate-our-range": {
+      "pt-pt": "nossa-gama"
+    },
+    "investing-with-climate-in-mind": {
+      "pt-pt": "investir-com-o-clima-na-mente"
+    },
+    "sustaining-blackrock-through-covid-19": {
+      "pt-pt": "nossa-resposta-a-covid-19"
+    },
+    "sustainable-indexing-mythbusting": {
+      "pt-pt": "desmistificacao-indexacao-sustentavel"
+    },
+    "alternative-investments": {
+      "pt-pt": "investimentos-alternativos"
+    },
+    "myths-and-misconceptions": {
+      "pt-pt": "mitos-e-quivocos"
+    },
+    "fuel-for-your-portfolio": {
+      "pt-pt": "combustivel-para-a-sua-carteira"
+    },
+    "liquid-offering": {
+      "pt-pt": "oferta-liquida"
+    },
+    "illiquid-offering": {
+      "pt-pt": "oferta-iliquida"
+    },
+    "building-better-portfolios": {
+      "pt-pt": "ajudar-a-construir-carteiras-melhores"
+    },
+    "glossary": {
+      "pt-pt": "conceitos-chave"
+    },
+    "china-the-essentials": {
+      "pt-pt": "china-os-essenciais"
+    },
+    "discover-the-china-opportunity": {
+      "pt-pt": "a-oportunidade-da-china"
+    },
+    "navigate-our-range-fixed-income": {
+      "pt-pt": "rendimento-fixo-percorrer-a-nossa-gama"
+    },
+    "modernisation-of-the-bond-market": {
+      "pt-pt": "modernizacao-do-mercado-obrigacionista"
+    },
+    "fixed-income-etfs-explained": {
+      "pt-pt": "os-etf-de-rendimento-fixo-explicados"
+    },
+    "china-in-the-world": {
+      "pt-pt": "a-china-no-mundo"
+    },
+    "solving-portfolio-challenges": {
+      "pt-pt": "resolver-desafios-de-carteira-com-indexacao"
+    },
+    "discretionary-portfolio-manager": {
+      "pt-pt": "gestor-de-carteira-discricionaria"
+    },
+    "asset-owner": {
+      "pt-pt": "proprietario-de-ativos"
+    },
+    "asset-managers": {
+      "pt-pt": "gestores-de-ativos"
+    },
+    "thinking-sustainably": {
+      "pt-pt": "pensar-de-forma-sustentavel"
+    },
+    "managing-portfolio-costs": {
+      "pt-pt": "gerir-os-custos-da-carteira"
+    },
+    "expressing-short-term-market-views": {
+      "pt-pt": "expressar-visoes-de-mercado-de-curto-prazo"
+    },
+    "building-a-defensive-portfolio": {
+      "pt-pt": "construir-uma-carteira-defensiva"
+    },
+    "deciphering-factor-driven-returns": {
+      "pt-pt": "decifrar-retornos-impulsionados-por-fatores"
+    },
+    "fixed-income-saa": {
+      "pt-pt": "obrigacoes-para-aea"
+    },
+    "fixed-income-taa": {
+      "pt-pt": "obrigacoes-para-ata"
+    },
+    "fixed-income-cash-continuum": {
+      "pt-pt": "continuum-de-liquidez-de-obrigacoes"
+    },
+    "fixed-income-esg-integration": {
+      "pt-pt": "integracao-esg-de-obrigacoes"
+    },
+    "cash-flow-management": {
+      "pt-pt": "gestao-do-fluxo-de-caixa"
+    },
+    "adapting-to-a-lower-yield-environment": {
+      "pt-pt": "adaptar-se-a-um-ambiente-de-menor-rendimento"
+    },
+    "index-your-bonds": {
+      "pt-pt": "indexar-as-suas-obrigacoes"
+    },
+    "control-portfolio-outcomes": {
+      "pt-pt": "controlar-os-resultados-da-carteira"
+    },
+    "high-yield-to-high-income": {
+      "pt-pt": "de-high-yield-para-alto-rendimento"
+    },
+    "reducing-j-curve-in-alternative-investment": {
+      "pt-pt": "reduzir-a-curva-j-nos-investimentos-alternativos"
+    },
+    "fixed-income-derivative-replacement": {
+      "pt-pt": "obrigacoes-para-substituir-derivados"
+    },
+    "rethinking-product-choices": {
+      "pt-pt": "repensar-as-escolhas-de-produtos"
+    },
+    "managing-allocations-to-alternatives": {
+      "pt-pt": "gerir-alocacoes-a-investimentos-alternativos"
+    },
+    "fixed-income-liquidity-management": {
+      "pt-pt": "obrigacoes-para-gestao-de-liquidez"
+    },
+    "investing-in-sustainable-funds": {
+      "pt-pt": "investir-em-fundos-sustentaveis"
+    },
+    "why-europe": {
+      "pt-pt": "porque-a-europa"
+    },
+    "how-to-invest-in-europe": {
+      "pt-pt": "como-investir-na-europa"
+    },
+    "invest-in-europe": {
+      "pt-pt": "investir-na-europa"
+    },
+    "investors-top-5-esg-challenges": {
+      "pt-pt": "5-maiores-desafios-esg-dos-investidores"
+    },
+    "china-alternative-data": {
+      "pt-pt": "sinais-na-china-pos-pandemica"
+    },
+    "china-a-decade-of-financial-opening": {
+      "pt-pt": "uma-decada-de-abertura-financeira"
+    },
+    "private-market-in-china": {
+      "pt-pt": "mercado-privado"
+    },
+    "thematic-investing": {
+      "pt-pt": "investimento-tematico"
+    },
+    "road-to-net-zero": {
+      "pt-pt": "o-caminho-para-as-zero-emissoes"
+    },
+    "finding-companies-set-for-supply-chain-success": {
+      "pt-pt": "pressao-nas-cadeias-de-suprimentos"
+    },
+    "sustainable-fixed-income": {
+      "pt-pt": "rendimento-fixo-sustentavel"
+    },
+    "dynamic-approach-to-portfolios": {
+      "pt-pt": "abordagem-dinamica-as-carteiras"
+    },
+    "investment-platform": {
+      "pt-pt": "plataforma-de-investimento"
+    },
+    "sustainable-and-transition-investing": {
+      "pt-pt": "investimento-sustentavel-transicao"
+    },
+    "blackrock-in-portugal": {
+      "pt-pt": "blackrock-em-portugal"
+    },
+    "weekly-commentary": {
+      "pt-pt": "comentario-semanal"
+    },
+    "its-a-fixed-income-era": {
+      "pt-pt": "e-uma-era-de-obrigacoes"
+    },
+    "dispersion-is-back": {
+      "pt-pt": "a-dispersao-esta-de-volta"
+    },
+    "the-portfolio-of-the-future": {
+      "pt-pt": "carteira-do-futuro"
+    },
+    "what-are-mutual-funds": {
+      "sk-sk": "co-su-to-podielove-fondy",
+      "cs-cz": "co-jsou-podilove-fondy"
+    },
+    "etfs-explained": {
+      "sk-sk": "co-je-etf"
+    },
+    "about-blackrock-in-czech-republic": {
+      "cs-cz": "o-spolecnosti-blackrock-v-ceske-republice"
+    },
+    "where-to-buy": {
+      "cs-cz": "kde-koupit",
+      "sk-sk": "kde-kupit"
+    },
+    "fund-prices": {
+      "pl-pl": "ceny",
+      "hu-hu": "arfolyamok"
+    },
+    "overview": {
+      "pl-pl": "przeglad",
+      "hu-hu": "attekintes"
+    },
+    "performance": {
+      "pl-pl": "wyniki",
+      "hu-hu": "teljesitmeny"
+    },
+    "prices": {
+      "pl-pl": "cena",
+      "hu-hu": "arfolyam"
+    },
+    "holdings": {
+      "pl-pl": "sklad-funduszu",
+      "hu-hu": "holdingok"
+    },
+    "documents": {
+      "pl-pl": "dokumenty",
+      "hu-hu": "dokumentum"
+    },
+    "about-investing": {
+      "hu-hu": "forgalmazok"
+    },
+    "subscriptions": {
+      "hu-hu": "fliratkozasaim"
+    },
+    "securities-lending": {
+      "hu-hu": "ertekpapir-kolcsonzes"
+    },
+    "investor-relations": {
+      "hu-hu": "befektetoi-kapcsolatok"
+    },
+    "distributions": {
+      "hu-hu": "disztribucio"
+    },
+    "find-a-fund": {
+      "de-de": "fonds-finden"
+    },
+    "error": {
+      "de-de": "fehler"
+    },
+    "thematic-etfs": {
+      "de-de": "thematische-etfs"
+    },
+    "defence-etfs": {
+      "de-de": "verteidigungs-etfs"
+    },
+    "markets-and-insights": {
+      "de-de": "maerkte-und-analysen"
+    },
+    "etf-savings-planner": {
+      "de-de": "etf-sparplaner"
+    },
+    "my-portfolio": {
+      "de-de": "mein-portfolio"
+    },
+    "market-insights": {
+      "de-de": "marktanalysen"
+    },
+    "investor-education": {
+      "de-de": "anlegerwissen"
+    },
+    "retirement-savings-account-what-it-all-about": {
+      "de-de": "altersvorsorgekonto-was-ist-das"
+    },
+    "dividend-calendar": {
+      "de-de": "dividendenkalender"
+    },
+    "saving": {
+      "de-de": "sparen"
+    }
+  }
+}

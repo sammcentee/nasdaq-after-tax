@@ -1,0 +1,20 @@
+[
+  {
+    "security_id": "tts-133282628",
+    "date": "2017-01-25",
+    "vendor_dividend_usd": 1.153852,
+    "action_dividend_usd": 1.08
+  },
+  {
+    "security_id": "tts-137012693",
+    "date": "2020-09-15",
+    "vendor_dividend_usd": 1.5,
+    "action_dividend_usd": 1.5
+  },
+  {
+    "security_id": "tts-133282628",
+    "date": "2024-01-30",
+    "vendor_dividend_usd": 1.357745,
+    "action_dividend_usd": 1.3195876288659794
+  }
+]

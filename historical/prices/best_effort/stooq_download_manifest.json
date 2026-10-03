@@ -1,0 +1,50 @@
+[
+  {
+    "symbol": "cdk.us",
+    "status": 404,
+    "bytes": 271,
+    "sample": "<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-t"
+  },
+  {
+    "symbol": "logm.us",
+    "status": 404,
+    "bytes": 271,
+    "sample": "<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-t"
+  },
+  {
+    "symbol": "cvet.us",
+    "status": 404,
+    "bytes": 271,
+    "sample": "<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-t"
+  },
+  {
+    "symbol": "vmw.us",
+    "status": 404,
+    "bytes": 271,
+    "sample": "<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-t"
+  },
+  {
+    "symbol": "amfw.us",
+    "status": 404,
+    "bytes": 271,
+    "sample": "<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-t"
+  },
+  {
+    "symbol": "wg.uk",
+    "status": 404,
+    "bytes": 271,
+    "sample": "<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-t"
+  },
+  {
+    "symbol": "aaba.us",
+    "status": 404,
+    "bytes": 271,
+    "sample": "<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-t"
+  },
+  {
+    "symbol": "yhoo.us",
+    "status": 404,
+    "bytes": 271,
+    "sample": "<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-t"
+  }
+]

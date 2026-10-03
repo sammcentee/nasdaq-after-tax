@@ -1,0 +1,30 @@
+[
+  {
+    "tickers": ["WLTW", "WTW"],
+    "from_date": "2016-01-01",
+    "security_id": "tts-159320127",
+    "quality": "primary_unchanged_CUSIP_ticker_change_Yahoo_history_recovered",
+    "source_url": "https://investors.wtwco.com/news-releases/news-release-details/willis-towers-watson-announces-nasdaq-ticker-symbol-change-wltw"
+  },
+  {
+    "tickers": ["LILA"],
+    "from_date": "2015-07-02",
+    "security_id": "yahoo:LILA",
+    "quality": "primary_class_A_lineage_with_2017_one_for_one_exchange_requires_tax_action_ledger",
+    "source_url": "https://www.libertyglobal.com/investors/share-information/share-cost-basis/"
+  },
+  {
+    "tickers": ["LILAK"],
+    "from_date": "2015-07-02",
+    "security_id": "yahoo:LILAK",
+    "quality": "primary_class_C_lineage_with_2017_one_for_one_exchange_requires_tax_action_ledger",
+    "source_url": "https://www.libertyglobal.com/investors/share-information/share-cost-basis/"
+  },
+  {
+    "tickers": ["SOLS"],
+    "from_date": "2025-10-30",
+    "security_id": "tts-375502573",
+    "quality": "primary_spin_issuer_identity_Yahoo_history_recovered",
+    "source_url": "https://www.honeywell.com/us/en/news/press-releases/2025/10/honeywell-completes-spin-off-of-solstice-advanced-materials"
+  }
+]

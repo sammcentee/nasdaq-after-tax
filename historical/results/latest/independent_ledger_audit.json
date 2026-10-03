@@ -1,0 +1,324 @@
+{
+  "case_count": 14,
+  "all_passed": true,
+  "independent_of_engine_tax_helper": true,
+  "checks": [
+    {
+      "key": "annual_monthly_control",
+      "status": "PASS",
+      "final_cash": 943303.627068586,
+      "cash_error_eur": -4.656612873077393e-10,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 20561.22938086852,
+      "nominal_cgt_avoided_by_exemption_eur": 6785.205695686612,
+      "gain_harvest_sales": 199,
+      "gain_repurchase_count": 199,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 3.0013325158506633e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "annual_only",
+      "status": "PASS",
+      "final_cash": 936098.6725776019,
+      "cash_error_eur": -5.820766091346741e-10,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 20568.162906814578,
+      "nominal_cgt_avoided_by_exemption_eur": 6787.493759248811,
+      "gain_harvest_sales": 139,
+      "gain_repurchase_count": 139,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 1.5006662579253317e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "any_loss",
+      "status": "PASS",
+      "final_cash": 909433.4269804619,
+      "cash_error_eur": -4.656612873077393e-10,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 20197.51379640268,
+      "nominal_cgt_avoided_by_exemption_eur": 6665.179552812885,
+      "gain_harvest_sales": 269,
+      "gain_repurchase_count": 269,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 1.5006662579253317e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "baseline",
+      "status": "PASS",
+      "final_cash": 905982.2301692774,
+      "cash_error_eur": -1.1641532182693481e-09,
+      "basis_error_eur": 8.731149137020111e-11,
+      "cumulative_exemption_used_eur": 6083.410265880803,
+      "nominal_cgt_avoided_by_exemption_eur": 2007.525387740665,
+      "gain_harvest_sales": 0,
+      "gain_repurchase_count": 0,
+      "min_preceding_purchase_age_days": null,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "exits",
+      "status": "PASS",
+      "final_cash": 932582.7148740685,
+      "cash_error_eur": -4.656612873077393e-10,
+      "basis_error_eur": 0.0,
+      "cumulative_exemption_used_eur": 6587.270038580607,
+      "nominal_cgt_avoided_by_exemption_eur": 2173.7991127316004,
+      "gain_harvest_sales": 0,
+      "gain_repurchase_count": 0,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "hybrid_no_exemption",
+      "status": "PASS",
+      "final_cash": 946965.0502082611,
+      "cash_error_eur": -1.1641532182693481e-10,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 0.0,
+      "nominal_cgt_avoided_by_exemption_eur": 0.0,
+      "gain_harvest_sales": 44,
+      "gain_repurchase_count": 39,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "hybrid_only",
+      "status": "PASS",
+      "final_cash": 934690.8416554565,
+      "cash_error_eur": 2.3283064365386963e-10,
+      "basis_error_eur": 1.7462298274040222e-10,
+      "cumulative_exemption_used_eur": 20568.162906814578,
+      "nominal_cgt_avoided_by_exemption_eur": 6787.493759248811,
+      "gain_harvest_sales": 196,
+      "gain_repurchase_count": 195,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 6.002665031701327e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "monthly_gains",
+      "status": "PASS",
+      "final_cash": 912875.625121595,
+      "cash_error_eur": -8.149072527885437e-10,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 20318.59779030294,
+      "nominal_cgt_avoided_by_exemption_eur": 6705.137270799971,
+      "gain_harvest_sales": 717,
+      "gain_repurchase_count": 717,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 2.2509993868879974e-13,
+      "automatic_receipts_during_block": 1,
+      "automatic_receipt_details": [
+        {
+          "date": "2016-07-05",
+          "security_id": "yahoo:LILA",
+          "maximum_loss_relief_affected_eur": 0.057678509199602
+        }
+      ],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": 0.01903390803586866,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "monthly_hybrid",
+      "status": "PASS",
+      "final_cash": 947728.8500214337,
+      "cash_error_eur": -1.1641532182693481e-10,
+      "basis_error_eur": 0.0,
+      "cumulative_exemption_used_eur": 20561.22938086852,
+      "nominal_cgt_avoided_by_exemption_eur": 6785.205695686612,
+      "gain_harvest_sales": 216,
+      "gain_repurchase_count": 216,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 6.002665031701327e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "monthly_tlh",
+      "status": "PASS",
+      "final_cash": 943616.2827323163,
+      "cash_error_eur": 6.984919309616089e-10,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 1275.4347627381637,
+      "nominal_cgt_avoided_by_exemption_eur": 420.89347170359406,
+      "gain_harvest_sales": 0,
+      "gain_repurchase_count": 0,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "retain_gains",
+      "status": "PASS",
+      "final_cash": 910237.7901960649,
+      "cash_error_eur": 3.4924596548080444e-10,
+      "basis_error_eur": 8.731149137020111e-11,
+      "cumulative_exemption_used_eur": 20562.728144076413,
+      "nominal_cgt_avoided_by_exemption_eur": 6785.700287545216,
+      "gain_harvest_sales": 143,
+      "gain_repurchase_count": 143,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 1.5006662579253317e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "weekly_annual",
+      "status": "PASS",
+      "final_cash": 952180.6192207573,
+      "cash_error_eur": 2.3283064365386963e-10,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 19298.162906814578,
+      "nominal_cgt_avoided_by_exemption_eur": 6368.393759248811,
+      "gain_harvest_sales": 167,
+      "gain_repurchase_count": 167,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 6.002665031701327e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "weekly_no_exemption",
+      "status": "PASS",
+      "final_cash": 923336.7576093145,
+      "cash_error_eur": 3.4924596548080444e-10,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 0.0,
+      "nominal_cgt_avoided_by_exemption_eur": 0.0,
+      "gain_harvest_sales": 39,
+      "gain_repurchase_count": 39,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 1.5006662579253317e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "weekly_tlh",
+      "status": "PASS",
+      "final_cash": 941704.6352697558,
+      "cash_error_eur": -9.313225746154785e-10,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 1275.4347627381637,
+      "nominal_cgt_avoided_by_exemption_eur": 420.89347170359406,
+      "gain_harvest_sales": 0,
+      "gain_repurchase_count": 0,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    }
+  ],
+  "complete_predeclared_case_set": true,
+  "engine_sha256": "8369d63b2f6928b81ed69cf26a80d15a1fe37555d710338a02da90e3f2d6d501",
+  "audit_code_sha256": "b2a9e65d4c2aa6a87fcb39db6e83ec7fb9eaef78c2c4acea6940775a855e1d1c"
+}

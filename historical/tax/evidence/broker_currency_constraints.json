@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-10-03",
+  "sources": [
+    {
+      "url": "https://helpcentre.trading212.com/hc/en-us/articles/34159237080861-Can-I-choose-the-currency-in-which-to-buy-sell-assets-for-Invest-accounts",
+      "finding": "Manual Invest orders may select currency; Pies use primary currency and charge conversion FX fee where needed."
+    },
+    {
+      "url": "https://docs.trading212.com/api/accounts",
+      "finding": "Public API supports execution in primary account currency only; multi-currency accounts currently unsupported through API."
+    }
+  ],
+  "model_decision": "Keep per-transaction 0.15% FX assumption for this API-oriented comparison. No fictitious fx_fee=0 sensitivity labelled as supported execution."
+}

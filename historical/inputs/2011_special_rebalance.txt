@@ -1,0 +1,631 @@
+© Copyright 2011, The NASDAQ OMX Group, Inc. All rights reserved.
+/ NASDAQ 100 SPECIAL REBALANCE / 04 05 11
+/ NASDAQ-100 SPECIAL REBALANCE / 04.05.11
+
+NASDAQ-100 SPECIAL REBALANCE: TIMELINE
+NDX changes 
+are effective
+prior to market 
+NASDAQ-100 
+Index Tracking 
+Stock® 
+(QQQ) Created
+(
+500 million 
+NDX futures 
+contracts
+NASDAQ-100®
+(NDX®) Created prior to market 
+open today
+12/1998 4/5/2011
+(Now 
+PowerShares
+QQQTM)
+contracts
+traded
+(NDX ) Created
+12/2/2002
+5/2/20111/31/1985
+Special 
+NASDAQ -100 
+European 
+Tk ®  
+3/10/1999 9/2008
+Special 
+Rebalance to 
+NDX
+Announced
+Tracker® 
+(EQQQ)  
+Created (Now 
+PowerShares
+EQQQ Fund)
+Initial
+Rebalance
+2
+
+NDX i   difi d k t it li ti  i ht d i d  hi h tili   
+NASDAQ-100 SPECIAL 
+REBALANCE: NDX is a modified market-capitalization weighted index which utilizes a 
+patented system of adjusting weights of stocks that is designed so the 
+Index Securities maintain their respective position in the Index relative to 
+their actual unadjusted order (i.e. largest to smallest) at the point of the 
+REBALANCE:
+ANNOUNCEMENT
+their actual unadjusted order (i.e. largest to smallest) at the point of the 
+rebalance.
+Toda  NASDAQ OMX ® is anno ncing its plans to enact a Special Today, NASDAQ OMX® is announcing its plans to enact a Special 
+Rebalance where the weight of each Index Security will reflect a weight 
+closer to the actual market capitalization of the Index Security. 
+The Special Rebalance is not changing any Index Securities or the 
+rules of the Index. The Special Rebalance is adjusting the Index Shares 
+for each Index Security to bring the weights closer in line with their actual for each Index Security to bring the weights closer in line with their actual 
+market capitalizations.
+The Special Rebalance will be enacted based on the Index Securities 
+and shares currently in the Index as of March 31, 2011* and will be 
+effective on May 2, 2011. The new Index Shares of each Index Security 
+are included within this document (page 21)
+are included within this document (page 21).
+3
+*The Special Rebalance of the NASDAQ-100 Index will be enacted based on Index Securities and shares outstanding as of March 
+31, 2011, except for Alexion Pharmaceuticals, Inc. (NASDAQ:ALXN), which became a component of the Index on April 4, 2011.
+
+NASDAQ OMX constantly monitors NDX  and performed extensive 
+NASDAQ-100 SPECIAL 
+REBALANCE: NASDAQ OMX constantly monitors NDX, and performed extensive 
+research into the special rebalancing concept in early 2010 because 
+weights of Index Securities were no longer closely aligned to the actual 
+market capitalization weights and continued to diverge
+REBALANCE:
+WHY NOW
+NASDAQ OMX believes these changes will ensure NDX remains one of 
+the most widely watched indexes in the world and the single best 
+barometer for the performance of U.S. large-cap growth.
+The methodology used to calculate NDX is not changing, nor are any 
+Index Securities.
+4
+
+NASDAQ-100 
+WEIGHTING METHODOLOGYWEIGHTING METHODOLOGY
+
+
+I  1998  NDX ld t h  t IRS R l t d I t t C  
+NASDAQ-100 SPECIAL 
+REBALANCE: In 1998, NDX would not have met IRS Regulated Investment Company 
+(RIC) diversification rules without the first Index Rebalance and, as such, 
+NDX would not have been the basis of thousands of products or their 
+underlying billions of assets, or be the preeminent market indicator for 
+REBALANCE:
+WEIGHTING 
+METHODOLOGY underlying billions of assets, or be the preeminent market indicator for 
+U.S. large-cap growth stocks.
+The adj stment factors set in 1998 ranged from 0 65 to 2 88  O er time  
+METHODOLOGY 
+HISTORY
+The adjustment factors set in 1998 ranged from 0.65 to 2.88. Over time, 
+due to price performance of the individual Index Securities, the 
+adjustment factors have moved out of alignment in relation to their actual 
+market capitalizations.p
+Since 1998, when Index Securities were added to NDX, they were given 
+an adjustment factor based upon the added Index Security’s actual 
+1998 = Initial Rebalance
+an adjustment factor based upon the added Index Security s actual 
+market capitalization versus the then current Index Securities’ market 
+capitalizations. If a security entered the Index ranked 50th unadjusted, it 
+would be given an adjustment factor to place the stock 50th in NDX.gj p
+After the initial Index Rebalance, or at any subsequent point when a new 
+Index Security was added to NDX  adjustments factors were not altered
+Index Security was added to NDX, adjustments factors were not altered.
+6
+
+NASDAQ-100 SPECIAL REBALANCE: WEIGHTING METHODOLOGY HISTORY
+Below is a chart reflecting the original Index Rebalance performed in 1998. The Index Securities remained in the 
+same relative order as a result of the rebalance, but the Index met IRS RIC diversification rules allowing the index 
+to become the premier representation of U.S. large-cap growth stocks for investors around the world.
+26.00%
+1998 Rebalance
+18.00%
+20.00%
+22.00%
+24.00%
+IXO represents a 
+hypothetical, 
+historical market-
+cap weighted 8 00%
+10.00%
+12.00%
+14.00%
+16.00%
+Weight
+pg
+version of NDX.
+NDXE represents 
+an equal-weight 
+version of NDX.
+0.00%
+2.00%
+4.00%
+6.00%
+8.00%
+0.00%
+0 20 40 60 80 100 120
+Security Count
+IXO NDX NDXE (estimate)
+7
+
+NASDAQ-100 SPECIAL 
+REBALANCE:
+NDX was rebalanced following a very precise process. The methodology 
+is based on testing the Index Securities for compliance of certain 
+thresholds:
+REBALANCE:
+WEIGHTING 
+METHODOLOGY
+• 24% - if a single Index Security is greater than 24% then the index  
+will be rebalanced
+4 5% & 48% if ll I d  S iti  t   l t  4 5% 
+METHODOLOGY
+• 4.5% & 48% - if all Index Securities greater or equal to 4.5% 
+exceed 48% then the index will be rebalancedThe Special Rebalance is not 
+changing the current Index 
+Methodology nor the list
+To conduct the rebalancing, Index Securities are categorized as 
+“Large Stocks” or “Small Stocks” depending on whether their weight is 
+greater than or less than or equal to the average weight of an Index 
+Si t  i  1 %
+gy
+of Index Securities. 
+Security, i.e. 1%.
+If either rule is broken, the rebalance is enacted which proportionally ,p p y
+scales down the “Large Stocks” towards an individual weight of 1% by 
+just enough for the largest security to be set to 20% and the collective 
+weight of the Index Securities that are 4.5% or greater to be set to 40%.  
+8
+
+NASDAQ-100 SPECIAL 
+REBALANCE:
+The excess weight from the “Large Stocks” was then applied to the 
+remaining “Small Stocks.” The weight was applied first to the largest 
+“Small Stock” to increase it’s weight to 1% and the remaining “Small 
+REBALANCE:
+WEIGHTING 
+METHODOLOGY Small Stock  to increase it s weight to 1% and the remaining Small 
+Stocks” were scaled upward by the same factor reduced in relation to 
+each stocks relative ranking.  The procedure was repeated until the 
+excess weight from the “Large Stocks” was completely redistributed to 
+th  “S ll St k ” 
+METHODOLOGY 
+the “Small Stocks.” 
+As a result of these rules, when the Rebalance was performed in 1998, 
+the Index Shares of each Index Security were adjusted.
+Following the initial determination of the adjustment factors and in 
+accordance with the weight adjustment procedures, the Index Shares 
+have been adjusted in the same proportion as the Index Security’s total 
+shares outstanding.
+9
+
+THE CHANGETHE CHANGE
+
+
+NASDAQ-100 SPECIAL 
+REBALANCE:
+Through normal market performance, the adjustment factors determined 
+in 1998 in order to reduce the weights of the top Index Securities, have 
+created a scenario where Index Weights are no longer in alignment with 
+t l k t it li ti  i ht
+REBALANCE:
+WHAT IS HAPPENING
+actual market capitalization weights.
+When the first Index Rebalance took effect, the 1st stock by weight , yg
+unadjusted was the 1st adjusted. Today, it is no longer true that an Index 
+Security’s unadjusted rank corresponds to its rank in NDX.NASDAQ OMX is enacting a 
+Special Rebalance in order to bring 
+the Index Securities more in 
+The Special Rebalance will be based on actual shares outstanding 
+versus the Index Shares currently used NDX.  
+alignment with actual market 
+capitalization.
+The Special Rebalance will be enacted based on Index Securities and 
+shares outstanding as of March 31, 2011*. 
+At this time, no changes are being made to the current methodology or 
+current list of Index Securities in NDX.
+11
+*The Special Rebalance of the NASDAQ-100 Index will be enacted based on Index Securities and shares outstanding as of March 
+31, 2011, except for Alexion Pharmaceuticals, Inc. (NASDAQ:ALXN), which became a component of the Index on April 4, 2011.
+
+T d  th  I d  S iti    l  i  th   l ti  d  h  d t  th i  ti  t l 
+NASDAQ-100 SPECIAL REBALANCE: THE CHANGE
+Today, the Index Securities are no longer in the same relative order when compared to their respective actual 
+market capitalization. The Special Rebalance will bring the weights of the Index Securities back into the relative 
+order of the unadjusted index just as the first Index Rebalance did in 1998.
+2011 Rebalance
+0.25
+01
+0.2
+eight
+0.1
+0.15
+Component We
+0
+0.05
+0 20 40 60 80 100 1200 20 40 60 80 100 120
+Component Count
+NDX after Rebalance NDX prior to Rebalance NDXE
+12
+
+NASDAQ-100 REBALANCE:
+INDEX IMPACTINDEX IMPACT
+
+
+Adjustments to the Index Shares will have an impact on the Index. Every 
+NASDAQ-100 SPECIAL 
+REBALANCE: Index Security will have an increase or reduction in its respective index 
+weight due to change in Index Shares resulting from the Special 
+Rebalance.
+REBALANCE: 
+IMPACT TO INDEX
+NASDAQ OMX has performed research to determine the historical 
+impact had the index never been adjusted in 1998. This hypothetical 
+market-cap weighted version, NASDAQ-100 (IXO), retains an extremely 
+high correlation of 99.31% to NDX following the original Index 
+Rebalance.
+The IXO version also has nearly identical volatility and sharpe ratio 
+figures compared to NDX.
+Additionally, NASDAQ OMX has been calculating an equal-weight 
+version of the NASDAQ-100 (NDXE) since 2005. To better illustrate the version of the NASDAQ 100 (NDXE) since 2005. To better illustrate the 
+minimal impact the Special Rebalance will have on the Index 
+performance and characteristics, the next slide illustrates the 
+performance comparisons for NDX, IXO and NDXE.
+14
+
+NASDAQ-100 SPECIAL 
+REBALANCE: 
+Annual IXO NDX NDXE
+2003 46.32% 49.12% 63.64%
+REBALANCE: 
+INDEX IMPACT ON 
+RETURNS
+2004 5.88% 10.44% 12.09%
+2005 -0.92% 1.49% 3.60%
+2006 7.09% 6.79% 10.01%
+2007 16.09% 18.67% 9.86%
+2008 -41.22% -41.89% -43.83%
+2009 50.14% 53.54% 59.37%
+2010 12 76% 19 22% 20 87%RETURNS 2010 12.76% 19.22% 20.87%
+2011 3.24% 5.46% 6.16%
+Cumulative
+3 year 20.89% 31.26% 31.47%
+5 year 24.81% 37.29% 29.09%
+Annualized
+3 year 6 53% 9 49% 9 55%3 year 6.53% 9.49% 9.55%
+5 year 4.53% 6.54% 5.24%
+Volatility IXO NDX NDXE
+2003 25.63% 25.78% 22.41%
+2004 18.15% 18.42% 19.14%
+2005 13.17% 13.90% 13.87%
+2006 15.05% 15.76% 16.28%
+2007 18.42% 18.67% 17.71%
+2008 42.08% 42.30% 43.14%
+2009 26.81% 26.52% 30.48%
+2010 19.17% 19.48% 20.33%
+2011 15.63% 16.22% 16.10%
+Sharpe Ratio
+2003 1.78 1.88 2.81
+2004 0.25 0.49 0.56
+2005 -0.31 -0.12 0.03
+2006 0.14 0.12 0.31
+2007 0.63 0.76 0.30
+2008 -1.01 -1.02 -1.05
+2009 18 6 20 1 19 4
+IXO is a hypothetically calculated version of NDX which is market-capitalization weighted   Values for NDXE prior to 6/30/2005 are historically recreated
+2009 1.86 2.01 1.94
+2010 0.66 0.98 1.02
+2011 0.21 0.33 0.38
+Correlation IXO and NDX NDXE and NDX IXO and NDXE
+Full Term 99.31% 96.79% 95.90%
+15
+IXO is a hypothetically calculated version of NDX which is market-capitalization weighted.  Values for NDXE prior to 6/30/2005 are historically recreated.
+
+NASDAQ-100 SPECIAL REBALANCE: SECTOR WEIGHTS
+Current NDX Projected NDX
+0.56% 0.34%
+1.59%
+0.54% 0.30%
+1.37%
+5.68%
+12.39%
+Oil & Gas
+Basic Materials
+Industrials
+4.91%
+11.33%
+17.77%59.46%
+Consumer Goods
+Health Care
+Consumer Services
+Telecommunications
+17.72%
+61.88%
+2.21%
+Technology
+1.96%
+As of 3/31/11
+16
+
+NASDAQ-100 SPECIAL REBALANCE:
+TRADING IMPACTTRADING IMPACT
+
+
+The NASDAQ Closing CrossSM will be used to set the NASDAQ Official 
+NASDAQ-100 SPECIAL 
+REBALANCE: Closing Price for the stocks in the NDX Special Rebalance.
+• The Cross enables market participants to execute market-on-close and 
+limit-on-close interest and provides unparalleled transparency.
+REBALANCE:
+TRADING IMPACT
+All Index Securities are listed on the 
+NASDAQ Global Select Market® or 
+th  NASDAQ Gl b l M k t ®
+The NDX Special Rebalance will result in a market event similar to the 
+annual Russell Reconstitution.
+the NASDAQ Global Market ®.
+Recognized as the most 
+For every $1 billion benchmarked to NDX, it is expected that 9.5 million 
+shares will execute.
+g
+sophisticated trading technology in 
+the world, NASDAQ OMX is 
+confident that its proven INET 
+technology with unsurpassed 
+Last year’s Russell Rebalance resulted in a record 1.04 billion shares 
+worth $11.2 billion being executed in 0.855 seconds in the technology with unsurpassed 
+capacity will seamlessly process the 
+Closing Cross, as it does on a daily 
+basis.
+NASDAQ Closing Cross.
+• A total of 2,065 NASDAQ-listed securities had a cross, executing a record 
+1,042,122,408 shares. 
+• 630 NASDAQ-listed stocks executed more than their average daily volume in the 
+Closing Cross. 
+• 232 NASDAQ-listed stocks executed more than a whole week's volume in the 
+Closing Cross.
+18
+
+NASDAQ-100 SPECIAL REBALANCE:
+ISSUER IMPACTISSUER IMPACT
+
+
+82 Index Securities will experience a reduction in weight in the Index due 
+NASDAQ-100 SPECIAL 
+REBALANCE: 82 Index Securities will experience a reduction in weight in the Index due 
+to the Special Rebalance resulting from the changes in the adjustment 
+factors. Each Index Security’s reduction will vary but, on average, each 
+change in weight will be 0.376% on an absolute value basis.
+REBALANCE:
+ISSUER IMPACT
+As a result of the changes in Index Shares, passive investment vehicles 
+which track NDX will either have to purchase or sell shares of companies 
+to match the Index’s new weights  An investment vehicle such as to match the Index s new weights. An investment vehicle such as 
+PowerShares QQQ (NASDAQ: QQQ) will enact a rebalance to match the 
+Index.
+The next slides provide the following information:
+• Estimated Shares Per Index Security — the current Index Shares and the new 
+Index Shares to become effective prior to market open on May 2, 2011 based on 
+M h 31  2011  d d  if ALXN   t f th  I d   th t March 31, 2011, and prepared as if ALXN was a component of the Index on that 
+date. 
+• Estimated Weight Change Per Index Security — the current weight in NDX and 
+the new projected weight based on start of day April 4, 2011 shares and prices, 
+sorted alphabetically by symbol, which includes ALXN as a component.
+• Estimated Weight Change Per Index Security (Sorted By New Weight) — the 
+current weight in NDX and the new projected weight based on start of day April 
+4, 2011 shares and prices sorted descending by absolute weight change, which 
+pg y g g
+includes ALXN as a component.
+20
+
+NASDAQ-100 SPECIAL REBALANCE: ESTIMATED SHARES PER INDEX SECURITY
+Symbol
+Current 
+Shares
+Projected  
+Shares Symbol
+Current 
+Shares
+Projected  
+Shares Symbol
+Current 
+Shares
+Projected  
+Shares Symbol
+Current 
+Shares
+Projected  
+Shares
+AAPL 2,413,718,358 921,278,012 CSCO 3,709,783,134 5,527,994,846 INTU 734,982,571 310,610,837 PCLN 97,670,434 49,151,597
+ADBE 931,710,392 506,112,690 CTRP 287,078,855 146,822,120 ISRG 72,933,852 38,866,512 QCOM 3,723,888,248 1,643,746,036ADBE 931,710,392 506,112,690 CTRP 287,078,855 146,822,120 ISRG 72,933,852 38,866,512 QCOM 3,723,888,248 1,643,746,036
+ADP 658,971,491 496,416,668 CTSH 556,907,572 304,214,788 JOYG 192,944,644 104,590,935 QGEN 443,147,450 233,115,000
+ADSK 445,060,941 227,394,939 CTXS 418,705,268 187,619,084 KLAC 380,644,832 167,221,198 RIMM 975,893,812 519,272,512
+AKAM 350,530,901 186,600,000 DELL 1,333,907,561 1,930,291,385 LIFE 342,191,424 180,002,190 ROST 226,240,585 119,084,540
+ALTR 845,312,867 319,961,257 DLTR 247,822,256 125,220,987 LINTA 1,033,711,751 570,762,287 SBUX 1,948,342,748 746,000,000
+ALXN* 178,529,550 91,308,703 DTV 1,081,611,816 790,782,019 LLTC 569,549,789 226,858,522 SHLD 213,925,839 108,900,000
+AMAT 1,281,701,879 1,319,407,222 EBAY 1,818,929,851 1,298,369,992 LRCX 239,652,417 123,549,931 SIAL 219,974,135 121,935,896
+AMGN 816,374,212 932,452,902 ERTS 633,071,695 334,316,218 MAT 749,017,257 348,681,741 SNDK 451,905,360 236,700,499
+AMZN 562,489,174 451,003,759 ESRX 885,494,040 528,284,000 MCHP 294,242,838 188,422,764 SPLS 912,500,487 723,195,266
+APOL 271 748 669 142 670 000 EXPD 391 328 818 212 197 775 MICC 198 171 617 109 053 120 SRCL 168 520 388 85 395 907APOL 271,748,669 142,670,000 EXPD 391,328,818 212,197,775 MICC 198,171,617 109,053,120 SRCL 168,520,388 85,395,907
+ATVI 1,982,981,093 1,182,249,613 EXPE 503,929,338 248,460,933 MRVL 1,166,011,577 650,500,000 STX 848,422,849 452,967,750
+BBBY 643,473,749 254,731,845 FAST 264,745,207 147,430,712 MSFT 5,431,937,678 8,402,382,031 SYMC 1,499,148,509 763,249,309
+BIDU 522,918,574 271,180,980 FFIV 145,645,487 80,747,473 MU 1,918,445,961 997,289,280 TEVA 1,352,144,643 703,806,530
+BIIB 491,924,921 240,911,883 FISV 343,229,592 146,077,101 MXIM 548,054,708 296,476,075 URBN 304,873,464 164,043,838BIIB 491,924,921 240,911,883 FISV 343,229,592 146,077,101 MXIM 548,054,708 296,476,075 URBN 304,873,464 164,043,838
+BMC 390,093,416 178,621,000 FLEX 1,548,792,960 760,012,116 MYL 834,083,756 437,057,304 VMED 618,717,820 322,010,065
+BRCM 830,716,158 484,732,000 FLIR 311,771,481 158,594,966 NFLX 94,680,897 52,890,638 VOD 1,425,687,772 837,328,625
+CA 920,212,881 510,053,016 FSLR 141,293,301 85,895,081 NIHD 309,797,404 169,719,080 VRSN 307,199,609 173,450,710
+CELG 876,565,188 470,640,374 GILD 1,471,120,286 795,264,644 NTAP 709,891,496 361,423,011 VRTX 401,574,810 204,412,712
+CEPH 138,552,634 75,730,236 GOOG 286,680,743 250,869,074 NVDA 1,071,677,785 581,000,000 WCRX 472,832,291 252,633,639
+CERN 156,018,854 83,380,384 GRMN 362,528,199 208,077,418 NWSA 2,682,064,598 1,826,457,096 WFMI 341,770,557 173,564,990
+CHKP 386,692,463 208,400,000 HSIC 172,096,542 91,897,104 ORCL 3,957,187,111 5,052,420,000 WYNN 253,809,333 123,946,173
+CHRW 308,495,569 166,166,000 ILMN 235,322,332 127,626,004 ORLY 264,284,298 141,128,889 XLNX 650,537,542 261,060,301
+CMCSA 2 725 202 041 2 071 820 901 INFY 202 059 559 104 965 090 PAYX 644 525 398 361 683 521 XRAY 256 319 162 142 145 313
+21
+CMCSA 2,725,202,041 2,071,820,901 INFY 202,059,559 104,965,090 PAYX 644,525,398 361,683,521 XRAY 256,319,162 142,145,313
+COST 431,892,040 436,524,744 INTC 3,609,792,537 5,488,000,000 PCAR 767,874,034 364,700,782 YHOO 1,182,353,003 1,309,412,235
+*Prepared as if ALXN was a component of Index on 3/31/11.
+
+NASDAQ-100 SPECIAL REBALANCE: ESTIMATED WEIGHT CHANGE PER INDEX SECURITY 
+(SORTED ALPHABETICALLY BY SYMBOL)(SORTED ALPHABETICALLY BY SYMBOL)
+Symbol
+Current 
+Weight
+Projected 
+Weight
+Change in 
+Weight Symbol
+Current 
+Weight
+Projected 
+Weight
+Change in 
+Weight Symbol
+Current 
+Weight
+Projected 
+Weight
+Change in 
+Weight Symbol
+Current 
+Weight
+Projected 
+Weight
+Change in 
+Weight
+AAPL 20.49% 12.33% -8.16% CSCO 1.56% 3.66% 2.10% INTU 0.98% 0.65% -0.33% PCLN 1.24% 0.98% -0.26%
+ADBE 0 78% 0 67% -0 11% CTRP 0 29% 0 24% -0 05% ISRG 0 62% 0 52% -0 10% QCOM 5 00% 3 48% -1 52%ADBE 0.78% 0.67% -0.11% CTRP 0.29% 0.24% -0.05% ISRG 0.62% 0.52% -0.10% QCOM 5.00% 3.48% -1.52%
+ADP 0.84% 1.00% 0.16% CTSH 1.13% 0.97% -0.16% JOYG 0.48% 0.41% -0.07% QGEN 0.22% 0.18% -0.04%
+ADSK 0.48% 0.39% -0.09% CTXS 0.78% 0.55% -0.23% KLAC 0.44% 0.30% -0.14% RIMM 1.35% 1.13% -0.22%
+AKAM 0.32% 0.27% -0.05% DELL 0.47% 1.08% 0.61% LIFE 0.45% 0.37% -0.08% ROST 0.40% 0.33% -0.07%
+ALTR 0.89% 0.53% -0.36% DLTR 0.35% 0.28% -0.07% LINTA 0.41% 0.36% -0.05% SBUX 1.79% 1.08% -0.71%
+ALXN 0.44% 0.35% -0.09% DTV 1.25% 1.44% 0.19% LLTC 0.47% 0.29% -0.18% SHLD 0.43% 0.35% -0.08%
+AMAT 0.49% 0.80% 0.31% EBAY 1.41% 1.58% 0.17% LRCX 0.33% 0.27% -0.06% SIAL 0.35% 0.30% -0.05%
+AMGN 1.07% 1.92% 0.85% ERTS 0.31% 0.26% -0.05% MAT 0.47% 0.34% -0.13% SNDK 0.51% 0.42% -0.09%
+AMZN 2.50% 3.16% 0.66% ESRX 1.23% 1.15% -0.08% MCHP 0.27% 0.28% 0.01% SPLS 0.45% 0.56% 0.11%
+APOL 0.28% 0.23% -0.05% EXPD 0.49% 0.42% -0.07% MICC 0.47% 0.41% -0.06% SRCL 0.38% 0.30% -0.08%
+ATVI 0.54% 0.51% -0.03% EXPE 0.28% 0.21% -0.07% MRVL 0.46% 0.40% -0.06% STX 0.31% 0.26% -0.05%
+BBBY 0.77% 0.48% -0.29% FAST 0.43% 0.38% -0.05% MSFT 3.41% 8.32% 4.91% SYMC 0.68% 0.55% -0.13%
+BIDU 1.79% 1.46% -0.33% FFIV 0.34% 0.29% -0.05% MU 0.53% 0.44% -0.09% TEVA 1.68% 1.38% -0.30%
+BIIB 0 88% 0 68% -0 20% FISV 0 53% 0 36% -0 17% MXIM 0 35% 0 30% -0 05% URBN 0 23% 0 19% -0 04%BIIB 0.88% 0.68% 0.20% FISV 0.53% 0.36% 0.17% MXIM 0.35% 0.30% 0.05% URBN 0.23% 0.19% 0.04%
+BMC 0.49% 0.35% -0.14% FLEX 0.28% 0.21% -0.07% MYL 0.48% 0.39% -0.09% VMED 0.42% 0.35% -0.07%
+BRCM 0.78% 0.72% -0.06% FLIR 0.27% 0.22% -0.05% NFLX 0.56% 0.50% -0.06% VOD 1.02% 0.95% -0.07%
+CA 0.55% 0.48% -0.07% FSLR 0.56% 0.54% -0.02% NIHD 0.32% 0.28% -0.04% VRSN 0.28% 0.25% -0.03%
+CELG 1.24% 1.05% -0.19% GILD 1.55% 1.32% -0.23% NTAP 0.84% 0.68% -0.16% VRTX 0.47% 0.38% -0.09%
+CEPH 0.26% 0.22% -0.04% GOOG 4.18% 5.77% 1.59% NVDA 0.48% 0.41% -0.07% WCRX 0.28% 0.24% -0.04%
+CERN 0.43% 0.37% -0.06% GRMN 0.30% 0.27% -0.03% NWSA 1.19% 1.27% 0.08% WFMI 0.56% 0.45% -0.11%
+CHKP 0.49% 0.42% -0.07% HSIC 0.30% 0.25% -0.05% ORCL 3.32% 6.68% 3.36% WYNN 0.83% 0.64% -0.19%
+CHRW 0.57% 0.48% -0.09% ILMN 0.41% 0.35% -0.06% ORLY 0.38% 0.32% -0.06% XLNX 0.51% 0.33% -0.18%
+CMCSA 1 69% 2 03% 0 34% INFY 0 36% 0 30% 0 06% PAYX 0 51% 0 45% 0 06% XRAY 0 23% 0 20% 0 03%
+22
+CMCSA 1.69% 2.03% 0.34% INFY 0.36% 0.30% -0.06% PAYX 0.51% 0.45% -0.06% XRAY 0.23% 0.20% -0.03%
+COST 0.79% 1.26% 0.47% INTC 1.75% 4.20% 2.45% PCAR 1.01% 0.76% -0.25% YHOO 0.49% 0.86% 0.37%
+* Based on start of day 4/4/11 weights
+
+NASDAQ-100 SPECIAL REBALANCE: ESTIMATED WEIGHT CHANGE PER INDEX SECURITY 
+(SORTED DESCENDING BY ABSOLUTE WEIGHT CHANGE)(SORTED DESCENDING BY ABSOLUTE WEIGHT CHANGE)
+Symbol
+Current 
+Weight
+Projected 
+Weight
+Change in 
+Weight Symbol
+Current 
+Weight
+Projected 
+Weight
+Change in 
+Weight Symbol
+Current 
+Weight
+Projected 
+Weight
+Change in 
+Weight Symbol
+Current 
+Weight
+Projected 
+Weight
+Change in 
+Weight
+AAPL 20.49% 12.33% -8.16% BIIB 0.88% 0.68% -0.20% VRTX 0.47% 0.38% -0.09% ORLY 0.38% 0.32% -0.06%
+MSFT 3 41% 8 32% 4 91% CELG 1 24% 1 05% -0 19% ESRX 1 23% 1 15% -0 08% PAYX 0 51% 0 45% -0 06%MSFT 3.41% 8.32% 4.91% CELG 1.24% 1.05% 0.19% ESRX 1.23% 1.15% 0.08% PAYX 0.51% 0.45% 0.06%
+ORCL 3.32% 6.68% 3.36% DTV 1.25% 1.44% 0.19% LIFE 0.45% 0.37% -0.08% AKAM 0.32% 0.27% -0.05%
+INTC 1.75% 4.20% 2.45% WYNN 0.83% 0.64% -0.19% NWSA 1.19% 1.27% 0.08% APOL 0.28% 0.23% -0.05%
+CSCO 1.56% 3.66% 2.10% LLTC 0.47% 0.29% -0.18% SHLD 0.43% 0.35% -0.08% CTRP 0.29% 0.24% -0.05%
+GOOG 4.18% 5.77% 1.59% XLNX 0.51% 0.33% -0.18% SRCL 0.38% 0.30% -0.08% ERTS 0.31% 0.26% -0.05%
+QCOM 5.00% 3.48% -1.52% EBAY 1.41% 1.58% 0.17% CA 0.55% 0.48% -0.07% FAST 0.43% 0.38% -0.05%
+AMGN 1.07% 1.92% 0.85% FISV 0.53% 0.36% -0.17% CHKP 0.49% 0.42% -0.07% FFIV 0.34% 0.29% -0.05%
+SBUX 1.79% 1.08% -0.71% ADP 0.84% 1.00% 0.16% DLTR 0.35% 0.28% -0.07% FLIR 0.27% 0.22% -0.05%
+AMZN 2.50% 3.16% 0.66% CTSH 1.13% 0.97% -0.16% EXPD 0.49% 0.42% -0.07% HSIC 0.30% 0.25% -0.05%
+DELL 0.47% 1.08% 0.61% NTAP 0.84% 0.68% -0.16% EXPE 0.28% 0.21% -0.07% LINT A 0.41% 0.36% -0.05%
+COST 0.79% 1.26% 0.47% BMC 0.49% 0.35% -0.14% FLEX 0.28% 0.21% -0.07% MXIM 0.35% 0.30% -0.05%
+YHOO 0.49% 0.86% 0.37% KLAC 0.44% 0.30% -0.14% JOYG 0.48% 0.41% -0.07% SIAL 0.35% 0.30% -0.05%
+ALTR 0.89% 0.53% -0.36% MAT 0.47% 0.34% -0.13% NVDA 0.48% 0.41% -0.07% STX 0.31% 0.26% -0.05%
+CMCSA 1 69% 2 03% 0 34% SYMC 0 68% 0 55% -0 13% ROST 0 40% 0 33% -0 07% CEPH 0 26% 0 22% -0 04%CMCSA 1.69% 2.03% 0.34% SYMC 0.68% 0.55% 0.13% ROST 0.40% 0.33% 0.07% CEPH 0.26% 0.22% 0.04%
+BIDU 1.79% 1.46% -0.33% ADBE 0.78% 0.67% -0.11% VMED 0.42% 0.35% -0.07% NIHD 0.32% 0.28% -0.04%
+INTU 0.98% 0.65% -0.33% SPLS 0.45% 0.56% 0.11% VOD 1.02% 0.95% -0.07% QGEN 0.22% 0.18% -0.04%
+AMAT 0.49% 0.80% 0.31% WFMI 0.56% 0.45% -0.11% BRCM 0.78% 0.72% -0.06% URBN 0.23% 0.19% -0.04%
+TEVA 1.68% 1.38% -0.30% ISRG 0.62% 0.52% -0.10% CERN 0.43% 0.37% -0.06% WCRX 0.28% 0.24% -0.04%
+BBBY 0.77% 0.48% -0.29% ADSK 0.48% 0.39% -0.09% ILMN 0.41% 0.35% -0.06% ATVI 0.54% 0.51% -0.03%
+PCLN 1.24% 0.98% -0.26% ALXN 0.44% 0.35% -0.09% INFY 0.36% 0.30% -0.06% GRMN 0.30% 0.27% -0.03%
+PCAR 1.01% 0.76% -0.25% CHRW 0.57% 0.48% -0.09% LRCX 0.33% 0.27% -0.06% VRSN 0.28% 0.25% -0.03%
+CTXS 0.78% 0.55% -0.23% MU 0.53% 0.44% -0.09% MICC 0.47% 0.41% -0.06% XRAY 0.23% 0.20% -0.03%
+GILD 1% 1 32% 0 23% MYL 0 48% 0 39% 0 09% MRVL 0 46% 0 40% 0 06% FSLR 06 % 04 % 0 02%
+23
+GILD 1.55% 1.32% -0.23% MYL 0.48% 0.39% -0.09% MRVL 0.46% 0.40% -0.06% FSLR 0.56% 0.54% -0.02%
+RIMM 1.35% 1.13% -0.22% SNDK 0.51% 0.42% -0.09% NFLX 0.56% 0.50% -0.06% MCHP 0.27% 0.28% 0.01%
+* Based on start of day 4/4/11 weights
+
+MORE INFORMATION: www.nasdaqomx.com/indexes
+QUESTIONS NAME PHONE EMAILQUESTIONS NAME PHONE EMAIL
+General
+questions
+John Jacobs, Executive Vice 
+President, Global Index Group
++1 301 978 8278 John.Jacobs@nasdaqomx.com
+Dave Gedeon, Director, Global 
+Index Group
++1 301 978 8288 Dave.Gedeon@nasdaqomx.com
+Lisa Chaney, Associate Vice
+Pi d  Gl b l I d  G
++1 301 978 8281 Lisa.Chaney@nasdaqomx.com 
+President, Global Index Group
+Trading impact Ellen Greene, Vice President, 
+Transaction Services, U.S.
++1 212 401 8954 Ellen.Greene@nasdaqomx.com
+Issuers Eric Bernbach, Vice President, 
+Corporate Client Group
++1 212 401 8759 Eric.Bernbach@nasdaqomx.com 
+Media Wayne Lee, Director, Corporate +1 301 978 4875 Wayne.D.Lee@nasdaqomx.com 
+Communications
+24
+
+DISCLAIMER
+The NASDAQ OMX Group, Inc., including its affiliates and subsidiaries (collectively, "NASDAQ OMX"), has not passed on the 
+merit of any of the Index Securities and does not endorse or sponsor any particular Index Security. The information contained
+herein is provided for informational and educational purposes only  and nothing contained herein should be construed as herein is provided for informational and educational purposes only, and nothing contained herein should be construed as 
+investment advice, either on behalf of a particular security or an overall investment strategy. 
+All information contained herein is obtained by NASDAQ OMX from sources believed by NASDAQ OMX to be accurate and 
+reliable. However, because of the possibility of human and mechanical error as well as other factors, NASDAQ OMX is not 
+responsible for any errors or omissions. ALL INFORMATION IS PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND . NASDAQ OMX 
+makes no representations and disclaims all express, implied, and statutory warranties of any kind, including warranties as to
+accuracy, timeliness, completeness, merchantability, or fitness for any particular purpose.
+NASDAQ®, NASDAQ-100®, NASDAQ-100 Index® and QQQ® are registered trademarks of NASDAQ OMX and have been 
+licensed by Invesco PowerShares Capital Management LLC for use with the PowerShares QQQ. The PowerShares QQQ has 
+not been passed on by NASDAQ OMX as to its legality or suitability  and is not issued or sold by NASDAQ OMX NASDAQ not been passed on by NASDAQ OMX as to its legality or suitability, and is not issued or sold by NASDAQ OMX. NASDAQ 
+OMX MAKES NO WARRANTIES AND BEARS NO LIABILITY WITH RESPECT TO THE POWERSHARES QQQ.
+Cautionary Note Regarding Forward-Looking Statements:
+The matters described herein contain forward-looking statements that are made under the Safe Harbor provisions of the Private 
+S f f 199 S Q 100Securities Litigation Reform Act of 1995. These statements include, but are not limited to, statements about the NASDAQ-100 
+Index. NASDAQ OMX cautions that these statements are not guarantees of future performance. Actual results may differ 
+materially from those expressed or implied in the forward-looking statements. Forward-looking statements involve a number of 
+risks, uncertainties or other factors beyond NASDAQ OMX's control. These factors include, but are not limited to factors 
+detailed in NASDAQ OMX's annual report on Form 10-K, and periodic reports filed with the U.S. Securities and Exchange 
+C i i  NASDAQ OMX d t k   bli ti  t  l   i i  t   f d lk i t t tCommission. NASDAQ OMX undertakes no obligation to release any revisions to any forward-looking statements.
+25

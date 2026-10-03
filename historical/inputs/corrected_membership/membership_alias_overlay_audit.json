@@ -1,0 +1,64 @@
+{
+  "purpose": "Append membership aliases and chronology repairs after prepare; keep last duplicate effective_date/security_id so primary GOOG publication correction overrides raw assumption. Original weights and prices untouched; reentry membership changes can enable purchases from existing dated weights.",
+  "row_count": 11,
+  "source_sha256": "88242f41da24004352a4849ec02e740b71cdbf881661c76c6a489deec45df3d8",
+  "aliases": {
+    "isin:US50076Q1067": "yahoo:KRFT",
+    "unresolved:VSNT": "yahoo:VSNT"
+  },
+  "sources": {
+    "KRFT_identity": "https://www.sec.gov/Archives/edgar/data/1103982/000119312512411522/d418430d8k.htm",
+    "KRFT_CUSIP": "https://www.sec.gov/divisions/corpfin/cf-noaction/14a-8/2015/craigayers012815-14a8.pdf",
+    "KRFT_inclusion_primary": "https://ir.nasdaq.com/news-releases/news-release-details/kraft-foods-group-inc-join-nasdaq-100-index-beginning-march-18",
+    "VSNT_identity": "https://www.cmcsa.com/static-files/ef578d62-7a9c-42fd-8d90-e07aea23c95e",
+    "LILA_LILAK_2018_year_primary": "https://indexes.nasdaqomx.com/docs/Whats%20New%20with%20the%20Nasdaq-100.pdf",
+    "LILA_LILAK_Dec2017_roster": "https://www.sec.gov/Archives/edgar/data/796343/000079634318000039/adbeex1028-k126.htm",
+    "GOOGL_retention_primary": "https://ir.nasdaq.com/static-files/6172102f-f3d5-48cf-b669-ba366758155b",
+    "Pepsi_does_not_remove_Liberty": "https://ir.nasdaq.com/node/99026"
+  },
+  "limitations": [
+    "Preserves source effective and available dates, including conservative one-session delay, although primary Nasdaq announcement for KRFT inclusion was already available 2013-03-08.",
+    "VSNT index membership/removal dates remain community-source reconstruction; issuer source proves identity and distribution, not index membership.",
+    "KRFT index deletion date remains existing community reconstruction; issuer identity evidence does not independently certify that removal date.",
+    "Initial 2010 false rows come from the full roster and are copied rather than asserting these future companies already existed as quoted shares."
+  ],
+  "corrections": [
+    {
+      "security_id": "tts-1947579",
+      "effective_date": "2014-04-03",
+      "available_date": "2014-02-10",
+      "is_member": true,
+      "source": "https://ir.nasdaq.com/node/81631",
+      "quality": "Primary Nasdaq announcement verifies both effective date and prior publication date."
+    },
+    {
+      "security_ids": [
+        "yahoo:LILA",
+        "yahoo:LILAK"
+      ],
+      "effective_date": "2016-12-19",
+      "available_date": "2016-12-19",
+      "is_member": true,
+      "source": "https://indexes.nasdaqomx.com/docs/NDX100_AnnualEvaluation.pdf",
+      "quality": "Primary retrospective February2017 Nasdaq publication verifies effective afterDecember16close; availability on effective date remains an explicit model assumption."
+    },
+    {
+      "security_ids": [
+        "yahoo:LILA",
+        "yahoo:LILAK"
+      ],
+      "effective_date": "2018-01-02",
+      "available_date": "2018-01-01",
+      "is_member": false,
+      "source": "https://www.marketscreener.com/quote/stock/LIBERTY-LATIN-AMERICA-LTD-39151789/news/LiLAC-Group-NasdaqGM-LILA-dropped-from-NASDAQ-100-Index-34861433/",
+      "quality": "Exact date relies on secondary hosting of S&P CapitalIQ dated event. Primary Nasdaq2018 review confirms deletion in2018, not exact day. FirstUSsessionJanuary2 used."
+    }
+  ],
+  "corroboration": "Primary stored CNDX holdings include bothLiberty classes atNov30,2017 and neither inDec29,2017 norJan/Feb/Mar/Apr2018. The July2018 Pepsi announcement removes onlyDISH. Membership correction means prior retain cash equality is no longer a valid assertion; compare a separately archived pre-correction regression.",
+  "existing_target_weight_rows_enabled": 12,
+  "existing_target_snapshot_count_enabled": 6,
+  "existing_weight_min_max": [
+    0.0001433905539966,
+    0.0004549261531256
+  ]
+}

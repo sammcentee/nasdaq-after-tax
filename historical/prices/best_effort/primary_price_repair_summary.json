@@ -1,0 +1,59 @@
+{
+  "repairs": [
+    {
+      "security_id": "tts-828516",
+      "symbol": "CTXS",
+      "before": "2017-02-01",
+      "factor_applied_this_run": 1.2558000650309311,
+      "primary_anchors": 38,
+      "max_relative_anchor_error": 0.0005379322400054232,
+      "method": "constant vendor unit factor calibrated to actual contemporaneous issuer portfolio prices, no return-fitting"
+    },
+    {
+      "security_id": "tts-3103596",
+      "symbol": "DISCA",
+      "before": "2014-08-07",
+      "factor_applied_this_run": 2.0,
+      "primary_anchors": 8,
+      "max_relative_anchor_error": 3.0376323678638073e-10,
+      "method": "constant vendor unit factor calibrated to actual contemporaneous issuer portfolio prices, no return-fitting"
+    },
+    {
+      "security_id": "tts-161284560",
+      "symbol": "FOXA_OLD",
+      "before": "2013-07-01",
+      "factor_applied_this_run": 1.1325008696652648,
+      "primary_anchors": 3,
+      "max_relative_anchor_error": 0.0010180008110427519,
+      "method": "constant vendor unit factor calibrated to actual contemporaneous issuer portfolio prices, no return-fitting"
+    },
+    {
+      "security_id": "tts-15427298",
+      "symbol": "DISCK",
+      "before": "2014-08-07",
+      "factor_applied_this_run": 2.0,
+      "primary_source": "https://ir.corporate.discovery.com/stock-information/cost-basis-and-debt-information/series-c-dividend/default.aspx"
+    }
+  ],
+  "noncash_dividends_removed": [
+    {
+      "security_id": "tts-15427298",
+      "date": "2014-08-07",
+      "source_dividend_removed": 39.78
+    },
+    {
+      "security_id": "tts-3103596",
+      "date": "2014-08-07",
+      "source_dividend_removed": 39.0044
+    },
+    {
+      "security_id": "tts-828516",
+      "date": "2017-02-01",
+      "source_dividend_removed": 18.5716
+    }
+  ],
+  "primary_price_observations": 14994,
+  "relative_error_within_0_1pct": 14962,
+  "relative_error_within_1pct": 14982,
+  "remaining_over_3pct": 12
+}

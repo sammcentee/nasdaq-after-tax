@@ -1,0 +1,32 @@
+{
+  "chunks": [
+    [
+      "tts-12361625",
+      "tts-159320127",
+      "tts-16784815",
+      "tts-16784816",
+      "tts-206812113",
+      "tts-239110702",
+      "tts-240346757",
+      "tts-245373754",
+      "tts-268663742",
+      "tts-282720976",
+      "tts-289567307",
+      "tts-307473587",
+      "tts-364559782",
+      "tts-375502573",
+      "tts-416341940",
+      "tts-54471318",
+      "tts-818515",
+      "tts-818716",
+      "tts-821527",
+      "tts-823980",
+      "tts-824309",
+      "tts-827362",
+      "tts-828100",
+      "tts-828275"
+    ]
+  ],
+  "source": "https://data-api.quantiacs.io/data",
+  "unit_check": "general_unit_test.nc matches NDX adjusted data for AAPL EBAY GOOGL"
+}

@@ -1,0 +1,6 @@
+key,label,final_cash,total_tax,transaction_costs,difference_vs_baseline_eur
+etf,Accumulating ETF; eight-year deemed disposal,709947.1335758336,317451.4689658335,0.0,-196035.09659344377
+baseline,Retain departures; no voluntary harvesting,905982.2301692774,361515.9479744802,2235.6979529226855,0.0
+monthly_tlh,Monthly loss harvesting,943616.2827323163,382199.1004285994,2928.7873277790372,37634.05256303889
+monthly_hybrid,"Monthly losses + annual gains, departed first",947728.8500214337,374396.8780001092,3346.1552874701265,41746.61985215626
+weekly_annual,Weekly losses + annual gain harvesting,952180.6192207573,377472.1015783513,3064.424054604891,46198.38905147987

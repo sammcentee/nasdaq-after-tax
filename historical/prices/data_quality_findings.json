@@ -1,0 +1,104 @@
+{
+  "status": "Downloaded real public historical market data, but data audit failed for exact buy-and-hold reconstruction.",
+  "available": {
+    "provider": "Quantiacs",
+    "asset_count": 304,
+    "field_count": 8,
+    "daily_dates": 4044,
+    "start": "2010-09-01",
+    "end": "2026-09-30",
+    "api_auth": "No API key required for successful public requests",
+    "price_file": "quantiacs_ndx_all.nc",
+    "asset_ids": "quantiacs_ndx_assets.json",
+    "provenance": "quantiacs_download_manifest.json"
+  },
+  "semantics": {
+    "plain_stock_splits": "AAPL confirms close and dividends split adjusted; split_cumprod can undo ordinary splits. 2010-10-01 AAPL close10.09,split_cumprod1/28. 2012-08-09 dividend0.094642857=$2.65/28.",
+    "noncash_distributions": "Some spinoffs/class-stock distributions are represented as divs while historical closes are ALREADY adjusted, so naive (close+divs)/prior_close materially overstates returns. split_cumprod does not encode all those adjustments.",
+    "membership": "Do not use is_liquid as point-in-time membership: tested 2010-10-01 has80members with TSLA/FTNT/DXCM before their inclusion dates. Many old members have all-zero flags."
+  },
+  "blocking_issues": [
+    {
+      "issue": "Unrecorded spin adjustment plus dividend double count",
+      "asset": "tts-832177",
+      "symbol": "EBAY",
+      "prior_date": "2015-07-17",
+      "prior_close": 26.8903,
+      "date": "2015-07-20",
+      "close": 28.57,
+      "divs": 38.39,
+      "split_cumprod_both_dates": 1,
+      "naive_return": 1.4901172541771572,
+      "actual_event": "One share of PYPL delivered per EBAY share; not cash income",
+      "primary_source": "https://www.ebayinc.com/stories/news/ebay-inc-board-approves-completion-of-ebay-and-paypal-separation/"
+    },
+    {
+      "issue": "Noncash class share distribution would double wealth",
+      "asset": "tts-71625495",
+      "symbol": "GOOGL",
+      "prior_date": "2014-04-02",
+      "prior_close": 28.3775,
+      "date": "2014-04-03",
+      "close": 28.575,
+      "divs": 28.398585,
+      "split_cumprod_both_dates": 0.05
+    },
+    {
+      "issue": "Past prices and cash distributions not on compatible scale",
+      "asset": "tts-203738082",
+      "symbol": "KDP",
+      "date": "2018-07-10",
+      "divs": 103.75,
+      "dividend_to_prior_close": 5.211132
+    },
+    {
+      "issue": "Cash merger consideration missing",
+      "asset": "tts-827879",
+      "symbol": "ATVI",
+      "last_price_date": "2023-10-12",
+      "last_close": 94.42,
+      "actual_cash_on_merger": 95,
+      "merger_date": "2023-10-13",
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523255762/d537928d8k.htm"
+    },
+    {
+      "issue": "Stock and cash merger succession missing",
+      "symbols": [
+        "ALXN",
+        "CELG",
+        "BRCM",
+        "SNDK"
+      ],
+      "description": "Last market prices are present but no successor ticker, cash amount, stock conversion ratio or subsequent return series."
+    },
+    {
+      "issue": "Bankruptcy terminal value not zero",
+      "asset": "tts-827919",
+      "symbol": "BBBY",
+      "last_price_date": "2023-05-02",
+      "last_close": 0.0751,
+      "description": "No subsequent OTC history or equity cancellation event in fields."
+    },
+    {
+      "issue": "Ticker reuse and historical identity errors",
+      "examples": [
+        "ALTR old Altera history labelled Altair",
+        "SNDK two different companies/identities",
+        "GENZ historic stock and reused ETF ticker",
+        "FISV two largely overlapping price histories",
+        "FB old Meta versus new ETF"
+      ],
+      "resolution": "Use stable source IDs and audited date ranges, never merge by ticker or trust current name alone."
+    }
+  ],
+  "audit_artifacts": {
+    "large_distribution_review.csv": "112 distributions exceeding3% of priorclose; review flags not corrections. Includes genuine specialcash dividends, so do not indiscriminately delete.",
+    "extreme_daily_return_review.csv": "67 naive totalreturns outside[-50%,+50%].",
+    "split_factor_events.csv": "All changes in split_cumprod, noninteger flag includes real3:2splits.",
+    "terminal_price_gaps_review.csv": "Assets whose prices end before2026-09-30, including no-data assets.",
+    "quantiacs_asset_coverage.csv": "Per-source-ID dates, dividend counts and is_liquid dates.",
+    "quantiacs_daily_member_counts.csv": "Membership-count audit."
+  },
+  "not_valid": "This dataset alone is insufficient for exact after-tax retain-former-members backtest. Do not silently drop terminal names, assume lastclose persists, use current constituents backdated, treat all divs as taxablecash, or call unadjusted capproxy indexweights.",
+  "possible_repair": "Requires independently verified membership+weights, corporate-action ledger for cash/stock merger/spinoff/rename/cancellation, ordinarycash dividend series on compatible units, and accurate price series. Preserve taxbasis allocation and forced-realization timing."
+}

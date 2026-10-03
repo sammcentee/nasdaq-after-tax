@@ -1,0 +1,9 @@
+{
+  "rows": 979230,
+  "securities": 343,
+  "null_prices_or_dividends": 0,
+  "nonpositive_prices": 0,
+  "duplicate_date_security_rows": 0,
+  "price_sha256": "bbe52353cde0596ff2dab1d996c9e94ec40c8cf89c18c16596c04e73daa2540d",
+  "status": "structural integrity checks passed; corporate action and source accuracy limitations remain"
+}

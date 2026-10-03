@@ -1,0 +1,101 @@
+name,sector,symbol,exchange,id,cik,FIGI,first_price,last_price,price_count,liquid_days,first_liquid,last_liquid,dividend_days,max_dividend
+DTE Energy Co,,DTV,NYS,tts-111093294,,tts-111093294,2016-10-03,2019-09-30,748,0,,,0,0.0
+SUN MICROSYSTEMS INC,,JAVA,NAS,tts-11317091,709519.0,tts-11317091,,,0,0,,,0,0.0
+DIRECTV,IT/Telecommunications,DTV,NAS,tts-12035732,1465112.0,tts-12035732,2010-09-01,2015-07-24,1232,0,,,0,0.0
+Altair Engineering Inc,IT/Telecommunications,ALTR,NAS,tts-130097863,768251.0,tts-130097863,2010-09-01,2017-11-01,1340,0,,,13,0.18
+Steel Connect Inc,,STCN,NAS,tts-136266149,914712.0,tts-136266149,2010-09-01,2025-01-02,3604,0,,,0,0.0
+Qurate Retail Inc,,QRTEA,NAS,tts-137012693,1355096.0,tts-137012693,2010-09-01,2025-02-21,3641,0,,,2,1.5
+CA INC,IT/Telecommunications,CA,NAS,tts-14011355,356028.0,tts-14011355,2010-09-01,2018-11-02,2059,0,,,11,0.255
+Discovery,IT/Telecommunications,DISCK,NAS,tts-15427298,,tts-15427298,2010-09-01,2022-04-07,2921,0,,,1,39.78
+"Twenty-First Century Fox, Inc. - Class B",,TFCF,NAS,tts-161284558,,tts-161284558,2010-09-01,2019-03-19,2150,0,,,1,0.005
+"Twenty-First Century Fox, Inc.",,TFCFA,NAS,tts-161284560,1308161.0,tts-161284560,2010-09-01,2019-03-19,2150,0,,,1,0.005
+"Monster Worldwide, Inc.",Industry,MWW,NYS,tts-16189359,1020416.0,tts-16189359,2010-09-01,2016-10-31,1553,0,,,0,0.0
+Mylan NV,,MYL,NAS,tts-16784810,1623613.0,tts-16784810,2010-09-01,2020-11-16,2571,0,,,0,0.0
+NortonLifeLock,,NLOK,NAS,tts-177780551,849399.0,tts-177780551,2010-09-01,2022-11-04,3067,0,,,35,4.0
+"BMC Software, Inc.",IT/Telecommunications,BMC,NAS,tts-17914522,835729.0,tts-17914522,2010-09-01,2013-09-10,761,0,,,0,0.0
+Super Micro Computer Inc,,SMCI,NAS,tts-181976270,1375365.0,tts-181976270,2010-09-01,2026-07-13,3975,107,2024-07-22,2024-12-20,0,0.0
+Warner Chilcott plc,Healthcare,WCRX,NAS,tts-1839830,1323854.0,tts-1839830,2010-09-01,2013-09-30,775,0,,,1,0.25
+Juniper Networks Inc,IT/Telecommunications,JNPR,NYS,tts-20366359,1043604.0,tts-20366359,2010-09-01,2025-07-01,3730,0,,,42,0.22
+Ribbit LEAP Ltd,,LEAP,NYS,tts-205658684,,tts-205658684,2010-09-01,2022-08-12,1341,0,,,0,0.0
+COMSovereign Holding Corporation,,COMS,NAS,tts-209398685,1178727.0,tts-209398685,2010-09-03,2024-01-30,3273,0,,,0,0.0
+Foster Wheeler AG.,Industry,FWLT,NAS,tts-2880955,1130385.0,tts-2880955,2010-09-01,2014-12-03,1072,0,,,0,0.0
+"Whole Foods Market, Inc.",Consumer Goods,WFM,NAS,tts-29400599,865436.0,tts-29400599,2010-09-01,2017-08-25,1758,0,,,8,1.1
+Xtrackers California Municipal Bonds ETF,,CA,NAS,tts-298814706,,tts-298814706,2023-12-15,2026-05-06,597,0,,,0,0.0
+"Leap Wireless International, Inc.",IT/Telecommunications,LEAP,NAS,tts-2995163,1065049.0,tts-2995163,2010-09-01,2014-03-13,888,0,,,0,0.0
+"Focus Media Holding Limited - American depositary shares, each of which represents five ordinary shares",IT/Telecommunications,FMCN,NAS,tts-3055259,1330017.0,tts-3055259,2010-09-01,2013-05-23,686,0,,,0,0.0
+Discovery,IT/Telecommunications,DISCA,NAS,tts-3103596,,tts-3103596,2010-09-01,2022-04-07,2921,0,,,1,39.0044
+"Level 3 Communications, Inc.",IT/Telecommunications,LVLT,NYS,tts-33659182,794323.0,tts-33659182,2010-09-01,2017-10-31,1803,0,,,0,0.0
+Viacom,IT/Telecommunications,VIAB,NAS,tts-36228692,1339947.0,tts-36228692,2010-09-01,2019-12-04,2331,0,,,21,0.4
+Joy Global Inc.,Industry,JOY,NYS,tts-36299719,801898.0,tts-36299719,2010-09-01,2017-04-05,1660,0,,,21,0.2
+"Bed Bath & Beyond, Inc. Common Stock",IT/Telecommunications,BBBY,NYS,tts-367344332,1130713.0,tts-367344332,2010-09-01,2026-08-14,4000,0,,,0,0.0
+Electronic Arts Inc,IT/Telecommunications,EA,NAS,tts-36769516,712515.0,tts-36769516,2010-09-01,2026-08-03,4002,4002,2010-09-01,2026-08-03,21,0.19
+Splunk Inc,IT/Telecommunications,SPLK,NAS,tts-41981429,1353283.0,tts-41981429,2012-04-20,2024-03-15,2995,2745,2012-04-20,2024-03-15,0,0.0
+Meta Platforms,IT/Telecommunications,FB,NAS,tts-43902240,,tts-43902240,2012-05-18,2021-12-01,2401,2401,2012-05-18,2021-12-01,0,0.0
+"Shire plc - American Depositary Shares, each representing three Ordinary Shares",Healthcare,SHPG,NAS,tts-48237583,936402.0,tts-48237583,2010-09-01,2019-01-04,2099,0,,,0,0.0
+Catamaran Corporation,Healthcare,CTRX,NAS,tts-48237584,1363851.0,tts-48237584,2010-09-01,2015-07-23,1230,0,,,0,0.0
+Liberty Interactive Corporation,,LVNTA,NAS,tts-49260269,1355096.0,tts-49260269,2012-08-13,2018-03-09,1402,0,,,0,0.0
+Starz - Series A,IT/Telecommunications,STRZA,NAS,tts-54963811,,tts-54963811,2013-01-15,2016-12-08,984,0,,,0,0.0
+Virgin Media Inc.,IT/Telecommunications,VMED,NAS,tts-6191934,,tts-6191934,2010-09-01,2013-06-07,695,0,,,7,0.04
+Walgreens Boots Alliance Inc,,WBA,NAS,tts-80360010,1618921.0,tts-80360010,2010-09-01,2025-08-27,3770,3493,2010-09-01,2024-07-19,55,0.48
+PALM INC,,PALM,NAS,tts-818398,1100389.0,tts-818398,,,0,0,,,0,0.0
+PDL BioPharma,Healthcare,PDLI,NAS,tts-818528,882104.0,tts-818528,2010-09-01,2020-12-30,2601,0,,,10,0.15
+"PetSmart, Inc",Consumer Goods,PETM,NAS,tts-818586,863157.0,tts-818586,2010-09-01,2015-03-11,1138,0,,,1,0.19
+"Constellation Energy Group, Inc. Common Stock",,CEG,NYS,tts-818716,,tts-818716,2022-01-19,2024-04-09,558,558,2022-01-19,2024-04-09,0,0.0
+"PMC - Sierra, Inc.",IT/Telecommunications,PMCS,NAS,tts-818770,767920.0,tts-818770,2010-09-01,2016-01-14,1352,0,,,0,0.0
+PHARMACEUTICAL PROD DEV INC,,PPDI,NAS,tts-818958,1003124.0,tts-818958,2010-09-01,2011-12-05,319,0,,,0,0.0
+"RF Micro Devices, Inc.",IT/Telecommunications,RFMD,NAS,tts-819653,911160.0,tts-819653,2010-09-01,2014-12-31,1091,0,,,0,0.0
+RealNetworks,IT/Telecommunications,RNWK,NAS,tts-819721,,tts-819721,2010-09-01,2022-12-21,3098,0,,,1,4.0
+"Staples, Inc.",Consumer Goods,SPLS,NAS,tts-820309,791519.0,tts-820309,2010-09-01,2017-09-12,1770,0,,,21,0.12
+Red Hat Inc,IT/Telecommunications,RHT,NYS,tts-821236,1087423.0,tts-821236,2010-09-01,2019-07-08,2226,0,,,0,0.0
+Xilinx,IT/Telecommunications,XLNX,NAS,tts-821283,,tts-821283,2010-09-01,2022-02-10,2882,0,,,43,0.38
+"ADC Telecommunications, Inc.",,ADCT,NAS,tts-827046,61478.0,tts-827046,2010-09-01,2010-12-09,70,0,,,0,0.0
+Altair Engineering Inc,,ALTR,NAS,tts-827511,1701732.0,tts-827511,2017-11-02,2025-03-25,1857,0,,,0,0.0
+Applied Micro Circuits Corporation,IT/Telecommunications,AMCC,NAS,tts-827554,711065.0,tts-827554,2010-09-01,2017-01-26,1612,0,,,0,0.0
+ANSYS  Inc,IT/Telecommunications,ANSS,NAS,tts-827769,1013462.0,tts-827769,2010-09-01,2025-07-16,3740,3740,2010-09-01,2025-07-16,0,0.0
+"Apollo Education Group, Inc.",Industry,APOL,NAS,tts-827801,929887.0,tts-827801,2010-09-01,2017-02-01,1616,0,,,0,0.0
+Activision Blizzard,IT/Telecommunications,ATVI,NAS,tts-827879,,tts-827879,2010-09-01,2023-10-12,3301,3244,2010-09-01,2023-07-24,13,0.99
+Bed Bath & Beyond,Consumer Goods,BBBY,NAS,tts-827919,886158.0,tts-827919,2010-09-01,2023-05-02,3188,0,,,16,0.17
+"Brocade Communications Systems, Inc.",IT/Telecommunications,BRCD,NAS,tts-828036,1009626.0,tts-828036,2010-09-01,2017-11-16,1817,0,,,9,0.055
+Broadcom Corporation - Class A,IT/Telecommunications,BRCM,NAS,tts-828037,1054374.0,tts-828037,2010-09-01,2016-01-29,1362,0,,,11,0.14
+Comcast Corporation - Class A Special,IT/Telecommunications,CMCSK,NAS,tts-828342,1166691.0,tts-828342,2010-09-01,2015-12-11,1330,0,,,19,0.25
+"Comverse Technology, Inc.",,CMVT,NAS,tts-828356,803014.0,tts-828356,2011-09-23,2013-02-04,342,0,,,0,0.0
+CONEXANT SYSTEMS INC,,CNXT,NAS,tts-828385,1069353.0,tts-828385,2010-09-01,2011-04-18,159,0,,,0,0.0
+3COM CORP,,COMS,NAS,tts-828397,738076.0,tts-828397,,,0,0,,,0,0.0
+Compuware Corporation,IT/Telecommunications,CPWR,NAS,tts-828418,859014.0,tts-828418,2010-09-01,2014-12-15,1080,0,,,2,0.13
+Citrix Systems,IT/Telecommunications,CTXS,NAS,tts-828516,,tts-828516,2010-09-01,2022-09-28,3040,0,,,12,18.5716
+Dell Inc.,IT/Telecommunications,DELL,NAS,tts-828600,826083.0,tts-828600,2010-09-01,2013-10-29,796,0,,,1,0.08
+Endo International plc,Healthcare,ENDP,NAS,tts-828772,,tts-828772,2010-09-01,2022-08-24,3016,0,,,0,0.0
+Express Scripts Holding Company,Healthcare,ESRX,NAS,tts-828820,1532063.0,tts-828820,2010-09-01,2018-12-20,2091,0,,,0,0.0
+GENZYME CORPORATION,,GENZ,NAS,tts-829049,732485.0,tts-829049,2010-09-01,2011-04-08,153,0,,,0,0.0
+"Human Genome Sciences, Inc.",,HGSI,NAS,tts-829161,901219.0,tts-829161,2010-09-01,2012-08-02,484,0,,,0,0.0
+Integrated Device Technology,IT/Telecommunications,IDTI,NAS,tts-829251,703361.0,tts-829251,2010-09-01,2019-03-29,2158,0,,,0,0.0
+Lincare Holdings Inc.,,LNCR,NAS,tts-829543,882235.0,tts-829543,2010-09-01,2012-08-13,492,0,,,0,0.0
+Molex Incorporated,IT/Telecommunications,MOLX,NAS,tts-829749,67472.0,tts-829749,2010-09-01,2013-12-06,823,0,,,0,0.0
+Maxim Integrated Products,IT/Telecommunications,MXIM,NAS,tts-829854,743316.0,tts-829854,2010-09-01,2021-08-25,2765,0,,,40,0.48
+NOVELL INC,,NOVL,NAS,tts-829989,758004.0,tts-829989,2010-09-01,2011-04-27,165,0,,,0,0.0
+Nuance Communications,IT/Telecommunications,NUAN,NAS,tts-830036,,tts-830036,2010-09-01,2022-03-02,2895,0,,,0,0.0
+Patterson Companies Inc,Healthcare,PDCO,NAS,tts-830145,891024.0,tts-830145,2010-09-01,2025-04-16,3679,0,,,57,0.26
+QLogic Corporation,IT/Telecommunications,QLGC,NAS,tts-830271,918386.0,tts-830271,2010-09-01,2016-08-15,1499,0,,,0,0.0
+Sepracor Inc.,,SEPR,NAS,tts-830444,877357.0,tts-830444,,,0,0,,,0,0.0
+Seagen,,SGEN,NAS,tts-830459,,tts-830459,2010-09-01,2023-12-13,3343,3343,2010-09-01,2023-12-13,0,0.0
+Sigma-Aldrich Corporation,Commodities,SIAL,NAS,tts-830475,90185.0,tts-830475,2010-09-01,2015-11-17,1313,0,,,16,0.23
+SanDisk Corporation,IT/Telecommunications,SNDK,NAS,tts-830518,1000180.0,tts-830518,2010-09-01,2016-05-11,1433,0,,,6,0.3
+Stericycle Inc,Utilities,SRCL,NAS,tts-830564,861878.0,tts-830564,2010-09-01,2024-11-01,3567,0,,,0,0.0
+"Tellabs, Inc.",IT/Telecommunications,TLAB,NAS,tts-830736,317771.0,tts-830736,2010-09-01,2013-12-03,820,0,,,0,0.0
+Vitesse Semiconductor Corporation,IT/Telecommunications,VTSS,NAS,tts-830973,880446.0,tts-830973,2011-03-02,2015-04-27,1045,0,,,0,0.0
+Alexion Pharmaceuticals,Healthcare,ALXN,NAS,tts-831866,899866.0,tts-831866,2010-09-01,2021-07-20,2739,0,,,0,0.0
+"Amylin Pharmaceuticals, Inc.",,AMLN,NAS,tts-831872,881464.0,tts-831872,2010-09-01,2012-08-08,489,0,,,0,0.0
+"Ariba, Inc.",IT/Telecommunications,ARBA,NAS,tts-831895,1084755.0,tts-831895,2010-09-01,2012-09-28,525,0,,,0,0.0
+Atmel Corporation,IT/Telecommunications,ATML,NAS,tts-831920,872448.0,tts-831920,2010-09-01,2016-04-04,1406,0,,,3,0.04
+BroadVision,IT/Telecommunications,BVSN,NAS,tts-831987,920448.0,tts-831987,2010-09-01,2020-05-18,2385,0,,,0,0.0
+Celgene Corp,Healthcare,CELG,NAS,tts-832022,816284.0,tts-832022,2010-09-01,2019-11-20,2322,0,,,0,0.0
+CEPHALON INC,Healthcare,CEPH,NAS,tts-832024,873364.0,tts-832024,2010-09-01,2011-10-13,283,0,,,0,0.0
+Cerner Corp,IT/Telecommunications,CERN,NAS,tts-832025,,tts-832025,2010-09-01,2022-06-06,2961,0,,,11,0.27
+DISH Network Corporation,IT/Telecommunications,DISH,NAS,tts-832145,,tts-832145,2010-09-01,2023-12-29,3355,0,,,2,2.0
+Fiserv,IT/Telecommunications,FISV,NAS,tts-832260,798354.0,tts-832260,2010-09-01,2023-06-05,3211,3211,2010-09-01,2023-06-05,0,0.0
+FLIR Systems,IT/Telecommunications,FLIR,NAS,tts-832266,,tts-832266,2010-09-01,2021-05-12,2692,0,,,40,0.17
+"Keurig Green Mountain, Inc.",Consumer Goods,GMCR,NAS,tts-832321,909954.0,tts-832321,2010-09-01,2016-03-02,1384,0,,,5,0.33
+Hologic Inc,Healthcare,HOLX,NAS,tts-832375,859737.0,tts-832375,2010-09-01,2026-04-06,3921,0,,,0,0.0
+Intersil Corporation,IT/Telecommunications,ISIL,NAS,tts-832438,1096325.0,tts-832438,2010-09-01,2017-02-23,1631,0,,,4,0.12
+Linear Technology Corporation,IT/Telecommunications,LLTC,NAS,tts-832500,791907.0,tts-832500,2010-09-01,2017-03-10,1642,0,,,20,0.51
+ATYR PHARMA INC COM USD0.001,Healthcare,LIFE,NAS,tts-88339869,1073431.0,tts-88339869,2010-09-01,2014-02-03,861,0,,,0,0.0

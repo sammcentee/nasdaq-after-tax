@@ -1,0 +1,83 @@
+{
+  "tts-1947579": {
+    "name": "Alphabet C",
+    "sector": null,
+    "symbol": "GOOG",
+    "exchange": "NAS",
+    "id": "tts-1947579",
+    "cik": "1652044",
+    "FIGI": "tts-1947579"
+  },
+  "tts-203249662": {
+    "name": "AstraZeneca PLC",
+    "sector": "Healthcare",
+    "symbol": "AZN",
+    "exchange": "NYS",
+    "id": "tts-203249662",
+    "cik": "901832",
+    "FIGI": "tts-203249662"
+  },
+  "tts-71625495": {
+    "name": "Alphabet A",
+    "sector": null,
+    "symbol": "GOOGL",
+    "exchange": "NAS",
+    "id": "tts-71625495",
+    "cik": "1652044",
+    "FIGI": "tts-71625495"
+  },
+  "tts-827879": {
+    "name": "Activision Blizzard",
+    "sector": "IT/Telecommunications",
+    "symbol": "ATVI",
+    "exchange": "NAS",
+    "id": "tts-827879",
+    "cik": null,
+    "FIGI": "tts-827879"
+  },
+  "tts-831866": {
+    "name": "Alexion Pharmaceuticals",
+    "sector": "Healthcare",
+    "symbol": "ALXN",
+    "exchange": "NAS",
+    "id": "tts-831866",
+    "cik": "899866",
+    "FIGI": "tts-831866"
+  },
+  "tts-832022": {
+    "name": "Celgene Corp",
+    "sector": "Healthcare",
+    "symbol": "CELG",
+    "exchange": "NAS",
+    "id": "tts-832022",
+    "cik": "816284",
+    "FIGI": "tts-832022"
+  },
+  "tts-832177": {
+    "name": "eBay Inc",
+    "sector": "IT/Telecommunications",
+    "symbol": "EBAY",
+    "exchange": "NAS",
+    "id": "tts-832177",
+    "cik": "1065088",
+    "FIGI": "tts-832177"
+  },
+  "tts-91263224": {
+    "name": "PayPal Holdings Inc",
+    "sector": null,
+    "symbol": "PYPL",
+    "exchange": "NAS",
+    "id": "tts-91263224",
+    "cik": "1633917",
+    "FIGI": "tts-91263224"
+  },
+  "tts-818515": {
+    "name": "Bristol Myers Squibb Co",
+    "sector": "Healthcare",
+    "symbol": "BMY",
+    "exchange": "NYS",
+    "id": "tts-818515",
+    "cik": "14272",
+    "FIGI": "tts-818515"
+  }
+}

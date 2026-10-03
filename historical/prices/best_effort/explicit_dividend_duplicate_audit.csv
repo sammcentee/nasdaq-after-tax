@@ -1,0 +1,30 @@
+action_date,security_id,symbol,action_amount,provider_date,provider_dividend_usd,day_offset,comparison
+2013-10-29,tts-828600,DELL,0.13,2013-10-01 00:00:00,0.08,-28,nearby date: investigate event identity
+2014-02-24,tts-17917826,VOD,9.034675833333331,,0.0,,no provider dividend within +/-40 calendar days
+2015-07-06,yahoo:KRFT,KRFT,16.5,,0.0,,no provider dividend within +/-40 calendar days
+2017-01-25,tts-133282628,QGEN,1.08,2017-01-25 00:00:00,1.153852,0,same-day duplicate
+2020-03-05,right:GENZ_CVR,GENZ_CVR,0.89,,0.0,,no provider dividend within +/-40 calendar days
+2020-09-15,tts-137012693,QRTEA,1.5,2020-09-15 00:00:00,1.5,0,same-day duplicate
+2020-12-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2021-01-04,right:CELG_CVR,CELG_CVR,0.0,,0.0,,no provider dividend within +/-40 calendar days
+2021-03-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2021-06-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2021-09-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2021-11-12,tts-137012693,QRTEA,1.25,,0.0,,no provider dividend within +/-40 calendar days
+2021-12-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2022-03-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2022-06-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2022-09-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2022-12-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2023-03-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2023-06-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2023-09-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2023-12-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2024-01-30,tts-133282628,QGEN,1.3195876288659794,2024-01-30 00:00:00,1.357745,0,same-day duplicate
+2024-03-15,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2024-06-17,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2024-09-16,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2024-12-16,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2025-01-29,tts-133282628,QGEN,1.296,,0.0,,no provider dividend within +/-40 calendar days
+2025-03-17,yahoo:QRTEP,QRTEP,2.0,,0.0,,no provider dividend within +/-40 calendar days
+2026-01-08,tts-133282628,QGEN,2.4105263157894736,,0.0,,no provider dividend within +/-40 calendar days

@@ -1,0 +1,105 @@
+{
+  "status": "SOURCE INPUTS AND CANDIDATE IDENTITIES; FULL STRATEGY NOT VALIDATED",
+  "snapshots": 154,
+  "rows": 15838,
+  "snapshot_sources": {
+    "CNDX_monthly": 147,
+    "Nasdaq_2011_special_rebalance": 2,
+    "QQQ_SEC_annual": 5
+  },
+  "mapped_rows": 15496,
+  "unresolved_rows": 342,
+  "mapped_row_fraction": 0.9784063644399545,
+  "monthly_purchase_dates": 193,
+  "purchase_dates_with_new_members_missing_source_weights": 106,
+  "unresolved_snapshot_weight_min": 0.0,
+  "unresolved_snapshot_weight_max": 0.0512932044126009,
+  "source_equity_normalization": "Every source snapshot sums to one over ALL source equities. Unresolved weights are preserved; no renormalization over price survivors.",
+  "early_initial": {
+    "holdings_date": "2009-09-30",
+    "filed": "2010-01-15",
+    "usable_date": "2010-01-19",
+    "total_investments_usd": 17093021127,
+    "new_2010_members_without_2009_weight": [
+      "BMC",
+      "MAT",
+      "MYL",
+      "PCLN",
+      "QGEN",
+      "SNDK",
+      "VMED",
+      "VOD"
+    ],
+    "2009_names_no_longer_members_at_start": [
+      "AKAM",
+      "HANS",
+      "IACI",
+      "JNPR",
+      "LBTYA",
+      "PPDI",
+      "RYAAY",
+      "STLD"
+    ],
+    "limitations": "2009 prices are absent from current vendor corpus. Initial stale weights are causal, but drifting the baseline to Sep2010 and assigning new-member weights requires more input or an explicit proxy."
+  },
+  "filings": {
+    "2013-09-30": {
+      "filingDate": "2014-01-17",
+      "acceptanceDateTime": "2014-01-17T22:21:46.000Z",
+      "accessionNumber": "0001104659-14-003107",
+      "primaryDocument": "a13-21957_1n30b2.htm"
+    },
+    "2012-09-30": {
+      "filingDate": "2013-01-28",
+      "acceptanceDateTime": "2013-01-28T20:14:02.000Z",
+      "accessionNumber": "0001104659-13-005075",
+      "primaryDocument": "a12-24340_1n30b2.htm"
+    },
+    "2011-09-30": {
+      "filingDate": "2012-01-20",
+      "acceptanceDateTime": "2012-01-20T20:18:41.000Z",
+      "accessionNumber": "0001104659-12-003105",
+      "primaryDocument": "a11-28102_1n30b2.htm"
+    },
+    "2010-09-30": {
+      "filingDate": "2010-12-30",
+      "acceptanceDateTime": "2010-12-30T21:14:42.000Z",
+      "accessionNumber": "0001104659-10-064790",
+      "primaryDocument": "a10-18275_1n30b2.htm"
+    },
+    "2009-09-30": {
+      "filingDate": "2010-01-15",
+      "acceptanceDateTime": "2010-01-15T16:33:21.000Z",
+      "accessionNumber": "0001104659-10-001821",
+      "primaryDocument": "a09-31668_2n30b2.htm"
+    }
+  },
+  "special_rebalance": {
+    "announcement_url": "https://nasdaqtrader.com/TraderNews.aspx?id=fpnews2011-018",
+    "announced": "2011-04-05",
+    "effective": "2011-05-02",
+    "mirror_url": "https://st.ilsole24ore.com/pdf2010/SoleOnLine5/_Oggetti_Correlati/Documenti/Finanza%20e%20Mercati/2011/04/NDXSpecialRebalancePresentation%5B1%5D.pdf?uuid=d4dfeea2-5f69-11e0-b482-a582cb592628",
+    "reference_close": "2011-04-01",
+    "current_weight_sum": 0.9999999999999999,
+    "projected_weight_sum": 1.0,
+    "limitations": "Rounded published projections, not actual May2 close weights. Exact index shares also preserved. Corporate changes and price drift between reference and rebalance still need handling."
+  },
+  "causal_use_rules": [
+    "Select latest effective snapshot whose available_date is no later than trade date AND effective_date is no later than trade date.",
+    "To drift weights, use each snapshot weight_reference_date and prices available by the decision cutoff; never interpolate toward a future snapshot.",
+    "CNDX availability uses five Monday-Friday business days as an explicit unverified publication assumption. Sep2026 source is not usable during Sep2026.",
+    "Membership effective dates are community reconstructions; using them contemporaneously is an explicit availability assumption.",
+    "An index removal stops new purchases only; it never justifies selling retained shares or extinguishing their value.",
+    "New member missing from the selected source has no supplied weight: fail or use a separately labeled proxy. Do not backfill from a future source.",
+    "Vendor joins are candidates. Crosswalk identity does not validate corporate actions, distributions, terminal proceeds, or retained-security price continuity.",
+    "Do not execute the full backtest while unresolved positive weights or unvalidated corporate-action values remain."
+  ],
+  "missing_monthly_snapshots_2014_on": [
+    "2017-01",
+    "2017-02",
+    "2017-03",
+    "2017-04",
+    "2017-05",
+    "2017-06"
+  ]
+}

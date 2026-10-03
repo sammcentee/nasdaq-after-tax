@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "stock_cases": 14,
+  "headline_rows": 5,
+  "matched_pairs": 11,
+  "interactions": 2,
+  "underperformer_comparisons": 3,
+  "underperformer_checks": {
+    "any_loss": {
+      "comparator": "annual_monthly_control",
+      "gross_investment_profit_difference_eur": -50372.57815729454,
+      "total_tax_reduction_eur": 17238.685219955514,
+      "additional_transaction_cost_eur": 736.307150783091,
+      "after_tax_wealth_difference_eur": -33870.200088124024,
+      "annual_ledger_profit_reconciled": true
+    },
+    "retain_gains": {
+      "comparator": "annual_only",
+      "gross_investment_profit_difference_eur": -38639.23322894098,
+      "total_tax_reduction_eur": 12552.800236804062,
+      "additional_transaction_cost_eur": -225.550610593416,
+      "after_tax_wealth_difference_eur": -25860.882381537,
+      "annual_ledger_profit_reconciled": true
+    },
+    "monthly_gains": {
+      "comparator": "annual_monthly_control",
+      "gross_investment_profit_difference_eur": -44994.6831945763,
+      "total_tax_reduction_eur": 14644.983146907703,
+      "additional_transaction_cost_eur": 78.30189931897894,
+      "after_tax_wealth_difference_eur": -30428.00194699096,
+      "annual_ledger_profit_reconciled": true
+    }
+  },
+  "accounting_bridge_scope": "Realised investment profit along each actual portfolio path; not a tax-free counterfactual or a claim about individual missed recoveries",
+  "sequential_ladder_gains_eur": {
+    "monthly_hybrid": 41746.61985215626,
+    "weekly_annual": 46198.38905147987
+  },
+  "input_hashes_checked": 11,
+  "code_hashes_checked": 5,
+  "shared_membership_sha256": "5dd4b1d2580066c15acec38317f6ee2f7b2e5786cc8232eb73385a913341156f",
+  "control_configuration_changes": {
+    "baseline -> exits": [
+      "exit_policy",
+      "exit_review_dates"
+    ],
+    "exits -> monthly_tlh": [
+      "harvest"
+    ],
+    "monthly_tlh -> monthly_hybrid": [
+      "gain_harvest",
+      "gain_harvest_reinvest",
+      "gain_review_dates"
+    ],
+    "exits -> weekly_tlh": [
+      "harvest",
+      "harvest_review_dates"
+    ],
+    "weekly_tlh -> weekly_annual": [
+      "gain_harvest",
+      "gain_harvest_ranking",
+      "gain_harvest_reinvest",
+      "gain_review_dates"
+    ],
+    "exits -> annual_only": [
+      "gain_harvest",
+      "gain_harvest_ranking",
+      "gain_harvest_reinvest",
+      "gain_review_dates"
+    ],
+    "exits -> hybrid_only": [
+      "gain_harvest",
+      "gain_harvest_reinvest",
+      "gain_review_dates"
+    ],
+    "annual_only -> weekly_annual": [
+      "harvest",
+      "harvest_review_dates"
+    ],
+    "hybrid_only -> monthly_hybrid": [
+      "harvest"
+    ],
+    "weekly_no_exemption -> weekly_annual": [
+      "cgt_exemption"
+    ],
+    "hybrid_no_exemption -> monthly_hybrid": [
+      "cgt_exemption"
+    ],
+    "annual_monthly_control -> any_loss": [
+      "harvest_loss_fraction",
+      "harvest_min_loss_eur"
+    ],
+    "annual_only -> retain_gains": [
+      "exit_policy",
+      "exit_review_dates"
+    ],
+    "annual_monthly_control -> monthly_gains": [
+      "gain_review_dates"
+    ]
+  },
+  "checker_sha256": "56f7c6be7243e004254dbe2afce6f99a33e3b389a369cd6ccccffc65b4cb7a8f",
+  "scope": "Saved-output arithmetic, matched controls and source freshness; excludes certification of prices, legal classifications and pure-tax causal attribution"
+}

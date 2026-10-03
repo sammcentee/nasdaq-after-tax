@@ -1,0 +1,80 @@
+{
+  "status": "best-effort raw price panel, not certified market or Irish corporate-action tax data",
+  "rows": 979230,
+  "securities": 343,
+  "yahoo_downloaded_symbols": 256,
+  "accepted_yahoo_identities": 217,
+  "ordinary_split_events": 99,
+  "noncash_adjustment_events_removed_from_split_ledger": 18,
+  "source_counts": {
+    "yahoo_via_yfinance_crosschecked": 727293,
+    "quantiacs": 181495,
+    "yahoo_via_yfinance": 49475,
+    "quantiacs_plus_primary_repair": 20897,
+    "yahoo_ECHO_verified_SATS_ticker_continuation": 70
+  },
+  "priority_repairs_preserved": [
+    "tts-832177",
+    "tts-71625495",
+    "tts-1947579",
+    "tts-831866",
+    "tts-832022",
+    "tts-203249662"
+  ],
+  "known_limitations": [
+    "Yahoo and Quantiacs can share upstream errors; agreement does not prove accuracy",
+    "Yahoo historical Close is split-adjusted and sometimes spin-adjusted; raw restoration uses explicit action factors",
+    "Retained successor and spin-off action ledger must be applied separately",
+    "Foreign currency listings must not be treated as USD without explicit FX conversion",
+    "Unavailable deleted securities remain excluded or separately approximated by the runner; not assigned fabricated prices"
+  ],
+  "added_successors": {
+    "VAC": "yahoo:VAC",
+    "ASIX": "yahoo:ASIX",
+    "GTX": "yahoo:GTX",
+    "REZI": "yahoo:REZI",
+    "SUNN.SW": "yahoo:SUNN.SW",
+    "GRAL": "tts-315092541",
+    "SOLS": "tts-375502573"
+  },
+  "quarantined_reused_tickers": [
+    "yahoo:GOLD",
+    "yahoo:MICC",
+    "yahoo:SHLD"
+  ],
+  "fx_conversion": [
+    {
+      "security_id": "yahoo:SUNN.SW",
+      "listing_currency": "CHF",
+      "FX_symbol": "CHFUSD=X",
+      "method": "latest observed on or before quote date; no future observation",
+      "first_date": "2024-11-14"
+    }
+  ],
+  "primary_price_observations": 14994,
+  "primary_prices_within1pct": 14989,
+  "remaining_primary_price_flags": 5,
+  "executable_pipeline": [
+    "build_prices.py",
+    "refine_prices.py",
+    "finalize_prices.py",
+    "primary_price_repairs.py",
+    "final_price_adjustments.py",
+    "audit_action_boundaries.py"
+  ],
+  "verified_same_security_continuation": {
+    "security_id": "tts-12361625",
+    "old_symbol": "SATS",
+    "new_symbol": "ECHO",
+    "legal_effective_date": "2026-06-24",
+    "first_extended_quote": "2026-06-23",
+    "source": "https://ir.echostar.com/news-releases/news-release-details/echostar-changing-stocker-ticker-sats-echo-marking-companys-next",
+    "price_source": "Yahoo via yfinance ECHO",
+    "quantity_ratio": 1,
+    "comparison_observations_2026": 117,
+    "p99_relative_close_difference": 3.2838602361904415e-05,
+    "new_observations": 70,
+    "first_extended_close_usd": 103.91999816894533,
+    "last_close_usd": 89.41000366210938
+  }
+}

@@ -1,0 +1,46 @@
+# Local Python environments and generated interpreter caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Credentials and personal broker exports never belong in the research archive.
+.env
+.env.*
+!.env.example
+credentials*.json
+credentials*.yml
+credentials*.yaml
+secrets*.json
+secrets*.yml
+secrets*.yaml
+*.pem
+*.key
+*.p12
+*.pfx
+private/
+personal-exports/
+broker-exports/
+*.log
+
+# Account-derived connection checks and broker catalog exports are private.
+/readonly_api_checks.json
+/constituent_availability.json
+
+# Editor and operating-system state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Intentionally retain source data, current reports, ledgers and provenance.
+# Nested source-repository Git metadata is not part of the archive.
+**/.git/

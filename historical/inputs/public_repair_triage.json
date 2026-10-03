@@ -1,0 +1,89 @@
+{
+  "status": "Public-source triage; two additional identity/action candidates verified; canonical inputs unchanged",
+  "reviewed_on": "2026-10-03",
+  "scope": "Determine whether more data can be gathered autonomously; not a completed historical strategy replay",
+  "inventory": {
+    "dated_weight_snapshots": 154,
+    "weight_rows": 15838,
+    "unresolved_weight_rows": 342,
+    "distinct_unresolved_ticker_labels": 22,
+    "important_caveat": "Rows repeat across snapshots. 342 rows do not mean 342 missing companies. Candidate mappings and automated flags are not all confirmed data errors."
+  },
+  "publicly_repairable_examples": [
+    {
+      "historical_ticker": "ALTR",
+      "issuer": "Altera Corporation",
+      "sec_cik": "768251",
+      "vendor_id": "tts-130097863",
+      "vendor_problem": "Vendor issuer name says Altair Engineering; CIK belongs to Altera. One post-redemption quote is present on 2017-11-01 at USD 18.31. Other vendor ALTR ID tts-827511 starts in 2017 and is a different issuer.",
+      "confirmed_event": {
+        "type": "cash_merger",
+        "date": "2015-12-28",
+        "cash_usd_per_share": 54.0,
+        "surviving_common_stock_interest": false
+      },
+      "primary_sources": [
+        "https://www.sec.gov/Archives/edgar/data/768251/000119312515414631/d102231d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/50863/000119312515414642/d105836d8k.htm"
+      ],
+      "local_cross_checks": {
+        "last_pre_merger_quote_date": "2015-12-24",
+        "last_pre_merger_quote_usd": 53.96,
+        "spurious_later_quote_date": "2017-11-01",
+        "spurious_later_quote_usd": 18.31,
+        "2016_observations": 0
+      },
+      "proposed_repair": "Map pre-merger vendor series to Altera using matching SEC CIK; quarantine 2017 observation; process mandatory cash redemption on 2015-12-28.",
+      "remaining_validation": "Check raw price units and historical dividend treatment independently, establish settlement timing assumption, and apply Irish CGT in the tax engine. This evidence does not certify every daily quote."
+    },
+    {
+      "historical_ticker": "LIFE",
+      "issuer": "Life Technologies Corporation",
+      "sec_cik": "1073431",
+      "vendor_id": "tts-88339869",
+      "vendor_problem": "Vendor issuer name says aTyr Pharma; matching CIK and dates identify Life Technologies. The newer LIFE vendor ID tts-387639951 starts in 2026 and is Ethos Technologies.",
+      "confirmed_event": {
+        "type": "cash_merger",
+        "date": "2014-02-03",
+        "cash_usd_per_share": 76.1311786,
+        "trading_ceased_before_open": "2014-02-04",
+        "aggregate_payout_rounding": "Nearest whole cent"
+      },
+      "primary_sources": [
+        "https://www.sec.gov/Archives/edgar/data/1073431/000119312514033495/d655804d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1073431/000119312514033495/d655804dex991.htm"
+      ],
+      "local_cross_checks": {
+        "first_quote_date": "2010-09-01",
+        "last_quote_date": "2014-02-03",
+        "last_quote_usd": 76.04,
+        "observations": 861
+      },
+      "proposed_repair": "Map vendor series to Life Technologies using matching SEC CIK and implement exact cash consideration, rather than the initial announcement amount of USD 76.",
+      "remaining_validation": "Check raw price units independently and establish settlement timing assumption. Irish CGT applies in the tax engine; no successor TMO shares should be created."
+    }
+  ],
+  "can_gather_without_user": [
+    "SEC issuer filings and company announcements for cash merger terms, split ratios, spin-offs and security identities.",
+    "Additional public issuer holdings and dated Nasdaq announcements, subject to genuine historical coverage and publication timestamps.",
+    "Public vendor daily histories for delisted and successor securities, checked for split and spin-off adjustment conventions.",
+    "Evidence should be used to repair historical event accounting; future merger knowledge must not influence earlier trading decisions."
+  ],
+  "needs_more_work_or_licensed_data": [
+    "Complete point-in-time weights, especially before 2014 and missing January-June 2017 snapshots; a later snapshot must not be backfilled into earlier decisions.",
+    "Complete daily prices, distributions and linked corporate actions for delisted names and retained successors; open sources contain identity and adjustment defects.",
+    "Irish treatment and cost-basis allocation for non-cash and mixed corporate actions; a US issuer Form 8937 alone does not establish Irish tax treatment.",
+    "Historical broker eligibility, fraction handling and spreads may be unavailable and should be disclosed assumptions rather than claimed Trading 212 observations."
+  ],
+  "what_user_can_optionally_supply": [
+    "Existing licensed point-in-time Nasdaq-100 constituent/weight exports with effective and publication dates.",
+    "Unadjusted daily price and cash-dividend exports for delisted and successor securities, including stable identifiers and corporate-action tables.",
+    "Only lawfully available exports or read access; no new brokerage credentials or payment are needed for the public-source work."
+  ],
+  "not_done": [
+    "No full backtest run",
+    "No original data edited",
+    "No account accessed",
+    "No orders placed"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "membership_source": "../membership/nasdaq100_membership_snapshots.csv",
+  "classification": "Preliminary candidate matching only; aliases and stock identity require independent validation. Does not add missing retained descendants.",
+  "historic_ticker_labels": 255,
+  "single_candidate": 234,
+  "ambiguous_multiple_candidates": 4,
+  "no_symbol_match": 13,
+  "no_candidate_overlapping_first_purchase": 4,
+  "large_distribution_flags_after_first_possible_purchase": 48,
+  "large_distribution_flagged_asset_ids": 31,
+  "extreme_daily_return_flags_after_first_possible_purchase": 23,
+  "extreme_daily_return_flagged_asset_ids": 16,
+  "candidate_price_series_ending_before_endpoint": 55,
+  "confirmed_problem_original_sept2010_equity_weight_pct": 7.2531868117291465,
+  "confirmed_problem_weight_names": [
+    "Google Class A",
+    "eBay",
+    "ADP",
+    "Citrix"
+  ],
+  "weight_basis": "Sum original reported QQQ equity holdingvalues for these4names / sum all100 reported holdings in qqq_20100930_primary_holdings.json; not terminal portfolioimpact estimate",
+  "repair_status": "No mutations/corrections applied to original price data. Corporate terms in representative_corporate_actions.csv are evidence for what a valid repair needs, not a complete corporate action ledger.",
+  "strategy_return_accepted": false,
+  "blocking_data_fields": [
+    "Stable security identity and date-aware ticker mapping for every purchased name",
+    "Prices and ordinary cash dividends on a compatible adjustment basis",
+    "Corporate action effective dates and cash consideration",
+    "Stock merger successor security and conversion ratio",
+    "Spinoff child security and entitlement ratio",
+    "Historical tax basis allocation and cash consideration treatment",
+    "Post-delisting continuation, liquidation or cancellation distributions",
+    "Return history for retained descendant securities outside the Nasdaq-100"
+  ],
+  "official_examples": [
+    {
+      "ticker": "EBAY",
+      "event_date": "2015-07-17",
+      "terms": "One PYPL share per EBAY share; PYPL regular trading starts 2015-07-20",
+      "source": "https://www.ebayinc.com/stories/news/ebay-inc-board-approves-completion-of-ebay-and-paypal-separation/",
+      "observed_data_problem": "Quantiacs EBAY close on 2015-07-17 = 26.8903; close on 2015-07-20 = 28.57; divs = 38.39; split_cumprod = 1 on both dates. Naive total return = 149.0117%, because the price was already adjusted for the spinoff and the noncash distribution was then treated as additional cash."
+    },
+    {
+      "ticker": "ATVI",
+      "event_date": "2023-10-13",
+      "terms": "USD 95 cash per outstanding share",
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523255762/d537928d8k.htm",
+      "observed_data_problem": "Quantiacs ends on 2023-10-12 at 94.42 with no redemption cash event. Freezing the last quote or setting the value to zero after delisting gives an incorrect result."
+    }
+  ]
+}

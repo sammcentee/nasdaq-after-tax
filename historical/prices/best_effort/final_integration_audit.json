@@ -1,0 +1,43 @@
+{
+  "provider_dividend_rows_to_zero": [
+    {
+      "security_id": "tts-133282628",
+      "date": "2017-01-25",
+      "provider_amount": 1.153852
+    },
+    {
+      "security_id": "tts-137012693",
+      "date": "2020-09-15",
+      "provider_amount": 1.5
+    },
+    {
+      "security_id": "tts-133282628",
+      "date": "2024-01-30",
+      "provider_amount": 1.357745
+    }
+  ],
+  "provider_dividend_rows_to_keep": [
+    {
+      "security_id": "tts-828600",
+      "date": "2013-10-01",
+      "provider_amount": 0.08,
+      "reason": "ordinary quarterly dividend separate from October29 special dividend"
+    }
+  ],
+  "sunrise": {
+    "event_date": "2024-11-13",
+    "actual_USD_close": 45.2,
+    "source": "https://www.libertyglobal.com/investors/share-information/share-cost-basis/",
+    "swiss_first_regular_trading": "2024-11-15",
+    "timing_source": "https://www.libertyglobal.com/liberty-global-announces-completion-of-sunrise-spin-off-transaction/",
+    "exclude_as_execution_quote": {
+      "date": "2024-11-14",
+      "CHF_price": 43.790000915527344,
+      "volume": 0,
+      "reason": "Yahoo prelisting indication before SIX regular trading"
+    },
+    "suggested_mark_on_2024_11_14": "carry last known Nov13 USD45.20 without trading until actual Swiss first quote Nov15; do not fill from a future quote"
+  },
+  "stable_price_panel_sha256": "9f14b8812eaea0c1e10a978cd125e39eb028ad7522345280dcbf7a588b6f583d",
+  "stable_panel_mutated": false
+}

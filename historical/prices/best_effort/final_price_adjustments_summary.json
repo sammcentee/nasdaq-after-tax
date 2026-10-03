@@ -1,0 +1,41 @@
+{
+  "repairs": [
+    {
+      "security_id": "tts-29400599",
+      "start": "2010-09-01",
+      "end_exclusive": "2013-05-30",
+      "factor_applied_this_run": 1.0,
+      "primary_anchors": 2,
+      "max_relative_anchor_error": 1.665789728377831e-10
+    },
+    {
+      "security_id": "tts-832025",
+      "start": "2010-09-01",
+      "end_exclusive": "2011-06-27",
+      "factor_applied_this_run": 1.0,
+      "primary_anchors": 1,
+      "max_relative_anchor_error": 0.0
+    },
+    {
+      "security_id": "tts-832025",
+      "start": "2011-06-27",
+      "end_exclusive": "2013-07-01",
+      "factor_applied_this_run": 1.0,
+      "primary_anchors": 2,
+      "max_relative_anchor_error": 0.0001408256306292266
+    },
+    {
+      "security_id": "tts-830036",
+      "start": "2010-09-01",
+      "end_exclusive": "2019-10-02",
+      "factor_applied_this_run": 1.0,
+      "primary_anchors": 2,
+      "max_relative_anchor_error": 0.0004002284578155102
+    }
+  ],
+  "primary_crosscheck_observations": 14994,
+  "within_0_1pct": 14969,
+  "within_1pct": 14989,
+  "remaining_over3pct_rows": 5,
+  "remaining_flags": "QGEN old units; Braves2016 rights; unrelated reusedGENZ ticker (never mapped tooldholding)"
+}

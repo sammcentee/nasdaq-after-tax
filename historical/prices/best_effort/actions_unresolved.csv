@@ -1,0 +1,8 @@
+topic,limitation
+Irish corporate-action taxation,"Economic terms verified where cited; Irish rollover, capital-return, foreign stock dividend, preference issuance, and contingent-right taxation remain provisional."
+Unavailable child daily prices,"CDK, LOGM, KRFT, AMFW, WG.L, LGF-B, and QRTEP require alternate histories or explicitly disclosed non-tradable frozen marks. The economic ledger must not imply these quotes exist."
+Interim rights prices,"GCVRZ and BMYRT were historically tradable but no voluntary rights trades are modelled. Zero interim marks and zero allocated basis are assumptions, not observed prices."
+Outstanding contingent proceeds,WBA DAP and HOLX CVR have contractual maxima of $3 per original share each. No future payment is assumed. BMY CVR expired contractually; separate litigation outcome not independently resolved.
+Rounded ratios and dates,"FLEX NXT .17, VMW election proration .521/.479, first QRTEP quarterly coupon $2, GENZ CVR $.89, and same-day settlement are identified approximations."
+Fixed stock-election policy,"Where offered, select listed stock before known election deadline without reference to future returns. Actual historical Trading212 election facilities are unverified."
+Other rights and foreign events,LILA/LILAK rights issues and several foreign return-of-capital mechanisms remain only vendor actions unless explicitly listed. Do not label all corporate actions comprehensive or tax-validated.

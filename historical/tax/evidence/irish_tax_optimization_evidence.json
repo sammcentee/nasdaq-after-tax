@@ -1,0 +1,127 @@
+{
+  "checked_on": "2026-10-03",
+  "scope": "Irish-resident individual direct-share portfolio; fixed-current-rate historical scenario; research for model design, no account actions",
+  "sources": [
+    {
+      "id": "annual_exemption",
+      "url": "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-19/19-07-01.pdf",
+      "title": "Revenue Tax and Duty Manual 19-07-01: Annual exempt amount, reviewed December 2024",
+      "location": "page 2, sections 1.1 and 1.2",
+      "quote": "after deducting any losses available for current and earlier years",
+      "finding": "The EUR1270 annual individual exemption is applied after current and carried allowable losses. Each spouse/civil partner has an exemption; unused exemption is not transferable to the other. The model must not choose to preserve carried losses while consuming the exemption."
+    },
+    {
+      "id": "loss_order",
+      "url": "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-19/19-02-05.pdf",
+      "title": "Revenue Tax and Duty Manual 19-02-05: Allowable losses, updated December 2024",
+      "location": "pages 3-4 and examples 3-5 on pages 8-10",
+      "quote": "after deducting any allowable losses of that year and any unrelieved losses for an earlier year",
+      "finding": "Current losses then prior-year losses reduce gains before the personal exemption. Losses generally cannot be carried back to an earlier tax year. The examples explicitly use current and prior-year losses before the EUR1270 exemption."
+    },
+    {
+      "id": "statute_581",
+      "url": "https://www.irishstatutebook.ie/eli/1997/act/39/section/581/enacted/en/html",
+      "title": "Taxes Consolidation Act 1997 section 581",
+      "location": "subsections 1-4; enacted text, read alongside current Revenue guidance below",
+      "quote": "acquired within 4 weeks preceding the disposal",
+      "finding": "Subsection 1 identifies recent acquisitions before a disposal. Subsection 2 applies FIFO to the excess. Subsection 3 restricts a loss when same-class shares are reacquired during the four weeks after disposal; it does not state a corresponding restriction for a gain. Spouse/civil-partner related rules require separate checking if a second owner is introduced."
+    },
+    {
+      "id": "four_week_manual",
+      "url": "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-19/19-04-03.pdf",
+      "title": "Revenue Tax and Duty Manual 19-04-03: Disposals of marketable shares and securities, reviewed August 2023",
+      "location": "page 2, section 3.1",
+      "quote": "a loss on the sale will be allowed only against gains derived from the disposal of the shares re-acquired within four weeks",
+      "finding": "Revenue confirms the directional distinction between a purchase before sale (share matching) and a purchase after a losing sale (restricted loss relief). A partial repurchase proportionately restricts the loss. No explicit primary-source endorsement of same-day winner harvesting was located."
+    },
+    {
+      "id": "current_notes_581",
+      "url": "https://www.revenue.ie/en/tax-professionals/documents/notes-for-guidance/tca/part19.pdf",
+      "title": "Revenue TCA Notes for Guidance, Finance Act 2025 edition, Part 19",
+      "location": "section 581, PDF pages 69-70",
+      "quote": "the shares acquired in the 4-week period are treated as the shares actually disposed of",
+      "finding": "Current Revenue notes retain preceding-acquisition and subsequent-loss-repurchase distinctions. Ordinary FIFO is subject to section 581. Do not model US-style free choice of tax lots."
+    },
+    {
+      "id": "tax_rate_costs",
+      "url": "https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/how-to-calculate-cgt.aspx",
+      "title": "Revenue: How to calculate CGT",
+      "quote": "The rate of CGT is 33% for most gains.",
+      "finding": "The personal exemption is EUR1270 per year. Acquisition/disposal costs can be allowable expenses. Tax gain is calculated on the gain, not gross sale proceeds."
+    },
+    {
+      "id": "payment_timing",
+      "url": "https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/when-and-how-do-you-pay-and-file-cgt.aspx",
+      "title": "Revenue: When and how do you pay and file CGT?",
+      "quote": "you must pay CGT by 15 December of the same year",
+      "finding": "January-November disposal CGT is due 15 December that year; December disposal CGT is due 31 January following. Return due 31 October following disposal year, including disposals with no tax due. Existing backtest reserves tax contemporaneously and settles annually; that is not the statutory payment calendar."
+    },
+    {
+      "id": "later_period_refund",
+      "url": "https://www.revenue.ie/ga/self-assessment-and-self-employment/documents/guide-pay-file.pdf",
+      "title": "Revenue Guide to Completing 2024 Pay and File Tax Returns",
+      "location": "page 59",
+      "quote": "A refund may arise",
+      "finding": "The guide explicitly allows a refund when tax was paid on an initial-period gain and a loss arises in the later December period. Do not finance November taxes with hypothetical future December losses."
+    },
+    {
+      "id": "dividends",
+      "url": "https://www.revenue.ie/en/additional-incomes/dividend-income/index.aspx",
+      "title": "Revenue: Dividend income, published August 2026",
+      "quote": "You are liable to tax on the gross dividend at your marginal rate of tax.",
+      "finding": "Dividends are income rather than ordinary CGT gains, with Income Tax, USC and PRSI according to circumstances. Foreign dividend withholding can be reduced or relieved under a DTA; it must not simply be added to the entire Irish marginal rate without available credit."
+    },
+    {
+      "id": "us_treaty",
+      "url": "https://www.revenue.ie/en/tax-professionals/documents/double-taxation-treaties/u/usa-1997.pdf",
+      "title": "Ireland-USA Double Taxation Convention",
+      "location": "Article 10(2)(b), PDF page 13; Article 24(4)(a), PDF page 33",
+      "quote": "15 percent of the gross amount of the dividends in all other cases",
+      "finding": "Treaty-eligible ordinary individual portfolio dividends have a 15% source-tax cap, and eligible US tax receives Irish credit subject to the applicable rules. Existing settle_us_dividend already assumes treaty relief and a withholding credit; do not count that existing relief again as new alpha. Non-US issuer dividend tax still needs issuer-specific treatment."
+    }
+  ],
+  "model_recommendations": [
+    {
+      "strategy": "Annual gain harvesting",
+      "status": "Implementable with explicit trading/matching assumptions",
+      "rule": "On a fixed late-year actual trading session, calculate additional positive EUR gains needed using only realised current gains/losses and carried losses. Realise enough positive matched-lot gains to reach current losses plus carried losses plus EUR1270, subject to eligible unrealised gains and transaction-cost safeguards. Use partial FIFO sales rather than whole positions to avoid crossing into taxable gains. Recompute after every trade.",
+      "details": "Rank eligible positive FIFO prefixes by gain per euro traded to minimise turnover, or overweight/departed positions first for index fidelity. Never select lots freely across the holding. Avoid any same-class purchases in the preceding 29 days if the engine has not implemented recent-acquisition matching. Year-end schedule must remain in the intended tax year when markets are closed."
+    },
+    {
+      "strategy": "Winner repurchase with exposure preserved",
+      "status": "Reasoned interpretation of statute, not an explicit Revenue safe harbour",
+      "rule": "Permit only after sale, with every matched lot showing nonnegative gain after costs, no same-class prior-29-day acquisition and no open restricted-loss condition. Repurchase creates a new lot at actual cost and fees; preserve sale-before-buy execution order.",
+      "details": "Section581(1) is about preceding purchases and581(3) about losses. Thus an ordered positive-gain sale and subsequent repurchase is consistent with the directional rules. No primary guidance explicitly resolves all same-day ordering issues was found. A next-session repurchase removes same-date ambiguity but incurs real exposure risk and should be priced at that later session, not retrospectively at the sale price. Conservative underweight replacement with 29-day exclusion is another sensitivity."
+    },
+    {
+      "strategy": "Coordinated gain and loss harvesting",
+      "status": "Important interaction",
+      "rule": "Loss harvesting and exemption gain harvesting should share one annual tax budget. Apply losses before exemptions; additional loss harvesting can consume gains otherwise sheltered by an expiring exemption.",
+      "details": "For a causal loss sale, require available eligible net loss after costs and a fixed minimum loss/benefit threshold. Use genuine market sales and prohibit same-class repurchases for at least29 days after each loss sale. Match eligibility before the disposal; do not use future gains or future recovered prices to trigger a trade. A marginal-benefit variant can harvest only enough to reduce tax already accrued, leaving no redundant loss sale once current liability is zero. This may trade less than maximum-loss strategies."
+    },
+    {
+      "strategy": "Avoid double-counting tax alpha",
+      "status": "Algebraic model inference",
+      "rule": "A loss sale and same-exposure replacement reduce basis by approximately the loss realised. If the loss is merely carried to final liquidation, the lower basis raises the terminal gain by the same amount; that is not a second permanent tax benefit.",
+      "details": "Loss harvesting creates deferral when it offsets an actual current CGT liability; portfolio/exposure changes can have separate gains or losses. Exemption harvesting can provide permanent relief up to EUR1270 times33%=EUR419.10 per fully used additional year before costs. The 2010-2026 study touches17 tax years, with the2026 exemption already consumed at terminal liquidation, so no more than16 extra prior-year allowances (EUR6705.60 at fixed33%) exist. Wealth differences above that are not all exemption tax savings."
+    },
+    {
+      "strategy": "Fresh-cash rebalancing and cost-aware tax budgets",
+      "status": "Already partly implemented; refine without hindsight",
+      "rule": "Use contributions and after-tax dividends to fill current underweights before realising taxable winners. Rank planned disposals by incremental current CGT and trading cost, respect FIFO and avoid uneconomic microtrades.",
+      "details": "Use observed EUR proceeds and historical EUR basis. Losses, exemptions and taxpayer-level gains outside this account must be model inputs. Broker unrealised USD loss alone does not identify an Irish taxable loss."
+    },
+    {
+      "strategy": "Dividend withholding relief",
+      "status": "Already included in baseline ordinary US dividend assumptions",
+      "rule": "Maintain treaty eligibility and correctly credit source withholding. Do not treat15% US withholding plus52.35% total Irish marginal rate as67.35% combined tax.",
+      "details": "Do not manufacture a new15% alpha improvement where the existing model already credits withholding. A low-dividend portfolio tilt would alter index exposure and expected returns, so it must be reported as a separate portfolio strategy rather than guaranteed tax alpha."
+    }
+  ],
+  "out_of_scope_without_new_personal_facts": [
+    "Using another person's allowance is not assumed. Spouse/civil-partner ownership, transfer rules and related-share acquisitions require explicit household facts and different account scope.",
+    "Pension wrappers change contribution relief, ownership, withdrawal taxation and access timing. They are a separate comparison, not a drop-in tax adjustment to this16-year liquid personal-account model.",
+    "Automatic forced acquisitions after a loss sale can trigger restricted-loss rules even where voluntary buys are blocked; audit and disclose these separately.",
+    "A new higher realised loss total is not by itself evidence of higher after-tax wealth or a better strategy. Compare final net wealth, fees, gross exposure effects, exemption actually used and tax actually deferred."
+  ]
+}

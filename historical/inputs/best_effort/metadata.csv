@@ -1,0 +1,261 @@
+security_id,share_class,currency,ticker,name,vendor_cik,price_identity_resolved,dividend_withholding,withholding_assumption
+__CASH__,__CASH__,EUR,,,,False,0.0,zero_interest_cash
+isin:US50076Q1067,isin:US50076Q1067,USD,KRFT,"KRAFT FOODS GROUP INC | Kraft Foods Group, Inc.",,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+isin:US5312291025,isin:US5312291025,USD,LMCA,"LIBERTY MEDIA CORP SERIES A | Liberty Media Corp. | Liberty Media Corp. ""A"" | Liberty Media Corp., Class A",,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+isin:US5312291108,isin:US5312291108,USD,BATRR,LIBERTY MEDIA LIBERTY BRAVES SUBSC,,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+isin:US5312293005,isin:US5312293005,USD,LMCK,LIBERTY MEDIA CORP SERIES C,,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+isin:US9843321061,isin:US9843321061,USD,AABA|YHOO,"ALTABA INC | YAHOO! INC | Yahoo! Inc. | Yahoo!, Inc.",,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-104028640,tts-104028640,USD,BATRA,LIBERTY BRAVES GROUP A,1958140.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-104028642,tts-104028642,USD,BATRK,LIBERTY BRAVES GROUP C,1958140.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-1076458,tts-1076458,USD,BIIB,"BIOGEN IDEC INC | BIOGEN INC | BIOGEN INC INC | Biogen IDEC, Inc. | Biogen Idec, Inc.",875045.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-110325346,tts-110325346,USD,TTD,TRADE DESK CLASS A | TRADE DESK INC CLASS A,1671933.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-11159809,tts-11159809,USD,LULU,LULULEMON ATHLETICA INC,1397187.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-11222722,tts-11222722,USD,MELI,MERCADOLIBRE | MERCADOLIBRE INC,1099590.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-117027845,tts-117027845,USD,LMCA,LIBERTY MEDIA CORP SERIES A,1560385.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-117027846,tts-117027846,USD,LMCK,LIBERTY MEDIA CORP CLASS C,1560385.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-11704179,tts-11704179,USD,ULTA,ULTA BEAUTY INC | ULTA SALON COSMETICS & FRAGRANCE I,1403568.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-120075582,tts-120075582,USD,VIP,VEON ADR LTD | VIMPELCOM ADS  LTD,1468091.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-120195246,tts-120195246,USD,OKTA,OKTA INC CLASS A,1660134.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-12035732,tts-12035732,USD,DTV,"DIRECTV | DIRECTV ""A"" | DIRECTV Group, Inc./The | DIRECTV, Class A",1465112.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-127281511,tts-127281511,USD,AXON,AXON ENTERPRISE | AXON ENTERPRISE INC,1069183.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-127962865,tts-127962865,USD,WDAY,WORKDAY CLASS A | WORKDAY INC CLASS A,1327811.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-129193787,tts-129193787,USD,RIMM,Research In Motion Ltd.,1070235.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-129307390,tts-129307390,USD,MDB,MONGODB INC CLASS A,1441816.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-130097863,tts-130097863,USD,ALTR,ALTERA CORP | Altera Corp.,768251.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-132399257,tts-132399257,USD,NCLH,NORWEGIAN CRUISE LINE HOLDINGS LTD,1513761.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-132468358,tts-132468358,USD,PEP,PEPSICO | PEPSICO INC,77476.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-132814882,tts-132814882,USD,XEL,XCEL ENERGY INC,72903.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-133282628,tts-133282628,USD,QGEN,QIAGEN NV | Qiagen N.V. | Qiagen NV,1015820.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-136266150,tts-136266150,USD,BKNG|PCLN,"BOOKING HOLDINGS | BOOKING HOLDINGS INC | PRICELINE GROUP INC/THE | Priceline.com, Inc. | THE PRICELINE GROUP INC | priceline.com, Inc.",1075531.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-137012693,tts-137012693,USD,LINTA|QRTEA|QVCA,"LIBERTY INTERACTIVE CORP SERIES A | LIBERTY INTERACTIVE QVC GROUP CORP | Liberty Interactive Corp. ""A"" | Liberty Interactive Corp., Class A | Liberty Media Corp. - Interactive | Liberty Media Corp. - Interactive ""A"" | Liberty Media Corp. Interactive ""A"" | Liberty Media Corp.- Interactive ""A"" | QURATE RETAIL GROUP CORP SERIES A | QURATE RETAIL GROUP INC SERIES A | QURATE RETAIL INC SERIES A",1355096.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-137190768,tts-137190768,USD,ZS,ZSCALER INC,1713683.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-14011355,tts-14011355,USD,CA,"CA INC | CA, Inc.",356028.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-140322345,tts-140322345,USD,DOCU,DOCUSIGN INC,1261333.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-14359676,tts-14359676,USD,MRNA,MODERNA INC,1682852.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-146910073,tts-146910073,USD,PDD,PDD HOLDINGS ADS | PDD HOLDINGS ADS INC | PINDUODUO ADR REPRESENTING  INC,1737806.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-149357573,tts-149357573,USD,UAL,UNITED AIRLINES HOLDINGS INC | UNITED CONTINENTAL HOLDINGS INC,100517.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-15401130,tts-15401130,USD,STX,SEAGATE TECHNOLOGY HOLDINGS PLC | SEAGATE TECHNOLOGY PLC | Seagate Technology | Seagate Technology PLC | Seagate Technology plc,1137789.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-15427298,tts-15427298,USD,DISCK,DISCOVERY COMMUNICATIONS INC SERIE | DISCOVERY COMMUNICATIONS-C | DISCOVERY INC SERIES C,,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-158183018,tts-158183018,USD,TER,TERADYNE | TERADYNE INC,97210.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-15888595,tts-15888595,USD,ADP,"AUTOMATIC DATA PROCESSING INC | Automatic Data Processing, Inc.",8670.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-159320127,tts-159320127,USD,WLTW,WILLIS TOWERS WATSON PLC,,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-161284558,tts-161284558,USD,FOX,TWENTY-FIRST CENTURY FOX INC CLASS,,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-161284560,tts-161284560,USD,FOXA|NWSA|TFCFA,"News Corp. ""A"" | News Corp., Class A | TWENTY FIRST CENTURY FOX INC CLASS | Twenty-First Century Fox, Inc. | Twenty-First Century Fox, Inc. ""A""",1308161.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-163839424,tts-163839424,USD,ZM,ZOOM VIDEO COMMUNICATIONS INC CLAS,1585521.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-167018563,tts-167018563,USD,CRWD,CROWDSTRIKE HOLDINGS CLASS A | CROWDSTRIKE HOLDINGS INC CLASS A,1535527.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-16784810,tts-16784810,USD,MYL,"MYLAN INC | MYLAN NV | Mylan, Inc.",1623613.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-174002103,tts-174002103,USD,DDOG,DATADOG INC CLASS A,1561550.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-174238383,tts-174238383,USD,PTON,PELOTON INTERACTIVE CLASS A INC,1639825.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-175405676,tts-175405676,USD,EXC,EXELON CORP,1109357.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-177780548,tts-177780548,USD,CTRP|TCOM,CTRIP.COM INTERNATIONAL  ADR REPRE | CTRIP.COM INTERNATIONAL ADR REPRES | Ctrip.Com International Ltd. ADR | Ctrip.com International Ltd. ADR | TRIP COM GROUP ADR LTD,1269238.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-177780551,tts-177780551,USD,NLOK|SYMC,NORTONLIFELOCK INC | SYMANTEC CORP | SYMANTEC INC | Symantec Corp.,849399.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-1781672,tts-1781672,USD,ALNY,ALNYLAM PHARMACEUTICALS | ALNYLAM PHARMACEUTICALS INC,1178670.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-1784188,tts-1784188,USD,LBTYA,"LIBERTY GLOBAL PLC CLASS A | Liberty Global PLC, Class A | Liberty Global plc ""A"" | Liberty Global, Inc. ""A"" | Liberty Global, Inc., Class A",1570585.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-17914161,tts-17914161,USD,HAS,HASBRO INC,46080.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-17914522,tts-17914522,USD,BMC,"BMC Software, Inc.",835729.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-17914799,tts-17914799,USD,MU,"MICRON TECHNOLOGY | MICRON TECHNOLOGY INC | Micron Technology, Inc.",723125.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-17916214,tts-17916214,USD,MAT,"MATTEL INC | Mattel, Inc.",63276.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-17917826,tts-17917826,USD,VOD,VODAFONE GROUP ADR REPRESENTING  P | VODAFONE GROUP PLC ADS | Vodafone Group PLC ADR | Vodafone Group plc | Vodafone Group plc ADR,839923.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-181976270,tts-181976270,USD,SMCI,SUPER MICRO COMPUTER INC,1375365.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-1839830,tts-1839830,USD,WCRX,"Warner Chilcott PLC, Class A | Warner Chilcott plc ""A""",1323854.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-1947579,tts-1947579,USD,GGQ7|GOOG,ALPHABET CLASS C | ALPHABET INC CLASS C | GOOGLE INC CLASS C,1652044.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-20189978,tts-20189978,USD,VRSK,"VERISK ANALYTICS INC | VERISK ANALYTICS INC CLASS A | Verisk Analytics, Inc. ""A"" | Verisk Analytics, Inc., Class A",1442145.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-202005198,tts-202005198,USD,PLTR,PALANTIR TECHNOLOGIES CLASS A | PALANTIR TECHNOLOGIES INC CLASS A,1321655.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-203249662,tts-203249662,USD,AZN,ASTRAZENECA ADR REPRESENTING .5 PL,901832.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-20366359,tts-20366359,USD,JNPR,"Juniper Networks, Inc.",1043604.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-203738081,tts-203738081,USD,AEP,AMERICAN ELECTRIC POWER INC,4904.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-203738082,tts-203738082,USD,KDP,KEURIG DR PEPPER INC,1418135.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-20508704,tts-20508704,USD,FTNT,FORTINET | FORTINET INC,1262039.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-207966789,tts-207966789,USD,ABNB,AIRBNB CLASS A | AIRBNB INC CLASS A,1559720.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-208710142,tts-208710142,USD,SPCX,SPACE EXPLORATION TECHNOLOGIES COR,1181412.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-2098957,tts-2098957,USD,MPWR,MONOLITHIC POWER SYSTEMS INC,1280452.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-217036446,tts-217036446,USD,APP,APPLOVIN CLASS A | APPLOVIN CORP CLASS A,1751008.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-219587327,tts-219587327,USD,HON,HONEYWELL INTERNATIONAL INC,773840.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-222568848,tts-222568848,USD,FB|FB*|META,"FACEBOOK CLASS A  INC | Facebook, Inc. ""A"" | Facebook, Inc., Class A | META PLATFORMS CLASS A | META PLATFORMS INC CLASS A",1326801.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-224517911,tts-224517911,USD,LCID,LUCID GROUP INC,1811210.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-226809961,tts-226809961,USD,RKLB,ROCKET LAB CORP,1819994.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-228473225,tts-228473225,USD,CCEP,COCA COLA EUROPACIFIC PARTNERS PLC,1650107.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-231055357,tts-231055357,USD,GFS,GLOBALFOUNDRIES INC,1709048.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-231697626,tts-231697626,USD,PANW,PALO ALTO NETWORKS | PALO ALTO NETWORKS INC,1327567.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-232151446,tts-232151446,USD,RIVN,RIVIAN AUTOMOTIVE INC CLASS A,1874178.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-234941877,tts-234941877,USD,BKR,BAKER HUGHES CLASS A,1701605.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-237275457,tts-237275457,USD,GRMN,GARMIN LTD | Garmin Ltd.,1121788.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-239110702,tts-239110702,USD,CEG,CONSTELLATION ENERGY CORP,1868275.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-23947362,tts-23947362,USD,TSLA,"TESLA INC | TESLA MOTORS INC | Tesla Motors, Inc.",1318605.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-24429604,tts-24429604,USD,NXPI,NXP SEMICONDUCTORS NV,1413447.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-245373754,tts-245373754,USD,WBD,WARNER BROS. DISCOVERY INC SERIES | WARNER BROS. DISCOVERY SERIES A,1437107.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-268663742,tts-268663742,USD,GEHC,GE HEALTHCARE TECHNOLOGIES | GE HEALTHCARE TECHNOLOGIES INC,1932393.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-2711488,tts-2711488,USD,DXCM,DEXCOM INC,1093557.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-284392746,tts-284392746,USD,ROP,ROPER TECHNOLOGIES | ROPER TECHNOLOGIES INC,882835.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-2880955,tts-2880955,USD,FWLT,Foster Wheeler AG,1130385.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-289578745,tts-289578745,USD,ARM,ARM HOLDINGS AMERICAN DEPOSITARY S,1973239.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-291149473,tts-291149473,USD,DASH,DOORDASH CLASS A | DOORDASH INC CLASS A,1792789.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-29400599,tts-29400599,USD,WFM|WFMI,"WFMI | WHOLE FOODS MARKET INC | Whole Foods Market, Inc.",865436.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-294951046,tts-294951046,USD,LIN,LINDE PLC,1707925.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-306428272,tts-306428272,USD,ALAB,ASTERA LABS | ASTERA LABS INC,1736297.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-3103596,tts-3103596,USD,DISCA,"DISCOVERY COMMUNICATIONS INC SERIE | DISCOVERY COMMUNICATIONS-A | DISCOVERY INC SERIES A | Discovery Communications, Inc. ""A"" | Discovery Communications, Inc., Class A",,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-310935268,tts-310935268,USD,FER,FERROVIAL | FERROVIAL NV,1468522.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-3138949,tts-3138949,USD,BIDU,"BAIDU ADR REPTG   INC CLASS A | BAIDU ADR REPTG  INC CLASS A | BAIDU ADS REPTG  INC CLASS A | Baidu, Inc. | Baidu, Inc. ADR",1329099.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-315092541,tts-315092541,USD,GRAL,GRAIL INC,1699031.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-320792105,tts-320792105,USD,NBIS,NEBIUS NV CLASS A,1513845.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-3250167,tts-3250167,USD,LBTYK,LIBERTY GLOBAL PLC CLASS C,1570585.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-342851559,tts-342851559,USD,SNDK,SANDISK | SANDISK CORP,2023554.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-3468716,tts-3468716,USD,CDNS,CADENCE DESIGN SYSTEMS | CADENCE DESIGN SYSTEMS INC,813672.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-347224215,tts-347224215,USD,CRWV,COREWEAVE CLASS A | COREWEAVE INC CLASS A,1769628.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-36228692,tts-36228692,USD,VIAB,"VIACOM INC CLASS B | Viacom, Inc. ""B"" | Viacom, Inc., Class B",1339947.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-36299719,tts-36299719,USD,JOYG,"Joy Global, Inc.",801898.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-36769516,tts-36769516,USD,EA|ERTS,"ELECTRONIC ARTS INC | Electronic Arts, Inc.",712515.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-36804965,tts-36804965,USD,TRIP,TRIPADVISOR INC,1526520.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-3685519,tts-3685519,USD,AVGO,"AVAGO TECHNOLOGIES LTD | Avago Technologies Ltd. | Avago Technologies Ltd., Class A | BROADCOM INC | BROADCOM LTD",1730168.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-37090221,tts-37090221,USD,TXN,"TEXAS INSTRUMENT INC | TEXAS INSTRUMENTS INCORPORATED | Texas Instruments, Inc.",97476.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-37214168,tts-37214168,USD,HANS|MNST,Hansen Natural Corp. | MONSTER BEVERAGE | MONSTER BEVERAGE CORP | Monster Beverage Corp.,865752.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-375502573,tts-375502573,USD,SOLS,SOLSTICE ADVANCED MATERIALS INC,,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-40948542,tts-40948542,USD,ENPH,ENPHASE ENERGY INC,1463101.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-410496110,tts-410496110,USD,HONA,HONEYWELL AEROSPACE INC,2089271.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-41568568,tts-41568568,USD,ADI,"ANALOG DEVICES | ANALOG DEVICES INC | Analog Devices, Inc.",6281.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-41981429,tts-41981429,USD,SPLK,SPLUNK INC,1353283.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-45504153,tts-45504153,USD,TEVA,Teva Pharmaceutical Industries Ltd. - ADR | Teva Pharmaceutical Industries Ltd. ADR,818686.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-45576417,tts-45576417,USD,WDC,WESTERN DIGITAL CORP | Western Digital Corp.,106040.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-48237583,tts-48237583,USD,SHPG,SHIRE ADR REPRESENTING  PLC,936402.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-48237584,tts-48237584,USD,CTRX,CATAMARAN CORP | Catamaran Corp.,1363851.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-49260269,tts-49260269,USD,LVNTA,LIBERTY INTERACTIVE VENTURE CORP S | LIBERTY VENTURES - SER A,1355096.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-51210920,tts-51210920,USD,KFT|KTF|MDLZ,"Kraft Foods, Inc. ""A"" | Kraft Foods, Inc., Class A | MONDELEZ INTERNATIONAL CLASS A | MONDELEZ INTERNATIONAL INC CLASS A | Mondelez International, Inc. ""A"" | Mondelez International, Inc., Class A",1103982.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-51776389,tts-51776389,USD,FANG,DIAMONDBACK ENERGY | DIAMONDBACK ENERGY INC,1539838.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-5211016,tts-5211016,USD,FSLR,"First Solar, Inc.",1274494.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-53833112,tts-53833112,USD,INFY,Infosys Technologies Ltd. | Infosys Technologies Ltd. ADR,1067491.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-54963811,tts-54963811,USD,STRZA,Starz - Series A,,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-60267672,tts-60267672,USD,PRGO,Perrigo Co.,1585364.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-61020822,tts-61020822,USD,CDW,CDW CORP,1402057.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-61149824,tts-61149824,USD,FOXA,FOX CORP CLASS A,1754301.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-61149825,tts-61149825,USD,FOX,FOX CORP CLASS B,1754301.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-61604636,tts-61604636,USD,ORCL,Oracle Corp.,1341439.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-6191934,tts-6191934,USD,VMED,"Virgin Media, Inc.",,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-65832501,tts-65832501,USD,MAR,MARRIOTT INTERNATIONAL CLASS A | MARRIOTT INTERNATIONAL INC CLASS A,1048286.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-67645939,tts-67645939,USD,AAL,AMERICAN AIRLINES GROUP INC,6201.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-71625495,tts-71625495,USD,GOOG|GOOGL,"ALPHABET CLASS A | ALPHABET INC CLASS A | GOOGLE INC CLASS A | Google, Inc. ""A"" | Google, Inc., Class A",1652044.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-72890301,tts-72890301,USD,JD,JD.COM ADR REPRESENTING  INC CLASS | JD.COM ADR REPRESENTING INC,1549802.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-80360010,tts-80360010,USD,WBA,WALGREEN BOOTS ALLIANCE | WALGREEN BOOTS ALLIANCE INC,1618921.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-80383707,tts-80383707,USD,AMD,ADVANCED MICRO DEVICES | ADVANCED MICRO DEVICES INC,2488.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-818221,tts-818221,USD,ODFL,OLD DOMINION FREIGHT LINE | OLD DOMINION FREIGHT LINE INC,878927.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-818315,tts-818315,USD,ORLY,"O'REILLY AUTOMOTIVE INC | O'Reilly Automotive, Inc. | O'reilly Automotive, Inc. | OREILLY AUTOMOTIVE INC",898173.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-818433,tts-818433,USD,PAYX,"PAYCHEX | PAYCHEX INC | Paychex, Inc.",723531.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-818958,tts-818958,USD,PPDI,"Pharmaceutical Product Development, Inc.",1003124.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-819921,tts-819921,USD,SBAC,"SBA COMMUNICATIONS CORP CLASS A | SBA Communications Corp. ""A"" | SBA Communications Corp., Class A",1034054.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-820309,tts-820309,USD,SPLS,"STAPLES INC | Staples, Inc.",791519.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-820920,tts-820920,USD,URBN,"Urban Outfitters, Inc.",912615.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-821074,tts-821074,USD,VRTX|VX1,"VERTEX PHARMACEUTICALS | VERTEX PHARMACEUTICALS INC | Vertex Pharmaceuticals, Inc.",875320.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-821283,tts-821283,USD,XLNX,"XILINX INC | Xilinx, Inc.",,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-821304,tts-821304,USD,XRAY,"DENTSPLY International, Inc. | DENTSPLY SIRONA INC",818479.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827038,tts-827038,USD,ADBE,"ADOBE INC | ADOBE SYSTEM INC | Adobe Systems, Inc.",796343.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827425,tts-827425,USD,ALGN,ALIGN TECHNOLOGY INC,1097149.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827441,tts-827441,USD,TRI,THOMSON REUTERS CORP,1075124.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827539,tts-827539,USD,AMAT,"APPLIED MATERIAL INC | Applied Materials, Inc.",6951.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827593,tts-827593,USD,AMGN,"AMGEN INC | Amgen, Inc.",318154.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827665,tts-827665,USD,WMT,WALMART | WALMART INC,104169.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827705,tts-827705,USD,AMZN,"AMAZON COM INC | AMAZON.COM INC | Amazon.Com, Inc. | Amazon.com, Inc.",1018724.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827769,tts-827769,USD,ANSS,ANSYS INC,1013462.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827801,tts-827801,USD,APOL,"Apollo Group, Inc. ""A"" | Apollo Group, Inc.""A"" | Apollo Group, Inc., Class A",929887.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827847,tts-827847,USD,ASML,ASML HOLDING ADR REPRESENTING | ASML HOLDING ADR REPRESENTING NV,937966.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827879,tts-827879,USD,ATVI,"ACTIVISION BLIZZARD INC | Activision Blizzard, Inc.",,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-827919,tts-827919,USD,BBBY,"BED BATH AND BEYOND INC | Bed Bath & Beyond, Inc.",886158.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828037,tts-828037,USD,BRCM,"BROADCOM CORP CLASS A | Broadcom Corp. ""A"" | Broadcom Corp., Class A",1054374.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828255,tts-828255,USD,CHKP,CHECK POINT SOFTWARE TECHNOLOGIES | Check Point Software Technologies | Check Point Software Technologies Ltd.,1015922.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828266,tts-828266,USD,CHRW,"C.H. Robinson Worldwide, Inc. | CH ROBINSON WORLDWIDE INC | CH Robinson Worldwide, Inc.",1043277.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828275,tts-828275,USD,CHTR,"CHARTER COMMUNICATIONS INC CLASS A | Charter Communications, Inc. ""A"" | Charter Communications, Inc., Class A",1091667.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828340,tts-828340,USD,CMCSA,"COMCAST A CORP | COMCAST CLASS A | COMCAST CORP CLASS A | Comcast Corp. ""A"" | Comcast Corp.""A"" | Comcast Corp., Class A",1166691.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828342,tts-828342,USD,CMCSK,COMCAST SPECIAL CORP CLASS A,1166691.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828403,tts-828403,USD,COST,COSTCO WHOLESALE CORP | Costco Wholesale Corp.,909832.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828408,tts-828408,USD,CPRT,COPART INC,900075.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828468,tts-828468,USD,CSCO,"CISCO SYSTEMS INC | Cisco Systems, Inc.",858877.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828513,tts-828513,USD,CTSH,"COGNIZANT TECHNOLOGY SOLUTIONS COR | Cognizant Technology Solutions Corp. ""A"" | Cognizant Technology Solutions Corp., Class A",1058290.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828516,tts-828516,USD,CTXS,"CITRIX SYSTEMS INC | Citrix Systems, Inc.",,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828600,tts-828600,USD,DELL,"Dell, Inc.",826083.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828632,tts-828632,USD,DLTR,"DOLLAR TREE INC | Dollar Tree, Inc.",935703.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828772,tts-828772,USD,ENDP,ENDO INTERNATIONAL PLC,,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828800,tts-828800,USD,EQIX,"EQUINIX INC | EQUINIX REIT INC | Equinix, Inc.",1101239.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828820,tts-828820,USD,4XS|ESRX,"EXPRESS SCRIPTS HOLDING | EXPRESS SCRIPTS HOLDING CO | Express Scripts Holding Co. | Express Scripts Holdings Co. | Express Scripts, Inc. | Express Scripts, Inc., Class A",1532063.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828860,tts-828860,USD,EXPD,"EXPEDITORS INTERNATIONAL OF WASHIN | Expeditors International of Washington, Inc.",746515.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828861,tts-828861,USD,EXPE,"EXPEDIA GROUP INC | EXPEDIA INC | Expedia, Inc.",1324424.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828870,tts-828870,USD,FAST,FASTENAL | Fastenal Co | Fastenal Co.,815556.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-828913,tts-828913,USD,FFIV,"F5 NETWORKS INC | F5 Networks, Inc.",1048695.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829049,tts-829049,USD,GENZ,Genzyme Corp.,732485.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829063,tts-829063,USD,GILD,"GILEAD SCIENCES | GILEAD SCIENCES INC | Gilead Sciences, Inc.",882095.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829202,tts-829202,USD,HSIC,"HENRY SCHEIN INC | Henry Schein, Inc.",1000228.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829281,tts-829281,USD,ILMN|ILU,"ILLUMINA INC | Illumina, Inc.",1110803.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829309,tts-829309,USD,INCY,INCYTE CORP,879169.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829352,tts-829352,USD,INCO|INTC,INTEL CORP | INTEL CORPORATION | INTEL CORPORATION CORP | Intel Corp.,50863.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829359,tts-829359,USD,INTU,"INTUIT | INTUIT INC | Intuit, Inc.",896878.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829383,tts-829383,USD,ISRG,"INTUITIVE SURGICAL | INTUITIVE SURGICAL INC | Intuitive Surgical, Inc.",1035267.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829418,tts-829418,USD,JBHT,"JB HUNT TRANSPORT SERVICES INC | JB Hunt Transport Services, Inc.",728535.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829549,tts-829549,USD,LOGI,Logitech International S.A. | Logitech International SA,1032975.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829623,tts-829623,USD,MCHP,"MICROCHIP TECHNOLOGY INC | Microchip Technology, Inc.",827054.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829786,tts-829786,USD,MRVL,MARVELL TECHNOLOGY | MARVELL TECHNOLOGY GROUP LTD | MARVELL TECHNOLOGY INC | Marvell Technology Group Ltd.,1835632.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829802,tts-829802,USD,MSFT,MICROSOFT | MICROSOFT CORP | Microsoft Corp.,789019.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829808,tts-829808,USD,MSTR,MICROSTRATEGY INC CLASS A | STRATEGY INC CLASS A,1050446.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829854,tts-829854,USD,MXIM,"MAXIM INTEGRATED PRODUCTS INC | Maxim Integrated Products, Inc.",743316.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-829933,tts-829933,USD,NFLX,"NETFLIX | NETFLIX INC | NetFlix, Inc. | Netflix, Inc.",1065280.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830016,tts-830016,USD,NTAP,"NETAPP INC | NetApp, Inc.",1002047.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830020,tts-830020,USD,NTES,NETEASE ADR INC | NETEASE ADR REPRESENTING  INC,1110646.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830036,tts-830036,USD,NUAN,"Nuance Communications, Inc.",,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830046,tts-830046,USD,NVDA,NVIDIA | NVIDIA CORP | NVIDIA Corp. | Nvidia Corp.,1045810.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830133,tts-830133,USD,PCAR,"PACCAR INC | PACCAR, Inc.",75362.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830145,tts-830145,USD,PDCO,"Patterson Companies, Inc. | Patterson Cos, Inc. | Patterson Cos., Inc.",891024.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830263,tts-830263,USD,QCI|QCOM,"QUALCOMM | QUALCOMM INC | QUALCOMM, Inc.",804328.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830313,tts-830313,USD,REGN,"REGENERON PHARMACEUTICALS | REGENERON PHARMACEUTICALS INC | Regeneron Pharmaceuticals, Inc.",872589.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830361,tts-830361,USD,ROST,"ROSS STORES INC | Ross Stores, Inc.",745732.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830379,tts-830379,USD,RYAAY,Ryanair Holdings PLC,1038683.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830408,tts-830408,USD,SBUX,STARBUCKS CORP | STARBUCKS CORP N1 | Starbucks Corp.,829224.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830459,tts-830459,USD,SGEN,SEAGEN INC | SEATTLE GENETICS INC,,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830475,tts-830475,USD,SIAL,SIGMA ALDRICH CORP | Sigma-Aldrich Corp.,90185.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830484,tts-830484,USD,SIRI,"SIRIUS XM HOLDINGS INC | Sirius Satellite Radio, Inc. | Sirius XM Radio, Inc.",908937.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830518,tts-830518,USD,SNDK,SANDISK CORP | SanDisk Corp.,1000180.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830523,tts-830523,USD,SNPS,SYNOPSYS | SYNOPSYS INC,883241.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830564,tts-830564,USD,SRCL,"STERICYCLE INC | Stericycle, Inc.",861878.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830598,tts-830598,USD,STLD,"Steel Dynamics, Inc.",1022671.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830638,tts-830638,USD,SWKS,SKYWORKS SOLUTIONS INC,4127.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830674,tts-830674,USD,TEAM,ATLASSIAN CORP CLASS A | ATLASSIAN PLC CLASS A,1650372.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830823,tts-830823,USD,TSCO,TRACTOR SUPPLY,916365.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830842,tts-830842,USD,TTWO,TAKE TWO INTERACTIVE SOFTWARE | TAKE TWO INTERACTIVE SOFTWARE INC,946581.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-830966,tts-830966,USD,VRSN,"VERISIGN INC | VeriSign, Inc.",1014473.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-831069,tts-831069,USD,WYNN,WYNN RESORTS LTD | Wynn Resorts Ltd.,1174922.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-831814,tts-831814,USD,AAPL|AAPL*,"APPLE | APPLE INC | Apple, Inc.",320193.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-831838,tts-831838,USD,ADSK,"AUTODESK | AUTODESK INC | Autodesk, Inc.",769397.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-831856,tts-831856,USD,AKAM,"AKAMAI TECHNOLOGIES INC | Akamai Technologies, Inc.",1086222.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-831866,tts-831866,USD,ALXN,"ALEXION PHARMACEUTICALS INC | Alexion Pharmaceuticals, Inc.",899866.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-831964,tts-831964,USD,BMRN,BIOMARIN PHARMACEUTICAL INC,1048477.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832022,tts-832022,USD,CELG,CELGENE CORP | Celgene Corp.,816284.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832024,tts-832024,USD,CEPH,"Cephalon, Inc.",873364.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832025,tts-832025,USD,CERN,CERNER CORP | Cerner Corp.,,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832092,tts-832092,USD,CSGP,COSTAR GROUP INC,1057352.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832098,tts-832098,USD,CTAS,CINTAS | CINTAS CORP | Cintas Corp.,723254.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832145,tts-832145,USD,DISH,"DISH NETWORK CORP CLASS A | DISH Network Corp. ""A"" | DISH Network Corp., Class A",,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832177,tts-832177,USD,EBAY,"EBAY INC | eBay, Inc.",1065088.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832260,tts-832260,USD,FISV,"FISERV INC | Fiserv, Inc.",798354.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832265,tts-832265,USD,FLEX,Flextronics International Ltd.,866374.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832266,tts-832266,USD,FLIR,"FLIR Systems, Inc.",,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832280,tts-832280,USD,FOSL,"Fossil Group, Inc. | Fossil, Inc.",883569.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832321,tts-832321,USD,GMCR,"GREEN MOUNTAIN COFFEE ROASTERS INC | Green Mountain Coffee Roasters, Inc. | KEURIG GREEN MOUNTAIN INC",909954.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832375,tts-832375,USD,HOLX,"HOLOGIC INC | HOLOGIC INC. | Hologic, Inc.",859737.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832406,tts-832406,USD,IDXX,IDEXX LABORATORIES | IDEXX LABORATORIES INC,874716.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832423,tts-832423,USD,INSM,INSMED INC,1104506.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832472,tts-832472,USD,KLAC,KLA | KLA CORP | KLA TENCOR CORP | KLA-Tencor Corp. | Kla-Tencor Corp.,319201.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832500,tts-832500,USD,LLTC,LINEAR TECHNOLOGY CORP | Linear Technology Corp.,791907.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-832505,tts-832505,USD,LRCX,LAM RESEARCH | LAM RESEARCH CORP | Lam Research Corp.,707549.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-85128742,tts-85128742,USD,ON,ON SEMICONDUCTOR CORP,1097864.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-87928298,tts-87928298,USD,SHOP,SHOPIFY SUBORDINATE VOTING CLASS A | SHOPIFY SUBORDINATE VOTING INC CLA,1594805.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-88339869,tts-88339869,USD,LIFE,Life Technologies Corp.,1073431.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-90308539,tts-90308539,USD,KHC,KRAFT HEINZ,1637459.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-91263224,tts-91263224,USD,PYPL,PAYPAL HOLDINGS | PAYPAL HOLDINGS INC,1633917.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-92502189,tts-92502189,USD,LITE,LUMENTUM HOLDINGS | LUMENTUM HOLDINGS INC,1633978.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-96423906,tts-96423906,USD,TMUS,T MOBILE US INC,1283699.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-97315627,tts-97315627,USD,MTCH,MATCH GROUP INC,891103.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+tts-98691180,tts-98691180,USD,CSX,CSX | CSX CORP,277948.0,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+unresolved:GOLD,unresolved:GOLD,USD,GOLD,Randgold Resources Ltd. ADR,,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+unresolved:IACI,unresolved:IACI,USD,IACI,IAC/InterActiveCorp,,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+unresolved:MICC,unresolved:MICC,USD,MICC,Millicom International Cellular S.A. | Millicom International Cellular SA,,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+unresolved:NIHD,unresolved:NIHD,USD,NIHD,"NII Holdings, Inc. | NII Holdings, Inc. ""B""",,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+unresolved:ORCHARD_SUPPLY_2011,unresolved:ORCHARD_SUPPLY_2011,USD,OSH_OLD,"Orchard Supply Hardware Stores Corp. ""A""",,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+unresolved:SHLD,unresolved:SHLD,USD,SHLD,Sears Holdings Corp.,,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+unresolved:VSNT,unresolved:VSNT,USD,,,,False,0.15,15_percent_generic_model_assumption_not_issuer_specific
+yahoo:LILA,yahoo:LILA,USD,LILA,LIBERTY GLOBAL LILAC PLC CLASS A,,True,0.15,15_percent_generic_model_assumption_not_issuer_specific
+yahoo:LILAK,yahoo:LILAK,USD,LILAK,LIBERTY GLOBAL LILAC PLC CLASS C,,True,0.15,15_percent_generic_model_assumption_not_issuer_specific

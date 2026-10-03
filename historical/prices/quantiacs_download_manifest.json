@@ -1,0 +1,55 @@
+{
+  "retrieved_utc": "2026-10-03T07:28:45Z",
+  "asset_url": "https://data-api.quantiacs.io/assets?min_date=2010-09-01&max_date=2026-10-02&type=NASDAQ100",
+  "data_url": "https://data-api.quantiacs.io/data",
+  "documentation": "https://quantiacs.com/documentation/en/user_guide/data.html",
+  "toolbox_source": "https://github.com/quantiacs/toolbox/blob/master/qnt/data/stocks.py",
+  "asset_count": 304,
+  "dimensions": {
+    "field": 8,
+    "time": 4044,
+    "asset": 304
+  },
+  "fields": [
+    "open",
+    "low",
+    "high",
+    "close",
+    "vol",
+    "divs",
+    "split_cumprod",
+    "is_liquid"
+  ],
+  "first_date": "2010-09-01T00:00:00.000000000",
+  "last_date": "2026-09-30T00:00:00.000000000",
+  "downloads": [
+    {
+      "file": "quantiacs_chunk_00.nc",
+      "sha256": "bd1fbecfbb7ac8815b54ecfc6c20a3c0121f1a80752e3edd26bb53924e095e43"
+    },
+    {
+      "file": "quantiacs_chunk_01.nc",
+      "sha256": "14b13df3d24a79928bc0d26e44aea4da87e6a43d835dedcce6fb4619f41b727f"
+    },
+    {
+      "file": "quantiacs_chunk_02.nc",
+      "sha256": "601355a60f23b78c4bc4a1d0006fb54f950dfb3af86daf91149c7b11f8612be3"
+    },
+    {
+      "file": "quantiacs_chunk_03.nc",
+      "sha256": "d127f419b69dd66924de31c12897406dedf0604766de38a7f4e448921ab2e130"
+    },
+    {
+      "file": "quantiacs_chunk_04.nc",
+      "sha256": "5b58b03ec827fe06d2961b52b92a07c7a8b62b4ba6afea382c658b3dec9142d3"
+    },
+    {
+      "file": "quantiacs_chunk_05.nc",
+      "sha256": "c99899462d7097b10da9e75a5c192f07fd5c4d605d02ceb155ce175a7ce53a9e"
+    },
+    {
+      "file": "quantiacs_chunk_06.nc",
+      "sha256": "b5daa7ed5609b3f708b16bdc98d9221a3bddb20b64ecce97c1148e8a040c7816"
+    }
+  ]
+}

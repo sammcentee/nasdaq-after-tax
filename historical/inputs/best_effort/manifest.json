@@ -1,0 +1,62 @@
+{
+  "status": "BEST_EFFORT_CAUSAL_INPUTS; price and corporate-action certification is separate",
+  "source_snapshots": 168,
+  "source_rows": 17240,
+  "canonical_original_unresolved_rows": 342,
+  "original_unresolved_rows": 438,
+  "remaining_unresolved_rows": 184,
+  "identity_rows_repaired": 254,
+  "remaining_unresolved_unique_tickers": [
+    "AABA",
+    "BATRR",
+    "GOLD",
+    "IACI",
+    "KRFT",
+    "LMCA",
+    "LMCK",
+    "MICC",
+    "NIHD",
+    "OSH_OLD",
+    "SHLD",
+    "YHOO"
+  ],
+  "monthly_deposits_audited": 192,
+  "mean_unresolved_target_weight": 0.006242961465308013,
+  "max_unresolved_target_weight": 0.025285972850674302,
+  "mean_mapped_current_member_target_weight": 0.9896278871423355,
+  "all_trade_source_dates_strictly_prior": true,
+  "assumptions": [
+    "Latest effective source snapshot is used only when its available date is strictly before the trade date.",
+    "No future weight interpolation, current-constituent backfill, or normalization excluding missing names.",
+    "Unresolved source allocation is explicitly __CASH__, earns zero interest, and must remain cash in the caller's engine.",
+    "A mapped price identity does not certify its daily prices, corporate actions, distribution classification, or successor tax basis.",
+    "The June2010 USAA Nasdaq100 Fund equity portfolio, filed August27, supplies a more recent causal initial proxy; the September2009 QQQ snapshot is retained only as older source evidence.",
+    "Thirteen additional SEC-filed USAA Nasdaq100 Fund reports supply quarterly source weights through September2013, usable strictly after each filing date.",
+    "Later source weights are held fixed between available snapshots. January-June 2017 missing snapshots are not interpolated.",
+    "Monthly CNDX publication uses an unverified five-business-day lag; membership changes are assumed known on their effective date and used strictly afterward.",
+    "Known deletions bar new purchases; held shares remain until a loss sale, mandatory corporate action, or final liquidation.",
+    "Additions with no weight in the latest available source receive no invented weight.",
+    "Historical Trading 212 availability, fractional shares and exact spreads are not established by these market data.",
+    "Some old source tickers are retroactively relabeled by the fund provider; historical ISIN, source date and issuer records govern the crosswalk."
+  ],
+  "primary_identity_sources": {
+    "ALTR": "https://www.sec.gov/Archives/edgar/data/768251/000119312515414631/d102231d8k.htm",
+    "LIFE": "https://www.sec.gov/Archives/edgar/data/1073431/000119312514033495/d655804d8k.htm",
+    "VIP": "https://www.sec.gov/Archives/edgar/data/1468091/000119312517103808/d320784dex991.htm",
+    "OLD_FOX": "https://www.sec.gov/Archives/edgar/data/1308161/000119312513281456/d562317dex991.htm",
+    "KFT": "https://www.sec.gov/Archives/edgar/data/1103982/000119312512411522/d418430dex991.htm",
+    "LMCA": "https://www.libertymedia.com/investors/stock-data/faq",
+    "WLTW": "https://investors.wtwco.com/news-releases/news-release-details/willis-towers-watson-announces-nasdaq-ticker-symbol-change-wltw",
+    "YHOO": "https://www.sec.gov/Archives/edgar/data/1011006/000119312517206955/d389206d8k.htm",
+    "LILA": "https://www.libertyglobal.com/investors/share-information/share-cost-basis/",
+    "GOLD": "https://www.sec.gov/Archives/edgar/data/1175580/000114420419000112/tv510199_ex99-3.htm"
+  },
+  "input_sha256": {
+    "inputs/target_weights.csv": "1036be32d7db7b9cf61bce5d6454f6ae8a524eda39fa77f0df85ebe51f9e4b47",
+    "inputs/membership_snapshots_dated.csv": "503eb2307efdac8055e572e58e046fba38e1115f3bbcd9d0aad82a6d3b5256eb",
+    "prices/quantiacs_asset_coverage.csv": "ce2604576cdb02e6d3c51922b27465fe4af5fa879a7b625477fa88bd7a85761f",
+    "inputs/best_effort/usaa_20100630_source_weights.csv": "c60a75957835a081e7db76b45eacd4efa9e2acf32b22f66f0324c96c66945661",
+    "inputs/best_effort/usaa_quarterly_source_weights.csv": "6a282c764257b98ab761c99ac04f1b76a46499753d535dfc97ea52b2fe7349fe",
+    "inputs/best_effort/additional_identity_overrides.json": "ab3f3a46e9495374671a75c21c3b72ac81f4717fa3680631fcab0883e447865d"
+  }
+}

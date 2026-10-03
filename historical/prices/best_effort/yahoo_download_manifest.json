@@ -1,0 +1,2454 @@
+[
+  {
+    "symbol": "ABNB",
+    "status": "ok",
+    "rows": 1457,
+    "first": "2020-12-10 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ABNB.csv"
+  },
+  {
+    "symbol": "AAL",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AAL.csv"
+  },
+  {
+    "symbol": "ABBV",
+    "status": "ok",
+    "rows": 3457,
+    "first": "2013-01-02 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ABBV.csv"
+  },
+  {
+    "symbol": "ADBE",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ADBE.csv"
+  },
+  {
+    "symbol": "AABA",
+    "status": "error",
+    "error": "$AABA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ADCT",
+    "status": "ok",
+    "rows": 1601,
+    "first": "2020-05-18 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ADCT.csv"
+  },
+  {
+    "symbol": "AAPL",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AAPL.csv"
+  },
+  {
+    "symbol": "ADRX",
+    "status": "ok",
+    "rows": 4,
+    "first": "2026-09-25 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ADRX.csv"
+  },
+  {
+    "symbol": "ADI",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ADI.csv"
+  },
+  {
+    "symbol": "AEO",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AEO.csv"
+  },
+  {
+    "symbol": "ADP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ADP.csv"
+  },
+  {
+    "symbol": "ADSK",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ADSK.csv"
+  },
+  {
+    "symbol": "AEP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AEP.csv"
+  },
+  {
+    "symbol": "AKAM",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AKAM.csv"
+  },
+  {
+    "symbol": "ALAB",
+    "status": "ok",
+    "rows": 635,
+    "first": "2024-03-20 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ALAB.csv"
+  },
+  {
+    "symbol": "ALNY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ALNY.csv"
+  },
+  {
+    "symbol": "ALGN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ALGN.csv"
+  },
+  {
+    "symbol": "ALTR",
+    "status": "error",
+    "error": "$ALTR: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ALXN",
+    "status": "error",
+    "error": "$ALXN: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "AGN",
+    "status": "error",
+    "error": "$AGN: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "AMCC",
+    "status": "error",
+    "error": "$AMCC: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "AMFW",
+    "status": "error",
+    "error": "$AMFW: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "AMD",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AMD.csv"
+  },
+  {
+    "symbol": "AMGN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AMGN.csv"
+  },
+  {
+    "symbol": "AMLN",
+    "status": "error",
+    "error": "$AMLN: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ANSS",
+    "status": "error",
+    "error": "$ANSS: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "APP",
+    "status": "ok",
+    "rows": 1372,
+    "first": "2021-04-15 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_APP.csv"
+  },
+  {
+    "symbol": "AMZN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AMZN.csv"
+  },
+  {
+    "symbol": "AMAT",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AMAT.csv"
+  },
+  {
+    "symbol": "APOL",
+    "status": "error",
+    "error": "$APOL: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ARBA",
+    "status": "error",
+    "error": "$ARBA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ARM",
+    "status": "ok",
+    "rows": 764,
+    "first": "2023-09-14 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ARM.csv"
+  },
+  {
+    "symbol": "ATML",
+    "status": "error",
+    "error": "$ATML: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ATVI",
+    "status": "error",
+    "error": "$ATVI: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "AVGO",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AVGO.csv"
+  },
+  {
+    "symbol": "AXON",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AXON.csv"
+  },
+  {
+    "symbol": "ASML",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ASML.csv"
+  },
+  {
+    "symbol": "BATRA",
+    "status": "ok",
+    "rows": 2629,
+    "first": "2016-04-18 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BATRA.csv"
+  },
+  {
+    "symbol": "BATRK",
+    "status": "ok",
+    "rows": 2629,
+    "first": "2016-04-18 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BATRK.csv"
+  },
+  {
+    "symbol": "AZN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_AZN.csv"
+  },
+  {
+    "symbol": "BATRR",
+    "status": "error",
+    "error": "$BATRR: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "BBBY",
+    "status": "ok",
+    "rows": 53,
+    "first": "2026-07-17 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BBBY.csv"
+  },
+  {
+    "symbol": "BB",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BB.csv"
+  },
+  {
+    "symbol": "BIDU",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BIDU.csv"
+  },
+  {
+    "symbol": "BIIB",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BIIB.csv"
+  },
+  {
+    "symbol": "BKNG",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BKNG.csv"
+  },
+  {
+    "symbol": "BMC",
+    "status": "error",
+    "error": "$BMC: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "BMRN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BMRN.csv"
+  },
+  {
+    "symbol": "BKR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BKR.csv"
+  },
+  {
+    "symbol": "BRCD",
+    "status": "error",
+    "error": "$BRCD: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "BVSN",
+    "status": "error",
+    "error": "$BVSN: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "BRCM",
+    "status": "error",
+    "error": "$BRCM: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "BMY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_BMY.csv"
+  },
+  {
+    "symbol": "CA",
+    "status": "error",
+    "error": "$CA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "CDK",
+    "status": "error",
+    "error": "$CDK: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "CEG",
+    "status": "ok",
+    "rows": 1179,
+    "first": "2022-01-19 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CEG.csv"
+  },
+  {
+    "symbol": "CDNS",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CDNS.csv"
+  },
+  {
+    "symbol": "CCEP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CCEP.csv"
+  },
+  {
+    "symbol": "CDW",
+    "status": "ok",
+    "rows": 3335,
+    "first": "2013-06-27 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CDW.csv"
+  },
+  {
+    "symbol": "CEPH",
+    "status": "error",
+    "error": "$CEPH: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "CELG",
+    "status": "error",
+    "error": "$CELG: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "CERN",
+    "status": "error",
+    "error": "$CERN: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "CHKP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CHKP.csv"
+  },
+  {
+    "symbol": "CHTR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CHTR.csv"
+  },
+  {
+    "symbol": "CHRW",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CHRW.csv"
+  },
+  {
+    "symbol": "CIEN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CIEN.csv"
+  },
+  {
+    "symbol": "CI",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CI.csv"
+  },
+  {
+    "symbol": "CMCSA",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CMCSA.csv"
+  },
+  {
+    "symbol": "CMCSK",
+    "status": "error",
+    "error": "$CMCSK: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "CMVT",
+    "status": "error",
+    "error": "$CMVT: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "COMS",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_COMS.csv"
+  },
+  {
+    "symbol": "CRWD",
+    "status": "ok",
+    "rows": 1836,
+    "first": "2019-06-12 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CRWD.csv"
+  },
+  {
+    "symbol": "CPRT",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CPRT.csv"
+  },
+  {
+    "symbol": "CPWR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CPWR.csv"
+  },
+  {
+    "symbol": "CNXT",
+    "status": "ok",
+    "rows": 3065,
+    "first": "2014-07-24 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CNXT.csv"
+  },
+  {
+    "symbol": "COST",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_COST.csv"
+  },
+  {
+    "symbol": "CRWV",
+    "status": "ok",
+    "rows": 379,
+    "first": "2025-03-28 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CRWV.csv"
+  },
+  {
+    "symbol": "CSCO",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CSCO.csv"
+  },
+  {
+    "symbol": "CSGP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CSGP.csv"
+  },
+  {
+    "symbol": "CTAS",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CTAS.csv"
+  },
+  {
+    "symbol": "CSX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CSX.csv"
+  },
+  {
+    "symbol": "CTRX",
+    "status": "error",
+    "error": "$CTRX: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "CTSH",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_CTSH.csv"
+  },
+  {
+    "symbol": "CTXS",
+    "status": "error",
+    "error": "$CTXS: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "DASH",
+    "status": "ok",
+    "rows": 1458,
+    "first": "2020-12-09 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_DASH.csv"
+  },
+  {
+    "symbol": "DDOG",
+    "status": "ok",
+    "rows": 1767,
+    "first": "2019-09-19 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_DDOG.csv"
+  },
+  {
+    "symbol": "DELL",
+    "status": "ok",
+    "rows": 2544,
+    "first": "2016-08-17 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_DELL.csv"
+  },
+  {
+    "symbol": "DISCA",
+    "status": "error",
+    "error": "$DISCA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "DISCK",
+    "status": "error",
+    "error": "$DISCK: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "DTV",
+    "status": "error",
+    "error": "$DTV: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "DIS",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_DIS.csv"
+  },
+  {
+    "symbol": "DISH",
+    "status": "error",
+    "error": "$DISH: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "DOCU",
+    "status": "ok",
+    "rows": 2118,
+    "first": "2018-04-27 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_DOCU.csv"
+  },
+  {
+    "symbol": "DLTR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_DLTR.csv"
+  },
+  {
+    "symbol": "EA",
+    "status": "error",
+    "error": "$EA: possibly delisted; no price data found  (1d 2010-09-01 -> 2026-10-01)"
+  },
+  {
+    "symbol": "DXCM",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_DXCM.csv"
+  },
+  {
+    "symbol": "ENDP",
+    "status": "error",
+    "error": "$ENDP: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ENPH",
+    "status": "ok",
+    "rows": 3646,
+    "first": "2012-03-30 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ENPH.csv"
+  },
+  {
+    "symbol": "EBAY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_EBAY.csv"
+  },
+  {
+    "symbol": "ESRX",
+    "status": "error",
+    "error": "$ESRX: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "EQIX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_EQIX.csv"
+  },
+  {
+    "symbol": "EXC",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_EXC.csv"
+  },
+  {
+    "symbol": "ERIC",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ERIC.csv"
+  },
+  {
+    "symbol": "FANG",
+    "status": "ok",
+    "rows": 3510,
+    "first": "2012-10-12 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FANG.csv"
+  },
+  {
+    "symbol": "EXPE",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_EXPE.csv"
+  },
+  {
+    "symbol": "EXPD",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_EXPD.csv"
+  },
+  {
+    "symbol": "FB",
+    "status": "ok",
+    "rows": 318,
+    "first": "2025-06-26 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FB.csv"
+  },
+  {
+    "symbol": "FAST",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FAST.csv"
+  },
+  {
+    "symbol": "FFIV",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FFIV.csv"
+  },
+  {
+    "symbol": "FISV",
+    "status": "ok",
+    "rows": 4043,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FISV.csv"
+  },
+  {
+    "symbol": "FLEX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FLEX.csv"
+  },
+  {
+    "symbol": "FLIR",
+    "status": "error",
+    "error": "$FLIR: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "FER",
+    "status": "ok",
+    "rows": 3553,
+    "first": "2012-08-13 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FER.csv"
+  },
+  {
+    "symbol": "FMCN",
+    "status": "error",
+    "error": "$FMCN: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "FOXA",
+    "status": "ok",
+    "rows": 1900,
+    "first": "2019-03-12 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FOXA.csv"
+  },
+  {
+    "symbol": "FOX",
+    "status": "ok",
+    "rows": 1899,
+    "first": "2019-03-13 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FOX.csv"
+  },
+  {
+    "symbol": "FOSL",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FOSL.csv"
+  },
+  {
+    "symbol": "FSLR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FSLR.csv"
+  },
+  {
+    "symbol": "FTNT",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FTNT.csv"
+  },
+  {
+    "symbol": "FWLT",
+    "status": "error",
+    "error": "$FWLT: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "GEHC",
+    "status": "ok",
+    "rows": 950,
+    "first": "2022-12-15 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GEHC.csv"
+  },
+  {
+    "symbol": "FWONK",
+    "status": "ok",
+    "rows": 3077,
+    "first": "2014-07-08 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FWONK.csv"
+  },
+  {
+    "symbol": "GEV",
+    "status": "ok",
+    "rows": 630,
+    "first": "2024-03-27 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GEV.csv"
+  },
+  {
+    "symbol": "FWONA",
+    "status": "ok",
+    "rows": 3451,
+    "first": "2013-01-10 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_FWONA.csv"
+  },
+  {
+    "symbol": "GEN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GEN.csv"
+  },
+  {
+    "symbol": "GENZ",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GENZ.csv"
+  },
+  {
+    "symbol": "GFS",
+    "status": "ok",
+    "rows": 1235,
+    "first": "2021-10-28 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GFS.csv"
+  },
+  {
+    "symbol": "GILD",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GILD.csv"
+  },
+  {
+    "symbol": "GMCR",
+    "status": "error",
+    "error": "$GMCR: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "GLIBA",
+    "status": "ok",
+    "rows": 308,
+    "first": "2025-07-11 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GLIBA.csv"
+  },
+  {
+    "symbol": "GRAL",
+    "status": "ok",
+    "rows": 577,
+    "first": "2024-06-12 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GRAL.csv"
+  },
+  {
+    "symbol": "GOLD",
+    "status": "ok",
+    "rows": 3155,
+    "first": "2014-03-17 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GOLD.csv"
+  },
+  {
+    "symbol": "GOOGL",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GOOGL.csv"
+  },
+  {
+    "symbol": "GNTX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GNTX.csv"
+  },
+  {
+    "symbol": "GOOG",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GOOG.csv"
+  },
+  {
+    "symbol": "GRMN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GRMN.csv"
+  },
+  {
+    "symbol": "GRPN",
+    "status": "ok",
+    "rows": 3746,
+    "first": "2011-11-04 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_GRPN.csv"
+  },
+  {
+    "symbol": "HOLX",
+    "status": "error",
+    "error": "$HOLX: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "HGSI",
+    "status": "error",
+    "error": "$HGSI: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "HAS",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_HAS.csv"
+  },
+  {
+    "symbol": "HONA",
+    "status": "ok",
+    "rows": 75,
+    "first": "2026-06-15 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_HONA.csv"
+  },
+  {
+    "symbol": "HON",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_HON.csv"
+  },
+  {
+    "symbol": "IAC",
+    "status": "error",
+    "error": "$IAC: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "IACI",
+    "status": "error",
+    "error": "$IACI: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "HSIC",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_HSIC.csv"
+  },
+  {
+    "symbol": "IDTI",
+    "status": "error",
+    "error": "$IDTI: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "IDXX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_IDXX.csv"
+  },
+  {
+    "symbol": "INCY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_INCY.csv"
+  },
+  {
+    "symbol": "ILMN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ILMN.csv"
+  },
+  {
+    "symbol": "INKT",
+    "status": "ok",
+    "rows": 1244,
+    "first": "2021-10-15 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_INKT.csv"
+  },
+  {
+    "symbol": "INSM",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_INSM.csv"
+  },
+  {
+    "symbol": "INFY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_INFY.csv"
+  },
+  {
+    "symbol": "INTC",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_INTC.csv"
+  },
+  {
+    "symbol": "ISIL",
+    "status": "error",
+    "error": "$ISIL: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "JAVA",
+    "status": "ok",
+    "rows": 1252,
+    "first": "2021-10-05 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_JAVA.csv"
+  },
+  {
+    "symbol": "ISRG",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ISRG.csv"
+  },
+  {
+    "symbol": "JD",
+    "status": "ok",
+    "rows": 3108,
+    "first": "2014-05-22 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_JD.csv"
+  },
+  {
+    "symbol": "INTU",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_INTU.csv"
+  },
+  {
+    "symbol": "JNPR",
+    "status": "error",
+    "error": "$JNPR: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "JBHT",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_JBHT.csv"
+  },
+  {
+    "symbol": "KRFT",
+    "status": "error",
+    "error": "$KRFT: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "JOY",
+    "status": "error",
+    "error": "$JOY: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "KHC",
+    "status": "ok",
+    "rows": 2827,
+    "first": "2015-07-06 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_KHC.csv"
+  },
+  {
+    "symbol": "LBTYA",
+    "status": "cached",
+    "path": "yf_LBTYA.csv"
+  },
+  {
+    "symbol": "LBRDK",
+    "status": "error",
+    "error": "$LBRDK: possibly delisted; no price data found  (1d 2010-09-01 -> 2026-10-01)"
+  },
+  {
+    "symbol": "KLAC",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_KLAC.csv"
+  },
+  {
+    "symbol": "KDP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_KDP.csv"
+  },
+  {
+    "symbol": "LBRDA",
+    "status": "ok",
+    "rows": 2942,
+    "first": "2014-11-04 00:00:00-05:00",
+    "last": "2026-08-21 00:00:00-04:00",
+    "path": "yf_LBRDA.csv"
+  },
+  {
+    "symbol": "LCID",
+    "status": "ok",
+    "rows": 1515,
+    "first": "2020-09-18 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LCID.csv"
+  },
+  {
+    "symbol": "LAMR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LAMR.csv"
+  },
+  {
+    "symbol": "LBTYK",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LBTYK.csv"
+  },
+  {
+    "symbol": "LEAP",
+    "status": "error",
+    "error": "$LEAP: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LGF-A",
+    "status": "error",
+    "error": "$LGF-A: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LGF.A",
+    "status": "error",
+    "error": "$LGF.A: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LGF.B",
+    "status": "error",
+    "error": "$LGF.B: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LGF-B",
+    "status": "error",
+    "error": "$LGF-B: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LIFE",
+    "status": "ok",
+    "rows": 169,
+    "first": "2026-01-29 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LIFE.csv"
+  },
+  {
+    "symbol": "LILAB",
+    "status": "ok",
+    "rows": 2828,
+    "first": "2015-07-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LILAB.csv"
+  },
+  {
+    "symbol": "LILA",
+    "status": "ok",
+    "rows": 2828,
+    "first": "2015-07-02 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LILA.csv"
+  },
+  {
+    "symbol": "LILAK",
+    "status": "ok",
+    "rows": 2835,
+    "first": "2015-06-23 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LILAK.csv"
+  },
+  {
+    "symbol": "LILAV",
+    "status": "error",
+    "error": "$LILAV: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LION",
+    "status": "ok",
+    "rows": 1151,
+    "first": "2022-03-01 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LION.csv"
+  },
+  {
+    "symbol": "LIN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LIN.csv"
+  },
+  {
+    "symbol": "LLTC",
+    "status": "error",
+    "error": "$LLTC: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LMDIA",
+    "status": "error",
+    "error": "$LMDIA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LNCR",
+    "status": "error",
+    "error": "$LNCR: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LITE",
+    "status": "ok",
+    "rows": 2814,
+    "first": "2015-07-23 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LITE.csv"
+  },
+  {
+    "symbol": "LSXMA",
+    "status": "error",
+    "error": "$LSXMA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LOGM",
+    "status": "error",
+    "error": "$LOGM: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LOGI",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LOGI.csv"
+  },
+  {
+    "symbol": "LRCX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LRCX.csv"
+  },
+  {
+    "symbol": "LVLT",
+    "status": "error",
+    "error": "$LVLT: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LSXMK",
+    "status": "error",
+    "error": "$LSXMK: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "LULU",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_LULU.csv"
+  },
+  {
+    "symbol": "LVNTA",
+    "status": "error",
+    "error": "$LVNTA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "MDB",
+    "status": "ok",
+    "rows": 2248,
+    "first": "2017-10-19 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MDB.csv"
+  },
+  {
+    "symbol": "MAR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MAR.csv"
+  },
+  {
+    "symbol": "MAT",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MAT.csv"
+  },
+  {
+    "symbol": "MELI",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MELI.csv"
+  },
+  {
+    "symbol": "MDLZ",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MDLZ.csv"
+  },
+  {
+    "symbol": "MCHP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MCHP.csv"
+  },
+  {
+    "symbol": "MICC",
+    "status": "ok",
+    "rows": 204,
+    "first": "2025-12-08 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MICC.csv"
+  },
+  {
+    "symbol": "META",
+    "status": "ok",
+    "rows": 3612,
+    "first": "2012-05-18 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_META.csv"
+  },
+  {
+    "symbol": "MNST",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MNST.csv"
+  },
+  {
+    "symbol": "MOLX",
+    "status": "error",
+    "error": "$MOLX: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "MRNA",
+    "status": "ok",
+    "rows": 1963,
+    "first": "2018-12-07 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MRNA.csv"
+  },
+  {
+    "symbol": "MPWR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MPWR.csv"
+  },
+  {
+    "symbol": "MSTR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MSTR.csv"
+  },
+  {
+    "symbol": "MRVL",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MRVL.csv"
+  },
+  {
+    "symbol": "MTCH",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MTCH.csv"
+  },
+  {
+    "symbol": "MSFT",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MSFT.csv"
+  },
+  {
+    "symbol": "MU",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_MU.csv"
+  },
+  {
+    "symbol": "MWW",
+    "status": "error",
+    "error": "$MWW: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "MXIM",
+    "status": "error",
+    "error": "$MXIM: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "MYL",
+    "status": "error",
+    "error": "$MYL: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "NBIS",
+    "status": "ok",
+    "rows": 487,
+    "first": "2024-10-21 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NBIS.csv"
+  },
+  {
+    "symbol": "NFE",
+    "status": "ok",
+    "rows": 1926,
+    "first": "2019-01-31 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NFE.csv"
+  },
+  {
+    "symbol": "NCLH",
+    "status": "ok",
+    "rows": 3445,
+    "first": "2013-01-18 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NCLH.csv"
+  },
+  {
+    "symbol": "NFLX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NFLX.csv"
+  },
+  {
+    "symbol": "NIHD",
+    "status": "error",
+    "error": "$NIHD: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "NLOK",
+    "status": "error",
+    "error": "$NLOK: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "NUAN",
+    "status": "error",
+    "error": "$NUAN: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "NOVL",
+    "status": "error",
+    "error": "$NOVL: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "NWS",
+    "status": "ok",
+    "rows": 3341,
+    "first": "2013-06-19 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NWS.csv"
+  },
+  {
+    "symbol": "NTES",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NTES.csv"
+  },
+  {
+    "symbol": "NVDA",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NVDA.csv"
+  },
+  {
+    "symbol": "NTAP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NTAP.csv"
+  },
+  {
+    "symbol": "NXPI",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NXPI.csv"
+  },
+  {
+    "symbol": "NWSA",
+    "status": "ok",
+    "rows": 3341,
+    "first": "2013-06-19 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NWSA.csv"
+  },
+  {
+    "symbol": "NXT",
+    "status": "ok",
+    "rows": 913,
+    "first": "2023-02-09 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_NXT.csv"
+  },
+  {
+    "symbol": "ON",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ON.csv"
+  },
+  {
+    "symbol": "ODFL",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ODFL.csv"
+  },
+  {
+    "symbol": "ORLY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ORLY.csv"
+  },
+  {
+    "symbol": "OKTA",
+    "status": "ok",
+    "rows": 2383,
+    "first": "2017-04-07 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_OKTA.csv"
+  },
+  {
+    "symbol": "PALM",
+    "status": "error",
+    "error": "$PALM: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ORCL",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ORCL.csv"
+  },
+  {
+    "symbol": "PARA",
+    "status": "ok",
+    "rows": 1414,
+    "first": "2021-02-12 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PARA.csv"
+  },
+  {
+    "symbol": "PANW",
+    "status": "ok",
+    "rows": 3569,
+    "first": "2012-07-20 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PANW.csv"
+  },
+  {
+    "symbol": "PDCO",
+    "status": "error",
+    "error": "$PDCO: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "PDD",
+    "status": "ok",
+    "rows": 2056,
+    "first": "2018-07-26 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PDD.csv"
+  },
+  {
+    "symbol": "PCAR",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PCAR.csv"
+  },
+  {
+    "symbol": "PAYX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PAYX.csv"
+  },
+  {
+    "symbol": "PDLI",
+    "status": "error",
+    "error": "$PDLI: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "PEP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PEP.csv"
+  },
+  {
+    "symbol": "PPDI",
+    "status": "error",
+    "error": "$PPDI: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "PETM",
+    "status": "error",
+    "error": "$PETM: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "PMCS",
+    "status": "error",
+    "error": "$PMCS: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "PLTR",
+    "status": "ok",
+    "rows": 1507,
+    "first": "2020-09-30 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PLTR.csv"
+  },
+  {
+    "symbol": "PTON",
+    "status": "ok",
+    "rows": 1762,
+    "first": "2019-09-26 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PTON.csv"
+  },
+  {
+    "symbol": "PRDO",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PRDO.csv"
+  },
+  {
+    "symbol": "PTC",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PTC.csv"
+  },
+  {
+    "symbol": "PRGO",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PRGO.csv"
+  },
+  {
+    "symbol": "PTEN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PTEN.csv"
+  },
+  {
+    "symbol": "PSKY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PSKY.csv"
+  },
+  {
+    "symbol": "PYPL",
+    "status": "ok",
+    "rows": 2827,
+    "first": "2015-07-06 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_PYPL.csv"
+  },
+  {
+    "symbol": "QCOM",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_QCOM.csv"
+  },
+  {
+    "symbol": "QGEN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_QGEN.csv"
+  },
+  {
+    "symbol": "QRTEP",
+    "status": "error",
+    "error": "$QRTEP: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "QVCGA",
+    "status": "error",
+    "error": "$QVCGA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "QLGC",
+    "status": "error",
+    "error": "$QLGC: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "QRTEA",
+    "status": "error",
+    "error": "$QRTEA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "QVCGP",
+    "status": "error",
+    "error": "$QVCGP: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "RFMD",
+    "status": "error",
+    "error": "$RFMD: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "RHT",
+    "status": "error",
+    "error": "$RHT: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "RIVN",
+    "status": "ok",
+    "rows": 1226,
+    "first": "2021-11-10 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_RIVN.csv"
+  },
+  {
+    "symbol": "RKLB",
+    "status": "ok",
+    "rows": 1468,
+    "first": "2020-11-24 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_RKLB.csv"
+  },
+  {
+    "symbol": "REGN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_REGN.csv"
+  },
+  {
+    "symbol": "RNWK",
+    "status": "error",
+    "error": "$RNWK: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ROST",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ROST.csv"
+  },
+  {
+    "symbol": "ROP",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ROP.csv"
+  },
+  {
+    "symbol": "SATS",
+    "status": "error",
+    "error": "$SATS: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "SANM",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SANM.csv"
+  },
+  {
+    "symbol": "RYAAY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_RYAAY.csv"
+  },
+  {
+    "symbol": "SBAC",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SBAC.csv"
+  },
+  {
+    "symbol": "SBUX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SBUX.csv"
+  },
+  {
+    "symbol": "SEPR",
+    "status": "error",
+    "error": "$SEPR: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "SGEN",
+    "status": "error",
+    "error": "$SGEN: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "SHLDQ",
+    "status": "error",
+    "error": "$SHLDQ: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "SHPG",
+    "status": "error",
+    "error": "$SHPG: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "SHLD",
+    "status": "ok",
+    "rows": 764,
+    "first": "2023-09-14 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SHLD.csv"
+  },
+  {
+    "symbol": "SHOP",
+    "status": "ok",
+    "rows": 2858,
+    "first": "2015-05-20 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SHOP.csv"
+  },
+  {
+    "symbol": "SIAL",
+    "status": "error",
+    "error": "$SIAL: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "SNDK",
+    "status": "ok",
+    "rows": 409,
+    "first": "2025-02-13 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SNDK.csv"
+  },
+  {
+    "symbol": "SOLS",
+    "status": "ok",
+    "rows": 238,
+    "first": "2025-10-20 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SOLS.csv"
+  },
+  {
+    "symbol": "SMCI",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SMCI.csv"
+  },
+  {
+    "symbol": "SPCX",
+    "status": "ok",
+    "rows": 76,
+    "first": "2026-06-12 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SPCX.csv"
+  },
+  {
+    "symbol": "SNPS",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SNPS.csv"
+  },
+  {
+    "symbol": "SIRI",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SIRI.csv"
+  },
+  {
+    "symbol": "SPLK",
+    "status": "error",
+    "error": "$SPLK: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "SRCL",
+    "status": "error",
+    "error": "$SRCL: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "STRZA",
+    "status": "error",
+    "error": "$STRZA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "STCN",
+    "status": "error",
+    "error": "$STCN: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "STRZ",
+    "status": "ok",
+    "rows": 352,
+    "first": "2025-05-07 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_STRZ.csv"
+  },
+  {
+    "symbol": "TAK",
+    "status": "cached",
+    "path": "yf_TAK.csv"
+  },
+  {
+    "symbol": "SPLS",
+    "status": "ok",
+    "rows": 177,
+    "first": "2026-01-16 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SPLS.csv"
+  },
+  {
+    "symbol": "STLD",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_STLD.csv"
+  },
+  {
+    "symbol": "SWKS",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_SWKS.csv"
+  },
+  {
+    "symbol": "TCOM",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TCOM.csv"
+  },
+  {
+    "symbol": "STX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_STX.csv"
+  },
+  {
+    "symbol": "TDY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TDY.csv"
+  },
+  {
+    "symbol": "T",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_T.csv"
+  },
+  {
+    "symbol": "TEAM",
+    "status": "ok",
+    "rows": 2717,
+    "first": "2015-12-09 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TEAM.csv"
+  },
+  {
+    "symbol": "TER",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TER.csv"
+  },
+  {
+    "symbol": "TEVA",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TEVA.csv"
+  },
+  {
+    "symbol": "TFCF",
+    "status": "error",
+    "error": "$TFCF: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "TLAB",
+    "status": "error",
+    "error": "$TLAB: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "TFCFA",
+    "status": "error",
+    "error": "$TFCFA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "TKO",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TKO.csv"
+  },
+  {
+    "symbol": "TRIP",
+    "status": "ok",
+    "rows": 3724,
+    "first": "2011-12-07 00:00:00-05:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TRIP.csv"
+  },
+  {
+    "symbol": "TSLA",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TSLA.csv"
+  },
+  {
+    "symbol": "TMUS",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TMUS.csv"
+  },
+  {
+    "symbol": "TRI",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TRI.csv"
+  },
+  {
+    "symbol": "TSCO",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TSCO.csv"
+  },
+  {
+    "symbol": "TTD",
+    "status": "ok",
+    "rows": 2520,
+    "first": "2016-09-21 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TTD.csv"
+  },
+  {
+    "symbol": "TTWO",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TTWO.csv"
+  },
+  {
+    "symbol": "UAL",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_UAL.csv"
+  },
+  {
+    "symbol": "URBN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_URBN.csv"
+  },
+  {
+    "symbol": "ULTA",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ULTA.csv"
+  },
+  {
+    "symbol": "TXN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_TXN.csv"
+  },
+  {
+    "symbol": "VEON",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_VEON.csv"
+  },
+  {
+    "symbol": "VIAB",
+    "status": "error",
+    "error": "$VIAB: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "VIAV",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_VIAV.csv"
+  },
+  {
+    "symbol": "VMED",
+    "status": "error",
+    "error": "$VMED: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "VSTS",
+    "status": "ok",
+    "rows": 755,
+    "first": "2023-09-27 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_VSTS.csv"
+  },
+  {
+    "symbol": "VRSK",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_VRSK.csv"
+  },
+  {
+    "symbol": "VRTX",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_VRTX.csv"
+  },
+  {
+    "symbol": "VOD",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_VOD.csv"
+  },
+  {
+    "symbol": "VRSN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_VRSN.csv"
+  },
+  {
+    "symbol": "VTRS",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_VTRS.csv"
+  },
+  {
+    "symbol": "VTSS",
+    "status": "error",
+    "error": "$VTSS: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "WBA",
+    "status": "error",
+    "error": "$WBA: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "WCRX",
+    "status": "error",
+    "error": "$WCRX: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "WDAY",
+    "status": "ok",
+    "rows": 3510,
+    "first": "2012-10-12 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_WDAY.csv"
+  },
+  {
+    "symbol": "WBD",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_WBD.csv"
+  },
+  {
+    "symbol": "WFM",
+    "status": "error",
+    "error": "$WFM: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "WG.L",
+    "status": "error",
+    "error": "$WG.L: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "WDC",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_WDC.csv"
+  },
+  {
+    "symbol": "WMT",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_WMT.csv"
+  },
+  {
+    "symbol": "WTW",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_WTW.csv"
+  },
+  {
+    "symbol": "WYNN",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_WYNN.csv"
+  },
+  {
+    "symbol": "XLNX",
+    "status": "error",
+    "error": "$XLNX: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "XEL",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_XEL.csv"
+  },
+  {
+    "symbol": "YHOO",
+    "status": "error",
+    "error": "$YHOO: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ZIMV",
+    "status": "error",
+    "error": "$ZIMV: possibly delisted; no timezone found"
+  },
+  {
+    "symbol": "ZM",
+    "status": "ok",
+    "rows": 1873,
+    "first": "2019-04-18 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ZM.csv"
+  },
+  {
+    "symbol": "ZS",
+    "status": "ok",
+    "rows": 2147,
+    "first": "2018-03-16 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_ZS.csv"
+  },
+  {
+    "symbol": "XRAY",
+    "status": "ok",
+    "rows": 4044,
+    "first": "2010-09-01 00:00:00-04:00",
+    "last": "2026-09-30 00:00:00-04:00",
+    "path": "yf_XRAY.csv"
+  }
+]

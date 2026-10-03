@@ -1,0 +1,109 @@
+{
+  "status": "AUDIT CORPUS ONLY \u2014 not a complete executable historical direct-stock backtest",
+  "retrieved_on": "2026-10-03",
+  "membership": {
+    "source": "https://github.com/jmccarrell/n100tickers",
+    "commit": "cf7c89419941316ff8523726ccba136125f2c11c",
+    "license": "MIT",
+    "source_provenance": "Community reconstruction from Wikipedia historical component-change records, with manually patched historical tickers; not Nasdaq-certified.",
+    "source_claimed_coverage": "2007-02-01 through at least 2026-09-26",
+    "exported_coverage": "2010-01-01 through last change 2026-09-14; as-of lookup supports 2026-09-30",
+    "snapshot_rows": 119,
+    "dated_event_rows": 102,
+    "unique_ticker_labels": 255,
+    "initial_oct2010_count": 100,
+    "initial_membership_primary_validation": "All 100 names/tickers agree with QQQ September 30, 2010 audited holdings.",
+    "cross_year_continuity": "No January 1 discontinuities after applying prior-year changes.",
+    "primary_sample_checks": [
+      {
+        "date": "2010-12-20",
+        "source": "https://ir.nasdaq.com/node/69796",
+        "status": "all additions and removals match primary Nasdaq announcement"
+      },
+      {
+        "date": "2011-12-19",
+        "source": "https://ir.nasdaq.com/static-files/d92a5d2e-9eda-467e-831f-25db4e9ff1a6",
+        "status": "all additions and removals match primary Nasdaq announcement"
+      },
+      {
+        "date": "2013-12-23",
+        "source": "https://ir.nasdaq.com/static-files/07d71061-d890-419b-ba4e-3ed37b6b9495",
+        "status": "all additions and removals match primary Nasdaq announcement"
+      }
+    ],
+    "known_limitations": [
+      "CMCSK explicitly omitted in source despite being a genuine share class in the index in 2014\u201315.",
+      "LVNTA appears in primary CNDX holdings from October 2014 while the source list lacks it.",
+      "Index-addition and removal events do not supply merger, spinoff, cash-consideration or liquidation terms for retained holdings.",
+      "Tickers are labels, not stable security IDs. Old SNDK, DELL, ALTR and others must not automatically map to reused modern tickers.",
+      "Removal from index must stop future purchases, not automatically sell existing holdings, under the requested rule."
+    ]
+  },
+  "primary_monthly_weights": {
+    "source": "BlackRock CNDX physical Nasdaq-100 ETF historical holdings JSON",
+    "source_url": "https://www.blackrock.com/varnish-api/uk-retail01-product-data/product-data/api/v2/get-product-data?appSubType=ISHARES&appType=PRODUCT_PAGE&component=holdings.all&locale=en_GB&portfolioId=253741&targetSite=ishares-uk&userType=individual&excludeContent=true&includeConfig=true&asOfDate=20150930",
+    "earliest_valid": "2014-01-31",
+    "last_valid": "2026-09-30",
+    "valid_snapshots": 147,
+    "total_requested_monthends": 193,
+    "missing_snapshots": 46,
+    "missing_before_2014": 40,
+    "missing_within_supported_period": [
+      "20170131",
+      "20170228",
+      "20170331",
+      "20170428",
+      "20170531",
+      "20170630"
+    ],
+    "holding_rows": 15964,
+    "equity_rows": 15138,
+    "validation": "Accepted only if response asOfDate exactly equals request and ticker.value is a nonempty list. This rejects silent current-date fallback.",
+    "known_limitations": [
+      "These are actual historical fund weights, not the official index weights; cash/derivatives and tracking differences exist.",
+      "Some early symbols are retrospectively relabeled or use non-US exchange symbols. Examples: GOOGL before April 2014, AABA for Yahoo in 2014, QRTEA for LINTA/QVCA, and INCO for Intel. Join by dated ISIN/security identity, not raw ticker.",
+      "Point-in-time publication timestamps are not included. Prior month-end weights are a reasonable stated lag assumption for next-month purchases but exact publication availability is not proven.",
+      "Jan\u2013Jun 2017 monthly holdings are missing. Nearby-day requests also returned no holdings.",
+      "The generic fundDownloadV2 XLS accepts asOfDate but left its holdings on current date; do not use that endpoint to infer historical weights.",
+      "The old .ajax CSV endpoint returns HTML with status200; those responses are invalid."
+    ],
+    "github_vs_primary_raw_ticker_matches": 100,
+    "github_vs_primary_comparisons": 147,
+    "equity_weight_percent_min": 99.30666,
+    "equity_weight_percent_max": 100.02579
+  },
+  "early_primary_weights": {
+    "source": "QQQ annual reports filed with SEC",
+    "dates": [
+      "2010-09-30",
+      "2011-09-30",
+      "2012-09-30",
+      "2013-09-30"
+    ],
+    "rows": 400,
+    "sum_of_holdings_matches_reported_total": true,
+    "total_investment_usd": {
+      "2010-09-30": 21232784912,
+      "2011-09-30": 21485139915,
+      "2012-09-30": 34622078740,
+      "2013-09-30": 38231088980
+    },
+    "apple_20100930_equity_weight": 0.1979435221719162,
+    "known_limitations": [
+      "Annual weights are sparse. Interpolating future weights would introduce lookahead; simply drifting weights would miss intervening rebalances.",
+      "The 2011-05-02 Nasdaq special rebalance materially changed weights. Membership did not change; ignoring it makes the reconstructed allocation wrong.",
+      "The annual reports were published after period end (2010 report audited December23; 2011/12/13 reports published following January). They prove holdings at historical dates, but are not themselves publication-timely signals for purchases immediately after those dates.",
+      "No full monthly weight sequence for October2010\u2013December2013 was recovered."
+    ]
+  },
+  "backtest_conclusion": "Full requested direct-stock return should not be reported as validated: historical monthly weights remain incomplete, early ticker identities need reconciliation, and retained departed stocks require separately vetted prices, distributions and corporate-action terms.",
+  "sources": {
+    "qqq_20100930": "https://www.sec.gov/Archives/edgar/data/1067839/000110465910064790/a10-18275_1n30b2.htm",
+    "qqq_20110930": "https://www.sec.gov/Archives/edgar/data/1067839/000110465912003105/a11-28102_1n30b2.htm",
+    "qqq_20120930": "https://www.sec.gov/Archives/edgar/data/1067839/000110465913005075/a12-24340_1n30b2.htm",
+    "qqq_20130930": "https://www.sec.gov/Archives/edgar/data/1067839/000110465914003107/a13-21957_1n30b2.htm",
+    "2011_special_rebalance": "https://ir.nasdaq.com/node/70891",
+    "cndx_product": "https://www.ishares.com/uk/individual/en/products/253741/ishares-nasdaq-100-ucits-etf",
+    "cndx_archive_example": "https://www.blackrock.com/varnish-api/uk-retail01-product-data/product-data/api/v2/get-product-data?appSubType=ISHARES&appType=PRODUCT_PAGE&component=holdings.all&locale=en_GB&portfolioId=253741&targetSite=ishares-uk&userType=individual&excludeContent=true&includeConfig=true&asOfDate=20150930"
+  }
+}

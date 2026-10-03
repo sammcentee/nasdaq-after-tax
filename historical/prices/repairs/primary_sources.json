@@ -1,0 +1,16 @@
+{
+  "ebay_terms": "https://www.ebayinc.com/stories/news/ebay-inc-board-approves-completion-of-ebay-and-paypal-separation/",
+  "ebay_raw_extrema": "https://ebay.q4cdn.com/610426115/files/doc_financials/financials/2015/2015_ebay_annual_report.pdf",
+  "google_2014": "https://www.sec.gov/Archives/edgar/data/1288776/000112760215001601/xslF345X03/form4.xml",
+  "google_2014_exdate": "https://ir.nasdaq.com/node/81631",
+  "google_2015": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ETA2015-52",
+  "celgene_terms": "https://news.bms.com/news/details/2019/Bristol-Myers-Squibb-Completes-Acquisition-of-Celgene-Creating-a-Leading-Biopharma-Company/default.aspx",
+  "celgene_split_2014": "https://www.sec.gov/Archives/edgar/data/816284/000119312514241821/d744699dex991.htm",
+  "cvr_expiry": "https://www.bms.com/investors/shareholder-services/shareholder-faq.html",
+  "alexion_terms": "https://www.astrazeneca.com/media-centre/press-releases/2020/astrazeneca-to-acquire-alexion.html",
+  "alexion_close": "https://www.astrazeneca.com/media-centre/press-releases/2021/acquisition-of-alexion-completed.html",
+  "alexion_split_2011": "https://www.sec.gov/Archives/edgar/data/899866/000119312511137689/dex991.htm",
+  "azn_conversion": "https://www.sec.gov/Archives/edgar/data/901832/000165495426000464/a4875p.htm",
+  "azn_conversion_completed": "https://www.astrazeneca.com/investor-relations/faqs.html",
+  "atvi_cash": "https://www.sec.gov/Archives/edgar/data/789019/000119312523255762/d537928d8k.htm"
+}

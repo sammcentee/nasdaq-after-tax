@@ -1,0 +1,42 @@
+[
+  {
+    "symbol": "AAPL",
+    "first_date": "2010-09-30",
+    "first_raw_close": 283.7500190734863,
+    "last_date": "2026-09-30",
+    "last_raw_close": 333.0199890136719,
+    "quantity_multiplier": 28.0,
+    "price_only_multiple": 32.861882169487764,
+    "cash_dividend_observations": 57
+  },
+  {
+    "symbol": "NVDA",
+    "first_date": "2010-09-30",
+    "first_raw_close": 11.679999828338625,
+    "last_date": "2026-09-30",
+    "last_raw_close": 228.3800048828125,
+    "quantity_multiplier": 40.0,
+    "price_only_multiple": 782.1233158880876,
+    "cash_dividend_observations": 56
+  },
+  {
+    "symbol": "MSFT",
+    "first_date": "2010-09-30",
+    "first_raw_close": 24.489999771118164,
+    "last_date": "2026-09-30",
+    "last_raw_close": 512.9000244140625,
+    "quantity_multiplier": 1.0,
+    "price_only_multiple": 20.943243332282176,
+    "cash_dividend_observations": 64
+  },
+  {
+    "symbol": "AMZN",
+    "first_date": "2010-09-30",
+    "first_raw_close": 157.06000328063965,
+    "last_date": "2026-09-30",
+    "last_raw_close": 249.1499938964844,
+    "quantity_multiplier": 20.0,
+    "price_only_multiple": 31.726727198814014,
+    "cash_dividend_observations": 0
+  }
+]

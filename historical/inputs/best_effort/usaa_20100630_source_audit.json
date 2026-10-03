@@ -1,0 +1,20 @@
+{
+  "source_url": "https://www.sec.gov/Archives/edgar/data/908695/000090869510000170/ncsrsnas063010.htm",
+  "source_sha256": "f8057591560c44df4b7354211a974105241562041f141c74a8428b9e4069d27b",
+  "report_date": "2010-06-30",
+  "filed_date": "2010-08-27",
+  "accepted": "2010-08-27T19:04:40.000Z",
+  "available_date": "2010-08-30",
+  "holding_count": 100,
+  "reported_equity_value_usd": 154982000,
+  "equity_value_sum_matches_report": true,
+  "all_100_names_preserved": true,
+  "normalization": "All reported ordinary equities normalized over USD154982000; no price-survivor filtering",
+  "limitations": [
+    "USAA index fund's actual portfolio is a close contemporaneous proxy, not certified exact Nasdaq index weights.",
+    "Reported stock values are rounded to USD1000; implied raw closes are rounding-bounded anchors, not precise executions.",
+    "Fund report shows common stocks at98.5% of NAV plus Nasdaq futures at1.6% exposure; only equity-sleeve relative weights are used.",
+    "June snapshot is still92days old at first contribution, but replaces the former365day-old September2009 snapshot.",
+    "No prices, weights or returns from the later September2010 annual report enter these values; it supplies historical issuer labels only."
+  ]
+}

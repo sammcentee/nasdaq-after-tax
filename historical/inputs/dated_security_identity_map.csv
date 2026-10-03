@@ -1,0 +1,402 @@
+ticker,isin,security_id,price_id,identity_quality,identity_notes,candidate_price_ids,first_source_date,last_source_date,observed_names
+4XS,US30219G1085,tts-828820,tts-828820,historical_alias_candidate,,tts-828820,2014-01-31,2014-02-28,EXPRESS SCRIPTS HOLDING
+AABA,US9843321061,isin:US9843321061,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2014-01-31,2014-11-28,ALTABA INC
+AAL,US02376R1023,tts-67645939,tts-67645939,name_symbol_date_consistent_candidate,,tts-67645939,2014-12-31,2020-03-31,AMERICAN AIRLINES GROUP INC
+AAPL,,tts-831814,tts-831814,name_symbol_date_consistent_candidate,,tts-831814,2009-09-30,2013-09-30,"Apple, Inc."
+AAPL,US0378331005,tts-831814,tts-831814,name_symbol_date_consistent_candidate,,tts-831814,2014-03-31,2026-09-30,APPLE | APPLE INC
+AAPL*,US0378331005,tts-831814,tts-831814,historical_alias_candidate,,tts-831814,2014-01-31,2014-02-28,APPLE INC
+ABNB,US0090661010,tts-207966789,tts-207966789,name_symbol_date_consistent_candidate,,tts-207966789,2021-12-31,2026-09-30,AIRBNB CLASS A | AIRBNB INC CLASS A
+ADBE,,tts-827038,tts-827038,name_symbol_date_consistent_candidate,,tts-827038,2009-09-30,2013-09-30,"Adobe Systems, Inc."
+ADBE,US00724F1012,tts-827038,tts-827038,name_symbol_date_consistent_candidate,,tts-827038,2014-01-31,2026-09-30,ADOBE INC | ADOBE SYSTEM INC
+ADI,,tts-41568568,tts-41568568,name_symbol_date_consistent_candidate,,tts-41568568,2013-09-30,2013-09-30,"Analog Devices, Inc."
+ADI,US0326541051,tts-41568568,tts-41568568,name_symbol_date_consistent_candidate,,tts-41568568,2014-01-31,2026-09-30,ANALOG DEVICES | ANALOG DEVICES INC
+ADP,,tts-15888595,tts-15888595,name_symbol_date_consistent_candidate,,tts-15888595,2009-09-30,2013-09-30,"Automatic Data Processing, Inc."
+ADP,US0530151036,tts-15888595,tts-15888595,name_symbol_date_consistent_candidate,,tts-15888595,2014-01-31,2026-09-30,AUTOMATIC DATA PROCESSING INC
+ADSK,,tts-831838,tts-831838,name_symbol_date_consistent_candidate,,tts-831838,2009-09-30,2013-09-30,"Autodesk, Inc."
+ADSK,US0527691069,tts-831838,tts-831838,name_symbol_date_consistent_candidate,,tts-831838,2014-01-31,2026-09-30,AUTODESK | AUTODESK INC
+AEP,US0255371017,tts-203738081,tts-203738081,name_symbol_date_consistent_candidate,,tts-203738081,2020-12-31,2026-09-30,AMERICAN ELECTRIC POWER INC
+AKAM,,tts-831856,tts-831856,name_symbol_date_consistent_candidate,,tts-831856,2009-09-30,2013-09-30,"Akamai Technologies, Inc."
+AKAM,US00971T1016,tts-831856,tts-831856,name_symbol_date_consistent_candidate,,tts-831856,2014-01-31,2017-11-30,AKAMAI TECHNOLOGIES INC
+ALAB,US04626A1034,tts-306428272,tts-306428272,name_symbol_date_consistent_candidate,,tts-306428272,2026-06-30,2026-09-30,ASTERA LABS | ASTERA LABS INC
+ALGN,US0162551016,tts-827425,tts-827425,name_symbol_date_consistent_candidate,,tts-827425,2017-10-31,2023-11-30,ALIGN TECHNOLOGY INC
+ALNY,US02043Q1076,tts-1781672,tts-1781672,name_symbol_date_consistent_candidate,,tts-1781672,2025-12-31,2026-09-30,ALNYLAM PHARMACEUTICALS | ALNYLAM PHARMACEUTICALS INC
+ALTR,,isin:US0214411003,,unresolved_identity,Vendor name contradicts historical issuer; price history needs independent confirmation.,tts-130097863|tts-827511,2009-09-30,2013-09-30,Altera Corp.
+ALTR,US0214411003,isin:US0214411003,,unresolved_identity,Vendor name contradicts historical issuer; price history needs independent confirmation.,tts-130097863|tts-827511,2014-01-31,2015-09-30,ALTERA CORP
+ALXN,,tts-831866,tts-831866,name_symbol_date_consistent_candidate,,tts-831866,2011-04-04,2013-09-30,"Alexion Pharmaceuticals, Inc."
+ALXN,US0153511094,tts-831866,tts-831866,name_symbol_date_consistent_candidate,,tts-831866,2014-01-31,2021-06-30,ALEXION PHARMACEUTICALS INC
+AMAT,,tts-827539,tts-827539,name_symbol_date_consistent_candidate,,tts-827539,2009-09-30,2013-09-30,"Applied Materials, Inc."
+AMAT,US0382221051,tts-827539,tts-827539,name_symbol_date_consistent_candidate,,tts-827539,2014-01-31,2026-09-30,APPLIED MATERIAL INC
+AMD,US0079031078,tts-80383707,tts-80383707,name_symbol_date_consistent_candidate,,tts-80383707,2018-12-31,2026-09-30,ADVANCED MICRO DEVICES | ADVANCED MICRO DEVICES INC
+AMGN,,tts-827593,tts-827593,name_symbol_date_consistent_candidate,,tts-827593,2009-09-30,2013-09-30,"Amgen, Inc."
+AMGN,US0311621009,tts-827593,tts-827593,name_symbol_date_consistent_candidate,,tts-827593,2014-01-31,2026-09-30,AMGEN INC
+AMZN,,tts-827705,tts-827705,name_symbol_date_consistent_candidate,,tts-827705,2009-09-30,2013-09-30,"Amazon.Com, Inc. | Amazon.com, Inc."
+AMZN,US0231351067,tts-827705,tts-827705,name_symbol_date_consistent_candidate,,tts-827705,2014-01-31,2026-09-30,AMAZON COM INC | AMAZON.COM INC
+ANSS,US03662Q1058,tts-827769,tts-827769,name_symbol_date_consistent_candidate,,tts-827769,2019-12-31,2025-06-30,ANSYS INC
+APOL,,tts-827801,tts-827801,name_symbol_date_consistent_candidate,,tts-827801,2009-09-30,2012-09-30,"Apollo Group, Inc., Class A"
+APP,US03831W1080,tts-217036446,tts-217036446,name_symbol_date_consistent_candidate,,tts-217036446,2024-11-29,2026-09-30,APPLOVIN CLASS A | APPLOVIN CORP CLASS A
+ARM,US0420682058,tts-289578745,tts-289578745,name_symbol_date_consistent_candidate,,tts-289578745,2024-06-28,2026-09-30,ARM HOLDINGS AMERICAN DEPOSITARY S
+ASML,USN070592100,tts-827847,tts-827847,name_symbol_date_consistent_candidate,,tts-827847,2017-12-29,2026-09-30,ASML HOLDING ADR REPRESENTING | ASML HOLDING ADR REPRESENTING NV
+ATVI,,tts-827879,tts-827879,name_symbol_date_consistent_candidate,,tts-827879,2009-09-30,2013-09-30,"Activision Blizzard, Inc."
+ATVI,US00507V1098,tts-827879,tts-827879,name_symbol_date_consistent_candidate,,tts-827879,2014-01-31,2023-06-30,ACTIVISION BLIZZARD INC
+AVGO,,tts-3685519,tts-3685519,name_symbol_date_consistent_candidate,,tts-3685519,2012-09-30,2013-09-30,"Avago Technologies Ltd. | Avago Technologies Ltd., Class A"
+AVGO,SG9999006241,tts-3685519,tts-3685519,name_symbol_date_consistent_candidate,,tts-3685519,2014-01-31,2016-01-29,AVAGO TECHNOLOGIES LTD | BROADCOM LTD
+AVGO,SG9999014823,tts-3685519,tts-3685519,name_symbol_date_consistent_candidate,,tts-3685519,2016-02-29,2018-03-30,BROADCOM LTD
+AVGO,US11135F1012,tts-3685519,tts-3685519,name_symbol_date_consistent_candidate,,tts-3685519,2018-04-30,2026-09-30,BROADCOM INC
+AXON,US05464C1018,tts-127281511,tts-127281511,name_symbol_date_consistent_candidate,,tts-127281511,2024-12-31,2026-09-30,AXON ENTERPRISE | AXON ENTERPRISE INC
+AZN,US0463531089,tts-203249662,tts-203249662,name_symbol_date_consistent_candidate,,tts-203249662,2022-02-28,2025-12-31,ASTRAZENECA ADR REPRESENTING .5 PL
+BATRA,US5312297063,tts-104028640,tts-104028640,name_symbol_date_consistent_candidate,,tts-104028640,2016-04-29,2016-05-31,LIBERTY BRAVES GROUP A
+BATRK,US5312298889,tts-104028642,tts-104028642,name_symbol_date_consistent_candidate,,tts-104028642,2016-04-29,2016-05-31,LIBERTY BRAVES GROUP C
+BATRR,US5312291108,isin:US5312291108,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2016-05-31,2016-05-31,LIBERTY MEDIA LIBERTY BRAVES SUBSC
+BBBY,,tts-827919,tts-827919,dated_reuse_or_duplicate_resolved_candidate,,tts-367344332|tts-827919,2009-09-30,2013-09-30,"Bed Bath & Beyond, Inc."
+BBBY,US0758961009,tts-827919,tts-827919,dated_reuse_or_duplicate_resolved_candidate,,tts-367344332|tts-827919,2014-01-31,2016-11-30,BED BATH AND BEYOND INC
+BIDU,,tts-3138949,tts-3138949,name_symbol_date_consistent_candidate,,tts-3138949,2009-09-30,2013-09-30,"Baidu, Inc. | Baidu, Inc. ADR"
+BIDU,US0567521085,tts-3138949,tts-3138949,name_symbol_date_consistent_candidate,,tts-3138949,2014-01-31,2022-11-30,BAIDU ADR REPTG   INC CLASS A | BAIDU ADR REPTG  INC CLASS A | BAIDU ADS REPTG  INC CLASS A
+BIIB,,tts-1076458,tts-1076458,name_symbol_date_consistent_candidate,,tts-1076458,2009-09-30,2013-09-30,"Biogen IDEC, Inc. | Biogen Idec, Inc."
+BIIB,US09062X1037,tts-1076458,tts-1076458,name_symbol_date_consistent_candidate,,tts-1076458,2014-01-31,2025-11-28,BIOGEN IDEC INC | BIOGEN INC | BIOGEN INC INC
+BKNG,US09857L1089,tts-136266150,tts-136266150,name_symbol_date_consistent_candidate,,tts-136266150,2018-02-28,2026-09-30,BOOKING HOLDINGS | BOOKING HOLDINGS INC
+BKR,US05722G1004,tts-234941877,tts-234941877,name_symbol_date_consistent_candidate,,tts-234941877,2022-12-30,2026-09-30,BAKER HUGHES CLASS A
+BMC,,tts-17914522,tts-17914522,name_symbol_date_consistent_candidate,,tts-17914522,2010-09-30,2012-09-30,"BMC Software, Inc."
+BMRN,US09061G1013,tts-831964,tts-831964,name_symbol_date_consistent_candidate,,tts-831964,2015-07-31,2020-11-30,BIOMARIN PHARMACEUTICAL INC
+BRCM,,tts-828037,tts-828037,name_symbol_date_consistent_candidate,,tts-828037,2009-09-30,2013-09-30,"Broadcom Corp., Class A"
+BRCM,US1113201073,tts-828037,tts-828037,name_symbol_date_consistent_candidate,,tts-828037,2014-01-31,2015-10-30,BROADCOM CORP CLASS A
+CA,,tts-14011355,tts-14011355,dated_reuse_or_duplicate_resolved_candidate,,tts-14011355|tts-298814706,2009-09-30,2013-09-30,"CA, Inc."
+CA,US12673P1057,tts-14011355,tts-14011355,dated_reuse_or_duplicate_resolved_candidate,,tts-14011355|tts-298814706,2014-01-31,2018-10-31,CA INC
+CCEP,GB00BDCPN049,tts-228473225,tts-228473225,name_symbol_date_consistent_candidate,,tts-228473225,2023-12-29,2026-09-30,COCA COLA EUROPACIFIC PARTNERS PLC
+CDNS,US1273871087,tts-3468716,tts-3468716,name_symbol_date_consistent_candidate,,tts-3468716,2017-12-29,2026-09-30,CADENCE DESIGN SYSTEMS | CADENCE DESIGN SYSTEMS INC
+CDW,US12514G1085,tts-61020822,tts-61020822,name_symbol_date_consistent_candidate,,tts-61020822,2019-12-31,2025-11-28,CDW CORP
+CEG,US21037T1097,tts-239110702,tts-239110702,dated_reuse_or_duplicate_resolved_candidate,,tts-239110702|tts-818716,2022-02-28,2026-09-30,CONSTELLATION ENERGY CORP
+CELG,,tts-832022,tts-832022,name_symbol_date_consistent_candidate,,tts-832022,2009-09-30,2013-09-30,Celgene Corp.
+CELG,US1510201049,tts-832022,tts-832022,name_symbol_date_consistent_candidate,,tts-832022,2014-01-31,2019-10-31,CELGENE CORP
+CEPH,,tts-832024,tts-832024,name_symbol_date_consistent_candidate,,tts-832024,2009-09-30,2011-05-02,"Cephalon, Inc."
+CERN,,tts-832025,tts-832025,name_symbol_date_consistent_candidate,,tts-832025,2009-09-30,2013-09-30,Cerner Corp.
+CERN,US1567821046,tts-832025,tts-832025,name_symbol_date_consistent_candidate,,tts-832025,2014-01-31,2021-11-30,CERNER CORP
+CHKP,,tts-828255,tts-828255,name_symbol_date_consistent_candidate,,tts-828255,2009-09-30,2013-09-30,Check Point Software Technologies | Check Point Software Technologies Ltd.
+CHKP,IL0010824113,tts-828255,tts-828255,name_symbol_date_consistent_candidate,,tts-828255,2014-01-31,2021-11-30,CHECK POINT SOFTWARE TECHNOLOGIES
+CHRW,,tts-828266,tts-828266,name_symbol_date_consistent_candidate,,tts-828266,2009-09-30,2013-09-30,"CH Robinson Worldwide, Inc."
+CHRW,US12541W2098,tts-828266,tts-828266,name_symbol_date_consistent_candidate,,tts-828266,2014-01-31,2015-11-30,CH ROBINSON WORLDWIDE INC
+CHTR,,tts-828275,tts-828275,name_symbol_date_consistent_candidate,,tts-828275,2013-09-30,2013-09-30,"Charter Communications, Inc., Class A"
+CHTR,US16117M3051,tts-828275,tts-828275,name_symbol_date_consistent_candidate,,tts-828275,2014-01-31,2016-04-29,CHARTER COMMUNICATIONS INC CLASS A
+CHTR,US16119P1084,tts-828275,tts-828275,name_symbol_date_consistent_candidate,,tts-828275,2016-05-31,2026-05-29,CHARTER COMMUNICATIONS INC CLASS A
+CMCSA,,tts-828340,tts-828340,name_symbol_date_consistent_candidate,,tts-828340,2009-09-30,2013-09-30,"Comcast Corp., Class A"
+CMCSA,US20030N1019,tts-828340,tts-828340,name_symbol_date_consistent_candidate,,tts-828340,2014-01-31,2026-09-30,COMCAST A CORP | COMCAST CLASS A | COMCAST CORP CLASS A
+CMCSK,US20030N2009,tts-828342,tts-828342,name_symbol_date_consistent_candidate,,tts-828342,2014-12-31,2015-11-30,COMCAST SPECIAL CORP CLASS A
+COST,,tts-828403,tts-828403,name_symbol_date_consistent_candidate,,tts-828403,2009-09-30,2013-09-30,Costco Wholesale Corp.
+COST,US22160K1051,tts-828403,tts-828403,name_symbol_date_consistent_candidate,,tts-828403,2014-01-31,2026-09-30,COSTCO WHOLESALE CORP
+CPRT,US2172041061,tts-828408,tts-828408,name_symbol_date_consistent_candidate,,tts-828408,2019-12-31,2026-09-30,COPART INC
+CRWD,US22788C1053,tts-167018563,tts-167018563,name_symbol_date_consistent_candidate,,tts-167018563,2021-08-31,2026-09-30,CROWDSTRIKE HOLDINGS CLASS A | CROWDSTRIKE HOLDINGS INC CLASS A
+CRWV,US21873S1087,tts-347224215,tts-347224215,name_symbol_date_consistent_candidate,,tts-347224215,2026-06-30,2026-09-30,COREWEAVE CLASS A | COREWEAVE INC CLASS A
+CSCO,,tts-828468,tts-828468,name_symbol_date_consistent_candidate,,tts-828468,2009-09-30,2013-09-30,"Cisco Systems, Inc."
+CSCO,US17275R1023,tts-828468,tts-828468,name_symbol_date_consistent_candidate,,tts-828468,2014-01-31,2026-09-30,CISCO SYSTEMS INC
+CSGP,US22160N1090,tts-832092,tts-832092,name_symbol_date_consistent_candidate,,tts-832092,2019-12-31,2026-04-30,COSTAR GROUP INC
+CSX,US1264081035,tts-98691180,tts-98691180,name_symbol_date_consistent_candidate,,tts-98691180,2016-02-29,2026-09-30,CSX | CSX CORP
+CTAS,,tts-832098,tts-832098,name_symbol_date_consistent_candidate,,tts-832098,2009-09-30,2010-09-30,Cintas Corp.
+CTAS,US1729081059,tts-832098,tts-832098,name_symbol_date_consistent_candidate,,tts-832098,2016-12-30,2026-09-30,CINTAS | CINTAS CORP
+CTRP,,tts-177780548,tts-177780548,historical_alias_candidate,,tts-177780548,2011-04-04,2011-09-30,Ctrip.Com International Ltd. ADR
+CTRP,US22943F1003,tts-177780548,tts-177780548,historical_alias_candidate,,tts-177780548,2015-12-31,2019-10-31,CTRIP.COM INTERNATIONAL  ADR REPRE | CTRIP.COM INTERNATIONAL ADR REPRES
+CTRX,,tts-48237584,tts-48237584,name_symbol_date_consistent_candidate,,tts-48237584,2013-09-30,2013-09-30,Catamaran Corp.
+CTRX,CA1488871023,tts-48237584,tts-48237584,name_symbol_date_consistent_candidate,,tts-48237584,2014-01-31,2015-06-30,CATAMARAN CORP
+CTSH,,tts-828513,tts-828513,name_symbol_date_consistent_candidate,,tts-828513,2009-09-30,2013-09-30,"Cognizant Technology Solutions Corp., Class A"
+CTSH,US1924461023,tts-828513,tts-828513,name_symbol_date_consistent_candidate,,tts-828513,2014-01-31,2026-05-29,COGNIZANT TECHNOLOGY SOLUTIONS COR
+CTXS,,tts-828516,tts-828516,name_symbol_date_consistent_candidate,,tts-828516,2009-09-30,2013-09-30,"Citrix Systems, Inc."
+CTXS,US1773761002,tts-828516,tts-828516,name_symbol_date_consistent_candidate,,tts-828516,2014-01-31,2020-11-30,CITRIX SYSTEMS INC
+DASH,US25809K1051,tts-291149473,tts-291149473,name_symbol_date_consistent_candidate,,tts-291149473,2023-12-29,2026-09-30,DOORDASH CLASS A | DOORDASH INC CLASS A
+DDOG,US23804L1035,tts-174002103,tts-174002103,name_symbol_date_consistent_candidate,,tts-174002103,2021-12-31,2026-09-30,DATADOG INC CLASS A
+DELL,,tts-828600,tts-828600,dated_reuse_or_duplicate_resolved_candidate,,tts-157040141|tts-828600,2009-09-30,2013-09-30,"Dell, Inc."
+DISCA,,tts-3103596,tts-3103596,name_symbol_date_consistent_candidate,,tts-3103596,2013-09-30,2013-09-30,"Discovery Communications, Inc., Class A"
+DISCA,US25470F1049,tts-3103596,tts-3103596,name_symbol_date_consistent_candidate,,tts-3103596,2014-01-31,2017-11-30,DISCOVERY COMMUNICATIONS INC SERIE | DISCOVERY COMMUNICATIONS-A | DISCOVERY INC SERIES A
+DISCK,US25470F3029,tts-15427298,tts-15427298,name_symbol_date_consistent_candidate,,tts-15427298,2014-08-29,2017-11-30,DISCOVERY COMMUNICATIONS INC SERIE | DISCOVERY COMMUNICATIONS-C | DISCOVERY INC SERIES C
+DISH,,tts-832145,tts-832145,name_symbol_date_consistent_candidate,,tts-832145,2009-09-30,2010-09-30,"DISH Network Corp., Class A"
+DISH,US25470M1099,tts-832145,tts-832145,name_symbol_date_consistent_candidate,,tts-832145,2014-01-31,2018-06-29,DISH NETWORK CORP CLASS A
+DLTR,,tts-828632,tts-828632,name_symbol_date_consistent_candidate,,tts-828632,2011-04-04,2013-09-30,"Dollar Tree, Inc."
+DLTR,US2567461080,tts-828632,tts-828632,name_symbol_date_consistent_candidate,,tts-828632,2014-01-31,2024-10-31,DOLLAR TREE INC
+DOCU,US2561631068,tts-140322345,tts-140322345,name_symbol_date_consistent_candidate,,tts-140322345,2020-06-30,2022-11-30,DOCUSIGN INC
+DTV,,tts-12035732,tts-12035732,dated_reuse_or_duplicate_resolved_candidate,,tts-111093294|tts-12035732,2009-09-30,2013-09-30,"DIRECTV | DIRECTV Group, Inc./The | DIRECTV, Class A"
+DTV,US25490A3095,tts-12035732,tts-12035732,dated_reuse_or_duplicate_resolved_candidate,,tts-111093294|tts-12035732,2014-01-31,2015-06-30,DIRECTV
+DXCM,US2521311074,tts-2711488,tts-2711488,name_symbol_date_consistent_candidate,,tts-2711488,2020-04-30,2026-09-30,DEXCOM INC
+EA,US2855121099,tts-36769516,tts-36769516,name_symbol_date_consistent_candidate,,tts-36769516,2014-12-31,2026-07-31,ELECTRONIC ARTS INC
+EBAY,,tts-832177,tts-832177,name_symbol_date_consistent_candidate,,tts-832177,2009-09-30,2013-09-30,"eBay, Inc."
+EBAY,US2786421030,tts-832177,tts-832177,name_symbol_date_consistent_candidate,,tts-832177,2014-01-31,2023-11-30,EBAY INC
+ENDP,IE00BJ3V9050,tts-828772,tts-828772,name_symbol_date_consistent_candidate,,tts-828772,2015-12-31,2016-06-30,ENDO INTERNATIONAL PLC
+ENPH,US29355A1079,tts-40948542,tts-40948542,name_symbol_date_consistent_candidate,,tts-40948542,2022-11-30,2023-11-30,ENPHASE ENERGY INC
+EQIX,,tts-828800,tts-828800,name_symbol_date_consistent_candidate,,tts-828800,2013-09-30,2013-09-30,"Equinix, Inc."
+EQIX,US29444U5020,tts-828800,tts-828800,name_symbol_date_consistent_candidate,,tts-828800,2014-01-31,2014-12-31,EQUINIX INC | EQUINIX REIT INC
+EQIX,US29444U7000,tts-828800,tts-828800,name_symbol_date_consistent_candidate,,tts-828800,2015-01-30,2015-02-27,EQUINIX REIT INC
+ERTS,,tts-36769516,tts-36769516,historical_alias_candidate,,tts-36769516,2009-09-30,2012-09-30,"Electronic Arts, Inc."
+ESRX,,tts-828820,tts-828820,name_symbol_date_consistent_candidate,,tts-828820,2009-09-30,2013-09-30,"Express Scripts Holding Co. | Express Scripts, Inc. | Express Scripts, Inc., Class A"
+ESRX,US30219G1085,tts-828820,tts-828820,name_symbol_date_consistent_candidate,,tts-828820,2014-03-31,2018-11-30,EXPRESS SCRIPTS HOLDING | EXPRESS SCRIPTS HOLDING CO
+EXC,US30161N1019,tts-175405676,tts-175405676,name_symbol_date_consistent_candidate,,tts-175405676,2019-11-29,2026-09-30,EXELON CORP
+EXPD,,tts-828860,tts-828860,name_symbol_date_consistent_candidate,,tts-828860,2009-09-30,2013-09-30,"Expeditors International of Washington, Inc."
+EXPD,US3021301094,tts-828860,tts-828860,name_symbol_date_consistent_candidate,,tts-828860,2014-01-31,2015-11-30,EXPEDITORS INTERNATIONAL OF WASHIN
+EXPE,,tts-828861,tts-828861,name_symbol_date_consistent_candidate,,tts-828861,2009-09-30,2013-09-30,"Expedia, Inc."
+EXPE,US30212P3038,tts-828861,tts-828861,name_symbol_date_consistent_candidate,,tts-828861,2014-01-31,2020-11-30,EXPEDIA GROUP INC | EXPEDIA INC
+FANG,US25278X1090,tts-51776389,tts-51776389,name_symbol_date_consistent_candidate,,tts-51776389,2022-12-30,2026-09-30,DIAMONDBACK ENERGY | DIAMONDBACK ENERGY INC
+FAST,,tts-828870,tts-828870,name_symbol_date_consistent_candidate,,tts-828870,2009-09-30,2013-09-30,Fastenal Co | Fastenal Co.
+FAST,US3119001044,tts-828870,tts-828870,name_symbol_date_consistent_candidate,,tts-828870,2014-01-31,2026-09-30,FASTENAL
+FB,,tts-222568848,tts-222568848,historical_alias_candidate,,tts-222568848,2013-09-30,2013-09-30,"Facebook, Inc., Class A"
+FB,US30303M1027,tts-222568848,tts-222568848,historical_alias_candidate,,tts-222568848,2014-03-31,2022-05-31,FACEBOOK CLASS A  INC | META PLATFORMS INC CLASS A
+FB*,US30303M1027,tts-222568848,tts-222568848,historical_alias_candidate,,tts-222568848,2014-01-31,2014-02-28,FACEBOOK CLASS A  INC
+FER,NL0015001FS8,tts-310935268,tts-310935268,name_symbol_date_consistent_candidate,,tts-310935268,2025-12-31,2026-09-30,FERROVIAL | FERROVIAL NV
+FFIV,,tts-828913,tts-828913,name_symbol_date_consistent_candidate,,tts-828913,2011-04-04,2013-09-30,"F5 Networks, Inc."
+FFIV,US3156161024,tts-828913,tts-828913,name_symbol_date_consistent_candidate,,tts-828913,2014-01-31,2014-11-28,F5 NETWORKS INC
+FISV,,tts-832260,tts-832260,dated_reuse_or_duplicate_resolved_candidate,,tts-377137730|tts-832260,2009-09-30,2013-09-30,"Fiserv, Inc."
+FISV,US3377381088,tts-832260,tts-832260,dated_reuse_or_duplicate_resolved_candidate,,tts-377137730|tts-832260,2014-01-31,2023-05-31,FISERV INC
+FLEX,,tts-832265,tts-832265,name_symbol_date_consistent_candidate,,tts-832265,2009-09-30,2012-09-30,Flextronics International Ltd.
+FLIR,,tts-832266,tts-832266,name_symbol_date_consistent_candidate,,tts-832266,2009-09-30,2011-09-30,"FLIR Systems, Inc."
+FOSL,,tts-832280,tts-832280,name_symbol_date_consistent_candidate,,tts-832280,2012-09-30,2013-09-30,"Fossil Group, Inc. | Fossil, Inc."
+FOX,US35137L2043,tts-61149825,tts-61149825,name_symbol_date_consistent_candidate,,tts-61149825,2019-03-29,2021-11-30,FOX CORP CLASS B
+FOX,US90130A2006,isin:US90130A2006,,unresolved_identity,Pre-2019 Twenty-First Century Fox is not post-2019 Fox Corporation.,tts-61149825,2014-12-31,2019-02-28,TWENTY-FIRST CENTURY FOX INC CLASS
+FOXA,,isin:US90130A1016,,unresolved_identity,Pre-2019 Twenty-First Century Fox is not post-2019 Fox Corporation.,tts-161284560,2013-09-30,2013-09-30,"Twenty-First Century Fox, Inc."
+FOXA,US35137L1052,tts-61149824,tts-61149824,name_symbol_date_consistent_candidate,,tts-61149824,2019-03-29,2021-11-30,FOX CORP CLASS A
+FOXA,US90130A1016,isin:US90130A1016,,unresolved_identity,Pre-2019 Twenty-First Century Fox is not post-2019 Fox Corporation.,tts-161284560,2014-01-31,2019-02-28,TWENTY FIRST CENTURY FOX INC CLASS
+FSLR,,tts-5211016,tts-5211016,name_symbol_date_consistent_candidate,,tts-5211016,2009-09-30,2011-09-30,"First Solar, Inc."
+FTNT,US34959E1091,tts-20508704,tts-20508704,name_symbol_date_consistent_candidate,,tts-20508704,2021-12-31,2026-09-30,FORTINET | FORTINET INC
+FWLT,,tts-2880955,tts-2880955,name_symbol_date_consistent_candidate,,tts-2880955,2009-09-30,2010-09-30,Foster Wheeler AG
+GEHC,US36266G1076,tts-268663742,tts-268663742,name_symbol_date_consistent_candidate,,tts-268663742,2023-06-30,2026-09-30,GE HEALTHCARE TECHNOLOGIES | GE HEALTHCARE TECHNOLOGIES INC
+GENZ,,tts-829049,tts-829049,dated_reuse_or_duplicate_resolved_candidate,,tts-398207769|tts-829049,2009-09-30,2010-09-30,Genzyme Corp.
+GFS,KYG393871085,tts-231055357,tts-231055357,name_symbol_date_consistent_candidate,,tts-231055357,2022-12-30,2025-11-28,GLOBALFOUNDRIES INC
+GGQ7,US38259P7069,tts-1947579,tts-1947579,historical_alias_candidate,,tts-1947579,2014-04-30,2014-04-30,GOOGLE INC CLASS C
+GILD,,tts-829063,tts-829063,name_symbol_date_consistent_candidate,,tts-829063,2009-09-30,2013-09-30,"Gilead Sciences, Inc."
+GILD,US3755581036,tts-829063,tts-829063,name_symbol_date_consistent_candidate,,tts-829063,2014-01-31,2026-09-30,GILEAD SCIENCES | GILEAD SCIENCES INC
+GMCR,,tts-832321,tts-832321,name_symbol_date_consistent_candidate,,tts-832321,2011-09-30,2013-09-30,"Green Mountain Coffee Roasters, Inc."
+GMCR,US3931221069,tts-832321,tts-832321,name_symbol_date_consistent_candidate,,tts-832321,2014-01-31,2014-02-28,GREEN MOUNTAIN COFFEE ROASTERS INC
+GMCR,US49271M1009,tts-832321,tts-832321,name_symbol_date_consistent_candidate,,tts-832321,2014-03-31,2015-11-30,KEURIG GREEN MOUNTAIN INC
+GOLD,,unresolved:GOLD,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2012-09-30,2013-09-30,Randgold Resources Ltd. ADR
+GOOG,,tts-71625495,tts-71625495,historical_alias_candidate,,tts-71625495,2009-09-30,2013-09-30,"Google, Inc., Class A"
+GOOG,US02079K1079,tts-1947579,tts-1947579,name_symbol_date_consistent_candidate,,tts-1947579,2015-10-30,2026-09-30,ALPHABET CLASS C | ALPHABET INC CLASS C
+GOOG,US38259P7069,tts-1947579,tts-1947579,name_symbol_date_consistent_candidate,,tts-1947579,2014-05-30,2015-09-30,GOOGLE INC CLASS C
+GOOGL,US02079K3059,tts-71625495,tts-71625495,name_symbol_date_consistent_candidate,,tts-71625495,2015-10-30,2026-09-30,ALPHABET CLASS A | ALPHABET INC CLASS A
+GOOGL,US38259P5089,tts-71625495,tts-71625495,name_symbol_date_consistent_candidate,,tts-71625495,2014-01-31,2015-09-30,GOOGLE INC CLASS A
+GRAL,US3847471014,tts-315092541,tts-315092541,name_symbol_date_consistent_candidate,,tts-315092541,2024-06-28,2024-06-28,GRAIL INC
+GRMN,,tts-237275457,tts-237275457,name_symbol_date_consistent_candidate,,tts-237275457,2009-09-30,2013-09-30,Garmin Ltd.
+GRMN,CH0114405324,tts-237275457,tts-237275457,name_symbol_date_consistent_candidate,,tts-237275457,2014-01-31,2015-11-30,GARMIN LTD
+HANS,,tts-37214168,tts-37214168,historical_alias_candidate,,tts-37214168,2009-09-30,2009-09-30,Hansen Natural Corp.
+HAS,US4180561072,tts-17914161,tts-17914161,name_symbol_date_consistent_candidate,,tts-17914161,2016-12-30,2019-11-29,HASBRO INC
+HOLX,,tts-832375,tts-832375,name_symbol_date_consistent_candidate,,tts-832375,2009-09-30,2010-09-30,"Hologic, Inc."
+HOLX,US4364401012,tts-832375,tts-832375,name_symbol_date_consistent_candidate,,tts-832375,2016-12-30,2018-11-30,HOLOGIC INC | HOLOGIC INC.
+HON,US4385161066,tts-219587327,tts-219587327,name_symbol_date_consistent_candidate,,tts-219587327,2021-07-30,2026-05-29,HONEYWELL INTERNATIONAL INC
+HON,US4385162056,tts-219587327,tts-219587327,name_symbol_date_consistent_candidate,,tts-219587327,2026-06-30,2026-09-30,HONEYWELL INTERNATIONAL INC
+HONA,US43849R1059,tts-410496110,tts-410496110,name_symbol_date_consistent_candidate,,tts-410496110,2026-06-30,2026-09-30,HONEYWELL AEROSPACE INC
+HSIC,,tts-829202,tts-829202,name_symbol_date_consistent_candidate,,tts-829202,2009-09-30,2013-09-30,"Henry Schein, Inc."
+HSIC,US8064071025,tts-829202,tts-829202,name_symbol_date_consistent_candidate,,tts-829202,2014-01-31,2019-11-29,HENRY SCHEIN INC
+IACI,,unresolved:IACI,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2009-09-30,2009-09-30,IAC/InterActiveCorp
+IDXX,US45168D1046,tts-832406,tts-832406,name_symbol_date_consistent_candidate,,tts-832406,2017-07-31,2026-09-30,IDEXX LABORATORIES | IDEXX LABORATORIES INC
+ILMN,,tts-829281,tts-829281,name_symbol_date_consistent_candidate,,tts-829281,2009-09-30,2011-09-30,"Illumina, Inc."
+ILMN,US4523271090,tts-829281,tts-829281,name_symbol_date_consistent_candidate,,tts-829281,2014-03-31,2024-11-29,ILLUMINA INC
+ILU,US4523271090,tts-829281,tts-829281,historical_alias_candidate,,tts-829281,2014-01-31,2014-02-28,ILLUMINA INC
+INCO,US4581401001,tts-829352,tts-829352,historical_alias_candidate,,tts-829352,2014-01-31,2014-04-30,INTEL CORPORATION CORP
+INCY,US45337C1027,tts-829309,tts-829309,name_symbol_date_consistent_candidate,,tts-829309,2015-10-30,2021-11-30,INCYTE CORP
+INFY,,tts-53833112,tts-53833112,name_symbol_date_consistent_candidate,,tts-53833112,2009-09-30,2012-09-30,Infosys Technologies Ltd. | Infosys Technologies Ltd. ADR
+INSM,US4576693075,tts-832423,tts-832423,name_symbol_date_consistent_candidate,,tts-832423,2025-12-31,2026-05-29,INSMED INC
+INTC,,tts-829352,tts-829352,name_symbol_date_consistent_candidate,,tts-829352,2009-09-30,2013-09-30,Intel Corp.
+INTC,US4581401001,tts-829352,tts-829352,name_symbol_date_consistent_candidate,,tts-829352,2014-05-30,2026-09-30,INTEL CORP | INTEL CORPORATION | INTEL CORPORATION CORP
+INTU,,tts-829359,tts-829359,name_symbol_date_consistent_candidate,,tts-829359,2009-09-30,2013-09-30,"Intuit, Inc."
+INTU,US4612021034,tts-829359,tts-829359,name_symbol_date_consistent_candidate,,tts-829359,2014-01-31,2026-09-30,INTUIT | INTUIT INC
+ISRG,,tts-829383,tts-829383,name_symbol_date_consistent_candidate,,tts-829383,2009-09-30,2013-09-30,"Intuitive Surgical, Inc."
+ISRG,US46120E6023,tts-829383,tts-829383,name_symbol_date_consistent_candidate,,tts-829383,2014-01-31,2026-09-30,INTUITIVE SURGICAL | INTUITIVE SURGICAL INC
+JBHT,,tts-829418,tts-829418,name_symbol_date_consistent_candidate,,tts-829418,2009-09-30,2010-09-30,"JB Hunt Transport Services, Inc."
+JBHT,US4456581077,tts-829418,tts-829418,name_symbol_date_consistent_candidate,,tts-829418,2017-07-31,2019-11-29,JB HUNT TRANSPORT SERVICES INC
+JD,US47215P1066,tts-72890301,tts-72890301,name_symbol_date_consistent_candidate,,tts-72890301,2015-07-31,2023-11-30,JD.COM ADR REPRESENTING  INC CLASS | JD.COM ADR REPRESENTING INC
+JNPR,,tts-20366359,tts-20366359,name_symbol_date_consistent_candidate,,tts-20366359,2009-09-30,2009-09-30,"Juniper Networks, Inc."
+JOYG,,tts-36299719,tts-36299719,historical_alias_candidate,,tts-36299719,2009-09-30,2011-09-30,"Joy Global, Inc."
+KDP,US49271V1008,tts-203738082,tts-203738082,name_symbol_date_consistent_candidate,,tts-203738082,2020-10-30,2026-09-30,KEURIG DR PEPPER INC
+KFT,,unresolved:KFT,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2012-09-30,2012-09-30,"Kraft Foods, Inc., Class A"
+KHC,US5007541064,tts-90308539,tts-90308539,name_symbol_date_consistent_candidate,,tts-90308539,2015-07-31,2026-08-31,KRAFT HEINZ
+KLAC,,tts-832472,tts-832472,name_symbol_date_consistent_candidate,,tts-832472,2009-09-30,2013-09-30,KLA-Tencor Corp. | Kla-Tencor Corp.
+KLAC,US4824801009,tts-832472,tts-832472,name_symbol_date_consistent_candidate,,tts-832472,2014-01-31,2026-09-30,KLA | KLA CORP | KLA TENCOR CORP
+KRFT,,isin:US50076Q1067,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2013-09-30,2013-09-30,"Kraft Foods Group, Inc."
+KRFT,US50076Q1067,isin:US50076Q1067,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2014-01-31,2015-06-30,KRAFT FOODS GROUP INC
+KTF,US6092071058,tts-51210920,tts-51210920,historical_alias_candidate,,tts-51210920,2014-01-31,2014-02-28,MONDELEZ INTERNATIONAL INC CLASS A
+LBTYA,,tts-1784188,tts-1784188,name_symbol_date_consistent_candidate,,tts-1784188,2009-09-30,2013-09-30,"Liberty Global PLC, Class A | Liberty Global, Inc., Class A"
+LBTYA,GB00B8W67662,tts-1784188,tts-1784188,name_symbol_date_consistent_candidate,,tts-1784188,2014-01-31,2020-11-30,LIBERTY GLOBAL PLC CLASS A
+LBTYK,GB00B8W67B19,tts-3250167,tts-3250167,name_symbol_date_consistent_candidate,,tts-3250167,2014-12-31,2020-11-30,LIBERTY GLOBAL PLC CLASS C
+LCID,US5494981039,tts-224517911,tts-224517911,name_symbol_date_consistent_candidate,,tts-224517911,2021-12-31,2023-11-30,LUCID GROUP INC
+LIFE,,unresolved:LIFE,,unresolved_identity,Vendor name contradicts historical issuer; price history needs independent confirmation.,tts-387639951|tts-88339869,2009-09-30,2012-09-30,Life Technologies Corp.
+LILA,GB00BTC0M714,isin:GB00BTC0M714,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2015-07-31,2017-11-30,LIBERTY GLOBAL LILAC PLC CLASS A
+LILAK,GB00BTC0MD78,isin:GB00BTC0MD78,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2015-07-31,2017-11-30,LIBERTY GLOBAL LILAC PLC CLASS C
+LIN,IE000S9YS762,tts-294951046,tts-294951046,name_symbol_date_consistent_candidate,,tts-294951046,2024-03-29,2026-09-30,LINDE PLC
+LINTA,,tts-137012693,tts-137012693,historical_alias_candidate,,tts-137012693,2009-09-30,2013-09-30,"Liberty Interactive Corp., Class A | Liberty Media Corp. - Interactive"
+LITE,US55024U1097,tts-92502189,tts-92502189,name_symbol_date_consistent_candidate,,tts-92502189,2026-05-29,2026-09-30,LUMENTUM HOLDINGS | LUMENTUM HOLDINGS INC
+LLTC,,tts-832500,tts-832500,name_symbol_date_consistent_candidate,,tts-832500,2009-09-30,2013-09-30,Linear Technology Corp.
+LLTC,US5356781063,tts-832500,tts-832500,name_symbol_date_consistent_candidate,,tts-832500,2014-01-31,2016-09-30,LINEAR TECHNOLOGY CORP
+LMCA,,isin:US5312291025,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2013-09-30,2013-09-30,"Liberty Media Corp., Class A"
+LMCA,US5312291025,isin:US5312291025,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2014-01-31,2016-03-31,LIBERTY MEDIA CORP SERIES A
+LMCA,US5312298707,isin:US5312298707,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2016-04-29,2016-05-31,LIBERTY MEDIA CORP SERIES A
+LMCK,US5312293005,isin:US5312293005,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2014-07-31,2016-03-31,LIBERTY MEDIA CORP SERIES C
+LMCK,US5312298541,isin:US5312298541,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2016-04-29,2016-05-31,LIBERTY MEDIA CORP CLASS C
+LOGI,,tts-829549,tts-829549,name_symbol_date_consistent_candidate,,tts-829549,2009-09-30,2010-09-30,Logitech International SA
+LRCX,,tts-832505,tts-832505,name_symbol_date_consistent_candidate,,tts-832505,2009-09-30,2012-09-30,Lam Research Corp.
+LRCX,US5128071082,tts-832505,tts-832505,name_symbol_date_consistent_candidate,,tts-832505,2014-12-31,2024-09-30,LAM RESEARCH CORP
+LRCX,US5128073062,tts-832505,tts-832505,name_symbol_date_consistent_candidate,,tts-832505,2024-10-31,2026-09-30,LAM RESEARCH | LAM RESEARCH CORP
+LULU,US5500211090,tts-11159809,tts-11159809,name_symbol_date_consistent_candidate,,tts-11159809,2018-12-31,2025-11-28,LULULEMON ATHLETICA INC
+LVNTA,US53071M8560,tts-49260269,tts-49260269,name_symbol_date_consistent_candidate,,tts-49260269,2016-11-30,2018-02-28,LIBERTY INTERACTIVE VENTURE CORP S
+LVNTA,US53071M8800,tts-49260269,tts-49260269,name_symbol_date_consistent_candidate,,tts-49260269,2014-10-31,2016-10-31,LIBERTY VENTURES - SER A
+MAR,US5719032022,tts-65832501,tts-65832501,name_symbol_date_consistent_candidate,,tts-65832501,2014-01-31,2026-09-30,MARRIOTT INTERNATIONAL CLASS A | MARRIOTT INTERNATIONAL INC CLASS A
+MAT,,tts-17916214,tts-17916214,name_symbol_date_consistent_candidate,,tts-17916214,2010-09-30,2013-09-30,"Mattel, Inc."
+MAT,US5770811025,tts-17916214,tts-17916214,name_symbol_date_consistent_candidate,,tts-17916214,2014-01-31,2017-09-29,MATTEL INC
+MCHP,,tts-829623,tts-829623,name_symbol_date_consistent_candidate,,tts-829623,2009-09-30,2013-09-30,"Microchip Technology, Inc."
+MCHP,US5950171042,tts-829623,tts-829623,name_symbol_date_consistent_candidate,,tts-829623,2016-07-29,2026-09-30,MICROCHIP TECHNOLOGY INC
+MDB,US60937P1066,tts-129307390,tts-129307390,name_symbol_date_consistent_candidate,,tts-129307390,2023-12-29,2025-04-30,MONGODB INC CLASS A
+MDLZ,,tts-51210920,tts-51210920,name_symbol_date_consistent_candidate,,tts-51210920,2013-09-30,2013-09-30,"Mondelez International, Inc., Class A"
+MDLZ,US6092071058,tts-51210920,tts-51210920,name_symbol_date_consistent_candidate,,tts-51210920,2014-03-31,2026-09-30,MONDELEZ INTERNATIONAL CLASS A | MONDELEZ INTERNATIONAL INC CLASS A
+MELI,US58733R1023,tts-11222722,tts-11222722,name_symbol_date_consistent_candidate,,tts-11222722,2017-07-31,2026-09-30,MERCADOLIBRE | MERCADOLIBRE INC
+META,US30303M1027,tts-222568848,tts-222568848,dated_reuse_or_duplicate_resolved_candidate,,tts-222568848,2022-06-30,2026-09-30,META PLATFORMS CLASS A | META PLATFORMS INC CLASS A
+MICC,,unresolved:MICC,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2009-09-30,2011-05-02,Millicom International Cellular SA
+MNST,,tts-37214168,tts-37214168,name_symbol_date_consistent_candidate,,tts-37214168,2012-09-30,2013-09-30,Monster Beverage Corp.
+MNST,US6117401017,tts-37214168,tts-37214168,name_symbol_date_consistent_candidate,,tts-37214168,2014-01-31,2015-05-29,MONSTER BEVERAGE CORP
+MNST,US61174X1090,tts-37214168,tts-37214168,name_symbol_date_consistent_candidate,,tts-37214168,2015-06-30,2026-09-30,MONSTER BEVERAGE | MONSTER BEVERAGE CORP
+MPWR,US6098391054,tts-2098957,tts-2098957,name_symbol_date_consistent_candidate,,tts-2098957,2025-12-31,2026-09-30,MONOLITHIC POWER SYSTEMS INC
+MRNA,US60770K1079,tts-14359676,tts-14359676,name_symbol_date_consistent_candidate,,tts-14359676,2020-07-31,2024-11-29,MODERNA INC
+MRVL,,tts-829786,tts-829786,name_symbol_date_consistent_candidate,,tts-829786,2009-09-30,2012-09-30,Marvell Technology Group Ltd.
+MRVL,BMG5876H1051,tts-829786,tts-829786,name_symbol_date_consistent_candidate,,tts-829786,2020-12-31,2021-03-31,MARVELL TECHNOLOGY GROUP LTD
+MRVL,US5738741041,tts-829786,tts-829786,name_symbol_date_consistent_candidate,,tts-829786,2021-04-30,2026-09-30,MARVELL TECHNOLOGY | MARVELL TECHNOLOGY INC
+MSFT,,tts-829802,tts-829802,name_symbol_date_consistent_candidate,,tts-829802,2009-09-30,2013-09-30,Microsoft Corp.
+MSFT,US5949181045,tts-829802,tts-829802,name_symbol_date_consistent_candidate,,tts-829802,2014-01-31,2026-09-30,MICROSOFT | MICROSOFT CORP
+MSTR,US5949724083,tts-829808,tts-829808,name_symbol_date_consistent_candidate,,tts-829808,2024-12-31,2026-09-30,MICROSTRATEGY INC CLASS A | STRATEGY INC CLASS A
+MTCH,US57667L1070,tts-97315627,tts-97315627,name_symbol_date_consistent_candidate,,tts-97315627,2020-12-31,2022-11-30,MATCH GROUP INC
+MU,,tts-17914799,tts-17914799,name_symbol_date_consistent_candidate,,tts-17914799,2011-04-04,2013-09-30,"Micron Technology, Inc."
+MU,US5951121038,tts-17914799,tts-17914799,name_symbol_date_consistent_candidate,,tts-17914799,2014-01-31,2026-09-30,MICRON TECHNOLOGY | MICRON TECHNOLOGY INC
+MXIM,,tts-829854,tts-829854,name_symbol_date_consistent_candidate,,tts-829854,2009-09-30,2013-09-30,"Maxim Integrated Products, Inc."
+MXIM,US57772K1016,tts-829854,tts-829854,name_symbol_date_consistent_candidate,,tts-829854,2014-01-31,2021-07-30,MAXIM INTEGRATED PRODUCTS INC
+MYL,,tts-16784810,tts-16784810,name_symbol_date_consistent_candidate,,tts-16784810,2010-09-30,2013-09-30,"Mylan, Inc."
+MYL,NL0011031208,tts-16784810,tts-16784810,name_symbol_date_consistent_candidate,,tts-16784810,2015-03-31,2019-11-29,MYLAN NV
+MYL,US6285301072,tts-16784810,tts-16784810,name_symbol_date_consistent_candidate,,tts-16784810,2014-01-31,2015-02-27,MYLAN INC
+NBIS,NL0009805522,tts-320792105,tts-320792105,name_symbol_date_consistent_candidate,,tts-320792105,2026-06-30,2026-09-30,NEBIUS NV CLASS A
+NCLH,BMG667211046,tts-132399257,tts-132399257,name_symbol_date_consistent_candidate,,tts-132399257,2015-12-31,2017-11-30,NORWEGIAN CRUISE LINE HOLDINGS LTD
+NFLX,,tts-829933,tts-829933,name_symbol_date_consistent_candidate,,tts-829933,2011-04-04,2013-09-30,"NetFlix, Inc. | Netflix, Inc."
+NFLX,US64110L1061,tts-829933,tts-829933,name_symbol_date_consistent_candidate,,tts-829933,2014-01-31,2026-09-30,NETFLIX | NETFLIX INC
+NIHD,,unresolved:NIHD,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2009-09-30,2011-09-30,"NII Holdings, Inc."
+NLOK,US6687711084,tts-177780551,tts-177780551,name_symbol_date_consistent_candidate,,tts-177780551,2019-11-29,2019-11-29,NORTONLIFELOCK INC
+NTAP,,tts-830016,tts-830016,name_symbol_date_consistent_candidate,,tts-830016,2009-09-30,2013-09-30,"NetApp, Inc."
+NTAP,US64110D1046,tts-830016,tts-830016,name_symbol_date_consistent_candidate,,tts-830016,2014-01-31,2020-07-31,NETAPP INC
+NTES,US64110W1027,tts-830020,tts-830020,name_symbol_date_consistent_candidate,,tts-830020,2016-03-31,2022-11-30,NETEASE ADR INC | NETEASE ADR REPRESENTING  INC
+NUAN,,tts-830036,tts-830036,name_symbol_date_consistent_candidate,,tts-830036,2012-09-30,2013-09-30,"Nuance Communications, Inc."
+NVDA,,tts-830046,tts-830046,name_symbol_date_consistent_candidate,,tts-830046,2009-09-30,2013-09-30,NVIDIA Corp. | Nvidia Corp.
+NVDA,US67066G1040,tts-830046,tts-830046,name_symbol_date_consistent_candidate,,tts-830046,2014-01-31,2026-09-30,NVIDIA | NVIDIA CORP
+NWSA,,unresolved:NWSA,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2009-09-30,2012-09-30,"News Corp., Class A"
+NXPI,NL0009538784,tts-24429604,tts-24429604,name_symbol_date_consistent_candidate,,tts-24429604,2014-01-31,2026-09-30,NXP SEMICONDUCTORS NV
+ODFL,US6795801009,tts-818221,tts-818221,name_symbol_date_consistent_candidate,,tts-818221,2022-01-31,2026-09-30,OLD DOMINION FREIGHT LINE | OLD DOMINION FREIGHT LINE INC
+OKTA,US6792951054,tts-120195246,tts-120195246,name_symbol_date_consistent_candidate,,tts-120195246,2020-12-31,2022-10-31,OKTA INC CLASS A
+ON,US6821891057,tts-85128742,tts-85128742,name_symbol_date_consistent_candidate,,tts-85128742,2023-06-30,2025-11-28,ON SEMICONDUCTOR CORP
+ORCL,,tts-61604636,tts-61604636,name_symbol_date_consistent_candidate,,tts-61604636,2009-09-30,2012-09-30,Oracle Corp.
+ORLY,,tts-818315,tts-818315,name_symbol_date_consistent_candidate,,tts-818315,2009-09-30,2013-09-30,"O'Reilly Automotive, Inc. | O'reilly Automotive, Inc."
+ORLY,US67103H1077,tts-818315,tts-818315,name_symbol_date_consistent_candidate,,tts-818315,2014-01-31,2026-09-30,O'REILLY AUTOMOTIVE INC | OREILLY AUTOMOTIVE INC
+PANW,US6974351057,tts-231697626,tts-231697626,name_symbol_date_consistent_candidate,,tts-231697626,2021-12-31,2026-09-30,PALO ALTO NETWORKS | PALO ALTO NETWORKS INC
+PAYX,,tts-818433,tts-818433,name_symbol_date_consistent_candidate,,tts-818433,2009-09-30,2013-09-30,"Paychex, Inc."
+PAYX,US7043261079,tts-818433,tts-818433,name_symbol_date_consistent_candidate,,tts-818433,2014-01-31,2026-09-30,PAYCHEX | PAYCHEX INC
+PCAR,,tts-830133,tts-830133,name_symbol_date_consistent_candidate,,tts-830133,2009-09-30,2013-09-30,"PACCAR, Inc."
+PCAR,US6937181088,tts-830133,tts-830133,name_symbol_date_consistent_candidate,,tts-830133,2014-01-31,2026-09-30,PACCAR INC
+PCLN,,tts-136266150,tts-136266150,historical_alias_candidate,,tts-136266150,2010-09-30,2013-09-30,"priceline.com, Inc."
+PCLN,US7415034039,tts-136266150,tts-136266150,historical_alias_candidate,,tts-136266150,2014-01-31,2018-01-31,BOOKING HOLDINGS INC | PRICELINE GROUP INC/THE | THE PRICELINE GROUP INC
+PDCO,,tts-830145,tts-830145,name_symbol_date_consistent_candidate,,tts-830145,2009-09-30,2010-09-30,"Patterson Cos, Inc. | Patterson Cos., Inc."
+PDD,US7223041028,tts-146910073,tts-146910073,name_symbol_date_consistent_candidate,,tts-146910073,2020-08-31,2026-09-30,PDD HOLDINGS ADS | PDD HOLDINGS ADS INC | PINDUODUO ADR REPRESENTING  INC
+PEP,US7134481081,tts-132468358,tts-132468358,name_symbol_date_consistent_candidate,,tts-132468358,2018-07-31,2026-09-30,PEPSICO | PEPSICO INC
+PLTR,US69608A1088,tts-202005198,tts-202005198,name_symbol_date_consistent_candidate,,tts-202005198,2024-12-31,2026-09-30,PALANTIR TECHNOLOGIES CLASS A | PALANTIR TECHNOLOGIES INC CLASS A
+PPDI,,tts-818958,tts-818958,name_symbol_date_consistent_candidate,,tts-818958,2009-09-30,2009-09-30,"Pharmaceutical Product Development, Inc."
+PRGO,,tts-60267672,tts-60267672,name_symbol_date_consistent_candidate,,tts-60267672,2012-09-30,2012-09-30,Perrigo Co.
+PTON,US70614W1009,tts-174238383,tts-174238383,name_symbol_date_consistent_candidate,,tts-174238383,2020-12-31,2021-12-31,PELOTON INTERACTIVE CLASS A INC
+PYPL,US70450Y1038,tts-91263224,tts-91263224,name_symbol_date_consistent_candidate,,tts-91263224,2015-11-30,2026-09-30,PAYPAL HOLDINGS | PAYPAL HOLDINGS INC
+QCI,US7475251036,tts-830263,tts-830263,historical_alias_candidate,,tts-830263,2014-01-31,2014-02-28,QUALCOMM INC
+QCOM,,tts-830263,tts-830263,name_symbol_date_consistent_candidate,,tts-830263,2009-09-30,2013-09-30,"QUALCOMM, Inc."
+QCOM,US7475251036,tts-830263,tts-830263,name_symbol_date_consistent_candidate,,tts-830263,2014-03-31,2026-09-30,QUALCOMM | QUALCOMM INC
+QGEN,,tts-133282628,tts-133282628,name_symbol_date_consistent_candidate,,tts-133282628,2010-09-30,2011-09-30,QIAGEN NV
+QRTEA,US53071M1045,tts-137012693,tts-137012693,name_symbol_date_consistent_candidate,,tts-137012693,2014-01-31,2018-03-30,LIBERTY INTERACTIVE QVC GROUP CORP | QURATE RETAIL GROUP CORP SERIES A
+QRTEA,US74915M1009,tts-137012693,tts-137012693,name_symbol_date_consistent_candidate,,tts-137012693,2018-04-30,2018-11-30,QURATE RETAIL GROUP INC SERIES A | QURATE RETAIL INC SERIES A
+QVCA,US53071M1045,tts-137012693,tts-137012693,historical_alias_candidate,,tts-137012693,2014-12-31,2018-02-28,LIBERTY INTERACTIVE CORP SERIES A | LIBERTY INTERACTIVE QVC GROUP CORP
+REGN,,tts-830313,tts-830313,name_symbol_date_consistent_candidate,,tts-830313,2013-09-30,2013-09-30,"Regeneron Pharmaceuticals, Inc."
+REGN,US75886F1075,tts-830313,tts-830313,name_symbol_date_consistent_candidate,,tts-830313,2014-01-31,2026-09-30,REGENERON PHARMACEUTICALS | REGENERON PHARMACEUTICALS INC
+RIMM,,tts-129193787,tts-129193787,historical_alias_candidate,,tts-129193787,2009-09-30,2012-09-30,Research In Motion Ltd.
+RIVN,US76954A1034,tts-232151446,tts-232151446,name_symbol_date_consistent_candidate,,tts-232151446,2022-12-30,2023-05-31,RIVIAN AUTOMOTIVE INC CLASS A
+RKLB,US7731211089,tts-226809961,tts-226809961,name_symbol_date_consistent_candidate,,tts-226809961,2026-06-30,2026-09-30,ROCKET LAB CORP
+ROP,US7766961061,tts-284392746,tts-284392746,name_symbol_date_consistent_candidate,,tts-284392746,2023-12-29,2026-09-30,ROPER TECHNOLOGIES | ROPER TECHNOLOGIES INC
+ROST,,tts-830361,tts-830361,name_symbol_date_consistent_candidate,,tts-830361,2009-09-30,2013-09-30,"Ross Stores, Inc."
+ROST,US7782961038,tts-830361,tts-830361,name_symbol_date_consistent_candidate,,tts-830361,2014-01-31,2026-09-30,ROSS STORES INC
+RYAAY,,tts-830379,tts-830379,name_symbol_date_consistent_candidate,,tts-830379,2009-09-30,2009-09-30,Ryanair Holdings PLC
+SBAC,,tts-819921,tts-819921,name_symbol_date_consistent_candidate,,tts-819921,2013-09-30,2013-09-30,"SBA Communications Corp., Class A"
+SBAC,US78388J1060,tts-819921,tts-819921,name_symbol_date_consistent_candidate,,tts-819921,2014-01-31,2016-12-30,SBA COMMUNICATIONS CORP CLASS A
+SBUX,,tts-830408,tts-830408,name_symbol_date_consistent_candidate,,tts-830408,2009-09-30,2013-09-30,Starbucks Corp.
+SBUX,US8552441094,tts-830408,tts-830408,name_symbol_date_consistent_candidate,,tts-830408,2014-01-31,2026-09-30,STARBUCKS CORP | STARBUCKS CORP N1
+SGEN,US81181C1045,tts-830459,tts-830459,name_symbol_date_consistent_candidate,,tts-830459,2020-10-30,2023-11-30,SEAGEN INC
+SGEN,US8125781026,tts-830459,tts-830459,name_symbol_date_consistent_candidate,,tts-830459,2019-12-31,2020-09-30,SEATTLE GENETICS INC
+SHLD,,unresolved:SHLD,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2009-09-30,2013-09-30,Sears Holdings Corp.
+SHOP,CA82509L1076,tts-87928298,tts-87928298,name_symbol_date_consistent_candidate,,tts-87928298,2025-05-30,2026-09-30,SHOPIFY SUBORDINATE VOTING CLASS A | SHOPIFY SUBORDINATE VOTING INC CLA
+SHPG,US82481R1068,tts-48237583,tts-48237583,name_symbol_date_consistent_candidate,,tts-48237583,2016-10-31,2018-11-30,SHIRE ADR REPRESENTING  PLC
+SIAL,,tts-830475,tts-830475,name_symbol_date_consistent_candidate,,tts-830475,2009-09-30,2013-09-30,Sigma-Aldrich Corp.
+SIAL,US8265521018,tts-830475,tts-830475,name_symbol_date_consistent_candidate,,tts-830475,2014-01-31,2015-06-30,SIGMA ALDRICH CORP
+SIRI,,tts-830484,tts-830484,name_symbol_date_consistent_candidate,,tts-830484,2011-09-30,2013-09-30,"Sirius XM Radio, Inc."
+SIRI,US82968B1035,tts-830484,tts-830484,name_symbol_date_consistent_candidate,,tts-830484,2014-01-31,2024-05-31,SIRIUS XM HOLDINGS INC
+SMCI,US86800U1043,tts-181976270,tts-181976270,name_symbol_date_consistent_candidate,,tts-181976270,2024-07-31,2024-09-30,SUPER MICRO COMPUTER INC
+SMCI,US86800U3023,tts-181976270,tts-181976270,name_symbol_date_consistent_candidate,,tts-181976270,2024-10-31,2024-11-29,SUPER MICRO COMPUTER INC
+SNDK,,tts-830518,tts-830518,dated_reuse_or_duplicate_resolved_candidate,,tts-342851559|tts-830518,2010-09-30,2013-09-30,SanDisk Corp.
+SNDK,US80004C1018,tts-830518,tts-830518,dated_reuse_or_duplicate_resolved_candidate,,tts-342851559|tts-830518,2014-01-31,2016-02-29,SANDISK CORP
+SNDK,US80004C2008,tts-342851559,tts-342851559,dated_reuse_or_duplicate_resolved_candidate,,tts-342851559|tts-830518,2026-04-30,2026-09-30,SANDISK | SANDISK CORP
+SNPS,US8716071076,tts-830523,tts-830523,name_symbol_date_consistent_candidate,,tts-830523,2017-12-29,2026-09-30,SYNOPSYS | SYNOPSYS INC
+SOLS,US83443Q1031,isin:US83443Q1031,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2025-10-31,2025-10-31,SOLSTICE ADVANCED MATERIALS INC
+SPCX,US84615Q1031,tts-208710142,tts-208710142,name_symbol_date_consistent_candidate,,tts-208710142,2026-07-31,2026-09-30,SPACE EXPLORATION TECHNOLOGIES COR
+SPLK,US8486371045,tts-41981429,tts-41981429,name_symbol_date_consistent_candidate,,tts-41981429,2019-12-31,2024-02-29,SPLUNK INC
+SPLS,,tts-820309,tts-820309,dated_reuse_or_duplicate_resolved_candidate,,tts-385731618|tts-820309,2009-09-30,2013-09-30,"Staples, Inc."
+SPLS,US8550301027,tts-820309,tts-820309,dated_reuse_or_duplicate_resolved_candidate,,tts-385731618|tts-820309,2014-01-31,2015-11-30,STAPLES INC
+SRCL,,tts-830564,tts-830564,name_symbol_date_consistent_candidate,,tts-830564,2009-09-30,2013-09-30,"Stericycle, Inc."
+SRCL,US8589121081,tts-830564,tts-830564,name_symbol_date_consistent_candidate,,tts-830564,2014-01-31,2016-11-30,STERICYCLE INC
+STLD,,tts-830598,tts-830598,name_symbol_date_consistent_candidate,,tts-830598,2009-09-30,2009-09-30,"Steel Dynamics, Inc."
+STX,,tts-15401130,tts-15401130,name_symbol_date_consistent_candidate,,tts-15401130,2009-09-30,2013-09-30,Seagate Technology | Seagate Technology PLC
+STX,IE00B58JVZ52,tts-15401130,tts-15401130,name_symbol_date_consistent_candidate,,tts-15401130,2014-01-31,2018-11-30,SEAGATE TECHNOLOGY HOLDINGS PLC | SEAGATE TECHNOLOGY PLC
+STX,IE00BKVD2N49,tts-15401130,tts-15401130,name_symbol_date_consistent_candidate,,tts-15401130,2025-12-31,2026-09-30,SEAGATE TECHNOLOGY HOLDINGS PLC
+SWKS,US83088M1027,tts-830638,tts-830638,name_symbol_date_consistent_candidate,,tts-830638,2015-07-31,2022-11-30,SKYWORKS SOLUTIONS INC
+SYMC,,tts-177780551,tts-177780551,historical_alias_candidate,,tts-177780551,2009-09-30,2013-09-30,Symantec Corp.
+SYMC,US8715031089,tts-177780551,tts-177780551,historical_alias_candidate,,tts-177780551,2014-01-31,2019-10-31,SYMANTEC CORP | SYMANTEC INC
+TCOM,US89677Q1076,tts-177780548,tts-177780548,name_symbol_date_consistent_candidate,,tts-177780548,2019-11-29,2021-11-30,TRIP COM GROUP ADR LTD
+TEAM,GB00BZ09BD16,tts-830674,tts-830674,name_symbol_date_consistent_candidate,,tts-830674,2020-12-31,2022-09-30,ATLASSIAN PLC CLASS A
+TEAM,US0494681010,tts-830674,tts-830674,name_symbol_date_consistent_candidate,,tts-830674,2022-10-31,2026-03-31,ATLASSIAN CORP CLASS A
+TER,US8807701029,tts-158183018,tts-158183018,name_symbol_date_consistent_candidate,,tts-158183018,2026-06-30,2026-09-30,TERADYNE | TERADYNE INC
+TEVA,,tts-45504153,tts-45504153,name_symbol_date_consistent_candidate,,tts-45504153,2009-09-30,2011-09-30,Teva Pharmaceutical Industries Ltd. - ADR | Teva Pharmaceutical Industries Ltd. ADR
+TFCFA,US90130A3095,tts-161284560,tts-161284560,name_symbol_date_consistent_candidate,Selected historical issuer has no price on this source date.,tts-161284560,2019-03-29,2019-03-29,TWENTY FIRST CENTURY FOX INC CLASS
+TMUS,US8725901040,tts-96423906,tts-96423906,name_symbol_date_consistent_candidate,,tts-96423906,2015-12-31,2026-09-30,T MOBILE US INC
+TRI,CA8849038085,tts-827441,tts-827441,name_symbol_date_consistent_candidate,,tts-827441,2025-07-31,2026-04-30,THOMSON REUTERS CORP
+TRI,CA8849038812,tts-827441,tts-827441,name_symbol_date_consistent_candidate,,tts-827441,2026-05-29,2026-09-30,THOMSON REUTERS CORP
+TRIP,US8969452015,tts-36804965,tts-36804965,name_symbol_date_consistent_candidate,,tts-36804965,2014-01-31,2016-12-30,TRIPADVISOR INC
+TSCO,US8923561067,tts-830823,tts-830823,name_symbol_date_consistent_candidate,,tts-830823,2014-01-31,2017-11-30,TRACTOR SUPPLY
+TSLA,,tts-23947362,tts-23947362,name_symbol_date_consistent_candidate,,tts-23947362,2013-09-30,2013-09-30,"Tesla Motors, Inc."
+TSLA,US88160R1014,tts-23947362,tts-23947362,name_symbol_date_consistent_candidate,,tts-23947362,2014-01-31,2026-09-30,TESLA INC | TESLA MOTORS INC
+TTD,US88339J1051,tts-110325346,tts-110325346,name_symbol_date_consistent_candidate,,tts-110325346,2023-07-31,2025-11-28,TRADE DESK CLASS A | TRADE DESK INC CLASS A
+TTWO,US8740541094,tts-830842,tts-830842,name_symbol_date_consistent_candidate,,tts-830842,2017-12-29,2026-09-30,TAKE TWO INTERACTIVE SOFTWARE | TAKE TWO INTERACTIVE SOFTWARE INC
+TXN,,tts-37090221,tts-37090221,name_symbol_date_consistent_candidate,,tts-37090221,2012-09-30,2013-09-30,"Texas Instruments, Inc."
+TXN,US8825081040,tts-37090221,tts-37090221,name_symbol_date_consistent_candidate,,tts-37090221,2014-01-31,2026-09-30,TEXAS INSTRUMENT INC | TEXAS INSTRUMENTS INCORPORATED
+UAL,US9100471096,tts-149357573,tts-149357573,name_symbol_date_consistent_candidate,,tts-149357573,2018-12-31,2020-05-29,UNITED AIRLINES HOLDINGS INC | UNITED CONTINENTAL HOLDINGS INC
+ULTA,US90384S3031,tts-11704179,tts-11704179,name_symbol_date_consistent_candidate,,tts-11704179,2015-12-31,2020-11-30,ULTA BEAUTY INC | ULTA SALON COSMETICS & FRAGRANCE I
+URBN,,tts-820920,tts-820920,name_symbol_date_consistent_candidate,,tts-820920,2009-09-30,2011-09-30,"Urban Outfitters, Inc."
+VIAB,,tts-36228692,tts-36228692,name_symbol_date_consistent_candidate,,tts-36228692,2012-09-30,2013-09-30,"Viacom, Inc., Class B"
+VIAB,US92553P2011,tts-36228692,tts-36228692,name_symbol_date_consistent_candidate,,tts-36228692,2014-01-31,2017-11-30,VIACOM INC CLASS B
+VIP,US92719A1060,isin:US92719A1060,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2014-01-31,2015-11-30,VEON ADR LTD | VIMPELCOM ADS  LTD
+VMED,,tts-6191934,tts-6191934,name_symbol_date_consistent_candidate,,tts-6191934,2010-09-30,2012-09-30,"Virgin Media, Inc."
+VOD,,tts-17917826,tts-17917826,name_symbol_date_consistent_candidate,,tts-17917826,2010-09-30,2013-09-30,Vodafone Group PLC ADR
+VOD,US92857W2098,tts-17917826,tts-17917826,name_symbol_date_consistent_candidate,,tts-17917826,2014-01-31,2014-01-31,VODAFONE GROUP PLC ADS
+VOD,US92857W3088,tts-17917826,tts-17917826,name_symbol_date_consistent_candidate,,tts-17917826,2014-02-28,2018-11-30,VODAFONE GROUP ADR REPRESENTING  P
+VRSK,,tts-20189978,tts-20189978,name_symbol_date_consistent_candidate,,tts-20189978,2013-09-30,2013-09-30,"Verisk Analytics, Inc., Class A"
+VRSK,US92345Y1064,tts-20189978,tts-20189978,name_symbol_date_consistent_candidate,,tts-20189978,2014-01-31,2026-05-29,VERISK ANALYTICS INC | VERISK ANALYTICS INC CLASS A
+VRSN,,tts-830966,tts-830966,name_symbol_date_consistent_candidate,,tts-830966,2009-09-30,2012-09-30,"VeriSign, Inc."
+VRSN,US92343E1029,tts-830966,tts-830966,name_symbol_date_consistent_candidate,,tts-830966,2018-12-31,2022-11-30,VERISIGN INC
+VRTX,,tts-821074,tts-821074,name_symbol_date_consistent_candidate,,tts-821074,2009-09-30,2013-09-30,"Vertex Pharmaceuticals, Inc."
+VRTX,US92532F1003,tts-821074,tts-821074,name_symbol_date_consistent_candidate,,tts-821074,2014-03-31,2026-09-30,VERTEX PHARMACEUTICALS | VERTEX PHARMACEUTICALS INC
+VX1,US92532F1003,tts-821074,tts-821074,historical_alias_candidate,,tts-821074,2014-01-31,2014-02-28,VERTEX PHARMACEUTICALS INC
+WBA,US9314271084,tts-80360010,tts-80360010,name_symbol_date_consistent_candidate,,tts-80360010,2015-03-31,2024-06-28,WALGREEN BOOTS ALLIANCE | WALGREEN BOOTS ALLIANCE INC
+WBD,US9344231041,tts-245373754,tts-245373754,name_symbol_date_consistent_candidate,,tts-245373754,2022-12-30,2026-09-30,WARNER BROS. DISCOVERY INC SERIES | WARNER BROS. DISCOVERY SERIES A
+WCRX,,tts-1839830,tts-1839830,name_symbol_date_consistent_candidate,,tts-1839830,2009-09-30,2012-09-30,"Warner Chilcott PLC, Class A"
+WDAY,US98138H1014,tts-127962865,tts-127962865,name_symbol_date_consistent_candidate,,tts-127962865,2017-12-29,2026-09-30,WORKDAY CLASS A | WORKDAY INC CLASS A
+WDC,,tts-45576417,tts-45576417,name_symbol_date_consistent_candidate,,tts-45576417,2013-09-30,2013-09-30,Western Digital Corp.
+WDC,US9581021055,tts-45576417,tts-45576417,name_symbol_date_consistent_candidate,,tts-45576417,2014-01-31,2026-09-30,WESTERN DIGITAL CORP
+WFM,,tts-29400599,tts-29400599,name_symbol_date_consistent_candidate,,tts-29400599,2011-09-30,2013-09-30,"Whole Foods Market, Inc."
+WFM,US9668371068,tts-29400599,tts-29400599,name_symbol_date_consistent_candidate,,tts-29400599,2014-01-31,2016-11-30,WHOLE FOODS MARKET INC
+WFMI,,tts-29400599,tts-29400599,historical_alias_candidate,,tts-29400599,2011-04-04,2011-05-02,WFMI
+WLTW,IE00BDB6Q211,isin:IE00BDB6Q211,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2018-12-31,2020-03-31,WILLIS TOWERS WATSON PLC
+WMT,US9311421039,tts-827665,tts-827665,name_symbol_date_consistent_candidate,,tts-827665,2026-01-30,2026-09-30,WALMART | WALMART INC
+WYNN,,tts-831069,tts-831069,name_symbol_date_consistent_candidate,,tts-831069,2009-09-30,2013-09-30,Wynn Resorts Ltd.
+WYNN,US9831341071,tts-831069,tts-831069,name_symbol_date_consistent_candidate,,tts-831069,2014-01-31,2019-11-29,WYNN RESORTS LTD
+XEL,US98389B1008,tts-132814882,tts-132814882,name_symbol_date_consistent_candidate,,tts-132814882,2018-11-30,2026-09-30,XCEL ENERGY INC
+XLNX,,tts-821283,tts-821283,name_symbol_date_consistent_candidate,,tts-821283,2009-09-30,2013-09-30,"Xilinx, Inc."
+XLNX,US9839191015,tts-821283,tts-821283,name_symbol_date_consistent_candidate,,tts-821283,2014-01-31,2022-01-31,XILINX INC
+XRAY,,tts-821304,tts-821304,name_symbol_date_consistent_candidate,,tts-821304,2009-09-30,2013-09-30,"DENTSPLY International, Inc."
+XRAY,US24906P1093,tts-821304,tts-821304,name_symbol_date_consistent_candidate,,tts-821304,2016-06-30,2018-10-31,DENTSPLY SIRONA INC
+YHOO,,isin:US9843321061,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2009-09-30,2013-09-30,"Yahoo!, Inc."
+YHOO,US9843321061,isin:US9843321061,,unresolved_identity,No unique defensible vendor identity in local corpus.,,2014-12-31,2016-12-30,YAHOO! INC
+ZM,US98980L1017,tts-163839424,tts-163839424,name_symbol_date_consistent_candidate,,tts-163839424,2020-04-30,2023-11-30,ZOOM VIDEO COMMUNICATIONS INC CLAS
+ZS,US98980G1022,tts-137190768,tts-137190768,name_symbol_date_consistent_candidate,,tts-137190768,2021-12-31,2026-05-29,ZSCALER INC

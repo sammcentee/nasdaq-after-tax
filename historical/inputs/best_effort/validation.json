@@ -1,0 +1,12 @@
+{
+  "complete_snapshot_sums_preserved": true,
+  "no_duplicate_engine_target": true,
+  "no_duplicate_membership_update": true,
+  "all_192_deposits_use_strictly_prior_information": true,
+  "first_deposit_source_date": "2010-06-30",
+  "first_deposit_source_age_days": 92,
+  "first_deposit_new_members_without_weight": 0,
+  "first_deposit_current_member_mapped_weight": 0.9807461511659377,
+  "first_deposit_explicit_missing_cash_weight": 0.0192538488340579,
+  "last_unresolved_source_purchase_date": "2017-07-31"
+}
