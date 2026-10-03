@@ -205,6 +205,12 @@ A [free-data replacement](historical/providers/README.md) is being evaluated usi
 
 Share matching and immediate winner repurchases are documented modelling interpretations, not a Revenue ruling. See Revenue’s guidance on [CGT calculation and exemption](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/how-to-calculate-cgt.aspx) and [share disposals](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/selling-or-disposing-of-shares.aspx).
 
+## Licence
+
+The project's original source code and associated documentation are licensed under the [MIT License](LICENSE), copyright (c) 2026 sammcentee. You may use, modify and redistribute them, including commercially, provided you retain the copyright and licence notices in copies or substantial portions of the software.
+
+This licence does not cover third-party software, datasets, issuer documents or market-data-derived reports and results. Their existing terms and restrictions remain separate; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The research disclaimer below does not restrict uses permitted by the MIT License.
+
 ## Legal notice
 
 **Research and educational use; Irish-law notice.** Nasdaq After Tax, including its source code, datasets, simulations, reports and documentation (the “Materials”), is made available without charge for general research and educational purposes. Nothing in the Materials is intended to constitute tax, legal, accounting or investment advice, a personalised recommendation, or an offer or solicitation to acquire or dispose of any investment. Publication, access or use does not, of itself, establish an adviser–client, fiduciary or other professional relationship with the authors, maintainers or contributors.

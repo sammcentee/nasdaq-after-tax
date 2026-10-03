@@ -2,6 +2,8 @@
 
 Nasdaq After Tax builds on the work of the authors and providers credited below. Source credits do not imply endorsement. Software licences apply to the identified software; they do not grant new rights in market data, issuer documents or other third-party material.
 
+The root [MIT License](LICENSE) applies to this project's original source code and associated documentation. It does not relicense the third-party software, datasets, documentary evidence or market-data-derived reports and results described here. Retain the applicable upstream licences and notices; material without an explicit licence is not made MIT-licensed by inclusion in this repository.
+
 ## Copied software
 
 ### Quantiacs toolbox — QuantNet LLC and contributors
