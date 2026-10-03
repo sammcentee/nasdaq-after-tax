@@ -486,7 +486,7 @@
     "results/latest/contribution_schedule.csv": "dfe2a2a1e4cc56af23710566fdc3a3a7585a344c70a99f737efe244309c6085d"
   },
   "code_sha256": {
-    "run_tax_optimization_study.py": "8ae0fa72fd6246523409d3c1a2fdcc13cfd12037761232d122837ac2cd33c45b",
+    "run_tax_optimization_study.py": "a42ba648484e698307f29c2aa23d9e9667575ad18c2be004a06422558f86d5f0",
     "study_inputs.py": "ea651f462553af158cd1126ea0e6d12a473f5b3a1f03b38876c845ee6dd78bef",
     "model/direct_stock_backtest.py": "788cd9a22b08da7384046667920996990c0ab1edcf6b4b63ca1b3e3d4caff4ab",
     "model/etf_backtest.py": "5d58e305b613c41ca303d8f09b7bf6f962f7d50688cb02d58dc050fd92376397",
@@ -503,7 +503,7 @@
     "Confirmed bankrupt stocks remain untradeable through missing quote interval until legal cancellation",
     "Fractional successor entitlements retained; exact broker cash-in-lieu not reconstructed",
     "Today's broker fractional availability and fee policy assumed; historical broker offerings not reconstructed",
-    "Fixed complete16-year horizon; newest corrected cached corpus, no live account access",
+    "Fixed complete16-year horizon; newest corrected cached corpus",
     "Monthly contributions start at EUR1000 and follow Irish CPI at annual September reviews; both inflation and deflation apply; identical dated cash flows fund every strategy",
     "Contribution amounts use only CPI published before their annual review; all portfolio results are nominal euros, not inflation-adjusted terminal wealth",
     "33% CGT,38% fund tax and52.35% dividend tax are frozen comparison scenarios, not historical tax legislation",

@@ -1,4 +1,4 @@
-"""Public vendor price reconstruction. No trading and no return-fitting.
+"""Public vendor price reconstruction without return-fitting.
 
 Quantiacs endpoint close is empirically split-adjusted even for type=''.
 Yahoo Close is also split-adjusted; explicit Yahoo splits are used to restore

@@ -3,13 +3,8 @@
   "repository_name": "nasdaq-after-tax",
   "purpose": "Hypothetical Irish Nasdaq-100 after-tax research with a curated current study",
   "prepared_on": "2026-10-03",
-  "intended_repository_visibility": "public",
-  "collaborators_requested": [],
-  "github_pages_requested": false,
-  "github_actions_requested": false,
-  "broker_execution": "none; simulations use cached public market research inputs",
   "contents": "Source, cached market research inputs and provenance, one current report, three leading stock strategies, three underperforming variants, ETF and stock baselines, matched controls and independent audits",
-  "financial_scenarios": "All contribution amounts, tax bands, portfolio values and trades are hypothetical model parameters or simulated outputs, not personal account or income information",
+  "financial_scenarios": "Contribution amounts, tax bands, portfolio values and trades are hypothetical model parameters or simulated outputs",
   "contributions": "Start at EUR1,000/month and review each September against previously published August Irish all-items CPI; follow both inflation and deflation; 192 payments total EUR210,936.48",
   "contribution_provenance": "historical/inflation/provenance.json; CSO CPM02 December2006=100 indices, original publication dates, CC BY4.0 attribution and current-snapshot limitations",
   "exclusions": [
@@ -49,16 +44,13 @@
     }
   ],
   "third_party_notices": "THIRD_PARTY_NOTICES.md",
-  "release_history": "The public release is prepared from a sanitized working-tree snapshot; the original private Git history is excluded",
   "environment": {
     "python": "3.14",
     "runtime_dependencies": "requirements.txt",
     "optional_acquisition_dependencies": "requirements-data.txt"
   },
   "data_integrity": "Git line-ending conversion is disabled so recorded source-file hashes remain meaningful.",
-  "git_history": "Public commits use the owner's GitHub username and no-reply email for contribution attribution without exposing a personal email; original private Git history is not included",
   "current_results": "historical/results/latest",
   "result_selection": "Three leaders and three weakest active gain-harvesting variants selected retrospectively from earlier studies; fourteen stock replays include matched controls and two exemption-unavailable sensitivities",
-  "data_cutoff": "2026-09-30 fixed sixteen-year study; benchmark source cache through 2026-10-02",
-  "historical_outputs": "Superseded generated studies are removed from the current tree; prior public commits preserve the research history"
+  "data_cutoff": "2026-09-30 fixed sixteen-year study; benchmark source cache through 2026-10-02"
 }

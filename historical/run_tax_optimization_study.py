@@ -1,7 +1,7 @@
 """Replay selected strategies, underperformers and matched tax controls.
 
 Run: .venv/bin/python historical/run_tax_optimization_study.py --workers 3
-Uses the latest corrected cached corpus. No account access or broker orders.
+Uses the latest corrected cached corpus.
 """
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import asdict, replace
@@ -305,7 +305,7 @@ def main():
                     code_sha256={str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest() for path in code},
                     prepared_membership_sha256=hashlib.sha256((LEDGERS / "membership_used.csv").read_bytes()).hexdigest(),
                     assumptions=input_audit["assumptions"]+[
-                        "Fixed complete16-year horizon; newest corrected cached corpus, no live account access",
+                        "Fixed complete16-year horizon; newest corrected cached corpus",
                         "Monthly contributions start at EUR1000 and follow Irish CPI at annual September reviews; both inflation and deflation apply; identical dated cash flows fund every strategy",
                         "Contribution amounts use only CPI published before their annual review; all portfolio results are nominal euros, not inflation-adjusted terminal wealth",
                         "33% CGT,38% fund tax and52.35% dividend tax are frozen comparison scenarios, not historical tax legislation",

@@ -77,13 +77,10 @@
   ],
   "what_user_can_optionally_supply": [
     "Existing licensed point-in-time Nasdaq-100 constituent/weight exports with effective and publication dates.",
-    "Unadjusted daily price and cash-dividend exports for delisted and successor securities, including stable identifiers and corporate-action tables.",
-    "Only lawfully available exports or read access; no new brokerage credentials or payment are needed for the public-source work."
+    "Unadjusted daily price and cash-dividend exports for delisted and successor securities, including stable identifiers and corporate-action tables."
   ],
   "not_done": [
     "No full backtest run",
-    "No original data edited",
-    "No account accessed",
-    "No orders placed"
+    "No original data edited"
   ]
 }

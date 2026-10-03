@@ -8,7 +8,7 @@ Starts at €1,000/month · Annual Irish CPI reviews · 16 years · €210,936.4
 
 [Read the report](historical/results/latest/report.pdf) · [Compare strategies](historical/results/latest/comparison.csv) · [Inspect marginal effects](historical/results/latest/marginal_effects.csv)
 
-<sub>Python · Reproducible historical simulation · No live account access or trading</sub>
+<sub>Python · Reproducible historical simulation</sub>
 
 </div>
 
@@ -20,7 +20,7 @@ This project models **recreating a Nasdaq-100 ETF in our own brokerage account b
 
 This is an approximate, self-managed replica. We allow holdings to drift instead of automatically selling every overweight stock to restore exact weights. Retained former members, purchase restrictions and missing data can leave differences or cash, so the model does not claim to own every constituent at every date.
 
-**Every contribution, tax band, account value and transaction ledger is hypothetical or simulated.** The repository does not describe anyone’s actual income, holdings or investment activity.
+**Results and transaction ledgers are hypothetical historical simulations.**
 
 **Research only; not tax, legal or investment advice.** Read the [legal notice](#legal-notice) before relying on any material.
 
@@ -137,7 +137,7 @@ These observations explain the recorded differences, not a universal claim that 
 | [Independent ledger audit](historical/results/latest/independent_ledger_audit.json) | Cash, cost-basis, tax and trade-eligibility checks. |
 | [Attribution audit](historical/results/latest/attribution_audit.json) | Checks that reported marginal effects and interactions match the underlying replays. |
 
-Run from the repository root. The recorded environment uses **Python 3.14 on Linux**. Cached market inputs are sufficient; broker credentials are not required.
+Run from the repository root with the cached market inputs. The recorded environment uses **Python 3.14 on Linux**.
 
 ```bash
 python3 -m venv .venv
@@ -204,8 +204,6 @@ A [free-data replacement](historical/providers/README.md) is being evaluated usi
 - **Provisional reconstruction:** historical weights, delisted-stock dividends, corporate-action tax treatment and some successor valuations remain incomplete or approximate. Some unquoted holdings use explicit nontradable marks. Small performance differences deserve caution.
 
 Share matching and immediate winner repurchases are documented modelling interpretations, not a Revenue ruling. See Revenue’s guidance on [CGT calculation and exemption](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/how-to-calculate-cgt.aspx) and [share disposals](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/selling-or-disposing-of-shares.aspx).
-
-The historical runners place no broker orders. Keep credentials and personal account exports outside version control.
 
 ## Legal notice
 
