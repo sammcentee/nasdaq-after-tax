@@ -183,6 +183,8 @@ Acquisition and repair scripts are separate from replay engines. Refreshing sour
 
 This study uses Quantiacs market data and toolbox code, historical membership work by Jeff McCarrell and thuningxu, iShares and SEC-filed fund holdings, Yahoo Finance via yfinance, Nasdaq/FRED series, ECB exchange rates, [Irish CPI from the Central Statistics Office](https://data.cso.ie/table/CPM02), and issuer, Revenue and broker documentation. See [source credits and third-party notices](THIRD_PARTY_NOTICES.md) for authors, upstream revisions, retained licences and links to the detailed provenance records; the [CPI source notes](historical/inflation/README.md) include the CSO attribution and licence.
 
+A [free-data replacement](historical/providers/README.md) is being evaluated using Tiingo and the public-domain WIKI archive. The candidate readers are separate from the active study: existing figures still use the sources above, and no completed migration or new publication clearance is claimed.
+
 ## Assumptions that change the interpretation
 
 - **Horizon:** 30 September 2010 to 30 September 2026; 192 monthly contributions. The period touches 17 calendar tax years.
