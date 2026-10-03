@@ -116,7 +116,7 @@ These observations explain the recorded differences, not a universal claim that 
 
 | Artifact | Contents |
 |:---|:---|
-| [Current report](historical/results/latest/report.pdf) | One five-page explanation of leading strategies, underperformers, marginal effects and limits. |
+| [Current report](historical/results/latest/report.pdf) | Four-page visual brief: results, marginal gains, trading rules and assumptions. |
 | [Contribution schedule](historical/results/latest/contribution_schedule.csv) | All 192 payments, annual reviews, CPI observations and publication dates. |
 | [Irish CPI inputs](historical/inflation/README.md) | Official source, funding formula, vintage limitations and provenance links. |
 | [Headline comparison](historical/results/latest/comparison.csv) | ETF, baseline and three selected stock strategies. |

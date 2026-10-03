@@ -1,13 +1,13 @@
-"""Render the current study only: one five-page PDF and two shareable charts."""
+"""Render the current study as a four-page brief and two matching charts."""
 from pathlib import Path
 import json
-import textwrap
 
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib.dates import DateFormatter, YearLocator
+from matplotlib.patches import Rectangle
 from matplotlib.ticker import FuncFormatter
 import numpy as np
 import pandas as pd
@@ -16,166 +16,55 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "results/latest"
 ORDER = ["etf", "baseline", "monthly_tlh", "monthly_hybrid", "weekly_annual"]
 LABELS = {
-    "etf": "ETF · deemed disposal",
-    "baseline": "Stocks · retain departures",
+    "etf": "ETF / eight-year deemed disposal",
+    "baseline": "Stock baseline / retain departures",
     "monthly_tlh": "Monthly loss harvesting",
     "monthly_hybrid": "Monthly losses + annual hybrid gains",
     "weekly_annual": "Weekly losses + annual same-share gains",
 }
-SHORT = {
-    "etf": "ETF",
-    "baseline": "Stock baseline",
-    "monthly_tlh": "Monthly losses",
-    "monthly_hybrid": "Monthly + hybrid gains",
-    "weekly_annual": "Weekly + same-share gains",
-}
-INK, MUTED, TEAL, GOLD, LINE = "#173544", "#536875", "#087f8c", "#bc7c26", "#dde6e9"
-COLORS = ["#a8b8c1", "#6e8794", "#25a3a7", "#087f8c", "#173544"]
-PAGE_COUNT = 5
 UNDERPERFORMER_LABELS = {
-    "any_loss": "Harvest any monthly loss ≥ €1",
+    "any_loss": "Harvest losses from €1",
+    "retain_gains": "Keep departures; annual gains",
     "monthly_gains": "Review gains every month",
-    "retain_gains": "Retain departures; gains only",
 }
 UNDERPERFORMER_CONTROLS = {"annual_monthly_control": "A", "annual_only": "B"}
+INK, MUTED, TEAL, LIME, CORAL = "#142F3B", "#596B72", "#087F80", "#C4EF68", "#B34D35"
+PAPER, WHITE, LINE, SOFT = "#F5F4EE", "#FFFFFF", "#D9DFD9", "#E8EDE7"
+PAGE_COUNT = 4
 
 
 def money(value, signed=False):
     amount = float(value)
-    if round(amount) == 0:
-        amount = 0.0
-    return f"€{amount:+,.0f}" if signed else f"€{amount:,.0f}"
+    sign = ("+" if amount >= 0 else "−") if signed and round(amount) else ""
+    return f"{sign}€{abs(amount) if sign else amount:,.0f}"
 
 
-def monthly_money(value):
-    return f"€{float(value):,.2f}"
+def text(fig, x, y, value, size=10, color=INK, weight="normal", **kwargs):
+    return fig.text(x, y, value, fontsize=size, color=color, weight=weight,
+                    va="top", linespacing=1.45, **kwargs)
 
 
-def contribution_summary(manifest, schedule):
-    initial = float(schedule.contribution_eur.iloc[0])
-    final = float(schedule.contribution_eur.iloc[-1])
-    total = float(schedule.contribution_eur.sum())
-    fixed_total = initial * len(schedule)
-    change = total - fixed_total
-    difference = (f"{money(abs(change))} {'more' if change > 0 else 'less'} contributed than keeping the initial monthly amount fixed"
-                  if abs(change) >= .5 else "the same total contributions as keeping the initial monthly amount fixed")
-    return dict(initial=initial, final=final, total=total, count=len(schedule),
-                reviews=int(manifest["contribution_schedule"]["annual_reviews"]),
-                difference_from_fixed=difference,
-                subtitle=f"Starts at {money(initial)}/month · Irish CPI each September · {money(total)} contributed")
+def box(fig, x, y, width, height, color):
+    fig.add_artist(Rectangle((x, y), width, height, transform=fig.transFigure,
+                             facecolor=color, edgecolor="none", zorder=0))
 
 
-def contribution_chart(fig, schedule, summary):
-    fig.text(.06, .852,
-             f"Monthly amount: {monthly_money(summary['initial'])} initially → {monthly_money(summary['final'])} finally"
-             f"  |  {summary['reviews']} anniversary reviews  |  {summary['count']} contributions",
-             fontsize=9, color=INK)
-    ax = fig.add_axes([.13, .685, .80, .135])
-    ax.step(schedule.date, schedule.contribution_eur, where="post", color=TEAL, lw=1.8)
-    reviews = schedule.loc[schedule.date.dt.month.eq(9)]
-    ax.scatter(reviews.date, reviews.contribution_eur, s=10, color=TEAL, zorder=3)
-    ax.xaxis.set_major_locator(YearLocator(4))
-    ax.xaxis.set_major_formatter(DateFormatter("%Y"))
-    ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"€{value:,.0f}"))
-    ax.set_ylabel("Monthly contribution", fontsize=8)
-    ax.tick_params(labelsize=8)
-    ax.grid(axis="y", alpha=.17)
-    ax.set_axisbelow(True)
-    ax.set_xlim(schedule.date.iloc[0], schedule.date.iloc[-1])
+def rule(fig, x, y, width, color=LINE):
+    box(fig, x, y, width, .0012, color)
 
 
 def page(title, subtitle, number):
-    fig = plt.figure(figsize=(11.7, 8.3), facecolor="white")
-    fig.text(.06, .945, title, fontsize=21, weight="bold", color=INK)
-    fig.text(.06, .900, subtitle, fontsize=10, color=MUTED)
-    fig.text(.06, .03, "NASDAQ AFTER TAX  /  Hypothetical research  /  2010–2026", fontsize=8, color=MUTED)
-    fig.text(.94, .03, f"{number} / {PAGE_COUNT}", fontsize=8, color=MUTED, ha="right")
+    fig = plt.figure(figsize=(11.7, 8.3), facecolor=PAPER)
+    for i in range(3):
+        box(fig, .05 + i * .009, .944, .005, .009 + i * .008, TEAL)
+    text(fig, .088, .964, "NASDAQ AFTER TAX", 9, weight="bold")
+    text(fig, .95, .964, "RESEARCH BRIEF  /  2010—2026", 8, MUTED, ha="right")
+    text(fig, .05, .887, title, 29, weight="bold")
+    text(fig, .05, .817, subtitle, 10, MUTED)
+    rule(fig, .05, .066, .90)
+    text(fig, .05, .046, "HYPOTHETICAL STUDY  ·  30 SEP 2010 — 30 SEP 2026", 7.5, MUTED)
+    text(fig, .95, .046, f"{number:02d} / {PAGE_COUNT:02d}", 8, MUTED, ha="right")
     return fig
-
-
-def paragraphs(fig, texts, y=.84, width=125, size=10, x=.06, gap=.018):
-    for value in texts:
-        wrapped = textwrap.fill(value, width=width)
-        fig.text(x, y, wrapped, fontsize=size, color=INK, va="top", linespacing=1.4)
-        y -= .024 * size / 10 * (wrapped.count("\n") + 1) + gap
-    return y
-
-
-def table(fig, rows, columns, box, widths, size=9):
-    ax = fig.add_axes(box)
-    ax.axis("off")
-    tab = ax.table(cellText=rows, colLabels=columns, colWidths=widths,
-                   cellLoc="right", bbox=[0, 0, 1, 1])
-    tab.auto_set_font_size(False)
-    tab.set_fontsize(size)
-    for (r, c), cell in tab.get_celld().items():
-        cell.set_edgecolor(LINE)
-        cell.set_linewidth(.6)
-        cell.PAD = .035
-        if r == 0:
-            cell.set_facecolor(INK)
-            cell.set_text_props(color="white", weight="bold")
-        elif r % 2:
-            cell.set_facecolor("#f2f6f7")
-        if c == 0:
-            cell.set_text_props(ha="left")
-    return tab
-
-
-def strategy_bars(ax, comparison):
-    values = comparison.final_cash.to_numpy()
-    yy = np.arange(len(comparison))
-    ax.barh(yy, values, color=COLORS, height=.6)
-    ax.set_yticks(yy, [LABELS[k] for k in comparison.key], fontsize=10)
-    ax.invert_yaxis()
-    ax.set_xlim(0, max(values) * 1.19)
-    for y, value in zip(yy, values):
-        ax.text(value + max(values) * .014, y, money(value), va="center", color=INK, fontsize=11, weight="bold")
-    ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f"€{x / 1e3:,.0f}k"))
-    ax.grid(axis="x", alpha=.14)
-    ax.set_axisbelow(True)
-    ax.tick_params(axis="y", length=0)
-    ax.set_xlabel("Nominal final cash after liquidation, modelled taxes and costs", color=MUTED)
-    for side in ["top", "right", "left"]:
-        ax.spines[side].set_visible(False)
-
-
-def context_label(value):
-    return SHORT.get(value, str(value).replace("_", " ").capitalize())
-
-
-def marginal_chart(data):
-    height = max(5.3, 2.1 + .51 * len(data))
-    fig, ax = plt.subplots(figsize=(12, height))
-    fig.subplots_adjust(left=.43, right=.87, top=.84, bottom=.16)
-    values = data.after_tax_gain_eur.to_numpy()
-    yy = np.arange(len(data))
-    labels = [f"{r.feature}\n{context_label(r.context)}" for r in data.itertuples()]
-    ax.barh(yy, values, height=.66, color=[TEAL if value >= 0 else GOLD for value in values])
-    ax.set_yticks(yy, labels, fontsize=9)
-    ax.invert_yaxis()
-    limit = max(float(np.abs(values).max()), 1)
-    ax.set_xlim(min(float(values.min()), 0) - limit * .25, max(float(values.max()), 0) + limit * .32)
-    for y, value in zip(yy, values):
-        ax.text(value + limit * (.025 if value >= 0 else -.025), y, money(value, True),
-                ha="left" if value >= 0 else "right", va="center", fontsize=9, color=INK)
-    ax.axvline(0, color=INK, lw=.8)
-    if "presentation" in data.columns:
-        sensitivity = np.flatnonzero(data.presentation.to_numpy() == "sensitivity")
-        if len(sensitivity) and sensitivity[0] > 0:
-            ax.axhline(sensitivity[0] - .5, color=LINE, lw=1, ls="--")
-    ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f"€{x / 1e3:,.0f}k"))
-    ax.grid(axis="x", alpha=.15)
-    ax.set_axisbelow(True)
-    ax.tick_params(axis="y", length=0)
-    ax.set_xlabel("Change in final after-tax wealth versus the matched control")
-    fig.text(.04, .95, "What changes when one rule changes?", fontsize=20, weight="bold", color=INK)
-    fig.text(.04, .90, "Matched comparisons · Effects include portfolio changes; do not sum effects from different controls", fontsize=10, color=MUTED)
-    fig.text(.04, .04, "Annual exemption rows switch the allowance off/on. Gain-harvesting rows change trading rules; they are different experiments.", fontsize=9, color=MUTED)
-    for side in ["top", "right", "left"]:
-        ax.spines[side].set_visible(False)
-    fig.savefig(OUT / "marginal_effects.png", dpi=170, facecolor="white")
-    plt.close(fig)
 
 
 def read_inputs():
@@ -226,130 +115,230 @@ def read_inputs():
     return frames
 
 
-def underperformance_page(data, baseline_cash):
-    fig = page("Previously weak rules, tested again", "Selected from the earlier fixed-contribution study; this replay uses matched CPI-indexed cashflows", 5)
-    controls = data.groupby("comparator").comparator_final_cash.first().to_dict()
-    paragraphs(fig, [
-        f"Control A ({money(controls['annual_monthly_control'])}): monthly loss harvesting at 5% and €25, quarterly tax-budget departure reviews and annual same-share gain harvesting. Control B ({money(controls['annual_only'])}): the same departure and gain rules, without discretionary loss harvesting. Results include final liquidation, taxes and costs.",
-    ], y=.842, width=136, size=9.6)
-    rows = [[f"{UNDERPERFORMER_LABELS[r.key]}\nControl {UNDERPERFORMER_CONTROLS[r.comparator]}", money(r.final_cash), money(r.difference_vs_comparator_eur, True),
-             money(r.additional_transaction_cost_eur, True), money(r.cgt_reduction_eur, True)] for r in data.itertuples()]
-    table(fig, rows, ["Change / matched comparator", "Final cash", "Wealth change\nvs control", "Extra trading\ncosts", "CGT reduction\nvs control"],
-          [.06, .565, .88, .175], [.39, .16, .16, .14, .15], size=9.2)
-    notes = []
-    for row in data.itertuples():
-        baseline_note = f" Versus the plain stock baseline: {money(row.final_cash - baseline_cash, True)}." if row.key == "retain_gains" else ""
-        notes.append(
-            f"{UNDERPERFORMER_LABELS[row.key].upper()}  •  {str(row.explanation).strip()}{baseline_note}"
-        )
-    bottom = paragraphs(fig, notes, y=.512, width=139, size=9.1, gap=.010)
-    if bottom < .255:
-        raise ValueError("Underperformer explanations are too long for a readable fifth page")
-    evidence = [[UNDERPERFORMER_LABELS[r.key],
-                 f"{int(r.harvest_sale_count):,} / {int(r.comparator_harvest_sale_count):,}",
-                 f"{int(r.gain_harvest_sale_count):,} / {int(r.comparator_gain_harvest_sale_count):,}",
-                 money(r.tlh_realised_net_loss_eur), money(r.additional_nominal_exemption_shelter_eur, True)] for r in data.itertuples()]
-    table(fig, evidence, ["Ledger evidence", "Loss sales\nvariant / control", "Gain sales\nvariant / control", "Net TLH\nlosses realised", "Extra nominal\nexemption relief"],
-          [.06, .108, .88, .14], [.35, .16, .16, .16, .17], size=8.1)
-    paragraphs(fig, [
-        "Selection from the earlier study does not predetermine this replay's ranking. Fees, holdings, tax basis and later decisions all change; the comparisons do not separately attribute each mechanism. Lower tax can also reflect lower investment gains.",
-    ], y=.082, width=144, size=8.5)
+def overview(data):
+    comparison = data["comparison"].set_index("key")
+    best = comparison.loc[comparison.final_cash.idxmax()]
+    total = data["manifest"]["contributions_eur"]
+    fig = page("Nasdaq-100, after Irish tax.",
+               "Individual shares versus an accumulating ETF under the modelled Irish tax rules.", 1)
+    box(fig, .05, .177, .345, .585, INK)
+    text(fig, .075, .730, "HIGHEST SELECTED RESULT", 9, LIME, "bold")
+    text(fig, .072, .675, money(best.final_cash), 42, WHITE, "bold")
+    text(fig, .075, .570, LABELS[best.name].replace(" + ", " +\n"), 13, WHITE, "bold")
+    rule(fig, .075, .474, .292, "#46606A")
+    for y, key, label in [(.443, "etf", "versus the ETF"), (.330, "baseline", "versus the stock baseline")]:
+        text(fig, .075, y, money(best.final_cash - comparison.loc[key, "final_cash"], True), 25, LIME, "bold")
+        text(fig, .075, y - .054, label, 10, "#CFDAD9")
+    text(fig, .075, .218, "After liquidation, taxes and costs.", 9, "#CFDAD9")
+    maximum = comparison.final_cash.max()
+    colors = ["#A7B5BA", "#778F99", "#76B6AE", "#368E8B", TEAL]
+    for i, key in enumerate(ORDER):
+        y = .736 - i * .100
+        row = comparison.loc[key]
+        text(fig, .435, y, LABELS[key], 10, weight="bold" if key == best.name else "normal")
+        text(fig, .95, y - .030, money(row.final_cash), 17, weight="bold", ha="right")
+        box(fig, .435, y - .082, .515, .010, LINE)
+        box(fig, .435, y - .082, .515 * row.final_cash / maximum, .010, colors[i])
+    text(fig, .435, .215, "Baseline: retain departures; no discretionary harvesting.", 8.5, MUTED)
+    text(fig, .05, .138, f"€{total:,.2f} invested  /  192 monthly payments  /  16 years", 11, weight="bold")
+    text(fig, .05, .104, "Nominal euros. Selected historical cases; differences include changed holdings and reinvestment as well as tax.", 9, MUTED)
     return fig
 
 
+def effect(data, control, variant):
+    rows = data["marginal_effects"]
+    return rows.loc[rows.control.eq(control) & rows.variant.eq(variant)].iloc[0]
+
+
+def attribution(data):
+    fig = page("Where the gains came from.",
+               "Change one rule at a time; compare complete portfolios after all taxes and costs.", 2)
+    baseline = data["comparison"].set_index("key").loc["baseline", "final_cash"]
+    steps = [effect(data, a, b).after_tax_gain_eur for a, b in
+             [("baseline", "exits"), ("exits", "weekly_tlh"), ("weekly_tlh", "weekly_annual")]]
+    text(fig, .05, .748, "THE WEEKLY STRATEGY, BUILT IN THREE STEPS", 9, TEAL, "bold")
+    text(fig, .05, .701, f"{money(baseline)} → {money(baseline + sum(steps))}", 25, weight="bold")
+    ax = fig.add_axes([.087, .414, .488, .231], facecolor=PAPER)
+    cumulative = np.cumsum(steps)
+    for i, (gain, top, color) in enumerate(zip(steps, cumulative, ["#9ABFB7", "#4FA39E", TEAL])):
+        ax.bar(i, gain, bottom=top-gain, width=.58, color=color, zorder=3)
+        ax.text(i, top + 1800, money(gain, True), ha="center", fontsize=10, color=INK, weight="bold")
+        ax.plot([i + .29, i + .71], [top, top], color=MUTED, lw=.8, ls=":")
+    ax.bar(3, sum(steps), width=.58, color=INK, zorder=3)
+    ax.text(3, sum(steps) + 1800, money(sum(steps), True), ha="center", fontsize=10, color=INK, weight="bold")
+    ax.set_xticks(range(4), ["Quarterly\nexits", "Weekly\nlosses", "Annual\ngains", "Total"], fontsize=9)
+    ax.set_yticks([0, 20000, 40000], ["€0", "+€20k", "+€40k"], fontsize=8, color=MUTED)
+    ax.set_ylim(0, max(cumulative.max(), sum(steps)) * 1.20)
+    ax.grid(axis="y", color=LINE, lw=.7, zorder=0)
+    ax.tick_params(axis="both", length=0)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    text(fig, .05, .322, "MONTHLY ALTERNATIVE  /  AFTER QUARTERLY EXITS", 8, TEAL, "bold")
+    a = effect(data, "exits", "monthly_tlh").after_tax_gain_eur
+    b = effect(data, "monthly_tlh", "monthly_hybrid").after_tax_gain_eur
+    text(fig, .05, .281, f"{money(a, True)} losses  →  {money(b, True)} hybrid gains", 13, weight="bold")
+    text(fig, .638, .748, "THE ANNUAL EXEMPTION: OFF → ON", 9, TEAL, "bold")
+    for y, key, label in [(.505, "weekly_annual", "WEEKLY + ANNUAL GAINS"),
+                           (.270, "monthly_hybrid", "MONTHLY + HYBRID GAINS")]:
+        row = effect(data, "weekly_no_exemption" if key == "weekly_annual" else "hybrid_no_exemption", key)
+        box(fig, .630, y, .320, .211, WHITE)
+        text(fig, .651, y + .187, label, 8.5, MUTED, "bold")
+        text(fig, .651, y + .144, money(row.after_tax_gain_eur, True), 26,
+             TEAL if row.after_tax_gain_eur >= 0 else CORAL, "bold")
+        text(fig, .651, y + .084, "change in final wealth", 9, MUTED)
+        text(fig, .651, y + .043, f"Nominal exemption relief: {money(row.additional_nominal_exemption_shelter_eur)}", 10)
+    rule(fig, .05, .232, .90)
+    text(fig, .05, .205,
+         "The three steps add because each builds on the previous rule. The exemption cards are separate experiments.\n"
+         "Wealth effects include holdings, costs and reinvestment. Nominal relief is exempt gains × 33%.\n"
+         "Loss and gain harvesting interact: effects measured against different controls cannot simply be added.", 10, MUTED)
+    return fig
+
+
+def rules_and_misses(data):
+    fig = page("How the strategies traded.",
+               "The leading strategy uses three scheduled reviews, with no foresight of later prices or losses.", 3)
+    cards = [
+        ("01 / EVERY FRIDAY", "Harvest meaningful losses",
+         "Sell a whole holding at ≥5% and ≥€25 loss.\nNo same-class buy in the prior 29 days;\nblock repurchase for 29 days afterwards."),
+        ("02 / EACH QUARTER", "Review departed stocks",
+         "Sell when existing losses and remaining\nexemption cover the gain without extra\nCGT. Keep other departed holdings."),
+        ("03 / EACH DECEMBER", "Use remaining tax capacity",
+         "Sell eligible FIFO lots: losses first,\nthen the €1,270 exemption. Repurchase\ncurrent shares with non-losing lots;\npurchase restrictions and fees apply."),
+    ]
+    for x, (cadence, title, body) in zip([.05, .36, .67], cards):
+        box(fig, x, .505, .28, .25, WHITE)
+        box(fig, x, .746, .28, .009, TEAL)
+        text(fig, x + .016, .727, cadence, 8, TEAL, "bold")
+        text(fig, x + .016, .684, title, 12, weight="bold")
+        text(fig, x + .016, .635, body, 9.5)
+    text(fig, .05, .476, "Monthly hybrid: monthly loss reviews; annual gains sell departed holdings first, then restore eligible current shares.", 9, MUTED)
+    text(fig, .05, .416, "Three rules that fell behind.", 20, weight="bold")
+    text(fig, .05, .361, "PREVIOUSLY WEAK RULES, REPLAYED", 8, MUTED, "bold")
+    text(fig, .605, .361, "SHORTFALL VS CONTROL", 8, MUTED, "bold", ha="right")
+    text(fig, .655, .361, "WHAT CHANGED", 8, MUTED, "bold")
+    notes = {
+        "any_loss": lambda r: f"{r.harvest_sale_count:,} loss sales vs {r.comparator_harvest_sale_count:,};\nfees and holdings changed.",
+        "retain_gains": lambda r: "Kept former constituents;\nlower tax, lower final wealth.",
+        "monthly_gains": lambda r: f"{r.gain_harvest_sale_count:,} gain sales vs {r.comparator_gain_harvest_sale_count:,};\nthe annual allowance stayed fixed.",
+    }
+    for y, r in zip([.317, .247, .177], data["underperformers"].itertuples()):
+        rule(fig, .05, y + .015, .90)
+        text(fig, .05, y, UNDERPERFORMER_LABELS[r.key], 11)
+        text(fig, .605, y, money(r.difference_vs_comparator_eur, True), 17, CORAL, "bold", ha="right")
+        text(fig, .655, y, notes[r.key](r), 9.5)
+    text(fig, .05, .102,
+         "Controls: quarterly exits + annual same-share gains; monthly 5%/€25 loss reviews for rows 1 and 3, no voluntary losses for row 2.", 8, MUTED)
+    return fig
+
+
+def assumptions(data):
+    schedule = data["contribution_schedule"]
+    initial, final = schedule.contribution_eur.iloc[[0, -1]]
+    total = data["manifest"]["contributions_eur"]
+    fig = page("What the comparison assumes.",
+               "Same scheduled funding. Frozen tax scenarios. A provisional historical reconstruction.", 4)
+    text(fig, .05, .748, "CONTRIBUTIONS FOLLOW IRISH CPI", 9, TEAL, "bold")
+    text(fig, .05, .703, f"€{initial:,.2f} → €{final:,.2f}", 29, weight="bold")
+    text(fig, .05, .641, f"Per month  /  €{total:,.2f} contributed over 16 years", 10, MUTED)
+    ax = fig.add_axes([.093, .462, .469, .142], facecolor=PAPER)
+    ax.fill_between(schedule.date, initial, schedule.contribution_eur, step="post", color=LIME, alpha=.65)
+    ax.step(schedule.date, schedule.contribution_eur, where="post", color=TEAL, lw=2)
+    ax.xaxis.set_major_locator(YearLocator(5))
+    ax.xaxis.set_major_formatter(DateFormatter("%Y"))
+    ax.set_yticks([1000, 1150, 1300], ["€1,000", "€1,150", "€1,300"])
+    ax.set_xlim(schedule.date.iloc[0], schedule.date.iloc[-1])
+    ax.tick_params(labelsize=8, length=0, colors=MUTED)
+    ax.grid(axis="y", color=LINE, lw=.6)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    text(fig, .05, .409, "Each September: €1,000 × August CPI ÷ August 2010 CPI.", 10, weight="bold")
+    text(fig, .05, .373,
+         "Published data only; increases and decreases apply.\n"
+         "Same scheduled flows; three stock deposits post next session.\n"
+         "CSO CPI: December 2006=100; current, non-revised series.", 9, MUTED)
+    box(fig, .630, .339, .320, .420, INK)
+    text(fig, .653, .730, "THE TAX SCENARIO", 9, LIME, "bold")
+    taxes = [("33%", "STOCK CAPITAL GAINS"), ("€1,270", "ANNUAL CGT EXEMPTION"),
+             ("52.35%", "DIVIDEND TAX"), ("38% / 8y", "FUND TAX / DEEMED DISPOSAL")]
+    for y, (value, label) in zip([.680, .606, .532, .458], taxes):
+        text(fig, .653, y, value, 20, WHITE, "bold")
+        text(fig, .653, y - .045, label, 7.7, "#CFDAD9")
+    text(fig, .653, .366, "No unrelated gains consume the allowance.", 8, "#CFDAD9")
+    rule(fig, .05, .300, .90)
+    text(fig, .05, .270, "READ THE RESULTS AS A BACKTEST", 8.5, TEAL, "bold")
+    text(fig, .05, .233,
+         "Strategies were selected retrospectively, not out of sample.\n"
+         "Weights, membership and corporate actions remain provisional;\n"
+         "some holdings use nontradable marks. Wealth is nominal.", 9.5, MUTED)
+    text(fig, .550, .270, "COSTS & INTERPRETATION", 8.5, TEAL, "bold")
+    text(fig, .550, .233,
+         "0.15% FX each non-euro trade; no extra spread or slippage.\n"
+         "ETF NAV includes fund costs. Tax rates are frozen scenarios,\n"
+         "not each year's legislation. See the full modelling limitations.", 9.5, MUTED)
+    text(fig, .05, .125, "Research only. Not tax, legal or investment advice.", 10, weight="bold")
+    text(fig, .05, .090, "Methodology, ledgers, source links and legal notice: README + study_manifest.json", 8, MUTED,
+         url="../../../README.md")
+    return fig
+
+
+def marginal_chart(data):
+    labels = {
+        ("baseline", "exits"): "Quarterly exits / harvesting off",
+        ("exits", "monthly_tlh"): "Monthly losses / annual gains off",
+        ("monthly_tlh", "monthly_hybrid"): "Annual hybrid gains / monthly losses",
+        ("exits", "weekly_tlh"): "Weekly losses / annual gains off",
+        ("weekly_tlh", "weekly_annual"): "Annual gains / weekly losses",
+        ("weekly_no_exemption", "weekly_annual"): "Exemption on / weekly combined",
+        ("hybrid_no_exemption", "monthly_hybrid"): "Exemption on / monthly hybrid",
+    }
+    shown = data["marginal_effects"].set_index(["control", "variant"]).loc[list(labels)]
+    fig, ax = plt.subplots(figsize=(12, 5.7), facecolor=PAPER)
+    fig.subplots_adjust(left=.365, right=.87, top=.79, bottom=.18)
+    ax.set_facecolor(PAPER)
+    values = shown.after_tax_gain_eur.to_numpy()
+    positions = np.arange(len(values))
+    ax.barh(positions, values, height=.58, color=[TEAL if v >= 0 else CORAL for v in values])
+    ax.set_yticks(positions, list(labels.values()), fontsize=10)
+    ax.invert_yaxis()
+    limit = np.abs(values).max()
+    ax.set_xlim(min(values.min(), 0)-limit*.12, max(values.max(), 0)+limit*.21)
+    for y, value in zip(positions, values):
+        ax.text(max(value, 0) + limit * .02, y, money(value, True),
+                ha="left", va="center", fontsize=10, weight="bold", color=INK if value >= 0 else CORAL)
+    ax.axvline(0, color=MUTED, lw=.8)
+    ax.axhline(4.5, color=LINE, lw=1, ls=":")
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda value, _: f"€{value/1000:,.0f}k"))
+    ax.tick_params(length=0, colors=MUTED)
+    ax.grid(axis="x", color=LINE, lw=.6)
+    ax.set_axisbelow(True)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    text(fig, .04, .94, "One rule. One matched comparison.", 24, weight="bold")
+    text(fig, .04, .853, "Change in final after-tax wealth; each row has its own control.", 11, MUTED)
+    text(fig, .04, .082, "Effects include changed holdings and costs. Exemption availability is a separate experiment from gain harvesting.", 9, MUTED)
+    text(fig, .04, .045, "Selected historical cases · CPI-indexed contributions · Full liquidation", 8, MUTED)
+    fig.savefig(OUT / "marginal_effects.png", dpi=170, facecolor=PAPER)
+    plt.close(fig)
+
+
 def main():
-    frames = read_inputs()
-    manifest = frames["manifest"]
-    schedule = frames["contribution_schedule"]
-    contributions = contribution_summary(manifest, schedule)
-    comparison, effects, relief, interactions = [frames[k] for k in ["comparison", "marginal_effects", "tax_relief", "interactions"]]
-    shown_effects = effects.loc[effects.presentation.isin(["main", "sensitivity"])] if "presentation" in effects else effects
-    weekly_exemption = effects.loc[effects.feature.eq("Annual exemption") & effects.variant.eq("weekly_annual")].iloc[0]
-    by_key = comparison.set_index("key")
-    best = comparison.loc[comparison.final_cash.idxmax()]
-    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
-                         "axes.spines.top": False, "axes.spines.right": False,
-                         "text.color": INK, "axes.labelcolor": MUTED, "xtick.color": MUTED, "ytick.color": INK})
-    chart, ax = plt.subplots(figsize=(12, 5.7))
-    chart.subplots_adjust(left=.36, right=.97, bottom=.16, top=.81)
-    strategy_bars(ax, comparison)
-    chart.text(.035, .94, "Nasdaq-100, after Irish tax", fontsize=22, weight="bold", color=INK)
-    chart.text(.035, .875, contributions["subtitle"], fontsize=10.5, color=MUTED)
-    chart.savefig(OUT / "strategy_comparison.png", dpi=170, facecolor="white")
-    plt.close(chart)
-    marginal_chart(shown_effects)
-
+    data = read_inputs()
+    plt.rcParams.update({"font.family": "DejaVu Sans", "pdf.fonttype": 42,
+                         "text.color": INK, "axes.labelcolor": MUTED})
     destination = OUT / "report.pdf"
-    with PdfPages(destination, metadata={"Title": "Nasdaq After Tax — Current Study", "Author": "Nasdaq After Tax", "Subject": "Hypothetical Irish ETF and direct-share tax comparison"}) as pdf:
-        fig = page("Nasdaq-100, after Irish tax", contributions["subtitle"], 1)
-        ax = fig.add_axes([.355, .435, .60, .365])
-        strategy_bars(ax, comparison)
-        rows = [[SHORT[r.key], money(r.total_tax), money(r.transaction_costs), money(r.difference_vs_baseline_eur, True)] for r in comparison.itertuples()]
-        table(fig, rows, ["Scenario", "Total modelled tax", "Trading costs", "Wealth vs stock baseline"],
-              [.06, .18, .88, .205], [.40, .20, .18, .22], size=9)
-        paragraphs(fig, [f"Highest selected result: {LABELS[best.key]} ({money(best.final_cash)}). Every strategy uses the same CPI-indexed contributions. Results are nominal, after final liquidation. The stock baseline retains departures without discretionary harvesting; differences include changed investments as well as tax."], y=.125, width=137, size=9)
-        pdf.savefig(fig); plt.close(fig)
-
-        fig = page("Measure each change against its own control", "Effects measured against different controls should not be added together", 2)
-        rows = [[f"{r.feature}\n{context_label(r.context)}", money(r.after_tax_gain_eur, True), money(r.cgt_reduction_eur, True), money(r.additional_nominal_exemption_shelter_eur, True), money(r.additional_cost_eur, True)] for r in shown_effects.itertuples()]
-        table(fig, rows, ["Feature / existing rules", "After-tax\nwealth change", "CGT\nreduction", "Extra nominal\nexemption relief", "Extra\ntrading costs"],
-              [.06, .39, .88, .46], [.40, .16, .14, .17, .13], size=8.7 if len(rows) <= 8 else 7.8)
-        notes = [
-            "Wealth change compares complete replays. CGT reduction is the difference in modelled CGT paid; changed investments can also change taxable returns. Nominal exemption relief is 33% of the difference in exempt gains on the two ledgers. Neither number is a separate bonus to add to final wealth.",
-            f"Exemption sensitivities switch the allowance off/on; gain-harvesting comparisons change trading rules. In the weekly case, the allowance changes full-strategy wealth by {money(weekly_exemption.after_tax_gain_eur)}, but nominal exemption relief is {money(weekly_exemption.additional_nominal_exemption_shelter_eur)}. Tax capacity changes later holdings and cash decisions: the wealth change is not an allowance tax saving. Four interaction-control pairs remain in marginal_effects.csv.",
-        ]
-        if len(interactions):
-            interaction_text = "; ".join(f"{context_label(r.context)}: {money(r.interaction_eur, True)}" for r in interactions.itertuples())
-            notes.append(f"Interaction between loss and gain harvesting: {interaction_text}. These measure how the loss-harvesting effect changes when gain harvesting is enabled. Standalone effects cannot simply be combined; differences along a consistent sequence of controls do sum correctly.")
-        paragraphs(fig, notes, y=.335, width=134, size=9.3, gap=.015)
-        pdf.savefig(fig); plt.close(fig)
-
-        fig = page("The rules, and the relief actually used", "All three selected stock strategies review departed holdings quarterly", 3)
-        rules = [
-            ["Monthly loss harvesting", "Monthly losses; no annual gain review."],
-            ["Monthly + hybrid gains", "Monthly losses; December gains sell departed holdings first, then restore current shares."],
-            ["Weekly + same-share gains", "Friday loss reviews; December gains sell and repurchase eligible current shares."],
-        ]
-        table(fig, rules, ["Selected strategy", "Loss and gain review schedule"], [.06, .655, .88, .18], [.33, .67], size=9.2)
-        rows = [[SHORT[r.key], money(r.exemption_used_before_final_eur), str(int(r.exemption_fully_used_before_final_years)), money(r.nominal_cgt_sheltered_by_exemption_eur), money(r.tlh_realised_net_loss_eur)] for r in relief.itertuples()]
-        table(fig, rows, ["Strategy", "Exempt gains\nbefore final year", "Earlier years\nusing full allowance", "Nominal relief\nincluding final year", "Net losses from\nTLH disposals"],
-              [.06, .415, .88, .19], [.32, .18, .16, .17, .17], size=8.6)
-        paragraphs(fig, [
-            "Loss review: sell an eligible whole holding when its euro loss after fees reaches both 5% and €25. Require no same-class purchase in the preceding 29 days and block repurchase for the next 29 days. Reinvest into eligible current underweights; every strategy shares the CPI-indexed contribution schedule.",
-            "Departure review: sell confirmed former constituents only when existing realised losses, carried losses and the remaining exemption cover the gain without increasing CGT at that review. A profitable departure can therefore remain in the portfolio.",
-            "Annual gain review: partial FIFO sales use losses before the €1,270 allowance. Same-share mode ranks by gain per euro sold; hybrid ranks departures then current overweights. Immediate replacement requires non-losing selected lots, current membership and the purchase restriction; both legs pay costs. Hybrid departure sales fund current underweights.",
-            "Harvested losses are not permanent relief equal to loss × 33%: replacement shares can have lower cost basis and a larger later gain. This study touches 17 tax years, including partial 2010 and final-liquidation 2026. All figures are hypothetical; no unrelated gains consume the exemption.",
-        ], y=.37, width=136, size=9.1, gap=.014)
-        pdf.savefig(fig); plt.close(fig)
-
-        fig = page("Contributions, evidence and practical limits", "Annual Irish CPI adjustments use information available at the time; all reported wealth is nominal", 4)
-        contribution_chart(fig, schedule, contributions)
-        paragraphs(fig, [
-            f"CASHFLOWS  •  Each September: {monthly_money(contributions['initial'])} × August CPI / August 2010 CPI, rounded to cents and fixed for 12 payments. Both inflation and deflation apply. CSO all-items CPI uses December 2006=100 and releases predating each review; a current snapshot relies on CSO's non-revision policy. Identical scheduled amounts fund both cases; three stock payments post next trading session. There is {contributions['difference_from_fixed']}; wealth remains nominal.",
-            "PERIOD AND INPUTS  •  30 September 2010 to 30 September 2026. Stock prices extend through the final session; ETF/FX observations through 2 October. Last usable weights: 31 August, available 7 September. September weights were unavailable until 7 October. Membership, weights, dividends and corporate actions remain provisional; some unquoted holdings use nontradable valuation marks.",
-            "SELECTION  •  Strategies were selected retrospectively from the earlier fixed-contribution exploration. Causal trade rules do not make that selection an out-of-sample test. CPI-linked cashflows can change holdings, tax capacity, triggers and rankings. Matched controls describe this replay, not a universally best strategy.",
-            "FROZEN TAX AND COSTS  •  33% share CGT; €1,270 annual exemption; 52.35% dividend tax; 38% ETF fund tax with eight-year deemed disposal. Losses precede the exemption; withholding credits are included. Non-euro share trades incur 0.15% FX per side; no extra spread or slippage is modelled. ETF NAV embeds fund costs. Assumed rates are not each year's law or anyone's actual tax status.",
-            "INTERPRETATION  •  Share matching, foreign reorganisations and compulsory receipts retain documented assumptions. CGT reserves and annual settlements approximate payment timing. Audits check arithmetic and trade eligibility, not tax rulings, historical broker availability or executable fills.",
-            "REPRODUCE LOCALLY  •  Run python historical/run_tax_optimization_study.py --workers 3 with the required inputs, then python historical/run_tax_optimization_report.py. Current tables, contribution_schedule.csv, ledgers and input/code hashes are in historical/results/latest/. The schedule records CPI evidence and availability; the manifest documents its method.",
-        ], y=.632, width=139, size=9.0, gap=.013)
-        fig.text(.06, .105, "Read the assumptions before interpreting small differences as an investable advantage.", fontsize=10, color=TEAL, weight="bold")
-        fig.text(.06, .083, "Research only, not tax, legal or investment advice. See the README legal notice.", fontsize=8.2, color=MUTED)
-        links = [
-            ("Revenue · CGT calculation and exemption", "https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/how-to-calculate-cgt.aspx"),
-            ("Revenue · Share matching restrictions", "https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/selling-or-disposing-of-shares.aspx"),
-        ]
-        for i, (label, url) in enumerate(links):
-            fig.text(.06 + i * .46, .064, label, fontsize=8, color=TEAL, url=url)
-        pdf.savefig(fig); plt.close(fig)
-        fig = underperformance_page(frames["underperformers"], float(by_key.loc["baseline", "final_cash"]))
-        pdf.savefig(fig); plt.close(fig)
-    print(json.dumps({"report": "historical/results/latest/report.pdf", "pages": PAGE_COUNT,
-                      "contributions_eur": contributions["total"],
-                      "initial_monthly_eur": contributions["initial"],
-                      "final_monthly_eur": contributions["final"],
-                      "best_selected_historical_case": best.key,
-                      "best_final_cash": float(best.final_cash),
-                      "stock_baseline_final_cash": float(by_key.loc["baseline", "final_cash"])}, indent=2))
+    with PdfPages(destination, metadata={"Title": "Nasdaq After Tax — Research Brief",
+            "Author": "Nasdaq After Tax", "Subject": "Hypothetical Irish ETF and direct-share tax comparison"}) as pdf:
+        for build in (overview, attribution, rules_and_misses, assumptions):
+            fig = build(data)
+            pdf.savefig(fig, facecolor=PAPER)
+            if build is overview:
+                fig.savefig(OUT / "strategy_comparison.png", dpi=170, facecolor=PAPER)
+            plt.close(fig)
+    marginal_chart(data)
+    print(json.dumps({"report": str(destination.relative_to(ROOT.parent)), "pages": PAGE_COUNT,
+                      "contributions_eur": data["manifest"]["contributions_eur"],
+                      "best_final_cash": float(data["comparison"].final_cash.max())}, indent=2))
 
 
 if __name__ == "__main__":
