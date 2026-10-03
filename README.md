@@ -22,6 +22,28 @@ The study follows dated index membership, invests monthly contributions, and acc
 
 **Research only; not tax, legal or investment advice.** Read the [legal notice](#legal-notice) before relying on any material.
 
+## What each strategy actually does
+
+All five scenarios invest the same CPI-linked monthly contributions for 16 years, then sell everything. The stock portfolios buy current Nasdaq-100 members using the weights available at the time.
+
+| Strategy | Trading rule | Final after-tax wealth |
+|:---|:---|---:|
+| **Hold the ETF** | Buy an accumulating ETF; pay the modelled tax at each purchase’s eight-year anniversaries and on final sale. | **€750,729** |
+| **Buy index shares; keep stocks that leave** | Buy current index shares with new money. Keep existing holdings, including former members; no discretionary sales before final liquidation. Compulsory corporate actions still apply. | **€952,619** |
+| **Sell losing shares each month** | Each month, sell eligible holdings down at least **5% and €25**, then reinvest into current index stocks. No December sales to use unused tax capacity. | **€988,601** |
+| **Sell losses monthly; sell former index stocks first in December** | Add December sales of profitable former members, putting proceeds into current index stocks. If tax capacity remains, sell and rebuy eligible current stocks. | **€994,222** |
+| **Sell losses weekly; sell and rebuy current stocks in December** | Check losses each Friday. In December, sell and rebuy eligible current index stocks to realise gains without adding CGT at that review. | **€998,425** |
+
+**Shared by the three strategies that sell losses:** review former index members every quarter and sell a whole holding only when it adds no current-year CGT; reinvest proceeds into current index stocks. Otherwise, keep it. Both monthly and weekly loss reviews use the **5% and €25** thresholds and the model’s 29-day purchase restrictions.
+
+**The December rule:** try to realise gains covered first by available losses, then by the remaining **€1,270 annual CGT exemption**. It is not a €1,270 cap on gross gains, and eligible holdings may prevent full use. The monthly version sells former members first; the weekly version’s December sales are confined to current index stocks. Selling and rebuying records a new purchase cost for future CGT while keeping those stocks, with fewer shares after fees.
+
+![Final proceeds after modelled taxes and costs](historical/results/latest/strategy_comparison.png)
+
+The strongest selected result was **€998,425**. Adding December sales and repurchases to the otherwise identical weekly-loss strategy increased final wealth by **€9,319**; additional nominal exemption relief was **€5,948**. Those are different measures, not amounts to add together.
+
+These three strategies were selected from an earlier, broader exploration with fixed contributions and rerun with CPI-linked funding. **Selection is retrospective**; using only information available at each trade does not make this an out-of-sample test.
+
 ## Why direct ownership changes the tax comparison
 
 The model assumes an Irish-resident individual investing personally in ordinary company shares, compared with an accumulating Irish-domiciled ETF within the investment-fund tax regime. ETF classification and personal circumstances matter; this is not a rule for every product called an ETF.
@@ -51,22 +73,6 @@ These are **nominal euro results**, not final wealth expressed in constant purch
 
 Source: CSO Ireland’s [CPM02 national CPI series](https://data.cso.ie/table/CPM02). The [contribution schedule](historical/results/latest/contribution_schedule.csv) records each payment, reference index and publication date. The [CPI methodology and provenance](historical/inflation/README.md) explain rounding and the current official snapshot: historical release dates are checked, but archived API vintages are not reconstructed.
 
-## One period. Five headline scenarios.
-
-![Final proceeds after modelled taxes and costs](historical/results/latest/strategy_comparison.png)
-
-The strongest selected result was **€998,425**, from weekly loss reviews plus annual same-share gain harvesting; the ETF finished at **€750,729**. Against the matched weekly-loss strategy, adding annual gain harvesting increased final wealth by **€9,319**; additional nominal exemption relief was **€5,948**. Those are different measures, not amounts to add together.
-
-The current study keeps three stock strategies from an earlier, broader exploration with fixed contributions, alongside an ETF benchmark and a simpler stock baseline. All now use the same 16-year CPI-indexed contribution schedule and final liquidation. **Strategy selection is retrospective**; causal trading rules do not make the selection an out-of-sample test.
-
-| Scenario | What it does |
-|:---|:---|
-| **ETF benchmark** | Accumulating ETF with eight-year deemed disposal and a frozen 38% fund-tax assumption. |
-| **Stock baseline** | Buys current constituents; retains departed holdings; no discretionary loss harvesting or annual gain review. |
-| **Monthly loss harvesting** | Monthly loss reviews and quarterly reviews of departed stocks; no annual gain review. |
-| **Monthly losses + annual hybrid gains** | Adds December gain harvesting: handle departed stocks first, then sell and repurchase eligible current holdings. |
-| **Weekly losses + annual same-share gains** | Reviews losses each Friday; December gain harvesting sells and repurchases eligible current holdings. |
-
 ## What is the tax optimisation actually worth?
 
 ![Matched marginal effects on final after-tax wealth](historical/results/latest/marginal_effects.png)
@@ -82,7 +88,7 @@ These distinctions matter:
 
 Harvesting a loss does not automatically create a permanent benefit equal to the loss times the tax rate. Replacement shares can have a lower cost basis and a larger taxable gain later. The relevant outcome is wealth after all taxes and costs.
 
-The exemption-on/off sensitivities illustrate the feedback. With the exemption available, the weekly strategy finishes **€13,243 higher**, with **€6,368** of nominal exemption relief. The monthly hybrid finishes **€700 lower**, despite **€6,787** of nominal exemption relief and lower CGT. These wealth changes include altered holdings and cash deployment; neither is a measure of allowance tax savings alone.
+The exemption-on/off sensitivities illustrate the feedback. With the exemption available, the weekly strategy finishes **€13,243 higher**, with **€6,368** of nominal exemption relief. The strategy that sells losses monthly and former members first in December finishes **€700 lower**, despite **€6,787** of nominal exemption relief and lower CGT. These wealth changes include altered holdings and cash deployment; neither is a measure of allowance tax savings alone.
 
 ## How the three stock strategies trade
 
@@ -90,11 +96,11 @@ The exemption-on/off sensitivities illustrate the feedback. With the exemption a
 |:---|:---|
 | **Monthly contributions** | Invest the scheduled CPI-indexed amount into eligible current constituents below their dated target weights. Reinvest dividends after tax. |
 | **Loss harvesting** | Sell a whole eligible holding only when its euro loss after fees reaches **both 5% and €25**. Require no same-class purchase in the preceding 29 days, then block repurchase for 29 days. |
-| **Quarterly departures** | Sell confirmed former constituents when known realised losses, carried losses and the available exemption cover the gain without increasing CGT at that review. Otherwise retain them. |
-| **December gains, where enabled** | Use partial FIFO sales to absorb existing losses and then use remaining **€1,270 annual exemption** capacity. Eligible current-share replacements require non-losing selected lots and incur costs on both trades. |
+| **Quarterly sales of former members** | Sell a whole holding only when known realised losses, carried losses and the available exemption cover the gain without increasing CGT at that review. Otherwise keep it. |
+| **December sales, where enabled** | Sell the oldest shares first, including partial holdings, to use existing losses and then remaining **€1,270 annual exemption** capacity. Immediate repurchases of current stocks require every selected lot to be non-losing and incur costs on both trades. |
 | **Final liquidation** | Sell all remaining holdings using required terminal quotes and settle remaining modelled taxes and costs. |
 
-Decisions use the information available at the review; they do not anticipate later losses, recoveries or index changes. FIFO means oldest shares are sold first. The hybrid rule directs departed-stock proceeds into current underweights; same-share replacement aims to preserve current exposure, subject to costs.
+Decisions use the information available at the review; they do not anticipate later losses, recoveries or index changes.
 
 ## Previously weak rules, tested again
 
@@ -102,12 +108,12 @@ These were the three weakest active gain-harvesting variants in the earlier fixe
 
 | Underperforming rule | Final after-tax wealth | Matched comparator | Shortfall |
 |:---|---:|:---|---:|
-| Harvest any monthly loss of at least €1 | €972,752 | Annual gains + monthly losses at 5% / €25 | −€22,369 |
-| Retain departed stocks; annual gains, no loss harvesting | €956,852 | Same rules, with quarterly tax-budget exits | −€26,624 |
-| Review gains monthly instead of annually | €957,621 | Same rules, with annual gain reviews | −€37,500 |
+| Sell losing shares monthly from a €1 loss | €972,752 | Same rules, but require a 5% and €25 loss; both sell and rebuy current stocks in December | −€22,369 |
+| Keep former members; sell and rebuy current stocks in December; no loss sales | €956,852 | Same rules, but also sell former members quarterly when no extra CGT arises | −€26,624 |
+| Sell and rebuy profitable current stocks monthly | €957,621 | Same rules, but sell and rebuy in December only | −€37,500 |
 
 - **Harvesting tiny losses created much more activity without improving the net outcome.** Loss sales rose from 424 to 1,403, while realised losses increased by €2,041. Recorded costs rose by €741, while nominal exemption relief fell by €120. Changed holdings, replacement purchases and cash deployment also affected returns; the fees alone do not explain the €22,369 shortfall.
-- **Keeping departed holdings preserved exposure that underperformed on this path.** Average confirmed outside-index weight was 4.71%, versus 0.21% with tax-budget exits. This version paid €12,925 less total tax and €236 less in recorded costs, yet finished €26,624 behind. It still beat the plain retained-stock baseline by €4,234: annual gain harvesting helped in that comparison, but did not make retention the better rule.
+- **Keeping departed holdings preserved exposure that underperformed on this path.** Average confirmed outside-index weight was 4.71%, versus 0.21% when former members could be sold quarterly without extra CGT. This version paid €12,925 less total tax and €236 less in recorded costs, yet finished €26,624 behind. It still beat the plain retained-stock baseline by €4,234: December sales and repurchases helped in that comparison, but did not make retention the better rule.
 - **Monthly gain reviews did not create a larger annual allowance.** They produced 720 gain sales versus 198, with €80 less nominal exemption relief. Earlier basis resets and use of tax capacity changed later loss and departure decisions. The portfolio paid less tax but also generated less wealth; this was not simply a transaction-fee problem.
 
 These observations explain the recorded differences, not a universal claim that a strategy can never work. The study does not establish which particular missed recoveries caused the shortfalls. [Underperformer results](historical/results/latest/underperformers.csv) include the controls, trade counts, tax and cost differences; the [independent audit](historical/results/latest/attribution_audit.json) reconciles the accounting changes.

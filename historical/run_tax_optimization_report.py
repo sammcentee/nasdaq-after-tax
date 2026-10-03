@@ -16,16 +16,23 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "results/latest"
 ORDER = ["etf", "baseline", "monthly_tlh", "monthly_hybrid", "weekly_annual"]
 LABELS = {
-    "etf": "ETF / eight-year deemed disposal",
-    "baseline": "Stock baseline / retain departures",
-    "monthly_tlh": "Monthly loss harvesting",
-    "monthly_hybrid": "Monthly losses + annual hybrid gains",
-    "weekly_annual": "Weekly losses + annual same-share gains",
+    "etf": "Hold the ETF",
+    "baseline": "Buy index shares; keep stocks that leave",
+    "monthly_tlh": "Sell losing shares each month",
+    "monthly_hybrid": "Sell losses monthly; sell former index stocks first in December",
+    "weekly_annual": "Sell losses weekly; sell and rebuy current stocks in December",
+}
+DESCRIPTIONS = {
+    "etf": "Fund tax on gains, including eight-year deemed disposal.",
+    "baseline": "No voluntary sales before the final sale of everything.",
+    "monthly_tlh": "Sell eligible losses; no December sales to use the exemption.",
+    "monthly_hybrid": "Then sell and rebuy eligible current stocks to use remaining exemption.",
+    "weekly_annual": "Sell at a covered profit; rebuy to reset the purchase cost for future CGT.",
 }
 UNDERPERFORMER_LABELS = {
-    "any_loss": "Harvest losses from €1",
-    "retain_gains": "Keep departures; annual gains",
-    "monthly_gains": "Review gains every month",
+    "any_loss": "Sell even tiny losses (from €1)",
+    "retain_gains": "Keep stocks that leave the index",
+    "monthly_gains": "Sell and rebuy profitable shares monthly",
 }
 UNDERPERFORMER_CONTROLS = {"annual_monthly_control": "A", "annual_only": "B"}
 INK, MUTED, TEAL, LIME, CORAL = "#142F3B", "#596B72", "#087F80", "#C4EF68", "#B34D35"
@@ -124,7 +131,7 @@ def overview(data):
     box(fig, .05, .177, .345, .585, INK)
     text(fig, .075, .730, "HIGHEST SELECTED RESULT", 9, LIME, "bold")
     text(fig, .072, .675, money(best.final_cash), 42, WHITE, "bold")
-    text(fig, .075, .570, LABELS[best.name].replace(" + ", " +\n"), 13, WHITE, "bold")
+    text(fig, .075, .577, LABELS[best.name].replace("; ", ";\n").replace("current stocks", "current stocks\n"), 12, WHITE, "bold")
     rule(fig, .075, .474, .292, "#46606A")
     for y, key, label in [(.443, "etf", "versus the ETF"), (.330, "baseline", "versus the stock baseline")]:
         text(fig, .075, y, money(best.final_cash - comparison.loc[key, "final_cash"], True), 25, LIME, "bold")
@@ -135,13 +142,14 @@ def overview(data):
     for i, key in enumerate(ORDER):
         y = .736 - i * .100
         row = comparison.loc[key]
-        text(fig, .435, y, LABELS[key], 10, weight="bold" if key == best.name else "normal")
-        text(fig, .95, y - .030, money(row.final_cash), 17, weight="bold", ha="right")
-        box(fig, .435, y - .082, .515, .010, LINE)
-        box(fig, .435, y - .082, .515 * row.final_cash / maximum, .010, colors[i])
-    text(fig, .435, .215, "Baseline: retain departures; no discretionary harvesting.", 8.5, MUTED)
-    text(fig, .05, .138, f"€{total:,.2f} invested  /  192 monthly payments  /  16 years", 11, weight="bold")
-    text(fig, .05, .104, "Nominal euros. Selected historical cases; differences include changed holdings and reinvestment as well as tax.", 9, MUTED)
+        text(fig, .435, y, LABELS[key], 9.5, weight="bold")
+        text(fig, .435, y - .025, DESCRIPTIONS[key], 8.5, MUTED)
+        text(fig, .95, y - .046, money(row.final_cash), 16, weight="bold", ha="right")
+        box(fig, .435, y - .085, .515, .008, LINE)
+        box(fig, .435, y - .085, .515 * row.final_cash / maximum, .008, colors[i])
+    text(fig, .05, .158, "All three active stock strategies: review former index stocks quarterly; sell only when the sale adds no CGT.", 10, weight="bold")
+    text(fig, .05, .127, "December profit sales use existing losses first, then the remaining €1,270 exemption. Eligibility limits apply.", 9.5, MUTED)
+    text(fig, .05, .098, f"€{total:,.2f} invested / 192 payments / 16 years. Nominal wealth; differences include holdings, costs and tax.", 9, MUTED)
     return fig
 
 
@@ -166,23 +174,24 @@ def attribution(data):
         ax.plot([i + .29, i + .71], [top, top], color=MUTED, lw=.8, ls=":")
     ax.bar(3, sum(steps), width=.58, color=INK, zorder=3)
     ax.text(3, sum(steps) + 1800, money(sum(steps), True), ha="center", fontsize=10, color=INK, weight="bold")
-    ax.set_xticks(range(4), ["Quarterly\nexits", "Weekly\nlosses", "Annual\ngains", "Total"], fontsize=9)
+    ax.set_xticks(range(4), ["Sell former\nindex stocks\nquarterly", "Sell losing\nshares\nweekly", "Sell & rebuy\ncurrent stocks\nin December", "Total"], fontsize=8.5)
     ax.set_yticks([0, 20000, 40000], ["€0", "+€20k", "+€40k"], fontsize=8, color=MUTED)
     ax.set_ylim(0, max(cumulative.max(), sum(steps)) * 1.20)
     ax.grid(axis="y", color=LINE, lw=.7, zorder=0)
     ax.tick_params(axis="both", length=0)
     for spine in ax.spines.values():
         spine.set_visible(False)
-    text(fig, .05, .322, "MONTHLY ALTERNATIVE  /  AFTER QUARTERLY EXITS", 8, TEAL, "bold")
+    text(fig, .05, .322, "ALTERNATIVE: CHECK LOSSES MONTHLY", 8, TEAL, "bold")
     a = effect(data, "exits", "monthly_tlh").after_tax_gain_eur
     b = effect(data, "monthly_tlh", "monthly_hybrid").after_tax_gain_eur
-    text(fig, .05, .281, f"{money(a, True)} losses  →  {money(b, True)} hybrid gains", 13, weight="bold")
+    text(fig, .05, .286, f"{money(a, True)}: sell losses monthly. Then {money(b, True)}:", 11, weight="bold")
+    text(fig, .05, .256, "sell former index stocks first in December; then sell & rebuy current stocks.", 8.5, MUTED)
     text(fig, .638, .748, "THE ANNUAL EXEMPTION: OFF → ON", 9, TEAL, "bold")
-    for y, key, label in [(.505, "weekly_annual", "WEEKLY + ANNUAL GAINS"),
-                           (.270, "monthly_hybrid", "MONTHLY + HYBRID GAINS")]:
+    for y, key, label in [(.505, "weekly_annual", "Weekly loss sales; December sell & rebuy"),
+                           (.270, "monthly_hybrid", "Monthly loss sales; former stocks first")]:
         row = effect(data, "weekly_no_exemption" if key == "weekly_annual" else "hybrid_no_exemption", key)
         box(fig, .630, y, .320, .211, WHITE)
-        text(fig, .651, y + .187, label, 8.5, MUTED, "bold")
+        text(fig, .651, y + .187, label, 8, MUTED, "bold")
         text(fig, .651, y + .144, money(row.after_tax_gain_eur, True), 26,
              TEAL if row.after_tax_gain_eur >= 0 else CORAL, "bold")
         text(fig, .651, y + .084, "change in final wealth", 9, MUTED)
@@ -199,12 +208,12 @@ def rules_and_misses(data):
     fig = page("How the strategies traded.",
                "The leading strategy uses three scheduled reviews, with no foresight of later prices or losses.", 3)
     cards = [
-        ("01 / EVERY FRIDAY", "Harvest meaningful losses",
-         "Sell a whole holding at ≥5% and ≥€25 loss.\nNo same-class buy in the prior 29 days;\nblock repurchase for 29 days afterwards."),
-        ("02 / EACH QUARTER", "Review departed stocks",
+        ("01 / EVERY FRIDAY", "Sell losing shares",
+         "Sell a whole holding at ≥5% and ≥€25 loss.\nNo buy of that share class in prior 29 days;\nblock repurchase for 29 days afterwards.\nReinvest in other current index stocks."),
+        ("02 / EACH QUARTER", "Sell former index stocks",
          "Sell when existing losses and remaining\nexemption cover the gain without extra\nCGT. Keep other departed holdings."),
-        ("03 / EACH DECEMBER", "Use remaining tax capacity",
-         "Sell eligible FIFO lots: losses first,\nthen the €1,270 exemption. Repurchase\ncurrent shares with non-losing lots;\npurchase restrictions and fees apply."),
+        ("03 / EACH DECEMBER", "Sell and rebuy at a profit",
+         "Sell eligible current stocks; buy them back.\nUse existing losses, then the remaining\n€1,270 exemption, to cover gains. Oldest\nshares sell first; no losing lots; fees apply."),
     ]
     for x, (cadence, title, body) in zip([.05, .36, .67], cards):
         box(fig, x, .505, .28, .25, WHITE)
@@ -212,7 +221,7 @@ def rules_and_misses(data):
         text(fig, x + .016, .727, cadence, 8, TEAL, "bold")
         text(fig, x + .016, .684, title, 12, weight="bold")
         text(fig, x + .016, .635, body, 9.5)
-    text(fig, .05, .476, "Monthly hybrid: monthly loss reviews; annual gains sell departed holdings first, then restore eligible current shares.", 9, MUTED)
+    text(fig, .05, .476, "Monthly alternative: sell losses monthly. In December, sell former index stocks first; then sell and rebuy current stocks.", 9, MUTED)
     text(fig, .05, .416, "Three rules that fell behind.", 20, weight="bold")
     text(fig, .05, .361, "PREVIOUSLY WEAK RULES, REPLAYED", 8, MUTED, "bold")
     text(fig, .605, .361, "SHORTFALL VS CONTROL", 8, MUTED, "bold", ha="right")
@@ -228,7 +237,7 @@ def rules_and_misses(data):
         text(fig, .605, y, money(r.difference_vs_comparator_eur, True), 17, CORAL, "bold", ha="right")
         text(fig, .655, y, notes[r.key](r), 9.5)
     text(fig, .05, .102,
-         "Controls: quarterly exits + annual same-share gains; monthly 5%/€25 loss reviews for rows 1 and 3, no voluntary losses for row 2.", 8, MUTED)
+         "Controls: sell former stocks quarterly; sell/rebuy current stocks each December. Monthly loss sales for rows 1/3; none for row 2.", 8, MUTED)
     return fig
 
 
@@ -284,22 +293,22 @@ def assumptions(data):
 
 def marginal_chart(data):
     labels = {
-        ("baseline", "exits"): "Quarterly exits / harvesting off",
-        ("exits", "monthly_tlh"): "Monthly losses / annual gains off",
-        ("monthly_tlh", "monthly_hybrid"): "Annual hybrid gains / monthly losses",
-        ("exits", "weekly_tlh"): "Weekly losses / annual gains off",
-        ("weekly_tlh", "weekly_annual"): "Annual gains / weekly losses",
-        ("weekly_no_exemption", "weekly_annual"): "Exemption on / weekly combined",
-        ("hybrid_no_exemption", "monthly_hybrid"): "Exemption on / monthly hybrid",
+        ("baseline", "exits"): "Sell former index stocks quarterly\nOnly when the sale adds no CGT",
+        ("exits", "monthly_tlh"): "Add monthly sales of losing shares\nNo December profit sales",
+        ("monthly_tlh", "monthly_hybrid"): "Add December profit sales: former stocks first\nThen sell and rebuy current stocks; losses monthly",
+        ("exits", "weekly_tlh"): "Add weekly sales of losing shares\nNo December profit sales",
+        ("weekly_tlh", "weekly_annual"): "Add December sales and rebuys at a profit\nCurrent index stocks only; losses weekly",
+        ("weekly_no_exemption", "weekly_annual"): "Make the €1,270 exemption available\nWeekly loss sales; December sales and rebuys",
+        ("hybrid_no_exemption", "monthly_hybrid"): "Make the €1,270 exemption available\nMonthly loss sales; former stocks first in December",
     }
     shown = data["marginal_effects"].set_index(["control", "variant"]).loc[list(labels)]
-    fig, ax = plt.subplots(figsize=(12, 5.7), facecolor=PAPER)
-    fig.subplots_adjust(left=.365, right=.87, top=.79, bottom=.18)
+    fig, ax = plt.subplots(figsize=(12, 7), facecolor=PAPER)
+    fig.subplots_adjust(left=.405, right=.87, top=.79, bottom=.18)
     ax.set_facecolor(PAPER)
     values = shown.after_tax_gain_eur.to_numpy()
     positions = np.arange(len(values))
     ax.barh(positions, values, height=.58, color=[TEAL if v >= 0 else CORAL for v in values])
-    ax.set_yticks(positions, list(labels.values()), fontsize=10)
+    ax.set_yticks(positions, list(labels.values()), fontsize=9)
     ax.invert_yaxis()
     limit = np.abs(values).max()
     ax.set_xlim(min(values.min(), 0)-limit*.12, max(values.max(), 0)+limit*.21)
