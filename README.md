@@ -14,7 +14,7 @@ Starts at €1,000/month · Annual Irish CPI reviews · 16 years · €210,936.4
 
 ---
 
-This project models **recreating a Nasdaq-100 ETF in our own brokerage account by buying the underlying company shares directly**. We aim to hold the full basket of index shares in the available target proportions, and take responsibility for buying, rebalancing, reinvesting dividends and managing sales ourselves. The comparison asks what an Irish investor keeps after tax versus simply buying an accumulating ETF.
+This project models **recreating a Nasdaq-100 ETF in our own brokerage account by buying the underlying company shares directly**. We aim to hold the full basket of underlying company shares in the available target proportions, and take responsibility for buying, rebalancing, reinvesting dividends and managing sales ourselves. The comparison asks what an Irish investor keeps after tax versus simply buying an accumulating ETF.
 
 **How we keep the portfolio close to the index:** use historical membership and target weights available at each date. New contributions, after-tax dividends and sale proceeds buy eligible current members below their target weights. New members become purchase targets once their weights are known; stocks that leave stop receiving new purchases. Each strategy below controls when holdings are sold, including for tax losses and the annual CGT exemption.
 
@@ -31,7 +31,7 @@ All five scenarios invest the same CPI-linked monthly contributions for 16 years
 | Strategy | Trading rule | Final after-tax wealth |
 |:---|:---|---:|
 | **Hold the ETF** | Buy an accumulating ETF; pay the modelled tax at each purchase’s eight-year anniversaries and on final sale. | **€750,729** |
-| **Buy index shares; keep stocks that leave** | Buy current index shares with new money. Keep existing holdings, including former members; no discretionary sales before final liquidation. Compulsory corporate actions still apply. | **€952,619** |
+| **Buy underlying company shares directly; keep stocks that leave** | Use new money to buy shares directly in individual companies currently in the Nasdaq-100. Keep existing holdings, including former members; no discretionary sales before final liquidation. Compulsory corporate actions still apply. | **€952,619** |
 | **Sell losing shares each month** | Each month, sell eligible holdings down at least **5% and €25**, then reinvest into current index stocks. No December sales to use unused tax capacity. | **€988,601** |
 | **Sell losses monthly; sell former index stocks first in December** | Add December sales of profitable former members, putting proceeds into current index stocks. If tax capacity remains, sell and rebuy eligible current stocks. | **€994,222** |
 | **Sell losses weekly; sell and rebuy current stocks in December** | Check losses each Friday. In December, sell and rebuy eligible current index stocks to realise gains without adding CGT at that review. | **€998,425** |
