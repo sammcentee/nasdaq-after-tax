@@ -1,6 +1,6 @@
 <div align="center">
 
-# Nasdaq After Tax
+# ![Nasdaq After Tax](docs/assets/readme-header.svg)
 
 **Recreate a Nasdaq-100 ETF with individual shares, manage and rebalance it ourselves, then compare the Irish tax outcome.**
 

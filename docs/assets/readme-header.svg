@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="256" viewBox="0 0 1120 256" role="img" aria-labelledby="title description">
+  <title id="title">Nasdaq After Tax</title>
+  <desc id="description">A navy and cyan wordmark with a geometric motif representing individual holdings.</desc>
+  <defs>
+    <clipPath id="panel">
+      <rect x="1" y="1" width="1118" height="254" rx="22"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#panel)">
+    <rect width="1120" height="256" fill="#101F2D"/>
+    <path d="M800 0V256M832 0V256M864 0V256M896 0V256M928 0V256M960 0V256M992 0V256M1024 0V256M1056 0V256M1088 0V256M770 32H1120M770 64H1120M770 96H1120M770 128H1120M770 160H1120M770 192H1120M770 224H1120" fill="none" stroke="#54DACB" stroke-opacity=".06"/>
+    <path d="M798 0 704 256" stroke="#54DACB" stroke-opacity=".07" stroke-width="70"/>
+    <g transform="translate(903 57)" fill="#294855">
+      <rect width="28" height="28" rx="5"/>
+      <rect x="38" width="28" height="28" rx="5" fill="#3C807F"/>
+      <rect x="76" width="28" height="28" rx="5"/>
+      <rect x="114" width="28" height="28" rx="5"/>
+      <rect y="38" width="28" height="28" rx="5"/>
+      <rect x="38" y="38" width="28" height="28" rx="5"/>
+      <rect x="76" y="38" width="28" height="28" rx="5" fill="#54DACB"/>
+      <rect x="114" y="38" width="28" height="28" rx="5"/>
+      <rect y="76" width="28" height="28" rx="5" fill="#83B5F3"/>
+      <rect x="38" y="76" width="28" height="28" rx="5"/>
+      <rect x="76" y="76" width="28" height="28" rx="5"/>
+      <rect x="114" y="76" width="28" height="28" rx="5"/>
+      <rect y="114" width="28" height="28" rx="5"/>
+      <rect x="38" y="114" width="28" height="28" rx="5"/>
+      <rect x="76" y="114" width="28" height="28" rx="5"/>
+      <rect x="114" y="114" width="28" height="28" rx="5" fill="#C4EF68"/>
+    </g>
+    <rect x="50" y="48" width="26" height="4" rx="2" fill="#54DACB"/>
+    <text x="90" y="55" fill="#B2C3CF" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2.5">IRISH INVESTMENT RESEARCH</text>
+    <text x="46" y="155" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="700" letter-spacing="-3">Nasdaq <tspan fill="#54DACB">After Tax</tspan></text>
+    <path d="M50 203H244" stroke="#54DACB" stroke-width="3" stroke-linecap="round"/>
+    <path d="M258 203H810" stroke="#3B5D69" stroke-linecap="round"/>
+  </g>
+  <rect x=".5" y=".5" width="1119" height="255" rx="22.5" fill="none" stroke="#2B4654"/>
+</svg>
