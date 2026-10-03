@@ -9,6 +9,7 @@ from pathlib import Path
 import argparse
 import hashlib
 import json
+import math
 import multiprocessing
 import sys
 
@@ -19,7 +20,8 @@ OUT = ROOT / "results/latest"
 LEDGERS = OUT / "ledgers"
 sys.path.insert(0, str(ROOT / "model"))
 from direct_stock_backtest import BacktestConfig, run_backtest
-from etf_backtest import replay
+from etf_backtest import monthly_dates, replay
+from contributions import build_cpi_schedule
 from study_inputs import prepare
 
 INPUTS = BASE_CONFIG = None
@@ -90,7 +92,8 @@ def simulate(spec):
                   - total("buy", "cash_outlay_eur") - total("cgt_settlement", "tax_eur"))
     error = cash_check-result.summary["final_cash"]
     assert abs(error) < 1e-5, (spec["key"], error)
-    assert result.summary["contributions"] == 192000 and result.summary["contribution_count"] == 192
+    assert math.isclose(result.summary["contributions"], sum(c.contribution_amounts), abs_tol=1e-7, rel_tol=0)
+    assert result.summary["contribution_count"] == len(c.contribution_dates) == 192
     assert d.iloc[-1].holdings == {}
     assert (result.lots.units.abs() < 1e-8).all()
     buys = t[t.event.eq("buy")]
@@ -165,11 +168,11 @@ PAIRS = [
 
 POOR_COMPARISONS = [
     ("any_loss", "annual_monthly_control",
-     "Relaxing the loss threshold triggered many more sales and changed replacement holdings and purchase restrictions. Recorded fees rose, but explain only part of the wealth shortfall; harvesting more losses did not improve the eventual after-tax outcome."),
+     "Relaxing the loss threshold changes loss-sale eligibility, replacement holdings and purchase restrictions. The matched comparison measures the resulting wealth, tax and cost effects; a larger harvested loss is not itself a cash benefit."),
     ("retain_gains", "annual_only",
-     "Retaining departed stocks prevented tax-budget exits and reinvestment into current constituents. This portfolio paid less tax and fewer fees but produced less final wealth. Annual gain harvesting still improved the plain retained-stock baseline; retention underperformed the matched exit policy."),
+     "Retaining departed stocks prevents tax-budget exits and reinvestment of those proceeds into current constituents. Differences in wealth reflect the retained exposure as well as taxes and trading costs."),
     ("monthly_gains", "annual_monthly_control",
-     "More frequent gain reviews triggered more winning disposals without materially increasing annual exemption use. Earlier basis resets also changed later loss eligibility and holdings. Lower taxes did not offset the weaker investment outcome; an annual allowance is not multiplied by monthly reviews."),
+     "Monthly gain reviews change disposal timing, cost-basis resets, later loss eligibility and holdings. An annual allowance is not multiplied by monthly reviews; the matched replay measures the combined wealth effect."),
 ]
 
 
@@ -245,13 +248,22 @@ def main():
     (OUT / "policy_definitions.json").write_text(json.dumps(specs, indent=2))
     nav_path = ROOT / "benchmark/issuer/cndx_nav_eur_2010-09-30_to_2026-09-30.csv"
     nav = pd.read_csv(nav_path, parse_dates=["date"]).set_index("date")
-    etf, ledger, daily = replay(nav.loc[nav.index.weekday < 5, "nav_eur"], tax_rate=.38, deemed_disposal=True)
-    assert etf["contribution_count"] == 192 and etf["contributions"] == 192000
+    nav_prices = nav.loc[nav.index.weekday < 5, "nav_eur"]
+    dates = tuple(d.strftime("%Y-%m-%d") for d in sorted(monthly_dates(nav_prices)))
+    contributions = build_cpi_schedule(dates, initial_amount=1000.)
+    contributions.to_csv(OUT / "contribution_schedule.csv", index=False)
+    amounts = tuple(contributions.contribution_eur)
+    total_contributions = round(sum(amounts), 2)
+    etf, ledger, daily = replay(nav_prices, tax_rate=.38, deemed_disposal=True,
+                                contribution_amounts=amounts)
+    assert etf["contribution_count"] == len(dates) == 192
+    assert math.isclose(etf["contributions"], total_contributions, abs_tol=1e-7, rel_tol=0)
     (OUT / "etf/summary.json").write_text(json.dumps(etf, indent=2))
     ledger.to_csv(OUT / "etf/events.csv.gz", index=False)
     daily.to_csv(OUT / "etf/daily.csv.gz", index=False)
-    dates = tuple(ledger.loc[ledger.event.eq("contribution"), "date"].dt.strftime("%Y-%m-%d"))
-    BASE_CONFIG = BacktestConfig(contribution_dates=dates, missing_target_policy="reserve_cash", max_stale_sessions=10)
+    assert tuple(ledger.loc[ledger.event.eq("contribution"), "date"].dt.strftime("%Y-%m-%d")) == dates
+    BASE_CONFIG = BacktestConfig(contribution_dates=dates, contribution_amounts=amounts,
+                                missing_target_policy="reserve_cash", max_stale_sessions=10)
     p, w, events, metadata, membership, audit_dir = prepare()
     overlay_path = ROOT / "inputs/corrected_membership/membership_alias_overlay.csv"
     overlay = pd.read_csv(overlay_path, parse_dates=["effective_date", "available_date"])
@@ -263,11 +275,13 @@ def main():
     input_audit = json.loads((audit_dir / "input_audit.json").read_text())
     benchmark_audit = json.loads((ROOT / "benchmark/issuer/benchmark_audit.json").read_text())
     extra_inputs = [nav_path, overlay_path, ROOT / "benchmark/issuer/cndx_nav_eur.csv",
-                    ROOT / "benchmark/indexes/NASDAQ100.csv", ROOT / "prices/best_effort/yf_GBPUSD=X.csv"]
+                    ROOT / "benchmark/indexes/NASDAQ100.csv", ROOT / "prices/best_effort/yf_GBPUSD=X.csv",
+                    ROOT / "inflation/irish_cpi.csv", ROOT / "inflation/provenance.json",
+                    OUT / "contribution_schedule.csv"]
     input_hashes = dict(input_audit["input_sha256"])
     input_hashes.update({str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest() for path in extra_inputs})
     code = [Path(__file__), ROOT / "study_inputs.py", ROOT / "model/direct_stock_backtest.py",
-            ROOT / "model/etf_backtest.py", ROOT / "tax/irish_tax.py"]
+            ROOT / "model/etf_backtest.py", ROOT / "tax/irish_tax.py", ROOT / "contributions.py"]
     eligible_weights = w[pd.to_datetime(w.available_date) < pd.Timestamp(BASE_CONFIG.end)]
     freshness = dict(stock_price_cutoff=str(p.date.max().date()),
                      benchmark_cache_cutoff=benchmark_audit["end"],
@@ -276,16 +290,24 @@ def main():
                      latest_eligible_weight_available_date=str(pd.to_datetime(eligible_weights.available_date).max().date()),
                      weights_publication_lag="September2026 holdings assumed available7October; excluded from earlier decisions")
     manifest = dict(project="Nasdaq After Tax", classification="PROVISIONAL_MATCHED_STRATEGY_STUDY",
-                    period=[BASE_CONFIG.start, BASE_CONFIG.end], monthly_contribution_eur=1000,
-                    contributions_eur=192000, final_liquidation=True, data_freshness=freshness,
+                    period=[BASE_CONFIG.start, BASE_CONFIG.end], initial_monthly_contribution_eur=1000,
+                    contributions_eur=total_contributions, final_liquidation=True, data_freshness=freshness,
+                    contribution_schedule=dict(type="irish_cpi_annual", review_month=9,
+                        deflation_policy="track", schedule_file="contribution_schedule.csv",
+                        initial_monthly_eur=amounts[0], final_monthly_eur=amounts[-1],
+                        annual_reviews=contributions.review_date.nunique()-1,
+                        source="CSO Ireland all-items Consumer Price Index",
+                        method="Review each September using that August's all-items CPI published strictly before the payment; index the initial EUR1000 to August2010 CPI on the same December2006 base, round to cents and hold for twelve payments; allow inflation and deflation"),
                     headline_strategies=list(LEADERS), underperforming_strategies=list(UNDERPERFORMERS), stock_replays=len(specs),
-                    selection="Three effective strategies retained after the earlier25-case exploration; retrospective selection, not an out-of-sample test or proof of optimality",
-                    underperformer_selection="Three lowest final-wealth gain-harvesting variants in the earlier25-case study, excluding control cases and extra-spread sensitivities; different departure policies remain eligible. Each is compared with a matched rule variant, not labelled universally ineffective",
+                    selection="Three effective strategies retained after the earlier25-case fixed-contribution exploration; retrospective selection, not an out-of-sample test or proof of optimality",
+                    underperformer_selection="Three lowest final-wealth gain-harvesting variants in the earlier25-case study with fixed contributions, excluding control cases and extra-spread sensitivities; different departure policies remain eligible. Each is replayed with CPI-indexed contributions and compared with a matched rule variant, not labelled universally ineffective",
                     base_configuration=asdict(BASE_CONFIG), input_sha256=input_hashes,
                     code_sha256={str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest() for path in code},
                     prepared_membership_sha256=hashlib.sha256((LEDGERS / "membership_used.csv").read_bytes()).hexdigest(),
                     assumptions=input_audit["assumptions"]+[
                         "Fixed complete16-year horizon; newest corrected cached corpus, no live account access",
+                        "Monthly contributions start at EUR1000 and follow Irish CPI at annual September reviews; both inflation and deflation apply; identical dated cash flows fund every strategy",
+                        "Contribution amounts use only CPI published before their annual review; all portfolio results are nominal euros, not inflation-adjusted terminal wealth",
                         "33% CGT,38% fund tax and52.35% dividend tax are frozen comparison scenarios, not historical tax legislation",
                         "All regular cases receive the EUR1270 annual CGT exemption; annual gain harvesting actively uses remaining headroom",
                         "Current and carried losses must be used before the exemption; unused exemption expires;17 calendar tax years",

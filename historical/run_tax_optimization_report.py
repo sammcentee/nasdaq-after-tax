@@ -7,6 +7,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
+from matplotlib.dates import DateFormatter, YearLocator
 from matplotlib.ticker import FuncFormatter
 import numpy as np
 import pandas as pd
@@ -44,6 +45,43 @@ def money(value, signed=False):
     if round(amount) == 0:
         amount = 0.0
     return f"€{amount:+,.0f}" if signed else f"€{amount:,.0f}"
+
+
+def monthly_money(value):
+    return f"€{float(value):,.2f}"
+
+
+def contribution_summary(manifest, schedule):
+    initial = float(schedule.contribution_eur.iloc[0])
+    final = float(schedule.contribution_eur.iloc[-1])
+    total = float(schedule.contribution_eur.sum())
+    fixed_total = initial * len(schedule)
+    change = total - fixed_total
+    difference = (f"{money(abs(change))} {'more' if change > 0 else 'less'} contributed than keeping the initial monthly amount fixed"
+                  if abs(change) >= .5 else "the same total contributions as keeping the initial monthly amount fixed")
+    return dict(initial=initial, final=final, total=total, count=len(schedule),
+                reviews=int(manifest["contribution_schedule"]["annual_reviews"]),
+                difference_from_fixed=difference,
+                subtitle=f"Starts at {money(initial)}/month · Irish CPI each September · {money(total)} contributed")
+
+
+def contribution_chart(fig, schedule, summary):
+    fig.text(.06, .852,
+             f"Monthly amount: {monthly_money(summary['initial'])} initially → {monthly_money(summary['final'])} finally"
+             f"  |  {summary['reviews']} anniversary reviews  |  {summary['count']} contributions",
+             fontsize=9, color=INK)
+    ax = fig.add_axes([.13, .685, .80, .135])
+    ax.step(schedule.date, schedule.contribution_eur, where="post", color=TEAL, lw=1.8)
+    reviews = schedule.loc[schedule.date.dt.month.eq(9)]
+    ax.scatter(reviews.date, reviews.contribution_eur, s=10, color=TEAL, zorder=3)
+    ax.xaxis.set_major_locator(YearLocator(4))
+    ax.xaxis.set_major_formatter(DateFormatter("%Y"))
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"€{value:,.0f}"))
+    ax.set_ylabel("Monthly contribution", fontsize=8)
+    ax.tick_params(labelsize=8)
+    ax.grid(axis="y", alpha=.17)
+    ax.set_axisbelow(True)
+    ax.set_xlim(schedule.date.iloc[0], schedule.date.iloc[-1])
 
 
 def page(title, subtitle, number):
@@ -97,7 +135,7 @@ def strategy_bars(ax, comparison):
     ax.grid(axis="x", alpha=.14)
     ax.set_axisbelow(True)
     ax.tick_params(axis="y", length=0)
-    ax.set_xlabel("Final cash after liquidation, modelled taxes and costs", color=MUTED)
+    ax.set_xlabel("Nominal final cash after liquidation, modelled taxes and costs", color=MUTED)
     for side in ["top", "right", "left"]:
         ax.spines[side].set_visible(False)
 
@@ -167,11 +205,29 @@ def read_inputs():
         if not np.allclose(group.comparator_final_cash, group.comparator_final_cash.iloc[0]):
             raise ValueError("Inconsistent final cash for the same underperformer comparator")
     frames["manifest"] = json.loads((OUT / "study_manifest.json").read_text())
+    manifest = frames["manifest"]
+    settings = manifest["contribution_schedule"]
+    if (settings["type"], settings["review_month"], settings["deflation_policy"]) != ("irish_cpi_annual", 9, "track"):
+        raise ValueError("This report expects September Irish CPI reviews that follow both inflation and deflation")
+    schedule = pd.read_csv(OUT / settings["schedule_file"], parse_dates=["date"])
+    if not {"date", "contribution_eur"}.issubset(schedule.columns) or schedule.empty:
+        raise ValueError("A dated contribution schedule is required")
+    if not schedule.date.is_monotonic_increasing or schedule.date.duplicated().any():
+        raise ValueError("Contribution dates must be unique and increasing")
+    if not np.isfinite(schedule.contribution_eur).all() or not schedule.contribution_eur.gt(0).all():
+        raise ValueError("Contribution amounts must be finite and positive")
+    checks = [(schedule.contribution_eur.sum(), manifest["contributions_eur"]),
+              (schedule.contribution_eur.iloc[0], manifest["initial_monthly_contribution_eur"]),
+              (schedule.contribution_eur.iloc[0], settings["initial_monthly_eur"]),
+              (schedule.contribution_eur.iloc[-1], settings["final_monthly_eur"])]
+    if any(not np.isclose(float(actual), float(expected), rtol=0, atol=.011) for actual, expected in checks):
+        raise ValueError("Contribution schedule and manifest amounts do not reconcile")
+    frames["contribution_schedule"] = schedule
     return frames
 
 
 def underperformance_page(data, baseline_cash):
-    fig = page("What underperformed — and why", "Three weak active variants, rerun on current inputs against the appropriate matched controls", 5)
+    fig = page("Previously weak rules, tested again", "Selected from the earlier fixed-contribution study; this replay uses matched CPI-indexed cashflows", 5)
     controls = data.groupby("comparator").comparator_final_cash.first().to_dict()
     paragraphs(fig, [
         f"Control A ({money(controls['annual_monthly_control'])}): monthly loss harvesting at 5% and €25, quarterly tax-budget departure reviews and annual same-share gain harvesting. Control B ({money(controls['annual_only'])}): the same departure and gain rules, without discretionary loss harvesting. Results include final liquidation, taxes and costs.",
@@ -182,7 +238,7 @@ def underperformance_page(data, baseline_cash):
           [.06, .565, .88, .175], [.39, .16, .16, .14, .15], size=9.2)
     notes = []
     for row in data.itertuples():
-        baseline_note = f" It still beats the plain stock baseline by {money(row.final_cash - baseline_cash)}." if row.key == "retain_gains" else ""
+        baseline_note = f" Versus the plain stock baseline: {money(row.final_cash - baseline_cash, True)}." if row.key == "retain_gains" else ""
         notes.append(
             f"{UNDERPERFORMER_LABELS[row.key].upper()}  •  {str(row.explanation).strip()}{baseline_note}"
         )
@@ -196,13 +252,16 @@ def underperformance_page(data, baseline_cash):
     table(fig, evidence, ["Ledger evidence", "Loss sales\nvariant / control", "Gain sales\nvariant / control", "Net TLH\nlosses realised", "Extra nominal\nexemption relief"],
           [.06, .108, .88, .14], [.35, .16, .16, .16, .17], size=8.1)
     paragraphs(fig, [
-        "Retrospectively selected historical outcomes, not universal failures. Fees, holdings, tax basis and later decisions all change; the comparisons do not separately attribute each mechanism. Lower tax can also reflect lower investment gains.",
+        "Selection from the earlier study does not predetermine this replay's ranking. Fees, holdings, tax basis and later decisions all change; the comparisons do not separately attribute each mechanism. Lower tax can also reflect lower investment gains.",
     ], y=.082, width=144, size=8.5)
     return fig
 
 
 def main():
     frames = read_inputs()
+    manifest = frames["manifest"]
+    schedule = frames["contribution_schedule"]
+    contributions = contribution_summary(manifest, schedule)
     comparison, effects, relief, interactions = [frames[k] for k in ["comparison", "marginal_effects", "tax_relief", "interactions"]]
     shown_effects = effects.loc[effects.presentation.isin(["main", "sensitivity"])] if "presentation" in effects else effects
     weekly_exemption = effects.loc[effects.feature.eq("Annual exemption") & effects.variant.eq("weekly_annual")].iloc[0]
@@ -215,20 +274,20 @@ def main():
     chart.subplots_adjust(left=.36, right=.97, bottom=.16, top=.81)
     strategy_bars(ax, comparison)
     chart.text(.035, .94, "Nasdaq-100, after Irish tax", fontsize=22, weight="bold", color=INK)
-    chart.text(.035, .875, "€1,000/month · 16 years · €192,000 contributed · One historical scenario", fontsize=11, color=MUTED)
+    chart.text(.035, .875, contributions["subtitle"], fontsize=10.5, color=MUTED)
     chart.savefig(OUT / "strategy_comparison.png", dpi=170, facecolor="white")
     plt.close(chart)
     marginal_chart(shown_effects)
 
     destination = OUT / "report.pdf"
     with PdfPages(destination, metadata={"Title": "Nasdaq After Tax — Current Study", "Author": "Nasdaq After Tax", "Subject": "Hypothetical Irish ETF and direct-share tax comparison"}) as pdf:
-        fig = page("Nasdaq-100, after Irish tax", "€1,000 each month · 16 years · €192,000 contributed · Final liquidation", 1)
+        fig = page("Nasdaq-100, after Irish tax", contributions["subtitle"], 1)
         ax = fig.add_axes([.355, .435, .60, .365])
         strategy_bars(ax, comparison)
         rows = [[SHORT[r.key], money(r.total_tax), money(r.transaction_costs), money(r.difference_vs_baseline_eur, True)] for r in comparison.itertuples()]
         table(fig, rows, ["Scenario", "Total modelled tax", "Trading costs", "Wealth vs stock baseline"],
               [.06, .18, .88, .205], [.40, .20, .18, .22], size=9)
-        paragraphs(fig, [f"Highest selected historical result: {LABELS[best.key]} ({money(best.final_cash)}). The stock baseline retains departed holdings and disables discretionary loss and annual gain harvesting. Differences include changed holdings and returns, not only tax savings."], y=.125, width=137, size=9)
+        paragraphs(fig, [f"Highest selected result: {LABELS[best.key]} ({money(best.final_cash)}). Every strategy uses the same CPI-indexed contributions. Results are nominal, after final liquidation. The stock baseline retains departures without discretionary harvesting; differences include changed investments as well as tax."], y=.125, width=137, size=9)
         pdf.savefig(fig); plt.close(fig)
 
         fig = page("Measure each change against its own control", "Effects measured against different controls should not be added together", 2)
@@ -256,22 +315,23 @@ def main():
         table(fig, rows, ["Strategy", "Exempt gains\nbefore final year", "Earlier years\nusing full allowance", "Nominal relief\nincluding final year", "Net losses from\nTLH disposals"],
               [.06, .415, .88, .19], [.32, .18, .16, .17, .17], size=8.6)
         paragraphs(fig, [
-            "Loss review: sell an eligible whole holding when its euro loss after fees reaches both 5% and €25. Require no same-class purchase in the preceding 29 days and block repurchase for the next 29 days. Reinvest into eligible current underweights; monthly contributions remain unchanged.",
+            "Loss review: sell an eligible whole holding when its euro loss after fees reaches both 5% and €25. Require no same-class purchase in the preceding 29 days and block repurchase for the next 29 days. Reinvest into eligible current underweights; every strategy shares the CPI-indexed contribution schedule.",
             "Departure review: sell confirmed former constituents only when existing realised losses, carried losses and the remaining exemption cover the gain without increasing CGT at that review. A profitable departure can therefore remain in the portfolio.",
             "Annual gain review: partial FIFO sales use losses before the €1,270 allowance. Same-share mode ranks by gain per euro sold; hybrid ranks departures then current overweights. Immediate replacement requires non-losing selected lots, current membership and the purchase restriction; both legs pay costs. Hybrid departure sales fund current underweights.",
             "Harvested losses are not permanent relief equal to loss × 33%: replacement shares can have lower cost basis and a larger later gain. This study touches 17 tax years, including partial 2010 and final-liquidation 2026. All figures are hypothetical; no unrelated gains consume the exemption.",
         ], y=.37, width=136, size=9.1, gap=.014)
         pdf.savefig(fig); plt.close(fig)
 
-        fig = page("Evidence, assumptions and practical limits", "A corrected cached-data replay, not a forecast or a live broker execution test", 4)
+        fig = page("Contributions, evidence and practical limits", "Annual Irish CPI adjustments use information available at the time; all reported wealth is nominal", 4)
+        contribution_chart(fig, schedule, contributions)
         paragraphs(fig, [
-            "PERIOD AND FRESHNESS  •  30 September 2010 to 30 September 2026. Stock price inputs extend through the final session; the issuer ETF and FX source cache contains observations through 2 October 2026. The last usable weights are dated 31 August 2026 and available 7 September. September weights were not available until 7 October and cannot inform September trades.",
-            "SELECTION  •  The three selected strategies were chosen retrospectively from the previous 25-case exploration. Individual trades use contemporaneously available inputs and fixed review rules, but selection was not validated out of sample. This focused replay includes diagnostic controls and exemption-off sensitivities to explain mechanisms, not to establish a universally best strategy.",
-            "FROZEN TAX SCENARIO  •  33% share CGT; €1,270 annual allowance; 52.35% marginal dividend tax; 38% ETF fund tax and eight-year deemed disposal. Losses precede the allowance; unused allowance expires. Dividend withholding credits are included. Rates are comparison assumptions, not each historical year's actual law or any account holder's personal tax status.",
-            "COSTS AND EXECUTION  •  Non-euro share trades incur 0.15% FX per side. ETF NAV already reflects fund expenses and fund-level withholding. The model does not certify historical spreads, broker availability or fills. CGT is reserved as it accrues and settled annually; no claimed benefit depends on statutory payment timing.",
-            "DATA LIMITS  •  Historical membership, weight availability, delisted-stock dividends and corporate actions remain provisional. Some unquoted successors use explicit nontradable marks. Foreign reorganisations and compulsory same-class receipts can complicate share matching. The ledger audit records material restrictions and arithmetic checks; it is not a tax ruling.",
-            "REPRODUCE  •  Run python historical/run_tax_optimization_study.py --workers 3, or render saved results with python historical/run_tax_optimization_report.py. The current comparison, marginal effects, tax relief, interaction table, ledgers and input/code hashes are all in historical/results/latest/. Source and checks are retained separately; earlier generated report archives are not inputs to this report.",
-        ], y=.84, width=126, size=10, gap=.02)
+            f"CASHFLOWS  •  Each September: {monthly_money(contributions['initial'])} × August CPI / August 2010 CPI, rounded to cents and fixed for 12 payments. Both inflation and deflation apply. CSO all-items CPI uses December 2006=100 and releases predating each review; a current snapshot relies on CSO's non-revision policy. Identical scheduled amounts fund both cases; three stock payments post next trading session. There is {contributions['difference_from_fixed']}; wealth remains nominal.",
+            "PERIOD AND INPUTS  •  30 September 2010 to 30 September 2026. Stock prices extend through the final session; ETF/FX observations through 2 October. Last usable weights: 31 August, available 7 September. September weights were unavailable until 7 October. Membership, weights, dividends and corporate actions remain provisional; some unquoted holdings use nontradable valuation marks.",
+            "SELECTION  •  Strategies were selected retrospectively from the earlier fixed-contribution exploration. Causal trade rules do not make that selection an out-of-sample test. CPI-linked cashflows can change holdings, tax capacity, triggers and rankings. Matched controls describe this replay, not a universally best strategy.",
+            "FROZEN TAX AND COSTS  •  33% share CGT; €1,270 annual exemption; 52.35% dividend tax; 38% ETF fund tax with eight-year deemed disposal. Losses precede the exemption; withholding credits are included. Non-euro share trades incur 0.15% FX per side; no extra spread or slippage is modelled. ETF NAV embeds fund costs. Assumed rates are not each year's law or anyone's actual tax status.",
+            "INTERPRETATION  •  Share matching, foreign reorganisations and compulsory receipts retain documented assumptions. CGT reserves and annual settlements approximate payment timing. Audits check arithmetic and trade eligibility, not tax rulings, historical broker availability or executable fills.",
+            "REPRODUCE LOCALLY  •  Run python historical/run_tax_optimization_study.py --workers 3 with the required inputs, then python historical/run_tax_optimization_report.py. Current tables, contribution_schedule.csv, ledgers and input/code hashes are in historical/results/latest/. The schedule records CPI evidence and availability; the manifest documents its method.",
+        ], y=.632, width=139, size=9.0, gap=.013)
         fig.text(.06, .105, "Read the assumptions before interpreting small differences as an investable advantage.", fontsize=10, color=TEAL, weight="bold")
         fig.text(.06, .083, "Research only, not tax, legal or investment advice. See the README legal notice.", fontsize=8.2, color=MUTED)
         links = [
@@ -284,6 +344,9 @@ def main():
         fig = underperformance_page(frames["underperformers"], float(by_key.loc["baseline", "final_cash"]))
         pdf.savefig(fig); plt.close(fig)
     print(json.dumps({"report": "historical/results/latest/report.pdf", "pages": PAGE_COUNT,
+                      "contributions_eur": contributions["total"],
+                      "initial_monthly_eur": contributions["initial"],
+                      "final_monthly_eur": contributions["final"],
                       "best_selected_historical_case": best.key,
                       "best_final_cash": float(best.final_cash),
                       "stock_baseline_final_cash": float(by_key.loc["baseline", "final_cash"])}, indent=2))

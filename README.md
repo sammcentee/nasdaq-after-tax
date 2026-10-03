@@ -4,7 +4,7 @@
 
 **Owning the Nasdaq-100's shares directly versus buying its ETF: what changes after Irish tax?**
 
-€1,000 per month · 16 years · €192,000 modelled contributions · Final liquidation
+Starts at €1,000/month · Annual Irish CPI reviews · 16 years · €210,936.48 contributed
 
 [Read the report](historical/results/latest/report.pdf) · [Compare strategies](historical/results/latest/comparison.csv) · [Inspect marginal effects](historical/results/latest/marginal_effects.csv)
 
@@ -41,13 +41,23 @@ The 38% fund rate applies from [1 January 2026](https://www.revenue.ie/en/tax-pr
 
 The strategies test whether managing sales, harvesting eligible losses and using available annual CGT exemption can improve final after-tax wealth. Direct ownership also brings dividend taxes, trading costs, tracking differences and more record-keeping. All of those affect the comparison; a harvested loss is not an immediate cash refund, and a lower tax bill does not necessarily mean a better investment outcome.
 
+## Contributions that follow Irish inflation
+
+Monthly contributions start at **€1,000 in September 2010**. At each subsequent September review, the new monthly amount is **€1,000 × that August’s Irish all-items CPI ÷ August 2010 CPI (101.9)**, using the same December 2006 reference base. The August index must have been published before the review date. Round the result to cents and hold it through the following August; both inflation and deflation apply.
+
+The 15 annual reviews produce **€210,936.48 across 192 contributions**, ending at **€1,301.28 per month** for September 2025–August 2026. The schedule includes reductions in September 2016 and September 2020. Every strategy uses the same scheduled amounts and dates; stock contributions scheduled for 30 March 2018, 31 May 2021 and 29 March 2024 post on the next available stock-market session.
+
+These are **nominal euro results**, not final wealth expressed in constant purchasing power. This schedule invests **€18,936.48 more** than the earlier fixed-€1,000 study, so changes from that study’s final balances also reflect different cash contributions.
+
+Source: CSO Ireland’s [CPM02 national CPI series](https://data.cso.ie/table/CPM02). The [contribution schedule](historical/results/latest/contribution_schedule.csv) records each payment, reference index and publication date. The [CPI methodology and provenance](historical/inflation/README.md) explain rounding and the current official snapshot: historical release dates are checked, but archived API vintages are not reconstructed.
+
 ## One period. Five headline scenarios.
 
 ![Final proceeds after modelled taxes and costs](historical/results/latest/strategy_comparison.png)
 
-The strongest selected result was **€952,181**, from weekly loss reviews plus annual same-share gain harvesting. Against the matched weekly-loss strategy, adding annual gain harvesting increased final wealth by **€10,476**; additional nominal exemption relief was **€5,948**. Those are different measures, not amounts to add together.
+The strongest selected result was **€998,425**, from weekly loss reviews plus annual same-share gain harvesting; the ETF finished at **€750,729**. Against the matched weekly-loss strategy, adding annual gain harvesting increased final wealth by **€9,319**; additional nominal exemption relief was **€5,948**. Those are different measures, not amounts to add together.
 
-The current study keeps three stock strategies from an earlier, broader exploration, alongside an ETF benchmark and a simpler stock baseline. All use the same 16-year contribution horizon and final liquidation. **Strategy selection is retrospective**; causal trading rules do not make the selection an out-of-sample test.
+The current study keeps three stock strategies from an earlier, broader exploration with fixed contributions, alongside an ETF benchmark and a simpler stock baseline. All now use the same 16-year CPI-indexed contribution schedule and final liquidation. **Strategy selection is retrospective**; causal trading rules do not make the selection an out-of-sample test.
 
 | Scenario | What it does |
 |:---|:---|
@@ -72,13 +82,13 @@ These distinctions matter:
 
 Harvesting a loss does not automatically create a permanent benefit equal to the loss times the tax rate. Replacement shares can have a lower cost basis and a larger taxable gain later. The relevant outcome is wealth after all taxes and costs.
 
-The weekly exemption-on/off sensitivity illustrates the feedback: final wealth changes by **€28,844**, while nominal exemption relief is **€6,368**. The larger figure includes the consequences of changed tax capacity for holdings and cash; it is not €28,844 of allowance tax savings.
+The exemption-on/off sensitivities illustrate the feedback. With the exemption available, the weekly strategy finishes **€13,243 higher**, with **€6,368** of nominal exemption relief. The monthly hybrid finishes **€700 lower**, despite **€6,787** of nominal exemption relief and lower CGT. These wealth changes include altered holdings and cash deployment; neither is a measure of allowance tax savings alone.
 
 ## How the three stock strategies trade
 
 | Review | Common execution rules |
 |:---|:---|
-| **Monthly contributions** | Invest €1,000 into eligible current constituents below their dated target weights. Reinvest dividends after tax. |
+| **Monthly contributions** | Invest the scheduled CPI-indexed amount into eligible current constituents below their dated target weights. Reinvest dividends after tax. |
 | **Loss harvesting** | Sell a whole eligible holding only when its euro loss after fees reaches **both 5% and €25**. Require no same-class purchase in the preceding 29 days, then block repurchase for 29 days. |
 | **Quarterly departures** | Sell confirmed former constituents when known realised losses, carried losses and the available exemption cover the gain without increasing CGT at that review. Otherwise retain them. |
 | **December gains, where enabled** | Use partial FIFO sales to absorb existing losses and then use remaining **€1,270 annual exemption** capacity. Eligible current-share replacements require non-losing selected lots and incur costs on both trades. |
@@ -86,19 +96,19 @@ The weekly exemption-on/off sensitivity illustrates the feedback: final wealth c
 
 Decisions use the information available at the review; they do not anticipate later losses, recoveries or index changes. FIFO means oldest shares are sold first. The hybrid rule directs departed-stock proceeds into current underweights; same-share replacement aims to preserve current exposure, subject to costs.
 
-## What underperformed — and why
+## Previously weak rules, tested again
 
-These are the three weakest active gain-harvesting variants from the earlier exploration, rerun on the same corrected data. The plain stock baseline is already shown above. Each shortfall below is measured against an otherwise matched strategy, rather than against the historical winner.
+These were the three weakest active gain-harvesting variants in the earlier fixed-contribution exploration, excluding controls and extra-spread sensitivities. They are now rerun with CPI-indexed contributions on the same corrected market data. All three still trail their matched controls, although their order has changed. Each shortfall below is measured against an otherwise matched strategy, rather than against the historical winner.
 
 | Underperforming rule | Final after-tax wealth | Matched comparator | Shortfall |
 |:---|---:|:---|---:|
-| Harvest any monthly loss of at least €1 | €909,433 | Annual gains + monthly losses at 5% / €25 | −€33,870 |
-| Retain departed stocks; annual gains, no loss harvesting | €910,238 | Same rules, with quarterly tax-budget exits | −€25,861 |
-| Review gains monthly instead of annually | €912,876 | Same rules, with annual gain reviews | −€30,428 |
+| Harvest any monthly loss of at least €1 | €972,752 | Annual gains + monthly losses at 5% / €25 | −€22,369 |
+| Retain departed stocks; annual gains, no loss harvesting | €956,852 | Same rules, with quarterly tax-budget exits | −€26,624 |
+| Review gains monthly instead of annually | €957,621 | Same rules, with annual gain reviews | −€37,500 |
 
-- **Harvesting tiny losses created much more activity for little extra loss relief.** Loss sales rose from 411 to 1,408, but realised losses increased by only €1,397. Recorded costs rose by €736, while nominal exemption relief fell by €120. Changed holdings, replacement purchases and cash deployment also affected returns; the fees alone do not explain the €33,870 shortfall.
-- **Keeping departed holdings preserved exposure that underperformed on this path.** Average confirmed outside-index weight was 4.74%, versus 0.21% with tax-budget exits. This version paid €12,553 less total tax and €226 less in recorded costs, yet finished €25,861 behind. It still beat the plain retained-stock baseline by €4,256: annual gain harvesting helped, but did not make retention the better rule.
-- **Monthly gain reviews did not create a larger annual allowance.** They produced 717 gain sales versus 199, with €80 less nominal exemption relief. Earlier basis resets and use of tax capacity changed later loss and departure decisions. The portfolio paid less tax but also generated less wealth; this was not simply a transaction-fee problem.
+- **Harvesting tiny losses created much more activity without improving the net outcome.** Loss sales rose from 424 to 1,403, while realised losses increased by €2,041. Recorded costs rose by €741, while nominal exemption relief fell by €120. Changed holdings, replacement purchases and cash deployment also affected returns; the fees alone do not explain the €22,369 shortfall.
+- **Keeping departed holdings preserved exposure that underperformed on this path.** Average confirmed outside-index weight was 4.71%, versus 0.21% with tax-budget exits. This version paid €12,925 less total tax and €236 less in recorded costs, yet finished €26,624 behind. It still beat the plain retained-stock baseline by €4,234: annual gain harvesting helped in that comparison, but did not make retention the better rule.
+- **Monthly gain reviews did not create a larger annual allowance.** They produced 720 gain sales versus 198, with €80 less nominal exemption relief. Earlier basis resets and use of tax capacity changed later loss and departure decisions. The portfolio paid less tax but also generated less wealth; this was not simply a transaction-fee problem.
 
 These observations explain the recorded differences, not a universal claim that a strategy can never work. The study does not establish which particular missed recoveries caused the shortfalls. [Underperformer results](historical/results/latest/underperformers.csv) include the controls, trade counts, tax and cost differences; the [independent audit](historical/results/latest/attribution_audit.json) reconciles the accounting changes.
 
@@ -107,9 +117,11 @@ These observations explain the recorded differences, not a universal claim that 
 | Artifact | Contents |
 |:---|:---|
 | [Current report](historical/results/latest/report.pdf) | One five-page explanation of leading strategies, underperformers, marginal effects and limits. |
+| [Contribution schedule](historical/results/latest/contribution_schedule.csv) | All 192 payments, annual reviews, CPI observations and publication dates. |
+| [Irish CPI inputs](historical/inflation/README.md) | Official source, funding formula, vintage limitations and provenance links. |
 | [Headline comparison](historical/results/latest/comparison.csv) | ETF, baseline and three selected stock strategies. |
 | [Matched effects](historical/results/latest/marginal_effects.csv) | Complete-control wealth differences, CGT changes, exemption relief and costs. |
-| [Underperformers](historical/results/latest/underperformers.csv) | Three poor historical variants, their matched comparators and explanatory evidence. |
+| [Previously weak variants](historical/results/latest/underperformers.csv) | The selected variants replayed with CPI-indexed funding, their matched comparators and explanatory evidence. |
 | [Tax relief](historical/results/latest/tax_relief.csv) | Actual exemption usage and realised loss-harvesting amounts. |
 | [Annual tax ledger](historical/results/latest/annual_tax_and_exemptions.csv) | Year-by-year gains, losses, exemption use and carried losses. |
 | [Study manifest](historical/results/latest/study_manifest.json) | Assumptions, selection caveats, freshness and input/code hashes. |
@@ -136,6 +148,7 @@ Parallel execution uses Unix `fork`; use `--workers 1` where it is unavailable o
 ```bash
 python -m unittest discover -s historical/model -p 'test_*.py'
 python -m unittest discover -s historical/tax -p 'test_*.py'
+python -m unittest discover -s historical -p 'test_contributions.py'
 python historical/checks/independent_policy_checks.py
 python historical/checks/independent_checks.py
 python historical/checks/audit_ledgers.py
@@ -151,10 +164,12 @@ historical/
 ├── tax/                           Irish tax helpers; tests
 ├── checks/                        Independent economic and ledger checks
 ├── benchmark/                     Issuer ETF benchmark and source audits
+├── inflation/                     Irish CPI observations and publication evidence
 ├── inputs/                        Dated weights, membership and metadata
 ├── membership/                    Membership evidence and source tooling
 ├── prices/                        Market data and corporate-action repairs
 ├── results/latest/                One current report, tables, charts and ledgers
+├── contributions.py               Publication-aware annual CPI contribution schedule
 ├── study_inputs.py                Shared input preparation
 ├── run_tax_optimization_study.py   Focused comparison and matched controls
 └── run_tax_optimization_report.py  Current report and charts
@@ -166,11 +181,12 @@ Acquisition and repair scripts are separate from replay engines. Refreshing sour
 
 ## Sources and acknowledgements
 
-This study uses Quantiacs market data and toolbox code, historical membership work by Jeff McCarrell and thuningxu, iShares and SEC-filed fund holdings, Yahoo Finance via yfinance, Nasdaq/FRED series, ECB exchange rates, and issuer, Revenue and broker documentation. See [source credits and third-party notices](THIRD_PARTY_NOTICES.md) for authors, upstream revisions, retained licences and links to the detailed provenance records.
+This study uses Quantiacs market data and toolbox code, historical membership work by Jeff McCarrell and thuningxu, iShares and SEC-filed fund holdings, Yahoo Finance via yfinance, Nasdaq/FRED series, ECB exchange rates, [Irish CPI from the Central Statistics Office](https://data.cso.ie/table/CPM02), and issuer, Revenue and broker documentation. See [source credits and third-party notices](THIRD_PARTY_NOTICES.md) for authors, upstream revisions, retained licences and links to the detailed provenance records; the [CPI source notes](historical/inflation/README.md) include the CSO attribution and licence.
 
 ## Assumptions that change the interpretation
 
 - **Horizon:** 30 September 2010 to 30 September 2026; 192 monthly contributions. The period touches 17 calendar tax years.
+- **Funding:** €1,000 initially, reviewed each September using already-published August CPI, with decreases allowed. Total nominal outlay is €210,936.48; all portfolio outcomes are nominal euros. The final CPI observation used is August 2025, with no 2026 inflation estimate needed.
 - **Data freshness:** corrected stock prices through 30 September 2026; ETF/FX source cache contains observations through 2 October. Last eligible target weights are dated 31 August and available 7 September. September weights were not yet available for September decisions.
 - **Frozen taxes:** 33% stock CGT, €1,270 annual exemption, 52.35% marginal dividend tax and 38% ETF fund tax. These are hypothetical comparison assumptions, not each year’s historical law or a person’s tax status.
 - **Relief:** current and carried losses precede the exemption; unused exemption expires. No unrelated gains consume the allowance. Dividend withholding credits are included.

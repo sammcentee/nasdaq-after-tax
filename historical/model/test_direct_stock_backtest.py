@@ -40,6 +40,62 @@ class DirectStockBacktestTests(unittest.TestCase):
         self.assertEqual(dates[0], pd.Timestamp("2010-09-30"))
         self.assertEqual(dates[-1], pd.Timestamp("2026-08-31"))
 
+    def test_variable_contributions_post_each_due_amount_on_next_session(self):
+        days = ["2020-01-31", "2020-02-03", "2020-03-02", "2020-04-01"]
+        scheduled = (days[0], "2020-02-01", "2020-02-02", "2020-02-29", "2020-03-31")
+        amounts = (1000.0, 550.0, 550.0, 900.0, 0.0)
+        p = fixture(days, {"A": [100, 110, 90, 120]})
+        w = weights("2020-01-30", "2020-01-30", A=1)
+        c = config(days[0], days[-1], contribution_dates=tuple(reversed(scheduled)),
+                   contribution_amounts=amounts)
+        r = run_backtest(p, w, c)
+        deposits = r.transactions.query("event == 'contribution'")
+        self.assertEqual(deposits.cash_eur.tolist(), list(amounts))
+        self.assertEqual(deposits.scheduled_date.tolist(), list(pd.to_datetime(scheduled)))
+        self.assertEqual(deposits.date.tolist(), list(pd.to_datetime(
+            [days[0], days[1], days[1], days[2], days[3]])))
+        self.assertEqual(r.daily.contributions_eur.tolist(), [1000, 2100, 3000, 3000])
+        self.assertEqual(r.transactions.query("event == 'buy'").units.tolist(), [10, 10, 10])
+        self.assertEqual(r.summary["contribution_count"], 5)
+        self.assertEqual(r.summary["contributions"], 3000)
+        self.assertAlmostEqual(r.summary["total_cgt"], 600 * .33)
+        self.assertAlmostEqual(r.summary["final_cash"], 3600 - 600 * .33)
+
+    def test_future_contribution_cannot_change_prefix_or_replace_zero_amount(self):
+        days = ["2020-01-02", "2020-02-03", "2020-03-02", "2020-04-01"]
+        p = fixture(days, {"A": [100, 110, 90, 120]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        c = config(days[0], days[-1], contribution_dates=tuple(days[:3]),
+                   contribution_amounts=(0.0, 1100.0, 900.0))
+        original = run_backtest(p, w, c)
+        changed = run_backtest(p, w, replace(c, contribution_amounts=(0.0, 1100.0, 90000.0)))
+        self.assertEqual(original.daily.iloc[0].contributions_eur, 0)
+        self.assertEqual(original.daily.iloc[0].holdings, {})
+        for name in ("transactions", "daily"):
+            first, second = getattr(original, name), getattr(changed, name)
+            pd.testing.assert_frame_equal(first[first.date < days[2]].reset_index(drop=True),
+                                          second[second.date < days[2]].reset_index(drop=True))
+
+    def test_constant_contribution_tuple_matches_existing_default(self):
+        days = ["2020-01-02", "2020-02-03", "2020-03-02"]
+        p = fixture(days, {"A": [100, 110, 120]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        c = config(contribution_dates=tuple(days[:2]))
+        original = run_backtest(p, w, c)
+        explicit = run_backtest(p, w, replace(c, contribution_amounts=(1000.0, 1000.0)))
+        self.assertEqual(original.summary, explicit.summary)
+        for name in ("transactions", "daily", "yearly_tax", "lots"):
+            pd.testing.assert_frame_equal(getattr(original, name), getattr(explicit, name))
+
+    def test_invalid_contribution_amounts_fail_before_replay(self):
+        days = ["2020-01-02", "2020-03-02"]
+        p = fixture(days, {"A": [100, 100]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        for amounts in ((), (1000.0, 1000.0), (-1.0,), (float("nan"),),
+                        (float("inf"),), (float("-inf"),)):
+            with self.subTest(amounts=amounts), self.assertRaises(ValueError):
+                run_backtest(p, w, config(contribution_amounts=amounts))
+
     def test_winners_retained_after_deletion_and_new_cash_buys_current_member(self):
         days = ["2020-01-02", "2020-02-03", "2020-03-02"]
         p = fixture(days, {"A": [100, 200, 250], "B": [100, 100, 100]})

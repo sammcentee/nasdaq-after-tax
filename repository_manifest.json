@@ -10,6 +10,8 @@
   "broker_execution": "none; simulations use cached public market research inputs",
   "contents": "Source, cached market research inputs and provenance, one current report, three leading stock strategies, three underperforming variants, ETF and stock baselines, matched controls and independent audits",
   "financial_scenarios": "All contribution amounts, tax bands, portfolio values and trades are hypothetical model parameters or simulated outputs, not personal account or income information",
+  "contributions": "Start at EUR1,000/month and review each September against previously published August Irish all-items CPI; follow both inflation and deflation; 192 payments total EUR210,936.48",
+  "contribution_provenance": "historical/inflation/provenance.json; CSO CPM02 December2006=100 indices, original publication dates, CC BY4.0 attribution and current-snapshot limitations",
   "exclusions": [
     "Python environments and interpreter caches",
     "Credential/private-key file patterns",

@@ -1,0 +1,17 @@
+reference_month,cpi_index,cpi_published_date,release_url,release_sha256
+2010-08,101.9,2010-09-09,https://www.cso.ie/en/media/csoie/releasespublications/documents/prices/2010/prices/consumerpriceindex/cpi_aug2010.pdf,5bd6982c10824fb5cecc066898ec986d75fddb0f243c26ce5d2e7193ac2f1482
+2011-08,104.1,2011-09-08,https://www.cso.ie/en/media/csoie/releasespublications/documents/prices/2011/prices/consumerpriceindex/cpi_aug2011.pdf,9a97d59f38461289e8b7f4480600a28db4b7353678a470c17893c63b9f20f916
+2012-08,106.2,2012-09-13,https://www.cso.ie/en/media/csoie/releasespublications/documents/prices/2012/prices/consumerpriceindex/cpi_aug2012.pdf,a133a3b35bf143145472f22bf28f1919bb28636a301b38d0e1bdb7914bedceb2
+2013-08,106.3,2013-09-12,https://www.cso.ie/en/releasesandpublications/er/cpi/consumerpriceindexaugust2013/,980111d3feeae1b418966532f2a08776a6eec474dc04a1b6782acb07f715e586
+2014-08,106.8,2014-09-11,https://www.cso.ie/en/releasesandpublications/er/cpi/consumerpriceindexaugust2014/,fea43081133b2284759c591441300bc7aa52d1b08379ef863cd4c4d07cd444b9
+2015-08,106.8,2015-09-10,https://www.cso.ie/en/releasesandpublications/er/cpi/consumerpriceindexaugust2015/,b175f00ef1151a62ad5528ab0a897f1095cc555bc35f0674010be5140152c288
+2016-08,106.7,2016-09-08,https://www.cso.ie/en/releasesandpublications/er/cpi/consumerpriceindexaugust2016/,78c5170dc6b6c1b34e47d59e1ce83cf3f79a53e6b8ca3cb2ae5667d3765575f9
+2017-08,107.2,2017-09-07,https://www.cso.ie/en/releasesandpublications/er/cpi/consumerpriceindexaugust2017/,8eb14c9209efbf2c40e82cce9c4535e834c8a23add506b0279b9ce4cc1681eb5
+2018-08,107.8,2018-09-13,https://www.cso.ie/en/releasesandpublications/er/cpi/consumerpriceindexaugust2018/,624d8517c1cbd889814f38f6e48e0e05a60d9da841047e70a110257ba0c9c6c8
+2019-08,108.6,2019-09-12,https://www.cso.ie/en/releasesandpublications/er/cpi/consumerpriceindexaugust2019/,20388e1494a613df23fc2950d605bb269a3ba0290e5b187f3bbc853d93627293
+2020-08,107.5,2020-09-10,https://www.cso.ie/en/releasesandpublications/er/cpi/consumerpriceindexaugust2020/,cf496ff47f6936df26b0016ca26893651d5039916fac7ccb9be903b9c6dc57ca
+2021-08,110.7,2021-09-09,https://www.cso.ie/en/releasesandpublications/er/cpi/consumerpriceindexaugust2021/,e170198bdef25c30982bc34c9b7fa57713ad1884935a902f18b399a3c95cd8c4
+2022-08,120.2,2022-09-08,https://www.cso.ie/en/releasesandpublications/ep/p-cpi/consumerpriceindexaugust2022/,f15688f9b3bd93af685ee620105878f23c424cbbea763102bbf212edc3a4c9a1
+2023-08,127.8,2023-09-07,https://www.cso.ie/en/releasesandpublications/ep/p-cpi/consumerpriceindexaugust2023/,e1e0b8b311c64d53fbb222eaa83693e306354a00299f5e18b226b6c729e7ebc0
+2024-08,130.0,2024-09-12,https://www.cso.ie/en/releasesandpublications/ep/p-cpi/consumerpriceindexaugust2024/,e9d20f8369e204aa596bb0b5ff6da1f5f23de3ba4965d84dd176fe6a1dc55b71
+2025-08,132.6,2025-09-11,https://www.cso.ie/en/releasesandpublications/ep/p-cpi/consumerpriceindexaugust2025/,a4058ba7b9842ad810e668e0948f0602601e2dc78ce0a4012db9cc4cada341ed

@@ -2,42 +2,45 @@
   "status": "PASS",
   "stock_cases": 14,
   "headline_rows": 5,
+  "contribution_events_checked": 2880,
+  "contributions_eur": 210936.48,
+  "cpi_annual_reviews_checked": 15,
   "matched_pairs": 11,
   "interactions": 2,
   "underperformer_comparisons": 3,
   "underperformer_checks": {
     "any_loss": {
       "comparator": "annual_monthly_control",
-      "gross_investment_profit_difference_eur": -50372.57815729454,
-      "total_tax_reduction_eur": 17238.685219955514,
-      "additional_transaction_cost_eur": 736.307150783091,
-      "after_tax_wealth_difference_eur": -33870.200088124024,
+      "gross_investment_profit_difference_eur": -33211.22300312598,
+      "total_tax_reduction_eur": 11582.78086247528,
+      "additional_transaction_cost_eur": 740.6135963690485,
+      "after_tax_wealth_difference_eur": -22369.055737014976,
       "annual_ledger_profit_reconciled": true
     },
     "retain_gains": {
       "comparator": "annual_only",
-      "gross_investment_profit_difference_eur": -38639.23322894098,
-      "total_tax_reduction_eur": 12552.800236804062,
-      "additional_transaction_cost_eur": -225.550610593416,
-      "after_tax_wealth_difference_eur": -25860.882381537,
+      "gross_investment_profit_difference_eur": -39784.43801871361,
+      "total_tax_reduction_eur": 12925.13829050603,
+      "additional_transaction_cost_eur": -235.60246670270044,
+      "after_tax_wealth_difference_eur": -26623.69726150832,
       "annual_ledger_profit_reconciled": true
     },
     "monthly_gains": {
       "comparator": "annual_monthly_control",
-      "gross_investment_profit_difference_eur": -44994.6831945763,
-      "total_tax_reduction_eur": 14644.983146907703,
-      "additional_transaction_cost_eur": 78.30189931897894,
-      "after_tax_wealth_difference_eur": -30428.00194699096,
+      "gross_investment_profit_difference_eur": -55714.30017981818,
+      "total_tax_reduction_eur": 18347.974568564387,
+      "additional_transaction_cost_eur": 133.21789277633889,
+      "after_tax_wealth_difference_eur": -37499.54350402765,
       "annual_ledger_profit_reconciled": true
     }
   },
   "accounting_bridge_scope": "Realised investment profit along each actual portfolio path; not a tax-free counterfactual or a claim about individual missed recoveries",
   "sequential_ladder_gains_eur": {
-    "monthly_hybrid": 41746.61985215626,
-    "weekly_annual": 46198.38905147987
+    "monthly_hybrid": 41603.17298616748,
+    "weekly_annual": 45806.11617350858
   },
-  "input_hashes_checked": 11,
-  "code_hashes_checked": 5,
+  "input_hashes_checked": 14,
+  "code_hashes_checked": 6,
   "shared_membership_sha256": "5dd4b1d2580066c15acec38317f6ee2f7b2e5786cc8232eb73385a913341156f",
   "control_configuration_changes": {
     "baseline -> exits": [
@@ -98,6 +101,6 @@
       "gain_review_dates"
     ]
   },
-  "checker_sha256": "56f7c6be7243e004254dbe2afce6f99a33e3b389a369cd6ccccffc65b4cb7a8f",
+  "checker_sha256": "31b9a8dad25b35044ed5229326a3732857e63df60e96da0dbca669ac6b86de48",
   "scope": "Saved-output arithmetic, matched controls and source freshness; excludes certification of prices, legal classifications and pure-tax causal attribution"
 }

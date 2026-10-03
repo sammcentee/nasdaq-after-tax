@@ -59,6 +59,7 @@ class BacktestConfig:
     end: str = "2026-09-30"
     monthly_contribution: float = 1000.0
     contribution_dates: tuple[str, ...] | None = None
+    contribution_amounts: tuple[float, ...] | None = None  # chronological scheduled_contributions order
     harvest: bool = True
     harvest_frequency: str = "contribution_dates"  # or daily
     investment_frequency: str = "contribution_dates"  # or daily
@@ -342,6 +343,13 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
     if c.liquidate_at_end and dates[-1] != end:
         raise DataIntegrityError("Exact final valuation date is required for liquidation")
     deposits = scheduled_contributions(c)
+    amounts = c.contribution_amounts
+    if amounts is None:
+        amounts = (c.monthly_contribution,) * len(deposits)
+    if len(amounts) != len(deposits):
+        raise ValueError("Contribution amounts must match the scheduled contribution dates")
+    amounts = tuple(_number(amount, f"contribution_amounts[{i}]")
+                    for i, amount in enumerate(amounts))
     reviews = deposits if c.exit_review_dates is None else [pd.Timestamp(d).normalize() for d in c.exit_review_dates]
     if any(pd.isna(d) or d < start or d > end for d in reviews) or len(reviews) != len(set(reviews)):
         raise ValueError("Exit review dates must be unique dates in the configured interval")
@@ -747,11 +755,12 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
 
         contributed_today = False
         while deposit_index < len(deposits) and deposits[deposit_index] <= day:
-            cash += c.monthly_contribution
-            total_contributions += c.monthly_contribution
+            amount = amounts[deposit_index]
+            cash += amount
+            total_contributions += amount
             contribution_count += 1
             contributed_today = True
-            log(day, "contribution", scheduled_date=deposits[deposit_index], cash_eur=c.monthly_contribution)
+            log(day, "contribution", scheduled_date=deposits[deposit_index], cash_eur=amount)
             deposit_index += 1
 
         terminal = c.liquidate_at_end and day == end

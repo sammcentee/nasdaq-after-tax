@@ -7,6 +7,7 @@ Tax rates/Trading 212 terms are counterfactual current rules, not historical law
 from __future__ import annotations
 
 from dataclasses import dataclass
+from math import isfinite
 from pathlib import Path
 import sys
 import pandas as pd
@@ -36,7 +37,9 @@ def monthly_dates(prices, start="2010-09-30", end="2026-09-30"):
 
 
 def replay(prices: pd.Series, contribution=1000.0, tax_rate=.38,
-           deemed_disposal=True, start="2010-09-30", end="2026-09-30"):
+           deemed_disposal=True, start="2010-09-30", end="2026-09-30",
+           contribution_amounts: tuple[float, ...] | None = None):
+    """Replay amounts aligned with sorted monthly_dates; None uses contribution."""
     prices = prices.sort_index().dropna()
     prices = prices[~prices.index.duplicated(keep="last")]
     prices = prices.loc[start:end]
@@ -44,7 +47,16 @@ def replay(prices: pd.Series, contribution=1000.0, tax_rate=.38,
         raise ValueError("Positive, dated prices are required")
     if prices.index[0] != pd.Timestamp(start) or prices.index[-1] != pd.Timestamp(end):
         raise ValueError("Price series must include exact start and end dates")
-    deposits = monthly_dates(prices, start, end)
+    deposit_dates = sorted(monthly_dates(prices, start, end))
+    amounts = contribution_amounts
+    if amounts is None:
+        amounts = (contribution,) * len(deposit_dates)
+    if len(amounts) != len(deposit_dates):
+        raise ValueError("Contribution amounts must match the scheduled contribution dates")
+    amounts = tuple(float(amount) for amount in amounts)
+    if any(not isfinite(amount) or amount < 0 for amount in amounts):
+        raise ValueError("Contribution amounts must be finite and nonnegative")
+    deposits = dict(zip(deposit_dates, amounts))
     lots, ledger, path = [], [], []
     anniversaries = {}
     total_contributions = total_dd = total_funding_sale_tax = 0.0
@@ -84,16 +96,17 @@ def replay(prices: pd.Series, contribution=1000.0, tax_rate=.38,
     final_day = prices.index[-1]
     for day, price in prices.items():
         if day in deposits:
-            lot = FundLot(day, contribution/price, price)
+            amount = deposits[day]
+            lot = FundLot(day, amount/price, price)
             lots.append(lot)
-            total_contributions += contribution
+            total_contributions += amount
             # Map calendar anniversaries to the first available valuation day.
             for years in (8, 16):
                 anniversary = day + pd.DateOffset(years=years)
                 k = prices.index.searchsorted(anniversary)
                 if k < len(prices):
                     anniversaries.setdefault(prices.index[k], []).append(lot)
-            ledger.append(dict(date=day, event="contribution", cash=contribution,
+            ledger.append(dict(date=day, event="contribution", cash=amount,
                                units=lot.units, price=price))
         if deemed_disposal and day != final_day:
             bill = 0.0
