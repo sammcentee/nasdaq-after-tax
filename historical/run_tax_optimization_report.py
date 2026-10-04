@@ -1,5 +1,7 @@
-"""Render the current study as a four-page brief and two matching charts."""
+"""Render the current study, accuracy assessment, and two matching charts."""
 from pathlib import Path
+import gzip
+import hashlib
 import json
 
 import matplotlib
@@ -39,7 +41,8 @@ INK, MUTED, TEAL, LIME, CORAL = "#142F3B", "#596B72", "#087F80", "#C4EF68", "#B3
 PAPER, WHITE, LINE, SOFT = "#F5F4EE", "#FFFFFF", "#D9DFD9", "#E8EDE7"
 NIGHT, PANEL, AQUA, BLUE, DIM = "#101F2D", "#1B2D3B", "#54DACB", "#83B5F3", "#B2C3CF"
 SALMON = "#F29C88"
-PAGE_COUNT = 4
+PAGE_COUNT = 8
+ASSESSMENT_URL = "https://github.com/sammcentee/nasdaq-after-tax/blob/main/docs/ACCURACY_ASSESSMENT.md"
 
 
 def money(value, signed=False):
@@ -127,6 +130,36 @@ def read_inputs():
     if any(not np.isclose(float(actual), float(expected), rtol=0, atol=.011) for actual, expected in checks):
         raise ValueError("Contribution schedule and manifest amounts do not reconcile")
     frames["contribution_schedule"] = schedule
+    for name in ("accuracy_audit", "accuracy_data_audit", "accuracy_replay", "accuracy_etf_funding"):
+        frames[name] = json.loads((OUT / f"{name}.json").read_text())
+    frames["accuracy_sensitivities"] = pd.read_csv(OUT / "accuracy_sensitivities.csv")
+    sensitivity = json.loads((OUT / "accuracy_sensitivities.json").read_text())
+    manifest_hash = hashlib.sha256((OUT / "study_manifest.json").read_bytes()).hexdigest()
+    for evidence in (sensitivity, frames["accuracy_audit"], frames["accuracy_replay"]):
+        if manifest_hash != evidence["study_manifest_sha256"]:
+            raise ValueError("Repeat the accuracy assessment for the current study manifest")
+    if hashlib.sha256((OUT / "accuracy_sensitivities.csv").read_bytes()).hexdigest() != sensitivity["results_sha256"]:
+        raise ValueError("Sensitivity results do not match their audit record")
+    audit, replay, fund = (frames[name] for name in ("accuracy_audit", "accuracy_replay", "accuracy_etf_funding"))
+    if (audit["arithmetic_checks"]["all_passed"] is not True or audit["manifest_hashes"]["all_match"] is not True
+            or replay["all_match"] is not True or fund["published_summary_reproduced"] is not True
+            or any(row["status"] != "PASS" for row in audit["ledger_checks"] + replay["files"])):
+        raise ValueError("The report requires successful accuracy checks")
+    for hashes in (manifest["input_sha256"], manifest["code_sha256"], sensitivity["code_sha256"],
+                   frames["accuracy_data_audit"]["input_sha256"], fund["source_sha256"]):
+        for name, expected in hashes.items():
+            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+                raise ValueError(f"Accuracy evidence is stale: {name}")
+    for name, expected in replay["output_sha256"].items():
+        content = (ROOT / name).read_bytes()
+        if name.endswith(".gz"):
+            content = gzip.decompress(content)
+        if hashlib.sha256(content).hexdigest() != expected:
+            raise ValueError(f"Replay evidence is stale: {name}")
+    comparison = frames["comparison"].set_index("key")
+    expected_gap = comparison.loc["weekly_annual", "final_cash"]-comparison.loc["etf", "final_cash"]
+    if not np.isclose(expected_gap, audit["headline_decomposition"]["total_gap_eur"], rtol=0, atol=1e-6):
+        raise ValueError("Accuracy assessment and headline balances disagree")
     return frames
 
 
@@ -136,7 +169,7 @@ def overview(data):
     total = data["manifest"]["contributions_eur"]
     fig = page("Recreating an ETF, share by share.",
                "We buy and manage the Nasdaq-100's individual shares ourselves, then compare Irish taxes with owning an ETF.", 1)
-    text(fig, .05, .790, "Target the full index; rebalance with fresh cash using dated weights. Tax rules and data gaps allow drift.", 9.5, MUTED)
+    text(fig, .05, .790, "Provisional estimates. Substantial weight drift and execution limits affect interpretation. See the assessment on pages 5–8.", 9, CORAL)
     rounded_box(fig, .05, .177, .345, .585, NIGHT)
     rounded_box(fig, .075, .711, .223, .035, PANEL, .008)
     text(fig, .075, .730, "HIGHEST SELECTED RESULT", 9, LIME, "bold")
@@ -311,10 +344,180 @@ def assumptions(data):
     text(fig, .550, .233,
          "0.15% FX each non-euro trade; no extra spread or slippage.\n"
          "ETF NAV includes fund costs. Tax rates are frozen scenarios,\n"
-         "not each year's legislation. See the full modelling limitations.", 9.5, MUTED)
+         "not each year's legislation. See the assessment on pages 5–8.", 9.5, MUTED)
     text(fig, .05, .125, "Research only. Not tax, legal or investment advice.", 10, weight="bold")
     text(fig, .05, .090, "Methodology, ledgers, source links and legal notice: README + study_manifest.json", 8, MUTED,
          url="../../../README.md")
+    return fig
+
+
+def accuracy_verdict(data):
+    audit = data["accuracy_audit"]
+    diagnostic = next(r for r in audit["portfolio_diagnostics"] if r["key"] == "weekly_annual")
+    comparison = data["comparison"].set_index("key")
+    fig = page("What the results can support.",
+               "Accuracy assessment / 4 October 2026 / Numerical consistency does not establish real-world accuracy.", 5)
+    rounded_box(fig, .05, .613, .90, .154, NIGHT)
+    text(fig, .075, .740, "REPRODUCIBLE SCENARIO  /  LIMITED EVIDENCE OF REAL-WORLD PERFORMANCE", 10, LIME, "bold")
+    text(fig, .075, .695,
+         "The balances follow the checked model and cached inputs. The stock portfolio differs substantially from its targets.\n"
+         "The study does not establish an executable, tax-compliant replica or a reliable forecast.\n"
+         "There is no defensible overall accuracy percentage or measured error interval for final wealth.", 10, WHITE)
+    text(fig, .05, .580, "THE ETF GAP IS NOT A PURE TAX BENEFIT", 9, TEAL, "bold")
+    labels = ["ETF → direct-share baseline", "Then: quarterly departure sales",
+              "Then: weekly loss sales", "Then: December gain sales"]
+    for y, label, row in zip([.532, .485, .438, .391], labels, audit["headline_decomposition"]["steps"]):
+        text(fig, .05, y, label, 10)
+        text(fig, .525, y, money(row["change_eur"], True), 12, weight="bold", ha="right")
+    rule(fig, .05, .352, .475)
+    text(fig, .05, .329, "Total difference from the ETF", 10, weight="bold")
+    text(fig, .525, .329, money(audit["headline_decomposition"]["total_gap_eur"], True), 18, TEAL, "bold", ha="right")
+    text(fig, .05, .271,
+         "These sequential policy effects include different securities,\n"
+         "taxes, fees, and reinvestment. They depend on this path.\n"
+         "Most of the gap exists before the extra sale rules.", 9.5, MUTED)
+    text(fig, .590, .580, "TOP TEN SHARE CLASSES", 9, TEAL, "bold")
+    for y, value, label, color in [(.521, diagnostic["top10_share_of_stock_value"], "Held stock value / 29 Sep 2026", TEAL),
+                                   (.421, diagnostic["target_top10_weight"], "Last known targets / 31 Aug 2026", MUTED)]:
+        text(fig, .590, y, f"{value:.2%}", 23, color, "bold")
+        text(fig, .590, y-.053, label, 9, MUTED)
+    text(fig, .590, .329,
+         "Targets assumed available on 7 September.\n"
+         "Different dates: this is target-weight drift,\n"
+         "not contemporaneous ETF tracking error.\n"
+         "Large weights in winners change risk and return.", 9.5, MUTED)
+    gap = comparison.loc["weekly_annual", "final_cash"]-comparison.loc["monthly_hybrid", "final_cash"]
+    rule(fig, .05, .183, .90)
+    text(fig, .05, .161, f"The weekly strategy leads the monthly hybrid by only {money(gap)} ({gap/comparison.loc['monthly_hybrid', 'final_cash']:.2%}).", 11, weight="bold")
+    text(fig, .05, .120, "One retrospectively selected market path does not prove an optimal strategy, equal risk, or future superiority.", 10, MUTED)
+    return fig
+
+
+def accuracy_limits(data):
+    coverage = data["accuracy_data_audit"]["source_coverage"]
+    marks = data["accuracy_data_audit"]["strategies"]["weekly_annual"]
+    fig = page("Where realism is limited.",
+               "Some limits have a measured scale. The combined effect on final wealth and strategy rank remains unknown.", 6)
+    cards = [
+        (.05, .559, "01 / HISTORICAL WEIGHTS", "Stale inputs; assumed release dates",
+         f"Mean source age: {coverage['mean_snapshot_age_days']:.1f} days. Maximum: {coverage['maximum_snapshot_age_days']} days.\n"
+         f"{coverage['dates_age_over_90_days']}/192 deposit dates use weights over 90 days old.\n"
+         "Fund snapshots stay fixed between updates.\n"
+         "Prior-date checks do not prove assumed release dates."),
+        (.52, .559, "02 / PORTFOLIO EXECUTION", "Decisions and trades use the same close",
+         "The model observes closing prices, then trades at them.\n"
+         "It has no next-session execution validation.\n"
+         "Ordinary dividends use ex-date cash accrual.\n"
+         "ETF NAV and ECB FX are valuation references."),
+        (.05, .328, "03 / INCOMPLETE CASH FLOWS", "Known omissions have a small direct scale",
+         f"Weekly peak proxy marks / total portfolio: {marks['peak_provisional_weight']:.4%}.\n"
+         "Five verified missing dividends total under €2 gross\n"
+         "per stock case, at payment-date FX. The full total is unknown.\n"
+         "Neither measure bounds valuation or portfolio errors."),
+        (.52, .328, "04 / TAX CLASSIFICATION", "Core formulas have conditional support",
+         "Loss ordering, exemption and fund credits agree with\n"
+         "Revenue guidance under the stated assumptions.\n"
+         "84 corporate-action classifications remain provisional.\n"
+         "The weekly case encounters 33 of those actions."),
+        (.05, .097, "05 / PERSONAL TAX AND DATES", "Frozen tax rates; approximate payment dates",
+         "Rates do not reconstruct each year's legislation.\n"
+         "Dividend tax and treaty credits depend on the investor.\n"
+         "The €1,270 exemption is shared with other eligible gains.\n"
+         "Tax reserves and settlement dates affect investable cash."),
+        (.52, .097, "06 / BROKER FEASIBILITY", "Thousands of small fractional purchases",
+         "Weekly case: 16,739 buys, median outlay €10.55.\n"
+         "15,119 purchases buy less than one share.\n"
+         "Historical instrument access is not reconstructed.\n"
+         "Spreads, some charges and investor time are absent."),
+    ]
+    for x, y, tag, title, body in cards:
+        box(fig, x, y, .43, .204, WHITE)
+        text(fig, x+.014, y+.188, tag, 8, TEAL, "bold")
+        text(fig, x+.014, y+.153, title, 11, weight="bold")
+        text(fig, x+.014, y+.113, body, 9, MUTED)
+    return fig
+
+
+def accuracy_stresses(data):
+    frame = data["accuracy_sensitivities"]
+    fig = page("How assumptions change the result.",
+               "Complete cost replays and ETF controls. Diagnostic scenarios, not calibrated costs or confidence intervals.", 7)
+    text(fig, .05, .755, "STOCK CASES / FINAL AFTER-TAX WEALTH", 9, TEAL, "bold")
+    for x, label in [(.05, "Strategy"), (.59, "Published costs"), (.77, "+5 bp per side"), (.95, "+25 bp per side")]:
+        text(fig, x, .708, label, 9, MUTED, "bold", ha="left" if x == .05 else "right")
+    for y, key, label in zip([.660, .612, .564, .516], ORDER[1:],
+                            ["Retained-share baseline", "Monthly loss sales", "Monthly hybrid", "Weekly loss + annual gain sales"]):
+        text(fig, .05, y, label, 11, weight="bold" if key == "weekly_annual" else "normal")
+        for x, spread in zip([.59, .77, .95], [0, .0005, .0025]):
+            row = frame.loc[frame.key.eq(key) & frame.extra_cost_per_side.eq(spread)].iloc[0]
+            text(fig, x, y, money(row.final_cash), 12, TEAL if key == "weekly_annual" else INK, ha="right")
+    text(fig, .05, .464,
+         "The two monthly strategies reverse order at 25 bp. Weekly remains highest among these four cases.\n"
+         "1 bp = 0.01%. FX stays at 0.15%. The extra cost also affects certain corporate cash receipts.", 9.5, MUTED)
+    rule(fig, .05, .398, .90)
+    text(fig, .05, .376, "ETF CONTROLS / SAME NAV AND CONTRIBUTIONS", 9, TEAL, "bold")
+    etf = frame.loc[frame.asset.eq("etf")].set_index("scenario")
+    labels = [("fund_tax_41_before_2026_38_from_2026", "41% before 2026, then 38% / rate-only change"),
+              ("fund_tax_38_dd_0", "38% with no interim deemed disposal / hypothetical")]
+    for y, (key, label) in zip([.331, .286], labels):
+        text(fig, .05, y, label, 10)
+        text(fig, .73, y, money(etf.loc[key, "final_cash"]), 12, weight="bold", ha="right")
+        text(fig, .95, y, money(etf.loc[key, "difference_vs_published_same_strategy_eur"], True), 12, ha="right")
+    text(fig, .05, .241, "No deemed disposal still includes final fund tax. It is not an available tax election.", 9, MUTED)
+    text(fig, .05, .201, "ETF cash management: pay a same-day tax bill from the contribution before any unit sale.", 10, weight="bold")
+    fund = data["accuracy_etf_funding"]
+    text(fig, .05, .165,
+         f"Independent control: {money(fund['same_date_contribution_first_sensitivity']['final_cash'])} final wealth, or "
+         f"{money(fund['final_wealth_difference_eur'], True)}. Contribution dates and totals stay the same.", 10, MUTED)
+    text(fig, .05, .119, "All controls retain other model limits. They do not establish an error range or resolve exposure and execution differences.", 9.5, CORAL)
+    return fig
+
+
+def accuracy_evidence(data):
+    audit = data["accuracy_audit"]
+    replay = data["accuracy_replay"]
+    fig = page("What we checked. What remains open.",
+               "Evidence supports arithmetic and specific model comparisons. It does not certify every input or legal interpretation.", 8)
+    text(fig, .05, .752, "VERIFICATION COMPLETED", 9, TEAL, "bold")
+    text(fig, .05, .709,
+         f"Full replay: {replay['stock_replays']} stock cases and the ETF.\n"
+         f"{replay['files_compared']} CSV/JSON outputs match exactly after parsing.\n"
+         "122 existing unit and synthetic checks passed.\n"
+         f"{audit['manifest_hashes']['count']} recorded input/code hashes match.\n"
+         "Independent ledger checks: all 14 stock cases pass.\n"
+         "Maximum cash residual is below €0.000001.\n"
+         "Independent ETF lot arithmetic reproduces the baseline.", 11)
+    text(fig, .05, .465, "LIMITS OF THAT VERIFICATION", 9, TEAL, "bold")
+    text(fig, .05, .424,
+         "A replay uses the same engine and cached inputs.\n"
+         "Ledger checks detect arithmetic and consistency errors.\n"
+         "They do not prove price accuracy or source completeness.\n"
+         "Cost stresses keep same-close execution and selected history.\n"
+         "Shared sources can contain shared errors.\n"
+         "No independent holdout or probability of future success exists.", 10, MUTED)
+    text(fig, .56, .752, "NEXT EVIDENCE NEEDED", 9, TEAL, "bold")
+    text(fig, .56, .709,
+         "Executable decisions with a later trade price.\n"
+         "A comparison with matched investment exposures.\n"
+         "Complete dividends and event-specific Irish tax treatment.\n"
+         "A joint historical-rate and payment-date replay.\n"
+         "Independent periods with rules fixed before evaluation.", 10.5)
+    text(fig, .56, .509, "PRIMARY SOURCES / CLICK TO OPEN", 9, TEAL, "bold")
+    sources = [
+        ("Revenue / CGT and annual exemption", "https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/how-to-calculate-cgt.aspx"),
+        ("Revenue / share identification and four-week rules", "https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/selling-or-disposing-of-shares.aspx"),
+        ("Revenue / 2026 fund-tax rate", "https://www.revenue.ie/en/tax-professionals/ebrief/2026/no-0162026.aspx"),
+        ("Revenue / fund tax and deemed-disposal credits", "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-27/27-01a-02.pdf"),
+        ("iShares / fund NAV and expenses", "https://www.ishares.com/uk/individual/en/products/253741/ishares-nasdaq-100-ucits-etf"),
+        ("ECB / reference FX rates", "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"),
+    ]
+    for y, (label, url) in zip([.468, .433, .398, .363, .328, .293], sources):
+        text(fig, .56, y, label, 9, TEAL, url=url)
+    rule(fig, .05, .218, .90)
+    text(fig, .05, .193, "Full assessment, reproducible evidence, broker and issuer sources", 12, TEAL, "bold", url=ASSESSMENT_URL)
+    text(fig, .05, .148,
+         "docs/ACCURACY_ASSESSMENT.md · historical/checks/accuracy* · results/latest/accuracy*\n"
+         "This is a documented software and research assessment. It is not an external financial audit or a Revenue ruling.", 9.5, MUTED)
     return fig
 
 
@@ -373,7 +576,8 @@ def main():
     destination = OUT / "report.pdf"
     with PdfPages(destination, metadata={"Title": "Nasdaq After Tax — Research Brief",
             "Author": "Nasdaq After Tax", "Subject": "Recreating a Nasdaq-100 ETF with a self-managed share portfolio: hypothetical Irish tax comparison"}) as pdf:
-        for build in (overview, attribution, rules_and_misses, assumptions):
+        for build in (overview, attribution, rules_and_misses, assumptions,
+                      accuracy_verdict, accuracy_limits, accuracy_stresses, accuracy_evidence):
             fig = build(data)
             pdf.savefig(fig, facecolor=PAPER)
             if build is overview:

@@ -1,0 +1,319 @@
+{
+  "classification": "DESCRIPTIVE_DATA_LIMITS_NOT_AN_ERROR_BOUND",
+  "broker_cash_payment_fee_source": "https://helpcentre.trading212.com/hc/en-us/articles/11669719976093-What-is-a-multi-currency-account",
+  "metric_definitions": {
+    "coverage": "Cached source-coverage audit on the 192 scheduled contribution dates; equal weight per date, not invested capital. Dates and latest eligible snapshots are checked against current prepared inputs.",
+    "provisional_weight": "Value of held securities with an explicit nontradable prepared mark divided by same-day value_eur, which includes cash before CGT reserve deduction. Mean includes every saved daily row, including final liquidation. Other stale quotes and contingent rights are excluded.",
+    "dividend_examples": "Five actual issuer payments absent from the saved ledgers. Units must remain positive and constant from seven calendar days before the record date through payment. The window covers ordinary ex-date entitlement, without an exact ex-date assumption. Gross EUR uses payment-date ECB FX; this is not an exact model correction, since the model uses ex-date cash accrual. Tax, reinvestment and later decisions are excluded. Full missing-dividend total remains unknown.",
+    "mandatory_cash_fx_fees": "Cash-merger and contingent-payment fees plus inferred mixed-merger/capital-distribution fees. Mixed-event rows store net cash without a fee field, so fees equal net cash times 0.0015/0.9985. The configuration check requires a 0.15% FX fee and zero half-spread. All affected securities use USD metadata or the USD default. This amount excludes later tax and reinvestment effects."
+  },
+  "source_coverage": {
+    "scheduled_contribution_dates": 192,
+    "mean_snapshot_age_days": 48.083333333333336,
+    "median_snapshot_age_days": 31.0,
+    "maximum_snapshot_age_days": 213,
+    "maximum_age_purchase_date": "2017-07-31",
+    "dates_age_over_60_days": 42,
+    "dates_age_over_90_days": 29,
+    "dates_with_new_members_without_source_weight": 91,
+    "maximum_new_members_without_source_weight": 11,
+    "dates_with_unresolved_target_weight": 83,
+    "mean_unresolved_target_weight": 0.006242961465308006,
+    "maximum_unresolved_target_weight": 0.0252859728506743,
+    "minimum_mapped_current_member_target_weight": 0.9198562952803984,
+    "recorded_prior_availability_passes": true,
+    "availability_limitation": "The CNDX five-business-day publication lag and community membership availability remain assumptions, not proven historical timestamps."
+  },
+  "explicit_provisional_marks": {
+    "prepared_rows": 21709,
+    "securities": 11
+  },
+  "strategies": {
+    "baseline": {
+      "daily_rows": 4025,
+      "days_with_explicit_provisional_value": 2979,
+      "peak_provisional_weight": 0.0011195104837321169,
+      "peak_weight_date": "2017-02-02",
+      "provisional_value_eur_at_peak_weight": 171.97260321817274,
+      "maximum_provisional_value_eur": 272.7794833275787,
+      "mean_provisional_weight": 0.00037813466711380953,
+      "known_omitted_dividend_examples": [
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2020-09-01",
+          "payment_date": "2020-09-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.359813917379765,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4304510485197854,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2020-12-01",
+          "payment_date": "2020-12-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.359813917379765,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4103673052739718,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2021-03-08",
+          "payment_date": "2021-03-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.359813917379765,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.42924119547480183,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2021-06-21",
+          "payment_date": "2021-06-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.359813917379765,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.42407614238216496,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:LOGM",
+          "record_date": "2018-08-08",
+          "payment_date": "2018-08-24",
+          "dividend_usd_per_share": 0.3,
+          "units": 0.727857982237818,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.18843406512887934,
+          "source": "https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm"
+        }
+      ],
+      "five_examples_omitted_gross_eur_at_payment_fx": 1.8825697567796034,
+      "mandatory_cash_fx_fees_eur": 25.620724326989755,
+      "buy_count": 16825,
+      "buy_count_below_one_share": 16218
+    },
+    "monthly_tlh": {
+      "daily_rows": 4025,
+      "days_with_explicit_provisional_value": 2024,
+      "peak_provisional_weight": 0.0011649274629440321,
+      "peak_weight_date": "2014-10-16",
+      "provisional_value_eur_at_peak_weight": 84.39686481805438,
+      "maximum_provisional_value_eur": 252.59754599146248,
+      "mean_provisional_weight": 0.0003573607497795481,
+      "known_omitted_dividend_examples": [
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2020-09-01",
+          "payment_date": "2020-09-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.470778486356242,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4446675546237071,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2020-12-01",
+          "payment_date": "2020-12-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.470778486356242,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.42392050562123307,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2021-03-08",
+          "payment_date": "2021-03-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.470778486356242,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4434177437641056,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2021-06-21",
+          "payment_date": "2021-06-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.470778486356242,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.43808210447108414,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:LOGM",
+          "record_date": "2018-08-08",
+          "payment_date": "2018-08-24",
+          "dividend_usd_per_share": 0.3,
+          "units": 0.7129194262425989,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.18456664469518436,
+          "source": "https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm"
+        }
+      ],
+      "five_examples_omitted_gross_eur_at_payment_fx": 1.9346545531753143,
+      "mandatory_cash_fx_fees_eur": 14.17030197962447,
+      "buy_count": 13037,
+      "buy_count_below_one_share": 11449
+    },
+    "monthly_hybrid": {
+      "daily_rows": 4025,
+      "days_with_explicit_provisional_value": 2024,
+      "peak_provisional_weight": 0.0011672387775774117,
+      "peak_weight_date": "2014-10-16",
+      "provisional_value_eur_at_peak_weight": 82.67575713113858,
+      "maximum_provisional_value_eur": 250.16808198725323,
+      "mean_provisional_weight": 0.00035773565847423833,
+      "known_omitted_dividend_examples": [
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2020-09-01",
+          "payment_date": "2020-09-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.399998801052437,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.43559943641771903,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2020-12-01",
+          "payment_date": "2020-12-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.399998801052437,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4152754825811135,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2021-03-08",
+          "payment_date": "2021-03-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.399998801052437,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4343751129868542,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2021-06-21",
+          "payment_date": "2021-06-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.399998801052437,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.42914828353909923,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:LOGM",
+          "record_date": "2018-08-08",
+          "payment_date": "2018-08-24",
+          "dividend_usd_per_share": 0.3,
+          "units": 0.7067039536065199,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.18295753027438383,
+          "source": "https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm"
+        }
+      ],
+      "five_examples_omitted_gross_eur_at_payment_fx": 1.89735584579917,
+      "mandatory_cash_fx_fees_eur": 18.871091676378857,
+      "buy_count": 12813,
+      "buy_count_below_one_share": 10950
+    },
+    "weekly_annual": {
+      "daily_rows": 4025,
+      "days_with_explicit_provisional_value": 2024,
+      "peak_provisional_weight": 0.0012310095057615831,
+      "peak_weight_date": "2017-02-02",
+      "provisional_value_eur_at_peak_weight": 187.4979069945678,
+      "maximum_provisional_value_eur": 270.764985127652,
+      "mean_provisional_weight": 0.000373173927928301,
+      "known_omitted_dividend_examples": [
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2020-09-01",
+          "payment_date": "2020-09-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.4617037021532013,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4435049157182953,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2020-12-01",
+          "payment_date": "2020-12-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.4617037021532013,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4228121124688382,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2021-03-08",
+          "payment_date": "2021-03-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.4617037021532013,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4422583726454137,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:CDK",
+          "record_date": "2021-06-21",
+          "payment_date": "2021-06-30",
+          "dividend_usd_per_share": 0.15,
+          "units": 3.4617037021532013,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.4369366840482836,
+          "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
+        },
+        {
+          "security_id": "yahoo:LOGM",
+          "record_date": "2018-08-08",
+          "payment_date": "2018-08-24",
+          "dividend_usd_per_share": 0.3,
+          "units": 0.8818825365525836,
+          "units_constant_in_entitlement_window": true,
+          "omitted_gross_eur_at_payment_fx": 0.22830925178268474,
+          "source": "https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm"
+        }
+      ],
+      "five_examples_omitted_gross_eur_at_payment_fx": 1.9738213366635156,
+      "mandatory_cash_fx_fees_eur": 17.4294172797139,
+      "buy_count": 16739,
+      "buy_count_below_one_share": 15119
+    }
+  },
+  "input_sha256": {
+    "checks/accuracy_data_checks.py": "3876804eef198c05c38cc92518c5ceb0d9f150e3371d15715b40af59075396e4",
+    "study_inputs.py": "ea651f462553af158cd1126ea0e6d12a473f5b3a1f03b38876c845ee6dd78bef",
+    "inputs/best_effort/purchase_date_coverage.csv": "ab51958abd82cde0627f00fb2ef60ff067e3ad4b1b82d03de179d698131e9f52",
+    "results/latest/contribution_schedule.csv": "dfe2a2a1e4cc56af23710566fdc3a3a7585a344c70a99f737efe244309c6085d",
+    "benchmark/issuer/cndx_nav_eur.csv": "96b2f6124b453857e3b2244ff9f09c67837403cf5d011d0ec5a647ec1ecf6ae7",
+    "benchmark/indexes/NASDAQ100.csv": "bae89ee54c67155ed67810b063aa58c4b05d7d5274f654b36c479f3939a0850b",
+    "inputs/best_effort/best_effort_weights.csv": "15a4bc6576f0b5d585c67b5f7f65465871f96a42a3d21076743f3bc99e85100a",
+    "inputs/best_effort/membership.csv": "88242f41da24004352a4849ec02e740b71cdbf881661c76c6a489deec45df3d8",
+    "inputs/best_effort/metadata.csv": "b8eff52ac03d6dce0626e7279701324f55a8eb85a5401a1f0d50f60fd4359b2f",
+    "prices/best_effort/prices_usd.csv.gz": "bbe52353cde0596ff2dab1d996c9e94ec40c8cf89c18c16596c04e73daa2540d",
+    "prices/best_effort/actions.csv": "ed8e92aff14a2cdcf89d466a4d8258621ddb1fd70c02a7f3f6ea811a76d8bf8c",
+    "prices/best_effort/split_events.csv": "16fe61e64ef4f1213aa96706a5431532de7edb0c93b07c6229d54f81f8772410",
+    "results/latest/ledgers/baseline_daily.csv.gz": "b200d6e21580de1f4ffe34adb9af35fed52bb043a0f73f71dee80e92cc776680",
+    "results/latest/ledgers/baseline_transactions.csv.gz": "bd950c64b7bbeb4aefb699f1fbb713c6c41ebd21a81bd3977a8ba0163b9cfbb7",
+    "results/latest/ledgers/monthly_tlh_daily.csv.gz": "648ba50886fb7eaa831c50e983a2f1011c68d2918e7eb4820c17c99f2e7d2506",
+    "results/latest/ledgers/monthly_tlh_transactions.csv.gz": "596bb65f7d95db43be82cc8b17cd2d3286d9d96f94ae3d8203fe09602ed10cee",
+    "results/latest/ledgers/monthly_hybrid_daily.csv.gz": "d1c0ee024ce8d416db74399ec15c7627e7bfca9878648a750218703b530f09d0",
+    "results/latest/ledgers/monthly_hybrid_transactions.csv.gz": "3e277fefa1da146a548a5e3d2d51330965d1860050d007b5b2d1e34192f6d22b",
+    "results/latest/ledgers/weekly_annual_daily.csv.gz": "ed7c7e7a00beb3472f71b983ed40c213b806b95dc1e51ceaacc2a2bf1d569a32",
+    "results/latest/ledgers/weekly_annual_transactions.csv.gz": "23bd82175ab4bb807d173817003988d3e152d91b7bffa2aeefac9d4ca1547981",
+    "results/latest/ledgers/baseline_summary.json": "ce7b3186b0f242f111793fce11832309e4cb22d58714f110ab17f5fe29ae5e03",
+    "results/latest/ledgers/monthly_tlh_summary.json": "d14c6192a9a74ba83ccb6f702b8b632fc0599efe9141071c922bf582158d167c",
+    "results/latest/ledgers/monthly_hybrid_summary.json": "881a898cdab98ac7bef82b0fea1167f3ad041c54d2d2fd2347365229793b1a95",
+    "results/latest/ledgers/weekly_annual_summary.json": "a685a12b4bc029d3015568b193c24566b3d94d3bc14c8c84a8ac264e39259bd1"
+  }
+}

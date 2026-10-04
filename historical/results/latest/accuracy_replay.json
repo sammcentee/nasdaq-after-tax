@@ -1,0 +1,561 @@
+{
+  "classification": "CACHED_INPUT_REPLAY_VERIFICATION",
+  "assessment_date": "2026-10-04",
+  "reference_commit": "86fa591672e27ace812bec7d2922751e53a32714",
+  "command": "python historical/run_tax_optimization_study.py --workers 3",
+  "method": "Fresh run in an isolated full copy of historical/. Parsed JSON and CSV contents compare exactly; gzip container timestamps are ignored. Empty CSV files compare as bytes. Existing audit JSON files are not outputs of the study runner and are excluded.",
+  "stock_replays": 14,
+  "etf_replays": 1,
+  "files_compared": 90,
+  "all_match": true,
+  "files": [
+    {
+      "file": "annual_tax_and_exemptions.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "comparison.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "contribution_schedule.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "etf/daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "etf/events.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "etf/summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "input_audit/events_prepared.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "input_audit/input_audit.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "input_audit/missing_action_quote_review.csv",
+      "method": "empty_csv_bytes_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "input_audit/provisional_valuation_marks.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "input_audit/replaced_vendor_dividends.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "interactions.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/all_summaries.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_monthly_control_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_monthly_control_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_monthly_control_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_monthly_control_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_monthly_control_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_only_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_only_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_only_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_only_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/annual_only_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/any_loss_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/any_loss_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/any_loss_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/any_loss_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/any_loss_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/baseline_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/baseline_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/baseline_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/baseline_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/baseline_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/exits_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/exits_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/exits_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/exits_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/exits_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_no_exemption_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_no_exemption_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_no_exemption_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_no_exemption_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_no_exemption_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_only_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_only_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_only_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_only_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/hybrid_only_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/membership_used.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/metadata_used.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_gains_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_gains_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_gains_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_gains_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_gains_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_hybrid_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_hybrid_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_hybrid_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_hybrid_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_hybrid_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_tlh_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_tlh_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_tlh_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_tlh_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/monthly_tlh_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/retain_gains_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/retain_gains_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/retain_gains_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/retain_gains_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/retain_gains_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_annual_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_annual_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_annual_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_annual_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_annual_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_no_exemption_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_no_exemption_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_no_exemption_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_no_exemption_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_no_exemption_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_tlh_daily.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_tlh_lots.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_tlh_summary.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_tlh_transactions.csv.gz",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "ledgers/weekly_tlh_yearly_tax.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "marginal_effects.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "policy_definitions.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "study_manifest.json",
+      "method": "parsed_json_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "tax_relief.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    },
+    {
+      "file": "underperformers.csv",
+      "method": "parsed_csv_exact",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Same implementation and cached market inputs; this is reproducibility, not independent source verification.",
+    "Plots and PDF are separately generated and are outside this comparison."
+  ],
+  "study_manifest_sha256": "6ce13ec451c24802eb4148aa35b5ed2aeb1b63cf9928680238274c521494c595",
+  "output_sha256": {
+    "results/latest/annual_tax_and_exemptions.csv": "46007cd142479a8168cde40f87a373627249c2b9821aa0d8d8f36e19f3107421",
+    "results/latest/comparison.csv": "5f1f64830245d5d1fd852b26c8bd20d8a1b815955a2893a814a2b36f9299493c",
+    "results/latest/contribution_schedule.csv": "dfe2a2a1e4cc56af23710566fdc3a3a7585a344c70a99f737efe244309c6085d",
+    "results/latest/etf/daily.csv.gz": "81f0bdba41d1964537dfc05855d2cdf767ca34affa869351d068bf77e9f8704e",
+    "results/latest/etf/events.csv.gz": "c6ba187cda903d7d87f4ab0e83e1ceddcbbdec4afb64cb7f38788bf13515902e",
+    "results/latest/etf/summary.json": "0400c1b103314bba3eb0ce4567f87dac27a07607683672c4126e4d1d248c0ad7",
+    "results/latest/input_audit/events_prepared.csv": "f745dd6c815e7878fe3f036c94cef006354549b628ed7d50d54e44f38a19e14a",
+    "results/latest/input_audit/input_audit.json": "986f68c6af14d872f1dc614ff3633d881313647b4ea38c5c9e3b31274e5d6825",
+    "results/latest/input_audit/missing_action_quote_review.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "results/latest/input_audit/provisional_valuation_marks.json": "f863725f9b5096d1cb5e9963c33df4cc2b2b06ee43dfd62d3b174cedb277a05d",
+    "results/latest/input_audit/replaced_vendor_dividends.json": "ddf5f631ddd0fcd19d7114f4c67c1ba69afaa982ce7bbeba2b4711aeef691423",
+    "results/latest/interactions.csv": "37fc95e171d7add7755a801831b6370923737a3079bc03234343668b34c653fa",
+    "results/latest/ledgers/all_summaries.json": "00f18bcd31bc003db8373340d963282cf1d17e338fa734030c55de46daf96e74",
+    "results/latest/ledgers/annual_monthly_control_daily.csv.gz": "bf64258a190a4ec1f85312fde0e3e228f5311a1eca983a77f29611c94ffe3cc8",
+    "results/latest/ledgers/annual_monthly_control_lots.csv.gz": "8cdb546c1792208467d8c9df0389b3f20945e7c8f277f4496dd28dedde4e8b4f",
+    "results/latest/ledgers/annual_monthly_control_summary.json": "02d6ce76a6e67c8f7a4ff0431c79fddf5c8f54a93152b0facafdc2e2f9088355",
+    "results/latest/ledgers/annual_monthly_control_transactions.csv.gz": "8b1bf8ce6385acb61150cfba750a3b39f01c2654c9725b715b225b583e57d5e9",
+    "results/latest/ledgers/annual_monthly_control_yearly_tax.csv": "98e5cbb413dcc069e0f755064b366b8440b0fa529860cf6be6cdad2e6ef98095",
+    "results/latest/ledgers/annual_only_daily.csv.gz": "4c4ebd4f2a1e56ae74c3b86ad08654abc75411878e64b7328693a941ed4f73db",
+    "results/latest/ledgers/annual_only_lots.csv.gz": "7737614b585ef93fe65ea05d7410caa0e0df3e478d1f49e2a6f9ce7367286807",
+    "results/latest/ledgers/annual_only_summary.json": "bd343e90ff0cfda7e45d9a101015c43fc849c0ec489cdbc61784670fd5a44d70",
+    "results/latest/ledgers/annual_only_transactions.csv.gz": "6b20214aa631fbfedeb3dce31665bb60e889376a36f88e957e677cd3c5d8d962",
+    "results/latest/ledgers/annual_only_yearly_tax.csv": "ad87794c75741f010a1330fe8c611a3fb32417930c7881baf6ee2e8ae557ad00",
+    "results/latest/ledgers/any_loss_daily.csv.gz": "99f5a07efd0655687817203ff88c5549ded79a6649815e58801fc1213a3e7b15",
+    "results/latest/ledgers/any_loss_lots.csv.gz": "0a13b3019f9d0d8a0026f7cb3e87e7d272092be809d6fa9a7a5ef163743ebbe2",
+    "results/latest/ledgers/any_loss_summary.json": "00211fb2afb1c2f2c178ea4a5bf0b7ac73e1ac0522f9444bf1a3ddf6807a7033",
+    "results/latest/ledgers/any_loss_transactions.csv.gz": "110afcbb1c9bd7bd21264872216a5b87bb1af28edef5bffada4948a51fba72e6",
+    "results/latest/ledgers/any_loss_yearly_tax.csv": "54aa887621c8899f146caeba55e4a5dbafa0a943746be3ca46c21252fc6ae0dc",
+    "results/latest/ledgers/baseline_daily.csv.gz": "e5d892dec5c1c7804b94907cb0b6cafd49dd5363006dd4b48d359fba12c0fa2f",
+    "results/latest/ledgers/baseline_lots.csv.gz": "a9cdb3f9520e3bfc021e41196e25f8fd9bcf5019d5caba39ce56fa17e2863cae",
+    "results/latest/ledgers/baseline_summary.json": "ce7b3186b0f242f111793fce11832309e4cb22d58714f110ab17f5fe29ae5e03",
+    "results/latest/ledgers/baseline_transactions.csv.gz": "367f1d62980240f96cf2cc91c85ba87bc202524d58662df537b8fd68f17dedf5",
+    "results/latest/ledgers/baseline_yearly_tax.csv": "8c77a02749e14525bae0982ecba05667cf35999d96ba795505d2d126b87d00f8",
+    "results/latest/ledgers/exits_daily.csv.gz": "1470260cd0e6af631fa3867b5bf872a95927d55961e531b31e1f4e5d5ceb27e0",
+    "results/latest/ledgers/exits_lots.csv.gz": "5b78d81d86d60b61037696e17f1a581417493c6daa3c991a5af2115fdec7315f",
+    "results/latest/ledgers/exits_summary.json": "588f9be49e3dfde038e11f17ac6c6ca7a23a0808aac32afdc9f762d0ee91b480",
+    "results/latest/ledgers/exits_transactions.csv.gz": "2698b0ae26e0378532bd4b245195a617087458a0367dbb823e1dc4a36b6a4f0d",
+    "results/latest/ledgers/exits_yearly_tax.csv": "acf7b4ab1d2531343982180c76a52396d4ad2bc7a9bdb1cff908d3b05e92da4b",
+    "results/latest/ledgers/hybrid_no_exemption_daily.csv.gz": "abdf60178ae73b08cf11b0717fd9ca37307e4d71142ceea071bc61936a7c2062",
+    "results/latest/ledgers/hybrid_no_exemption_lots.csv.gz": "f377d08a67ad2100eb7b19e3b5dcd9ae6f327577fdb90e5ebbb0a8e03f9706d2",
+    "results/latest/ledgers/hybrid_no_exemption_summary.json": "ed50828454d760149d70b417436d34d887491b1c5677f76c65c039bec05752f6",
+    "results/latest/ledgers/hybrid_no_exemption_transactions.csv.gz": "fec3e3bcb0f4652b7076bface7aadf27c487964b523487b771438d6e65d9a7d9",
+    "results/latest/ledgers/hybrid_no_exemption_yearly_tax.csv": "302e75633d49c8c8f6ca2fda341ba60a24b017a2825d99d11a3490a3f5fbd7f4",
+    "results/latest/ledgers/hybrid_only_daily.csv.gz": "670f40f346724e50d9e598c9f134948cc0ce4db60b51408ea7a92c27326537d1",
+    "results/latest/ledgers/hybrid_only_lots.csv.gz": "e877e9daf5dbe0a47b64d806222145f2f19fc2b16ac785f2867eb648a7fc78d1",
+    "results/latest/ledgers/hybrid_only_summary.json": "72589c2fc95a430efc2efafa4e1a27a8d8f63e3637d925c23362702bd0d314ef",
+    "results/latest/ledgers/hybrid_only_transactions.csv.gz": "9e0528d5d6fbbfdbd9c6f2526efcd4d6e504a25b31c336f5a6355abaecefdb7d",
+    "results/latest/ledgers/hybrid_only_yearly_tax.csv": "160a15f2c6810c0d8e3b14dedbd43f92ec42fde64ebbb8060706702f75f861b5",
+    "results/latest/ledgers/membership_used.csv": "5dd4b1d2580066c15acec38317f6ee2f7b2e5786cc8232eb73385a913341156f",
+    "results/latest/ledgers/metadata_used.csv": "1685485ffe9f09f1c116fdacad4afd598fcc03726f2cd55ca94085bc6ed4266e",
+    "results/latest/ledgers/monthly_gains_daily.csv.gz": "fe446ffe6d698edf1dfb4b4ccd2fcaca0af7cb5e7a861aaafb834b7afe64aae4",
+    "results/latest/ledgers/monthly_gains_lots.csv.gz": "fc1ed5f200381e6662a68b48689d3924d85e5a1c9b74a55a2a4b8ce33bfc816a",
+    "results/latest/ledgers/monthly_gains_summary.json": "6fddbb73235c1d4349a4e56e3a2f2fd9866ef3c523049133393e7a92c361600f",
+    "results/latest/ledgers/monthly_gains_transactions.csv.gz": "6b4129f448570829ba3044d4340d9dafb3472b8b86099b62d95ff165f393fca3",
+    "results/latest/ledgers/monthly_gains_yearly_tax.csv": "1ec9d1fdadf0c3c3a62d473af1287b4b9a4498b9b6f9711ca6737ea0d49697bc",
+    "results/latest/ledgers/monthly_hybrid_daily.csv.gz": "aa2a325a7162879088ed10db927c12dc4e6ec90032c41ffcbd59c7572f2a0a7a",
+    "results/latest/ledgers/monthly_hybrid_lots.csv.gz": "e16f41b85a95cb027cbeec5e9dd992a4554d4a5f199977a10f927861818769f1",
+    "results/latest/ledgers/monthly_hybrid_summary.json": "881a898cdab98ac7bef82b0fea1167f3ad041c54d2d2fd2347365229793b1a95",
+    "results/latest/ledgers/monthly_hybrid_transactions.csv.gz": "809b579a14c6bd604f1d1c2beab4e3005971a33f4b07c3fafc2b8592547868b7",
+    "results/latest/ledgers/monthly_hybrid_yearly_tax.csv": "e4dfc0e8d8b31284a808667a1655c0ad9f4dc76e905163db19a358db6b3855e1",
+    "results/latest/ledgers/monthly_tlh_daily.csv.gz": "83132f82e4ed77eea69a6f2b8f4899ad19bcff1d63fc6403480b8377ee643b8a",
+    "results/latest/ledgers/monthly_tlh_lots.csv.gz": "91d46e5d0a0c229d7766731e3854c9b14a8c47f1b362b590184f5f4c3913cd4c",
+    "results/latest/ledgers/monthly_tlh_summary.json": "d14c6192a9a74ba83ccb6f702b8b632fc0599efe9141071c922bf582158d167c",
+    "results/latest/ledgers/monthly_tlh_transactions.csv.gz": "01f2a04ec4327591a9af9f133d24e722281fb148ecd694987ce6cea7932b2ef6",
+    "results/latest/ledgers/monthly_tlh_yearly_tax.csv": "032650561495a58b27045453cbd1c64d170dda65bbd7fe755c421e5343f061d9",
+    "results/latest/ledgers/retain_gains_daily.csv.gz": "6f03fddafd1af2f3f764a98c565c67b665a66575fb8eebeb00c17a7f9efb110c",
+    "results/latest/ledgers/retain_gains_lots.csv.gz": "d144022e19f1f1c639330889c874d806228bb954d7d4ed821c8af668389121c8",
+    "results/latest/ledgers/retain_gains_summary.json": "171db7609f2397b9224feba37480fa448f472cb22aba54519215bcd10354fa4c",
+    "results/latest/ledgers/retain_gains_transactions.csv.gz": "bcee57ce8196c7cb01ac932caa532abcc902fa76d732ca686b2b004d4a6a4ec5",
+    "results/latest/ledgers/retain_gains_yearly_tax.csv": "17919566ed5feb81349378d5ed8014933ce20d42a081fba66464adfe2861a8e3",
+    "results/latest/ledgers/weekly_annual_daily.csv.gz": "603cdac8629bdd5f294e0d9c6e397e317b059efaa91518382110976c21d49220",
+    "results/latest/ledgers/weekly_annual_lots.csv.gz": "639b123ca8decad3fbe065d0a73261de21e9190de5e804f8118fab61417bccfe",
+    "results/latest/ledgers/weekly_annual_summary.json": "a685a12b4bc029d3015568b193c24566b3d94d3bc14c8c84a8ac264e39259bd1",
+    "results/latest/ledgers/weekly_annual_transactions.csv.gz": "6d3fcd77a20e0a6467d107a5823f41a4a5eeb56f118c26e942f7c10fb3bc992b",
+    "results/latest/ledgers/weekly_annual_yearly_tax.csv": "8f2b727c03f2295e411e7dd04b468ee8271b6bc4ce85cfc8a87e1d91deb1b0fd",
+    "results/latest/ledgers/weekly_no_exemption_daily.csv.gz": "dfd182fbb0fb7ecb471dbc147bb80832fa98ccb14a5eccf1a9ee7c22eb48d326",
+    "results/latest/ledgers/weekly_no_exemption_lots.csv.gz": "18660a7cb9a1f3128634f34061e5bd5799367e15d8546a41c513b4a2e0cc2fa8",
+    "results/latest/ledgers/weekly_no_exemption_summary.json": "a31fbd97c0eb5b31e20443a7898e1f2fd6eca3e13b16b34268b9bc78223c2ad1",
+    "results/latest/ledgers/weekly_no_exemption_transactions.csv.gz": "05c34c6a0f796f00823ce0eaa7a973d3bb0fde6f7d7c5d4d169340fdade5aab7",
+    "results/latest/ledgers/weekly_no_exemption_yearly_tax.csv": "935c5fa887f7b7a8111f4e64bbd36f86610e6a3092690a305f2dc2cc9d6f849e",
+    "results/latest/ledgers/weekly_tlh_daily.csv.gz": "0698a702efe6816fb132c980690f2354e796cc6dfd071a72f330512f5bb45b7d",
+    "results/latest/ledgers/weekly_tlh_lots.csv.gz": "f39ccee2f514b7e8442ce1c4b6419250516d0da2af6efeee4ffd7aee85e3054f",
+    "results/latest/ledgers/weekly_tlh_summary.json": "2b02196049c85699963596556a6d5f18280698cd31388cad4f333438802591b9",
+    "results/latest/ledgers/weekly_tlh_transactions.csv.gz": "2368bc8942b0121286a9c06c0c84da395abf07b89815c35c682ddd67147e6f0d",
+    "results/latest/ledgers/weekly_tlh_yearly_tax.csv": "b4e24a493a7cb786202154f966f95f917dd7d78524a63c614e4fa5eb293b4907",
+    "results/latest/marginal_effects.csv": "c1b989bd43b183202ae886380c215abb003cc2f8d11804e7f4dafb184e9b0569",
+    "results/latest/policy_definitions.json": "4c044d00dc627eea5a554bf9da5be5b4c4a9512d6aaeea0ccbf1d2e7807cabea",
+    "results/latest/study_manifest.json": "6ce13ec451c24802eb4148aa35b5ed2aeb1b63cf9928680238274c521494c595",
+    "results/latest/tax_relief.csv": "f49fd72c3a1bf52973fdf2a01132c0702aaa65479eca617339a50641c80c648a",
+    "results/latest/underperformers.csv": "4564513ab33b2ec602a0ef0fb8019d6a477aa915798283f7676379bd8e7dca3e"
+  },
+  "output_hash_method": "SHA256 of file bytes, after decompression for .gz files; container timestamps are excluded."
+}

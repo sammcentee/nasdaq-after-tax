@@ -1,0 +1,827 @@
+{
+  "classification": "SAVED_OUTPUT_ARITHMETIC_AND_EXPOSURE_AUDIT",
+  "scope": "Arithmetic checks on saved outputs, plus portfolio diagnostics from shared prepared price inputs. This is not an independent market-data audit or a new backtest.",
+  "study_manifest_sha256": "6ce13ec451c24802eb4148aa35b5ed2aeb1b63cf9928680238274c521494c595",
+  "manifest_hashes": {
+    "all_match": true,
+    "count": 21,
+    "files": [
+      "benchmark/indexes/NASDAQ100.csv",
+      "benchmark/issuer/cndx_nav_eur.csv",
+      "benchmark/issuer/cndx_nav_eur_2010-09-30_to_2026-09-30.csv",
+      "contributions.py",
+      "inflation/irish_cpi.csv",
+      "inflation/provenance.json",
+      "inputs/best_effort/best_effort_weights.csv",
+      "inputs/best_effort/membership.csv",
+      "inputs/best_effort/metadata.csv",
+      "inputs/corrected_membership/membership_alias_overlay.csv",
+      "model/direct_stock_backtest.py",
+      "model/etf_backtest.py",
+      "prices/best_effort/actions.csv",
+      "prices/best_effort/prices_usd.csv.gz",
+      "prices/best_effort/split_events.csv",
+      "prices/best_effort/yf_GBPUSD=X.csv",
+      "results/latest/contribution_schedule.csv",
+      "results/latest/ledgers/membership_used.csv",
+      "run_tax_optimization_study.py",
+      "study_inputs.py",
+      "tax/irish_tax.py"
+    ],
+    "limitation": "Matching hashes verify consistency with recorded artifacts, not completeness, source accuracy, or availability at the historical date."
+  },
+  "ledger_checks": [
+    {
+      "key": "baseline",
+      "status": "PASS",
+      "final_cash": 952618.8510568859,
+      "cash_error_eur": -8.149072527885437e-10,
+      "basis_error_eur": 2.9103830456733704e-11,
+      "cumulative_exemption_used_eur": 6167.61056106555,
+      "nominal_cgt_avoided_by_exemption_eur": 2035.3114851516318,
+      "gain_harvest_sales": 0,
+      "gain_repurchase_count": 0,
+      "min_preceding_purchase_age_days": null,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "exits",
+      "status": "PASS",
+      "final_cash": 979998.5816172785,
+      "cash_error_eur": 0.0,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 6662.35531091486,
+      "nominal_cgt_avoided_by_exemption_eur": 2198.5772526019036,
+      "gain_harvest_sales": 0,
+      "gain_repurchase_count": 0,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "monthly_tlh",
+      "status": "PASS",
+      "final_cash": 988600.9143892631,
+      "cash_error_eur": 2.3283064365386963e-10,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 1275.4347627381637,
+      "nominal_cgt_avoided_by_exemption_eur": 420.89347170359406,
+      "gain_harvest_sales": 0,
+      "gain_repurchase_count": 0,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "monthly_hybrid",
+      "status": "PASS",
+      "final_cash": 994222.0240430534,
+      "cash_error_eur": 6.984919309616089e-10,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 20565.545743907907,
+      "nominal_cgt_avoided_by_exemption_eur": 6786.63009548961,
+      "gain_harvest_sales": 217,
+      "gain_repurchase_count": 216,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "weekly_tlh",
+      "status": "PASS",
+      "final_cash": 989106.0772172185,
+      "cash_error_eur": 0.0,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 1275.4347627381637,
+      "nominal_cgt_avoided_by_exemption_eur": 420.89347170359406,
+      "gain_harvest_sales": 0,
+      "gain_repurchase_count": 0,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 0.0,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "weekly_annual",
+      "status": "PASS",
+      "final_cash": 998424.9672303945,
+      "cash_error_eur": -5.820766091346741e-10,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 19298.162906814574,
+      "nominal_cgt_avoided_by_exemption_eur": 6368.39375924881,
+      "gain_harvest_sales": 165,
+      "gain_repurchase_count": 165,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 3.0013325158506633e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "annual_only",
+      "status": "PASS",
+      "final_cash": 983476.1228594732,
+      "cash_error_eur": -5.820766091346741e-10,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 20568.162906814578,
+      "nominal_cgt_avoided_by_exemption_eur": 6787.493759248811,
+      "gain_harvest_sales": 139,
+      "gain_repurchase_count": 139,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 3.0013325158506633e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "hybrid_only",
+      "status": "PASS",
+      "final_cash": 982037.05104802,
+      "cash_error_eur": -5.820766091346741e-10,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 20568.162906814578,
+      "nominal_cgt_avoided_by_exemption_eur": 6787.493759248811,
+      "gain_harvest_sales": 196,
+      "gain_repurchase_count": 195,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 3.0013325158506633e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "weekly_no_exemption",
+      "status": "PASS",
+      "final_cash": 985182.3318548991,
+      "cash_error_eur": -5.820766091346741e-10,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 0.0,
+      "nominal_cgt_avoided_by_exemption_eur": 0.0,
+      "gain_harvest_sales": 38,
+      "gain_repurchase_count": 38,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 1.5006662579253317e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "hybrid_no_exemption",
+      "status": "PASS",
+      "final_cash": 994921.8141306443,
+      "cash_error_eur": -9.313225746154785e-10,
+      "basis_error_eur": 5.820766091346741e-11,
+      "cumulative_exemption_used_eur": 0.0,
+      "nominal_cgt_avoided_by_exemption_eur": 0.0,
+      "gain_harvest_sales": 48,
+      "gain_repurchase_count": 45,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 3.751665644813329e-14,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "annual_monthly_control",
+      "status": "PASS",
+      "final_cash": 995120.9321082446,
+      "cash_error_eur": 4.656612873077393e-10,
+      "basis_error_eur": 0.0,
+      "cumulative_exemption_used_eur": 20565.545743907904,
+      "nominal_cgt_avoided_by_exemption_eur": 6786.630095489609,
+      "gain_harvest_sales": 198,
+      "gain_repurchase_count": 198,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 3.0013325158506633e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "any_loss",
+      "status": "PASS",
+      "final_cash": 972751.8763712296,
+      "cash_error_eur": -3.4924596548080444e-10,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 20202.908604373544,
+      "nominal_cgt_avoided_by_exemption_eur": 6666.95983944327,
+      "gain_harvest_sales": 268,
+      "gain_repurchase_count": 268,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 3.0013325158506633e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "retain_gains",
+      "status": "PASS",
+      "final_cash": 956852.4255979649,
+      "cash_error_eur": 3.4924596548080444e-10,
+      "basis_error_eur": 0.0,
+      "cumulative_exemption_used_eur": 20562.728144076413,
+      "nominal_cgt_avoided_by_exemption_eur": 6785.700287545216,
+      "gain_harvest_sales": 143,
+      "gain_repurchase_count": 143,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 3.0013325158506633e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    },
+    {
+      "key": "monthly_gains",
+      "status": "PASS",
+      "final_cash": 957621.388604217,
+      "cash_error_eur": 1.1641532182693481e-10,
+      "basis_error_eur": 1.1641532182693481e-10,
+      "cumulative_exemption_used_eur": 20321.780832457902,
+      "nominal_cgt_avoided_by_exemption_eur": 6706.187674711108,
+      "gain_harvest_sales": 720,
+      "gain_repurchase_count": 720,
+      "min_preceding_purchase_age_days": 29,
+      "maximum_gain_harvest_incremental_cgt_eur": 3.0013325158506633e-13,
+      "automatic_receipts_during_block": 0,
+      "automatic_receipt_details": [],
+      "forced_receipt_permanent_loss_denial_tax_upper_bound_eur": -0.0,
+      "caveats": [
+        "Frozen-rate, unused-personal-exemption scenario; input corporate actions provisional",
+        "Foreign currency balances are not independently modelled",
+        "Voluntary same-class blocking verified; forced receipts remain separately disclosed",
+        "Terminal differences include exposure, costs and reinvestment, not just tax alpha"
+      ]
+    }
+  ],
+  "arithmetic_checks": {
+    "stock_cases": 14,
+    "headline_rows": 5,
+    "matched_pairs": 11,
+    "all_passed": true,
+    "contribution_count": 192,
+    "contributions_eur": 210936.48000000004,
+    "max_cash_residual_eur": 9.313225746154785e-10,
+    "max_basis_residual_eur": 1.1641532182693481e-10
+  },
+  "headline_decomposition": {
+    "total_gap_eur": 247696.11991598515,
+    "relative_gap": 0.3299408578770767,
+    "steps": [
+      {
+        "step": "ETF to direct baseline",
+        "control": "etf",
+        "variant": "baseline",
+        "change_eur": 201890.00374247658,
+        "share_of_total_gap": 0.8150713213067474
+      },
+      {
+        "step": "Quarterly departure management",
+        "control": "baseline",
+        "variant": "exits",
+        "change_eur": 27379.730560392607,
+        "share_of_total_gap": 0.11053758359105263
+      },
+      {
+        "step": "Weekly loss reviews",
+        "control": "exits",
+        "variant": "weekly_tlh",
+        "change_eur": 9107.495599939954,
+        "share_of_total_gap": 0.03676882626594668
+      },
+      {
+        "step": "Annual gain reviews",
+        "control": "weekly_tlh",
+        "variant": "weekly_annual",
+        "change_eur": 9318.890013176017,
+        "share_of_total_gap": 0.037622268836253255
+      }
+    ]
+  },
+  "accounting_bridges": [
+    {
+      "control": "baseline",
+      "variant": "exits",
+      "change_in_gross_investment_profit_eur": 40657.20745980879,
+      "additional_total_tax_eur": 13057.68292632571,
+      "additional_cost_eur": 219.79397309053365,
+      "change_in_final_cash_eur": 27379.730560392607
+    },
+    {
+      "control": "exits",
+      "variant": "monthly_tlh",
+      "change_in_gross_investment_profit_eur": 15889.744484314462,
+      "additional_total_tax_eur": 6773.524524364271,
+      "additional_cost_eur": 513.8871879655421,
+      "change_in_final_cash_eur": 8602.332771984627
+    },
+    {
+      "control": "monthly_tlh",
+      "variant": "monthly_hybrid",
+      "change_in_gross_investment_profit_eur": -1024.2154474819545,
+      "additional_total_tax_eur": -7106.238536364632,
+      "additional_cost_eur": 460.9134350925756,
+      "change_in_final_cash_eur": 5621.109653790249
+    },
+    {
+      "control": "exits",
+      "variant": "weekly_tlh",
+      "change_in_gross_investment_profit_eur": 16512.392645389307,
+      "additional_total_tax_eur": 7003.827769303578,
+      "additional_cost_eur": 401.0692761457485,
+      "change_in_final_cash_eur": 9107.495599939954
+    },
+    {
+      "control": "weekly_tlh",
+      "variant": "weekly_annual",
+      "change_in_gross_investment_profit_eur": 5360.475308533991,
+      "additional_total_tax_eur": -4206.404504533566,
+      "additional_cost_eur": 247.98979989173404,
+      "change_in_final_cash_eur": 9318.890013176017
+    },
+    {
+      "control": "exits",
+      "variant": "annual_only",
+      "change_in_gross_investment_profit_eur": -1562.7387309730984,
+      "additional_total_tax_eur": -5145.261702958553,
+      "additional_cost_eur": 104.98172979087758,
+      "change_in_final_cash_eur": 3477.5412421947112
+    },
+    {
+      "control": "exits",
+      "variant": "hybrid_only",
+      "change_in_gross_investment_profit_eur": -3692.5912589556538,
+      "additional_total_tax_eur": -5869.586162467371,
+      "additional_cost_eur": 138.52547277046233,
+      "change_in_final_cash_eur": 2038.4694307415048
+    },
+    {
+      "control": "annual_only",
+      "variant": "weekly_annual",
+      "change_in_gross_investment_profit_eur": 23435.606684896396,
+      "additional_total_tax_eur": 7942.6849677285645,
+      "additional_cost_eur": 544.077346246605,
+      "change_in_final_cash_eur": 14948.84437092126
+    },
+    {
+      "control": "hybrid_only",
+      "variant": "monthly_hybrid",
+      "change_in_gross_investment_profit_eur": 18558.12029578816,
+      "additional_total_tax_eur": 5536.87215046701,
+      "additional_cost_eur": 836.2751502876554,
+      "change_in_final_cash_eur": 12184.972995033371
+    },
+    {
+      "control": "weekly_no_exemption",
+      "variant": "weekly_annual",
+      "change_in_gross_investment_profit_eur": 10641.248789858306,
+      "additional_total_tax_eur": -2825.119031634822,
+      "additional_cost_eur": 223.73244599764303,
+      "change_in_final_cash_eur": 13242.635375495418
+    },
+    {
+      "control": "hybrid_no_exemption",
+      "variant": "monthly_hybrid",
+      "change_in_gross_investment_profit_eur": -11206.310703270137,
+      "additional_total_tax_eur": -10892.328399658378,
+      "additional_cost_eur": 385.80778397943277,
+      "change_in_final_cash_eur": -699.7900875909254
+    }
+  ],
+  "portfolio_diagnostics": [
+    {
+      "key": "baseline",
+      "as_of": "2026-09-29",
+      "stock_position_count": 208,
+      "total_stock_value_eur": 1300874.0065168017,
+      "top10_share_of_stock_value": 0.6584369086640615,
+      "target_effective_date": "2026-08-31",
+      "target_available_date": "2026-09-07",
+      "target_top10_weight": 0.4637668824117027,
+      "top_holdings": [
+        {
+          "security_id": "tts-830046",
+          "ticker": "NVDA",
+          "share_of_stock_value": 0.1413264871799979,
+          "last_known_target_weight": 0.0852548790336884
+        },
+        {
+          "security_id": "tts-831814",
+          "ticker": "AAPL|AAPL*",
+          "share_of_stock_value": 0.13950147694715662,
+          "last_known_target_weight": 0.0742578411273903
+        },
+        {
+          "security_id": "tts-829802",
+          "ticker": "MSFT",
+          "share_of_stock_value": 0.08222450589424825,
+          "last_known_target_weight": 0.0601323008897133
+        },
+        {
+          "security_id": "tts-827705",
+          "ticker": "AMZN",
+          "share_of_stock_value": 0.05212660925854382,
+          "last_known_target_weight": 0.0445899760707204
+        },
+        {
+          "security_id": "tts-1947579",
+          "ticker": "GGQ7|GOOG",
+          "share_of_stock_value": 0.0497027416499366,
+          "last_known_target_weight": 0.0292010968901181
+        },
+        {
+          "security_id": "tts-71625495",
+          "ticker": "GOOG|GOOGL",
+          "share_of_stock_value": 0.04569834369755792,
+          "last_known_target_weight": 0.0315365455357217
+        },
+        {
+          "security_id": "tts-3685519",
+          "ticker": "AVGO",
+          "share_of_stock_value": 0.04243642958341651,
+          "last_known_target_weight": 0.0280183495660462
+        },
+        {
+          "security_id": "tts-222568848",
+          "ticker": "FB|FB*|META",
+          "share_of_stock_value": 0.041207050534055045,
+          "last_known_target_weight": 0.0270418042393402
+        },
+        {
+          "security_id": "tts-17914799",
+          "ticker": "MU",
+          "share_of_stock_value": 0.036318313451627865,
+          "last_known_target_weight": 0.0476321589499856
+        },
+        {
+          "security_id": "tts-80383707",
+          "ticker": "AMD",
+          "share_of_stock_value": 0.02789495046752103,
+          "last_known_target_weight": 0.0338136104773928
+        }
+      ],
+      "purchases": 16825,
+      "discretionary_sales": 0,
+      "dividend_records": 4305,
+      "fractional_purchases": 16825,
+      "purchases_below_eur10": 9791,
+      "median_purchase_eur": 7.962666876724283,
+      "total_purchase_outlay_eur": 249318.77892977116,
+      "discretionary_sale_gross_eur": 0.0,
+      "mean_cash_share": 0.006552621439669598,
+      "peak_cash_share": 0.028044195809813897,
+      "money_weighted_annual_return": 0.1739228604267401,
+      "mean_outside_weight": 0.04708423655740258,
+      "mean_unknown_weight": 0.005936300306373211
+    },
+    {
+      "key": "monthly_tlh",
+      "as_of": "2026-09-29",
+      "stock_position_count": 107,
+      "total_stock_value_eur": 1357690.262275452,
+      "top10_share_of_stock_value": 0.7004469690751447,
+      "target_effective_date": "2026-08-31",
+      "target_available_date": "2026-09-07",
+      "target_top10_weight": 0.4637668824117027,
+      "top_holdings": [
+        {
+          "security_id": "tts-830046",
+          "ticker": "NVDA",
+          "share_of_stock_value": 0.15671293623001062,
+          "last_known_target_weight": 0.0852548790336884
+        },
+        {
+          "security_id": "tts-831814",
+          "ticker": "AAPL|AAPL*",
+          "share_of_stock_value": 0.13864078696074428,
+          "last_known_target_weight": 0.0742578411273903
+        },
+        {
+          "security_id": "tts-829802",
+          "ticker": "MSFT",
+          "share_of_stock_value": 0.08256934797810524,
+          "last_known_target_weight": 0.0601323008897133
+        },
+        {
+          "security_id": "tts-827705",
+          "ticker": "AMZN",
+          "share_of_stock_value": 0.05343619832254069,
+          "last_known_target_weight": 0.0445899760707204
+        },
+        {
+          "security_id": "tts-1947579",
+          "ticker": "GGQ7|GOOG",
+          "share_of_stock_value": 0.04990314732103223,
+          "last_known_target_weight": 0.0292010968901181
+        },
+        {
+          "security_id": "tts-3685519",
+          "ticker": "AVGO",
+          "share_of_stock_value": 0.04861566716142446,
+          "last_known_target_weight": 0.0280183495660462
+        },
+        {
+          "security_id": "tts-71625495",
+          "ticker": "GOOG|GOOGL",
+          "share_of_stock_value": 0.04791903444806619,
+          "last_known_target_weight": 0.0315365455357217
+        },
+        {
+          "security_id": "tts-222568848",
+          "ticker": "FB|FB*|META",
+          "share_of_stock_value": 0.04398646514863741,
+          "last_known_target_weight": 0.0270418042393402
+        },
+        {
+          "security_id": "tts-17914799",
+          "ticker": "MU",
+          "share_of_stock_value": 0.043007126398896346,
+          "last_known_target_weight": 0.0476321589499856
+        },
+        {
+          "security_id": "tts-80383707",
+          "ticker": "AMD",
+          "share_of_stock_value": 0.03565625910568717,
+          "last_known_target_weight": 0.0338136104773928
+        }
+      ],
+      "purchases": 13037,
+      "discretionary_sales": 505,
+      "dividend_records": 3131,
+      "fractional_purchases": 13037,
+      "purchases_below_eur10": 5030,
+      "median_purchase_eur": 15.192710220598086,
+      "total_purchase_outlay_eur": 465408.4347976245,
+      "discretionary_sale_gross_eur": 224295.18061003345,
+      "mean_cash_share": 0.008245449034670211,
+      "peak_cash_share": 0.1171857005921668,
+      "money_weighted_annual_return": 0.1778935398403666,
+      "mean_outside_weight": 0.00158942735796966,
+      "mean_unknown_weight": 0.006103873490014738
+    },
+    {
+      "key": "monthly_hybrid",
+      "as_of": "2026-09-29",
+      "stock_position_count": 107,
+      "total_stock_value_eur": 1356843.608887226,
+      "top10_share_of_stock_value": 0.6998404651060193,
+      "target_effective_date": "2026-08-31",
+      "target_available_date": "2026-09-07",
+      "target_top10_weight": 0.4637668824117027,
+      "top_holdings": [
+        {
+          "security_id": "tts-830046",
+          "ticker": "NVDA",
+          "share_of_stock_value": 0.15908524701227417,
+          "last_known_target_weight": 0.0852548790336884
+        },
+        {
+          "security_id": "tts-831814",
+          "ticker": "AAPL|AAPL*",
+          "share_of_stock_value": 0.13659926928168772,
+          "last_known_target_weight": 0.0742578411273903
+        },
+        {
+          "security_id": "tts-829802",
+          "ticker": "MSFT",
+          "share_of_stock_value": 0.08212480580582228,
+          "last_known_target_weight": 0.0601323008897133
+        },
+        {
+          "security_id": "tts-827705",
+          "ticker": "AMZN",
+          "share_of_stock_value": 0.052893567308869,
+          "last_known_target_weight": 0.0445899760707204
+        },
+        {
+          "security_id": "tts-1947579",
+          "ticker": "GGQ7|GOOG",
+          "share_of_stock_value": 0.04932637492767785,
+          "last_known_target_weight": 0.0292010968901181
+        },
+        {
+          "security_id": "tts-3685519",
+          "ticker": "AVGO",
+          "share_of_stock_value": 0.04871699412634932,
+          "last_known_target_weight": 0.0280183495660462
+        },
+        {
+          "security_id": "tts-71625495",
+          "ticker": "GOOG|GOOGL",
+          "share_of_stock_value": 0.04772807884446013,
+          "last_known_target_weight": 0.0315365455357217
+        },
+        {
+          "security_id": "tts-222568848",
+          "ticker": "FB|FB*|META",
+          "share_of_stock_value": 0.04441416839231201,
+          "last_known_target_weight": 0.0270418042393402
+        },
+        {
+          "security_id": "tts-17914799",
+          "ticker": "MU",
+          "share_of_stock_value": 0.04301579281930812,
+          "last_known_target_weight": 0.0476321589499856
+        },
+        {
+          "security_id": "tts-80383707",
+          "ticker": "AMD",
+          "share_of_stock_value": 0.0359361665872587,
+          "last_known_target_weight": 0.0338136104773928
+        }
+      ],
+      "purchases": 12813,
+      "discretionary_sales": 760,
+      "dividend_records": 3124,
+      "fractional_purchases": 12813,
+      "purchases_below_eur10": 4743,
+      "median_purchase_eur": 15.953298762255107,
+      "total_purchase_outlay_eur": 619141.5558540893,
+      "discretionary_sale_gross_eur": 375749.48247348197,
+      "mean_cash_share": 0.012297956755674083,
+      "peak_cash_share": 0.19537453976964292,
+      "money_weighted_annual_return": 0.1785001512390464,
+      "mean_outside_weight": 0.0010391722306509043,
+      "mean_unknown_weight": 0.006159992245269725
+    },
+    {
+      "key": "weekly_annual",
+      "as_of": "2026-09-29",
+      "stock_position_count": 107,
+      "total_stock_value_eur": 1363455.3610656909,
+      "top10_share_of_stock_value": 0.7000241417769223,
+      "target_effective_date": "2026-08-31",
+      "target_available_date": "2026-09-07",
+      "target_top10_weight": 0.4637668824117027,
+      "top_holdings": [
+        {
+          "security_id": "tts-830046",
+          "ticker": "NVDA",
+          "share_of_stock_value": 0.15678925118935433,
+          "last_known_target_weight": 0.0852548790336884
+        },
+        {
+          "security_id": "tts-831814",
+          "ticker": "AAPL|AAPL*",
+          "share_of_stock_value": 0.14232264006741174,
+          "last_known_target_weight": 0.0742578411273903
+        },
+        {
+          "security_id": "tts-829802",
+          "ticker": "MSFT",
+          "share_of_stock_value": 0.0823390102410626,
+          "last_known_target_weight": 0.0601323008897133
+        },
+        {
+          "security_id": "tts-827705",
+          "ticker": "AMZN",
+          "share_of_stock_value": 0.053393496521137576,
+          "last_known_target_weight": 0.0445899760707204
+        },
+        {
+          "security_id": "tts-1947579",
+          "ticker": "GGQ7|GOOG",
+          "share_of_stock_value": 0.04961915153060471,
+          "last_known_target_weight": 0.0292010968901181
+        },
+        {
+          "security_id": "tts-3685519",
+          "ticker": "AVGO",
+          "share_of_stock_value": 0.047456159079355596,
+          "last_known_target_weight": 0.0280183495660462
+        },
+        {
+          "security_id": "tts-71625495",
+          "ticker": "GOOG|GOOGL",
+          "share_of_stock_value": 0.047317559666700294,
+          "last_known_target_weight": 0.0315365455357217
+        },
+        {
+          "security_id": "tts-222568848",
+          "ticker": "FB|FB*|META",
+          "share_of_stock_value": 0.04436569670452594,
+          "last_known_target_weight": 0.0270418042393402
+        },
+        {
+          "security_id": "tts-17914799",
+          "ticker": "MU",
+          "share_of_stock_value": 0.041606512578828705,
+          "last_known_target_weight": 0.0476321589499856
+        },
+        {
+          "security_id": "tts-80383707",
+          "ticker": "AMD",
+          "share_of_stock_value": 0.034814664197940756,
+          "last_known_target_weight": 0.0338136104773928
+        }
+      ],
+      "purchases": 16739,
+      "discretionary_sales": 613,
+      "dividend_records": 3152,
+      "fractional_purchases": 16739,
+      "purchases_below_eur10": 8102,
+      "median_purchase_eur": 10.55387649413982,
+      "total_purchase_outlay_eur": 507644.8577878544,
+      "discretionary_sale_gross_eur": 264375.71245670604,
+      "mean_cash_share": 0.0094632337118388,
+      "peak_cash_share": 0.15878214562991508,
+      "money_weighted_annual_return": 0.17895138058496263,
+      "mean_outside_weight": 0.001730734742518571,
+      "mean_unknown_weight": 0.006113414321807586
+    }
+  ],
+  "limitations": [
+    "Gross investment profit is an accounting reconstruction of each actual modeled path. It is not a counterfactual return with all taxes removed.",
+    "Concentration uses September 29 holdings and available marks. Target weights are dated August 31. Their difference is not contemporaneous ETF tracking error.",
+    "Top ten counts share classes, not consolidated companies. The stock-value denominator excludes cash. The target denominator includes any target cash weight.",
+    "Trade counts exclude corporate-action and final-liquidation sales from discretionary sales. No minimum commission or value for investor time is modeled.",
+    "The marked after-tax unit curve is not an investable index. Its annualized return differs from the investor money-weighted return.",
+    "One retrospectively selected 16-year market path supplies no confidence interval, out-of-sample validation, or probability of future outperformance."
+  ]
+}

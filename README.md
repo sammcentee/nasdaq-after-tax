@@ -6,7 +6,7 @@
 
 Starts at €1,000/month · Annual Irish CPI reviews · 16 years · €210,936.48 contributed
 
-[Read the report](historical/results/latest/report.pdf) · [Compare strategies](historical/results/latest/comparison.csv) · [Inspect marginal effects](historical/results/latest/marginal_effects.csv)
+[Read the report](historical/results/latest/report.pdf) · [Accuracy assessment](docs/ACCURACY_ASSESSMENT.md) · [Compare strategies](historical/results/latest/comparison.csv) · [Inspect marginal effects](historical/results/latest/marginal_effects.csv)
 
 <sub>Python · Reproducible historical simulation</sub>
 
@@ -16,13 +16,25 @@ Starts at €1,000/month · Annual Irish CPI reviews · 16 years · €210,936.4
 
 This project models **recreating a Nasdaq-100 ETF in our own brokerage account by buying the underlying company shares directly**. We aim to hold the full basket of underlying company shares in the available target proportions, and take responsibility for buying, rebalancing, reinvesting dividends and managing sales ourselves. The comparison asks what an Irish investor keeps after tax versus simply buying an accumulating ETF.
 
-**How we keep the portfolio close to the index:** use historical membership and target weights available at each date. New contributions, after-tax dividends and sale proceeds buy eligible current members below their target weights. New members become purchase targets once their weights are known; stocks that leave stop receiving new purchases. Each strategy below controls when holdings are sold, including for tax losses and the annual CGT exemption.
+**How we keep the portfolio close to the index:** use historical membership and target weights with recorded availability dates. Some dates rely on assumed publication lags. New contributions, after-tax dividends and sale proceeds buy eligible current members below their target weights. New members become purchase targets once their weights are known; stocks that leave stop receiving new purchases. Each strategy below controls when holdings are sold, including for tax losses and the annual CGT exemption.
 
 This is an approximate, self-managed replica. We allow holdings to drift instead of automatically selling every overweight stock to restore exact weights. Retained former members, purchase restrictions and missing data can leave differences or cash, so the model does not claim to own every constituent at every date.
 
 **Results and transaction ledgers are hypothetical historical simulations.**
 
 **Research only; not tax, legal or investment advice.** Read the [legal notice](#legal-notice) before relying on any material.
+
+## How accurate and realistic are these results?
+
+**The calculations reproduce, but the study does not establish an executable Nasdaq-100 replica or a reliable forecast.** The [full assessment](docs/ACCURACY_ASSESSMENT.md) explains the evidence and its limits. Pages 5–8 of the [report](historical/results/latest/report.pdf) present the main findings.
+
+- **Arithmetic:** all 14 stock cases and the ETF reproduce. Ninety CSV/JSON outputs match after parsing. The 122 existing checks pass.
+- **Different investment exposure:** the weekly strategy holds 70.00% of stock value in its ten largest share classes before final sale. The last known targets assign 46.38%. Those dates differ. This measures target drift, not contemporaneous ETF tracking error.
+- **The ETF gap does not isolate tax benefits:** €201,890 of the €247,696 gap already exists in the direct-share baseline. The extra sale rules add €45,806 on this path.
+- **Rank depends on assumptions:** an extra 25 basis points per side reverses the order of the two monthly strategies. The weekly strategy remains highest among the four stock cases in these cost stresses.
+- **Realism remains limited:** same-close decisions and execution, assumed publication dates, incomplete dividends, provisional corporate-action tax treatment, and historical broker access need further evidence.
+
+No overall accuracy percentage or confidence interval is justified. Small known omissions do not explain the whole gap. They also do not bound the unknown error. The assessment preserves the published balances and adds reproducible controls, including an independent ETF cash-management comparison.
 
 ## What each strategy actually does
 
@@ -102,7 +114,7 @@ The exemption-on/off sensitivities illustrate the feedback. With the exemption a
 | **December sales, where enabled** | Sell the oldest shares first, including partial holdings, to use existing losses and then remaining **€1,270 annual exemption** capacity. Immediate repurchases of current stocks require every selected lot to be non-losing and incur costs on both trades. |
 | **Final liquidation** | Sell all remaining holdings using required terminal quotes and settle remaining modelled taxes and costs. |
 
-Decisions use the information available at the review; they do not anticipate later losses, recoveries or index changes.
+The model uses recorded availability dates and does not anticipate later losses or recoveries. Some source dates rely on assumed publication lags. These checks do not establish execution at the same closing price that the model uses for its decisions.
 
 ## Previously weak rules, tested again
 
@@ -124,7 +136,13 @@ These observations explain the recorded differences, not a universal claim that 
 
 | Artifact | Contents |
 |:---|:---|
-| [Current report](historical/results/latest/report.pdf) | Four-page visual brief: results, marginal gains, trading rules and assumptions. |
+| [Current report](historical/results/latest/report.pdf) | Eight-page brief: results, rules, accuracy assessment, sensitivity checks, and sources. |
+| [Full accuracy assessment](docs/ACCURACY_ASSESSMENT.md) | Evidence, quantified limits, tax-source review, and conclusions the study can support. |
+| [Arithmetic and exposure audit](historical/results/latest/accuracy_audit.json) | Independent ledger checks, sequential wealth differences, concentration, and trade counts. |
+| [Data accuracy evidence](historical/results/latest/accuracy_data_audit.json) | Source age, coverage, provisional marks, verified dividend omissions, and fee mismatch. |
+| [Cost and tax sensitivities](historical/results/latest/accuracy_sensitivities.csv) | Complete cost replays and separate ETF tax controls. These are diagnostic scenarios. |
+| [Independent ETF funding control](historical/results/latest/accuracy_etf_funding.json) | Independent lot arithmetic and a contribution-first tax-payment policy. |
+| [Full replay verification](historical/results/latest/accuracy_replay.json) | Exact parsed-data agreement across 90 study outputs. |
 | [Contribution schedule](historical/results/latest/contribution_schedule.csv) | All 192 payments, annual reviews, CPI observations and publication dates. |
 | [Irish CPI inputs](historical/inflation/README.md) | Official source, funding formula, vintage limitations and provenance links. |
 | [Headline comparison](historical/results/latest/comparison.csv) | ETF, baseline and three selected stock strategies. |
@@ -161,6 +179,13 @@ python historical/checks/independent_policy_checks.py
 python historical/checks/independent_checks.py
 python historical/checks/audit_ledgers.py
 python historical/checks/check_attribution.py
+
+# Rebuild the accuracy evidence. Sensitivity replays take longer.
+python historical/checks/assess_accuracy.py
+python historical/checks/accuracy_data_checks.py
+python historical/checks/accuracy_etf_funding.py
+python historical/checks/accuracy_sensitivities.py --workers 3
+python historical/run_tax_optimization_report.py
 ```
 
 <details>
