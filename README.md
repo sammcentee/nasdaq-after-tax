@@ -16,13 +16,15 @@ Nasdaq After Tax asks what an Irish investor keeps after tax from two approaches
 
 New cash buys eligible shares below their target weights. Holdings can drift from those weights. The portfolios are approximate replicas of the index.
 
+The ETF is **[iShares NASDAQ 100 UCITS ETF USD (Acc)](https://www.ishares.com/uk/individual/en/products/253741/ishares-nasdaq-100-ucits-etf)**, ISIN **IE00B53SZB19**. It is based in Ireland and reinvests dividends. The same share class trades as **CNDX** in London (USD) and **SXRV** on Xetra (EUR). The study uses the issuer's daily net asset value (NAV), converted to euros with ECB exchange rates.
+
 ## Results
 
 The study runs from **30 September 2010 to 30 September 2026**. Each strategy receives **192 monthly contributions, for a total of €210,936.48**. All assets sell at the end. The figures below show final cash in nominal euros after the model's taxes and costs.
 
 | Strategy | Final cash |
 |:---|---:|
-| Hold the accumulating ETF | **€754,335** |
+| Hold iShares NASDAQ 100 UCITS ETF (Acc) | **€754,335** |
 | Hold direct shares and retain departed stocks | **€951,188** |
 | Monthly loss reviews | **€981,304** |
 | Monthly loss reviews; December gains, departed stocks first | **€993,051** |
