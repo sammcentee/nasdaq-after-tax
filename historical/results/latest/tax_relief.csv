@@ -1,4 +1,4 @@
 key,label,exemption_used_before_final_eur,exemption_used_total_eur,exemption_fully_used_before_final_years,nominal_cgt_sheltered_by_exemption_eur,tlh_realised_net_loss_eur,terminal_loss_carry_eur
-monthly_tlh,Monthly loss harvesting,0.0,1270.0,0,419.1,28285.009161354024,0.0
-monthly_hybrid,"Monthly losses + annual gains, departed first",17529.878174916266,18799.878174916266,9,6203.959797722368,29927.272774104484,0.0
-weekly_annual,Weekly losses + annual gain harvesting,17346.20729132212,18616.20729132212,5,6143.3484061363,29347.97749473909,0.0
+monthly_tlh,Monthly loss harvesting,0.0,1270.0,0,419.1,28284.04668749111,0.0
+monthly_hybrid,"Monthly losses + annual gains, departed first",17529.850654991278,18799.850654991278,9,6203.950716147122,29926.413356881578,0.0
+weekly_annual,Weekly losses + annual gain harvesting,17345.66681342666,18615.66681342666,5,6143.170048430798,29348.009327722986,0.0

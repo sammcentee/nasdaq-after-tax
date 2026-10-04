@@ -491,9 +491,9 @@
   },
   "code_sha256": {
     "run_tax_optimization_study.py": "bc08fd5bcef9fe4c26e49f3700c3a29a5658500ff9ac903e983b37a7f1851094",
-    "study_inputs.py": "6a88c8d47d57d3bc86164137dfb1c13d5934cc8cd7ec0e74955fafd090b60007",
-    "model/direct_stock_backtest.py": "9575c8d7669d4d883f1a77968448a476af7a4a7d8fef413164f5124fb670baf0",
-    "model/etf_backtest.py": "5cf2473c2632f992d82262eef1e8b33e9443f31900885ab845df56bb35752f61",
+    "study_inputs.py": "32d9e92051e3ff302267b68901e3197101e04e0b2c83b305a73c54b0d9b35d9d",
+    "model/direct_stock_backtest.py": "3ec2ae791d9055e9eebe55f5e03f6843a3b80685cb55b68d6dee0c65c82f6173",
+    "model/etf_backtest.py": "529407a003e105162edf1dfd5ee35e468f14244b7ff60f1df003b9faade8e78a",
     "tax/irish_tax.py": "a26243d442c6fb79e877537df64458a1e865edc3f87bebe7774392a2b7fcc294",
     "contributions.py": "8dd02541358362f602dac131280a002c5b063dba7310ae5b1f4043169bb32728"
   },

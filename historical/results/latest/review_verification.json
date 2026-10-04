@@ -1,0 +1,118 @@
+{
+  "review_date": "2026-10-04",
+  "previous_revision": "bb5862d87d2be39165ae4a1a397f49e4918fb1ea",
+  "conclusion": "The completed checks pass under the recorded model assumptions. They do not certify all source data, Irish tax classifications or strategy rankings.",
+  "test_counts": {
+    "model": 97,
+    "tax": 11,
+    "contributions": 6,
+    "verified_dividends": 8,
+    "input_repairs": 5,
+    "providers": 14,
+    "audit": 11,
+    "independent_economic_cases": 15,
+    "independent_policy_cases": 6,
+    "total": 173
+  },
+  "verification": {
+    "fresh_replay_files": 93,
+    "fresh_replay_all_match": true,
+    "daily_position_cases": 14,
+    "daily_observations": 56350,
+    "daily_positions_all_passed": true
+  },
+  "fixes": [
+    "Remove the false 2011 Expedia cash dividend; preserve the reverse split and TRIP stock entitlement.",
+    "Reject a held 2019 EchoStar distribution while its price and tax basis remain unresolved. No current study case holds it on that date.",
+    "Process same-day corporate actions before dividend entitlement, then payment.",
+    "Reject corporate events deferred across tax years.",
+    "Schedule ETF deemed disposal at every eight-year anniversary, including year 24 and later."
+  ],
+  "headline_stock_changes": [
+    {
+      "key": "baseline",
+      "previous_final_cash_eur": 951256.195514393,
+      "current_final_cash_eur": 951187.7141257017,
+      "change_eur": -68.48138869134709
+    },
+    {
+      "key": "monthly_tlh",
+      "previous_final_cash_eur": 981373.4964677965,
+      "current_final_cash_eur": 981303.9327817028,
+      "change_eur": -69.56368609366473
+    },
+    {
+      "key": "monthly_hybrid",
+      "previous_final_cash_eur": 993123.1253538546,
+      "current_final_cash_eur": 993050.74696199,
+      "change_eur": -72.37839186459314
+    },
+    {
+      "key": "weekly_annual",
+      "previous_final_cash_eur": 950304.0361326155,
+      "current_final_cash_eur": 950234.1411274516,
+      "change_eur": -69.89500516396947
+    }
+  ],
+  "etf_final_cash_unchanged": true,
+  "diagnostic_threshold_sensitivity": {
+    "case": "monthly_gains",
+    "reference_commit": "bb5862d",
+    "reference_final_cash_eur": 955859.1838715338,
+    "old_engine_new_inputs_final_cash_eur": 909529.9397524593,
+    "new_engine_new_inputs_final_cash_eur": 909529.9397524593,
+    "new_engine_restored_expe_cash_only_final_cash_eur": 955859.1838715338,
+    "change_eur": -46329.244119074545,
+    "summaries_exact_between_engines": true,
+    "engine_summary_fields_matched_to_saved": 43,
+    "daily_rows_exact_between_engines": 4025,
+    "daily_columns_compared": 26,
+    "saved_daily_max_value_parse_residual_eur": 2.3283064365386963e-10,
+    "transactions_each": 96394,
+    "transaction_row_multisets_exact": true,
+    "prepared_membership_sha256": "5dd4b1d2580066c15acec38317f6ee2f7b2e5786cc8232eb73385a913341156f",
+    "matches_main_prepared_membership": true,
+    "old_engine_sha256": "9575c8d7669d4d883f1a77968448a476af7a4a7d8fef413164f5124fb670baf0",
+    "new_engine_sha256": "3ec2ae791d9055e9eebe55f5e03f6843a3b80685cb55b68d6dee0c65c82f6173",
+    "first_changed_buy": {
+      "signal_date": "2011-12-30",
+      "security_id": "tts-828340",
+      "ticker": "CMCSA",
+      "old_cash_budget_eur": 1.02868232009956,
+      "new_candidate_cash_budget_eur": 0.9169538220015738,
+      "minimum_order_eur": 1.0,
+      "old_fill_date": "2012-01-03",
+      "new_order_omitted": true,
+      "next_effect": "Old run skips January gain review for recent_class_purchase. New run sells on 2012-02-01."
+    },
+    "first_input_effect": {
+      "date": "2011-12-21",
+      "security_id": "tts-828861",
+      "ticker": "EXPE",
+      "removed_gross_dividend_eur": 12.6377644403885,
+      "removed_net_dividend_eur": 6.02189475584511
+    },
+    "interpretation": "The cash correction crosses a real minimum-order cutoff and changes later purchase restrictions, sales and exposure. This is path sensitivity, not an engine-phase or floating-point defect."
+  },
+  "remaining_limits": [
+    "Market data, historical weights, assumed publication dates and some corporate-action tax classifications remain provisional.",
+    "Frozen tax rates and settlement dates are comparison assumptions, not a full historical tax reconstruction.",
+    "Fractional broker access, spreads and actual execution are not established for the full period.",
+    "Stock portfolios differ from ETF exposure. Their wealth gap is not pure tax savings.",
+    "Small input changes can alter later trades. Selected periods and policies reuse the historical record and do not establish stable or optimal rankings.",
+    "Twelve robustness stock cases remain explicitly unavailable because required terminal quotes are missing."
+  ],
+  "evidence_sha256": {
+    "results/latest/study_manifest.json": "0f32de55cba13ed20740025d18db44e6c5e4dd0384d57ff3e222af41ae1bf81e",
+    "results/latest/accuracy_replay.json": "a54b074f334d4101fb7f0b9ab7549844bf155a22bbf4dceab30d62f4cb125e67",
+    "results/latest/daily_position_audit.json": "d35f63837ae309f90660031b78d6e5b3b4e23d2ac9b2d1245b12d48d5c0c1315",
+    "results/latest/independent_ledger_audit.json": "c4876184418f847d8eab0db057aa48c1ceda12583ed18a59b863d1a64ad17c25",
+    "results/latest/attribution_audit.json": "c48545fe4098574265d7cb4052ba3bdd4668cdf7fcde5016ea2c5cd9b0c7b6d6",
+    "results/latest/accuracy_audit.json": "b0c2084cfba3a9e1b6af15c87e1228f7c344ab7e4ce0485f8bfcecee5f73201b",
+    "results/latest/accuracy_data_audit.json": "16806277ea1f700fb3d2dc8c65ef560f73f2a1c6dc9d6cc6a69432453c0c2b19",
+    "results/latest/accuracy_etf_funding.json": "0e42c62e6c51a18e71d1a59a1acff4e62aa0d4c4af3d701394e11c4cfdb8c8f7",
+    "results/latest/accuracy_sensitivities.json": "3c95ff0cd76666cffd79c6c84517c033ce9ebff0a8f6d484741ab162db50344a",
+    "results/latest/robustness.json": "b21d150c00b46e5034dd82fb0d834f62a26a6197238f815cde83517bebae2626",
+    "results/latest/execution_timing.json": "905434d0c412df82bd77cfa5ab28707eeb076d69dfd5955f4cc1b351eeb589e7"
+  }
+}

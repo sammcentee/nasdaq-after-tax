@@ -2,7 +2,7 @@
   "classification": "PROVISIONAL_CONSTITUENT_RECONSTRUCTION",
   "price_rows": 986650,
   "securities": 350,
-  "events": 340,
+  "events": 341,
   "missing_action_quotes": 0,
   "verified_dividend_schedules": 42,
   "issuer_confirmed_dividend_payments": 41,
@@ -10,6 +10,14 @@
   "dividend_ex_date_rule_sources": [
     "https://www.sec.gov/files/rules/sro/nasdaq/2017/34-81446.pdf",
     "https://listingcenter.nasdaq.com/assets/rulebook/nasdaq/filings/SR-NASDAQ-2016-183_Approval.pdf"
+  ],
+  "known_unresolved_corporate_actions": [
+    {
+      "security_id": "tts-12361625",
+      "date": "2019-09-11",
+      "source": "https://nasdaqtrader.com/TraderNews.aspx?id=ECA2019-165",
+      "issue": "DISH share distribution, not $37.03 cash. Price units and Irish tax basis remain unresolved; held positions must fail."
+    }
   ],
   "input_sha256": {
     "prices/best_effort/prices_usd.csv.gz": "bbe52353cde0596ff2dab1d996c9e94ec40c8cf89c18c16596c04e73daa2540d",

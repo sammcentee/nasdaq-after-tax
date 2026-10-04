@@ -239,6 +239,17 @@ def prepare(audit_dir=None):
                     source=mark["source"], quality=mark["quality"], tradable=False))
     p = pd.concat([p, pd.DataFrame(provisional_rows)], ignore_index=True)
     p["tradable"] = p.tradable.astype(bool)
+    # Expedia shareholders received TRIP shares, not this vendor cash value.
+    # The existing split and spinoff events already award those shares.
+    noncash = p.security_id.eq("tts-828861") & p.date.eq(pd.Timestamp("2011-12-21"))
+    if not (np.isclose(p.loc[noncash, "dividend_usd"], 15.125, rtol=0, atol=1e-8)
+            | p.loc[noncash, "dividend_usd"].eq(0)).all():
+        raise ValueError("Changed Expedia distribution requires primary-source review")
+    removed_noncash = [dict(security_id="tts-828861", date="2011-12-21",
+        vendor_dividend_usd=float(p.loc[noncash, "dividend_usd"].sum()),
+        source="https://www.sec.gov/Archives/edgar/data/1324424/000119312511352242/d270711d8k.htm",
+        correction="Stock entitlement already represented by the reverse split and TRIP spinoff; no per-share cash dividend.")]
+    p.loc[noncash, "dividend_usd"] = 0.
     verified_dividends = load_verified_dividends(calendar)
     p, actions, verified_replacements = replace_verified_dividend_duplicates(p, actions, verified_dividends)
     # Replace the vendor distribution when the separately sourced corporate
@@ -265,6 +276,8 @@ def prepare(audit_dir=None):
         day = calendar[k]
         if a["date"] < calendar[0]:
             continue
+        if day.year != a["date"].year:
+            raise ValueError(f"Corporate action cannot move across tax years: {a['security_id']} {a['date'].date()}")
         old = a["security_id"]
         kind = a["event_type"]
         new = a.get("new_security_id")
@@ -318,6 +331,16 @@ def prepare(audit_dir=None):
         elif kind == "capital_distribution":
             row["remaining_value_eur_per_share"] = prices.get((old, day), np.nan)
         changes.append(row)
+    # The vendor reports $37.03 cash for this stock distribution. Its full
+    # price and tax-basis reconstruction remains unresolved. A held position
+    # must fail the engine's existing rollover check before it can use that cash.
+    unresolved_sats = dict(date=pd.Timestamp("2019-09-11"), security_id="tts-12361625",
+        event_type="spinoff", successor_id="tts-832145", ratio=.23523769,
+        tax_treatment="unresolved", tax_classification_quality="unresolved_price_and_tax_basis",
+        priority=15, source_date=pd.Timestamp("2019-09-11"),
+        source="https://nasdaqtrader.com/TraderNews.aspx?id=ECA2019-165",
+        notes="DISH share distribution, not $37.03 cash. Price units and Irish tax basis remain unresolved; held positions must fail.")
+    changes.append(unresolved_sats)
     changes.extend(verified_dividend_events(verified_dividends, fx))
     events = pd.DataFrame(changes).sort_values(["date", "priority"], kind="stable")
     # All known extinguished/converted classes become ineligible for purchases,
@@ -355,6 +378,8 @@ def prepare(audit_dir=None):
              "issuer_confirmed_dividend_payments": int(verified_dividends.payment_evidence.eq("issuer_report_confirms_payment").sum()),
              "derived_dividend_ex_dates": int(verified_dividends.ex_date.isna().sum()),
              "dividend_ex_date_rule_sources": DIVIDEND_RULE_SOURCES,
+             "known_unresolved_corporate_actions": [dict(security_id=unresolved_sats["security_id"],
+                 date="2019-09-11", source=unresolved_sats["source"], issue=unresolved_sats["notes"])],
              "input_sha256": {str(f.relative_to(ROOT)): hashlib.sha256(f.read_bytes()).hexdigest() for f in input_paths},
              "assumptions": [
                  "Current tax and broker fee scenario replayed on historical market data",
@@ -370,6 +395,7 @@ def prepare(audit_dir=None):
     (out / "input_audit.json").write_text(json.dumps(audit, indent=2))
     (out / "provisional_valuation_marks.json").write_text(json.dumps(provisional_marks, indent=2))
     (out / "replaced_vendor_dividends.json").write_text(json.dumps(replaced_dividends, indent=2))
+    (out / "removed_noncash_dividends.json").write_text(json.dumps(removed_noncash, indent=2))
     verified_dividends.to_csv(out / "verified_dividends_prepared.csv", index=False)
     (out / "replaced_verified_dividends.json").write_text(json.dumps(verified_replacements, indent=2))
     return p, w, events, m, membership, out

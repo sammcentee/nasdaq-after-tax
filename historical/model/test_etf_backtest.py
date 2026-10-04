@@ -108,6 +108,19 @@ class ETFBacktestTests(unittest.TestCase):
                                +final.gross_proceeds-deposits.invested_cash.sum()
                                -summary["total_tax"], summary["final_cash"])
 
+    def test_deemed_disposal_continues_at_year_twenty_four(self):
+        prices = pd.Series([100., 200., 300., 400., 500.], index=pd.to_datetime(
+            ["2000-01-31", "2008-01-31", "2016-01-31", "2024-01-31", "2025-01-31"]))
+        summary, ledger, _ = replay(prices, start="2000-01-31", end="2025-01-31",
+                                    contribution_amounts=(1000., 0., 0., 0.))
+        disposals = ledger[ledger.event.eq("deemed_disposal")]
+        self.assertEqual(disposals.date.tolist(), list(prices.index[1:4]))
+        # Tax sales leave 8.1 units at year 8 and 7.074 units at year 16.
+        # Year 24 adds 38 tax per unit after the prior 76 credit per unit.
+        self.assertAlmostEqual(disposals.iloc[2].units, 7.074)
+        self.assertAlmostEqual(disposals.iloc[2].tax, 7.074 * (300. * .38 - 76.))
+        self.assertAlmostEqual(summary["final_cash"], 2957.71014)
+
     def test_invalid_amounts_fail_before_replay(self):
         for amounts in ((1000.0,) * 3, (1000.0,) * 5, (0.0, -1.0, 0.0, 0.0),
                         (0.0, float("nan"), 0.0, 0.0), (0.0, float("inf"), 0.0, 0.0),

@@ -230,8 +230,9 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
       same-class purchases for 29 days even where every sold lot was profitable.
       Hybrid reinvestment uses the underweight route for departed holdings and
       immediate replacement for known current targets, with the same lot guards.
-      gain_harvest_exemption_increments_eur sums increases at sale time; it is
-      NOT final annual exemption use or an estimate of tax alpha. The yearly
+      gain_harvest_exemption_increments_eur sums signed changes at sale time;
+      later losing fills can reduce it. It is not final annual exemption use
+      or an estimate of tax alpha. The yearly
       settlements and cgt_exemption_used_total_eur report actual modelled use.
     Cash dividends accumulate until a scheduled contribution date by default.
       Cash-merger and harvest proceeds can be reinvested on the disposal date.
@@ -247,6 +248,8 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
       cash_eur_per_share at each event. Entitlement fixes units before ex-date
       trades. The net receivable retains its ex-date EUR mark until payment.
       Cash and dividend tax post only on payment. Unpaid terminal claims fail.
+      Same-day corporate actions precede entitlement, which precedes payment.
+      Events deferred into another tax year fail instead of changing tax years.
     Compulsory cash receipts incur no market spread or FX conversion fee.
     rebalance_review_dates optionally trims known holdings above dated targets.
       Confirmed departures have a zero target. Unknown or unweighted holdings
@@ -345,7 +348,9 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                 raise DataIntegrityError("Duplicate dividend entitlement identifier")
             for row in entitlements.loc[entitlements.date.lt(start)].to_dict("records"):
                 prior_dividend_entitlements[row["dividend_id"]] = row["security_id"]
-        event_rows = e.loc[e.date.between(start, end)].sort_values("date", kind="stable").to_dict("records")
+        event_rows = e.loc[e.date.between(start, end)].to_dict("records")
+        event_rows.sort(key=lambda row: (row["date"],
+            {"dividend_entitlement": 1, "dividend_payment": 2}.get(row["event_type"], 0)))
 
     membership_rows = []
     if membership is not None:
@@ -971,6 +976,11 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         for update in membership_rows:
             if update["effective_date"] <= day and ("available_date" not in update or update["available_date"] < day):
                 member_state[update["security_id"]] = update["is_member"]
+        if event_index < len(event_rows) and event_rows[event_index]["date"].year < day.year:
+            event = event_rows[event_index]
+            raise DataIntegrityError(
+                f"Event deferred across tax-year boundary: {event['security_id']} "
+                f"{event['event_type']} dated {event['date'].date()}, next observation {day.date()}")
         if day.year != current_year:
             settle_year(day)
             current_year = day.year

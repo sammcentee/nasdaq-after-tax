@@ -1,0 +1,9 @@
+[
+  {
+    "security_id": "tts-828861",
+    "date": "2011-12-21",
+    "vendor_dividend_usd": 15.125,
+    "source": "https://www.sec.gov/Archives/edgar/data/1324424/000119312511352242/d270711d8k.htm",
+    "correction": "Stock entitlement already represented by the reverse split and TRIP spinoff; no per-share cash dividend."
+  }
+]

@@ -1026,6 +1026,36 @@ class NextSessionExecutionTests(unittest.TestCase):
 
 
 class DividendSettlementAndMandatoryFeesTests(unittest.TestCase):
+    def test_same_day_split_entitlement_and_payment_use_post_split_units(self):
+        days = ["2020-01-02", "2020-02-03", "2020-03-02"]
+        p = fixture(days, {"A": [100, 50, 50]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        events = [
+            dict(date=days[1], security_id="A", event_type="dividend_entitlement",
+                 dividend_id="d1", cash_eur_per_share=1),
+            dict(date=days[1], security_id="A", event_type="split", ratio=2),
+            dict(date=days[1], security_id="A", event_type="dividend_payment",
+                 dividend_id="d1", cash_eur_per_share=1),
+        ]
+        for order in ((0, 1, 2), (2, 1, 0), (1, 2, 0)):
+            with self.subTest(order=order):
+                r = run_backtest(p, w, config(), pd.DataFrame([events[i] for i in order]))
+                self.assertEqual(r.summary["total_gross_dividends"], 20)
+                self.assertEqual(r.transactions.query("event=='dividend_entitlement'").iloc[0].units, 20)
+                self.assertAlmostEqual(r.summary["final_cash"], 1000+20*(1-.5235))
+
+    def test_event_deferred_into_another_tax_year_fails(self):
+        days = ["2019-01-02", "2019-12-30", "2020-01-02"]
+        p = fixture(days, {"A": [100]*3})
+        w = weights("2019-01-01", "2019-01-01", A=1)
+        for kind in ("cash_merger", "mixed_merger", "capital_distribution", "cash_dividend",
+                     "contingent_cash", "dividend_payment", "dividend_entitlement", "split"):
+            with self.subTest(event_type=kind):
+                events = pd.DataFrame([dict(date="2019-12-31", security_id="A", event_type=kind,
+                    cash_eur_per_share=200, ratio=2)])
+                with self.assertRaisesRegex(DataIntegrityError, "deferred across tax-year boundary"):
+                    run_backtest(p, w, config(days[0], days[-1]), events)
+
     def test_pre_start_entitlement_has_zero_units_in_fresh_cohort(self):
         days = ["2020-02-03", "2020-03-02"]
         p = fixture(days, {"A": [100, 100]})

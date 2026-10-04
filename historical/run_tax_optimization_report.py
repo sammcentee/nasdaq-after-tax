@@ -146,6 +146,8 @@ def read_inputs():
             content = gzip.decompress(content)
         if hashlib.sha256(content).hexdigest() != expected:
             raise ValueError(f"Replay evidence is stale: {name}")
+    if hashlib.sha256((ROOT / "checks/verify_replay.py").read_bytes()).hexdigest() != replay["verification_code_sha256"]:
+        raise ValueError("Replay verification code changed; repeat the replay check")
     comparison = frames["comparison"].set_index("key")
     expected_gap = comparison.loc["weekly_annual", "final_cash"]-comparison.loc["etf", "final_cash"]
     if not np.isclose(expected_gap, audit["headline_decomposition"]["total_gap_eur"], rtol=0, atol=1e-6):
@@ -238,7 +240,8 @@ def corrections_and_limits(data):
          "ETF tax uses the same-day contribution first.\n"
          "Only the shortfall requires a sale of ETF units.\n"
          f"Effect versus the old rule: {money(fund['final_wealth_difference_eur'], True)}.\n"
-         "Compulsory corporate cash receipts have no trade fee."),
+         "Compulsory corporate cash receipts have no trade fee.\n"
+         "The Expedia spin-off no longer adds false cash."),
         (.05, .109, "03 / CDK AND LOGMEIN DIVIDENDS",
          f"The correction adds {len(dividends)} ordinary dividend schedules.\n"
          f"Issuers confirm {confirmed} payments. {unconfirmed} remains declaration-only.\n"
@@ -248,7 +251,7 @@ def corrections_and_limits(data):
          f"Top ten share classes / stock value: {diagnostic['top10_share_of_stock_value']:.1%} ({exposure_date}).\n"
          f"Last known targets: {diagnostic['target_top10_weight']:.1%} ({target_date}).\n"
          f"Mean weight-source age: {coverage['mean_snapshot_age_days']:.1f} days.\n"
-         f"Weekly wealth with +5 business days of weight lag: {money(delay_effect, True)}.\n"
+         f"Weekly wealth change with +5 business days of weight lag: {money(delay_effect, True)}.\n"
          "Release dates and some corporate actions stay provisional."),
         (.53, .322, "TAX AND EXECUTION ASSUMPTIONS",
          f"Frozen rates: {config['cgt_rate']:.0%} CGT, 38% fund tax, {dividend_rate:.2%} dividends.\n"

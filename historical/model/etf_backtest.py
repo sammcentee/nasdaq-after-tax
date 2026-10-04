@@ -76,7 +76,7 @@ def replay(prices: pd.Series, contribution=1000.0, tax_rate=.38,
         lot = FundLot(day, amount/price, price)
         lots.append(lot)
         # Map calendar anniversaries to the first available valuation day.
-        for years in (8, 16):
+        for years in range(8, prices.index[-1].year - day.year + 1, 8):
             anniversary = day + pd.DateOffset(years=years)
             k = prices.index.searchsorted(anniversary)
             if k < len(prices):

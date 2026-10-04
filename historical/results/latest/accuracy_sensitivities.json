@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-04T12:52:39.196870+00:00",
+  "generated_at_utc": "2026-10-04T13:12:50.526129+00:00",
   "classification": "DIAGNOSTIC_STRESS_SCENARIOS_NOT_CALIBRATED_ESTIMATES",
   "period": [
     "2010-09-30",
     "2026-09-30"
   ],
-  "study_manifest_sha256": "01af8553bc3c09c4731526c172e7579fa927c36643acc25383c9f3c926ddb882",
+  "study_manifest_sha256": "0f32de55cba13ed20740025d18db44e6c5e4dd0384d57ff3e222af41ae1bf81e",
   "input_sha256": {
     "prices/best_effort/prices_usd.csv.gz": "bbe52353cde0596ff2dab1d996c9e94ec40c8cf89c18c16596c04e73daa2540d",
     "prices/best_effort/actions.csv": "ed8e92aff14a2cdcf89d466a4d8258621ddb1fd70c02a7f3f6ea811a76d8bf8c",
@@ -28,13 +28,13 @@
   "code_sha256": {
     "checks/accuracy_sensitivities.py": "a92a8e24f797d89d061c5d519d3e76831cadcd1caae114f70b94b70b7e2b46c5",
     "run_tax_optimization_study.py": "bc08fd5bcef9fe4c26e49f3700c3a29a5658500ff9ac903e983b37a7f1851094",
-    "study_inputs.py": "6a88c8d47d57d3bc86164137dfb1c13d5934cc8cd7ec0e74955fafd090b60007",
-    "model/direct_stock_backtest.py": "9575c8d7669d4d883f1a77968448a476af7a4a7d8fef413164f5124fb670baf0",
-    "model/etf_backtest.py": "5cf2473c2632f992d82262eef1e8b33e9443f31900885ab845df56bb35752f61",
+    "study_inputs.py": "32d9e92051e3ff302267b68901e3197101e04e0b2c83b305a73c54b0d9b35d9d",
+    "model/direct_stock_backtest.py": "3ec2ae791d9055e9eebe55f5e03f6843a3b80685cb55b68d6dee0c65c82f6173",
+    "model/etf_backtest.py": "529407a003e105162edf1dfd5ee35e468f14244b7ff60f1df003b9faade8e78a",
     "tax/irish_tax.py": "a26243d442c6fb79e877537df64458a1e865edc3f87bebe7774392a2b7fcc294",
     "contributions.py": "8dd02541358362f602dac131280a002c5b063dba7310ae5b1f4043169bb32728"
   },
-  "results_sha256": "6556bbae3d7dbb46c20e6fab93dfced6b1716ef859f4ee7a5557b004a5672552",
+  "results_sha256": "4b5211a5943f545374e8e138e638d2f35a67233fdb76b771d6819b8f6fa4e834",
   "stock_replays": 12,
   "etf_replays": 4,
   "stock_identity_cases": [
@@ -44,7 +44,7 @@
     "weekly_annual"
   ],
   "identity_tolerance_eur": 1e-06,
-  "maximum_cash_reconciliation_error_eur": 9.313225746154785e-10,
+  "maximum_cash_reconciliation_error_eur": 6.984919309616089e-10,
   "dated_fund_rate_sources": [
     "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-27/27-01a-02.pdf",
     "https://www.revenue.ie/en/tax-professionals/ebrief/2026/no-0162026.aspx"

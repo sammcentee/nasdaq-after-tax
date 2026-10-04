@@ -1,0 +1,230 @@
+{
+  "scope": "Rebuild daily units, cash and dividend claims from saved transaction records.\n\nPrices and corporate-action terms share the study's prepared inputs. This checks\nledger consistency, not independent source accuracy or tax classifications.",
+  "study_manifest_sha256": "0f32de55cba13ed20740025d18db44e6c5e4dd0384d57ff3e222af41ae1bf81e",
+  "source_sha256": {
+    "prices/best_effort/prices_usd.csv.gz": "bbe52353cde0596ff2dab1d996c9e94ec40c8cf89c18c16596c04e73daa2540d",
+    "prices/best_effort/actions.csv": "ed8e92aff14a2cdcf89d466a4d8258621ddb1fd70c02a7f3f6ea811a76d8bf8c",
+    "prices/best_effort/split_events.csv": "16fe61e64ef4f1213aa96706a5431532de7edb0c93b07c6229d54f81f8772410",
+    "inputs/best_effort/best_effort_weights.csv": "15a4bc6576f0b5d585c67b5f7f65465871f96a42a3d21076743f3bc99e85100a",
+    "inputs/best_effort/membership.csv": "88242f41da24004352a4849ec02e740b71cdbf881661c76c6a489deec45df3d8",
+    "inputs/best_effort/metadata.csv": "b8eff52ac03d6dce0626e7279701324f55a8eb85a5401a1f0d50f60fd4359b2f",
+    "inputs/verified_dividends.csv": "e1a0c1753ef591cf560a2b49dc36d5b811a8e233122b6a317ff9e5770cc7a56f",
+    "inputs/verified_dividends_provenance.json": "29e7c7574b9f51b8282c529349d79b237341c7a3f795f0b5162da99135bd68d7",
+    "benchmark/issuer/cndx_nav_eur_2010-09-30_to_2026-09-30.csv": "56913cffa85a66512ef24321c9f1532886bbf0a97397a46904c6e055fec8eb44",
+    "inputs/corrected_membership/membership_alias_overlay.csv": "5dda1a620bd0ccc190781765cb9855a4b7fc87771b0d58aa05aca9d718ffe21b",
+    "benchmark/issuer/cndx_nav_eur.csv": "96b2f6124b453857e3b2244ff9f09c67837403cf5d011d0ec5a647ec1ecf6ae7",
+    "benchmark/indexes/NASDAQ100.csv": "bae89ee54c67155ed67810b063aa58c4b05d7d5274f654b36c479f3939a0850b",
+    "prices/best_effort/yf_GBPUSD=X.csv": "0c144031d8345b8064b85e61ef8a39f3c1be440be76c46851607c9ea84e03c89",
+    "inflation/irish_cpi.csv": "dcfc50b29e150bb1ab68075cdf7a67712e4cdd716839ef492fe91ba7d116c952",
+    "inflation/provenance.json": "ee540702be9f1e6fb32d40d4af075beb91684f4e9441c8bdd681d0b3c72a273f",
+    "results/latest/contribution_schedule.csv": "dfe2a2a1e4cc56af23710566fdc3a3a7585a344c70a99f737efe244309c6085d",
+    "run_tax_optimization_study.py": "bc08fd5bcef9fe4c26e49f3700c3a29a5658500ff9ac903e983b37a7f1851094",
+    "study_inputs.py": "32d9e92051e3ff302267b68901e3197101e04e0b2c83b305a73c54b0d9b35d9d",
+    "model/direct_stock_backtest.py": "3ec2ae791d9055e9eebe55f5e03f6843a3b80685cb55b68d6dee0c65c82f6173",
+    "model/etf_backtest.py": "529407a003e105162edf1dfd5ee35e468f14244b7ff60f1df003b9faade8e78a",
+    "tax/irish_tax.py": "a26243d442c6fb79e877537df64458a1e865edc3f87bebe7774392a2b7fcc294",
+    "contributions.py": "8dd02541358362f602dac131280a002c5b063dba7310ae5b1f4043169bb32728",
+    "results/latest/study_manifest.json": "0f32de55cba13ed20740025d18db44e6c5e4dd0384d57ff3e222af41ae1bf81e",
+    "results/latest/policy_definitions.json": "b9a574b7b5a8f87f07816793ec5b83deff03ebf2dee76ddf7339050fe1e022aa",
+    "checks/check_daily_positions.py": "62280af0ff8425aa3d98e38219ee2f33dea3878f49c799f42743de498127fd12",
+    "results/latest/ledgers/baseline_transactions.csv.gz": "e251882689660e6ffbe9855670680cebccb8b8c361daf1dd7c4eb6b587bfae94",
+    "results/latest/ledgers/baseline_daily.csv.gz": "b5ba338f54709da3081ac7206bf165dd2fb9c74d781b06a83d466985f8df4294",
+    "results/latest/ledgers/exits_transactions.csv.gz": "483fc0372ea3f82952fc3e07934818a9e695a34dd788ab1d38a8641c5c336b02",
+    "results/latest/ledgers/exits_daily.csv.gz": "206b7e2c288a69878119add8fbdca1c8278c830a1db393c0b3153f6a9929a4af",
+    "results/latest/ledgers/monthly_tlh_transactions.csv.gz": "c09bf63ef1f55533f39cff52efe64817f4f7101f46318828786a7fb70fcd38a1",
+    "results/latest/ledgers/monthly_tlh_daily.csv.gz": "93f98d15b88501b96f9b1529237debb424a0dc6c952574fda0af3092a8fa43d9",
+    "results/latest/ledgers/monthly_hybrid_transactions.csv.gz": "14dd0165eaea45f2a0f1b653f28692776b1cd64b8022b603bc9f0017ebaf02b8",
+    "results/latest/ledgers/monthly_hybrid_daily.csv.gz": "2eb88fa0f9ad17c45d9f8b57ff2fd6074dfe50963781c1e94ba57761b2ff3974",
+    "results/latest/ledgers/weekly_tlh_transactions.csv.gz": "cdd971b967ac3acf3237a47f3440a25b10ff102f4ac4a06175f22aa7f26ff9ff",
+    "results/latest/ledgers/weekly_tlh_daily.csv.gz": "7c3ea64648a7b699a7e8d32b71f12364590e9ecaeef67cb9abe66580f488098c",
+    "results/latest/ledgers/weekly_annual_transactions.csv.gz": "a88685c0afef5b3ecdb8030aab5a6cfdad1934e46d64fd2d041d108a7d1163c1",
+    "results/latest/ledgers/weekly_annual_daily.csv.gz": "b612cea475dc04fbf5a85fb9c4342f1ffc9806568f2b66d123d1ae3723d25b8f",
+    "results/latest/ledgers/annual_only_transactions.csv.gz": "f1241ca037e19383489a00c618d6ba2d47d53a42f0e78accc66120a0a7777747",
+    "results/latest/ledgers/annual_only_daily.csv.gz": "5bcd336fd0c7485fc6d305e715fda4128f1c84ad51132979ab3e090d5af8b16f",
+    "results/latest/ledgers/hybrid_only_transactions.csv.gz": "8e3268cd3f6b1204be55b9571273a747236fa809bc4414e7e145eb0410ff4e82",
+    "results/latest/ledgers/hybrid_only_daily.csv.gz": "2f74db5c40a52ce31a2956df4f1bd2982098ee46438436be6b035d06ef536ba2",
+    "results/latest/ledgers/weekly_no_exemption_transactions.csv.gz": "a944aef19d1876c402c1f83717ab3760ad556f5409007204d356b0290912d0fb",
+    "results/latest/ledgers/weekly_no_exemption_daily.csv.gz": "2c6a9e02baba05f48496b1d27fb8f48bca16b98619d1143c98f77d420c6376c9",
+    "results/latest/ledgers/hybrid_no_exemption_transactions.csv.gz": "e518f62adfeb8f1b2e1a840a34598c4390394fae81456a11984aa488124487d2",
+    "results/latest/ledgers/hybrid_no_exemption_daily.csv.gz": "2f5fcf308c2383c04da522101f303155b0e9afed5e452ceb23af6fea28e1c020",
+    "results/latest/ledgers/annual_monthly_control_transactions.csv.gz": "76464a6d6ede1ae449f5e27edc3b83ed4129faaae6d35ebf70f2e6a8297deb2e",
+    "results/latest/ledgers/annual_monthly_control_daily.csv.gz": "58f5fd9ac43297b6571c4ece95c204be3e02c672e0b6c144ac0ad970c299bf7c",
+    "results/latest/ledgers/any_loss_transactions.csv.gz": "0beb1ac7527d85284c2deabaf1d57d3c47ecaaa7ab6927554eabafe7ef4a61e3",
+    "results/latest/ledgers/any_loss_daily.csv.gz": "221a9cfe7d44a43d899ebd5cb4beb01b1532ff5b0a9e2dd2a3fbe3c363313a01",
+    "results/latest/ledgers/retain_gains_transactions.csv.gz": "1abf3ad973c98d6acac411e2a98817af5b64de754b85537d00fbaaedf05349f3",
+    "results/latest/ledgers/retain_gains_daily.csv.gz": "94302c79e7b7b5da434e0ba9c18944d8bc79d17f4761422e993bf6844457e31b",
+    "results/latest/ledgers/monthly_gains_transactions.csv.gz": "0dc976501e509122b2af78f1070b9a940298b1ee859608818bcd9306fd77f3a8",
+    "results/latest/ledgers/monthly_gains_daily.csv.gz": "8383a4df623319ac98c815d65017b7c815d9cc651ac508510d25cda71de84177"
+  },
+  "all_passed": true,
+  "cases": [
+    {
+      "key": "baseline",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 782244,
+      "maximum_residuals": {
+        "units": 7.958078640513122e-13,
+        "cash_eur": 1.1641532182693481e-10,
+        "value_eur": 4.656612873077393e-10,
+        "dividend_receivable_eur": 1.1102230246251565e-16
+      }
+    },
+    {
+      "key": "exits",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 783945,
+      "maximum_residuals": {
+        "units": 7.958078640513122e-13,
+        "cash_eur": 2.9558577807620168e-12,
+        "value_eur": 9.313225746154785e-10,
+        "dividend_receivable_eur": 1.1102230246251565e-16
+      }
+    },
+    {
+      "key": "monthly_tlh",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 783977,
+      "maximum_residuals": {
+        "units": 2.8421709430404007e-13,
+        "cash_eur": 7.73070496506989e-12,
+        "value_eur": 4.656612873077393e-10,
+        "dividend_receivable_eur": 0.0
+      }
+    },
+    {
+      "key": "monthly_hybrid",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 784010,
+      "maximum_residuals": {
+        "units": 9.094947017729282e-13,
+        "cash_eur": 4.575895218295045e-12,
+        "value_eur": 9.313225746154785e-10,
+        "dividend_receivable_eur": 1.1102230246251565e-16
+      }
+    },
+    {
+      "key": "weekly_tlh",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 784384,
+      "maximum_residuals": {
+        "units": 6.821210263296962e-13,
+        "cash_eur": 4.604316927725449e-12,
+        "value_eur": 9.313225746154785e-10,
+        "dividend_receivable_eur": 5.551115123125783e-17
+      }
+    },
+    {
+      "key": "weekly_annual",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 787182,
+      "maximum_residuals": {
+        "units": 2.5579538487363607e-13,
+        "cash_eur": 3.637978807091713e-12,
+        "value_eur": 6.984919309616089e-10,
+        "dividend_receivable_eur": 1.1102230246251565e-16
+      }
+    },
+    {
+      "key": "annual_only",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 786577,
+      "maximum_residuals": {
+        "units": 3.126388037344441e-13,
+        "cash_eur": 3.922195901395753e-12,
+        "value_eur": 6.984919309616089e-10,
+        "dividend_receivable_eur": 5.551115123125783e-17
+      }
+    },
+    {
+      "key": "hybrid_only",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 786577,
+      "maximum_residuals": {
+        "units": 2.2737367544323206e-13,
+        "cash_eur": 1.1641532182693481e-10,
+        "value_eur": 4.656612873077393e-10,
+        "dividend_receivable_eur": 0.0
+      }
+    },
+    {
+      "key": "weekly_no_exemption",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 784505,
+      "maximum_residuals": {
+        "units": 2.8421709430404007e-13,
+        "cash_eur": 1.1641532182693481e-10,
+        "value_eur": 6.984919309616089e-10,
+        "dividend_receivable_eur": 0.0
+      }
+    },
+    {
+      "key": "hybrid_no_exemption",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 784017,
+      "maximum_residuals": {
+        "units": 4.547473508864641e-13,
+        "cash_eur": 2.3283064365386963e-10,
+        "value_eur": 4.656612873077393e-10,
+        "dividend_receivable_eur": 0.0
+      }
+    },
+    {
+      "key": "annual_monthly_control",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 784010,
+      "maximum_residuals": {
+        "units": 2.2737367544323206e-13,
+        "cash_eur": 1.1641532182693481e-10,
+        "value_eur": 4.656612873077393e-10,
+        "dividend_receivable_eur": 0.0
+      }
+    },
+    {
+      "key": "any_loss",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 784010,
+      "maximum_residuals": {
+        "units": 4.547473508864641e-13,
+        "cash_eur": 1.1641532182693481e-10,
+        "value_eur": 4.656612873077393e-10,
+        "dividend_receivable_eur": 0.0
+      }
+    },
+    {
+      "key": "retain_gains",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 782277,
+      "maximum_residuals": {
+        "units": 3.410605131648481e-13,
+        "cash_eur": 2.0463630789890885e-12,
+        "value_eur": 6.984919309616089e-10,
+        "dividend_receivable_eur": 0.0
+      }
+    },
+    {
+      "key": "monthly_gains",
+      "status": "PASS",
+      "daily_rows": 4025,
+      "security_day_comparisons": 784008,
+      "maximum_residuals": {
+        "units": 6.821210263296962e-13,
+        "cash_eur": 1.1641532182693481e-10,
+        "value_eur": 6.984919309616089e-10,
+        "dividend_receivable_eur": 0.0
+      }
+    }
+  ]
+}

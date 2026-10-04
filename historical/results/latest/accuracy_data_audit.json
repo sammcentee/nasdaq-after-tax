@@ -43,21 +43,21 @@
     "baseline": {
       "daily_rows": 4025,
       "days_with_explicit_provisional_value": 2979,
-      "peak_provisional_weight": 0.0011111827972337621,
+      "peak_provisional_weight": 0.0011111512323329592,
       "peak_weight_date": "2017-02-02",
-      "provisional_value_eur_at_peak_weight": 170.41471547313816,
-      "maximum_provisional_value_eur": 272.278476135882,
-      "mean_provisional_weight": 0.0003753836786719788,
+      "provisional_value_eur_at_peak_weight": 170.3920985291375,
+      "maximum_provisional_value_eur": 272.2548206444402,
+      "mean_provisional_weight": 0.0003753749453176333,
       "known_dividend_examples": [
         {
           "security_id": "yahoo:CDK",
           "record_date": "2020-09-01",
           "payment_date": "2020-09-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.3171755837529098,
+          "units": 3.31673462452049,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.42498833068238506,
-          "recorded_gross_eur": 0.424988330682385,
+          "expected_gross_eur_at_payment_fx": 0.42493183607624996,
+          "recorded_gross_eur": 0.4249318360762499,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -65,10 +65,10 @@
           "record_date": "2020-12-01",
           "payment_date": "2020-12-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.3171755837529098,
+          "units": 3.31673462452049,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.40515946385712603,
-          "recorded_gross_eur": 0.405159463857126,
+          "expected_gross_eur_at_payment_fx": 0.40510560514459204,
+          "recorded_gross_eur": 0.405105605144592,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -76,10 +76,10 @@
           "record_date": "2021-03-08",
           "payment_date": "2021-03-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.3171755837529098,
+          "units": 3.31673462452049,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.42379383149896643,
-          "recorded_gross_eur": 0.4237938314989664,
+          "expected_gross_eur_at_payment_fx": 0.423737495680158,
+          "recorded_gross_eur": 0.423737495680158,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -87,10 +87,10 @@
           "record_date": "2021-06-21",
           "payment_date": "2021-06-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.3171755837529098,
+          "units": 3.31673462452049,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.41869432645820975,
-          "recorded_gross_eur": 0.4186943264582097,
+          "expected_gross_eur_at_payment_fx": 0.4186386685274937,
+          "recorded_gross_eur": 0.4186386685274937,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -98,14 +98,14 @@
           "record_date": "2018-08-08",
           "payment_date": "2018-08-24",
           "dividend_usd_per_share": 0.3,
-          "units": 0.7246098926927217,
+          "units": 0.7245102236722978,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.18759317208130522,
-          "recorded_gross_eur": 0.1875931720813052,
+          "expected_gross_eur_at_payment_fx": 0.18756736891757794,
+          "recorded_gross_eur": 0.1875673689175779,
           "source": "https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm"
         }
       ],
-      "five_examples_recorded_gross_eur": 1.8602291245779923,
+      "five_examples_recorded_gross_eur": 1.8599809743460716,
       "five_examples_verified_exactly_once": true,
       "verified_dividend_corpus": {
         "source_schedules": 42,
@@ -113,10 +113,10 @@
         "payment_rows": 42,
         "positive_entitlements": 42,
         "zero_entitlements": 0,
-        "recorded_gross_eur": 14.992732387171968,
-        "recorded_net_cash_eur": 7.14403698248744,
-        "recorded_tax_eur": 7.848695404684525,
-        "maximum_arithmetic_residual": 1.6653345369377348e-16,
+        "recorded_gross_eur": 14.990729872881031,
+        "recorded_net_cash_eur": 7.1430827844278095,
+        "recorded_tax_eur": 7.84764708845322,
+        "maximum_arithmetic_residual": 1.3877787807814457e-16,
         "all_schedules_checked_exactly_once": true,
         "payments": [
           {
@@ -127,10 +127,10 @@
             "payment_session": "2014-12-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.3263598180293098,
-            "recorded_net_cash_eur": 0.1555104532909661,
-            "recorded_tax_eur": 0.1708493647383437
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.3263164343219306,
+            "recorded_net_cash_eur": 0.1554897809543999,
+            "recorded_tax_eur": 0.1708266533675307
           },
           {
             "dividend_id": "yahoo:CDK:2015-03-27",
@@ -140,10 +140,10 @@
             "payment_session": "2015-03-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.3666737933404101,
-            "recorded_net_cash_eur": 0.1747200625267053,
-            "recorded_tax_eur": 0.1919537308137047
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.3666250506102236,
+            "recorded_net_cash_eur": 0.1746968366157715,
+            "recorded_tax_eur": 0.1919282139944521
           },
           {
             "dividend_id": "yahoo:CDK:2015-06-30",
@@ -153,10 +153,10 @@
             "payment_session": "2015-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.3557610778893101,
-            "recorded_net_cash_eur": 0.1695201536142562,
-            "recorded_tax_eur": 0.1862409242750539
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.355713785809687,
+            "recorded_net_cash_eur": 0.1694976189383158,
+            "recorded_tax_eur": 0.1862161668713711
           },
           {
             "dividend_id": "yahoo:CDK:2015-09-29",
@@ -166,10 +166,10 @@
             "payment_session": "2015-09-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.355284782265574,
-            "recorded_net_cash_eur": 0.169293198749546,
-            "recorded_tax_eur": 0.185991583516028
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.355237553500945,
+            "recorded_net_cash_eur": 0.1692706942432002,
+            "recorded_tax_eur": 0.1859668592577447
           },
           {
             "dividend_id": "yahoo:CDK:2015-12-30",
@@ -179,10 +179,10 @@
             "payment_session": "2015-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4098651874488768,
-            "recorded_net_cash_eur": 0.1953007618193898,
-            "recorded_tax_eur": 0.214564425629487
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4098107031944592,
+            "recorded_net_cash_eur": 0.1952748000721597,
+            "recorded_tax_eur": 0.2145359031222994
           },
           {
             "dividend_id": "yahoo:CDK:2016-03-29",
@@ -192,10 +192,10 @@
             "payment_session": "2016-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4000524422071135,
-            "recorded_net_cash_eur": 0.1906249887116895,
-            "recorded_tax_eur": 0.2094274534954239
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.3999992623818708,
+            "recorded_net_cash_eur": 0.1905996485249614,
+            "recorded_tax_eur": 0.2093996138569094
           },
           {
             "dividend_id": "yahoo:CDK:2016-06-30",
@@ -205,10 +205,10 @@
             "payment_session": "2016-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4033675948537586,
-            "recorded_net_cash_eur": 0.1922046589478159,
-            "recorded_tax_eur": 0.2111629359059426
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4033139743381968,
+            "recorded_net_cash_eur": 0.1921791087721507,
+            "recorded_tax_eur": 0.211134865566046
           },
           {
             "dividend_id": "yahoo:CDK:2016-09-30",
@@ -218,10 +218,10 @@
             "payment_session": "2016-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.401235286987405,
-            "recorded_net_cash_eur": 0.1911886142494984,
-            "recorded_tax_eur": 0.2100466727379066
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4011819499240804,
+            "recorded_net_cash_eur": 0.1911631991388243,
+            "recorded_tax_eur": 0.2100187507852561
           },
           {
             "dividend_id": "yahoo:CDK:2016-12-30",
@@ -231,10 +231,10 @@
             "payment_session": "2016-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4405697578269684,
-            "recorded_net_cash_eur": 0.2099314896045503,
-            "recorded_tax_eur": 0.230638268222418
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.440511191948457,
+            "recorded_net_cash_eur": 0.2099035829634397,
+            "recorded_tax_eur": 0.2306076089850173
           },
           {
             "dividend_id": "yahoo:CDK:2017-03-29",
@@ -244,10 +244,10 @@
             "payment_session": "2017-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4320846499119905,
-            "recorded_net_cash_eur": 0.2058883356830634,
-            "recorded_tax_eur": 0.226196314228927
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4320272119769898,
+            "recorded_net_cash_eur": 0.2058609665070356,
+            "recorded_tax_eur": 0.2261662454699541
           },
           {
             "dividend_id": "yahoo:CDK:2017-06-30",
@@ -257,10 +257,10 @@
             "payment_session": "2017-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4069440779227194,
-            "recorded_net_cash_eur": 0.1939088531301758,
-            "recorded_tax_eur": 0.2130352247925436
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4068899819776276,
+            "recorded_net_cash_eur": 0.1938830764123395,
+            "recorded_tax_eur": 0.2130069055652881
           },
           {
             "dividend_id": "yahoo:CDK:2017-09-29",
@@ -270,10 +270,10 @@
             "payment_session": "2017-09-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.3933631896708516,
-            "recorded_net_cash_eur": 0.1874375598781607,
-            "recorded_tax_eur": 0.2059256297926908
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.3933108990622299,
+            "recorded_net_cash_eur": 0.1874126434031525,
+            "recorded_tax_eur": 0.2058982556590773
           },
           {
             "dividend_id": "yahoo:CDK:2017-12-29",
@@ -283,10 +283,10 @@
             "payment_session": "2017-12-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4148889665329245,
-            "recorded_net_cash_eur": 0.1976945925529385,
-            "recorded_tax_eur": 0.217194373979986
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4148338144568276,
+            "recorded_net_cash_eur": 0.1976683125886783,
+            "recorded_tax_eur": 0.2171655018681493
           },
           {
             "dividend_id": "yahoo:CDK:2018-03-29",
@@ -296,10 +296,10 @@
             "payment_session": "2018-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4038441178174957,
-            "recorded_net_cash_eur": 0.1924317221400366,
-            "recorded_tax_eur": 0.211412395677459
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.403790433956719,
+            "recorded_net_cash_eur": 0.1924061417803765,
+            "recorded_tax_eur": 0.2113842921763424
           },
           {
             "dividend_id": "yahoo:CDK:2018-06-29",
@@ -309,10 +309,10 @@
             "payment_session": "2018-06-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4268110632723764,
-            "recorded_net_cash_eur": 0.2033754716492873,
-            "recorded_tax_eur": 0.2234355916230891
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4267543263665067,
+            "recorded_net_cash_eur": 0.2033484365136403,
+            "recorded_tax_eur": 0.2234058898528663
           },
           {
             "dividend_id": "yahoo:CDK:2018-09-28",
@@ -322,10 +322,10 @@
             "payment_session": "2018-09-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4298344312050245,
-            "recorded_net_cash_eur": 0.2048161064691941,
-            "recorded_tax_eur": 0.2250183247358304
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4297772923964007,
+            "recorded_net_cash_eur": 0.2047888798268849,
+            "recorded_tax_eur": 0.2249884125695158
           },
           {
             "dividend_id": "yahoo:CDK:2018-12-28",
@@ -335,10 +335,10 @@
             "payment_session": "2018-12-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4344127270498834,
-            "recorded_net_cash_eur": 0.2069976644392694,
-            "recorded_tax_eur": 0.2274150626106139
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4343549796386183,
+            "recorded_net_cash_eur": 0.2069701477978016,
+            "recorded_tax_eur": 0.2273848318408167
           },
           {
             "dividend_id": "yahoo:CDK:2019-03-29",
@@ -348,10 +348,10 @@
             "payment_session": "2019-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4428805852807623,
-            "recorded_net_cash_eur": 0.2110325988862832,
-            "recorded_tax_eur": 0.2318479863944791
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.442821712219024,
+            "recorded_net_cash_eur": 0.2110045458723649,
+            "recorded_tax_eur": 0.2318171663466591
           },
           {
             "dividend_id": "yahoo:CDK:2019-06-27",
@@ -361,10 +361,10 @@
             "payment_session": "2019-06-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4376221086745263,
-            "recorded_net_cash_eur": 0.2085269347834117,
-            "recorded_tax_eur": 0.2290951738911145
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.43756393463331,
+            "recorded_net_cash_eur": 0.2084992148527721,
+            "recorded_tax_eur": 0.2290647197805378
           },
           {
             "dividend_id": "yahoo:CDK:2019-09-27",
@@ -374,10 +374,10 @@
             "payment_session": "2019-09-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4550309442733758,
-            "recorded_net_cash_eur": 0.2168222449462635,
-            "recorded_tax_eur": 0.2382086993271122
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4549704560384759,
+            "recorded_net_cash_eur": 0.2167934223023337,
+            "recorded_tax_eur": 0.2381770337361422
           },
           {
             "dividend_id": "yahoo:CDK:2019-12-30",
@@ -387,10 +387,10 @@
             "payment_session": "2019-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4447013473616377,
-            "recorded_net_cash_eur": 0.2119001920178203,
-            "recorded_tax_eur": 0.2328011553438174
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4446422322621087,
+            "recorded_net_cash_eur": 0.2118720236728948,
+            "recorded_tax_eur": 0.2327702085892139
           },
           {
             "dividend_id": "yahoo:CDK:2020-03-30",
@@ -400,10 +400,10 @@
             "payment_session": "2020-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4509482849038757,
-            "recorded_net_cash_eur": 0.2148768577566967,
-            "recorded_tax_eur": 0.236071427147179
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4508883393856022,
+            "recorded_net_cash_eur": 0.2148482937172394,
+            "recorded_tax_eur": 0.2360400456683628
           },
           {
             "dividend_id": "yahoo:CDK:2020-06-29",
@@ -413,10 +413,10 @@
             "payment_session": "2020-06-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4409574065605604,
-            "recorded_net_cash_eur": 0.210116204226107,
-            "recorded_tax_eur": 0.2308412023344534
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4408987891510753,
+            "recorded_net_cash_eur": 0.2100882730304873,
+            "recorded_tax_eur": 0.2308105161205879
           },
           {
             "dividend_id": "yahoo:CDK:2020-09-30",
@@ -426,10 +426,10 @@
             "payment_session": "2020-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.424988330682385,
-            "recorded_net_cash_eur": 0.2025069395701564,
-            "recorded_tax_eur": 0.2224813911122286
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4249318360762499,
+            "recorded_net_cash_eur": 0.202480019890333,
+            "recorded_tax_eur": 0.2224518161859168
           },
           {
             "dividend_id": "yahoo:CDK:2020-12-30",
@@ -439,10 +439,10 @@
             "payment_session": "2020-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.405159463857126,
-            "recorded_net_cash_eur": 0.1930584845279205,
-            "recorded_tax_eur": 0.2121009793292055
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.405105605144592,
+            "recorded_net_cash_eur": 0.193032820851398,
+            "recorded_tax_eur": 0.2120727842931939
           },
           {
             "dividend_id": "yahoo:CDK:2021-03-30",
@@ -452,10 +452,10 @@
             "payment_session": "2021-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4237938314989664,
-            "recorded_net_cash_eur": 0.2019377607092574,
-            "recorded_tax_eur": 0.2218560707897089
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.423737495680158,
+            "recorded_net_cash_eur": 0.2019109166915952,
+            "recorded_tax_eur": 0.2218265789885627
           },
           {
             "dividend_id": "yahoo:CDK:2021-06-30",
@@ -465,10 +465,10 @@
             "payment_session": "2021-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4186943264582097,
-            "recorded_net_cash_eur": 0.1995078465573369,
-            "recorded_tax_eur": 0.2191864799008728
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4186386685274937,
+            "recorded_net_cash_eur": 0.1994813255533506,
+            "recorded_tax_eur": 0.219157342974143
           },
           {
             "dividend_id": "yahoo:CDK:2021-09-30",
@@ -478,10 +478,10 @@
             "payment_session": "2021-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4297230655176928,
-            "recorded_net_cash_eur": 0.2047630407191805,
-            "recorded_tax_eur": 0.2249600247985122
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4296659415131475,
+            "recorded_net_cash_eur": 0.2047358211310147,
+            "recorded_tax_eur": 0.2249301203821327
           },
           {
             "dividend_id": "yahoo:CDK:2021-12-30",
@@ -491,10 +491,10 @@
             "payment_session": "2021-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4390121206660812,
-            "recorded_net_cash_eur": 0.2091892754973877,
-            "recorded_tax_eur": 0.2298228451686935
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4389537618476032,
+            "recorded_net_cash_eur": 0.2091614675203829,
+            "recorded_tax_eur": 0.2297922943272203
           },
           {
             "dividend_id": "yahoo:CDK:2022-03-30",
@@ -504,10 +504,10 @@
             "payment_session": "2022-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.44721942977075,
-            "recorded_net_cash_eur": 0.2131000582857623,
-            "recorded_tax_eur": 0.2341193714849876
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4471599799371503,
+            "recorded_net_cash_eur": 0.2130717304400521,
+            "recorded_tax_eur": 0.2340882494970982
           },
           {
             "dividend_id": "yahoo:CDK:2022-06-29",
@@ -517,10 +517,10 @@
             "payment_session": "2022-06-29",
             "payment_evidence": "issuer_declared_schedule_only",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.3171755837529098,
-            "recorded_gross_eur": 0.4731162285470537,
-            "recorded_net_cash_eur": 0.225439882902671,
-            "recorded_tax_eur": 0.2476763456443826
+            "prior_session_units": 3.31673462452049,
+            "recorded_gross_eur": 0.4730533361967038,
+            "recorded_net_cash_eur": 0.2254099146977293,
+            "recorded_tax_eur": 0.2476434214989744
           },
           {
             "dividend_id": "yahoo:LOGM:2017-05-26",
@@ -530,10 +530,10 @@
             "payment_session": "2017-05-26",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.1618010657138089,
-            "recorded_net_cash_eur": 0.0770982078126299,
-            "recorded_tax_eur": 0.0847028579011789
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.1617788102162151,
+            "recorded_net_cash_eur": 0.0770876030680264,
+            "recorded_tax_eur": 0.0846912071481886
           },
           {
             "dividend_id": "yahoo:LOGM:2017-08-25",
@@ -543,10 +543,10 @@
             "payment_session": "2017-08-25",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.1534150348688858,
-            "recorded_net_cash_eur": 0.0731022641150241,
-            "recorded_tax_eur": 0.0803127707538617
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.1533939328574478,
+            "recorded_net_cash_eur": 0.0730922090065739,
+            "recorded_tax_eur": 0.0803017238508739
           },
           {
             "dividend_id": "yahoo:LOGM:2017-11-24",
@@ -556,10 +556,10 @@
             "payment_session": "2017-11-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.1525237628805089,
-            "recorded_net_cash_eur": 0.0726775730125624,
-            "recorded_tax_eur": 0.0798461898679464
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.1525027834622164,
+            "recorded_net_cash_eur": 0.0726675763197461,
+            "recorded_tax_eur": 0.0798352071424703
           },
           {
             "dividend_id": "yahoo:LOGM:2018-02-28",
@@ -569,10 +569,10 @@
             "payment_session": "2018-02-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.1779785228490392,
-            "recorded_net_cash_eur": 0.0848067661375671,
-            "recorded_tax_eur": 0.093171756711472
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.1779540421661121,
+            "recorded_net_cash_eur": 0.0847951010921524,
+            "recorded_tax_eur": 0.0931589410739597
           },
           {
             "dividend_id": "yahoo:LOGM:2018-05-25",
@@ -582,10 +582,10 @@
             "payment_session": "2018-05-25",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.1861952615056244,
-            "recorded_net_cash_eur": 0.08872204210743,
-            "recorded_tax_eur": 0.0974732193981944
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.186169650622432,
+            "recorded_net_cash_eur": 0.0887098385215888,
+            "recorded_tax_eur": 0.0974598121008431
           },
           {
             "dividend_id": "yahoo:LOGM:2018-08-24",
@@ -595,10 +595,10 @@
             "payment_session": "2018-08-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.1875931720813052,
-            "recorded_net_cash_eur": 0.0893881464967419,
-            "recorded_tax_eur": 0.0982050255845632
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.1875673689175779,
+            "recorded_net_cash_eur": 0.0893758512892258,
+            "recorded_tax_eur": 0.098191517628352
           },
           {
             "dividend_id": "yahoo:LOGM:2018-11-30",
@@ -608,10 +608,10 @@
             "payment_session": "2018-11-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.1913750927087036,
-            "recorded_net_cash_eur": 0.0911902316756972,
-            "recorded_tax_eur": 0.1001848610330063
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.1913487693473803,
+            "recorded_net_cash_eur": 0.0911776885940267,
+            "recorded_tax_eur": 0.1001710807533536
           },
           {
             "dividend_id": "yahoo:LOGM:2019-03-12",
@@ -621,10 +621,10 @@
             "payment_session": "2019-03-12",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.2088675965633122,
-            "recorded_net_cash_eur": 0.0995254097624182,
-            "recorded_tax_eur": 0.1093421868008939
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.2088388671339217,
+            "recorded_net_cash_eur": 0.0995117201893137,
+            "recorded_tax_eur": 0.109327146944608
           },
           {
             "dividend_id": "yahoo:LOGM:2019-05-24",
@@ -634,10 +634,10 @@
             "payment_session": "2019-05-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.2105106061724631,
-            "recorded_net_cash_eur": 0.1003083038411786,
-            "recorded_tax_eur": 0.1102023023312845
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.2104816507495278,
+            "recorded_net_cash_eur": 0.1002945065821499,
+            "recorded_tax_eur": 0.1101871441673778
           },
           {
             "dividend_id": "yahoo:LOGM:2019-08-23",
@@ -647,10 +647,10 @@
             "payment_session": "2019-08-23",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.2128316449391184,
-            "recorded_net_cash_eur": 0.1014142788134899,
-            "recorded_tax_eur": 0.1114173661256285
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.2128023702607291,
+            "recorded_net_cash_eur": 0.1014003294292374,
+            "recorded_tax_eur": 0.1114020408314917
           },
           {
             "dividend_id": "yahoo:LOGM:2019-11-29",
@@ -660,10 +660,10 @@
             "payment_session": "2019-11-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7246098926927217,
-            "recorded_gross_eur": 0.2144401886042019,
-            "recorded_net_cash_eur": 0.1021807498699022,
-            "recorded_tax_eur": 0.1122594387342997
+            "prior_session_units": 0.7245102236722978,
+            "recorded_gross_eur": 0.2144106926730074,
+            "recorded_net_cash_eur": 0.102166695058688,
+            "recorded_tax_eur": 0.1122439976143194
           }
         ]
       },
@@ -674,21 +674,21 @@
     "monthly_tlh": {
       "daily_rows": 4025,
       "days_with_explicit_provisional_value": 2024,
-      "peak_provisional_weight": 0.00115841732788857,
+      "peak_provisional_weight": 0.001158415574835964,
       "peak_weight_date": "2014-10-16",
-      "provisional_value_eur_at_peak_weight": 83.58406810381221,
-      "maximum_provisional_value_eur": 251.69027516109952,
-      "mean_provisional_weight": 0.0003569039117900517,
+      "provisional_value_eur_at_peak_weight": 83.57290998599828,
+      "maximum_provisional_value_eur": 251.6620346002182,
+      "mean_provisional_weight": 0.00035689553748378917,
       "known_dividend_examples": [
         {
           "security_id": "yahoo:CDK",
           "record_date": "2020-09-01",
           "payment_date": "2020-09-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.4373526315492606,
+          "units": 3.4368937595835742,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.4403851167854365,
-          "recorded_gross_eur": 0.4403851167854364,
+          "expected_gross_eur_at_payment_fx": 0.4403263272442228,
+          "recorded_gross_eur": 0.4403263272442227,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -696,10 +696,10 @@
           "record_date": "2020-12-01",
           "payment_date": "2020-12-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.4373526315492606,
+          "units": 3.4368937595835742,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.41983787536225803,
-          "recorded_gross_eur": 0.419837875362258,
+          "expected_gross_eur_at_payment_fx": 0.41978182879043735,
+          "recorded_gross_eur": 0.4197818287904373,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -707,10 +707,10 @@
           "record_date": "2021-03-08",
           "payment_date": "2021-03-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.4373526315492606,
+          "units": 3.4368937595835742,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.43914734241750203,
-          "recorded_gross_eur": 0.439147342417502,
+          "expected_gross_eur_at_payment_fx": 0.4390887181139052,
+          "recorded_gross_eur": 0.4390887181139052,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -718,10 +718,10 @@
           "record_date": "2021-06-21",
           "payment_date": "2021-06-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.4373526315492606,
+          "units": 3.4368937595835742,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.4338630888020777,
-          "recorded_gross_eur": 0.4338630888020777,
+          "expected_gross_eur_at_payment_fx": 0.4338051699238776,
+          "recorded_gross_eur": 0.4338051699238776,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -729,14 +729,14 @@
           "record_date": "2018-08-08",
           "payment_date": "2018-08-24",
           "dividend_usd_per_share": 0.3,
-          "units": 0.7042877440574271,
+          "units": 0.7042132935957787,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.1823320013956059,
-          "recorded_gross_eur": 0.1823320013956058,
+          "expected_gross_eur_at_payment_fx": 0.1823127270268671,
+          "recorded_gross_eur": 0.182312727026867,
           "source": "https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm"
         }
       ],
-      "five_examples_recorded_gross_eur": 1.91556542476288,
+      "five_examples_recorded_gross_eur": 1.9153147710993097,
       "five_examples_verified_exactly_once": true,
       "verified_dividend_corpus": {
         "source_schedules": 42,
@@ -744,9 +744,9 @@
         "payment_rows": 42,
         "positive_entitlements": 42,
         "zero_entitlements": 0,
-        "recorded_gross_eur": 15.403653427682334,
-        "recorded_net_cash_eur": 7.33984085829063,
-        "recorded_tax_eur": 8.063812569391702,
+        "recorded_gross_eur": 15.401652671539846,
+        "recorded_net_cash_eur": 7.338887497988735,
+        "recorded_tax_eur": 8.06276517355111,
         "maximum_arithmetic_residual": 1.6653345369377348e-16,
         "all_schedules_checked_exactly_once": true,
         "payments": [
@@ -758,10 +758,10 @@
             "payment_session": "2014-12-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.3381834186979677,
-            "recorded_net_cash_eur": 0.1611443990095816,
-            "recorded_tax_eur": 0.1770390196883861
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.3381382726490358,
+            "recorded_net_cash_eur": 0.1611228869172655,
+            "recorded_tax_eur": 0.1770153857317702
           },
           {
             "dividend_id": "yahoo:CDK:2015-03-27",
@@ -771,10 +771,10 @@
             "payment_session": "2015-03-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.3799579180047083,
-            "recorded_net_cash_eur": 0.1810499479292435,
-            "recorded_tax_eur": 0.1989079700754648
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.3799071952376833,
+            "recorded_net_cash_eur": 0.181025778530756,
+            "recorded_tax_eur": 0.1988814167069272
           },
           {
             "dividend_id": "yahoo:CDK:2015-06-30",
@@ -784,10 +784,10 @@
             "payment_session": "2015-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.3686498487674602,
-            "recorded_net_cash_eur": 0.1756616529376947,
-            "recorded_tax_eur": 0.1929881958297654
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.3686006355796129,
+            "recorded_net_cash_eur": 0.1756382028536855,
+            "recorded_tax_eur": 0.1929624327259274
           },
           {
             "dividend_id": "yahoo:CDK:2015-09-29",
@@ -797,10 +797,10 @@
             "payment_session": "2015-09-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.3681562975597208,
-            "recorded_net_cash_eur": 0.1754264757872069,
-            "recorded_tax_eur": 0.1927298217725138
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.3681071502588619,
+            "recorded_net_cash_eur": 0.1754030570983477,
+            "recorded_tax_eur": 0.1927040931605142
           },
           {
             "dividend_id": "yahoo:CDK:2015-12-30",
@@ -810,10 +810,10 @@
             "payment_session": "2015-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4247140813281624,
-            "recorded_net_cash_eur": 0.2023762597528693,
-            "recorded_tax_eur": 0.222337821575293
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4246573838035718,
+            "recorded_net_cash_eur": 0.2023492433824019,
+            "recorded_tax_eur": 0.2223081404211699
           },
           {
             "dividend_id": "yahoo:CDK:2016-03-29",
@@ -823,10 +823,10 @@
             "payment_session": "2016-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.414545832820395,
-            "recorded_net_cash_eur": 0.1975310893389181,
-            "recorded_tax_eur": 0.2170147434814768
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4144904927137596,
+            "recorded_net_cash_eur": 0.1975047197781064,
+            "recorded_tax_eur": 0.2169857729356532
           },
           {
             "dividend_id": "yahoo:CDK:2016-06-30",
@@ -836,10 +836,10 @@
             "payment_session": "2016-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4179810892264008,
-            "recorded_net_cash_eur": 0.1991679890163799,
-            "recorded_tax_eur": 0.2188131002100208
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4179252905276369,
+            "recorded_net_cash_eur": 0.1991414009364189,
+            "recorded_tax_eur": 0.2187838895912179
           },
           {
             "dividend_id": "yahoo:CDK:2016-09-30",
@@ -849,10 +849,10 @@
             "payment_session": "2016-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4157715305610162,
-            "recorded_net_cash_eur": 0.1981151343123242,
-            "recorded_tax_eur": 0.217656396248692
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4157160268289423,
+            "recorded_net_cash_eur": 0.198088686783991,
+            "recorded_tax_eur": 0.2176273400449513
           },
           {
             "dividend_id": "yahoo:CDK:2016-12-30",
@@ -862,10 +862,10 @@
             "payment_session": "2016-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4565310391963727,
-            "recorded_net_cash_eur": 0.2175370401770715,
-            "recorded_tax_eur": 0.2389939990193011
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4564700942431461,
+            "recorded_net_cash_eur": 0.2175079999068591,
+            "recorded_tax_eur": 0.238962094336287
           },
           {
             "dividend_id": "yahoo:CDK:2017-03-29",
@@ -875,10 +875,10 @@
             "payment_session": "2017-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4477385266253224,
-            "recorded_net_cash_eur": 0.2133474079369661,
-            "recorded_tax_eur": 0.2343911186883563
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4476787554351511,
+            "recorded_net_cash_eur": 0.2133189269648495,
+            "recorded_tax_eur": 0.2343598284703016
           },
           {
             "dividend_id": "yahoo:CDK:2017-06-30",
@@ -888,10 +888,10 @@
             "payment_session": "2017-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4216871437231831,
-            "recorded_net_cash_eur": 0.2009339239840967,
-            "recorded_tax_eur": 0.2207532197390864
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4216308502818967,
+            "recorded_net_cash_eur": 0.2009071001593237,
+            "recorded_tax_eur": 0.2207237501225729
           },
           {
             "dividend_id": "yahoo:CDK:2017-09-29",
@@ -901,10 +901,10 @@
             "payment_session": "2017-09-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4076142371818537,
-            "recorded_net_cash_eur": 0.1942281840171533,
-            "recorded_tax_eur": 0.2133860531647004
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.407559822413773,
+            "recorded_net_cash_eur": 0.1942022553801628,
+            "recorded_tax_eur": 0.2133575670336102
           },
           {
             "dividend_id": "yahoo:CDK:2017-12-29",
@@ -914,10 +914,10 @@
             "payment_session": "2017-12-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4299198655318845,
-            "recorded_net_cash_eur": 0.2048568159259429,
-            "recorded_tax_eur": 0.2250630496059415
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4298624730572301,
+            "recorded_net_cash_eur": 0.2048294684117701,
+            "recorded_tax_eur": 0.22503300464546
           },
           {
             "dividend_id": "yahoo:CDK:2018-03-29",
@@ -927,10 +927,10 @@
             "payment_session": "2018-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4184748760103799,
-            "recorded_net_cash_eur": 0.199403278418946,
-            "recorded_tax_eur": 0.2190715975914339
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4184190113931792,
+            "recorded_net_cash_eur": 0.1993766589288498,
+            "recorded_tax_eur": 0.2190423524643293
           },
           {
             "dividend_id": "yahoo:CDK:2018-06-29",
@@ -940,10 +940,10 @@
             "payment_session": "2018-06-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4422738846563639,
-            "recorded_net_cash_eur": 0.2107435060387574,
-            "recorded_tax_eur": 0.2315303786176065
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4422148429726678,
+            "recorded_net_cash_eur": 0.2107153726764762,
+            "recorded_tax_eur": 0.2314994702961916
           },
           {
             "dividend_id": "yahoo:CDK:2018-09-28",
@@ -953,10 +953,10 @@
             "payment_session": "2018-09-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4454067853597003,
-            "recorded_net_cash_eur": 0.2122363332238971,
-            "recorded_tax_eur": 0.2331704521358031
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4453473254470768,
+            "recorded_net_cash_eur": 0.212208000575532,
+            "recorded_tax_eur": 0.2331393248715447
           },
           {
             "dividend_id": "yahoo:CDK:2018-12-28",
@@ -966,10 +966,10 @@
             "payment_session": "2018-12-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4501509470336904,
-            "recorded_net_cash_eur": 0.2144969262615534,
-            "recorded_tax_eur": 0.2356540207721369
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4500908537956487,
+            "recorded_net_cash_eur": 0.2144682918336266,
+            "recorded_tax_eur": 0.2356225619620221
           },
           {
             "dividend_id": "yahoo:CDK:2019-03-29",
@@ -979,10 +979,10 @@
             "payment_session": "2019-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4589255849865501,
-            "recorded_net_cash_eur": 0.2186780412460911,
-            "recorded_tax_eur": 0.2402475437404589
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4588643203716387,
+            "recorded_net_cash_eur": 0.2186488486570857,
+            "recorded_tax_eur": 0.2402154717145529
           },
           {
             "dividend_id": "yahoo:CDK:2019-06-27",
@@ -992,10 +992,10 @@
             "payment_session": "2019-06-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4534766004682402,
-            "recorded_net_cash_eur": 0.2160816001231164,
-            "recorded_tax_eur": 0.2373950003451237
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4534160632696008,
+            "recorded_net_cash_eur": 0.2160527541479647,
+            "recorded_tax_eur": 0.237363309121636
           },
           {
             "dividend_id": "yahoo:CDK:2019-09-27",
@@ -1005,10 +1005,10 @@
             "payment_session": "2019-09-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4715161360149877,
-            "recorded_net_cash_eur": 0.2246774388111416,
-            "recorded_tax_eur": 0.2468386972038461
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4714531906150307,
+            "recorded_net_cash_eur": 0.2246474453280621,
+            "recorded_tax_eur": 0.2468057452869686
           },
           {
             "dividend_id": "yahoo:CDK:2019-12-30",
@@ -1018,10 +1018,10 @@
             "payment_session": "2019-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4608123109593253,
-            "recorded_net_cash_eur": 0.2195770661721184,
-            "recorded_tax_eur": 0.2412352447872068
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4607507944745161,
+            "recorded_net_cash_eur": 0.2195477535671069,
+            "recorded_tax_eur": 0.2412030409074092
           },
           {
             "dividend_id": "yahoo:CDK:2020-03-30",
@@ -1031,10 +1031,10 @@
             "payment_session": "2020-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.467285567094788,
-            "recorded_net_cash_eur": 0.2226615727206664,
-            "recorded_tax_eur": 0.2446239943741215
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4672231864577997,
+            "recorded_net_cash_eur": 0.2226318483471415,
+            "recorded_tax_eur": 0.2445913381106581
           },
           {
             "dividend_id": "yahoo:CDK:2020-06-29",
@@ -1044,10 +1044,10 @@
             "payment_session": "2020-06-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.456932731950008,
-            "recorded_net_cash_eur": 0.2177284467741788,
-            "recorded_tax_eur": 0.2392042851758292
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4568717333725062,
+            "recorded_net_cash_eur": 0.2176993809519992,
+            "recorded_tax_eur": 0.239172352420507
           },
           {
             "dividend_id": "yahoo:CDK:2020-09-30",
@@ -1057,10 +1057,10 @@
             "payment_session": "2020-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4403851167854364,
-            "recorded_net_cash_eur": 0.2098435081482604,
-            "recorded_tax_eur": 0.230541608637176
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4403263272442227,
+            "recorded_net_cash_eur": 0.2098154949318721,
+            "recorded_tax_eur": 0.2305108323123506
           },
           {
             "dividend_id": "yahoo:CDK:2020-12-30",
@@ -1070,10 +1070,10 @@
             "payment_session": "2020-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.419837875362258,
-            "recorded_net_cash_eur": 0.2000527476101159,
-            "recorded_tax_eur": 0.2197851277521421
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4197818287904373,
+            "recorded_net_cash_eur": 0.2000260414186433,
+            "recorded_tax_eur": 0.2197557873717939
           },
           {
             "dividend_id": "yahoo:CDK:2021-03-30",
@@ -1083,10 +1083,10 @@
             "payment_session": "2021-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.439147342417502,
-            "recorded_net_cash_eur": 0.2092537086619396,
-            "recorded_tax_eur": 0.2298936337555623
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4390887181139052,
+            "recorded_net_cash_eur": 0.2092257741812758,
+            "recorded_tax_eur": 0.2298629439326294
           },
           {
             "dividend_id": "yahoo:CDK:2021-06-30",
@@ -1096,10 +1096,10 @@
             "payment_session": "2021-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4338630888020777,
-            "recorded_net_cash_eur": 0.2067357618141899,
-            "recorded_tax_eur": 0.2271273269878877
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4338051699238776,
+            "recorded_net_cash_eur": 0.2067081634687276,
+            "recorded_tax_eur": 0.2270970064551499
           },
           {
             "dividend_id": "yahoo:CDK:2021-09-30",
@@ -1109,10 +1109,10 @@
             "payment_session": "2021-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4452913850353132,
-            "recorded_net_cash_eur": 0.2121813449693267,
-            "recorded_tax_eur": 0.2331100400659864
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4452319405281424,
+            "recorded_net_cash_eur": 0.2121530196616598,
+            "recorded_tax_eur": 0.2330789208664826
           },
           {
             "dividend_id": "yahoo:CDK:2021-12-30",
@@ -1122,10 +1122,10 @@
             "payment_session": "2021-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4549169708244125,
-            "recorded_net_cash_eur": 0.2167679365978325,
-            "recorded_tax_eur": 0.2381490342265799
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4548562413424529,
+            "recorded_net_cash_eur": 0.2167389989996788,
+            "recorded_tax_eur": 0.2381172423427741
           },
           {
             "dividend_id": "yahoo:CDK:2022-03-30",
@@ -1135,10 +1135,10 @@
             "payment_session": "2022-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4634216202879643,
-            "recorded_net_cash_eur": 0.2208204020672149,
-            "recorded_tax_eur": 0.2426012182207493
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4633597554714508,
+            "recorded_net_cash_eur": 0.2207909234821462,
+            "recorded_tax_eur": 0.2425688319893045
           },
           {
             "dividend_id": "yahoo:CDK:2022-06-29",
@@ -1148,10 +1148,10 @@
             "payment_session": "2022-06-29",
             "payment_evidence": "issuer_declared_schedule_only",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4373526315492606,
-            "recorded_gross_eur": 0.4902566271107626,
-            "recorded_net_cash_eur": 0.2336072828182783,
-            "recorded_tax_eur": 0.2566493442924842
+            "prior_session_units": 3.4368937595835742,
+            "recorded_gross_eur": 0.4901911799349017,
+            "recorded_net_cash_eur": 0.2335760972389806,
+            "recorded_tax_eur": 0.2566150826959211
           },
           {
             "dividend_id": "yahoo:LOGM:2017-05-26",
@@ -1161,10 +1161,10 @@
             "payment_session": "2017-05-26",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.1572632511739521,
-            "recorded_net_cash_eur": 0.0749359391843881,
-            "recorded_tax_eur": 0.0823273119895639
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.1572466268300685,
+            "recorded_net_cash_eur": 0.0749280176845276,
+            "recorded_tax_eur": 0.0823186091455408
           },
           {
             "dividend_id": "yahoo:LOGM:2017-08-25",
@@ -1174,10 +1174,10 @@
             "payment_session": "2017-08-25",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.1491124119362777,
-            "recorded_net_cash_eur": 0.0710520642876363,
-            "recorded_tax_eur": 0.0780603476486414
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.1490966492199734,
+            "recorded_net_cash_eur": 0.0710445533533173,
+            "recorded_tax_eur": 0.0780520958666561
           },
           {
             "dividend_id": "yahoo:LOGM:2017-11-24",
@@ -1187,10 +1187,10 @@
             "payment_session": "2017-11-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.1482461362417755,
-            "recorded_net_cash_eur": 0.070639283919206,
-            "recorded_tax_eur": 0.0776068523225694
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.1482304650997261,
+            "recorded_net_cash_eur": 0.0706318166200194,
+            "recorded_tax_eur": 0.0775986484797066
           },
           {
             "dividend_id": "yahoo:LOGM:2018-02-28",
@@ -1200,10 +1200,10 @@
             "payment_session": "2018-02-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.1729870011603308,
-            "recorded_net_cash_eur": 0.0824283060528976,
-            "recorded_tax_eur": 0.0905586951074332
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.1729687146542767,
+            "recorded_net_cash_eur": 0.0824195925327628,
+            "recorded_tax_eur": 0.0905491221215138
           },
           {
             "dividend_id": "yahoo:LOGM:2018-05-25",
@@ -1213,10 +1213,10 @@
             "payment_session": "2018-05-25",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.1809732961175401,
-            "recorded_net_cash_eur": 0.0862337756000078,
-            "recorded_tax_eur": 0.0947395205175322
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.1809541653779302,
+            "recorded_net_cash_eur": 0.0862246598025837,
+            "recorded_tax_eur": 0.0947295055753465
           },
           {
             "dividend_id": "yahoo:LOGM:2018-08-24",
@@ -1226,10 +1226,10 @@
             "payment_session": "2018-08-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.1823320013956058,
-            "recorded_net_cash_eur": 0.0868811986650061,
-            "recorded_tax_eur": 0.0954508027305997
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.182312727026867,
+            "recorded_net_cash_eur": 0.0868720144283021,
+            "recorded_tax_eur": 0.0954407125985649
           },
           {
             "dividend_id": "yahoo:LOGM:2018-11-30",
@@ -1239,10 +1239,10 @@
             "payment_session": "2018-11-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.1860078556362603,
-            "recorded_net_cash_eur": 0.088632743210678,
-            "recorded_tax_eur": 0.0973751124255823
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.1859881926919038,
+            "recorded_net_cash_eur": 0.0886233738176922,
+            "recorded_tax_eur": 0.0973648188742116
           },
           {
             "dividend_id": "yahoo:LOGM:2019-03-12",
@@ -1252,10 +1252,10 @@
             "payment_session": "2019-03-12",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.2030097710143359,
-            "recorded_net_cash_eur": 0.096734155888331,
-            "recorded_tax_eur": 0.1062756151260049
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.2029883107925748,
+            "recorded_net_cash_eur": 0.0967239300926618,
+            "recorded_tax_eur": 0.1062643806999129
           },
           {
             "dividend_id": "yahoo:LOGM:2019-05-24",
@@ -1265,10 +1265,10 @@
             "payment_session": "2019-05-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.2046067013664644,
-            "recorded_net_cash_eur": 0.0974950932011203,
-            "recorded_tax_eur": 0.1071116081653441
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.2045850723327326,
+            "recorded_net_cash_eur": 0.0974847869665471,
+            "recorded_tax_eur": 0.1071002853661855
           },
           {
             "dividend_id": "yahoo:LOGM:2019-08-23",
@@ -1278,10 +1278,10 @@
             "payment_session": "2019-08-23",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.2068626451140206,
-            "recorded_net_cash_eur": 0.0985700503968308,
-            "recorded_tax_eur": 0.1082925947171898
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.2068407776038211,
+            "recorded_net_cash_eur": 0.0985596305282207,
+            "recorded_tax_eur": 0.1082811470756003
           },
           {
             "dividend_id": "yahoo:LOGM:2019-11-29",
@@ -1291,10 +1291,10 @@
             "payment_session": "2019-11-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7042877440574271,
-            "recorded_gross_eur": 0.2084260761415623,
-            "recorded_net_cash_eur": 0.0993150252814544,
-            "recorded_tax_eur": 0.1091110508601079
+            "prior_session_units": 0.7042132935957787,
+            "recorded_gross_eur": 0.2084040433606156,
+            "recorded_net_cash_eur": 0.0993045266613333,
+            "recorded_tax_eur": 0.1090995166992822
           }
         ]
       },
@@ -1305,21 +1305,21 @@
     "monthly_hybrid": {
       "daily_rows": 4025,
       "days_with_explicit_provisional_value": 2024,
-      "peak_provisional_weight": 0.0011589658894864162,
+      "peak_provisional_weight": 0.0011589638716283115,
       "peak_weight_date": "2014-10-16",
-      "provisional_value_eur_at_peak_weight": 84.06372325683542,
-      "maximum_provisional_value_eur": 252.756759939153,
-      "mean_provisional_weight": 0.00035795957404361145,
+      "provisional_value_eur_at_peak_weight": 84.05219977421325,
+      "maximum_provisional_value_eur": 252.72761409098607,
+      "mean_provisional_weight": 0.0003579510717403434,
       "known_dividend_examples": [
         {
           "security_id": "yahoo:CDK",
           "record_date": "2020-09-01",
           "payment_date": "2020-09-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.4570782077252455,
+          "units": 3.4566043103161515,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.44291230881344956,
-          "recorded_gross_eur": 0.4429123088134495,
+          "expected_gross_eur_at_payment_fx": 0.4428515942495923,
+          "recorded_gross_eur": 0.4428515942495922,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -1327,10 +1327,10 @@
           "record_date": "2020-12-01",
           "payment_date": "2020-12-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.4570782077252455,
+          "units": 3.4566043103161515,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.42224715508410293,
-          "recorded_gross_eur": 0.4222471550841029,
+          "expected_gross_eur_at_payment_fx": 0.42218927330626393,
+          "recorded_gross_eur": 0.4221892733062639,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -1338,10 +1338,10 @@
           "record_date": "2021-03-08",
           "payment_date": "2021-03-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.4570782077252455,
+          "units": 3.4566043103161515,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.4416674313591575,
-          "recorded_gross_eur": 0.4416674313591575,
+          "expected_gross_eur_at_payment_fx": 0.441606887443508,
+          "recorded_gross_eur": 0.441606887443508,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -1349,10 +1349,10 @@
           "record_date": "2021-06-21",
           "payment_date": "2021-06-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.4570782077252455,
+          "units": 3.4566043103161515,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.4363528535499721,
-          "recorded_gross_eur": 0.4363528535499721,
+          "expected_gross_eur_at_payment_fx": 0.43629303815838333,
+          "recorded_gross_eur": 0.4362930381583833,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -1360,14 +1360,14 @@
           "record_date": "2018-08-08",
           "payment_date": "2018-08-24",
           "dividend_usd_per_share": 0.3,
-          "units": 0.7075712388983608,
+          "units": 0.7074945219149569,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.18318206046730084,
-          "recorded_gross_eur": 0.1831820604673008,
+          "expected_gross_eur_at_payment_fx": 0.18316219932213243,
+          "recorded_gross_eur": 0.1831621993221324,
           "source": "https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm"
         }
       ],
-      "five_examples_recorded_gross_eur": 1.9263618092739827,
+      "five_examples_recorded_gross_eur": 1.9261029924798798,
       "five_examples_verified_exactly_once": true,
       "verified_dividend_corpus": {
         "source_schedules": 42,
@@ -1375,10 +1375,10 @@
         "payment_rows": 42,
         "positive_entitlements": 42,
         "zero_entitlements": 0,
-        "recorded_gross_eur": 15.489896057587446,
-        "recorded_net_cash_eur": 7.380935471440415,
-        "recorded_tax_eur": 8.108960586147028,
-        "maximum_arithmetic_residual": 4.440892098500626e-16,
+        "recorded_gross_eur": 15.487830274502711,
+        "recorded_net_cash_eur": 7.37995112580054,
+        "recorded_tax_eur": 8.10787914870217,
+        "maximum_arithmetic_residual": 1.1102230246251565e-16,
         "all_schedules_checked_exactly_once": true,
         "payments": [
           {
@@ -1389,10 +1389,10 @@
             "payment_session": "2014-12-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.3401241165262191,
-            "recorded_net_cash_eur": 0.1620691415247434,
-            "recorded_tax_eur": 0.1780549750014757
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.3400774922013103,
+            "recorded_net_cash_eur": 0.1620469250339243,
+            "recorded_tax_eur": 0.1780305671673859
           },
           {
             "dividend_id": "yahoo:CDK:2015-03-27",
@@ -1402,10 +1402,10 @@
             "payment_session": "2015-03-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.3821383427846624,
-            "recorded_net_cash_eur": 0.1820889203368916,
-            "recorded_tax_eur": 0.2000494224477708
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.3820859591359047,
+            "recorded_net_cash_eur": 0.1820639595282586,
+            "recorded_tax_eur": 0.2000219996076461
           },
           {
             "dividend_id": "yahoo:CDK:2015-06-30",
@@ -1415,10 +1415,10 @@
             "payment_session": "2015-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.3707653811127263,
-            "recorded_net_cash_eur": 0.176669704100214,
-            "recorded_tax_eur": 0.1940956770125122
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.3707145564732667,
+            "recorded_net_cash_eur": 0.1766454861595115,
+            "recorded_tax_eur": 0.1940690703137551
           },
           {
             "dividend_id": "yahoo:CDK:2015-09-29",
@@ -1428,10 +1428,10 @@
             "payment_session": "2015-09-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.3702689976142712,
-            "recorded_net_cash_eur": 0.1764331773632002,
-            "recorded_tax_eur": 0.193835820251071
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.3702182410192236,
+            "recorded_net_cash_eur": 0.17640899184566,
+            "recorded_tax_eur": 0.1938092491735636
           },
           {
             "dividend_id": "yahoo:CDK:2015-12-30",
@@ -1441,10 +1441,10 @@
             "payment_session": "2015-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4271513436233829,
-            "recorded_net_cash_eur": 0.2035376152365419,
-            "recorded_tax_eur": 0.2236137283868409
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4270927895777782,
+            "recorded_net_cash_eur": 0.2035097142338113,
+            "recorded_tax_eur": 0.2235830753439669
           },
           {
             "dividend_id": "yahoo:CDK:2016-03-29",
@@ -1454,10 +1454,10 @@
             "payment_session": "2016-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.416924743650981,
-            "recorded_net_cash_eur": 0.1986646403496924,
-            "recorded_tax_eur": 0.2182601033012886
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4168675914710384,
+            "recorded_net_cash_eur": 0.1986374073359498,
+            "recorded_tax_eur": 0.2182301841350886
           },
           {
             "dividend_id": "yahoo:CDK:2016-06-30",
@@ -1467,10 +1467,10 @@
             "payment_session": "2016-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4203797136037724,
-            "recorded_net_cash_eur": 0.2003109335321975,
-            "recorded_tax_eur": 0.2200687800715748
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.420322087815421,
+            "recorded_net_cash_eur": 0.200283474844048,
+            "recorded_tax_eur": 0.2200386129713729
           },
           {
             "dividend_id": "yahoo:CDK:2016-09-30",
@@ -1480,10 +1480,10 @@
             "payment_session": "2016-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4181574751750812,
-            "recorded_net_cash_eur": 0.1992520369209261,
-            "recorded_tax_eur": 0.218905438254155
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.418100154011899,
+            "recorded_net_cash_eur": 0.1992247233866698,
+            "recorded_tax_eur": 0.2188754306252291
           },
           {
             "dividend_id": "yahoo:CDK:2016-12-30",
@@ -1493,10 +1493,10 @@
             "payment_session": "2016-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4591508861412905,
-            "recorded_net_cash_eur": 0.2187853972463249,
-            "recorded_tax_eur": 0.2403654888949656
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4590879455879529,
+            "recorded_net_cash_eur": 0.2187554060726595,
+            "recorded_tax_eur": 0.2403325395152934
           },
           {
             "dividend_id": "yahoo:CDK:2017-03-29",
@@ -1506,10 +1506,10 @@
             "payment_session": "2017-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4503079168975943,
-            "recorded_net_cash_eur": 0.2145717224017037,
-            "recorded_tax_eur": 0.2357361944958906
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.450246188541367,
+            "recorded_net_cash_eur": 0.2145423088399613,
+            "recorded_tax_eur": 0.2357038797014056
           },
           {
             "dividend_id": "yahoo:CDK:2017-06-30",
@@ -1519,10 +1519,10 @@
             "payment_session": "2017-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4241070356480323,
-            "recorded_net_cash_eur": 0.2020870024862873,
-            "recorded_tax_eur": 0.2220200331617449
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4240488989171585,
+            "recorded_net_cash_eur": 0.202059300334026,
+            "recorded_tax_eur": 0.2219895985831325
           },
           {
             "dividend_id": "yahoo:CDK:2017-09-29",
@@ -1532,10 +1532,10 @@
             "payment_session": "2017-09-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.409953370389238,
-            "recorded_net_cash_eur": 0.1953427809904718,
-            "recorded_tax_eur": 0.2146105893987661
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4098971738474176,
+            "recorded_net_cash_eur": 0.1953160033382944,
+            "recorded_tax_eur": 0.2145811705091231
           },
           {
             "dividend_id": "yahoo:CDK:2017-12-29",
@@ -1545,10 +1545,10 @@
             "payment_session": "2017-12-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.432387001716657,
-            "recorded_net_cash_eur": 0.206032406317987,
-            "recorded_tax_eur": 0.22635459539867
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.432327729965332,
+            "recorded_net_cash_eur": 0.2060041633284806,
+            "recorded_tax_eur": 0.2263235666368513
           },
           {
             "dividend_id": "yahoo:CDK:2018-03-29",
@@ -1558,10 +1558,10 @@
             "payment_session": "2018-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.420876334030344,
-            "recorded_net_cash_eur": 0.2005475731654589,
-            "recorded_tax_eur": 0.2203287608648851
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4208186401651024,
+            "recorded_net_cash_eur": 0.2005200820386712,
+            "recorded_tax_eur": 0.2202985581264311
           },
           {
             "dividend_id": "yahoo:CDK:2018-06-29",
@@ -1571,10 +1571,10 @@
             "payment_session": "2018-06-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4448119155590898,
-            "recorded_net_cash_eur": 0.2119528777639062,
-            "recorded_tax_eur": 0.2328590377951835
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4447509405965197,
+            "recorded_net_cash_eur": 0.2119238231942416,
+            "recorded_tax_eur": 0.2328271174022781
           },
           {
             "dividend_id": "yahoo:CDK:2018-09-28",
@@ -1584,10 +1584,10 @@
             "payment_session": "2018-09-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4479627947121517,
-            "recorded_net_cash_eur": 0.2134542716803402,
-            "recorded_tax_eur": 0.2345085230318114
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4479013878260389,
+            "recorded_net_cash_eur": 0.2134250112991075,
+            "recorded_tax_eur": 0.2344763765269314
           },
           {
             "dividend_id": "yahoo:CDK:2018-12-28",
@@ -1597,10 +1597,10 @@
             "payment_session": "2018-12-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4527341812107445,
-            "recorded_net_cash_eur": 0.2157278373469197,
-            "recorded_tax_eur": 0.2370063438638248
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4526721202614132,
+            "recorded_net_cash_eur": 0.2156982653045633,
+            "recorded_tax_eur": 0.2369738549568498
           },
           {
             "dividend_id": "yahoo:CDK:2019-03-29",
@@ -1610,10 +1610,10 @@
             "payment_session": "2019-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4615591732610474,
-            "recorded_net_cash_eur": 0.219932946058889,
-            "recorded_tax_eur": 0.2416262272021583
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4614959025789254,
+            "recorded_net_cash_eur": 0.2199027975788579,
+            "recorded_tax_eur": 0.2415931050000675
           },
           {
             "dividend_id": "yahoo:CDK:2019-06-27",
@@ -1623,10 +1623,10 @@
             "payment_session": "2019-06-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4560789192249664,
-            "recorded_net_cash_eur": 0.2173216050106964,
-            "recorded_tax_eur": 0.2387573142142699
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4560163997778564,
+            "recorded_net_cash_eur": 0.2172918144941485,
+            "recorded_tax_eur": 0.2387245852837078
           },
           {
             "dividend_id": "yahoo:CDK:2019-09-27",
@@ -1636,10 +1636,10 @@
             "payment_session": "2019-09-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4742219763683464,
-            "recorded_net_cash_eur": 0.225966771739517,
-            "recorded_tax_eur": 0.2482552046288294
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4741569698650413,
+            "recorded_net_cash_eur": 0.2259357961406922,
+            "recorded_tax_eur": 0.2482211737243491
           },
           {
             "dividend_id": "yahoo:CDK:2019-12-30",
@@ -1649,10 +1649,10 @@
             "payment_session": "2019-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4634567263909078,
-            "recorded_net_cash_eur": 0.2208371301252675,
-            "recorded_tax_eur": 0.2426195962656402
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4633931955915834,
+            "recorded_net_cash_eur": 0.2208068576993894,
+            "recorded_tax_eur": 0.2425863378921939
           },
           {
             "dividend_id": "yahoo:CDK:2020-03-30",
@@ -1662,10 +1662,10 @@
             "payment_session": "2020-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4699671299245848,
-            "recorded_net_cash_eur": 0.2239393374090645,
-            "recorded_tax_eur": 0.2460277925155202
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.469902706677019,
+            "recorded_net_cash_eur": 0.2239086397315995,
+            "recorded_tax_eur": 0.2459940669454194
           },
           {
             "dividend_id": "yahoo:CDK:2020-06-29",
@@ -1675,10 +1675,10 @@
             "payment_session": "2020-06-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4595548840471347,
-            "recorded_net_cash_eur": 0.2189779022484596,
-            "recorded_tax_eur": 0.240576981798675
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4594918881136323,
+            "recorded_net_cash_eur": 0.2189478846861457,
+            "recorded_tax_eur": 0.2405440034274865
           },
           {
             "dividend_id": "yahoo:CDK:2020-09-30",
@@ -1688,10 +1688,10 @@
             "payment_session": "2020-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4429123088134495,
-            "recorded_net_cash_eur": 0.2110477151496086,
-            "recorded_tax_eur": 0.2318645936638408
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4428515942495922,
+            "recorded_net_cash_eur": 0.2110187846599306,
+            "recorded_tax_eur": 0.2318328095896615
           },
           {
             "dividend_id": "yahoo:CDK:2020-12-30",
@@ -1701,10 +1701,10 @@
             "payment_session": "2020-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4222471550841029,
-            "recorded_net_cash_eur": 0.2012007693975749,
-            "recorded_tax_eur": 0.2210463856865279
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4221892733062639,
+            "recorded_net_cash_eur": 0.2011731887304347,
+            "recorded_tax_eur": 0.2210160845758291
           },
           {
             "dividend_id": "yahoo:CDK:2021-03-30",
@@ -1714,10 +1714,10 @@
             "payment_session": "2021-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4416674313591575,
-            "recorded_net_cash_eur": 0.2104545310426385,
-            "recorded_tax_eur": 0.231212900316519
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.441606887443508,
+            "recorded_net_cash_eur": 0.2104256818668315,
+            "recorded_tax_eur": 0.2311812055766764
           },
           {
             "dividend_id": "yahoo:CDK:2021-06-30",
@@ -1727,10 +1727,10 @@
             "payment_session": "2021-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4363528535499721,
-            "recorded_net_cash_eur": 0.2079221347165616,
-            "recorded_tax_eur": 0.2284307188334104
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4362930381583833,
+            "recorded_net_cash_eur": 0.2078936326824696,
+            "recorded_tax_eur": 0.2283994054759137
           },
           {
             "dividend_id": "yahoo:CDK:2021-09-30",
@@ -1740,10 +1740,10 @@
             "payment_session": "2021-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4478467321519879,
-            "recorded_net_cash_eur": 0.2133989678704222,
-            "recorded_tax_eur": 0.2344477642815657
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4477853411757688,
+            "recorded_net_cash_eur": 0.2133697150702538,
+            "recorded_tax_eur": 0.234415626105515
           },
           {
             "dividend_id": "yahoo:CDK:2021-12-30",
@@ -1753,10 +1753,10 @@
             "payment_session": "2021-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4575275552839129,
-            "recorded_net_cash_eur": 0.2180118800927844,
-            "recorded_tax_eur": 0.2395156751911284
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4574648372572991,
+            "recorded_net_cash_eur": 0.2179819949531029,
+            "recorded_tax_eur": 0.2394828423041961
           },
           {
             "dividend_id": "yahoo:CDK:2022-03-30",
@@ -1766,10 +1766,10 @@
             "payment_session": "2022-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.4660810094901913,
-            "recorded_net_cash_eur": 0.2220876010220761,
-            "recorded_tax_eur": 0.2439934084681151
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.466017118953283,
+            "recorded_net_cash_eur": 0.2220571571812393,
+            "recorded_tax_eur": 0.2439599617720437
           },
           {
             "dividend_id": "yahoo:CDK:2022-06-29",
@@ -1779,10 +1779,10 @@
             "payment_session": "2022-06-29",
             "payment_evidence": "issuer_declared_schedule_only",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.4570782077252455,
-            "recorded_gross_eur": 0.493070011561079,
-            "recorded_net_cash_eur": 0.234947860508854,
-            "recorded_tax_eur": 0.2581221510522249
+            "prior_session_units": 3.4566043103161515,
+            "recorded_gross_eur": 0.4930024213629577,
+            "recorded_net_cash_eur": 0.2349156537794493,
+            "recorded_tax_eur": 0.2580867675835084
           },
           {
             "dividend_id": "yahoo:LOGM:2017-05-26",
@@ -1792,10 +1792,10 @@
             "payment_session": "2017-05-26",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.1579964359812345,
-            "recorded_net_cash_eur": 0.0752853017450582,
-            "recorded_tax_eur": 0.0827111342361763
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.1579793055365659,
+            "recorded_net_cash_eur": 0.0752771390881736,
+            "recorded_tax_eur": 0.0827021664483922
           },
           {
             "dividend_id": "yahoo:LOGM:2017-08-25",
@@ -1805,10 +1805,10 @@
             "payment_session": "2017-08-25",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.1498075963114754,
-            "recorded_net_cash_eur": 0.071383319642418,
-            "recorded_tax_eur": 0.0784242766690574
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.1497913537252195,
+            "recorded_net_cash_eur": 0.0713755800500671,
+            "recorded_tax_eur": 0.0784157736751524
           },
           {
             "dividend_id": "yahoo:LOGM:2017-11-24",
@@ -1818,10 +1818,10 @@
             "payment_session": "2017-11-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.14893728191007,
-            "recorded_net_cash_eur": 0.0709686148301483,
-            "recorded_tax_eur": 0.0779686670799216
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.1489211336858964,
+            "recorded_net_cash_eur": 0.0709609202013296,
+            "recorded_tax_eur": 0.0779602134845668
           },
           {
             "dividend_id": "yahoo:LOGM:2018-02-28",
@@ -1831,10 +1831,10 @@
             "payment_session": "2018-02-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.1737934924426954,
-            "recorded_net_cash_eur": 0.0828125991489443,
-            "recorded_tax_eur": 0.090980893293751
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.173774649234065,
+            "recorded_net_cash_eur": 0.0828036203600319,
+            "recorded_tax_eur": 0.090971028874033
           },
           {
             "dividend_id": "yahoo:LOGM:2018-05-25",
@@ -1844,10 +1844,10 @@
             "payment_session": "2018-05-25",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.1818170207019342,
-            "recorded_net_cash_eur": 0.0866358103644716,
-            "recorded_tax_eur": 0.0951812103374626
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.1817973075584471,
+            "recorded_net_cash_eur": 0.0866264170516,
+            "recorded_tax_eur": 0.0951708905068471
           },
           {
             "dividend_id": "yahoo:LOGM:2018-08-24",
@@ -1857,10 +1857,10 @@
             "payment_session": "2018-08-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.1831820604673008,
-            "recorded_net_cash_eur": 0.0872862518126688,
-            "recorded_tax_eur": 0.095895808654632
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.1831621993221324,
+            "recorded_net_cash_eur": 0.087276787976996,
+            "recorded_tax_eur": 0.0958854113451363
           },
           {
             "dividend_id": "yahoo:LOGM:2018-11-30",
@@ -1870,10 +1870,10 @@
             "payment_session": "2018-11-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.1868750520904201,
-            "recorded_net_cash_eur": 0.0890459623210851,
-            "recorded_tax_eur": 0.0978290897693349
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.1868547905400889,
+            "recorded_net_cash_eur": 0.0890363076923523,
+            "recorded_tax_eur": 0.0978184828477365
           },
           {
             "dividend_id": "yahoo:LOGM:2019-03-12",
@@ -1883,10 +1883,10 @@
             "payment_session": "2019-03-12",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.2039562329418778,
-            "recorded_net_cash_eur": 0.0971851449968047,
-            "recorded_tax_eur": 0.106771087945073
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.2039341193989898,
+            "recorded_net_cash_eur": 0.0971746078936186,
+            "recorded_tax_eur": 0.1067595115053711
           },
           {
             "dividend_id": "yahoo:LOGM:2019-05-24",
@@ -1896,10 +1896,10 @@
             "payment_session": "2019-05-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.2055606084222466,
-            "recorded_net_cash_eur": 0.0979496299132005,
-            "recorded_tax_eur": 0.1076109785090461
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.2055383209281854,
+            "recorded_net_cash_eur": 0.0979390099222803,
+            "recorded_tax_eur": 0.107599311005905
           },
           {
             "dividend_id": "yahoo:LOGM:2019-08-23",
@@ -1909,10 +1909,10 @@
             "payment_session": "2019-08-23",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.2078270697170965,
-            "recorded_net_cash_eur": 0.0990295987201964,
-            "recorded_tax_eur": 0.1087974709969
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.207804536486544,
+            "recorded_net_cash_eur": 0.0990188616358382,
+            "recorded_tax_eur": 0.1087856748507058
           },
           {
             "dividend_id": "yahoo:LOGM:2019-11-29",
@@ -1922,10 +1922,10 @@
             "payment_session": "2019-11-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7075712388983608,
-            "recorded_gross_eur": 0.2093977896940149,
-            "recorded_net_cash_eur": 0.0997780467891981,
-            "recorded_tax_eur": 0.1096197429048168
+            "prior_session_units": 0.7074945219149569,
+            "recorded_gross_eur": 0.2093750861613194,
+            "recorded_net_cash_eur": 0.0997672285558687,
+            "recorded_tax_eur": 0.1096078576054507
           }
         ]
       },
@@ -1936,21 +1936,21 @@
     "weekly_annual": {
       "daily_rows": 4025,
       "days_with_explicit_provisional_value": 2024,
-      "peak_provisional_weight": 0.0011549388894785911,
+      "peak_provisional_weight": 0.001154936715636036,
       "peak_weight_date": "2014-10-16",
-      "provisional_value_eur_at_peak_weight": 82.0519527560886,
-      "maximum_provisional_value_eur": 249.367738912947,
-      "mean_provisional_weight": 0.00035798164956031705,
+      "provisional_value_eur_at_peak_weight": 82.04024388806828,
+      "maximum_provisional_value_eur": 249.33740795256296,
+      "mean_provisional_weight": 0.00035797208898056263,
       "known_dividend_examples": [
         {
           "security_id": "yahoo:CDK",
           "record_date": "2020-09-01",
           "payment_date": "2020-09-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.374345160845707,
+          "units": 3.373863639555643,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.4323127554892859,
-          "recorded_gross_eur": 0.4323127554892859,
+          "expected_gross_eur_at_payment_fx": 0.4322510641726567,
+          "recorded_gross_eur": 0.4322510641726566,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -1958,10 +1958,10 @@
           "record_date": "2020-12-01",
           "payment_date": "2020-12-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.374345160845707,
+          "units": 3.373863639555643,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.41214214976537417,
-          "recorded_gross_eur": 0.4121421497653741,
+          "expected_gross_eur_at_payment_fx": 0.4120833368075454,
+          "recorded_gross_eur": 0.4120833368075453,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -1969,10 +1969,10 @@
           "record_date": "2021-03-08",
           "payment_date": "2021-03-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.374345160845707,
+          "units": 3.373863639555643,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.4310976698124998,
-          "recorded_gross_eur": 0.4310976698124998,
+          "expected_gross_eur_at_payment_fx": 0.4310361518894017,
+          "recorded_gross_eur": 0.4310361518894016,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -1980,10 +1980,10 @@
           "record_date": "2021-06-21",
           "payment_date": "2021-06-30",
           "dividend_usd_per_share": 0.15,
-          "units": 3.374345160845707,
+          "units": 3.373863639555643,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.4259102777910266,
-          "recorded_gross_eur": 0.4259102777910266,
+          "expected_gross_eur_at_payment_fx": 0.42584950011220674,
+          "recorded_gross_eur": 0.4258495001122067,
           "source": "https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm"
         },
         {
@@ -1991,14 +1991,14 @@
           "record_date": "2018-08-08",
           "payment_date": "2018-08-24",
           "dividend_usd_per_share": 0.3,
-          "units": 0.7128725960713043,
+          "units": 0.7127875002654054,
           "units_constant_in_entitlement_window": true,
-          "expected_gross_eur_at_payment_fx": 0.1845545209021326,
-          "recorded_gross_eur": 0.1845545209021326,
+          "expected_gross_eur_at_payment_fx": 0.18453249057613186,
+          "recorded_gross_eur": 0.1845324905761318,
           "source": "https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm"
         }
       ],
-      "five_examples_recorded_gross_eur": 1.886017373760319,
+      "five_examples_recorded_gross_eur": 1.8857525435579419,
       "five_examples_verified_exactly_once": true,
       "verified_dividend_corpus": {
         "source_schedules": 42,
@@ -2006,10 +2006,10 @@
         "payment_rows": 42,
         "positive_entitlements": 42,
         "zero_entitlements": 0,
-        "recorded_gross_eur": 15.18233489708665,
-        "recorded_net_cash_eur": 7.234382578461786,
-        "recorded_tax_eur": 7.947952318624861,
-        "maximum_arithmetic_residual": 1.6653345369377348e-16,
+        "recorded_gross_eur": 15.180215593275653,
+        "recorded_net_cash_eur": 7.233372730195846,
+        "recorded_tax_eur": 7.946842863079804,
+        "maximum_arithmetic_residual": 1.1102230246251565e-16,
         "all_schedules_checked_exactly_once": true,
         "payments": [
           {
@@ -2020,10 +2020,10 @@
             "payment_session": "2014-12-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.3319844382237311,
-            "recorded_net_cash_eur": 0.1581905848136078,
-            "recorded_tax_eur": 0.1737938534101232
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.3319370638244463,
+            "recorded_net_cash_eur": 0.1581680109123486,
+            "recorded_tax_eur": 0.1737690529120976
           },
           {
             "dividend_id": "yahoo:CDK:2015-03-27",
@@ -2033,10 +2033,10 @@
             "payment_session": "2015-03-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.3729932012725542,
-            "recorded_net_cash_eur": 0.1777312604063721,
-            "recorded_tax_eur": 0.1952619408661821
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.3729399748956127,
+            "recorded_net_cash_eur": 0.1777058980377595,
+            "recorded_tax_eur": 0.1952340768578532
           },
           {
             "dividend_id": "yahoo:CDK:2015-06-30",
@@ -2046,10 +2046,10 @@
             "payment_session": "2015-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.3618924115662568,
-            "recorded_net_cash_eur": 0.1724417341113213,
-            "recorded_tax_eur": 0.1894506774549355
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.3618407692793611,
+            "recorded_net_cash_eur": 0.1724171265616155,
+            "recorded_tax_eur": 0.1894236427177455
           },
           {
             "dividend_id": "yahoo:CDK:2015-09-29",
@@ -2059,10 +2059,10 @@
             "payment_session": "2015-09-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.3614079072665876,
-            "recorded_net_cash_eur": 0.172210867812529,
-            "recorded_tax_eur": 0.1891970394540586
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.3613563341187765,
+            "recorded_net_cash_eur": 0.1721862932075969,
+            "recorded_tax_eur": 0.1891700409111795
           },
           {
             "dividend_id": "yahoo:CDK:2015-12-30",
@@ -2072,10 +2072,10 @@
             "payment_session": "2015-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.416928973745351,
-            "recorded_net_cash_eur": 0.1986666559896597,
-            "recorded_tax_eur": 0.2182623177556912
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4168694777045688,
+            "recorded_net_cash_eur": 0.198638306126227,
+            "recorded_tax_eur": 0.2182311715783418
           },
           {
             "dividend_id": "yahoo:CDK:2016-03-29",
@@ -2085,10 +2085,10 @@
             "payment_session": "2016-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4069471115902898,
-            "recorded_net_cash_eur": 0.193910298672773,
-            "recorded_tax_eur": 0.2130368129175167
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4068890399678505,
+            "recorded_net_cash_eur": 0.1938826275446807,
+            "recorded_tax_eur": 0.2130064124231697
           },
           {
             "dividend_id": "yahoo:CDK:2016-06-30",
@@ -2098,10 +2098,10 @@
             "payment_session": "2016-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4103193989498923,
-            "recorded_net_cash_eur": 0.1955171935996236,
-            "recorded_tax_eur": 0.2148022053502686
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4102608460998125,
+            "recorded_net_cash_eur": 0.1954892931665606,
+            "recorded_tax_eur": 0.2147715529332518
           },
           {
             "dividend_id": "yahoo:CDK:2016-09-30",
@@ -2111,10 +2111,10 @@
             "payment_session": "2016-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4081503420071413,
-            "recorded_net_cash_eur": 0.1944836379664028,
-            "recorded_tax_eur": 0.2136667040407385
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4080920986829243,
+            "recorded_net_cash_eur": 0.1944558850224134,
+            "recorded_tax_eur": 0.2136362136605109
           },
           {
             "dividend_id": "yahoo:CDK:2016-12-30",
@@ -2124,10 +2124,10 @@
             "payment_session": "2016-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4481627193989175,
-            "recorded_net_cash_eur": 0.2135495357935841,
-            "recorded_tax_eur": 0.2346131836053333
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4480987662819372,
+            "recorded_net_cash_eur": 0.213519062133343,
+            "recorded_tax_eur": 0.2345797041485942
           },
           {
             "dividend_id": "yahoo:CDK:2017-03-29",
@@ -2137,10 +2137,10 @@
             "payment_session": "2017-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4395313756218822,
-            "recorded_net_cash_eur": 0.2094367004838268,
-            "recorded_tax_eur": 0.2300946751380553
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4394686542033774,
+            "recorded_net_cash_eur": 0.2094068137279093,
+            "recorded_tax_eur": 0.2300618404754681
           },
           {
             "dividend_id": "yahoo:CDK:2017-06-30",
@@ -2150,10 +2150,10 @@
             "payment_session": "2017-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4139575206084814,
-            "recorded_net_cash_eur": 0.1972507585699413,
-            "recorded_tax_eur": 0.21670676203854
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4138984485960306,
+            "recorded_net_cash_eur": 0.1972226107560085,
+            "recorded_tax_eur": 0.216675837840022
           },
           {
             "dividend_id": "yahoo:CDK:2017-09-29",
@@ -2163,10 +2163,10 @@
             "payment_session": "2017-09-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4001425737069278,
-            "recorded_net_cash_eur": 0.1906679363713511,
-            "recorded_tax_eur": 0.2094746373355767
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4000854730965527,
+            "recorded_net_cash_eur": 0.1906407279305073,
+            "recorded_tax_eur": 0.2094447451660453
           },
           {
             "dividend_id": "yahoo:CDK:2017-12-29",
@@ -2176,10 +2176,10 @@
             "payment_session": "2017-12-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4220393347176319,
-            "recorded_net_cash_eur": 0.2011017429929515,
-            "recorded_tax_eur": 0.2209375917246803
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4219791094249532,
+            "recorded_net_cash_eur": 0.2010730456409901,
+            "recorded_tax_eur": 0.220906063783963
           },
           {
             "dividend_id": "yahoo:CDK:2018-03-29",
@@ -2189,10 +2189,10 @@
             "payment_session": "2018-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4108041345076341,
-            "recorded_net_cash_eur": 0.1957481700928876,
-            "recorded_tax_eur": 0.2150559644147465
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4107455124854691,
+            "recorded_net_cash_eur": 0.1957202366993259,
+            "recorded_tax_eur": 0.2150252757861431
           },
           {
             "dividend_id": "yahoo:CDK:2018-06-29",
@@ -2202,10 +2202,10 @@
             "payment_session": "2018-06-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4341669018072191,
-            "recorded_net_cash_eur": 0.2068805287111398,
-            "recorded_tax_eur": 0.2272863730960792
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4341049459026818,
+            "recorded_net_cash_eur": 0.2068510067226278,
+            "recorded_tax_eur": 0.227253939180054
           },
           {
             "dividend_id": "yahoo:CDK:2018-09-28",
@@ -2215,10 +2215,10 @@
             "payment_session": "2018-09-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4372423757142847,
-            "recorded_net_cash_eur": 0.2083459920278566,
-            "recorded_tax_eur": 0.2288963836864281
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4371799809375833,
+            "recorded_net_cash_eur": 0.2083162609167584,
+            "recorded_tax_eur": 0.2288637200208249
           },
           {
             "dividend_id": "yahoo:CDK:2018-12-28",
@@ -2228,10 +2228,10 @@
             "payment_session": "2018-12-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4418995758048332,
-            "recorded_net_cash_eur": 0.210565147871003,
-            "recorded_tax_eur": 0.2313344279338302
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4418365164425933,
+            "recorded_net_cash_eur": 0.2105351000848956,
+            "recorded_tax_eur": 0.2313014163576977
           },
           {
             "dividend_id": "yahoo:CDK:2019-03-29",
@@ -2241,10 +2241,10 @@
             "payment_session": "2019-03-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4505133726095736,
-            "recorded_net_cash_eur": 0.2146696220484618,
-            "recorded_tax_eur": 0.2358437505611118
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4504490840528228,
+            "recorded_net_cash_eur": 0.21463898855117,
+            "recorded_tax_eur": 0.2358100955016527
           },
           {
             "dividend_id": "yahoo:CDK:2019-06-27",
@@ -2254,10 +2254,10 @@
             "payment_session": "2019-06-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4451642692408584,
-            "recorded_net_cash_eur": 0.212120774293269,
-            "recorded_tax_eur": 0.2330434949475894
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4451007440047023,
+            "recorded_net_cash_eur": 0.2120905045182406,
+            "recorded_tax_eur": 0.2330102394864616
           },
           {
             "dividend_id": "yahoo:CDK:2019-09-27",
@@ -2267,10 +2267,10 @@
             "payment_session": "2019-09-27",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4628731359184783,
-            "recorded_net_cash_eur": 0.2205590492651549,
-            "recorded_tax_eur": 0.2423140866533234
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4628070836153146,
+            "recorded_net_cash_eur": 0.2205275753426973,
+            "recorded_tax_eur": 0.2422795082726172
           },
           {
             "dividend_id": "yahoo:CDK:2019-12-30",
@@ -2280,10 +2280,10 @@
             "payment_session": "2019-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4523655144578211,
-            "recorded_net_cash_eur": 0.2155521676391517,
-            "recorded_tax_eur": 0.2368133468186693
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4523009615992014,
+            "recorded_net_cash_eur": 0.2155214082020194,
+            "recorded_tax_eur": 0.2367795533971819
           },
           {
             "dividend_id": "yahoo:CDK:2020-03-30",
@@ -2293,10 +2293,10 @@
             "payment_session": "2020-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4587201143074643,
-            "recorded_net_cash_eur": 0.2185801344675067,
-            "recorded_tax_eur": 0.2401399798399575
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4586546546432359,
+            "recorded_net_cash_eur": 0.2185489429375018,
+            "recorded_tax_eur": 0.240105711705734
           },
           {
             "dividend_id": "yahoo:CDK:2020-06-29",
@@ -2306,10 +2306,10 @@
             "payment_session": "2020-06-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4485570490312442,
-            "recorded_net_cash_eur": 0.2137374338633878,
-            "recorded_tax_eur": 0.2348196151678563
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4484930396431641,
+            "recorded_net_cash_eur": 0.2137069333899676,
+            "recorded_tax_eur": 0.2347861062531964
           },
           {
             "dividend_id": "yahoo:CDK:2020-09-30",
@@ -2319,10 +2319,10 @@
             "payment_session": "2020-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4323127554892859,
-            "recorded_net_cash_eur": 0.2059970279906447,
-            "recorded_tax_eur": 0.2263157274986412
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4322510641726566,
+            "recorded_net_cash_eur": 0.2059676320782708,
+            "recorded_tax_eur": 0.2262834320943857
           },
           {
             "dividend_id": "yahoo:CDK:2020-12-30",
@@ -2332,10 +2332,10 @@
             "payment_session": "2020-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4121421497653741,
-            "recorded_net_cash_eur": 0.1963857343632007,
-            "recorded_tax_eur": 0.2157564154021734
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4120833368075453,
+            "recorded_net_cash_eur": 0.1963577099887953,
+            "recorded_tax_eur": 0.21572562681875
           },
           {
             "dividend_id": "yahoo:CDK:2021-03-30",
@@ -2345,10 +2345,10 @@
             "payment_session": "2021-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4310976698124998,
-            "recorded_net_cash_eur": 0.2054180396656561,
-            "recorded_tax_eur": 0.2256796301468436
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4310361518894016,
+            "recorded_net_cash_eur": 0.2053887263752998,
+            "recorded_tax_eur": 0.2256474255141018
           },
           {
             "dividend_id": "yahoo:CDK:2021-06-30",
@@ -2358,10 +2358,10 @@
             "payment_session": "2021-06-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4259102777910266,
-            "recorded_net_cash_eur": 0.2029462473674241,
-            "recorded_tax_eur": 0.2229640304236024
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4258495001122067,
+            "recorded_net_cash_eur": 0.2029172868034665,
+            "recorded_tax_eur": 0.2229322133087402
           },
           {
             "dividend_id": "yahoo:CDK:2021-09-30",
@@ -2371,10 +2371,10 @@
             "payment_session": "2021-09-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4371290907045997,
-            "recorded_net_cash_eur": 0.2082920117207417,
-            "recorded_tax_eur": 0.228837078983858
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4370667120937442,
+            "recorded_net_cash_eur": 0.208262288312669,
+            "recorded_tax_eur": 0.2288044237810751
           },
           {
             "dividend_id": "yahoo:CDK:2021-12-30",
@@ -2384,10 +2384,10 @@
             "payment_session": "2021-12-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4465782372744451,
-            "recorded_net_cash_eur": 0.212794530061273,
-            "recorded_tax_eur": 0.233783707213172
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4465145102641137,
+            "recorded_net_cash_eur": 0.2127641641408502,
+            "recorded_tax_eur": 0.2337503461232635
           },
           {
             "dividend_id": "yahoo:CDK:2022-03-30",
@@ -2397,10 +2397,10 @@
             "payment_session": "2022-03-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4549269945414848,
-            "recorded_net_cash_eur": 0.2167727128990174,
-            "recorded_tax_eur": 0.2381542816424673
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.4548620761579601,
+            "recorded_net_cash_eur": 0.2167417792892679,
+            "recorded_tax_eur": 0.2381202968686921
           },
           {
             "dividend_id": "yahoo:CDK:2022-06-29",
@@ -2410,10 +2410,10 @@
             "payment_session": "2022-06-29",
             "payment_evidence": "issuer_declared_schedule_only",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 3.374345160845707,
-            "recorded_gross_eur": 0.4812701094673918,
-            "recorded_net_cash_eur": 0.2293252071612121,
-            "recorded_tax_eur": 0.2519449023061796
+            "prior_session_units": 3.373863639555643,
+            "recorded_gross_eur": 0.481201431903914,
+            "recorded_net_cash_eur": 0.229292482302215,
+            "recorded_tax_eur": 0.2519089496016991
           },
           {
             "dividend_id": "yahoo:LOGM:2017-05-26",
@@ -2423,10 +2423,10 @@
             "payment_session": "2017-05-26",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.1591801974078475,
-            "recorded_net_cash_eur": 0.0758493640648393,
-            "recorded_tax_eur": 0.0833308333430082
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.1591611960221073,
+            "recorded_net_cash_eur": 0.0758403099045341,
+            "recorded_tax_eur": 0.0833208861175732
           },
           {
             "dividend_id": "yahoo:LOGM:2017-08-25",
@@ -2436,10 +2436,10 @@
             "payment_session": "2017-08-25",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.1509300042495139,
-            "recorded_net_cash_eur": 0.0719181470248933,
-            "recorded_tax_eur": 0.0790118572246205
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.1509119876916932,
+            "recorded_net_cash_eur": 0.0719095621350918,
+            "recorded_tax_eur": 0.0790024255566014
           },
           {
             "dividend_id": "yahoo:LOGM:2017-11-24",
@@ -2449,10 +2449,10 @@
             "payment_session": "2017-11-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.1500531691654677,
-            "recorded_net_cash_eur": 0.0715003351073453,
-            "recorded_tax_eur": 0.0785528340581223
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.150035257275702,
+            "recorded_net_cash_eur": 0.071491800091872,
+            "recorded_tax_eur": 0.07854345718383
           },
           {
             "dividend_id": "yahoo:LOGM:2018-02-28",
@@ -2462,10 +2462,10 @@
             "payment_session": "2018-02-28",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.1750956106282882,
-            "recorded_net_cash_eur": 0.0834330584643793,
-            "recorded_tax_eur": 0.0916625521639089
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.1750747094151151,
+            "recorded_net_cash_eur": 0.0834230990363023,
+            "recorded_tax_eur": 0.0916516103788127
           },
           {
             "dividend_id": "yahoo:LOGM:2018-05-25",
@@ -2475,10 +2475,10 @@
             "payment_session": "2018-05-25",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.1831792538084722,
-            "recorded_net_cash_eur": 0.0872849144397369,
-            "recorded_tax_eur": 0.0958943393687352
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.1831573876484981,
+            "recorded_net_cash_eur": 0.0872744952145093,
+            "recorded_tax_eur": 0.0958828924339888
           },
           {
             "dividend_id": "yahoo:LOGM:2018-08-24",
@@ -2488,10 +2488,10 @@
             "payment_session": "2018-08-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.1845545209021326,
-            "recorded_net_cash_eur": 0.0879402292098661,
-            "recorded_tax_eur": 0.0966142916922664
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.1845324905761318,
+            "recorded_net_cash_eur": 0.0879297317595268,
+            "recorded_tax_eur": 0.096602758816605
           },
           {
             "dividend_id": "yahoo:LOGM:2018-11-30",
@@ -2501,10 +2501,10 @@
             "payment_session": "2018-11-30",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.1882751816369322,
-            "recorded_net_cash_eur": 0.0897131240499981,
-            "recorded_tax_eur": 0.098562057586934
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.1882527071745942,
+            "recorded_net_cash_eur": 0.0897024149686941,
+            "recorded_tax_eur": 0.0985502922059001
           },
           {
             "dividend_id": "yahoo:LOGM:2019-03-12",
@@ -2514,10 +2514,10 @@
             "payment_session": "2019-03-12",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.2054843403309746,
-            "recorded_net_cash_eur": 0.0979132881677093,
-            "recorded_tax_eur": 0.1075710521632652
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.2054598116064361,
+            "recorded_net_cash_eur": 0.0979016002304667,
+            "recorded_tax_eur": 0.1075582113759693
           },
           {
             "dividend_id": "yahoo:LOGM:2019-05-24",
@@ -2527,10 +2527,10 @@
             "payment_session": "2019-05-24",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.2071007363217787,
-            "recorded_net_cash_eur": 0.0986835008573275,
-            "recorded_tax_eur": 0.1084172354644512
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.207076014647588,
+            "recorded_net_cash_eur": 0.0986717209795756,
+            "recorded_tax_eur": 0.1084042936680123
           },
           {
             "dividend_id": "yahoo:LOGM:2019-08-23",
@@ -2540,10 +2540,10 @@
             "payment_session": "2019-08-23",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.2093841786924301,
-            "recorded_net_cash_eur": 0.0997715611469429,
-            "recorded_tax_eur": 0.1096126175454871
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.2093591844430698,
+            "recorded_net_cash_eur": 0.0997596513871227,
+            "recorded_tax_eur": 0.109599533055947
           },
           {
             "dividend_id": "yahoo:LOGM:2019-11-29",
@@ -2553,21 +2553,21 @@
             "payment_session": "2019-11-29",
             "payment_evidence": "issuer_report_confirms_payment",
             "ex_date_quality": "derived_Nasdaq_11140_regular_distribution",
-            "prior_session_units": 0.7128725960713043,
-            "recorded_gross_eur": 0.210966667021648,
-            "recorded_net_cash_eur": 0.1005256168358152,
-            "recorded_tax_eur": 0.1104410501858327
+            "prior_session_units": 0.7127875002654054,
+            "recorded_gross_eur": 0.2109414838702028,
+            "recorded_net_cash_eur": 0.1005136170641516,
+            "recorded_tax_eur": 0.1104278668060511
           }
         ]
       },
       "mandatory_cash_fx_fees_eur": 0.0,
-      "buy_count": 20375,
-      "buy_count_below_one_share": 18902
+      "buy_count": 20372,
+      "buy_count_below_one_share": 18899
     }
   },
   "input_sha256": {
     "checks/accuracy_data_checks.py": "3c68de7be6f44cc84e4c1ddf7a35a3fc6000a7bcc3c4024dd10cc6ce3cb65862",
-    "study_inputs.py": "6a88c8d47d57d3bc86164137dfb1c13d5934cc8cd7ec0e74955fafd090b60007",
+    "study_inputs.py": "32d9e92051e3ff302267b68901e3197101e04e0b2c83b305a73c54b0d9b35d9d",
     "inputs/best_effort/purchase_date_coverage.csv": "ab51958abd82cde0627f00fb2ef60ff067e3ad4b1b82d03de179d698131e9f52",
     "results/latest/contribution_schedule.csv": "dfe2a2a1e4cc56af23710566fdc3a3a7585a344c70a99f737efe244309c6085d",
     "benchmark/issuer/cndx_nav_eur.csv": "96b2f6124b453857e3b2244ff9f09c67837403cf5d011d0ec5a647ec1ecf6ae7",
@@ -2580,17 +2580,17 @@
     "prices/best_effort/split_events.csv": "16fe61e64ef4f1213aa96706a5431532de7edb0c93b07c6229d54f81f8772410",
     "inputs/verified_dividends.csv": "e1a0c1753ef591cf560a2b49dc36d5b811a8e233122b6a317ff9e5770cc7a56f",
     "inputs/verified_dividends_provenance.json": "29e7c7574b9f51b8282c529349d79b237341c7a3f795f0b5162da99135bd68d7",
-    "results/latest/ledgers/baseline_daily.csv.gz": "7a19edab3e6309eae579078ab89c786d806e20d4d2ebd79883a0eaede8ccb392",
-    "results/latest/ledgers/baseline_transactions.csv.gz": "b19a0522194ec7878fbf854723a64966aed8fae0c1d9aa0d4896d43d43149fc3",
-    "results/latest/ledgers/monthly_tlh_daily.csv.gz": "b1e2536016bf03d8b11ff1995a2066b4f2f6f53e807e2e037642ee58909e657f",
-    "results/latest/ledgers/monthly_tlh_transactions.csv.gz": "d90654fc0dfeb8c15e7a4b239481c66c8b3cf155b30fc1c58a3c8c6db171737e",
-    "results/latest/ledgers/monthly_hybrid_daily.csv.gz": "41910abb8195703e3cdf3425583d100d4a31cf32906e83ae2abd7904d0cf058d",
-    "results/latest/ledgers/monthly_hybrid_transactions.csv.gz": "03e5f5074c2ad8e940476716d3c5eda183ef2ec1de1da3e62e9665eca48a1ee5",
-    "results/latest/ledgers/weekly_annual_daily.csv.gz": "b1735ced61a176338b2ccd3c6dba5d91917884876abcd1a24466884795e6f6ea",
-    "results/latest/ledgers/weekly_annual_transactions.csv.gz": "2ef3fbdcc51936b0d70949e94112287ae795edbc9109cfa91e6bb407efb96ec1",
-    "results/latest/ledgers/baseline_summary.json": "26acd8e919f7080b90e2c992f7bad5888602eb7817dd4f83d1368b6aa54ad44d",
-    "results/latest/ledgers/monthly_tlh_summary.json": "90a299b7ce88bc101889337c3b6f67e5c07fef20eed2b0f97315e666be4f10a7",
-    "results/latest/ledgers/monthly_hybrid_summary.json": "1fff390f7ccf8f9974f5774ec3fbd6e57564193b59a31c870aa9f5a49525ea69",
-    "results/latest/ledgers/weekly_annual_summary.json": "626e70e8bc0968b51337b75fbb7aecb328bc7d4b20ff02e57dec0fd67493c471"
+    "results/latest/ledgers/baseline_daily.csv.gz": "b5ba338f54709da3081ac7206bf165dd2fb9c74d781b06a83d466985f8df4294",
+    "results/latest/ledgers/baseline_transactions.csv.gz": "e251882689660e6ffbe9855670680cebccb8b8c361daf1dd7c4eb6b587bfae94",
+    "results/latest/ledgers/monthly_tlh_daily.csv.gz": "93f98d15b88501b96f9b1529237debb424a0dc6c952574fda0af3092a8fa43d9",
+    "results/latest/ledgers/monthly_tlh_transactions.csv.gz": "c09bf63ef1f55533f39cff52efe64817f4f7101f46318828786a7fb70fcd38a1",
+    "results/latest/ledgers/monthly_hybrid_daily.csv.gz": "2eb88fa0f9ad17c45d9f8b57ff2fd6074dfe50963781c1e94ba57761b2ff3974",
+    "results/latest/ledgers/monthly_hybrid_transactions.csv.gz": "14dd0165eaea45f2a0f1b653f28692776b1cd64b8022b603bc9f0017ebaf02b8",
+    "results/latest/ledgers/weekly_annual_daily.csv.gz": "b612cea475dc04fbf5a85fb9c4342f1ffc9806568f2b66d123d1ae3723d25b8f",
+    "results/latest/ledgers/weekly_annual_transactions.csv.gz": "a88685c0afef5b3ecdb8030aab5a6cfdad1934e46d64fd2d041d108a7d1163c1",
+    "results/latest/ledgers/baseline_summary.json": "4b6e23977e9f674bcc7e33fddaa4c5d8c354e5663907f48969ce1f7e393b239c",
+    "results/latest/ledgers/monthly_tlh_summary.json": "81c0e8f83abfd8e422014fe941e0036f2e79cdd1070a6e97d0433200322fc122",
+    "results/latest/ledgers/monthly_hybrid_summary.json": "0d78b8e519daf12f5eba6778b71e362b40290353b16204dc33a128cc05b53af9",
+    "results/latest/ledgers/weekly_annual_summary.json": "a388090720ebb6a842262007b0cda601295d19b56a62f1e4aa12bd80c40a6b20"
   }
 }
