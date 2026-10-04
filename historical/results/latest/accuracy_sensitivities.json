@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-04T12:28:30.982800+00:00",
+  "generated_at_utc": "2026-10-04T12:52:39.196870+00:00",
   "classification": "DIAGNOSTIC_STRESS_SCENARIOS_NOT_CALIBRATED_ESTIMATES",
   "period": [
     "2010-09-30",
     "2026-09-30"
   ],
-  "study_manifest_sha256": "6ce13ec451c24802eb4148aa35b5ed2aeb1b63cf9928680238274c521494c595",
+  "study_manifest_sha256": "01af8553bc3c09c4731526c172e7579fa927c36643acc25383c9f3c926ddb882",
   "input_sha256": {
     "prices/best_effort/prices_usd.csv.gz": "bbe52353cde0596ff2dab1d996c9e94ec40c8cf89c18c16596c04e73daa2540d",
     "prices/best_effort/actions.csv": "ed8e92aff14a2cdcf89d466a4d8258621ddb1fd70c02a7f3f6ea811a76d8bf8c",
@@ -13,6 +13,8 @@
     "inputs/best_effort/best_effort_weights.csv": "15a4bc6576f0b5d585c67b5f7f65465871f96a42a3d21076743f3bc99e85100a",
     "inputs/best_effort/membership.csv": "88242f41da24004352a4849ec02e740b71cdbf881661c76c6a489deec45df3d8",
     "inputs/best_effort/metadata.csv": "b8eff52ac03d6dce0626e7279701324f55a8eb85a5401a1f0d50f60fd4359b2f",
+    "inputs/verified_dividends.csv": "e1a0c1753ef591cf560a2b49dc36d5b811a8e233122b6a317ff9e5770cc7a56f",
+    "inputs/verified_dividends_provenance.json": "29e7c7574b9f51b8282c529349d79b237341c7a3f795f0b5162da99135bd68d7",
     "benchmark/issuer/cndx_nav_eur_2010-09-30_to_2026-09-30.csv": "56913cffa85a66512ef24321c9f1532886bbf0a97397a46904c6e055fec8eb44",
     "inputs/corrected_membership/membership_alias_overlay.csv": "5dda1a620bd0ccc190781765cb9855a4b7fc87771b0d58aa05aca9d718ffe21b",
     "benchmark/issuer/cndx_nav_eur.csv": "96b2f6124b453857e3b2244ff9f09c67837403cf5d011d0ec5a647ec1ecf6ae7",
@@ -24,15 +26,15 @@
   },
   "prepared_membership_sha256": "5dd4b1d2580066c15acec38317f6ee2f7b2e5786cc8232eb73385a913341156f",
   "code_sha256": {
-    "checks/accuracy_sensitivities.py": "c3d5325fc6e469814e3c4c01ad3b1f9321e4a07a36f1a2d0223331cc6239ed45",
-    "run_tax_optimization_study.py": "a42ba648484e698307f29c2aa23d9e9667575ad18c2be004a06422558f86d5f0",
-    "study_inputs.py": "ea651f462553af158cd1126ea0e6d12a473f5b3a1f03b38876c845ee6dd78bef",
-    "model/direct_stock_backtest.py": "788cd9a22b08da7384046667920996990c0ab1edcf6b4b63ca1b3e3d4caff4ab",
-    "model/etf_backtest.py": "5d58e305b613c41ca303d8f09b7bf6f962f7d50688cb02d58dc050fd92376397",
+    "checks/accuracy_sensitivities.py": "a92a8e24f797d89d061c5d519d3e76831cadcd1caae114f70b94b70b7e2b46c5",
+    "run_tax_optimization_study.py": "bc08fd5bcef9fe4c26e49f3700c3a29a5658500ff9ac903e983b37a7f1851094",
+    "study_inputs.py": "6a88c8d47d57d3bc86164137dfb1c13d5934cc8cd7ec0e74955fafd090b60007",
+    "model/direct_stock_backtest.py": "9575c8d7669d4d883f1a77968448a476af7a4a7d8fef413164f5124fb670baf0",
+    "model/etf_backtest.py": "5cf2473c2632f992d82262eef1e8b33e9443f31900885ab845df56bb35752f61",
     "tax/irish_tax.py": "a26243d442c6fb79e877537df64458a1e865edc3f87bebe7774392a2b7fcc294",
     "contributions.py": "8dd02541358362f602dac131280a002c5b063dba7310ae5b1f4043169bb32728"
   },
-  "results_sha256": "d21dfbdc2bdfeb2662fcf36f9db398446d6e157a5727fe7b4bd7c9f6ed0de733",
+  "results_sha256": "6556bbae3d7dbb46c20e6fab93dfced6b1716ef859f4ee7a5557b004a5672552",
   "stock_replays": 12,
   "etf_replays": 4,
   "stock_identity_cases": [
@@ -43,10 +45,14 @@
   ],
   "identity_tolerance_eur": 1e-06,
   "maximum_cash_reconciliation_error_eur": 9.313225746154785e-10,
+  "dated_fund_rate_sources": [
+    "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-27/27-01a-02.pdf",
+    "https://www.revenue.ie/en/tax-professionals/ebrief/2026/no-0162026.aspx"
+  ],
   "assumptions": [
     "All prepared inputs, contribution dates and policy rules match the published study.",
     "Stock stresses change only half_spread. The 0.15% non-euro FX fee stays unchanged.",
-    "The extra cost enters the shared model cost rate, including costed corporate cash receipts and final sales.",
+    "The extra cost applies to market trades and final sales. Compulsory corporate cash receipts carry no trade fee.",
     "The 5 bp and 25 bp costs are diagnostic stresses, not measured spreads, slippage or confidence intervals.",
     "ETF stresses retain the issuer NAV and zero explicit investor transaction costs.",
     "The 38% and 41% fund tax rates remain constant across the full period. They are not historical tax schedules.",
@@ -54,9 +60,5 @@
     "The dated rate control is a partial historical rate check, not a full reconstruction of historical law or payment dates.",
     "No deemed disposal is a hypothetical timing control. Final fund tax still applies.",
     "These checks do not validate missing source data, historical broker access, tax law or strategy selection."
-  ],
-  "dated_fund_rate_sources": [
-    "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-27/27-01a-02.pdf",
-    "https://www.revenue.ie/en/tax-professionals/ebrief/2026/no-0162026.aspx"
   ]
 }

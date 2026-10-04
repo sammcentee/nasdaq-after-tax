@@ -1,0 +1,37 @@
+{
+  "scope": "Ordinary CDK dividends from first dividend in December 2014 to July 2022 takeover; ordinary LogMeIn dividends after February 2017 spin-off to August 2020 takeover.",
+  "source_schedule_rows": 42,
+  "securities": {
+    "yahoo:CDK": {
+      "payments": 31,
+      "total_usd_per_share": 4.43,
+      "confirmed_paid_rows": 30,
+      "declared_only_payment": "2022-06-29"
+    },
+    "yahoo:LOGM": {
+      "payments": 11,
+      "total_usd_per_share": 3.25,
+      "confirmed_paid_rows": 11
+    }
+  },
+  "date_meanings": "record_date and payment_date are issuer-published dates. Actual broker receipt dates are not reconstructed. A blank declaration_date does not identify a missing dividend: only the exact Board decision date is unresolved. announcement_date records a public notice date when available.",
+  "ex_dates": "Issuer schedules do not state the ex-dates. Empty ex_date cells remain empty. The loader derives entitlement dates under Nasdaq Rule 11140 for ordinary distributions below 25% of share value. Output labels each derived date explicitly. The input Nasdaq session calendar approximates delivery business days. Separate official per-event ex-date confirmation remains absent.",
+  "ex_date_rule_sources": [
+    "https://www.sec.gov/files/rules/sro/nasdaq/2017/34-81446.pdf",
+    "https://listingcenter.nasdaq.com/assets/rulebook/nasdaq/filings/SR-NASDAQ-2016-183_Approval.pdf"
+  ],
+  "settlement": "The engine records units before ex-date trades and pays on the issuer payment date, or next model session. The interim net receivable retains its ex-date EUR mark. The payment uses payment-session FX. This avoids early use of dividend cash and future FX in prior valuation. Daily FX valuation of the receivable remains approximate.",
+  "limits": [
+    "CDK June 29, 2022: primary source confirms the announced payment schedule only. No separate post-payment primary confirmation was found.",
+    "LogMeIn confirms no dividends through June 30, 2020 and limits further dividends without acquirer consent. No July-August dividend announcements were found, but no final cash-flow statement for those two months was found.",
+    "The correction covers these two securities only. Other deleted-security dividends remain outside this source reconstruction."
+  ],
+  "logm_excluded_special": {
+    "payment_date": "2017-01-31",
+    "amount_usd_per_share": 0.5,
+    "reason": "The payment predates the February 1 spin-off entitlement.",
+    "source": "https://www.sec.gov/Archives/edgar/data/1420302/000119312518050503/d506130d10k.htm"
+  },
+  "logm_2020_source": "https://www.sec.gov/Archives/edgar/data/1420302/000156459020034298/logm-10q_20200630.htm",
+  "source_reconciliation": "CDK FY2015-FY2021 annual tables plus FY2022 Q3 cash-dividend totals support the first 30 rows. LogMeIn annual 2019 Note 12 reconciles its 11 in-scope payments."
+}

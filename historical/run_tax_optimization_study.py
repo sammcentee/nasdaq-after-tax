@@ -36,7 +36,9 @@ def scheduled_reviews(frequency):
     dates = []
     for period in pd.period_range("2010-09", "2026-09", freq="M"):
         if period.month in months:
-            day = period.end_time.normalize()
+            # Leave time for December profit orders to fill in the same tax year.
+            day = (pd.Timestamp(period.year, 12, 15) if frequency == "annual"
+                   else period.end_time.normalize())
             while day.weekday() >= 5:
                 day -= pd.Timedelta(days=1)
             dates.append(str(day.date()))
@@ -99,9 +101,10 @@ def simulate(spec):
     buys = t[t.event.eq("buy")]
     assert (pd.to_datetime(buys.weight_available_date) < pd.to_datetime(buys.date)).all()
     harvests = t[t.event.eq("sell") & t.reason.eq("harvest")]
-    assert (harvests.realized_gain_eur < 0).all()
+    if c.execution_mode == "same_close":
+        assert (harvests.realized_gain_eur < 0).all()
     exits = t[t.event.eq("sell") & t.reason.eq("policy_exit")]
-    if c.exit_policy == "loss_only":
+    if c.exit_policy == "loss_only" and c.execution_mode == "same_close":
         assert (exits.realized_gain_eur < 0).all()
     # Returns adjusted for the only external inflow, scheduled contributions.
     # The curve uses hypothetical after-tax marks; it is not a traded NAV index.
@@ -145,7 +148,8 @@ def simulate(spec):
         terminal_loss_carry_eur=float(result.yearly_tax.iloc[-1].loss_carry_forward),
     )
     assert result.yearly_tax.exemption_used.between(-1e-8, c.cgt_exemption+1e-6).all()
-    assert gain_sales.realized_gain_eur.gt(0).all()
+    if c.execution_mode == "same_close":
+        assert gain_sales.realized_gain_eur.gt(0).all()
     (LEDGERS / f"{name}_summary.json").write_text(json.dumps(summary, indent=2))
     return summary
 
@@ -263,7 +267,8 @@ def main():
     daily.to_csv(OUT / "etf/daily.csv.gz", index=False)
     assert tuple(ledger.loc[ledger.event.eq("contribution"), "date"].dt.strftime("%Y-%m-%d")) == dates
     BASE_CONFIG = BacktestConfig(contribution_dates=dates, contribution_amounts=amounts,
-                                missing_target_policy="reserve_cash", max_stale_sessions=10)
+                                missing_target_policy="reserve_cash", max_stale_sessions=10,
+                                execution_mode="next_session")
     p, w, events, metadata, membership, audit_dir = prepare()
     overlay_path = ROOT / "inputs/corrected_membership/membership_alias_overlay.csv"
     overlay = pd.read_csv(overlay_path, parse_dates=["effective_date", "available_date"])
@@ -313,10 +318,15 @@ def main():
                         "Current and carried losses must be used before the exemption; unused exemption expires;17 calendar tax years",
                         "Exemption-unavailable sensitivities set only cgt_exemption=0; no other personal gains are modelled",
                         "Quarterly departure sales may realise losses even when discretionary TLH is off",
-                        "Same-share gain repurchase requires all selected FIFO lots nonnegative and no same-class buy in preceding29days",
+                        "Voluntary orders use fixed signal-close sale units and purchase cash budgets, with execution on a later eligible session",
+                        "Signal-date gain and tax-budget tests do not guarantee the same gain or tax on a later fill; actual taxes use fill proceeds",
+                        "Same-share repurchases follow the actual disposal on a later session and obey actual loss blocks",
+                        "Annual gain reviews occur on15December or the preceding weekday, leaving time for execution before the tax year ends",
                         "Loss sales impose a29-day voluntary repurchase block; compulsory receipts remain separately audited",
                         "Tax-funded cash reserves and January settlements approximate payment timing; no interest on reserves",
-                        "0.15% FX per non-euro buy/sale; no additional exchange spread/slippage; ETF NAV includes fund costs",
+                        "0.15% FX per non-euro market buy/sale; compulsory corporate cash receipts carry no trade fee",
+                        "No additional exchange spread/slippage in the reference case; separate cost stresses remain necessary; ETF NAV includes fund costs",
+                        "ETF tax uses available same-day contributions first, then FIFO sales for the shortfall, without extra external cash",
                         "Marginal wealth effects include holdings, reinvestment, tax and costs; do not add conditional effects or call all of them pure tax savings",
                         "Nominal exemption shelter equals exemption_used times CGT rate on that ledger; it is not incremental terminal wealth",
                     ],

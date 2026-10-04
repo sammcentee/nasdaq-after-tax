@@ -1,4 +1,4 @@
-"""Independently check ETF tax arithmetic and a contribution-first funding policy.
+"""Independently check corrected ETF funding and the legacy policy control.
 
 Run: .venv/bin/python historical/checks/accuracy_etf_funding.py
 This script does not import the study engine or its tax functions.
@@ -108,14 +108,14 @@ def main():
     assert schedule.date.isin(prices.index).all() and (schedule.contribution_eur >= 0).all()
     assert schedule.date.max() < prices.index[-1]
     deposits = dict(zip(schedule.date, schedule.contribution_eur))
-    original = replay(prices, deposits, contribution_first=False)
-    variant = replay(prices, deposits, contribution_first=True)
+    corrected = replay(prices, deposits, contribution_first=True)
+    legacy = replay(prices, deposits, contribution_first=False)
     published = json.loads(published_path.read_text())
     for name, expected in published.items():
-        near(original[name], expected, "published "+name)
+        near(corrected[name], expected, "published corrected "+name)
     source_files = [nav_path, schedule_path, published_path, Path(__file__).resolve()]
     output = dict(
-        scope="Independent arithmetic reproduction and a separate cash-management sensitivity",
+        scope="Independent reproduction of the corrected default and a legacy policy control",
         command=".venv/bin/python historical/checks/accuracy_etf_funding.py",
         source_sha256={str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                        for path in source_files},
@@ -127,25 +127,25 @@ def main():
             "Each purchase has original cost and proportional prior deemed-disposal tax credit.",
             "Eight-year anniversaries use the first available weekday NAV on or after the anniversary.",
             "Tax and refunds settle immediately. Final liquidation replaces same-day deemed disposal.",
-            "Original policy: invest each contribution, then sell FIFO units to pay tax.",
-            "Variant: use only that day's contribution for tax first; invest its remainder after tax.",
+            "Corrected default: use only that day's contribution for tax first; invest its remainder after tax.",
+            "Legacy control: invest each contribution, then sell FIFO units to pay tax.",
             "Both policies sell FIFO units for residual tax, with tax on those sales included.",
-            "The variant uses no later contribution and does not optimize annual payment dates."],
+            "The corrected default uses no later contribution and does not optimize annual payment dates."],
         accounting_checks={
             "cash_eur": "Contributions + gross sales - purchases - all taxes = final cash.",
             "units": "Purchased units - funding-sale units = units before final liquidation.",
             "dd_credit_eur": "Prior DD tax = credits on sold units + credits on remaining units.",
             "lifetime_tax_eur": "Total tax = 38% of positive gains on actual disposals, including final sale.",
             "contribution_allocation_eur": "Contributions = purchases + contributions used directly for tax."},
-        original_independent_reproduction=original,
-        same_date_contribution_first_sensitivity=variant,
-        final_wealth_difference_eur=variant["final_cash"]-original["final_cash"],
+        corrected_independent_reproduction=corrected,
+        legacy_buy_before_tax_control=legacy,
+        final_wealth_difference_eur=corrected["final_cash"]-legacy["final_cash"],
         published_summary_reproduced=True,
         limitation="Arithmetic agreement does not verify market data, tax classification or executable prices.")
     destination = OUT / "accuracy_etf_funding.json"
     destination.write_text(json.dumps(output, indent=2, allow_nan=False)+"\n")
-    print(f"ETF original reproduced: EUR{original['final_cash']:,.2f}")
-    print(f"Contribution-first sensitivity: EUR{variant['final_cash']:,.2f}")
+    print(f"ETF corrected default reproduced: EUR{corrected['final_cash']:,.2f}")
+    print(f"Legacy buy-before-tax control: EUR{legacy['final_cash']:,.2f}")
     print(f"Difference: EUR{output['final_wealth_difference_eur']:,.2f}; accounting checks passed")
     print(destination)
 

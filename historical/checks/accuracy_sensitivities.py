@@ -149,7 +149,7 @@ def main():
         assumptions=[
             "All prepared inputs, contribution dates and policy rules match the published study.",
             "Stock stresses change only half_spread. The 0.15% non-euro FX fee stays unchanged.",
-            "The extra cost enters the shared model cost rate, including costed corporate cash receipts and final sales.",
+            "The extra cost applies to market trades and final sales. Compulsory corporate cash receipts carry no trade fee.",
             "The 5 bp and 25 bp costs are diagnostic stresses, not measured spreads, slippage or confidence intervals.",
             "ETF stresses retain the issuer NAV and zero explicit investor transaction costs.",
             "The 38% and 41% fund tax rates remain constant across the full period. They are not historical tax schedules.",

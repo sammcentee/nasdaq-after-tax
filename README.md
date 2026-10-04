@@ -6,7 +6,7 @@
 
 Starts at €1,000/month · Annual Irish CPI reviews · 16 years · €210,936.48 contributed
 
-[Read the report](historical/results/latest/report.pdf) · [Accuracy assessment](docs/ACCURACY_ASSESSMENT.md) · [Compare strategies](historical/results/latest/comparison.csv) · [Inspect marginal effects](historical/results/latest/marginal_effects.csv)
+[Current results](#current-results) · [Robustness checks](historical/results/latest/robustness.csv) · [Two-page summary](historical/results/latest/report.pdf) · [Compare strategies](historical/results/latest/comparison.csv) · [Inspect marginal effects](historical/results/latest/marginal_effects.csv)
 
 <sub>Python · Reproducible historical simulation</sub>
 
@@ -24,39 +24,46 @@ This is an approximate, self-managed replica. We allow holdings to drift instead
 
 **Research only; not tax, legal or investment advice.** Read the [legal notice](#legal-notice) before relying on any material.
 
-## How accurate and realistic are these results?
+## Model fixes applied
 
-**The calculations reproduce, but the study does not establish an executable Nasdaq-100 replica or a reliable forecast.** The [full assessment](docs/ACCURACY_ASSESSMENT.md) explains the evidence and its limits. Pages 5–8 of the [report](historical/results/latest/report.pdf) present the main findings.
+The current study applies the corrections found during the accuracy review:
 
-- **Arithmetic:** all 14 stock cases and the ETF reproduce. Ninety CSV/JSON outputs match after parsing. The 122 existing checks pass.
-- **Different investment exposure:** the weekly strategy holds 70.00% of stock value in its ten largest share classes before final sale. The last known targets assign 46.38%. Those dates differ. This measures target drift, not contemporaneous ETF tracking error.
-- **The ETF gap does not isolate tax benefits:** €201,890 of the €247,696 gap already exists in the direct-share baseline. The extra sale rules add €45,806 on this path.
-- **Rank depends on assumptions:** an extra 25 basis points per side reverses the order of the two monthly strategies. The weekly strategy remains highest among the four stock cases in these cost stresses.
-- **Realism remains limited:** same-close decisions and execution, assumed publication dates, incomplete dividends, provisional corporate-action tax treatment, and historical broker access need further evidence.
+- **Later execution:** a closing-price decision fixes sale quantities or purchase cash budgets. Orders execute at a later eligible session. The ledger records both dates. Actual prices determine gains and tax. A planned loss can become a gain.
+- **December timing:** annual gain reviews occur on 15 December, or the preceding weekday. Repurchases execute after the sale, on a later session. This leaves time before the tax year ends. The [timing controls](historical/results/latest/execution_timing.csv) separate this calendar change from the execution change.
+- **ETF cash use:** a same-day contribution pays tax first. Only the shortfall requires a unit sale. This alone raises the ETF balance by €3,606 under otherwise identical assumptions.
+- **Cash-flow repairs:** 42 CDK and LogMeIn dividend schedules now preserve entitlement before payment. Issuer reports confirm 41 payments. One remains declaration-only. All ex-dates are explicitly derived from exchange rules. Compulsory corporate cash receipts incur no trade FX fee.
+- **Broader checks:** separate replays test different investment periods, later weight availability, added trading costs, and quarterly sales toward target weights. These are retrospective checks, not independent forecasts.
 
-No overall accuracy percentage or confidence interval is justified. Small known omissions do not explain the whole gap. They also do not bound the unknown error. The assessment preserves the published balances and adds reproducible controls, including an independent ETF cash-management comparison.
+The corrections improve the model. Missing daily prices, assumed publication dates, personal tax details and corporate-action tax classifications still limit the results. No overall accuracy percentage is justified. The [earlier assessment](docs/ACCURACY_ASSESSMENT.md) is archived against its original revision.
 
-## What each strategy actually does
+## Current results
 
-All five scenarios invest the same CPI-linked monthly contributions for 16 years, then sell everything. **The four share-based scenarios are different ways of managing the same attempted ETF replica**: they share the index-based buying rules above and differ in when they sell holdings.
+All five cases receive **€210,936.48 across 192 scheduled contributions**, then liquidate on 30 September 2026. Amounts are nominal euros after modelled taxes and costs. The changes below combine all corrections. They are not isolated execution effects.
 
-| Strategy | Trading rule | Final after-tax wealth |
-|:---|:---|---:|
-| **Hold the ETF** | Buy an accumulating ETF; pay the modelled tax at each purchase’s eight-year anniversaries and on final sale. | **€750,729** |
-| **Buy underlying company shares directly; keep stocks that leave** | Use new money to buy shares directly in individual companies currently in the Nasdaq-100. Keep existing holdings, including former members; no discretionary sales before final liquidation. Compulsory corporate actions still apply. | **€952,619** |
-| **Sell losing shares each month** | Each month, sell eligible holdings down at least **5% and €25**, then reinvest into current index stocks. No December sales to use unused tax capacity. | **€988,601** |
-| **Sell losses monthly; sell former index stocks first in December** | Add December sales of profitable former members, putting proceeds into current index stocks. If tax capacity remains, sell and rebuy eligible current stocks. | **€994,222** |
-| **Sell losses weekly; sell and rebuy current stocks in December** | Check losses each Friday. In December, sell and rebuy eligible current index stocks to realise gains without adding CGT at that review. | **€998,425** |
+| Strategy | Before corrections | Current result | Change |
+|:---|---:|---:|---:|
+| Hold the accumulating ETF | €750,729 | **€754,335** | +€3,606 |
+| Direct shares; retain departed stocks | €952,619 | **€951,256** | −€1,363 |
+| Monthly loss reviews | €988,601 | **€981,373** | −€7,227 |
+| Monthly losses; December gains, departed stocks first | €994,222 | **€993,123** | −€1,099 |
+| Weekly losses; December gains in current stocks | €998,425 | **€950,304** | −€48,121 |
 
-**Shared by the three strategies that sell losses:** review former index members every quarter and sell a whole holding only when it adds no current-year CGT; reinvest proceeds into current index stocks. Otherwise, keep it. Both monthly and weekly loss reviews use the **5% and €25** thresholds and the model’s 29-day purchase restrictions.
-
-**The December rule:** try to realise gains covered first by available losses, then by the remaining **€1,270 annual CGT exemption**. It is not a €1,270 cap on gross gains, and eligible holdings may prevent full use. The monthly version sells former members first; the weekly version’s December sales are confined to current index stocks. Selling and rebuying records a new purchase cost for future CGT while keeping those stocks, with fewer shares after fees.
+**The former weekly winner no longer leads.** The monthly hybrid is highest among these five displayed cases. The tiny-loss variant in the wider 14-case study reaches €996,419. The earlier selection therefore does not establish an optimal rule. We retain the original comparison set instead of choosing a new winner after seeing the revised results.
 
 ![Final proceeds after modelled taxes and costs](historical/results/latest/strategy_comparison.png)
 
-The strongest selected result was **€998,425**. Adding December sales and repurchases to the otherwise identical weekly-loss strategy increased final wealth by **€9,319**; additional nominal exemption relief was **€5,948**. Those are different measures, not amounts to add together.
+The gap from the ETF includes different holdings, concentration, costs, dividend treatment and tax timing. It is not a measure of tax savings alone. Before-correction values come from [commit 83afc81](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/comparison.csv). [Current balances](historical/results/latest/comparison.csv) and [all stock summaries](historical/results/latest/ledgers/all_summaries.json) provide the underlying figures.
 
-These three strategies were selected from an earlier, broader exploration with fixed contributions and rerun with CPI-linked funding. **Selection is retrospective**; using only information available at each trade does not make this an out-of-sample test.
+## What the stronger checks show
+
+- **Exposure matters.** Quarterly target trimming reduces the weekly portfolio's prefinal top-ten stock weight from 69.49% to 50.89%. Final wealth falls from €950,304 to €840,908. The last known targets allocate 46.38% to their top ten, at an earlier date. This is closer target concentration, not proof of equal ETF exposure or measured tracking error.
+- **Publication timing matters.** An extra five business days before weights become available raises the weekly result to €995,389 and reverses the ranking. Later weights are not proven better. This shows that assumed release dates can materially change the conclusion.
+- **No rule wins consistently.** Fixed rules are replayed over eight periods. Twelve of the 38 stock attempts cannot finish because a held security lacks a usable terminal quote. These failures remain visible. The complete shorter-period tests also reverse rankings. All periods reuse selected historical rules. None is an untouched holdout.
+- **Timing effects are separate.** At unchanged December month-end review dates, later execution reduces weekly wealth by €27,658. Moving those reviews to 15 December reduces it by a further €20,527 on this path. The second change improves same-year exemption use but lowers wealth. Neither amount is pure tax savings.
+
+The [robustness table](historical/results/latest/robustness.csv), [timing controls](historical/results/latest/execution_timing.csv), and [cost stresses](historical/results/latest/accuracy_sensitivities.csv) preserve the full results. The monthly hybrid remains ahead of the other three headline stock cases at the tested extra costs of 5 and 25 basis points per side.
+
+**Verification:** 163 unit and synthetic checks pass. Independent ledger checks reconcile all 14 main stock cases. A fresh full replay reproduces 92 output files exactly after parsing. These checks establish software consistency. They do not validate every market input or tax classification.
 
 ## Why direct ownership changes the tax comparison
 
@@ -87,62 +94,54 @@ These are **nominal euro results**, not final wealth expressed in constant purch
 
 Source: CSO Ireland’s [CPM02 national CPI series](https://data.cso.ie/table/CPM02). The [contribution schedule](historical/results/latest/contribution_schedule.csv) records each payment, reference index and publication date. The [CPI methodology and provenance](historical/inflation/README.md) explain rounding and the current official snapshot: historical release dates are checked, but archived API vintages are not reconstructed.
 
-## What is the tax optimisation actually worth?
+## What do the extra sale rules contribute?
 
 ![Matched marginal effects on final after-tax wealth](historical/results/latest/marginal_effects.png)
 
-Each bar compares two complete replays that differ in one rule. Additional diagnostic controls isolate departure management, loss harvesting, annual gain harvesting and the availability of the annual exemption.
+Each comparison repeats the whole portfolio with one rule changed. On the corrected full-period path, December gain reviews change the monthly hybrid balance by **+€11,750**. December gain reviews change the weekly balance by **−€34,065**. These effects depend on the other rules and this historical path.
 
-These distinctions matter:
+A harvested loss is not a cash refund. A lower cost basis can increase later tax. Nominal exemption relief is the used exemption multiplied by 33%. It is not extra terminal wealth.
 
-- **Final wealth change** includes taxes, costs, reinvestment and changes in which stocks were held. It is not all tax savings.
-- **Nominal exemption relief** is the exemption actually used, multiplied by 33%. It is an accounting measure, not an extra amount to add to the final balance.
-- **Gain harvesting and the annual exemption are different experiments.** Gain reviews use existing losses before the allowance and change acquisition costs; separate exemption-off replays test the allowance’s availability.
-- **Do not add effects measured against different controls.** Resetting a share’s tax basis changes later loss opportunities, while using a loss bank can change whether a departed holding is sold. The [interaction table](historical/results/latest/interactions.csv) measures that dependence. Differences along a consistent sequence of controls do sum correctly.
+Complete wealth effects include changed holdings, cash deployment, costs and taxes. Do not add effects from different controls. The [matched comparisons](historical/results/latest/marginal_effects.csv) and [interaction table](historical/results/latest/interactions.csv) retain those distinctions.
 
-Harvesting a loss does not automatically create a permanent benefit equal to the loss times the tax rate. Replacement shares can have a lower cost basis and a larger taxable gain later. The relevant outcome is wealth after all taxes and costs.
+## How the stock strategies trade
 
-The exemption-on/off sensitivities illustrate the feedback. With the exemption available, the weekly strategy finishes **€13,243 higher**, with **€6,368** of nominal exemption relief. The strategy that sells losses monthly and former members first in December finishes **€700 lower**, despite **€6,787** of nominal exemption relief and lower CGT. These wealth changes include altered holdings and cash deployment; neither is a measure of allowance tax savings alone.
-
-## How the three stock strategies trade
-
-| Review | Common execution rules |
+| Review | Rule |
 |:---|:---|
-| **Monthly contributions** | Invest the scheduled CPI-indexed amount into eligible current constituents below their dated target weights. Reinvest dividends after tax. |
-| **Loss harvesting** | Sell a whole eligible holding only when its euro loss after fees reaches **both 5% and €25**. Require no same-class purchase in the preceding 29 days, then block repurchase for 29 days. |
-| **Quarterly sales of former members** | Sell a whole holding only when known realised losses, carried losses and the available exemption cover the gain without increasing CGT at that review. Otherwise keep it. |
-| **December sales, where enabled** | Sell the oldest shares first, including partial holdings, to use existing losses and then remaining **€1,270 annual exemption** capacity. Immediate repurchases of current stocks require every selected lot to be non-losing and incur costs on both trades. |
-| **Final liquidation** | Sell all remaining holdings using required terminal quotes and settle remaining modelled taxes and costs. |
+| Monthly contributions | Queue purchases of eligible current members below their last known target weights. Net dividends accumulate until a contribution date unless another disposal triggers investment. |
+| Loss reviews | Use the signal price to test a whole-position loss of both 5% and €25. Require no same-class purchase in the preceding 29 days. Actual losing fills block repurchase for 29 days. |
+| Quarterly departure reviews | Queue a whole-holding sale only when the signal estimate fits known losses and remaining exemption. Actual fill prices can create additional CGT. |
+| Annual gain reviews | On 15 December, or the preceding weekday, use known losses first, then remaining €1,270 exemption capacity. The monthly hybrid considers departed stocks first. The weekly version considers current stocks. Same-stock repurchases require actual non-losing lots and available after-tax sale proceeds. |
+| Quarterly target control | Separately trim eligible overweights toward dated targets, even if this realizes tax. Retained unweighted holdings, tax reserves, restrictions and later prices can prevent exact tracking. |
+| Final liquidation | Cancel pending orders, require usable final quotes, sell the holdings, and settle remaining modelled taxes. |
 
-The model uses recorded availability dates and does not anticipate later losses or recoveries. Some source dates rely on assumed publication lags. These checks do not establish execution at the same closing price that the model uses for its decisions.
+The buy-and-hold stock baseline has no voluntary sales before final liquidation. Compulsory events still apply. The three active headline strategies share quarterly departure reviews. Their loss-review dates and December rules differ.
 
 ## Previously weak rules, tested again
 
-These were the three weakest active gain-harvesting variants in the earlier fixed-contribution exploration, excluding controls and extra-spread sensitivities. They are now rerun with CPI-indexed contributions on the same corrected market data. All three still trail their matched controls, although their order has changed. Each shortfall below is measured against an otherwise matched strategy, rather than against the historical winner.
+These rules were weak in the earlier study. That label does not describe every corrected result: the €1 loss threshold now beats its matched control on the full-period path.
 
-| Underperforming rule | Final after-tax wealth | Matched comparator | Shortfall |
+| Previously tested rule | Final wealth | Matched control key | Difference |
 |:---|---:|:---|---:|
-| Sell losing shares monthly from a €1 loss | €972,752 | Same rules, but require a 5% and €25 loss; both sell and rebuy current stocks in December | −€22,369 |
-| Keep former members; sell and rebuy current stocks in December; no loss sales | €956,852 | Same rules, but also sell former members quarterly when no extra CGT arises | −€26,624 |
-| Sell and rebuy profitable current stocks monthly | €957,621 | Same rules, but sell and rebuy in December only | −€37,500 |
+| Monthly losses from €1 | €996,419 | annual_monthly_control | +€6,896 |
+| Retain departures; annual gain reviews | €954,519 | annual_only | −€27,445 |
+| Monthly gain reviews | €955,859 | annual_monthly_control | −€33,663 |
 
-- **Harvesting tiny losses created much more activity without improving the net outcome.** Loss sales rose from 424 to 1,403, while realised losses increased by €2,041. Recorded costs rose by €741, while nominal exemption relief fell by €120. Changed holdings, replacement purchases and cash deployment also affected returns; the fees alone do not explain the €22,369 shortfall.
-- **Keeping departed holdings preserved exposure that underperformed on this path.** Average confirmed outside-index weight was 4.71%, versus 0.21% when former members could be sold quarterly without extra CGT. This version paid €12,925 less total tax and €236 less in recorded costs, yet finished €26,624 behind. It still beat the plain retained-stock baseline by €4,234: December sales and repurchases helped in that comparison, but did not make retention the better rule.
-- **Monthly gain reviews did not create a larger annual allowance.** They produced 720 gain sales versus 198, with €80 less nominal exemption relief. Earlier basis resets and use of tax capacity changed later loss and departure decisions. The portfolio paid less tax but also generated less wealth; this was not simply a transaction-fee problem.
-
-These observations explain the recorded differences, not a universal claim that a strategy can never work. The study does not establish which particular missed recoveries caused the shortfalls. [Underperformer results](historical/results/latest/underperformers.csv) include the controls, trade counts, tax and cost differences; the [independent audit](historical/results/latest/attribution_audit.json) reconciles the accounting changes.
+`annual_monthly_control` uses monthly losses of at least 5% and €25, plus December gain reviews in current stocks. `annual_only` uses December gain reviews and quarterly departure sales, without voluntary loss harvesting. The [variant table](historical/results/latest/underperformers.csv) records taxes, costs and trade counts for each matched pair.
 
 ## Read and reproduce
 
 | Artifact | Contents |
 |:---|:---|
-| [Current report](historical/results/latest/report.pdf) | Eight-page brief: results, rules, accuracy assessment, sensitivity checks, and sources. |
-| [Full accuracy assessment](docs/ACCURACY_ASSESSMENT.md) | Evidence, quantified limits, tax-source review, and conclusions the study can support. |
+| [Current summary](historical/results/latest/report.pdf) | Two pages: corrected balances, applied fixes and remaining limits. |
+| [Archived accuracy assessment](docs/ACCURACY_ASSESSMENT.md) | The pre-correction review, with evidence pinned to its original revision. |
 | [Arithmetic and exposure audit](historical/results/latest/accuracy_audit.json) | Independent ledger checks, sequential wealth differences, concentration, and trade counts. |
-| [Data accuracy evidence](historical/results/latest/accuracy_data_audit.json) | Source age, coverage, provisional marks, verified dividend omissions, and fee mismatch. |
+| [Data accuracy evidence](historical/results/latest/accuracy_data_audit.json) | Source age, coverage, provisional marks, all 42 restored dividend schedules, and corrected corporate cash fees. |
+| [Robustness checks](historical/results/latest/robustness.csv) | Eight investment periods, publication-delay controls and quarterly target-trimming controls. Unavailable cases remain explicit. |
+| [Execution timing controls](historical/results/latest/execution_timing.csv) | Separate the effects of later execution and the December review date. |
 | [Cost and tax sensitivities](historical/results/latest/accuracy_sensitivities.csv) | Complete cost replays and separate ETF tax controls. These are diagnostic scenarios. |
 | [Independent ETF funding control](historical/results/latest/accuracy_etf_funding.json) | Independent lot arithmetic and a contribution-first tax-payment policy. |
-| [Full replay verification](historical/results/latest/accuracy_replay.json) | Exact parsed-data agreement across 90 study outputs. |
+| [Full replay verification](historical/results/latest/accuracy_replay.json) | Exact parsed-data agreement across 92 study outputs. |
 | [Contribution schedule](historical/results/latest/contribution_schedule.csv) | All 192 payments, annual reviews, CPI observations and publication dates. |
 | [Irish CPI inputs](historical/inflation/README.md) | Official source, funding formula, vintage limitations and provenance links. |
 | [Headline comparison](historical/results/latest/comparison.csv) | ETF, baseline and three selected stock strategies. |
@@ -175,6 +174,9 @@ Parallel execution uses Unix `fork`; use `--workers 1` where it is unavailable o
 python -m unittest discover -s historical/model -p 'test_*.py'
 python -m unittest discover -s historical/tax -p 'test_*.py'
 python -m unittest discover -s historical -p 'test_contributions.py'
+python -m unittest discover -s historical -p 'test_verified_dividends.py'
+python -m unittest discover -s historical/checks -p 'test_*.py'
+python -m unittest discover -s historical/providers -p 'test_*.py'
 python historical/checks/independent_policy_checks.py
 python historical/checks/independent_checks.py
 python historical/checks/audit_ledgers.py
@@ -185,6 +187,9 @@ python historical/checks/assess_accuracy.py
 python historical/checks/accuracy_data_checks.py
 python historical/checks/accuracy_etf_funding.py
 python historical/checks/accuracy_sensitivities.py --workers 3
+python historical/checks/robustness_study.py --workers 3
+python historical/checks/execution_timing_checks.py
+python historical/checks/verify_replay.py --workers 3
 python historical/run_tax_optimization_report.py
 ```
 
@@ -225,10 +230,10 @@ A [free-data replacement](historical/providers/README.md) is being evaluated usi
 - **Data freshness:** corrected stock prices through 30 September 2026; ETF/FX source cache contains observations through 2 October. Last eligible target weights are dated 31 August and available 7 September. September weights were not yet available for September decisions.
 - **Frozen taxes:** 33% stock CGT, €1,270 annual exemption, 52.35% marginal dividend tax and 38% ETF fund tax. These are hypothetical comparison assumptions, not each year’s historical law or a person’s tax status.
 - **Relief:** current and carried losses precede the exemption; unused exemption expires. No unrelated gains consume the allowance. Dividend withholding credits are included.
-- **Costs:** 0.15% FX per non-euro stock purchase and sale; no extra spread or slippage. ETF NAV includes fund expenses and fund-level withholding. Historical broker availability and execution quality are not certified.
+- **Costs:** 0.15% FX per non-euro market purchase and sale. No extra spread or slippage in the reference case. Compulsory cash receipts have no trade fee. Separate 5 and 25 basis-point stresses add market-trade costs. ETF NAV includes fund expenses and fund-level withholding. Historical broker availability and execution quality are not certified.
 - **Provisional reconstruction:** historical weights, delisted-stock dividends, corporate-action tax treatment and some successor valuations remain incomplete or approximate. Some unquoted holdings use explicit nontradable marks. Small performance differences deserve caution.
 
-Share matching and immediate winner repurchases are documented modelling interpretations, not a Revenue ruling. See Revenue’s guidance on [CGT calculation and exemption](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/how-to-calculate-cgt.aspx) and [share disposals](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/selling-or-disposing-of-shares.aspx).
+Share matching and later winner repurchases are documented modelling interpretations, not a Revenue ruling. See Revenue’s guidance on [CGT calculation and exemption](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/how-to-calculate-cgt.aspx) and [share disposals](https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/selling-or-disposing-of-shares.aspx).
 
 ## Licence
 

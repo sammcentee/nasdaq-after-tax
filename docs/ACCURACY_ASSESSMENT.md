@@ -1,4 +1,6 @@
-# Accuracy and realism assessment
+# Pre-correction accuracy assessment (archived)
+
+**Historical record:** This assessment describes the results at commit `83afc81`, before the model corrections. Its balances and statements about missing features do not describe the current model. See the [current results and fixes](../README.md). Evidence links below point to that earlier revision.
 
 Assessment date: 4 October 2026. Study period: 30 September 2010 to 30 September 2026.
 The assessment covers the committed CPI-linked study and its cached inputs.
@@ -40,7 +42,7 @@ The selected weekly strategy records €391,459.97 of total investor tax. The ET
 
 The weekly strategy exceeds the monthly hybrid by only €4,202.94, or 0.42% of the monthly balance. That narrow lead needs stronger evidence than the much larger ETF comparison. The two strategies also use different December rules. Their difference does not isolate weekly versus monthly loss reviews.
 
-Sources: [headline balances](../historical/results/latest/comparison.csv), [matched effects](../historical/results/latest/marginal_effects.csv), and [arithmetic evidence](../historical/results/latest/accuracy_audit.json).
+Sources: [headline balances](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/comparison.csv), [matched effects](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/marginal_effects.csv), and [arithmetic evidence](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/accuracy_audit.json).
 
 ## The portfolios have different investment exposures
 
@@ -52,7 +54,7 @@ The position date is 29 September 2026. The target snapshot date is 31 August, w
 
 Low exposure to former index members does not prove close index replication. Concentration within current members also matters. The study does not separate the ETF gap into tax, concentration, fund costs, and security-selection effects. A matched-exposure counterfactual is necessary for that claim.
 
-Sources: [portfolio diagnostics](../historical/results/latest/accuracy_audit.json), [dated target weights](../historical/inputs/best_effort/best_effort_weights.csv), and [daily stock ledgers](../historical/results/latest/ledgers).
+Sources: [portfolio diagnostics](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/accuracy_audit.json), [dated target weights](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/inputs/best_effort/best_effort_weights.csv), and [daily stock ledgers](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/ledgers).
 
 ## Data accuracy and information dates
 
@@ -74,7 +76,7 @@ Some unquoted successors use explicit nontradable valuation marks. The maximum c
 
 Cash-flow completeness fails a specific check. The stock ledgers omit four documented CDK dividends and one documented LogMeIn dividend while the portfolios hold those shares. These five payments imply less than €2 of omitted gross cash in each headline stock case, at payment-date FX. This amount is illustrative. It is not the complete missing-dividend total or a corrected final balance. The model normally uses ex-date accrual, so a full correction needs those dates and subsequent portfolio replays.
 
-Primary evidence: [CDK fiscal 2021 annual report](https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm) and [LogMeIn September 2018 quarterly report](https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm). Local evidence: [data diagnostics](../historical/results/latest/accuracy_data_audit.json), [benchmark source audit](../historical/benchmark/issuer/benchmark_audit.json), and [provisional marks](../historical/results/latest/input_audit/provisional_valuation_marks.json).
+Primary evidence: [CDK fiscal 2021 annual report](https://www.sec.gov/Archives/edgar/data/1609702/000160970221000058/cdk-20210630.htm) and [LogMeIn September 2018 quarterly report](https://www.sec.gov/Archives/edgar/data/1420302/000156459018025208/logm-10q_20180930.htm). Local evidence: [data diagnostics](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/accuracy_data_audit.json), [benchmark source audit](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/benchmark/issuer/benchmark_audit.json), and [provisional marks](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/input_audit/provisional_valuation_marks.json).
 
 ## Tax realism
 
@@ -88,7 +90,7 @@ The ETF engine funds interim tax from sales inside the portfolio. It includes th
 
 The engine invests a contribution before it pays a same-day tax bill. It then sells units to fund the bill. An independent control uses that day's available contribution for tax first and invests the remainder. This feasible cash-management change raises final ETF wealth by €3,606.30, to €754,335.15.
 
-The control preserves contribution dates and totals. It retains all other price and tax assumptions. It is not an optimized payment policy. See the [independent ETF control](../historical/results/latest/accuracy_etf_funding.json).
+The control preserves contribution dates and totals. It retains all other price and tax assumptions. It is not an optimized payment policy. See the [independent ETF control](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/accuracy_etf_funding.json).
 
 ### Rules that require qualification
 
@@ -124,11 +126,11 @@ The result is therefore not uniformly conservative for either side. Extra stock 
 
 One small cost mismatch has direct evidence. The model charges FX on some compulsory corporate cash receipts. Current broker guidance exempts these payments. Recorded or inferred charges total €17.43 in the weekly case and €14.17–€25.62 across the four stock cases.
 
-These are direct fees only. A correction's later tax and portfolio effects need a replay. See [broker currency guidance](https://helpcentre.trading212.com/hc/en-us/articles/11669719976093-What-is-a-multi-currency-account) and the [data audit](../historical/results/latest/accuracy_data_audit.json).
+These are direct fees only. A correction's later tax and portfolio effects need a replay. See [broker currency guidance](https://helpcentre.trading212.com/hc/en-us/articles/11669719976093-What-is-a-multi-currency-account) and the [data audit](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/accuracy_data_audit.json).
 
 ## Sensitivity evidence
 
-The [sensitivity table](../historical/results/latest/accuracy_sensitivities.csv) repeats the four headline stock cases with additional costs of 5 and 25 basis points per side. One basis point is 0.01%. The 0.15% FX assumption remains unchanged. The model's shared cost rule also affects certain corporate cash receipts.
+The [sensitivity table](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/accuracy_sensitivities.csv) repeats the four headline stock cases with additional costs of 5 and 25 basis points per side. One basis point is 0.01%. The 0.15% FX assumption remains unchanged. The model's shared cost rule also affects certain corporate cash receipts.
 
 These costs are diagnostic stresses. They are not measured broker spreads or confidence intervals. The experiment retains the same prices, tax assumptions, signal timing, and selected history. It therefore cannot resolve those limits.
 
@@ -166,7 +168,7 @@ The most useful next checks are an executable trade schedule, matched investment
 
 The PDF includes the main findings. The linked JSON and CSV files contain numerical evidence. The original study balances remain the reference results. The assessment does not silently replace them with an incomplete correction.
 
-The full study replay reproduced all 14 stock cases and the ETF in an isolated copy. Ninety generated CSV and JSON files matched exactly after parsing. Gzip timestamps do not affect that comparison. See the [replay record](../historical/results/latest/accuracy_replay.json).
+The full study replay reproduced all 14 stock cases and the ETF in an isolated copy. Ninety generated CSV and JSON files matched exactly after parsing. Gzip timestamps do not affect that comparison. See the [replay record](https://github.com/sammcentee/nasdaq-after-tax/blob/83afc81af7c8f19ce180888b4a8286343f4677ba/historical/results/latest/accuracy_replay.json).
 
 The 122 existing unit and synthetic checks passed with the required Python import paths. They cover contributions, tax helpers, both engines, provider readers, and independent economic and policy cases. Independent arithmetic checks passed for all 14 saved stock ledgers. The largest cash residual was below €0.000001. All 21 hashes recorded in the study manifest matched their current files. These results establish consistency, not source completeness.
 

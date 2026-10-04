@@ -2,22 +2,32 @@
   "classification": "PROVISIONAL_CONSTITUENT_RECONSTRUCTION",
   "price_rows": 986650,
   "securities": 350,
-  "events": 256,
+  "events": 340,
   "missing_action_quotes": 0,
+  "verified_dividend_schedules": 42,
+  "issuer_confirmed_dividend_payments": 41,
+  "derived_dividend_ex_dates": 42,
+  "dividend_ex_date_rule_sources": [
+    "https://www.sec.gov/files/rules/sro/nasdaq/2017/34-81446.pdf",
+    "https://listingcenter.nasdaq.com/assets/rulebook/nasdaq/filings/SR-NASDAQ-2016-183_Approval.pdf"
+  ],
   "input_sha256": {
     "prices/best_effort/prices_usd.csv.gz": "bbe52353cde0596ff2dab1d996c9e94ec40c8cf89c18c16596c04e73daa2540d",
     "prices/best_effort/actions.csv": "ed8e92aff14a2cdcf89d466a4d8258621ddb1fd70c02a7f3f6ea811a76d8bf8c",
     "prices/best_effort/split_events.csv": "16fe61e64ef4f1213aa96706a5431532de7edb0c93b07c6229d54f81f8772410",
     "inputs/best_effort/best_effort_weights.csv": "15a4bc6576f0b5d585c67b5f7f65465871f96a42a3d21076743f3bc99e85100a",
     "inputs/best_effort/membership.csv": "88242f41da24004352a4849ec02e740b71cdbf881661c76c6a489deec45df3d8",
-    "inputs/best_effort/metadata.csv": "b8eff52ac03d6dce0626e7279701324f55a8eb85a5401a1f0d50f60fd4359b2f"
+    "inputs/best_effort/metadata.csv": "b8eff52ac03d6dce0626e7279701324f55a8eb85a5401a1f0d50f60fd4359b2f",
+    "inputs/verified_dividends.csv": "e1a0c1753ef591cf560a2b49dc36d5b811a8e233122b6a317ff9e5770cc7a56f",
+    "inputs/verified_dividends_provenance.json": "29e7c7574b9f51b8282c529349d79b237341c7a3f795f0b5162da99135bd68d7"
   },
   "assumptions": [
     "Current tax and broker fee scenario replayed on historical market data",
     "Source weights frozen between available snapshots; early weights are stale",
     "Unresolved purchase weight reserves cash, never renormalized to covered winners",
     "Foreign stock reorganisations/spin-offs provisionally treated as rollover; cash taxed by part-disposal",
-    "Same-day corporate-action cash settlement and ex-date dividend accrual",
+    "Same-day corporate-action cash settlement and ordinary vendor ex-date dividend accrual",
+    "Verified CDK/LOGM dividends lock entitlement before ex-date trades and settle on the payment date; interim net receivables retain ex-date EUR marks",
     "Confirmed bankrupt stocks remain untradeable through missing quote interval until legal cancellation",
     "Fractional successor entitlements retained; exact broker cash-in-lieu not reconstructed",
     "Today's broker fractional availability and fee policy assumed; historical broker offerings not reconstructed"

@@ -62,6 +62,52 @@ class ETFBacktestTests(unittest.TestCase):
         for first, second in zip(original[1:], explicit[1:]):
             pd.testing.assert_frame_equal(first, second)
 
+    def test_same_day_contribution_pays_dd_before_purchase(self):
+        prices = pd.Series([100., 200., 300.], index=pd.to_datetime(
+            ["2010-09-30", "2018-09-30", "2018-10-31"]))
+        options = dict(start="2010-09-30", end="2018-10-31",
+                       contribution_amounts=(100., 50.))
+        summary, ledger, _ = replay(prices, **options)
+        self.assertFalse(ledger.event.eq("fund_tax_with_fifo_sale").any())
+        deposits = ledger[ledger.event.eq("contribution")]
+        self.assertEqual(deposits.cash.tolist(), [100., 50.])
+        self.assertEqual(deposits.invested_cash.tolist(), [100., 12.])
+        self.assertEqual(deposits.tax_funding_cash.tolist(), [0., 38.])
+        self.assertEqual(deposits.units.tolist(), [1., .06])
+        self.assertAlmostEqual(summary["final_cash"], 277.72)
+        self.assertAlmostEqual(summary["total_tax"], 78.28)
+        final = ledger[ledger.event.eq("final_sale")].iloc[0]
+        self.assertAlmostEqual(deposits.cash.sum()+final.gross_proceeds
+                               -deposits.invested_cash.sum()-summary["total_tax"],
+                               summary["final_cash"])
+        _, legacy, _ = replay(prices, contribution_first=False, **options)
+        sale = legacy[legacy.event.eq("fund_tax_with_fifo_sale")].iloc[0]
+        self.assertAlmostEqual(sale.gross_proceeds, 38.)
+        self.assertAlmostEqual(sale.tax, 0.)
+
+    def test_contribution_shortfall_uses_fifo_and_proportional_dd_credit(self):
+        prices = pd.Series([100., 100., 200., 300., 300.], index=pd.to_datetime(
+            ["2010-01-31", "2010-02-28", "2018-01-31", "2018-02-28", "2018-03-31"]))
+        summary, ledger, _ = replay(prices, start="2010-01-31", end="2018-03-31",
+                                    contribution_amounts=(100., 100., 50., 20.))
+        deposits = ledger[ledger.event.eq("contribution")]
+        sales = ledger[ledger.event.eq("fund_tax_with_fifo_sale")]
+        self.assertEqual(len(sales), 1)
+        sale = sales.iloc[0]
+        self.assertEqual(sale.acquisition, pd.Timestamp("2010-01-31"))
+        self.assertAlmostEqual(sale.units, 56./262.)
+        self.assertAlmostEqual(sale.tax, sale.units*38.)
+        self.assertAlmostEqual(sale.gross_proceeds-sale.tax, 56.)
+        self.assertEqual(deposits.invested_cash.tolist(), [100., 100., 12., 0.])
+        self.assertEqual(deposits.tax_funding_cash.tolist(), [0., 0., 38., 20.])
+        self.assertAlmostEqual(summary["deemed_disposal_tax"], 114.)
+        self.assertAlmostEqual(summary["total_tax"], 154.28)
+        self.assertAlmostEqual(summary["final_cash"], 521.72)
+        final = ledger[ledger.event.eq("final_sale")].iloc[0]
+        self.assertAlmostEqual(deposits.cash.sum()+sales.gross_proceeds.sum()
+                               +final.gross_proceeds-deposits.invested_cash.sum()
+                               -summary["total_tax"], summary["final_cash"])
+
     def test_invalid_amounts_fail_before_replay(self):
         for amounts in ((1000.0,) * 3, (1000.0,) * 5, (0.0, -1.0, 0.0, 0.0),
                         (0.0, float("nan"), 0.0, 0.0), (0.0, float("inf"), 0.0, 0.0),

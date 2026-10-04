@@ -18,10 +18,102 @@ CANONICAL_IDS = {
     "tts-177780551": "tts-282720976",  # Symantec / NortonLifeLock / Gen
     "tts-43902240": "tts-222568848",  # Facebook / Meta
 }
+DIVIDEND_RULE_SOURCES = (
+    "https://www.sec.gov/files/rules/sro/nasdaq/2017/34-81446.pdf",
+    "https://listingcenter.nasdaq.com/assets/rulebook/nasdaq/filings/SR-NASDAQ-2016-183_Approval.pdf",
+)
 
 
 def canonical(value):
     return CANONICAL_IDS.get(value, value)
+
+
+def load_verified_dividends(calendar, path=None):
+    """Keep issuer dates separate from ex-dates derived under historic rules."""
+    path = Path(path) if path is not None else ROOT / "inputs/verified_dividends.csv"
+    dividends = pd.read_csv(path, keep_default_na=False)
+    for column in ("declaration_date", "ex_date", "record_date", "payment_date"):
+        dividends[column] = pd.to_datetime(dividends[column])
+    if dividends.duplicated(["security_id", "payment_date"]).any():
+        raise ValueError("Duplicate verified dividend payment")
+    if (dividends.source_url.eq("").any() or dividends.record_date.isna().any()
+            or dividends.payment_date.isna().any()
+            or not np.isfinite(dividends.cash_usd_per_share).all()
+            or not dividends.cash_usd_per_share.gt(0).all()):
+        raise ValueError("Verified dividends require source, dates and positive amounts")
+    dates, qualities = [], []
+    for row in dividends.itertuples():
+        ex = row.ex_date
+        if pd.isna(ex):
+            if row.dividend_type != "ordinary_regular_cash":
+                raise ValueError("Ex-date derivation requires an ordinary regular cash dividend")
+            if not pd.Timestamp("2010-09-30") < row.record_date < pd.Timestamp("2024-05-28"):
+                raise ValueError("Ex-date derivation supports the T+3 and T+2 study period only")
+            # Nasdaq applies the T+2 ex-date rule from the Sep 7 record date.
+            # A non-delivery record date requires one additional prior session.
+            prior = 2 if row.record_date < pd.Timestamp("2017-09-07") else 1
+            prior += int(row.record_date not in calendar)
+            earlier = calendar[calendar < row.record_date]
+            if len(earlier) < prior:
+                raise ValueError("Insufficient calendar for dividend entitlement")
+            ex = earlier[-prior]
+            quality = "derived_Nasdaq_11140_regular_distribution"
+        else:
+            quality = "issuer_or_exchange_verified"
+        if (ex not in calendar or ex >= row.record_date or row.record_date > row.payment_date
+                or (pd.notna(row.declaration_date) and row.declaration_date >= ex)):
+            raise ValueError(f"Invalid verified dividend dates: {row.security_id} {row.payment_date}")
+        dates.append(ex)
+        qualities.append(quality)
+    dividends["entitlement_date"] = dates
+    dividends["ex_date_quality"] = qualities
+    dividends["dividend_id"] = dividends.security_id + ":" + dividends.payment_date.dt.strftime("%Y-%m-%d")
+    if dividends.duplicated(["security_id", "entitlement_date"]).any():
+        raise ValueError("Duplicate verified dividend entitlement")
+    dividends["payment_session"] = [calendar[calendar.searchsorted(day)]
+        if day <= calendar[-1] else pd.NaT for day in dividends.payment_date]
+    if dividends.payment_session.isna().any():
+        raise ValueError("Verified dividend payment falls beyond the input calendar")
+    return dividends
+
+
+def replace_verified_dividend_duplicates(p, actions, dividends):
+    """Replace matching source payments once. Reject conflicting cash amounts."""
+    p, actions = p.copy(), actions.copy()
+    replaced = []
+    for row in dividends.itertuples():
+        prices = (p.security_id.eq(row.security_id)
+                  & p.date.between(row.entitlement_date, row.payment_session)
+                  & p.dividend_usd.ne(0))
+        events = (actions.security_id.eq(row.security_id) & actions.event_type.eq("cash_dividend")
+                  & actions.date.between(row.entitlement_date, row.payment_session))
+        for frame, mask, field, kind in ((p, prices, "dividend_usd", "price_row"),
+                                        (actions, events, "cash_usd_per_share", "action")):
+            if mask.any() and not np.isclose(frame.loc[mask, field], row.cash_usd_per_share, rtol=0, atol=1e-8).all():
+                raise ValueError(f"Conflicting verified dividend amount: {row.dividend_id}")
+            for old in frame.loc[mask].to_dict("records"):
+                replaced.append(dict(dividend_id=row.dividend_id, replaced_source=kind,
+                                     date=str(old["date"].date()), cash_usd_per_share=old[field]))
+        p.loc[prices, "dividend_usd"] = 0.
+        actions = actions.loc[~events].copy()
+    return p, actions, replaced
+
+
+def verified_dividend_events(dividends, fx):
+    """Use contemporaneous FX for entitlement and for the later cash receipt."""
+    events = []
+    for dividend in dividends.to_dict("records"):
+        for kind, day in (("dividend_entitlement", dividend["entitlement_date"]),
+                          ("dividend_payment", dividend["payment_session"])):
+            events.append(dict(date=day, security_id=dividend["security_id"], event_type=kind,
+                dividend_id=dividend["dividend_id"], cash_usd_per_share=dividend["cash_usd_per_share"],
+                cash_eur_per_share=dividend["cash_usd_per_share"]/fx.loc[day], priority=10,
+                source=dividend["source_url"], source_date=day,
+                record_date=dividend["record_date"], payment_date=dividend["payment_date"],
+                payment_evidence=dividend["payment_evidence"],
+                ex_date_quality=dividend["ex_date_quality"],
+                notes="Net receivable uses ex-date EUR until the issuer payment date; actual broker receipt timing is not reconstructed."))
+    return events
 
 
 def add_provisional_marks(p):
@@ -47,10 +139,10 @@ def add_provisional_marks(p):
     adp = quote("tts-15888595", "2014-10-01")
     add("2014-10-01", "yahoo:CDK", 3*adp*.1264/.8736,
         "https://s205.q4cdn.com/887941133/files/doc_downloads/faq/IRS_Form_8937.pdf",
-        "first_close_inferred_from_issuer_rounded_FMV_allocation; daily_prices_and_dividends_missing")
+        "first_close_inferred_from_issuer_rounded_FMV_allocation; daily_prices_missing; verified_cash_dividends_separate")
     add("2017-02-01", "yahoo:LOGM", 108.10,
         "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001420302/48509cd3-d1c6-4ad2-a0f5-f518990b4d6b.pdf",
-        "documented_Jan31_close_carried_to_distribution; daily_prices_and_dividends_missing")
+        "documented_Jan31_close_carried_to_distribution; daily_prices_missing; verified_cash_dividends_separate")
     add("2019-02-08", "yahoo:CVET", 41.54,
         "https://s206.q4cdn.com/399858780/files/doc_downloads/IRS-Form-8937.pdf",
         "issuer_documented_distribution_day_VWAP_proxy; daily_prices_missing")
@@ -147,6 +239,8 @@ def prepare(audit_dir=None):
                     source=mark["source"], quality=mark["quality"], tradable=False))
     p = pd.concat([p, pd.DataFrame(provisional_rows)], ignore_index=True)
     p["tradable"] = p.tradable.astype(bool)
+    verified_dividends = load_verified_dividends(calendar)
+    p, actions, verified_replacements = replace_verified_dividend_duplicates(p, actions, verified_dividends)
     # Replace the vendor distribution when the separately sourced corporate
     # action records the same economic payment. Preserve ordinary dividends.
     replaced_dividends = []
@@ -224,6 +318,7 @@ def prepare(audit_dir=None):
         elif kind == "capital_distribution":
             row["remaining_value_eur_per_share"] = prices.get((old, day), np.nan)
         changes.append(row)
+    changes.extend(verified_dividend_events(verified_dividends, fx))
     events = pd.DataFrame(changes).sort_values(["date", "priority"], kind="stable")
     # All known extinguished/converted classes become ineligible for purchases,
     # including stale fund reports that still show residual holdings.
@@ -251,17 +346,23 @@ def prepare(audit_dir=None):
     events.to_csv(out / "events_prepared.csv", index=False)
     pd.DataFrame(unresolved).to_csv(out / "missing_action_quote_review.csv", index=False)
     input_paths = [source / "prices_usd.csv.gz", source / "actions.csv", source / "split_events.csv",
-                   inputs / "best_effort_weights.csv", inputs / "membership.csv", inputs / "metadata.csv"]
+                   inputs / "best_effort_weights.csv", inputs / "membership.csv", inputs / "metadata.csv",
+                   ROOT / "inputs/verified_dividends.csv", ROOT / "inputs/verified_dividends_provenance.json"]
     audit = {"classification": "PROVISIONAL_CONSTITUENT_RECONSTRUCTION",
              "price_rows": len(p), "securities": p.security_id.nunique(), "events": len(events),
              "missing_action_quotes": len(unresolved),
+             "verified_dividend_schedules": len(verified_dividends),
+             "issuer_confirmed_dividend_payments": int(verified_dividends.payment_evidence.eq("issuer_report_confirms_payment").sum()),
+             "derived_dividend_ex_dates": int(verified_dividends.ex_date.isna().sum()),
+             "dividend_ex_date_rule_sources": DIVIDEND_RULE_SOURCES,
              "input_sha256": {str(f.relative_to(ROOT)): hashlib.sha256(f.read_bytes()).hexdigest() for f in input_paths},
              "assumptions": [
                  "Current tax and broker fee scenario replayed on historical market data",
                  "Source weights frozen between available snapshots; early weights are stale",
                  "Unresolved purchase weight reserves cash, never renormalized to covered winners",
                  "Foreign stock reorganisations/spin-offs provisionally treated as rollover; cash taxed by part-disposal",
-                 "Same-day corporate-action cash settlement and ex-date dividend accrual",
+                 "Same-day corporate-action cash settlement and ordinary vendor ex-date dividend accrual",
+                 "Verified CDK/LOGM dividends lock entitlement before ex-date trades and settle on the payment date; interim net receivables retain ex-date EUR marks",
                  "Confirmed bankrupt stocks remain untradeable through missing quote interval until legal cancellation",
                  "Fractional successor entitlements retained; exact broker cash-in-lieu not reconstructed",
                  "Today's broker fractional availability and fee policy assumed; historical broker offerings not reconstructed",
@@ -269,4 +370,6 @@ def prepare(audit_dir=None):
     (out / "input_audit.json").write_text(json.dumps(audit, indent=2))
     (out / "provisional_valuation_marks.json").write_text(json.dumps(provisional_marks, indent=2))
     (out / "replaced_vendor_dividends.json").write_text(json.dumps(replaced_dividends, indent=2))
+    verified_dividends.to_csv(out / "verified_dividends_prepared.csv", index=False)
+    (out / "replaced_verified_dividends.json").write_text(json.dumps(verified_replacements, indent=2))
     return p, w, events, m, membership, out

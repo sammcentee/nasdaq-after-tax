@@ -11,35 +11,35 @@
   "underperformer_checks": {
     "any_loss": {
       "comparator": "annual_monthly_control",
-      "gross_investment_profit_difference_eur": -33211.22300312598,
-      "total_tax_reduction_eur": 11582.78086247528,
-      "additional_transaction_cost_eur": 740.6135963690485,
-      "after_tax_wealth_difference_eur": -22369.055737014976,
+      "gross_investment_profit_difference_eur": 10342.57174609066,
+      "total_tax_reduction_eur": -3073.004130440182,
+      "additional_transaction_cost_eur": 373.2642551243298,
+      "after_tax_wealth_difference_eur": 6896.303360522375,
       "annual_ledger_profit_reconciled": true
     },
     "retain_gains": {
       "comparator": "annual_only",
-      "gross_investment_profit_difference_eur": -39784.43801871361,
-      "total_tax_reduction_eur": 12925.13829050603,
-      "additional_transaction_cost_eur": -235.60246670270044,
-      "after_tax_wealth_difference_eur": -26623.69726150832,
+      "gross_investment_profit_difference_eur": -40971.78954770346,
+      "total_tax_reduction_eur": 13287.091777999884,
+      "additional_transaction_cost_eur": -239.66821423674764,
+      "after_tax_wealth_difference_eur": -27445.02955545729,
       "annual_ledger_profit_reconciled": true
     },
     "monthly_gains": {
       "comparator": "annual_monthly_control",
-      "gross_investment_profit_difference_eur": -55714.30017981818,
-      "total_tax_reduction_eur": 18347.974568564387,
-      "additional_transaction_cost_eur": 133.21789277633889,
-      "after_tax_wealth_difference_eur": -37499.54350402765,
+      "gross_investment_profit_difference_eur": -51008.70098878513,
+      "total_tax_reduction_eur": 17400.57540268096,
+      "additional_transaction_cost_eur": 55.35401388198397,
+      "after_tax_wealth_difference_eur": -33663.47959998844,
       "annual_ledger_profit_reconciled": true
     }
   },
   "accounting_bridge_scope": "Realised investment profit along each actual portfolio path; not a tax-free counterfactual or a claim about individual missed recoveries",
   "sequential_ladder_gains_eur": {
-    "monthly_hybrid": 41603.17298616748,
-    "weekly_annual": 45806.11617350858
+    "monthly_hybrid": 41866.929839461576,
+    "weekly_annual": -952.1593817775138
   },
-  "input_hashes_checked": 14,
+  "input_hashes_checked": 16,
   "code_hashes_checked": 6,
   "shared_membership_sha256": "5dd4b1d2580066c15acec38317f6ee2f7b2e5786cc8232eb73385a913341156f",
   "control_configuration_changes": {

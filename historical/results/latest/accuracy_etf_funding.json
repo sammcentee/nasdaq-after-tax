@@ -1,11 +1,11 @@
 {
-  "scope": "Independent arithmetic reproduction and a separate cash-management sensitivity",
+  "scope": "Independent reproduction of the corrected default and a legacy policy control",
   "command": ".venv/bin/python historical/checks/accuracy_etf_funding.py",
   "source_sha256": {
     "benchmark/issuer/cndx_nav_eur_2010-09-30_to_2026-09-30.csv": "56913cffa85a66512ef24321c9f1532886bbf0a97397a46904c6e055fec8eb44",
     "results/latest/contribution_schedule.csv": "dfe2a2a1e4cc56af23710566fdc3a3a7585a344c70a99f737efe244309c6085d",
-    "results/latest/etf/summary.json": "0400c1b103314bba3eb0ce4567f87dac27a07607683672c4126e4d1d248c0ad7",
-    "checks/accuracy_etf_funding.py": "fc98695c8958fd6e254c7de3996fa2c2d2000bce4338118897c3eb0e1162e4ab"
+    "results/latest/etf/summary.json": "f698209a4b83a7addea23065072f6d3204a8bf14cdab47d89e1d287ef9e2fe05",
+    "checks/accuracy_etf_funding.py": "7d4e0dc1f9eeca43e810043389aa5fe8f5f8c243104514f5ee309eaaa161d89a"
   },
   "assumptions": [
     "Both cases use the saved issuer EUR NAV and all 192 saved contributions.",
@@ -15,10 +15,10 @@
     "Each purchase has original cost and proportional prior deemed-disposal tax credit.",
     "Eight-year anniversaries use the first available weekday NAV on or after the anniversary.",
     "Tax and refunds settle immediately. Final liquidation replaces same-day deemed disposal.",
-    "Original policy: invest each contribution, then sell FIFO units to pay tax.",
-    "Variant: use only that day's contribution for tax first; invest its remainder after tax.",
+    "Corrected default: use only that day's contribution for tax first; invest its remainder after tax.",
+    "Legacy control: invest each contribution, then sell FIFO units to pay tax.",
     "Both policies sell FIFO units for residual tax, with tax on those sales included.",
-    "The variant uses no later contribution and does not optimize annual payment dates."
+    "The corrected default uses no later contribution and does not optimize annual payment dates."
   ],
   "accounting_checks": {
     "cash_eur": "Contributions + gross sales - purchases - all taxes = final cash.",
@@ -27,27 +27,7 @@
     "lifetime_tax_eur": "Total tax = 38% of positive gains on actual disposals, including final sale.",
     "contribution_allocation_eur": "Contributions = purchases + contributions used directly for tax."
   },
-  "original_independent_reproduction": {
-    "contributions": 210936.48,
-    "contribution_count": 192,
-    "final_value_before_final_tax": 926185.2322458756,
-    "final_cash": 750728.8473144093,
-    "deemed_disposal_tax": 129638.38832897288,
-    "funding_sales_tax": 25745.709932263253,
-    "final_tax": 175456.3849314663,
-    "total_tax": 330840.4831927024,
-    "same_day_contributions_used_for_tax_eur": 0.0,
-    "gross_funding_sales_eur": 155384.09826123627,
-    "purchase_outlay_eur": 210936.4799999998,
-    "accounting_errors": {
-      "cash_eur": 4.656612873077393e-10,
-      "units": -5.684341886080801e-13,
-      "dd_credit_eur": -5.820766091346741e-11,
-      "lifetime_tax_eur": -5.820766091346741e-11,
-      "contribution_allocation_eur": 2.0372681319713593e-10
-    }
-  },
-  "same_date_contribution_first_sensitivity": {
+  "corrected_independent_reproduction": {
     "contributions": 210936.48,
     "contribution_count": 192,
     "final_value_before_final_tax": 939698.1577122969,
@@ -65,6 +45,26 @@
       "dd_credit_eur": -4.3655745685100555e-11,
       "lifetime_tax_eur": 0.0,
       "contribution_allocation_eur": -1.4551915228366852e-11
+    }
+  },
+  "legacy_buy_before_tax_control": {
+    "contributions": 210936.48,
+    "contribution_count": 192,
+    "final_value_before_final_tax": 926185.2322458756,
+    "final_cash": 750728.8473144093,
+    "deemed_disposal_tax": 129638.38832897288,
+    "funding_sales_tax": 25745.709932263253,
+    "final_tax": 175456.3849314663,
+    "total_tax": 330840.4831927024,
+    "same_day_contributions_used_for_tax_eur": 0.0,
+    "gross_funding_sales_eur": 155384.09826123627,
+    "purchase_outlay_eur": 210936.4799999998,
+    "accounting_errors": {
+      "cash_eur": 4.656612873077393e-10,
+      "units": -5.684341886080801e-13,
+      "dd_credit_eur": -5.820766091346741e-11,
+      "lifetime_tax_eur": -5.820766091346741e-11,
+      "contribution_allocation_eur": 2.0372681319713593e-10
     }
   },
   "final_wealth_difference_eur": 3606.3029049545294,

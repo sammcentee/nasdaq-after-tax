@@ -41,6 +41,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from math import floor, isfinite
 from pathlib import Path
+import json
 import sys
 
 import pandas as pd
@@ -63,6 +64,7 @@ class BacktestConfig:
     harvest: bool = True
     harvest_frequency: str = "contribution_dates"  # or daily
     investment_frequency: str = "contribution_dates"  # or daily
+    execution_mode: str = "same_close"  # or next_session: fixed orders from an earlier close
     reinvest_after_disposal: bool = True
     minimum_order_eur: float = 1.0
     harvest_loss_fraction: float = 0.05
@@ -96,6 +98,7 @@ class BacktestConfig:
     exit_grace_days: int = 0
     exit_fraction: float = 0.25  # fraction of remaining units at each gradual review
     exit_annual_tax_budget_eur: float = 0.0
+    rebalance_review_dates: tuple[str, ...] | None = None  # optional closer-target comparator only
 
 
 @dataclass
@@ -232,6 +235,23 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
       settlements and cgt_exemption_used_total_eur report actual modelled use.
     Cash dividends accumulate until a scheduled contribution date by default.
       Cash-merger and harvest proceeds can be reinvested on the disposal date.
+    execution_mode='next_session' fixes sale units and purchase cash budgets at
+      the signal close. Orders fill at a later fresh tradable close. Expected
+      gains/losses reserve signal tax capacity only. Actual fill prices can
+      reverse the gain sign or exceed the estimated tax budget. Sale proceeds
+      can form new orders only after the fill, for another later session.
+      Non-split changes to identity, units or basis cancel affected orders.
+      Splits adjust pending sale units. Ordinary income payments do not cancel
+      orders. Final liquidation cancels pending orders and uses its known date.
+    dividend_entitlement/payment pairs use one dividend_id and contemporary
+      cash_eur_per_share at each event. Entitlement fixes units before ex-date
+      trades. The net receivable retains its ex-date EUR mark until payment.
+      Cash and dividend tax post only on payment. Unpaid terminal claims fail.
+    Compulsory cash receipts incur no market spread or FX conversion fee.
+    rebalance_review_dates optionally trims known holdings above dated targets.
+      Confirmed departures have a zero target. Unknown or unweighted holdings
+      remain. This separate comparator keeps the recent-purchase restriction,
+      incurs actual CGT, and does not promise exact index weights at execution.
     """
     c = config or BacktestConfig()
     start, end = pd.Timestamp(c.start).normalize(), pd.Timestamp(c.end).normalize()
@@ -241,6 +261,8 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         raise ValueError("Unknown harvest frequency")
     if c.investment_frequency not in ("contribution_dates", "daily"):
         raise ValueError("Unknown investment frequency")
+    if c.execution_mode not in ("same_close", "next_session"):
+        raise ValueError("Unknown execution mode")
     if c.missing_target_policy not in ("error", "reserve_cash"):
         raise ValueError("Unknown missing target policy")
     if c.exit_policy not in ("retain", "sell_all", "tax_budget", "gradual", "loss_only"):
@@ -311,11 +333,18 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         return c.half_spread + (c.fx_fee if str(field(security, "currency", "USD")).upper() != "EUR" else 0.0)
 
     event_rows = []
+    prior_dividend_entitlements = {}
     if events is not None and not events.empty:
         e = events.copy()
         _require(e, ("date", "security_id", "event_type"), "events")
         _dates(e, ("date",))
         e["security_id"] = e.security_id.astype(str)
+        if "dividend_id" in e:
+            entitlements = e.loc[e.event_type.eq("dividend_entitlement")]
+            if entitlements.dividend_id.duplicated().any():
+                raise DataIntegrityError("Duplicate dividend entitlement identifier")
+            for row in entitlements.loc[entitlements.date.lt(start)].to_dict("records"):
+                prior_dividend_entitlements[row["dividend_id"]] = row["security_id"]
         event_rows = e.loc[e.date.between(start, end)].sort_values("date", kind="stable").to_dict("records")
 
     membership_rows = []
@@ -362,11 +391,17 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
 
     loss_reviews = review_schedule(c.harvest_review_dates, "Loss") if c.harvest_review_dates is not None else []
     gain_reviews = review_schedule(c.gain_review_dates, "Gain")
+    rebalance_reviews = review_schedule(c.rebalance_review_dates, "Rebalance") if c.rebalance_review_dates is not None else []
+    rebalance_review_index = 0
     loss_review_index = gain_review_index = 0
     deposit_index = event_index = review_index = 0
     lots: list[Lot] = []
     open_positions: dict[str, list[Lot]] = {}
     contingent_rights: dict[str, float] = {}
+    dividend_receivables = {}
+    pending_orders = []
+    order_serial = 0
+    active_order = None
     transactions, daily, taxes = [], [], []
     quote, quote_session, quote_tradable = {}, {}, {}
     last_buy, blocked_until = {}, {}
@@ -395,6 +430,9 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         return "outside" if security in inherited_outside else "unknown"
 
     def log(day, event, **kw):
+        if active_order is not None and event in ("buy", "sell", "lot_disposal"):
+            kw.update(order_id=active_order["order_id"], signal_date=active_order["signal_date"],
+                      fill_date=day)
         transactions.append(dict(date=day, event=event, **kw))
 
     def held(security):
@@ -415,7 +453,53 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         return sum(lot.units for lot in held(security))
 
     def value():
-        return cash + sum(balance(s) * quote[s] for s in securities())
+        return cash + sum(balance(s) * quote[s] for s in securities()) + sum(
+            receipt["net_mark_eur"] for receipt in dividend_receivables.values())
+
+    def pending_class(security):
+        return any(share_class(order["security_id"]) == share_class(security)
+                   for order in pending_orders)
+
+    def committed_cash():
+        return sum(order["cash_budget_eur"] for order in pending_orders if order["side"] == "buy")
+
+    def planned_totals():
+        return (gains + sum(order.get("expected_gains_eur", 0.) for order in pending_orders),
+                losses + sum(order.get("expected_losses_eur", 0.) for order in pending_orders))
+
+    def planned_headroom():
+        planned_gains, planned_losses = planned_totals()
+        return max(0., c.cgt_exemption+planned_losses+carried_loss-planned_gains)
+
+    def queue_order(day, side, security, reason, **details):
+        nonlocal order_serial
+        order_serial += 1
+        order = dict(order_id=order_serial, signal_date=day, side=side,
+                     security_id=security, reason=reason, **details)
+        pending_orders.append(order)
+        log(day, "order_signal", **order)
+        return order
+
+    def queue_sale(day, security, reason, units, **details):
+        parts = disposal_parts(security, units)
+        pnl = [n*quote[security]*(1-cost_rate(security))-b for _, n, b in parts]
+        planned_gains, planned_losses = planned_totals()
+        expected_gains, expected_losses = sum(max(p, 0.) for p in pnl), sum(max(-p, 0.) for p in pnl)
+        before = settle_cgt_year(planned_gains, planned_losses, carried_loss, c.cgt_rate, c.cgt_exemption)
+        after = settle_cgt_year(planned_gains+expected_gains, planned_losses+expected_losses,
+                                carried_loss, c.cgt_rate, c.cgt_exemption)
+        return queue_order(day, "sell", security, reason, units=units,
+                           signal_price_eur=quote[security],
+                           signal_basis_eur=sum(b for _, _, b in parts), signal_cost_rate=cost_rate(security),
+                           signal_lots=json.dumps([dict(lot_id=lot.lot_id, acquired=str(lot.acquired.date()),
+                               units=n, basis_eur=b) for lot, n, b in parts]),
+                           signal_position_lot_ids=json.dumps([lot.lot_id for lot in
+                               sorted(held(security), key=lambda lot: (lot.acquired, lot.lot_id))]),
+                           signal_gains_eur=gains, signal_losses_eur=losses,
+                           planned_gains_eur=planned_gains, planned_losses_eur=planned_losses,
+                           signal_carried_loss_eur=carried_loss, signal_headroom_eur=planned_headroom(),
+                           expected_incremental_cgt_eur=after.tax_due-before.tax_due,
+                           expected_gains_eur=expected_gains, expected_losses_eur=expected_losses, **details)
 
     def liability():
         return settle_cgt_year(gains, losses, carried_loss, c.cgt_rate, c.cgt_exemption)
@@ -515,7 +599,7 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         fees = gross * cost_rate(security) if apply_cost else 0.0
         net = gross - fees
         pnl = net - basis
-        if reason == "harvest" and pnl >= -1e-9:
+        if reason == "harvest" and pnl >= -1e-9 and c.execution_mode == "same_close":
             raise AssertionError("Voluntary profitable disposal prohibited")
         has_lot_loss = False
         for lot, part_units, part_basis in parts:
@@ -570,9 +654,62 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         security, kind = event["security_id"], event["event_type"]
         if kind not in ("split", "cash_merger", "stock_exchange", "spinoff",
                         "mixed_merger", "capital_distribution", "cash_dividend",
-                        "contingent_right", "contingent_cash"):
+                        "contingent_right", "contingent_cash", "dividend_entitlement", "dividend_payment"):
             raise DataIntegrityError(f"Unresolved/unsupported action: {security} {kind}")
         position = held(security)
+        if kind in ("cash_merger", "stock_exchange", "spinoff", "mixed_merger", "capital_distribution", "contingent_right"):
+            affected = {share_class(security)}
+            if isinstance(event.get("successor_id"), str):
+                affected.add(share_class(event["successor_id"]))
+            for order in list(pending_orders):
+                if share_class(order["security_id"]) in affected:
+                    pending_orders.remove(order)
+                    log(day, "order_cancelled", order_id=order["order_id"],
+                        security_id=order["security_id"], signal_date=order["signal_date"],
+                        reason="corporate_action", action=kind)
+        if kind in ("dividend_entitlement", "dividend_payment"):
+            identity = event.get("dividend_id")
+            if not isinstance(identity, str) or not identity:
+                raise DataIntegrityError("Dividend entitlement/payment requires dividend_id")
+            amount = _number(event.get("cash_eur_per_share", float("nan")), "cash dividend")
+            withholding = _number(field(security, "dividend_withholding", c.foreign_dividend_withholding), "withholding")
+            if kind == "dividend_entitlement":
+                if identity in dividend_receivables:
+                    raise DataIntegrityError(f"Duplicate dividend entitlement: {identity}")
+                units = balance(security)
+                tax = settle_us_dividend(units*amount, c.dividend_income_tax, c.dividend_usc,
+                                        c.dividend_prsi, withholding)
+                dividend_receivables[identity] = dict(security_id=security, units=units,
+                    entitlement_date=day, net_mark_eur=tax.net_to_reinvest)
+                log(day, "dividend_entitlement", security_id=security, dividend_id=identity,
+                    units=units, gross_entitlement_eur=units*amount, net_receivable_eur=tax.net_to_reinvest,
+                    assumption="Ex-date EUR net mark retained until payment; no cash available before payment")
+            else:
+                receipt = dividend_receivables.pop(identity, None)
+                if receipt is None and prior_dividend_entitlements.get(identity) == security:
+                    # Every run starts without inherited shares or receivables.
+                    # A proved pre-start entitlement therefore owns zero units.
+                    prior_dividend_entitlements.pop(identity)
+                    log(day, "dividend", security_id=security, dividend_id=identity, units=0.,
+                        gross_eur=0., withholding_eur=0., irish_top_up_eur=0., tax_eur=0., net_cash_eur=0.,
+                        assumption="Entitlement precedes empty portfolio start; no inherited claim")
+                    return
+                if receipt is None or receipt["security_id"] != security:
+                    raise DataIntegrityError(f"Dividend payment lacks matching entitlement: {identity}")
+                gross = receipt["units"]*amount
+                tax = settle_us_dividend(gross, c.dividend_income_tax, c.dividend_usc,
+                                        c.dividend_prsi, withholding)
+                cash += tax.net_to_reinvest
+                total_dividend_tax += tax.total_tax
+                total_gross_dividends += gross
+                annual_dividends += gross
+                annual_dividend_tax += tax.total_tax
+                log(day, "dividend", security_id=security, dividend_id=identity,
+                    entitlement_date=receipt["entitlement_date"], units=receipt["units"],
+                    gross_eur=gross, withholding_eur=tax.foreign_withholding,
+                    irish_top_up_eur=tax.irish_tax_top_up, tax_eur=tax.total_tax,
+                    net_cash_eur=tax.net_to_reinvest, source=event.get("source", ""))
+            return
         if kind == "contingent_right":
             right_id = event.get("successor_id")
             if not isinstance(right_id, str) or not right_id:
@@ -587,7 +724,7 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
             units = contingent_rights.get(security, 0.)
             amount = _number(event.get("cash_eur_per_share", float("nan")), "rights payment")
             gross = units*amount
-            fees = gross*cost_rate(security)
+            fees = 0.0
             cash += gross-fees
             gains += gross-fees
             total_cost += fees
@@ -602,7 +739,7 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
             return
         if kind == "cash_merger":
             amount = _number(event.get("cash_eur_per_share", float("nan")), "merger consideration")
-            dispose(day, security, amount, "cash_merger", apply_cost=True)
+            dispose(day, security, amount, "cash_merger", apply_cost=False)
         elif kind == "cash_dividend":
             amount = _number(event.get("cash_eur_per_share", float("nan")), "cash dividend")
             gross = balance(security)*amount
@@ -634,7 +771,7 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
             fraction = amount / (amount + retained)
             for lot in position:
                 gross = lot.units * amount
-                fee = gross * cost_rate(security)
+                fee = 0.0
                 cash_basis = lot.basis_eur * fraction
                 pnl = gross - fee - cash_basis
                 gains += max(pnl, 0.)
@@ -644,6 +781,7 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                 log(day, "lot_disposal", security_id=security, reason=kind,
                     lot_id=lot.lot_id, acquisition=lot.acquired,
                     units=lot.units * fraction, basis_eur=cash_basis,
+                    gross_proceeds_eur=gross, fees_eur=fee,
                     net_proceeds_eur=gross-fee, realized_gain_eur=pnl,
                     lineage=lot.lineage)
                 retained_basis = lot.basis_eur - cash_basis
@@ -662,6 +800,13 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         else:
             ratio = _number(event.get("ratio", float("nan")), "action ratio", positive=True)
             if kind == "split":
+                for order in pending_orders:
+                    if order["security_id"] == security and order["side"] == "sell":
+                        order["units"] *= ratio
+                        order["signal_price_eur"] /= ratio
+                        log(day, "order_split_adjusted", order_id=order["order_id"],
+                            security_id=security, ratio=ratio, units=order["units"],
+                            signal_date=order["signal_date"])
                 for lot in position:
                     lot.units *= ratio
                     lot.lineage += f"|split:{event['date'].date()}:{ratio}"
@@ -693,6 +838,130 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         log(day, "corporate_action", security_id=security, action=kind,
             effective_date=event["date"], affected_lots=len(position),
             source=event.get("source", "caller-supplied audited event"))
+
+    def execute_pending(day, session, terminal):
+        """Fill fixed prior-close orders. Fill prices never change sale eligibility."""
+        nonlocal active_order, cash, total_cost, lot_serial
+        nonlocal policy_tax_spent, total_policy_tax_spent, policy_sale_count
+        nonlocal policy_gross_proceeds, policy_net_proceeds, policy_realized_pnl
+        nonlocal gain_sale_count, gain_gross_proceeds, gain_net_proceeds
+        nonlocal gain_realized_pnl, gain_exemption_increment
+        sold_today = False
+        for order in list(pending_orders):
+            security, reason = order["security_id"], order["reason"]
+            if terminal:
+                pending_orders.remove(order)
+                log(day, "order_cancelled", order_id=order["order_id"], security_id=security,
+                    signal_date=order["signal_date"], reason="terminal_liquidation")
+                continue
+            if order["signal_date"] >= day or quote_session.get(security) != session or not quote_tradable.get(security, True):
+                continue
+            pending_orders.remove(order)
+            if order["side"] == "sell":
+                if order["units"] > balance(security)+1e-9:
+                    raise DataIntegrityError("Pending sale exceeds available shares")
+                before = liability()
+                headroom = gain_headroom()
+                losing_lot = any(n*quote[security]*(1-cost_rate(security))-b < -1e-9
+                                 for _, n, b in disposal_parts(security, order["units"]))
+                active_order = order
+                sale = dispose(day, security, quote[security], reason, units=order["units"])
+                active_order = None
+                after = liability()
+                increment = after.tax_due-before.tax_due
+                update_reserve()
+                sold_today = True
+                if reason == "policy_exit":
+                    policy_tax_spent += max(0., increment)
+                    total_policy_tax_spent += max(0., increment)
+                    policy_sale_count += 1
+                    policy_gross_proceeds += sale["gross"]
+                    policy_net_proceeds += sale["net"]
+                    policy_realized_pnl += sale["pnl"]
+                    log(day, "policy_exit", security_id=security, policy=c.exit_policy,
+                        scheduled_date=order["scheduled_date"], signal_date=order["signal_date"],
+                        order_id=order["order_id"], units=sale["units"],
+                        incremental_cgt_eur=max(0., increment),
+                        annual_positive_incremental_cgt_eur=policy_tax_spent,
+                        annual_tax_budget_eur=c.exit_annual_tax_budget_eur,
+                        tax_budget_overrun_eur=max(0., policy_tax_spent-c.exit_annual_tax_budget_eur))
+                elif reason == "gain_harvest":
+                    gain_sale_count += 1
+                    gain_gross_proceeds += sale["gross"]
+                    gain_net_proceeds += sale["net"]
+                    gain_realized_pnl += sale["pnl"]
+                    gain_exemption_increment += after.exemption_used-before.exemption_used
+                    log(day, "gain_harvest", security_id=security, order_id=order["order_id"],
+                        signal_date=order["signal_date"], scheduled_date=order["scheduled_date"],
+                        units=sale["units"], gain_headroom_before_eur=headroom,
+                        gain_headroom_after_eur=gain_headroom(),
+                        exemption_used_before_eur=before.exemption_used,
+                        exemption_used_after_eur=after.exemption_used,
+                        incremental_cgt_eur=increment, realized_gain_eur=sale["pnl"],
+                        reinvest=order["reinvest"])
+                    if order["reinvest"] == "same_security":
+                        if losing_lot or day < blocked_until.get(share_class(security), pd.Timestamp.min):
+                            log(day, "gain_repurchase_skipped", security_id=security,
+                                sale_order_id=order["order_id"], skip_reason="actual_losing_matched_lot")
+                        elif membership_status(security) != "inside" or known_targets.get(security, 0.) <= 0:
+                            log(day, "gain_repurchase_skipped", security_id=security,
+                                sale_order_id=order["order_id"], skip_reason="no_current_repurchase_target")
+                        else:
+                            budget = max(0., min(sale["net"]-max(0., increment), cash-reserve-committed_cash()))
+                            if budget >= c.minimum_order_eur:
+                                queue_order(day, "buy", security, "gain_repurchase", cash_budget_eur=budget,
+                                    sale_order_id=order["order_id"],
+                                    weight_effective_date=order["weight_effective_date"],
+                                    weight_available_date=order["weight_available_date"])
+                    else:
+                        blocked_until[share_class(security)] = day+pd.Timedelta(days=c.reentry_days)
+                log(day, "order_fill", order_id=order["order_id"], security_id=security,
+                    signal_date=order["signal_date"], fill_date=day, side="sell", reason=reason,
+                    units=sale["units"], realized_gain_eur=sale["pnl"],
+                    incremental_cgt_eur=increment,
+                    expected_incremental_cgt_eur=order["expected_incremental_cgt_eur"],
+                    tax_estimate_error_eur=increment-order["expected_incremental_cgt_eur"])
+            else:
+                if day < blocked_until.get(share_class(security), pd.Timestamp.min) or membership_status(security) == "outside":
+                    log(day, "order_cancelled", order_id=order["order_id"], security_id=security,
+                        signal_date=order["signal_date"], reason="class_block_or_known_departure")
+                    continue
+                update_reserve()
+                budget = max(0., min(order["cash_budget_eur"], cash-reserve))
+                if budget < c.minimum_order_eur:
+                    log(day, "order_cancelled", order_id=order["order_id"], security_id=security,
+                        signal_date=order["signal_date"], reason="insufficient_cash")
+                    continue
+                unit_cost = quote[security]*(1+cost_rate(security))
+                units = budget/unit_cost
+                if not c.fractional_shares:
+                    units = float(floor(units+1e-12))
+                if units <= 1e-12:
+                    log(day, "order_cancelled", order_id=order["order_id"], security_id=security,
+                        signal_date=order["signal_date"], reason="budget_below_one_share")
+                    continue
+                outlay = units*unit_cost
+                fee = units*quote[security]*cost_rate(security)
+                cash -= outlay
+                total_cost += fee
+                lot_serial += 1
+                basis = outlay if c.acquisition_costs_in_basis else units*quote[security]
+                lot = Lot(lot_serial, security, day, units, basis, f"{reason}:{day.date()}:{security}")
+                lots.append(lot)
+                open_positions.setdefault(security, []).append(lot)
+                last_buy[share_class(security)] = day
+                active_order = order
+                log(day, "buy", security_id=security, reason=reason, units=units, price_eur=quote[security],
+                    basis_eur=basis, cash_outlay_eur=outlay, fees_eur=fee, lot_id=lot_serial,
+                    sale_order_id=order.get("sale_order_id"),
+                    weight_effective_date=order["weight_effective_date"],
+                    weight_available_date=order["weight_available_date"])
+                active_order = None
+                log(day, "order_fill", order_id=order["order_id"], security_id=security,
+                    signal_date=order["signal_date"], fill_date=day, side="buy", reason=reason,
+                    units=units, cash_budget_eur=order["cash_budget_eur"], cash_outlay_eur=outlay)
+                check_class_identity()
+        return sold_today
 
     for session, (day, rows) in enumerate(p.groupby("date", sort=True)):
         disposal_today = False
@@ -764,6 +1033,8 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
             deposit_index += 1
 
         terminal = c.liquidate_at_end and day == end
+        if c.execution_mode == "next_session":
+            disposal_today = execute_pending(day, session, terminal) or disposal_today
         loss_review_today = False
         while loss_review_index < len(loss_reviews) and loss_reviews[loss_review_index] <= day:
             loss_review_today = True
@@ -773,6 +1044,8 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
         if c.harvest and not terminal and harvest_today:
             for security in securities():
                 klass = share_class(security)
+                if pending_class(security):
+                    continue
                 previous_buy = last_buy.get(klass)
                 if previous_buy is not None and (day - previous_buy).days < c.reentry_days:
                     continue
@@ -813,8 +1086,11 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                             loss_eur=loss, potential_loss_relief_eur=loss*c.cgt_rate,
                             estimated_round_trip_cost_eur=round_trip_cost)
                         continue
-                    dispose(day, security, quote[security], "harvest", units=harvest_units)
-                    disposal_today = True
+                    if c.execution_mode == "next_session":
+                        queue_sale(day, security, "harvest", units)
+                    else:
+                        dispose(day, security, quote[security], "harvest", units=harvest_units)
+                        disposal_today = True
 
         while review_index < len(reviews) and reviews[review_index] <= day:
             scheduled_review = reviews[review_index]
@@ -839,6 +1115,8 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
             if c.exit_policy == "tax_budget":
                 candidates.sort(key=lambda s: (gain_fraction(s), s))
             for security in candidates:
+                if pending_class(security):
+                    continue
                 since = outside_since[security]
                 age = (day-since).days
                 previous_buy = last_buy.get(share_class(security))
@@ -870,13 +1148,17 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                     pnl = units*quote[security]*(1-cost_rate(security))-basis
                     sale_gains += max(pnl, 0.)
                     sale_losses += max(-pnl, 0.)
-                before_tax = liability().tax_due
-                after_tax = settle_cgt_year(gains+sale_gains, losses+sale_losses,
+                planned_gains, planned_losses = planned_totals()
+                before_tax = settle_cgt_year(planned_gains, planned_losses, carried_loss,
+                                             c.cgt_rate, c.cgt_exemption).tax_due
+                after_tax = settle_cgt_year(planned_gains+sale_gains, planned_losses+sale_losses,
                                             carried_loss, c.cgt_rate, c.cgt_exemption).tax_due
                 increment = max(0., after_tax-before_tax)
+                committed_tax = sum(max(0., order["expected_incremental_cgt_eur"])
+                                    for order in pending_orders if order["reason"] == "policy_exit")
                 if c.exit_policy == "loss_only" and sale_losses-sale_gains <= 1e-9:
                     skip = "not_an_aggregate_loss"
-                elif c.exit_policy == "tax_budget" and policy_tax_spent+increment > c.exit_annual_tax_budget_eur+1e-8:
+                elif c.exit_policy == "tax_budget" and policy_tax_spent+committed_tax+increment > c.exit_annual_tax_budget_eur+1e-8:
                     skip = "annual_tax_budget"
                 if skip:
                     policy_skips[skip] = policy_skips.get(skip, 0)+1
@@ -885,6 +1167,10 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                         outside_age_days=age, skip_reason=skip,
                         projected_incremental_cgt_eur=increment,
                         annual_positive_incremental_cgt_eur=policy_tax_spent)
+                    continue
+                if c.execution_mode == "next_session":
+                    queue_sale(day, security, "policy_exit", sold_units,
+                               scheduled_date=scheduled_review, outside_since=since)
                     continue
                 sale = dispose(day, security, quote[security], "policy_exit",
                                units=sold_units if c.exit_policy == "gradual" else None)
@@ -912,7 +1198,7 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                     skip_reason="terminal_liquidation")
                 continue
             gain_review_count += 1
-            review_headroom = gain_headroom()
+            review_headroom = planned_headroom()
             review_exemption = liability().exemption_used
             log(day, "gain_review", scheduled_date=scheduled_gain_review,
                 gain_headroom_eur=review_headroom, exemption_used_eur=review_exemption,
@@ -923,7 +1209,9 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                 skip = None
                 status = membership_status(security)
                 previous_buy = last_buy.get(share_class(security))
-                if status == "unknown":
+                if pending_class(security):
+                    skip = "pending_class_order"
+                elif status == "unknown":
                     skip = "unknown_membership"
                 elif c.gain_harvest_scope == "departed" and status != "outside":
                     skip = "scope"
@@ -954,7 +1242,7 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
 
             candidates.sort(key=gain_rank)
             for security in candidates:
-                headroom = gain_headroom()
+                headroom = planned_headroom()
                 if headroom <= 1e-8:
                     break
                 units = gain_sale_units(security, headroom)
@@ -980,6 +1268,13 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                     if any(n*quote[security]*(1-cost_rate(security))-b < -1e-8
                            for _, n, b in disposal_parts(security, units)):
                         raise AssertionError("Immediate replacement cannot include a losing FIFO lot")
+                if c.execution_mode == "next_session":
+                    effective, available, _ = available_snapshots[-1]
+                    queue_sale(day, security, "gain_harvest", units,
+                        scheduled_date=scheduled_gain_review,
+                        reinvest="same_security" if immediate_repurchase(security) else "underweights",
+                        weight_effective_date=effective, weight_available_date=available)
+                    continue
                 sale = dispose(day, security, quote[security], "gain_harvest", units=units)
                 after = liability()
                 if sale["pnl"] <= 0 or after.tax_due > before.tax_due+1e-7:
@@ -1026,15 +1321,53 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                 gain_headroom_eur=gain_headroom(), exemption_used_eur=liability().exemption_used,
                 exemption_remaining_eur=c.cgt_exemption-liability().exemption_used)
 
+        while rebalance_review_index < len(rebalance_reviews) and rebalance_reviews[rebalance_review_index] <= day:
+            scheduled_rebalance = rebalance_reviews[rebalance_review_index]
+            rebalance_review_index += 1
+            if terminal:
+                continue
+            nav = value()-liability().tax_due
+            log(day, "rebalance_review", scheduled_date=scheduled_rebalance, signal_nav_eur=nav)
+            for security in securities():
+                status = membership_status(security)
+                if status == "unknown" or (status == "inside" and security not in known_targets):
+                    continue
+                target = 0. if status == "outside" else known_targets[security]
+                excess = balance(security)*quote[security]-target*nav
+                if excess <= 1e-9 or pending_class(security):
+                    continue
+                previous_buy = last_buy.get(share_class(security))
+                skip = None
+                if previous_buy is not None and (day-previous_buy).days < c.reentry_days:
+                    skip = "recent_class_purchase"
+                elif quote_session.get(security) != session or not quote_tradable.get(security, True):
+                    skip = "no_fresh_tradable_quote"
+                if skip:
+                    log(day, "rebalance_skipped", security_id=security, skip_reason=skip)
+                    continue
+                units = min(balance(security), excess/quote[security])
+                if not c.fractional_shares:
+                    units = float(floor(units+1e-12))
+                if units <= 1e-12 or units*quote[security]+1e-9 < c.minimum_order_eur:
+                    continue
+                if c.execution_mode == "next_session":
+                    queue_sale(day, security, "rebalance", units, scheduled_date=scheduled_rebalance,
+                               signal_target_weight=target, signal_nav_eur=nav)
+                else:
+                    dispose(day, security, quote[security], "rebalance", units=units)
+                    disposal_today = True
+
         update_reserve()
         if terminal:
+            if any(receipt["units"] > 1e-12 for receipt in dividend_receivables.values()):
+                raise DataIntegrityError("Unpaid dividend receivable at final liquidation")
             pre_liquidation_value = value()
             for security in securities():
                 if quote_session.get(security) != session or not quote_tradable.get(security, True):
                     raise DataIntegrityError(f"Fresh final liquidation price required: {security}")
                 dispose(day, security, quote[security], "final_liquidation")
             final_tax = settle_year(day, final=True)
-        elif (cash - reserve > 1e-8 and
+        elif (cash - reserve - committed_cash() > 1e-8 and
               (contributed_today or c.investment_frequency == "daily" or
                (disposal_today and c.reinvest_after_disposal))):
             if not available_snapshots:
@@ -1047,6 +1380,8 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                 if security == c.cash_target_security_id:
                     continue
                 if weight <= 0 or not member_state.get(security, True):
+                    continue
+                if pending_class(security):
                     continue
                 if security not in quote:
                     if c.missing_target_policy == "error":
@@ -1066,13 +1401,17 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                     deficits[security] = deficit
             total_deficit = sum(deficits.values())
             data_cash_reserve = cash_weight * investable_nav
-            budget = max(0., min(cash - reserve - data_cash_reserve, total_deficit))
+            budget = max(0., min(cash - reserve - committed_cash() - data_cash_reserve, total_deficit))
             if cash_weight:
                 log(day, "target_cash_reserve", target_weight=cash_weight,
                     required_cash_eur=data_cash_reserve, available_cash_eur=cash-reserve)
             for security, deficit in deficits.items():
                 allocation = budget * deficit / total_deficit
                 if allocation + 1e-9 < c.minimum_order_eur:
+                    continue
+                if c.execution_mode == "next_session":
+                    queue_order(day, "buy", security, "investment", cash_budget_eur=allocation,
+                                weight_effective_date=effective, weight_available_date=available)
                     continue
                 unit_cost = quote[security] * (1.0 + cost_rate(security))
                 units = allocation / unit_cost
@@ -1129,6 +1468,8 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                           unknown_membership_value_eur=unknown_value,
                           unknown_membership_weight=unknown_value/portfolio_value if portfolio_value else 0.,
                           exit_policy_cgt_budget_used_eur=policy_tax_spent,
+                          dividend_receivable_eur=sum(r["net_mark_eur"] for r in dividend_receivables.values()),
+                          pending_order_count=len(pending_orders), pending_buy_cash_eur=committed_cash(),
                           holdings={s: balance(s) for s in securities()}))
 
     summary = dict(strategy="loss_harvesting" if c.harvest else "same_basket_no_harvest",
@@ -1141,6 +1482,14 @@ def run_backtest(prices: pd.DataFrame, target_weights: pd.DataFrame,
                    total_tax=total_cgt + total_dividend_tax,
                    transaction_costs=total_cost, unutilized_loss=liability().loss_carry_forward,
                    cgt_reserve=reserve, liquidated=c.liquidate_at_end,
+                   execution_mode=c.execution_mode, pending_order_count=len(pending_orders),
+                   rebalance_sale_count=sum(t["event"] == "sell" and t.get("reason") == "rebalance"
+                                            for t in transactions),
+                   order_signal_count=order_serial,
+                   order_cancelled_count=sum(t["event"] == "order_cancelled" for t in transactions),
+                   positive_tax_estimate_error_eur=sum(max(0., t.get("tax_estimate_error_eur", 0.))
+                                                     for t in transactions if t["event"] == "order_fill"),
+                   unpaid_dividend_receivable_eur=sum(r["net_mark_eur"] for r in dividend_receivables.values()),
                    unpaid_contingent_right_units={k:v for k,v in contingent_rights.items() if v},
                    exit_policy=c.exit_policy, exit_policy_reviews=policy_review_count,
                    exit_policy_sales=policy_sale_count,

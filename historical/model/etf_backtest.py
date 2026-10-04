@@ -38,8 +38,13 @@ def monthly_dates(prices, start="2010-09-30", end="2026-09-30"):
 
 def replay(prices: pd.Series, contribution=1000.0, tax_rate=.38,
            deemed_disposal=True, start="2010-09-30", end="2026-09-30",
-           contribution_amounts: tuple[float, ...] | None = None):
-    """Replay amounts aligned with sorted monthly_dates; None uses contribution."""
+           contribution_amounts: tuple[float, ...] | None = None,
+           contribution_first=True):
+    """Replay contributions aligned with sorted monthly_dates.
+
+    Pay tax from that day's contribution first, then invest its remainder.
+    False retains the legacy buy-before-tax policy as an explicit control.
+    """
     prices = prices.sort_index().dropna()
     prices = prices[~prices.index.duplicated(keep="last")]
     prices = prices.loc[start:end]
@@ -64,6 +69,19 @@ def replay(prices: pd.Series, contribution=1000.0, tax_rate=.38,
 
     def rate_on(day):
         return float(tax_rate(day) if callable(tax_rate) else tax_rate)
+
+    def invest(day, amount, price):
+        if amount <= 0:
+            return 0.0
+        lot = FundLot(day, amount/price, price)
+        lots.append(lot)
+        # Map calendar anniversaries to the first available valuation day.
+        for years in (8, 16):
+            anniversary = day + pd.DateOffset(years=years)
+            k = prices.index.searchsorted(anniversary)
+            if k < len(prices):
+                anniversaries.setdefault(prices.index[k], []).append(lot)
+        return lot.units
 
     def fund_bill(due, day, price):
         """FIFO sales, with proportional original cost and previously paid credit.
@@ -95,19 +113,20 @@ def replay(prices: pd.Series, contribution=1000.0, tax_rate=.38,
 
     final_day = prices.index[-1]
     for day, price in prices.items():
+        cash = 0.0
+        contribution_entry = None
         if day in deposits:
             amount = deposits[day]
-            lot = FundLot(day, amount/price, price)
-            lots.append(lot)
             total_contributions += amount
-            # Map calendar anniversaries to the first available valuation day.
-            for years in (8, 16):
-                anniversary = day + pd.DateOffset(years=years)
-                k = prices.index.searchsorted(anniversary)
-                if k < len(prices):
-                    anniversaries.setdefault(prices.index[k], []).append(lot)
-            ledger.append(dict(date=day, event="contribution", cash=amount,
-                               units=lot.units, price=price))
+            contribution_entry = dict(date=day, event="contribution", cash=amount,
+                                      units=0.0, price=price, invested_cash=0.0,
+                                      tax_funding_cash=0.0)
+            ledger.append(contribution_entry)
+            if contribution_first:
+                cash = amount
+            else:
+                contribution_entry["units"] = invest(day, amount, price)
+                contribution_entry["invested_cash"] = amount
         if deemed_disposal and day != final_day:
             bill = 0.0
             for lot in anniversaries.get(day, []):
@@ -120,8 +139,16 @@ def replay(prices: pd.Series, contribution=1000.0, tax_rate=.38,
                 ledger.append(dict(date=day, event="deemed_disposal", tax=amount,
                                    units=lot.units, acquisition=lot.acquired))
             total_dd += bill
+            contribution_payment = min(cash, bill)
+            cash -= contribution_payment
+            bill -= contribution_payment
+            if contribution_entry is not None:
+                contribution_entry["tax_funding_cash"] = contribution_payment
             if bill > 1e-8:
                 fund_bill(bill, day, price)
+        if contribution_first and contribution_entry is not None:
+            contribution_entry["units"] = invest(day, cash, price)
+            contribution_entry["invested_cash"] = cash
         value = sum(l.units*price for l in lots)
         if day == final_day:
             final_tax = sum(fund_tax_delta(l.units*price, l.units*l.unit_basis,

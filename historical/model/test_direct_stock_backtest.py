@@ -830,5 +830,291 @@ class ProactiveTaxHarvestTests(unittest.TestCase):
         self.assertEqual(allowed.transactions.query("event=='gain_harvest'").security_id.tolist(), ["A"])
 
 
+class NextSessionExecutionTests(unittest.TestCase):
+    def next_config(self, days, **changes):
+        return config(start=days[0], end=days[-1], execution_mode="next_session",
+                      liquidate_at_end=False, **changes)
+
+    def test_buy_cash_budgets_precede_price_shock(self):
+        days = ["2020-01-02", "2020-01-03"]
+        p = fixture(days, {"A": [100, 1000], "B": [100, 10]})
+        w = weights("2020-01-01", "2020-01-01", A=.5, B=.5)
+        r = run_backtest(p, w, self.next_config(days))
+        buys = r.transactions.query("event=='buy'")
+        self.assertEqual(buys.cash_outlay_eur.tolist(), [500, 500])
+        self.assertEqual(buys.units.tolist(), [.5, 50])
+        self.assertTrue((buys.signal_date < buys.fill_date).all())
+        self.assertEqual(r.daily.iloc[0].cash_eur, 1000)
+        self.assertEqual(r.daily.iloc[0].holdings, {})
+
+    def test_loss_signal_executes_fixed_units_even_when_fill_is_profitable(self):
+        days = ["2020-01-02", "2020-01-03", "2020-03-02", "2020-03-03"]
+        p = fixture(days, {"A": [100, 100, 80, 120]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        c = self.next_config(days, harvest=True, harvest_review_dates=(days[2],))
+        r = run_backtest(p, w, c)
+        sale = r.transactions.query("event=='sell' and reason=='harvest'").iloc[0]
+        self.assertEqual(sale.units, 10)
+        self.assertEqual(sale.realized_gain_eur, 200)
+        self.assertEqual(sale.signal_date, pd.Timestamp(days[2]))
+        self.assertEqual(sale.date, pd.Timestamp(days[3]))
+        self.assertEqual(r.daily.iloc[-1].cgt_reserve_eur, 66)
+        other_prices = p.copy()
+        other_prices.loc[other_prices.date.eq(days[-1]), "price_eur"] = 40
+        other = run_backtest(other_prices, w, c)
+        pd.testing.assert_frame_equal(
+            r.transactions.loc[r.transactions.date.le(days[2])].dropna(axis=1, how="all"),
+            other.transactions.loc[other.transactions.date.le(days[2])].dropna(axis=1, how="all"))
+        self.assertEqual(other.transactions.query("event=='sell'").iloc[0].units, 10)
+
+    def test_gain_price_gap_records_tax_and_rebuys_only_on_later_session(self):
+        days = ["2020-01-02", "2020-01-03", "2020-03-02", "2020-03-03", "2020-03-04"]
+        p = fixture(days, {"A": [100, 100, 200, 300, 150]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        c = self.next_config(days, cgt_exemption=127, gain_harvest=True,
+            gain_review_dates=(days[2],), gain_harvest_reinvest="same_security")
+        r = run_backtest(p, w, c)
+        sale = r.transactions.query("event=='sell'").iloc[0]
+        repurchase = r.transactions.query("event=='buy' and reason=='gain_repurchase'").iloc[0]
+        self.assertAlmostEqual(sale.units, 1.27)
+        self.assertAlmostEqual(sale.realized_gain_eur, 254)
+        self.assertAlmostEqual(r.summary["positive_tax_estimate_error_eur"], 41.91)
+        self.assertEqual(repurchase.signal_date, sale.date)
+        self.assertGreater(repurchase.date, sale.date)
+        self.assertAlmostEqual(repurchase.cash_outlay_eur, 381-41.91)
+        self.assertAlmostEqual(repurchase.units, (381-41.91)/150)
+        self.assertEqual(repurchase.sale_order_id, sale.order_id)
+        self.assertAlmostEqual(r.daily.iloc[-1].cash_eur, 41.91)
+
+    def test_gain_sale_that_fills_at_a_loss_suppresses_repurchase(self):
+        days = ["2020-01-02", "2020-01-03", "2020-03-02", "2020-03-03", "2020-03-04"]
+        p = fixture(days, {"A": [100, 100, 200, 50, 200]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        c = self.next_config(days, cgt_exemption=127, gain_harvest=True,
+            gain_review_dates=(days[2],), gain_harvest_reinvest="same_security")
+        r = run_backtest(p, w, c)
+        sale = r.transactions.query("event=='sell'").iloc[0]
+        self.assertAlmostEqual(sale.realized_gain_eur, -63.5)
+        self.assertEqual(len(r.transactions.query("event=='buy'")), 1)
+        self.assertEqual(r.transactions.query("event=='gain_repurchase_skipped'").iloc[0].skip_reason,
+                         "actual_losing_matched_lot")
+        self.assertEqual(r.daily.iloc[-1].cash_eur, 63.5)
+
+    def test_positive_gain_fill_with_one_losing_lot_also_blocks_repurchase(self):
+        days = ["2020-01-02", "2020-01-03", "2020-02-03", "2020-02-04", "2020-03-10", "2020-03-11", "2020-03-12"]
+        p = fixture(days, {"A": [100, 100, 200, 200, 210, 190, 210]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        c = self.next_config(days, contribution_dates=(days[0], days[2]), cgt_exemption=2000,
+            gain_harvest=True, gain_review_dates=(days[4],), gain_harvest_reinvest="same_security")
+        r = run_backtest(p, w, c)
+        sale = r.transactions.query("event=='sell'").iloc[0]
+        self.assertEqual(sale.units, 15)
+        self.assertEqual(sale.realized_gain_eur, 850)
+        self.assertEqual(len(r.transactions.query("event=='buy'")), 2)
+        self.assertEqual(len(r.transactions.query("event=='gain_repurchase_skipped'")), 1)
+
+    def test_split_adjusts_fixed_sale_units(self):
+        days = ["2020-01-02", "2020-01-03", "2020-03-02", "2020-03-03"]
+        p = fixture(days, {"A": [100, 100, 80, 40]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        events = pd.DataFrame([dict(date=days[-1], security_id="A", event_type="split", ratio=2)])
+        c = self.next_config(days, harvest=True, harvest_review_dates=(days[2],))
+        r = run_backtest(p, w, c, events)
+        sale = r.transactions.query("event=='sell'").iloc[0]
+        self.assertEqual(sale.units, 20)
+        self.assertEqual(sale.basis_eur, 1000)
+        self.assertEqual(sale.realized_gain_eur, -200)
+        self.assertEqual(len(r.transactions.query("event=='order_split_adjusted'")), 1)
+
+    def test_spinoff_cancels_pending_orders_without_future_receipt_units(self):
+        days = ["2020-01-02", "2020-01-03", "2020-03-02", "2020-03-03"]
+        p = fixture(days, {"A": [100, 100, 80, 60], "B": [40]*4})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        events = pd.DataFrame([dict(date=days[-1], security_id="A", event_type="spinoff",
+            successor_id="B", ratio=.5, basis_fraction=.25, tax_treatment="rollover")])
+        c = self.next_config(days, harvest=True, harvest_review_dates=(days[2],))
+        r = run_backtest(p, w, c, events)
+        self.assertEqual(len(r.transactions.query("event=='sell'")), 0)
+        self.assertEqual(r.daily.iloc[-1].holdings, {"A": 10, "B": 5})
+        self.assertEqual(r.transactions.query("event=='order_cancelled'").iloc[0].reason, "corporate_action")
+
+    def test_missing_quote_delays_order_without_duplicate_purchase(self):
+        days = ["2020-01-02", "2020-01-03", "2020-01-06"]
+        p = fixture(days, {"A": [100, None, 200]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        r = run_backtest(p, w, self.next_config(days, investment_frequency="daily"))
+        self.assertEqual(r.summary["order_signal_count"], 1)
+        buy = r.transactions.query("event=='buy'").iloc[0]
+        self.assertEqual(buy.date, pd.Timestamp(days[-1]))
+        self.assertEqual(buy.units, 5)
+
+    def test_insufficient_budget_for_whole_share_cancels_without_borrowing(self):
+        days = ["2020-01-02", "2020-01-03"]
+        p = fixture(days, {"A": [100, 2000]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        r = run_backtest(p, w, self.next_config(days, fractional_shares=False))
+        self.assertEqual(r.daily.iloc[-1].cash_eur, 1000)
+        self.assertEqual(r.daily.iloc[-1].holdings, {})
+        self.assertEqual(r.transactions.query("event=='order_cancelled'").iloc[0].reason, "budget_below_one_share")
+
+    def test_terminal_session_cancels_pending_orders_before_final_sale(self):
+        days = ["2020-01-02", "2020-01-03", "2020-03-02", "2020-03-03"]
+        p = fixture(days, {"A": [100, 100, 80, 120]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        c = replace(self.next_config(days, harvest=True, harvest_review_dates=(days[2],)), liquidate_at_end=True)
+        r = run_backtest(p, w, c)
+        self.assertEqual(r.summary["pending_order_count"], 0)
+        self.assertEqual(r.transactions.query("event=='sell'").reason.tolist(), ["final_liquidation"])
+        self.assertEqual(r.transactions.query("event=='order_cancelled'").iloc[0].reason, "terminal_liquidation")
+        self.assertEqual(r.summary["final_cash"], 1134)
+
+    def test_year_boundary_taxes_only_actual_fills(self):
+        days = ["2019-01-02", "2019-01-03", "2019-12-31", "2020-01-02", "2020-01-03"]
+        p = fixture(days, {"A": [100, 100, 200, 300, 300]})
+        w = weights("2019-01-01", "2019-01-01", A=1)
+        c = self.next_config(days, cgt_exemption=127, gain_harvest=True,
+            gain_review_dates=(days[2],), gain_harvest_reinvest="same_security")
+        r = run_backtest(p, w, c)
+        self.assertEqual(r.yearly_tax.iloc[0].gains_eur, 0)
+        self.assertEqual(r.yearly_tax.iloc[0].exemption_used, 0)
+        self.assertEqual(r.transactions.query("event=='sell'").iloc[0].date, pd.Timestamp(days[3]))
+        self.assertAlmostEqual(r.daily.iloc[-1].cgt_reserve_eur, 41.91)
+
+    def test_unknown_execution_mode_fails(self):
+        p = fixture(["2020-01-02", "2020-03-02"], {"A": [100, 100]})
+        with self.assertRaisesRegex(ValueError, "execution mode"):
+            run_backtest(p, weights("2020-01-01", "2020-01-01", A=1), config(execution_mode="unknown"))
+
+    def test_rebalance_fixes_excess_units_and_reserves_actual_tax(self):
+        days = ["2020-01-02", "2020-01-03", "2020-03-02", "2020-03-03", "2020-03-04"]
+        p = fixture(days, {"A": [100, 100, 200, 300, 300], "B": [100, 100, 100, 100, 200]})
+        w = weights("2020-01-01", "2020-01-01", A=.5, B=.5)
+        r = run_backtest(p, w, self.next_config(days, rebalance_review_dates=(days[2],)))
+        sale = r.transactions.query("event=='sell' and reason=='rebalance'").iloc[0]
+        self.assertEqual(sale.units, 1.25)
+        self.assertEqual(sale.date, pd.Timestamp(days[3]))
+        self.assertEqual(sale.realized_gain_eur, 250)
+        self.assertEqual(r.summary["rebalance_sale_count"], 1)
+        self.assertEqual(r.daily.iloc[-1].cgt_reserve_eur, 82.5)
+        buy = r.transactions.query("event=='buy'").iloc[-1]
+        self.assertEqual(buy.security_id, "B")
+        self.assertEqual(buy.date, pd.Timestamp(days[4]))
+        self.assertEqual(buy.cash_outlay_eur, 292.5)
+        self.assertEqual(buy.units, 292.5/200)
+
+    def test_rebalance_sells_known_departure_but_retains_unknown_receipt(self):
+        days = ["2020-01-02", "2020-01-03", "2020-02-03", "2020-03-02", "2020-03-03"]
+        p = fixture(days, {"A": [100, 100, 80, 80, 80], "B": [100]*5, "C": [20]*5})
+        w = pd.concat([weights("2020-01-01", "2020-01-01", A=.5, B=.5),
+                       weights("2020-02-01", "2020-02-01", A=1)])
+        events = pd.DataFrame([dict(date=days[2], security_id="A", event_type="spinoff",
+            successor_id="C", ratio=1, basis_fraction=.2, tax_treatment="rollover")])
+        member = pd.DataFrame([dict(effective_date="2020-02-01", security_id="B", is_member=False)])
+        c = self.next_config(days, rebalance_review_dates=(days[3],))
+        r = run_backtest(p, w, c, events, membership=member)
+        self.assertEqual(r.transactions.query("event=='sell'").security_id.tolist(), ["B"])
+        self.assertEqual(r.daily.iloc[-1].holdings["C"], 5)
+
+    def test_rebalance_respects_recent_purchase_restriction(self):
+        days = ["2020-01-02", "2020-01-03", "2020-01-06", "2020-01-07"]
+        p = fixture(days, {"A": [100, 100, 200, 200], "B": [100]*4})
+        w = weights("2020-01-01", "2020-01-01", A=.5, B=.5)
+        r = run_backtest(p, w, self.next_config(days, rebalance_review_dates=(days[2],)))
+        self.assertEqual(r.summary["rebalance_sale_count"], 0)
+        self.assertEqual(r.transactions.query("event=='rebalance_skipped'").iloc[0].skip_reason,
+                         "recent_class_purchase")
+
+
+class DividendSettlementAndMandatoryFeesTests(unittest.TestCase):
+    def test_pre_start_entitlement_has_zero_units_in_fresh_cohort(self):
+        days = ["2020-02-03", "2020-03-02"]
+        p = fixture(days, {"A": [100, 100]})
+        e = pd.DataFrame([
+            dict(date="2020-01-02", security_id="A", event_type="dividend_entitlement", dividend_id="d1", cash_eur_per_share=2),
+            dict(date=days[0], security_id="A", event_type="dividend_payment", dividend_id="d1", cash_eur_per_share=2),
+        ])
+        r = run_backtest(p, weights("2020-01-01", "2020-01-01", A=1),
+                         config(start=days[0], end=days[-1]), e)
+        self.assertEqual(r.summary["total_gross_dividends"], 0)
+        self.assertEqual(r.summary["final_cash"], 1000)
+        with self.assertRaisesRegex(DataIntegrityError, "lacks matching entitlement"):
+            run_backtest(p, weights("2020-01-01", "2020-01-01", A=1),
+                         config(start=days[0], end=days[-1]), e.iloc[1:])
+
+    def test_dividend_identifier_cannot_be_reused_after_payment(self):
+        days = ["2020-01-02", "2020-02-03", "2020-03-02"]
+        p = fixture(days, {"A": [100]*3})
+        e = pd.DataFrame([
+            dict(date=days[0], security_id="A", event_type="dividend_entitlement", dividend_id="d1", cash_eur_per_share=2),
+            dict(date=days[1], security_id="A", event_type="dividend_payment", dividend_id="d1", cash_eur_per_share=2),
+            dict(date=days[2], security_id="A", event_type="dividend_entitlement", dividend_id="d1", cash_eur_per_share=2),
+        ])
+        with self.assertRaisesRegex(DataIntegrityError, "Duplicate dividend entitlement"):
+            run_backtest(p, weights("2020-01-01", "2020-01-01", A=1), config(), e)
+
+    def test_dividend_entitlement_survives_sale_and_cash_waits_for_payment(self):
+        days = ["2020-01-02", "2020-02-03", "2020-02-04", "2020-03-02"]
+        p = fixture(days, {"A": [100, 90, 90, 90]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        e = pd.DataFrame([
+            dict(date=days[1], security_id="A", event_type="dividend_entitlement", dividend_id="d1", cash_eur_per_share=2),
+            dict(date=days[2], security_id="A", event_type="cash_merger", cash_eur_per_share=90),
+            dict(date=days[3], security_id="A", event_type="dividend_payment", dividend_id="d1", cash_eur_per_share=3),
+        ])
+        r = run_backtest(p, w, config(), e)
+        self.assertEqual(r.daily.iloc[1].cash_eur, 0)
+        self.assertAlmostEqual(r.daily.iloc[1].dividend_receivable_eur, 20*(1-.5235))
+        self.assertEqual(r.daily.iloc[2].holdings, {})
+        self.assertAlmostEqual(r.summary["total_gross_dividends"], 30)
+        self.assertAlmostEqual(r.summary["final_cash"], 900+30*(1-.5235))
+        self.assertEqual(r.transactions.query("event=='dividend'").date.tolist(), [pd.Timestamp(days[-1])])
+
+    def test_ex_date_buyer_does_not_receive_already_detached_dividend(self):
+        days = ["2020-01-02", "2020-02-03", "2020-03-02"]
+        p = fixture(days, {"A": [100, 100, 100]})
+        w = weights("2020-01-01", "2020-01-01", A=1)
+        e = pd.DataFrame([
+            dict(date=days[0], security_id="A", event_type="dividend_entitlement", dividend_id="d1", cash_eur_per_share=2),
+            dict(date=days[1], security_id="A", event_type="dividend_payment", dividend_id="d1", cash_eur_per_share=2),
+        ])
+        r = run_backtest(p, w, config(), e)
+        self.assertEqual(r.summary["total_gross_dividends"], 0)
+        self.assertEqual(r.summary["final_cash"], 1000)
+
+    def test_unpaid_terminal_dividend_fails_closed(self):
+        days = ["2020-01-02", "2020-03-02"]
+        p = fixture(days, {"A": [100, 100]})
+        e = pd.DataFrame([dict(date=days[1], security_id="A", event_type="dividend_entitlement",
+                              dividend_id="d1", cash_eur_per_share=2)])
+        with self.assertRaisesRegex(DataIntegrityError, "Unpaid dividend receivable"):
+            run_backtest(p, weights("2020-01-01", "2020-01-01", A=1), config(), e)
+
+    def test_compulsory_cash_merger_has_no_fx_or_spread_fee(self):
+        days = ["2020-01-02", "2020-03-02"]
+        p = fixture(days, {"A": [100, 100]})
+        e = pd.DataFrame([dict(date=days[1], security_id="A", event_type="cash_merger", cash_eur_per_share=120)])
+        r = run_backtest(p, weights("2020-01-01", "2020-01-01", A=1),
+                         config(fx_fee=.01, half_spread=.01), e)
+        merger = r.transactions.query("event=='sell' and reason=='cash_merger'").iloc[0]
+        self.assertEqual(merger.fees_eur, 0)
+        self.assertAlmostEqual(r.summary["transaction_costs"], 1000*.02/1.02)
+
+    def test_compulsory_mixed_cash_and_contingent_payment_have_no_fee(self):
+        days = ["2020-01-02", "2020-02-03", "2020-02-04", "2020-03-02"]
+        p = fixture(days, {"A": [100]*4, "B": [100]*4})
+        e = pd.DataFrame([
+            dict(date=days[1], security_id="A", event_type="contingent_right", successor_id="R", ratio=1),
+            dict(date=days[1], security_id="A", event_type="mixed_merger", successor_id="B", ratio=1,
+                 cash_eur_per_share=20, stock_value_eur_per_old_share=100, tax_treatment="rollover"),
+            dict(date=days[2], security_id="R", event_type="contingent_cash", cash_eur_per_share=5),
+        ])
+        c = config(fx_fee=.01, half_spread=.01, liquidate_at_end=False, reinvest_after_disposal=False)
+        r = run_backtest(p, weights("2020-01-01", "2020-01-01", A=1), c, e)
+        parts = r.transactions.query("event=='lot_disposal' and reason=='mixed_merger'")
+        self.assertEqual(parts.fees_eur.sum(), 0)
+        self.assertEqual(r.transactions.query("event=='contingent_payment'").fees_eur.sum(), 0)
+        self.assertAlmostEqual(r.summary["transaction_costs"], 1000*.02/1.02)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

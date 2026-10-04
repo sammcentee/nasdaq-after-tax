@@ -125,7 +125,8 @@ def main():
         marks = marks.sort_values("date").groupby("security_id").tail(1).set_index("security_id")
         assert holdings.index.isin(marks.index).all()
         values = holdings * marks.price_eur.reindex(holdings.index)
-        near(values.sum()+as_of.cash_eur, as_of.value_eur, f"{key} pre-liquidation value")
+        near(values.sum()+as_of.cash_eur+as_of.get("dividend_receivable_eur", 0.),
+             as_of.value_eur, f"{key} pre-liquidation value")
         held_weights = (values/values.sum()).sort_values(ascending=False)
         known = weights.loc[weights.effective_date.le(as_of.date) & weights.available_date.lt(as_of.date)]
         snapshot = known.sort_values(["effective_date", "available_date"]).iloc[-1]
