@@ -17,7 +17,7 @@ OUT = ROOT / "results/latest"
 ORDER = ["etf", "baseline", "monthly_tlh", "monthly_hybrid", "weekly_annual"]
 LABELS = {
     "etf": "Hold the ETF",
-    "baseline": "Buy index shares; keep stocks that leave",
+    "baseline": "Buy underlying company shares directly; keep stocks that leave",
     "monthly_tlh": "Sell losing shares each month",
     "monthly_hybrid": "Sell losses monthly; sell former index stocks first in December",
     "weekly_annual": "Sell losses weekly; sell and rebuy current stocks in December",

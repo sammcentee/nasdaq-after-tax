@@ -2,7 +2,7 @@
 
 # ![Nasdaq After Tax](docs/assets/readme-header.svg)
 
-**Recreate a Nasdaq-100 ETF with individual shares, manage and rebalance it ourselves, then compare the Irish tax outcome.**
+**Recreate a Nasdaq-100 ETF by buying individual company shares directly, manage and rebalance it ourselves, then compare the Irish tax outcome.**
 
 Starts at €1,000/month · Annual Irish CPI reviews · 16 years · €210,936.48 contributed
 
